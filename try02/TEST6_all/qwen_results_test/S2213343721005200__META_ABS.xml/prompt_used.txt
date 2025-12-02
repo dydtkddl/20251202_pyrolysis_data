@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental validation of complex mathematical model of screw reactor coupled with particle model describing pyrolysis of lignocellulosic biomass As in every complex technological process design, pyrolysis reactor design and optimization require a mathematical model of sufficient complexity. Aside from properties of utilized feedstock, reaction temperature and residence time of solid and gaseous phase are the main parameters in pyrolysis reactor design. Screw pyrolysis reactor, also known as auger reactor, is a well-known and studied reactor type suitable for pyrolysis of heterogeneous materials. In this work, a complex mathematical model of a screw pyrolysis reactor coupled with a particle model is proposed. Primary pyrolysis reactions as well as secondary tar cracking reactions were taken into account. In addition, heat and mass transfer inside a solid particle and heat transfer between both phases and the reactor wall were considered. Experimental results obtained at a pyrolyzer temperature of 650, 700 and 750 °C and residence time of solid phase of 7, 9.6 and 15 min were compared with data predicted by the mathematical model. Both, tar and gas yield predicted by the model at 700 and 750 °C showed a good agreement with experimental data at all solid phase residence times. However, the model predicted higher gas production compared to the experimental one at 650 °C. The value of relative deviation of char yield remained under 2% under all pyrolysis conditions. The proposed model can be used for simulation and optimization of industry-scale screw pyrolyzers. However, its validity should be verified on wider operation temperature range.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A thermo-chemical and biotechnological approaches for bamboo waste recycling and conversion to value added product: Towards a zero-waste biorefinery and circular bioeconomy Fast growth of bamboo species make them a suitable candidate for eco-restoration, while its lignocellulosic substrate could be used for production of high-value green products such as biofuels, chemicals, and biomaterials. Within these frameworks, this review comprehensively explored the thermochemical and biological conversion of bamboo biomass to value-added fuels and chemicals. Additionally, this review stretches an in-depth understanding of bamboo biomass lignin extraction technologies and bioengineered methodologies, as well as their biorefinery conversion strategies. Additionally, bamboo biomass often utilized in biorefineries are mostly constituted of cellulose, hemicellulose, and lignin, along with proteins, lipids, and a few micronutrients which are not utilized efficientely by current bioengineered techniques. The results indicates that the potential for producing high-value products from bamboo biomass has not been adequately explored. However, enormous potential is still available to make bamboo biorefinery technologies cost-effective, and environmentally sustainable, which are discussed in the current review comprehensively. Furthermore, processes such as pretreatment, enzymatic hydrolysis, and fermentation are essential to obtain final high-value bio-based products from bamboo biomass, therefore, this review critically designed to explore the current state of the art of these technologies. Overall, the current review establishes a zero-waste suastainable approachs for the reformation of bamboo biomass into chemicals, biofuels, and value-added products.
+

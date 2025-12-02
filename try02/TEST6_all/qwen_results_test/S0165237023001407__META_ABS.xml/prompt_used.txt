@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characterization and evaluation of resource recovery potential of beach plastic wastes using analytical Py-GC/MS The majority of ocean plastic wastes supposedly comes from land-based sources, while the remaining comes from marine-based activities and sources such as lines, fishing nets, abandoned vessels and ropes. In this study, plastic wastes were collected from the sea shore in Chennai, India, and thoroughly characterized to determine their composition and plastic types. Eight out of nineteen samples were polyethylenes (PE), and their thermal stability, functional group and elemental composition were assessed using different techniques. Analytical pyrolysis hyphenated with gas chromatograph/mass spectrometry (Py-GC/MS) was performed to identify impurities and quantify the volatile hydrocarbons. Thermal desorption indicated the presence of fatty acids and plasticizers such as dimethyl and diethyl phthalates in most of the samples. The PE samples varied significantly in terms of their typical decomposition products, and the overall selectivities to alkenes, alkanes and alkadienes were in the range of 44.79–53.15%, 21.77–29.0% and 17.56–22.56%, respectively. The major products, alkenes, were distributed in the carbon number range of C5-C20. Upto 16 wt% of the hydrocarbons in the pyrolysate from various samples were quantified based on carbon number range.
+

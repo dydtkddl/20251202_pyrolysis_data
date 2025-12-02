@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An innovative method for optimizing continuous torrefaction in a helical screw-induced rotational fluidised bed reactor: Merging flow dynamics, energy efficiency, and biomass pretreatment to augment biochar production This study investigates the optimization and performance of a novel Helical Screw-Induced Rotation (HSIR) fluidized bed reactor for the continuous torrefaction of palm kernel shell (PKS). A hybrid Design of Experiments (DOE) approach was employed, integrating Face-Centered Central Composite Design (FCCD), Response Surface Methodology (RSM), and advanced statistical analyses to capture nonlinear effects and interactions among critical variables: reactor temperature (240–320 °C), feed rate speed (FRS), and helical screw rotation speed (HSRS). This combined optimization strategy represents a methodological advancement over conventional single-design approaches, enabling more robust prediction of reactor hydrodynamics and performance. The optimal operating condition (280 °C, FRS 50 rpm, HSRS 40 rpm) yielded biochar with a calorific value of 24.12 MJ·kg−1, a mass yield of 0.72 %, and a mean residence time of 17.67 min. To comprehensively evaluate process performance, novel indicators were introduced, including Energy Conversion Efficiency (ECE), Degree of Torrefaction (DoT), and Reactor Throughput Efficiency (RTE), achieving maximum values of 95.5 % and 20.36 g·min−1, respectively. Furthermore, water-washing pretreatment (75 °C, 6 h) effectively reduced alkali and alkaline earth metals (AAEMs), decreasing ash content and improving devolatilization, hydrophobicity, grindability, and thermal stability. The integration of multi-variable optimization with pretreatment and Residence Time Distribution (RTD)-based reactor analysis establishes a novel framework for intensifying biomass torrefaction and advancing PKS as a scalable renewable feedstock for sustainable energy and material applications.
+

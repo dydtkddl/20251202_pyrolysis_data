@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+System aspects of biomass gasification with methanol synthesis – Process concepts and energy analysis A systematic analysis of interrelations between different process steps in the biomass gasification and methanol synthesis chain was made. The energy performance of the system is assessed by reviewing previous studies and analysing a case study. Implications of technology choices and process integration opportunities are in focus. The case study analyses the impact on the energy balance of process-integrated drying compared to import of dried biomass, effects on electricity production due to heat pump integration or district heating (DH) delivery, effect on methanol yield of hydrogen addition and the impacts of adding an methanol-to-olefins (MTO) process. The biomass drying has significant impact on the overall energy balance, the cooling demand increases by 60% for the case study installation when process-integrated drying is not applied for drying the biomass. There is a trade-off between methanol yield, electricity and DH production potential of the system. Heat pumping can increase the electricity yield of the system. Hydrogen addition replacing the water gas shift can increase the methanol yield, in our case study by ∼35%, but in a stand-alone case the electricity demand makes such a system unrealistic. Adding an MTO unit to the system has limited impact on the energy balance.
+

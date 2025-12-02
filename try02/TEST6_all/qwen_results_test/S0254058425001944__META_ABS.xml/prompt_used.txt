@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Polystyrene waste-derived ion-exchange resins for water desalination The use of waste expanded polystyrene as a viable source of replacement material for production of both strong acid cation exchange (SAC) and strong base anion exchange (SBA) resins to achieve produced water desalination has been proposed in this study. The material was created in multistep process and functionalized using plasma and chemical treatments. Fourier-transform infrared (FTIR) spectroscopy, X-ray photoelectron spectroscopy (XPS), and scanning electron microscopy (SEM) studies were carried out to characterize the obtained material. The optimum parameters that contribute to the most efficient ion removal have been identified, including preconditioning and regeneration procedures. Activation of the resins can be achieved by simple swelling in water prior to testing, while regeneration can be performed using 5 M H2SO4 and 3 M NaOH solutions for SAC and SBA resins respectively. Batch and column tests were carried out to evaluate the performance of these resins in removing common ions in produced water – Na+, Ca2+, SO4 2− and Cl−. It was discovered that a pseudo-second order equation could adequately characterize the sorption kinetics of the resins. The equilibrium capacities were determined to be 0.4 eq/L (Na+ form) for SAC resin and 0.015 eq/L (SO4 2− form) for SBA resin. When stored in air, the resins' performance remains consistent at least for one month. The dynamical column testing shows higher performance of developed resins compared to the commercial one. It was found that both SAC and SBA show no selectivity on test solutions containing several types of mono- and divalent ions. The development of these sustainable ion exchange resins has enormous potential for produced water treatment, besides offering a practical and environmentally friendly solution for effective recycling of the plastic waste.
+

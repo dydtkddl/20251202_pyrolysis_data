@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A new perspective on polyethylene-promoted lignin pyrolysis with mass transfer and radical explanation Co-pyrolysis of lignin and waste plastics, for example polyethylene (PE), has been studied, but related reports are basically on condition optimizations. This study revealed a new perspective on PE-promoted lignin pyrolysis to phenolic monomers with mass transfer and radical explanation. Lignin and PE were first pyrolyzed individually to identify pyrolysis characteristics, pyrolytic products, as well as the suitable co-pyrolysis temperature. Then, co-pyrolysis of blended lignin/PE with various ratios was investigated. Yields of lignin products reached the maximum under lignin/PE ratio of 1:1, but blended approach always inhibited the production of lignin phenols. This resulted from the poor mass transfer and interactions between lignin and PE, in which PE pyrolysates could easily escape from the particle gaps. While in layered approach, PE pyrolysates had to pass through the lignin layer which contributed to the good interactions with lignin pyrolysis intermediates, thus the yields of lignin-derived products were significantly improved. Interactions between lignin and PE (or their pyrolysates) were mainly radical quenching reactions, and X-ray photoelectron spectrum (XPS) and electron paramagnetic resonance (EPR) of pyrolytic chars were conducted to verify these interactions controlled by mass transfer. The percentage of CC (sp2) and concentration of organic stable radicals in layered lignin/PE char were both the lowest compared with those in blended lignin/PE and lignin char, indicating the stabilization of lignin-derived radicals by PE pyrolysates. Moreover, the spin concentration of radicals in the char from layered char/PE was lower than that in lignin char, which further affirmed the quenching of radicals by PE in the layered co-pyrolysis mode.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of pre-devulcanization and temperature on physical and chemical properties of waste tire pyrolytic oil residue The effect of pre-devulcanization and temperature in waste tire pyrolysis are investigated on pyrolysis time, yield and properties of residual Heavy Fraction Pyrolytic Oil (HFPO). A comparative pyrolysis of usual Ground Tire Rubber (GTR) and a commercial devulcanized ground tire rubber, (known as Reclaim Rubber-RR) is performed in a static-bed batch reactor at 400–600°C and the oil is distillated to light and heavy fractions. Chemical composition studies show higher amounts of aromatics in HFPO than light fraction. As a novel approach, a relationship between isotherm at max temperature and pyrolysis temperature is presented in this work. Pyrolysis time for RR is approximately half of GTR at same temperatures due to RR devulcanized nature. The solid yield is larger for GTR than RR and decreases by temperature. The liquid yield for RR is larger than GTR. Pyrolysis time and liquid yields of GTR and RR approach to each other at higher temperatures. Kinematic viscosity and flash point are larger for GTR oils in comparison with RR. FTIR shows by increasing temperature the ratio of alkanes/aromatic (I 2952/I 1456) decreased for HR and increased for HG. So it can be said that both oil contain similar functional groups at different concentrations depending on temperature. 1H NMR and 13C NMR spectra shows oils are a mixture of aromatics, alkanes, alkenes, alkynes and ethers or alcohols, which exist in different concentrations. Gel Permeation Chromatography (GPC) shows that pyrolysis of GTR produces oil which is heavier and broader in Mw distribution in comparison with pre-devulcanized sample (RR). Elemental analysis shows similar elemental composition of HFPOs.
+

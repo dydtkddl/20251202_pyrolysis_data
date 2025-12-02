@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Promotion of bio oil, H2 gas from the pyrolysis of rice husk assisted with nano silver catalyst and utilization of bio oil blend in CI engine This paper reports on the pyrolytic distillation of rice husk with catalyst and its influence on both condensable and non-condensable volatiles. The catalyst used for pyrolysis was nano sized silver particles obtained through chemical reduction method. The structural features of the nano silver particles were explored through X-ray diffraction (XRD) and Field Emission Scanning Electron Microscope (FESEM) with Energy-dispersive-X-ray spectroscope (EDX), and the size of the nano particles was confirmed as 90 nm. After intimately mixing the rice husk (30 g) with the catalyst, the pyrolysis at various temperatures (400 °C, 450 °C, 500 °C, 550 °C) was performed. The products obtained during catalytic pyrolysis like gaseous fuel, bio oil, and bio char were separately collected and characterized through Gas Chromatography-Mass Spectrometer (GC-MS) and Inductively Coupled Plasma – Optical Emission Spectrometer (ICP-OES). About 50% of the solid biomass was converted into more useful liquid and gaseous fuel. It was noticed that during catalytic pyrolysis, the quantity of H2 obtained was more (19.12%) in contrast to thermal pyrolysis and could be attributable to the influence of silver nano particles towards the enhancement in hydrogen gas production. The liquid hydrocarbon obtained during the catalytic distillation was blended with diesel in the ratio 20:80 in the compression ignition (CI) engine. The quality of the blended bio oil was assessed from brake thermal efficiency (BTE), brake specific fuel consumption (BSFC) and emission of nitrogen oxides (NOX), carbon monoxide (CO) and unburnt hydrocarbon (UHC). At full load, the diesel fuel emitted 1780 ppm of NOx while the diesel blended with bio oil emitted only 1510 ppm which was 15.17% less than the diesel oil which proved its eco-friendly nature. In future, the bio oil obtained from catalytic pyrolysis can be used as a blend for diesel oil, since it reduces NOx emission and replaces 20% of diesel oil.
+

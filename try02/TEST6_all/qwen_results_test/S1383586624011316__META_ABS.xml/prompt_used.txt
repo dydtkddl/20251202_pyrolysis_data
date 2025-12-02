@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Improvement of agave bagasse hydrolysates processing under a biorefinery approach Summary The economic viability of producing second-generation bioethanol from agave bagasse (AB) is influenced by the presence of phenolic compounds in the hydrolysates used during fermentation. These compounds substantially constrain the growth in yeasts that convert sugars into bioethanol, thus becoming a limitation for the process. In this study, it was proposed to select an effective adsorbent matrix to remove and recover phenolic compounds from AB hydrolysates. The related adsorption phenomena and processes were described and characterized. Four adsorbents were examined, including activated carbon (CA), as well as three polymeric matrices (MN-102, ADS-800EP, and SP825L). The adsorption parameters, such as maximum equilibrium adsorption capacity (qmax) and percent desorption, were determined through adsorption–desorption experiments in batch systems. Additionally, the impact of removing phenolic compounds on bioethanol yield was evaluated and the potential use of the recovered phenols as biopesticides against plant pathogens, such as fungi and nematodes, was explored. The results showed that activated carbon has a higher phenol adsorption capacity (qmax = 118.1 mg/g) but a lower desorption capacity (59.46 %), meanwhile, the MN-102 matrix displayed comparable adsorption characteristics and superior desorption capacity (95.81 %), rendering it the most appropriate for the process. Subsequently, the detoxification of the AB hydrolyzate, by phenolic compounds remotion, on bioethanol yield was assessed and resulted in a significant increase (3.5-fold). Finally, the fungicidal potential of the recovered phenolic compounds was evaluated on Fusarium oxysporum and Alternaria alternata, while the nematicidal activity was tested on Meloidogyne incognita. The phenolic compounds exhibited high antifungal activity against F. oxysporum (73.91 %) and moderate activity against A. alternata (40 %), in comparison to the positive control. Moreover, they showed very high nematicidal activity, causing 91.23 % mortality in M. incognita. These findings allow to conclude that incorporating the adsorption stage not only enhances bioethanol yields but also enables the efficient recovery of potentially valuable molecules.
+

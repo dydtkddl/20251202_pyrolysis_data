@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+CFB air-blown flash pyrolysis. Part I: Engineering design and cold model performance The objective of this work was to design, construct and test a novel circulating fluid bed fast pyrolysis reactor system for production of liquids from biomass. The novelty lies in incorporating an integral char combustor to provide autothermal operation of the reactor. A reactor design methodology was devised which correlated input parameters to process variables, namely temperature, heat transfer and gas/vapor residence time, for both the char combustor and biomass pyrolyser. From this methodology, a CFB reactor was designed with integral char combustion for 10kg/h biomass throughput. A full-scale cold model of the CFB unit was developed and tested to derive suitable hydrodynamic relationships and performance constraints. The hot CFB reactor was constructed, its operability was tested and appropriate modifications were accomplished prior to the commissioning. A major requirement for the desired dual-mode operation of the reactor system conceived was the close coupling of the two reactor subsystems, namely the pyrolysis riser (medium temperature) and char combustor (high temperature). The basic CFB reactor design was proven effective in providing the high heat transfer rates – expressed as low voidage values in the riser and high solid circulation rates – to biomass particles in the very short vapor residence times (VRTs) required. The understanding of the complicated aspects related to two-phase gas–solids flow in the standpipe resulted in a smooth, stable transfer of solids over a wide range of operating parameters during cold CFB reactor operation. In the hot CFB unit testing, the use of two and three cyclones in series was proved insufficient to capture char and unconverted wood particles, especially during the reactor start-up phase. These problems were partially faced by adopting a configuration of a primary cyclone and inertia impinger in series, but further development is still required. A variety of configurations for the product collection system were built and tested, the most efficient being a combination of a shell-and-tube heat exchanger (condenser) and a cotton wool filter. However, the liquid recovery configuration gave rise to a number of problems, the most important being gradual plugging of the heat exchanger due to the formation of sticky solid–liquid agglomerates.
+

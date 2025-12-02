@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave applied to the thermochemical conversion of biomass: A review Renewable fuels and valuable chemicals derived from biomass offer a promising solution to address the global energy shortage and carbon emission challenges. However, the commercial application of traditional biomass thermochemical conversion technologies remains hindered, due to low heat transfer and processing efficiencies. In recent years, microwave heating, as a novel method, has garnered significant attention for its advantages in dielectric heating, superior heat transfer efficiency, and potential for carbon emission reduction. Nevertheless, the precise role of microwaves in various applications remains unclear. Therefore, this research provides an overview of microwave applications in different types of biomass thermochemical conversion processes, examines the role of microwave, and suggests research directions to enhance the benefits. This research summarized common knowledge points across areas including the principles of microwave heating, the microwaves-biomass interactions, microwave absorbents/catalysts, and microwave effects. The material transformation of biomass during thermochemical conversion and their interactions with microwave was analyzed. Based on whether microwave primarily provide rapid thermal energy or enhance activity during the process, the technologies were categorized into microwave-driven technologies (drying, pyrolysis, torrefaction, hydrothermal technology) and microwave-assisted technologies (gasification, tar reforming, combustion). Additionally, the technical characteristics and advancements in each technology was conducted. Furthermore, an in-depth analysis of the challenges and opportunities from the viewpoints of theoretical investigation, equipment research, and industrial application was concluded. This review aims to provide in-depth understanding and inspiration for research and development in the thermochemical conversion biomass with microwave.
+

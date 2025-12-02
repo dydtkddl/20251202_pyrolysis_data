@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Advances and challenges in the development of power-generation systems at small scales The miniaturization of electro-mechanical devices, and the resulting need for micro-power generation (milliwatts to watts) with low weight, long life devices, has lead to the recent development of the field of micro-scale combustion and power generation. The primary objective of this new field is to leverage the high energy density of fuels, specifically liquid hydrocarbon fuels relative to batteries and all other energy storage devices other than nuclear fission, fusion or decay. As such, a miniaturized device even with a moderately efficient conversion of hydrocarbon fuels to power would result in increased lifetime and/or reduced weight of an electronic or mechanical system that are currently most often powered by electrochemical cells. Furthermore, improvements in this field may make possible novel applications and/or capability. In addition to the interest in miniaturization, the field is also driven by the potential fabrication of the devices using Micro-Electro-Mechanical Systems (MEMS) or rapid prototyping techniques, with their favorable characteristics for mass production and/or low unit cost. The micro-power generation field is very young, and still is in most cases in the feasibility stage. However, considering that it is a new frontier of technological development, and that only a few projects have been funded, it can be said that significant progress has been made to date. Currently there is consensus, at least among those working in the field, that combustion at the micro-scale is possible with proper thermal and chemical management. Several meso-scale and micro-scale combustors have been developed that appear to operate with good combustion efficiency. Some of these combustors have been applied to energize thermoelectric systems to produce power, although with low overall efficiency. Several turbines/engines have also been, or are being, developed, some of them currently producing positive power, albeit with low efficiency. Micro-rockets using solid or liquid fuels have been built and shown to produce thrust. More detailed scaling/modeling efforts are required to improve existing designs. Improvements in diagnostic, control and computational tools are expected to have a significant impact on the development of the field. Some brief scaling arguments are given in this work, and more detailed efforts are referred. A brief introduction to several of the fabrication techniques is presented in this work. Hydrogen-based and some preliminary specialty fuel micro-fuel cells have been successfully developed, and there is a need to develop reliable reformers (or direct conversion fuel cells) for liquid hydrocarbons so that the fuel cells become competitive with the batteries. In this work, the technological issues related to micro-scale combustion and the development of thermochemical devices for power generation will be discussed. Some of the systems currently being developed will be presented, ongoing critical research issues under investigation, and other potential areas of development discussed. Comments regarding the opportunities and limitations of each of the techniques are also presented where applicable.
+

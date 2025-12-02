@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of metallic additives on thermal degradation and liquefaction of high density polyethylene (HDPE) This study evaluates the effect of typical polymer fillers on the thermal degradation of a commodity plastic to produce liquid fuels. HDPE was degraded in the presence and absence of some metallic additives such as Al(OH)3·xH2O, AlCl3, Al2O3, CaCO3, CuO, ZrO2, and Fe2O3. Liquefaction of HDPE in the presence of selected additives was also carried out to verify the thermal gravimetric data. The HDPE liquefaction conditions such as temperature, effect of H2 or N2 pressure, and time were established before studying the effect of additives. At 50% weightloss, Al2O3 increased the degradation temperature by ~30 °C, whereas ZrO2 and CaCO3 decreased it by ~30 and 70 °C, respectively. All the additives were thermally stable below 600 °C except AlCl3 and Al(OH)3·xH2O. Under the experimental conditions used, the thermal degradation trend of HDPE in the presence of Al2O3 was clearly reflected in the liquefaction product analysis. With Al2O3, the liquefaction of HDPE was delayed, which in turn resulted in wax formation. It was further proved by simulated distillation and gel permeation chromatographic analysis. More gas in the presence of ZrO2 and more oil (85%) in the case of CaCO3 were produced when compared to the liquefaction of HDPE alone (75%). However, the simulated distillation and GPC analysis of these products obtained at the end of 30 min liquefaction time did not show significant variation when compared to that of HDPE alone. The nature of gas did not affect the oil yield. However, the temperature and time were critical in obtaining the maximum oil yield.
+

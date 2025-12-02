@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Novel helical screw-fluidized bed reactor for bio-oil production in slow-pyrolysis mode: A preliminary study Slow pyrolysis has been generally recognized as an improper mode of bio-oil production because it produces a low liquid yield of ˜30 wt.%. This research introduces a type of innovation in which the designed helical screw-fluidized bed reactor can operate in the slow-pyrolysis mode to obtain high-yielding liquids. The concept of the reactor was designed to develop the fluidization condition by using a mechanical device. Experiments were performed at the heating rate of 10 °C/min to achieve 500 °C without using any inert gases. The focus of the preliminary study was on reactor performance, particularly for a setting with helical rotation (50 rpm) and another one without rotation (0 rpm). For the setting without the influence of helical screw rotation, the obtained liquid yield was 38.4 wt.%. Then, the liquid yield was remarkably increased to 51.6 wt.% when the 50-rpm condition was applied. The liquid obtained from the 50-rpm condition contained a higher proportion of organic phase than aqueous phase. The presence of oxygen compound in the organic phase in the 50-rpm condition was lower than that in the 0-rpm condition. Apart from the ability to obtain high-yielding liquids in the slow-pyrolysis condition, the reactor also has other good features, such as low pyrolysis time, fast vapor production, non-agglomeration of particles, non-occurrence of pressure drop during process implementation, and production of good-quality byproduct char.
+

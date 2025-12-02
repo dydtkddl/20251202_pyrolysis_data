@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Aging effects on low- and high-density polyethylene, polypropylene and polystyrene under UV irradiation: An insight into decomposition mechanism by Py-GC/MS for microplastic analysis In recent years, analytical pyrolysis coupled to gas chromatography and mass spectrometry (Py-GC/MS) has gained remarkable ground in microplastics (MPs) qualitative as well as quantitative analysis due to its numerous merits and promising applications. Microplastics are mainly formed by the degradation of plastic waste under the action of several physicochemical mechanisms in environment, but research on the aging characteristics of plastics and mechanism of microplastics formation is limited. In the present study, to improve understanding of aging process of plastics under UV irradiation and provide an insight into the analytical details, four of the most widely used polymers covering a wide spectrum of applications, such as low-density polyethylene (LDPE), high-density polyethylene (HDPE), polypropylene (PP) and polystyrene (PS) in the form of thin films were exposed to UV radiation at 280 nm for specific intervals. The photodamage was initially examined by several methods, such as Fourier-transform infrared spectroscopy (FTIR) which proved that new carbonyl, vinyl, and hydroxyl/hydroxyperoxide groups were formed during UV exposure, while X-Ray diffraction (XRD) and differential scanning calorimetry (DSC) measurements boosted the obvious effect of UV irradiation in their crystalline and thermal properties. Scanning Electron Microscopy (SEM) illustrated also the significant morphological alterations at the irradiated samples, while mechanical properties deterioration was displayed as a significant proof that UV irradiation leads to reduction of plastics properties and their gradual fragility, potentially leading to microplastic formation. The mechanism of plastic deterioration properties of the four polymers before and after UV exposure was investigated by Py-GC/MS proving that the ratio of the respective amounts of the low molecular weight compounds to the relative higher molecular weight hydrocarbons differentiates as UV exposure proceeds, whereas the identification of the newly formed oxidized products was also performed. Results also showed that the quantity of the pyrolytic markers of the studied polymers widely used nowadays in microplastic analysis is fluctuating with the UV exposure period, imposing though a severe impact on the reliability of quantification of microplastics in real samples.
+

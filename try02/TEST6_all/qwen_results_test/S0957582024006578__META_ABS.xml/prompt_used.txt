@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of phenolic printed circuit boards with CaO and Ca(OH)2 mixture in a fluidized bed reactor: Optimization of the operating conditions and the kinetic analysis In a previous study (Haghi et al., 2023), we demonstrated that co-pyrolysis of paper-laminated phenolic PCB (FR2-PCB) with a mixture of CaO and Ca(OH)2 in a fluidized bed reactor results in the simultaneous enhancement of the production of the pyrolysis oil and a significant decrease in its halide content. To advance the utilization of a blend of CaO and Ca(OH)2 for scaling up the pyrolysis of FR2-PCB beyond laboratory-scale pyrolyzers, especially in fluidized bed reactors renowned for their effectiveness in large-scale pyrolysis of polymeric materials, the optimal operating conditions, as well as the kinetic parameters in the presence of CaO and Ca(OH)2 should be explored. To this end, this study focuses on optimizing the temperature (T), retention time (t), and PCB-to-additive ratio (FR2/A) as the parameters controlling the co-pyrolysis of paper-laminated phenolic PCB (FR2-PCB) with a 50:50 mixture of CaO and Ca(OH)2 in a fluidized bed reactor. According to the results of the experiments designed based on the response surface methodology, the maximum recovery of pyrolysis oil (40.6 %) was obtained at T = 620 °C, t = 22 min, and FR2/A= 5.4 g/g. Additional tests were carried out to explore the impact of CaO+Ca(OH)2 concentration on the halogen content of the pyrolysis products. Furthermore, the thermogravimetric analysis (TGA) was performed to investigate the influence of the tested additives on the pyrolysis behavior and the kinetic characteristics of FR2-PCB. By employing three iso-conversional model-free approaches, i.e., the Kissinger-Akahira-Sunose (KAS), Flynn-Wall-Ozawa (FWO), and Starink integral methods, it was found that adding CaO+Ca(OH)2 to FR2-PCB can reduce the activation energy of the pyrolysis reactions by 20 %.
+

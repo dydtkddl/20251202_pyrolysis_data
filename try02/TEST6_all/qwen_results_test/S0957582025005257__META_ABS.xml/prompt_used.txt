@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unraveling the potential of chemical recycling for poly(methyl methacrylate) through pyrolysis: Rigorous modeling, economic, and environmental evaluation Pyrolysis is considered a promising method for the chemical recycling of waste plastics. While experimental and feasibility studies on the pyrolysis of poly(methyl methacrylate) (PMMA) have been conducted, a comprehensive pyrolyzer model has not yet been established. To address this gap, this study firstly develops a comprehensive and rigorous process model for the pyrolysis of PMMA. The research focuses on a one-dimensional, three-phase entrained bed model for the pyrolysis reactor, which thoroughly examines mass, energy, and momentum balances, as well as pyrolysis kinetics and thermodynamic properties. Subsequently, appropriate separation strategies have been developed for various scenarios of PMMA pyrolysis. For process analysis, a techno-economic evaluation (TEA) determines the minimum required selling price (MRSP) of recycled methyl methacrylate (MMA) monomer, which ranges from 0.76 to 1.1 USD/kg across various sources and with uncertainties in monomer yield. However, the corresponding price is less than half the cost of virgin MMA. Additionally, LCA indicated that chemical recycling of PMMA offers substantial advantages across multiple environmental impact categories compared to incineration and landfill treatments, including global warming potential (GWP), fine particulate matter formation (FPMF), terrestrial acidification (TA), human carcinogenic toxicity (HCT), fossil resource Scarcity (FRS), and water consumption (WC). The findings further indicate that the pyrolysis of PMMA sources containing impurities, as well as any uncertainties associated with monomer yield, may compromise the overall sustainability of the process. Overall, this study provides insights into the potential of PMMA pyrolysis as a sustainable recycling method, contributing to both economic efficiency and environmental sustainability in the polymer industry.
+

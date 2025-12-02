@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Process validation of propane dehydrogenation in a CFB reactor with heat supply and catalyst regeneration: CFD simulation coupled with reaction kinetics Although fixed-bed and moving-bed technologies for propane dehydrogenation have been commercialized in large scales, the process efficiency is still low due to the highly endothermic nature of the reaction and quick catalyst deactivation. Herein, the superiority of the circulating fluidized bed reactor in mitigating these issues is validated, in which the continuous dehydrogenation-regeneration process for propane dehydrogenation is numerically studied with integrated heat supply by using circulating catalyst particles as heat carriers and catalyst regeneration to remove deposited coke. The physical model of the riser with considering the heat supply and catalyst regeneration is developed to simplify the full-loop reactor. Additionally, the two-fluid model, incorporating a sub-grid drag model and detailed reaction kinetics, is adopted to simulate the propane dehydrogenation process in the circulating fluidized bed reactor, and key operating parameters are optimized. Results indicate the reactor with integrated heat supply and catalyst regeneration can be operated steadily under a wide range of operating conditions. Specifically, higher catalyst inventory, circulating particle temperature, and regeneration extent all positively contribute to the propylene yield, while the optimal inlet gas flow rate for maximizing propylene yield is found to range between 20 and 25 Nm3·h−1. These findings promote the understanding of the propane dehydrogenation processes in circulating fluidized bed reactors.
+

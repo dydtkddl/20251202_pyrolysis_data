@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of heat treatments on low-power-LPBFed CuCrZr for nuclear fusion applications In this study, the processability of CuCrZr alloy with additive manufacturing (AM) technology and the performance achievable with Direct Age Hardening treatments for nuclear fusion applications were investigated. This copper alloy is one of the most interesting for the field: it is easier to manufacture through Laser-based additive manufacturing technology and mechanically superior compared to pure copper, and it ensures values of thermal conductivity high enough to be considered a valid substitute for pure copper in many applications. The investigation on CuCrZr alloy was carried out in order to examine the influence of Direct Age Hardening (DAH) treatments on physical and mechanical properties. Laser Powder Bed Fusion technology was used to produce samples with CuCrZr alloy. The additive manufacturing process involved a machine provided with a 370 W IR laser and a preliminary process optimization was carried out to find the printing parameters that assured the highest density (99.15 %), which confirmed the processability of CuCrZr alloy also with low IR laser power. Then, three different DAH treatments were tested and the performance of DAHed material was compared to that of the alloy in as-built conditions. Precipitation phenomena were investigated with DSC analyses, revealing the effectiveness of the treatment already after 1 h. A deep microstructural investigation revealed a fine cellular structure formed during solidification and the presence of nanometric precipitates starting from the as-built condition. The presence of microstructural defects was also investigated. Mechanical performance and thermal conductivity were tested, too: the as-built samples showed limited properties, while very promising results for the use of additively manufactured CuCrZr components have been obtained after the DAHs. The ultimate tensile strength (UTS) and yield strength (YS) doubled the as-built values after 1 h treatment at 550 °C. The thermal conductivity reached three times the initial condition (from 100 W/mK to 300 W/mK).
+

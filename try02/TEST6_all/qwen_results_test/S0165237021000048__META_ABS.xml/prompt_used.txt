@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Production of hydrogen and valuable fuels from polyethylene terephthalate waste dissolved in phenol reforming and cracking reactions via Ni-Co/CeO2 nano-catalyst This research investigates the preparation of Ni-Co/CeO2 catalysts based on impregnation and hydrothermal treatment methods for the hydrogen and valuable fuels generation from the steam reforming and cracking reactions of polyethylene terephthalate (PET) waste liquefied in phenol. PET plastic waste is environmentally harmful, mostly when it eliminated by burning or landfilling. Therefore, in this study, this waste has been dissolved in phenol for hydrogen and liquid fuel generation via catalytic steam reforming and cracking reactions. Complementary characterization techniques such as XRD, BET, FTIR, SEM, TEM, EDX, H2-TPR, CO2-TPD, NH3-TPD, ICP, CHNS and TGA were used to correlate surface structure and functionality to catalytic performance of the catalysts. The hydrothermal route leads to higher catalyst activity and stability against a by-product formation such as coke, which approved by time on stream process, TGA and CHNS analysis. For an instant, at 700 °C of the catalytic reaction, impregnation method cause to achieve 72.8 % of phenol conversion and 56 % of hydrogen yield, while these factors increased when conducting the hydrothermal treatment to 83.8 % and 76 %, respectively. Analysis of liquid products obtained from GCMS illustrated that valuable components such as dibenzofuran, 2-methyl phenol and benzene were produced from PET cracking and phenol steam reforming reactions. This phenomenon is a vital idea to solve plastic waste recycling issues.
+

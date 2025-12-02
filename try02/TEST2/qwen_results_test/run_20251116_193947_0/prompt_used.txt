@@ -1,0 +1,61 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Polymers or copolymers
+   - Plastic-containing composites
+
+   Acceptable terms include:
+   - pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+     waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   → If pyrolysis is conducted on NON-plastic feedstocks (methane, light hydrocarbons, coal, biomass, bio-oil components, lignin, cellulose, hemicellulose, algae, fuels, sugars, furans)—even if pyrolysis is performed—return **NO**.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include **real laboratory experiments**, such as:
+   - fixed-bed / batch / fluidized-bed / microwave pyrolysis reactor
+   - catalyst bed experiments
+   - temperature-controlled reactor tests
+   - heating experiments (e.g., 400–900°C)
+   - measured product yields (oil, wax, gas, char)
+   - product analysis using GC–MS, FTIR, TGA, DSC, XRD, SEM, BET, etc.
+
+   → If the study is purely computational, theoretical, simulation-based, DFT-only,
+     modeling-only, ML-only, LCA-only, or a review → return **NO**.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results, such as:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance comparisons
+   - product composition analysis
+   - reactor operating conditions
+   - energy analysis from real experiments
+   - fuel engine test results
+
+   → If experimental data is not clearly present or is ambiguous → return **NO**.
+
+Your Output:
+Return STRICT JSON with fields:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one sentence explaining why>"
+}
+
+Rules:
+- ANY missing, unclear, or ambiguous criterion → "NO".
+- The reason MUST be **one and only one sentence**.
+- The reason must reflect the MAIN decisive failure factor
+  (e.g., “not plastic feedstock”, “no lab experiment”, “no measurable data”).
+- Do NOT include extra text outside JSON.
+
+<<ABSTRACT>>
+
+
+Hydrothermal formation of 1,2,4-benzenetriol from 5-hydroxymethyl-2-furaldehyde and d-fructose Thermolysis of 0.05 M aqueous 5-hydroxymethyl-2-furaldehyde (HMF) at 27.5 MPa and 290 to 400°C led to the formation of 1,2,4-benzenetriol in yields of up to 46% at 50% HMF conversion. The reaction temperature and water density have a significant effect on the product composition. Pseudo-first-order reaction rate constants for HMF conversion under these conditions range from 0.107 to 0.308 min−1. For the region 290 to 350°C, the activation energy for HMF conversion was found to be 47.7 kJ.mol−1. When subjecting d-fructose to hydrothermolysis, the main products are HMF, 1,2,4-benzenetriol, and furfural.

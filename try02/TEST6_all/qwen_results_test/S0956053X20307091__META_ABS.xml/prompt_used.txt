@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Plastic recycling in a circular economy; determining environmental performance through an LCA matrix model approach To ensure a circular economy for plastics, insights in the environmental impacts of recycling and optimal recycling choices for specific plastic polymers are crucial. This was obtained by determining the environmental performance of 10 selected recycling technologies with varying TRL levels, using the chemical properties of the top 25 produced polymers in Europe. The results were collected in a life cycle assessment (LCA) ‘matrix’ model. To simulate realistic plastic recycling challenges, case studies of PE/PP foils from municipal waste and ABS plastic with brominated flame retardants were developed, to be used as an addition to the LCA matrix model results. Potential emission reduction was assessed by combining LCA matrix outcomes with European polymer demand data. The LCA matrix model illustrates that potential environmental performance of recycling technologies varied strongly per polymer type and did not always follow the state-of-the-art recycling hierarchy. Commodity plastics performed well with tertiary recycling technologies, such as gasification and pyrolysis to monomers; secondary mechanical recycling was outperformed. A focus on primary recycling is environmentally beneficial for most engineering and high performance plastics. To enhance the performance of primary recycling technologies, a higher purity and improved sorting is required. As demonstrated in the case studies, low sorting efficiencies due to impurities reduces positive environmental impacts. Hence, optimal environmental performance of recycling is obtained where pre-treatment (sorting, cleaning) is adapted to the recycling technology. According to the model, recycling the 15 most demanded polymers in Europe reduces CO2 emissions from plastics by 73% or 200 Mtonne CO2 eq.
+

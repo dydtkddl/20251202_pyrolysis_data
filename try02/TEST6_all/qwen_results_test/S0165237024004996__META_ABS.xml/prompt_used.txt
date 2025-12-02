@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermo-chemical upcycling of cellulosic paper packaging waste into furfural and bio-fuel catalyst The extensive use of fossil fuels and chemicals has resulted in substantial emissions of anthropogenic carbon dioxide (CO2), which in turn have triggered global warming. As a proactive response, converting waste into energy and chemicals is a paramount importance. To maximize carbon utilization, implementing a thermo-chemical process for waste valorization is a promising approach owing to its high tolerance for the intrinsic heterogeneity of waste materials. Thus, the development of thermo-chemical processes that exhibit high productivity and selectivity for valorized products should be prioritized. In this study, we focused on the pyrolysis of paper packaging waste (PPW) as a case study to address these challenges. To enhance the production of syngas and furfural, PPW was pretreated with ferrous sulfate (FeSO4) before undergoing pyrolysis. Slow and fast pyrolysis were conducted to characterize the production of syngas and bio-oil, respectively. The pretreatment of PPW with FeSO4 increases syngas production, attributed to the catalytic properties of iron (Fe). Bio-oil derived from FeSO4-treated PPW contained more homogenized chemicals compared with that from untreated PPW. Furfural selectivity reached 51.1 % when PPW pretreated with FeSO4 (10 wt% of Fe relative to PPW) was pyrolyzed at 600 ˚C. Additionally, biochar produced from FeSO4-treated PPW exhibited a porous carbon structure with a high surface area (123.8 m2 g−1) and was rich in minerals, such as Fe and calcium (Ca). This biochar catalytically enhanced the reaction kinetics of thermally induced transesterification of soybean oil, resulting in a biodiesel yield of 88.7 % at 350 ˚C. The findings of this study offer a practical approach to establishing a sustainable and carbon-neutral platform for the conversion of lignocellulosic biomass into value-added products.
+

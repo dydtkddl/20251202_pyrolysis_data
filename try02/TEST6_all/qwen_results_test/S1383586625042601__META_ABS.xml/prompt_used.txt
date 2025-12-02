@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Insight into the kinetics and thermodynamic analyses of thermally-induced phase separation and liquid fuel recovery from Co-pyrolysis of waste cooking oil and polyethylene The study investigated the kinetic, thermal, and thermodynamic behaviors of the co-pyrolysis of waste cooking oil and waste polyethylene. The results showed an evident two-phase degradation of the different WCO-WP mixtures. WCO showed complete degradation in Phase 1(300–435 °C), whereas W3P1 showed a maximum degradation of 60.19 wt% among the mixtures at the same phase. The maximum weight loss temperatures for all the WCO-WP mixtures in Phase 2(435–510 °C) were found to be lower than that of WP. The correlation coefficient for diffusion models was 0.95–0.98, suggesting it to be the most probable reaction mechanism for WCO- WP co-pyrolysis. The activation energies of the mixtures for diffusion models were found to range from 103.33 to 122.66 kJ/mol and 73.42–258.88 kJ/mol in Phase 1 and Phase 2, respectively. The recorded entropy values for the co-pyrolysis of mixtures were lower than the parent pyrolysis value, indicating a stable activated complex formation during co-pyrolysis. Moreover, the highest liquid yield of 67.2 wt% was obtained for the W1P1 proportion at 500 °C. The produced liquid oil has a calorific value in the range of 42.8 to 45.9 MJ/kg. The GC–MS analysis of the highest-yield liquid at various temperatures reveals that its primary compounds are alkanes, alkenes, and alcohols, highlighting its potential as an alternative fuel source. The highest alkane percentage of 31.85 % was recorded at 500 °C. Additionally, the obtained liquid oil contains 71.05 % to 80.33 % of C8–C16 hydrocarbons, which fall within the typical carbon chain range for jet fuels.
+

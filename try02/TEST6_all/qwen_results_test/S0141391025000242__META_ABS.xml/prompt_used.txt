@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolytic conversion of polyimide into carbon-based CO2 adsorbent with in-situ suppression of toxic byproducts The polymer's physico-chemical property is reinforced by incorporating an aromatic molecule into the polymeric backbone. However, the persistence of aromatic plastics poses potential hazards against the liberation of toxic compounds. To address this issue, this work proposes a functional use of CO2 for the pyrolytic conversion of highly aromatised plastics, polyimide, into carbon-based materials while mitigating the toxic aromatic formations. Characterisations of polyimide clarified its exact type and pyrolysis mechanism. Polyimide pyrolysis yielded ≥ 60 wt.% of the char formation. Its surface functionalities revealed superior performance in CO2 adsorption than the reference materials. However, the production of polyimide-derived adsorbent inevitably generates toxic chemicals. To impede the toxic aromatic formations, CO2 was chosen as a detoxifying agent. The toxic chemicals liberated from polyimide can be converted into gaseous fuel, CO. This functional role of CO2 was improved in the presence of a nickel catalyst. CO2-mediated catalytic pyrolysis led to a 97.7% degradation in toxic chemicals, subsequently resulting in a 3.14-fold increase in CO formation. Therefore, the CO2-mediated pyrolysis provides insights into the sustainable valorization of aromatic plastic waste into CO2 adsorbent, simultaneously addressing the environmental issues related to the generation of toxic aromatic pollutants.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical recycling of plastic waste for sustainable material management: A prospective review on catalysts and processes Plastic waste management becomes imperative to prevent detrimental plastic-related environmental impacts. These relate to the huge plastic waste amount in both generation and disposal, non-biodegradability of most plastic waste, persistent nature of plastic waste in the environment, and the increasing concern of micro- and nanoplastics on human health. To continue exporting the use and benefits of plastic materials while mitigating their impacts to the planet, reuse, recovery and recycling of plastic waste are strongly encouraged. This would promote optimization of the value chain of plastic-based materials and validate the concept of a circular polymer economy. Chemical recycling techniques have been extensively studied for energy and material recovery from plastic waste, which are assisted by catalysts for enhanced process efficiency. In this review, the research progress of the applied catalysts in various thermochemical techniques is comprehensively summarized and assessed, covering the non-catalytic and catalytic pyrolysis, reforming of pyrolysis volatiles, and gasification processes. The impacts of feedstock, process conditions and catalyst properties on the quality and yield of the products are carefully examined. Finally, the practical challenges and perspectives on catalyst design and process improvement for material circularity are suggested and the emerging novel processes for the degradation of plastic waste are highlighted.
+

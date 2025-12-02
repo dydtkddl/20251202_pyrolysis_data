@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biomass to aviation-fuel-range hydrocarbon conversion over Pd-Mo/γ-Al₂O₃ catalysts: Revealing synergistic active sites and reaction pathways Biomass hydropyrolysis (HP) vapor upgrading (VU) is highly promising for producing sustainable aviation fuel, yet challenges remain. This study focused on PdMo/γ-Al2O3 and Mo/γ-Al2O3 catalyzed HP-VU of biomass in a pressurized continuous fixed-bed and the reaction mechanism. The results demonstrated that the introduction of Pd enhanced the hydrodeoxygenation activity through multiple effects, including the generation of surface acidic sites, the formation of oxygen vacancies, and the effect of hydrogen spillover. Beyond this, the effects of upgrading temperature and pressure on the catalytic performance of PdMo/γ-Al2O3 were also investigated. Under optimal conditions of 400 °C and 1.0 MPa, the organic phase achieved a mass yield of 12.03 wt%, with the selectivity of C4+ aliphatic hydrocarbons and monocyclic aromatic hydrocarbons reaching 77.01 %, leading to an HHV of 42.41 MJ/kg and high mass balance (98.71 %). Density functional theory calculations further provided insights into the role of defect sites in facilitating C–O/C=O bond cleavage and the contribution of Pd sites to CC bond activation. By integrating theoretical calculations with model compound experiments, the study revealed the potential reaction pathways including hydrodeoxygenation, hydrogenation, and CC coupling. This study provides practical and theoretical insights into the bimetallic-catalyzed HP-VU process of biomass.
+

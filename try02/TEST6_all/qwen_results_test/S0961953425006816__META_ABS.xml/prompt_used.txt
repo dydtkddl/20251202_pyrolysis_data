@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Phycoremediation of wastewater and valorization of Chlorella homosphaera biomass for biodiesel, bio-oil and biochar production via in-situ transesterification and pyrolysis in a biorefinery framework This study presents a novel biorefinery approach to sustainable bioenergy production utilizing the microalga Chlorella homosphaera, aiming to exploit its biomass components fully. In the first phase, C. homosphaera was cultivated using tea processing industrial wastewater, achieving effective phycoremediation alongside biomass generation. The harvested biomass was processed for biodiesel production via an in situ transesterification technique. In the second phase, the residual biomass post-biodiesel extraction was subjected to pyrolysis at varying temperatures (400 °C, 450 °C, 500 °C, 550 °C, and 600 °C). The pyrolysis results demonstrated a maximum bio-oil yield of 35.39 wt% and a biochar yield of 64.44 wt%. Comprehensive analyses of the bio-oil using FTIR and GC-MS confirmed the presence of hydrocarbons and oxygenated compounds, including esters, phenols, and acid derivatives. Fuel property assessments of both biodiesel and bio-oil, covering viscosity, density, calorific value, flash point, and pour point, indicated their suitability for stationary engine applications. Additionally, the biochar characterization revealed its potential as biocoal for industrial boilers, power plants, and cooking stoves. This integrated study underscores the potential of C. homosphaera as a sustainable feedstock for producing renewable fuels and value-added co-products, promoting a zero-waste, eco-friendly biorefinery model.
+

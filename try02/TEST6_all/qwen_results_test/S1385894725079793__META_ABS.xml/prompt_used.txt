@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Simultaneously enhancing sludge indirect drying and inhibiting hydrogen sulfide and ammonia gas emission by heat-activated persulfate oxidation Indirect drying is widely used in sludge treatment. However, as major malodorous compounds, hydrogen sulfide and ammonia emissions greatly threaten the environment and human health. Persulfate oxidation has been proven efficient in accelerating sludge dewatering. Hydrogen sulfide and ammonia can be oxidized into sulfate ions and nitrogen gas, which is rarely reported in sludge drying. To address above gap, this study employed thermally-activated persulfate to enhance drying performance and suppress hydrogen sulfide and ammonia release. Results indicated that when oil bath temperature was 180 °C and moisture content decreased to 1.0 g·g−1, adding 20 % sodium persulfate on a dry sludge weight basis (200 mg·g−1 DS) reduced drying time to 2.0 h, a 50 % decrease. After 5.0 h of drying, hydrogen sulfide and ammonia were 27.8 and 2.2 μg·g−1 DS, reducing by 52.3 % and 21.4 %. Nevertheless, chemical oxygen demand (COD) in condensate increased to 1.2 × 104 mg·L−1, a 2.4-fold increase, and volatile organic compounds were primary components. Hydrogen sulfide, ammonia, and condensate COD were mainly emitted in the first falling drying rate period (above 0.86 g·g−1). In the second falling rate period, even though sludge temperature exceeded 150 °C, as moisture content decreased and sludge temperature raised, the release rate decreased due to increase of sulfate radical and hydroxyl radical, inhibition of protein hydrolysis induced by decrease in sludge moisture content, and protein consumption caused by oxidative decomposition and non-enzymatic browning reactions. Hence, this study provided a novel method to suppress hydrogen sulfide and ammonia release and revealed the mechanism involved.
+

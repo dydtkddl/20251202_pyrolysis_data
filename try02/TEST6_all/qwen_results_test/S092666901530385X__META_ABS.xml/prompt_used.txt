@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimization of catalytic cracking process for upgrading camelina oil to hydrocarbon biofuel Catalytic cracking of camelina oil over Zn/ZSM-5 catalyst in a fixed-bed tubular reactor was investigated. An optimization study on the catalytic cracking conditions based on nine well-planned orthogonal experiments was carried out. Three main operation conditions including reaction temperature, liquid hourly space velocity and oil extraction press frequency were studied to examine their effects on the yield and quality of hydrocarbon biofuel produced. Characterization of the catalyst, hydrocarbon biofuel and non-condensable gas was conducted. There was no significant difference between the bulk structures of fresh Zn/ZSM-5 and used Zn/ZSM-5. Small ZnO particles dispersed well on the parent ZSM-5. Hydrocarbon biofuel contained 65.18% hydrocarbons and its properties including dynamic viscosity, density and higher heating value were improved after upgrading, compared to camelina oil. It was found that the oil extraction press frequency was the most important factor and liquid hourly space velocity was the least important factor for the hydrocarbon biofuel production. In addition, the optimum conditions for camelina oil upgrading were a combination of reaction temperature of 550°C, a liquid hourly space velocity of 1.0h−1 and an oil extraction press frequency of 15Hz.
+

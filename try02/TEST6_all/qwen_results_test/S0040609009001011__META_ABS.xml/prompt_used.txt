@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+HWCVD of polymers: Commercialization and scale-up GVD Corporation specializes in process development and equipment design for the production of ultra-thin polymer coatings using hot wire chemical vapor deposition (HWCVD, also known as initiated chemical vapor deposition, iCVD). HWCVD allows many coating compositions to be produced, including fluorocarbon and silicone polymers, copolymers, and vinyl hydrocarbon polymers. It is especially valuable for creating ultra-thin layers of insoluble, infusible polymers which are hard to process by conventional means, such as polytetrafluoroethylene (PTFE, Teflon®). HWCVD PTFE coatings are chemically robust, comprised of essentially 100% CF2, resistant to solvents, conformal to complex surface geometry, and have excellent adhesion to a wide range of substrates. Since the part to be coated remains at room temperature, fragile materials like plastics and fabrics can be coated with ease. GVD has focused on scale-up of the process equipment and has developed several standard coating systems, which will be discussed in this paper. These include laboratory-scale batch coating systems, a medium sized production batch coating system, a large scale custom batch coater, and a pilot scale roll-to-roll web coater. All of GVD's systems are complete with fully automated, computer based control systems and include options for effluent monitors and an exhaust scrubber.
+

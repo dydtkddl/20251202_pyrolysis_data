@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A critical review on energy recovery and non-hazardous disposal of oily sludge from petroleum industry by pyrolysis This review systematically reports the pyrolysis of oily sludge (OS) from petroleum industry in regards to its dual features of the energy recovery potential and the environmental risks. The petroleum hydrocarbons are the nonbiodegradable fractions in OS that possess hazardous properties, i.e. ignitability and toxicity. Besides, complicated hazardous elements (i.e. N, S and Cl) and heavy metals inherently existing in OS further aggravate the environmental risks. However, the high oil content and heating value of OS contribute to its huge energy resource potential. Considering the energy demand and the environmental pressure, the ultimate purposes of the OS management are to enhance the oil recovery efficiency to minimize the oil content as well as to stabilize the hazardous elements and heavy metals into the solid residue. Among various OS management technologies, pyrolysis is the most suitable approach to reach both targets. In this review paper, the pyrolysis principle, the kinetics and the product distribution in three-phases are discussed firstly. Then the effects of operating parameters of the pyrolysis process on the quality and the application potential of the three-phase products, as well as the hazardous element distribution are discussed. To further solve the dominant concerns, such as the oil content in the solid residue, the pyrolytic oil quality and the migration of hazardous elements and heavy metals, the potentials of the catalytic pyrolysis and the co-pyrolysis with additives are also summarized. Also, the typical pyrolysis reactors are then presented. From the perspective of the energy efficiency and the non-hazardous disposal, the integrated technology combining the pyrolysis and the combustion for the OS management is recommended. Finally, the remaining challenges of OS pyrolysis encountered in the research and the industrial application are discussed and the related outlooks are itemized.
+

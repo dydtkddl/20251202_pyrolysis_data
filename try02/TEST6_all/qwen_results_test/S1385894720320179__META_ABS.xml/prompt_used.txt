@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Functional use of CO2 for environmentally benign production of hydrogen through catalytic pyrolysis of polymeric waste A benign route for hydrogen (H2) production is environmentally desirable. To achieve this, H2 synthesis from polymeric waste was investigated. A new route was sought to maximize H2 production with the least formation of coke during catalytic pyrolysis of fishing net waste (FNW) by using CO2 (as reaction media) and a Ni/SiO2 (as catalyst). The thermolytic characteristics of FNW were also evaluated under the CO2 condition (and N2 as reference environment) both with and without catalysts to assess the full scope of variabilities involved in catalytic pyrolysis of FNW. The use of Ni/SiO2 catalyst in each of the N2 and CO2 conditions improved the reaction kinetics in terms of syngas formation with significant production of H2 (1,543 and 770 mmol g−1 cat h−1) and CO (11 and 1157 mmol g−1 cat h−1), respectively. However, H2 production rate dropped when the catalyst was deactivated due to (hydro)carbon deposition onto the catalyst surface under N2 environment. Under CO2 environment, CO2 served as an oxidant during FNW thermolysis with additional CO formation and prolonged lifetime of catalyst (via suppressed deactivation). H2 production mediated by CO2 increased to ≥1,093 mmol g−1 cat h−1 during five repeated cycles of FNW pyrolysis, coupling with water–gas shift reaction (WGS: CO + H 2 O ⇌ H 2 + CO 2 ). This new approach to H2 production is demonstrated as a practical measure for producing H2 while extending catalyst life.
+

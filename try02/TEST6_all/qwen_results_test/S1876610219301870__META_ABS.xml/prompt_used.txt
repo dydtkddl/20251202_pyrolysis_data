@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unstratified Downdraft Gasification: Conditions for Pyrolysis Zone Existence Traditionally, the process of downdraft gasification is considered as a sequence of conversion stages, primarily running in separate reaction zones of a bed. These zones include the zones of fuel drying, pyrolysis, oxidation and reduction. There are experimental data and modeling results that do not agree with the classical ideas about the stratified nature of the process. According to these data, we put forward a hypothesis about the existence of unstratified gasification mechanism. In accordance with the proposed hypothesis, the fuel bed does not have separate reaction zones and the conversion process runs and finishes mainly near the point where gasifying agent enters the reactor. We carried out experiments in a transparent quartz reactor to study the hypothesis. The experiments included visual observation of the fuel bed, temperature measurement of a bed particle, as well as reactor cooling and an analysis of thermal conversion of individual parts of the bed. The experiments established the conditions when the pyrolysis zone existed or did not exist. With a velocity of the fuel bed motion up to 1-1.5 cm/min, the pyrolysis zone is formed above tuyeres through which air is supplied to the bed. In the case that the velocity of the bed motion exceeds this range, the pyrolysis zone disappears and supply of uncharred fuel to the zone of tuyeres starts. The unstratified gasification that has no pyrolysis zone is characterized by low sensitivity of gas composition to a variation in the gasifier capacity and high cold gas efficiency.
+

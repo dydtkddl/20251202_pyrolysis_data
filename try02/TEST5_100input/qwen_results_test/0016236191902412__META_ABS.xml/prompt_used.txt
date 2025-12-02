@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Economics of liquid fuels production by coal gasification Since the oil crisis of 1973 considerable interest has been shown in the production of liquid fuels from alternative sources. In particular, processes utilizing coal as the feedstock have received considerable interest. These processes can be divided into indirect liquefaction, direct liquefaction and pyrolysis. This paper describes the modelling of indirect coal liquefaction processes in order to perform a consistent technical and economic assessment of the production of liquid fuels from coal and lignite, using a variety of gasification and synthesis gas conversion technologies. The technologies are modelled on a ‘step model’ basis where a step is defined as a combination of individual unit operations which together perform a significant function on the process streams, such as a methanol synthesis step or gasification and a physical gas cleaning step. Sample results of the modelling are presented to illustrate the scope of the work. These cover a representative range of gasifiers, liquid synthesis processes and products from the large number of combinations of feeds (3 alternatives), gasifiers (10 alternatives), products (6 alternatives), other technical parameters (up to 20 variables) and economic or financial parameters (17 variables), as well as possible sensitivity studies. The results have been validated by major European companies in absolute as well as comparative terms. The main results show that methanol is the most attractive fuel relative to current market prices, followed by fuel alcohol (a mixture of alcohols produced by modified Fischer-Tropsch synthesis), diesel from the Shell middle distillate synthesis process, diesel from the Mobil methanol to olefins gasoline diesel process, gasoline from the same process and finally gasoline from the Mobil methanol to gasoline process. Some products are currently economic based on typical world coal prices. There was a variation in production costs of up to 100% for most products depending on the type of gasifier chosen and specific feedstock.
+

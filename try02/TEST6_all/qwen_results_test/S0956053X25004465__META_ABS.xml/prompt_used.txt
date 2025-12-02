@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unlocking circular economy potential: Evaluating high-value chemical production from pyrolysis of plastics recovered from landfilled municipal solid waste This study evaluates the potential for producing valuable chemical products from plastics recovered from municipal solid waste (MSW) landfills and therefore contributing to waste reduction and resource recovery. Using pyrolysis–gas chromatography-mass spectrometry (Py-GC–MS) we analysed the decomposition products of 10 plastic samples including fresh and excavated samples of different landfill periods from 4 landfill sites. The samples comprised polyethylene (PE), polypropylene (PP), two mixed excavated plastic materials containing PE, PP, polystyrene (PS), poly(ethylene terephthalate) (PET) and poly(vinyl chloride) (PVC). All samples were pyrolyzed at 350, 500, 650 and 800 °C to semi-quantitatively identify the range of compounds produced at each temperature. Hydrocarbon production was the highest at 500 °C and 650 °C whit a significant proportion of the products falling within the naphtha range (C6-C10), which is a critical feedstock in the plastic industry. Notably, naphtha can be cracked to produce 55 wt% high-value chemicals, such as ethylene and propylene. Additionally, aromatic compounds such as benzene, toluene and styrene, especially in the mixed samples demonstrate potential for use in the chemical industries for polymers, solvents and dyes. These results provide encouraging evidence that excavated landfill plastics can serve as a viable source of valuable chemical intermediates, supporting both resource recovery and the advancement of a circular plastics economy. While this study offers an important initial assessment, primarily qualitative and focused on single polymers and controlled artificial mixtures, it establishes a solid foundation for future research. Further investigations using heterogeneous and larger-scale processing are recommended to fully demonstrate the techno-economic feasibility and environmental benefits of integrating pyrolysis of aged plastics into sustainable waste management and resource recovery strategies.
+

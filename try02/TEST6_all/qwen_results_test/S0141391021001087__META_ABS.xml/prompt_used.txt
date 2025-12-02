@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sulfenamides as Standalone Flame Retardants for Polystyrene Efficient standalone sulfenamide based flame retardants consisting of N-benzothiazol-2-ylsulfanyl-N-tert-butyl-benzothiazole-2-sulfenamide (SF-201) or N-cyclohexylthiophthal-imide (SF-205) have been developed for bulk and expanded polystyrene (EPS). In the first set of experiments the sulfenamides were mixed with general purpose polystyrene (GPPS) in a Haake Rheocord melt blender, and in the second set of experiments suspension polymerizations of styrene were carried out in the presence of either of the sulfenamides. Under these experimental conditions SF-201 was deemed to be a more effective flame retardant than SF-205. The third set of experiments involved all the relevant steps for industrial production of EPS: Preparation of polystyrene beads containing pentane as blowing agent and SF-201 as the sole flame retardant, subsequent pre-expansion of the beads at 120 °C with steam and in the last step molding with steam to produce large EPS blocks. The prepared EPS blocks were cut into desired dimensions for EN ISO 11925-2 fire tests. The obtained beads containing SF-201 had a spherical shape and their particle size distribution as well as molecular weights were rather similar to the reference polystyrene beads. Thus, it seems that SF-201 did not have a notably negative influence in the process of breakage and coalescence of monomer/polymer droplets. In addition, the molecular weight distribution remained narrow and a slight decrease in polystyrene molecular weights were observed in comparison to neat polystyrene prepared under similar conditions. The flame retardant efficacy of SF-201 as a standalone flame retardant in EPS was high, as at 2.5 % loading of SF-201 in EN ISO 11925-2 ignitability test the EN 13501-1 E class with no flammable droplets was obtained. The thermogravimetric analysis (TGA) carried out under inert atmosphere revealed enhanced and earlier onset of polystyrene degradation in the presence of sulfenamides. The enhanced polystyrene degradation led to a lowering of melt viscosity that facilitated an effective mass transfer of fuel and heat away from the fire zone. The pyrolysis gas chromatography-mass spectrometry (PyGCMS) measurements of blends showed a lower level and number of polystyrene related degradation products (styrene, multiple dimer and trimer species) and evidence of parent SF-201 flame retardant molecule was no longer visible. Whereas new volatile amine species such as tert-butylamine and N-tert-butyl-2-benzothiazolesulfenamide were detected which relate to flame retardant activity in the condensed phase and potentially radical scavenging of key combustion radicals (H., .OH) in gas-phase.
+

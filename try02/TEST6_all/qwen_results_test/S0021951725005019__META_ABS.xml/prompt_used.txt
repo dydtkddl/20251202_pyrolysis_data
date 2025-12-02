@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Lewis acid-base interactions of oxide support for enhanced C–C coupling and deoxygenation reactions The transition to sustainable energy systems requires efficient catalysts capable of upgrading biomass into liquid fuels and platform chemicals to meet future energy demands. Metal oxides, as supports in bifunctional catalysts, are pivotal due to their ability to provide active sites, create oxygen vacancy defects, and facilitate electron transfer. While these properties are well-studied in the presence of metal nanoparticles, the intrinsic activity and surface properties of stand-alone oxide supports remain underexplored. This study investigates the role of bare metal oxides (TiO2, ZrO2, and Al2O3) in the direct vapor upgrading of beechwood biomass vapors via a two-stage process comprising a non-catalytic hydropyrolysis step followed by ex-situ catalytic upgrading. The performance of metal oxides was compared with non-metal oxide such as SiO2. Through extensive characterization (H2-TPR, NH3-TPD, O2-TPD, CO2-TPD, BET, XRD, and Pyridine-FTIR), we establish that the combination of high weak acidity, low strong basicity, and reducibility of TiO2 results in superior catalytic performance. Ex-situ upgrading over TiO2 achieves the lowest oxygen-to-carbon ratio (O/C = 0.09) in bio-oil, the highest C2+ fraction (98.7 %), and the largest C8-C16 fraction (49.9 %), while minimizing light molecule formation (16.5 %). Binding energy analyses further reveal that weak adsorption of model compounds (acetone, acetic acid, guaiacol) occurs on the TiO2 (101) surface compared to other oxide surfaces, highlighting its exceptional properties for deoxygenation and C–C coupling. This work establishes the first comprehensive correlation between the catalytic performance of oxide supports and their surface properties using actual biomass feedstock, thus offering valuable insights for designing advanced catalysts for biomass upgrading.
+

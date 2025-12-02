@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+CFD analysis of fast pyrolysis process in a pilot-scale auger reactor In this work, an auger pilot-scale fast pyrolysis process computational fluid dynamic (CFD) model was developed for use as a design tool for scale-up. Multiphase flow dynamics and chemical kinetics were included in the multi-fluid model (MFM). Rotating reference frame (RRF) was adopted to simulate the effect of rotation of the auger in the reactor. The model predictions were validated with experimental data at three temperatures (450, 475, and 500 °C) and four biomass feed rates (1, 1.5, 2.5, 3.5 kg/h). Good agreement was observed between the simulations and the experiment. A parametric study of the process was carried out to study the impact of operating factors including biomass feed rate (1–4 kg/h), operating temperature (400–600 °C), and vacuum pressure (0–500 mbar). Other parameters studied included using nitrogen as a carrier gas (1–10 kg/h) and varying the angular velocity of the screw (45–95 rpm). The results illustrate that the predicted optimum temperature for maximising bio-oil production is 500 °C. Bio-oil yield increased as the biomass feed flow rate increased due to shorter vapour residence time, minimising further reaction of the non-condensable fraction in the vapour phase. Introducing nitrogen shows the same effect, increased yield due to decreased vapour residence time. Increasing the angular velocity of the screw enhances the flow of vapours in the reactor; however, the rotational speed must be balanced against the increase in unreacted biomass. The simulation gave an optimum of 70 rpm for the angular velocity of the screw.
+

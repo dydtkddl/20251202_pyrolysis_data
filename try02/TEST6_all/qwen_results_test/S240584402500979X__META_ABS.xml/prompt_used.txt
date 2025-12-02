@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characterization and energy recovery of fuels from medical waste via thermal pyrolysis This research studies the potentiality of recovering alternative fuel from the pyrolysis of syringe waste (SW) and saline bottle waste (SBW). Plastic-based medical wastes can cause severe environmental and human health damage if not properly managed. Lab-scale experiments were conducted in a batch-type fixed-bed reactor by fluctuating the temperature within the 0–600°C range at an interval of 50°C. The effect of temperature on product yield has been investigated. Various properties of pyrolytic oil extracted from SW and SBW, such as density, kinematic viscosity, pour point, boiling point, and cloud point were measured. The respective values were in the range of 726–758 kg/m3, 3.19 to 4.75 cSt, −12 to −16°C, 86–95°C, −2 to −5°C and GCV was around 42–44 MJ/kg. The GCV of pyrolytic char was around 42–43 MJ/kg. GC-MS and FT-IR tests suggested the presence of higher amounts of alcohols and organosilicons in pyrolytic oils, which evolved from SW and SBW, respectively. TGA-DTG curve indicated the thermal fracture range of SW and SBW pyrolytic oil was 50–280°C. Oil and char obtained in this study can be used as alternative fuel or chemical feedstock in different industries after some treatment. Results also showed that the properties are like low-grade liquid fuels and high-grade solid fuels. During COVID-19 and post-pandemic, a large amount of clinical waste has been used, and thus, it has become colossal waste. Pyrolysis of such waste (syringe/saline bottle) can reduce environmental contamination to a degree as well as be a substitute source of energy.
+

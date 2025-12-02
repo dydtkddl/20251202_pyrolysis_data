@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrogen release from ammonia borane dissolved in an ionic liquid Hydrogen release from ammonia borane (AB) dissolved in an ionic liquid (IL) is analyzed using batch, isothermal reaction data. It is found that an Avrami-Erofeyev type model, normally used in solid–gas systems, can be modified for this two-step reaction to describe the measured kinetics of hydrogen release and the observed double peaks in release rates. The kinetic model indicates that temperatures in excess of 200°C are needed for complete conversion (release of 2.35 H2-equivalents) in a reasonably compact flow reactor with <20s AB/IL residence time. A non-isothermal, plug flow reactor model indicates that heat transfer to ethylene glycol at 80°C alone is not sufficient to control the peak temperature to <250°C in the exothermic decomposition reaction. The peak temperature, however, can be controlled by partial recycling of the spent AB/IL mixture. The reactor can also be operated adiabatically to obtain complete conversion while limiting the peak temperature through recycle. In a flow reactor where the feed stream is heated by mixing with the recycle stream there is a minimum recycle ratio for complete conversion. This minimum recycle ratio is a function of the reactor outlet temperature, which is determined by heat transfer.
+

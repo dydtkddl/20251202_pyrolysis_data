@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhanced bio-oil production from Co-pyrolysis of cotton seed and polystyrene waste; fuel upgrading by metal-doped activated carbon catalysts There is an increasing concern about fossil fuel depletion and waste management. Therefore, sustainable conversion of waste and biomass to fuel is crucial. This research delves into the conversion of waste material including cotton seed (CS) biomass and polystyrene (PS) waste into valuable bio-oil through co-pyrolysis. The effects of temperature and residence time on bio-oil production yield were investigated. The optimal conditions occurred at 550 °C and 30 min, leading to a bio-oil, gas, and biochar yield of 58 %, 16 %, and 26 % from CS, respectively. Introducing PS in a 3:7 ratio had the greatest positive effect on bio-oil production efficiency compared to the calculated case. Gas chromatography-mass spectrometry (GC–MS) investigation revealed substantial improvement in hydrocarbons and minimization in the oxygen-rich products by blending the waste plastics at 50 wt%. The study extends to the catalytic upgrading of liquid fuel and aromatic chemicals using activated carbon (AC) catalysts doped with metals like Co, Cu, Fe, and Zn. Analytical methods, such as inductively coupled plasma-optical emission spectrometry (ICP-OES), Brunauer-Emmett-Teller (BET), CHNS, X-ray diffraction spectroscopy (XRD), field emission scanning electron microscope (FESEM), and energy-dispersive X-ray spectroscopy (EDS) characterize the catalysts, revealing varied impacts on fuel composition and performance. Notably, Fe-Zn/AC and Fe-Co/AC catalysts facilitate bio-oil deoxygenation via decarboxylation and decarbonylation. In contrast, AC, Fe-Cu/AC and Fe/AC catalysts indicate a predominance of hydrodeoxygenation. Enhanced monocyclic aromatic compound yields in bio-oil are observed with metal-modified AC catalysts, marking a significant advancement over unmodified AC.
+

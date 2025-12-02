@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Reusable hybrid foam catalyst for hydrolytic dehydrogenation of amine adducts of borane: Porous PVA-Immobilized Co–Ru nanoparticles In this study, reusable hybrid foam catalyst was synthesized, based on reduction of cobalt and ruthenium ions into polyvinyl alcohol (Co–Ru/PVA), for hydrolysis of ammonia borane (NH3BH3, AB) and its derivative methylamine borane, (CH3NH2BH3, MeAB), to generate hydrogen. Sixteen different hybrid catalysts were synthesized under different preparation conditions. The effect of different independent variables such as reduction medium and temperature, solvent, and post-treatment on hydrogen evolution rate as a dependent variable was evaluated using the Analysis of Variance (ANOVA). It was found that Co–Ru/PVA-16 was exhibited the highest catalytic activity for the NH3BH3 hydrolysis reaction based on the statistical analysis observations. The Co–Ru/PVA-16 hybrid catalyst was characterized by several advance techniques as X-ray diffraction (XRD), X-ray photoelectron electron spectroscopy (XPS), high-resolution transmission electron microscopy (HR-TEM), scanning electron microscopy (SEM), inductively coupled plasma mass spectrometry (ICP-MS) and Fourier transform Infrared spectroscopy (FT-IR). High initial turnover frequency (TOF) of 3384.23 molH2mol−1 CoRumin−1 and 346.16 molH2mol−1 CoRumin−1 were reported for NH3BH3 and CH3NH2BH3 hydrolysis, respectively. Besides high catalytic activity, Co–Ru/PVA-16 hybrid catalyst was reused in the hydrolysis of NH3BH3 over 46 cycles without decrease in H2 evolution rate.
+

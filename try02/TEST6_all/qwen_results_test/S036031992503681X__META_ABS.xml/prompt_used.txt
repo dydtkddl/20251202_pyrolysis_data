@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-gasification of sewage sludge derived hydrochar and coal: Implications for syngas production and ash content The co-gasification of hydrothermally carbonized sewage sludge-derived hydrochar (HC) with SH coal under a CO2 atmosphere presents a promising route for sustainable energy generation and CO2 mitigation. This study systematically investigates the influence of HC-to-coal blending ratios and gasification temperatures on syngas composition, tar formation, and ash content. A blend of 25 wt % HC with 75 wt % coal at 950 °C was found to be optimal, achieving a 21.32 % ash and elevating the syngas lower heating value to 8.49 MJ/Nm3, thereby indicating enhanced gasification efficiency. The optimized blend was further evaluated at 800–950 °C to elucidate temperature-dependent behavior. Gas analysis revealed that CO2 remained the dominant component (>60 vol %), while H2 concentration increased from 40 % to 58 % with rising HC content due to intensified thermal cracking and organic matter depolymerization. Concurrently, CO concentration rose significantly from 16 % at 800 °C to 59 % at 950 °C, attributed to enhanced Boudouard and water–gas shift reactions facilitated by the CO2 environment. Tar analysis showed an increase in polycyclic aromatic hydrocarbons (PAHs) with higher HC ratios, highlighting a trade-off between syngas quality and tar burden. This work provides a comprehensive mechanistic insight into HC–coal co-gasification, underscoring the critical role of temperature and blending optimization in maximizing syngas yield while minimizing undesirable byproducts. The findings support co-gasification as a viable waste-to-energy pathway for sewage sludge valorization and reduced reliance on fossil fuels.
+

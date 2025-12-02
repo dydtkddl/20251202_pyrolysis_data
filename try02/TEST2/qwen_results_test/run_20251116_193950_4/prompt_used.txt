@@ -1,0 +1,61 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Polymers or copolymers
+   - Plastic-containing composites
+
+   Acceptable terms include:
+   - pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+     waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   → If pyrolysis is conducted on NON-plastic feedstocks (methane, light hydrocarbons, coal, biomass, bio-oil components, lignin, cellulose, hemicellulose, algae, fuels, sugars, furans)—even if pyrolysis is performed—return **NO**.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include **real laboratory experiments**, such as:
+   - fixed-bed / batch / fluidized-bed / microwave pyrolysis reactor
+   - catalyst bed experiments
+   - temperature-controlled reactor tests
+   - heating experiments (e.g., 400–900°C)
+   - measured product yields (oil, wax, gas, char)
+   - product analysis using GC–MS, FTIR, TGA, DSC, XRD, SEM, BET, etc.
+
+   → If the study is purely computational, theoretical, simulation-based, DFT-only,
+     modeling-only, ML-only, LCA-only, or a review → return **NO**.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results, such as:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance comparisons
+   - product composition analysis
+   - reactor operating conditions
+   - energy analysis from real experiments
+   - fuel engine test results
+
+   → If experimental data is not clearly present or is ambiguous → return **NO**.
+
+Your Output:
+Return STRICT JSON with fields:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one sentence explaining why>"
+}
+
+Rules:
+- ANY missing, unclear, or ambiguous criterion → "NO".
+- The reason MUST be **one and only one sentence**.
+- The reason must reflect the MAIN decisive failure factor
+  (e.g., “not plastic feedstock”, “no lab experiment”, “no measurable data”).
+- Do NOT include extra text outside JSON.
+
+<<ABSTRACT>>
+
+
+Reactivities of carbon to steam and hydrogen and applications to technical gasification processes—A review Experimental results of reactivity measurements on coal and chars to steam, hydrogen and steamhydrogen mixtures are compared and their application to technical processes is discussed. The change of surface area as a function of burn-off has a minor significance for chars made from coal with high initial accessible surface areas. In this case the reaction rate under constant steam pressure is first order with respect to the amount of carbon being gasified. The reaction rate of hydrogasification markedly decreases with burn-off, since the activation energy increases with burn-off due to the consumption of reactive carbon during the reaction. The reaction of carbon with steam hydrogen mixtures can be described as a superposition of carbon steam reaction and hydrogasification. The overall rate relative to that with hydrogen or steam alone can increase if a high amount of reactive carbon is present and immediately reacts with hydrogen. It can decrease if the inhibition of the steam carbon reaction by hydrogen predominates. Some consequences for the technical performance of coal gasification are: The overall reaction rate in a fluid bed decreases with increasing bed height, since hydrogen-steam ratios and therefore the inhibition by hydrogen increase. The overall reaction rate in a moving bed with countercurrent flow of carbon and reacting gases increases with increasing overall pressure since highly reactive carbon, formed in the pyrolysis zone, can immediately react with high partial pressures of hydrogen.

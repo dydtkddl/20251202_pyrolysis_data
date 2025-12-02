@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal decomposition of polypropylene plastics through vacuum pyrolysis The technique of thermal pyrolysis has a great contribution to waste-to-energy platform and circular economic mission. This study used an internal heating process for the vacuum pyrolysis of plastic waste. Eight heating tubes were placed inside a reactor to accelerate heat transfer to the feedstock. Uniform temperature distribution was achieved in C22 at 9%. Gas chromatography–thermal conductivity detector analysis of noncondensable gases revealed that the main product of PP with 75% area was C2H6. Furthermore, the Taguchi method was used to optimize the vacuum pyrolysis of waste to energy. Optimal operating conditions for maximum pyrolytic yields were as follows: temperature 425 °C, heating rate 15 °C/min, residence time 6 h, and output flow rate 0.1 L/min. Moreover, the physical properties, cetane number, soot propensities, and auto-ignition temperature of pyrolytic oil were comparable to petroleum diesel. The heating value of the oil product was 55.96 MJ/kg, which was higher compared with petroleum fuels. Vacuum pyrolysis mass, carbon, and energy balances were also determined. This study demonstrated the novel use of internal heating in vacuum pyrolysis. Ultimately, this study provided a new technique of internal heating method in vacuum pyrolysis.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation of in situ and ex situ catalytic pyrolysis of lignocellulosic biomass waste for the production of de-oxygenated C8-C18 range enhanced liquid fuel precursor - reaction mechanisms and optimization Pyrolysis oil derived from lignocellulosic biomass waste is considered a viable alternative to fossil fuels. Nonetheless, organic acids and other oxygenated components render it unsuitable for direct fuel uses. A feasible option for utilizing pyrolysis oil is to process it with refinery feedstock, leveraging existing infrastructure. The adaptability of pyrolysis oil for co-processing can be enhanced by decreasing the acidity, generating the oil within a C8-C18 carbon range, and reducing high concentrations of phenols and aromatics. Catalytic pyrolysis represents a viable method for producing high-quality biooil. Currently, the catalysts are expensive, and their recovery poses a significant concern, incurring additional costs. The study uses various metal-impregnated eggshell catalysts to examine lignocellulosic biomass waste pyrolysis under in situ and ex situ configurations. The study indicates that both catalytic methods yield pyrolysis oil within the C8-C18 carbon number range, with diminished organic acid levels and lower concentrations of aromatics and phenols. The GC-MS NMR, and GC analysis of pyrolysis products suggested that ex situ catalysis exhibited improved selectivity for C8-C18 products, increasing from 48.12 % to 98.56 %. A substantial decrease in oxygenated compounds was observed, declining from 93.1 % to 72.3 %. The acid content of pyrolysis oil decreased from 37.1 % to negligible levels. Among the various metal-impregnated catalysts tested, CaO-Cu and CaO-Fe impregnated catalysts showed a significant improvement in the quality of pyrolysis oil. The study on the reaction mechanisms indicates that the presence of the catalyst substantially modifies the pyrolysis mechanism, validating the alterations in the product distribution. The study demonstrates the preparation of an economically viable metal-impregnated catalyst that efficiently produces deoxygenated, acid-free pyrolysis oil from biomass. The catalyst recoverability and reusability in the ex situ catalytic pyrolysis process enhance the sustainability and cost effectiveness.
+

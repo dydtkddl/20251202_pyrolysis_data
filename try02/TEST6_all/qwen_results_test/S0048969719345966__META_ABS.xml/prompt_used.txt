@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of alkali-treated HZSM-5 zeolite on the production of aromatic hydrocarbons from microwave assisted catalytic fast pyrolysis (MACFP) of rice husk We performed microwave-assisted catalytic fast pyrolysis (MACFP) of rice husk (RH) over an alkali-treated HZSM-5 zeolite, for production of hydrocarbons. The treatment consisted in the modification of the HZSM-5 by the organic base tetrapropylammonium hydroxide (TPAOH) solution at several concentrations. We characterized the resulting catalysts by powder X-ray diffraction (XRD), transmission electron microscopy (TEM), N2 adsorption-desorption, and temperature-programmed sorption of ammonia (NH3-TPD). The results suggest that the TPAOH treatment generated mesoporous structures in the HZSM-5, while preserving its microporous structure and crystallinity. We obtained the highest yield (45.9%) of hydrocarbons from MACFP of rice husk (RH) at 550 °C. As the TPAOH concentration increases, the relative content of BTEX hydrocarbons (benzene, toluene, ethylbenzene, and xylene) reaches a maximum value of 22.9% at 2.0 mol/L. A comparison of results obtained over the organic base TPAOH (HZSM-5 modified by 2.0 mol/L TPAOH solution) with those obtained over an inorganic base (HZSM-5 modified by 2.0 mol/L NaOH solution) shows a 4.3% increase in the relative content of monocyclic aromatic hydrocarbons for the TPAOH. In addition, the TPAOH-treated catalyst shows excellent selectivity of BTEX (58.5%), which is higher than the selectivity obtained with the parent HZSM-5 (51.2%) and NaOH-treated HZSM-5 (53.9%). The TPAOH-modified HZSM-5 catalyst effectively reduced coke formation by 4.6% compared to MACFP over the parent HZSM-5, most likely because TPAOH decreases the concentration of strong acidic sites on the outer surface of the catalyst, creating a mesoporous structure while retaining the weak acidic sites on the HZSM-5 inner surface. The new catalyst generated in this work contains a moderate amount of mesopores structures, which allows for effective upgrading of pyrolysis vapors while simultaneously reducing coke formation, thereby addressing a significant problem in the development of the catalytic fast pyrolysis process.
+

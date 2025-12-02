@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Lignin polyphenol: From biomass to innovative food applications, and influence on gut microflora There is an increasing need for green materials to replace or reduce the already commercialized synthetic materials use in the food and beverage industry. One such green and under-utilized raw material available in nature is lignin. Lignin is a high molecular weight phenolic macromolecule contained in biomass (about 10–50%) aside from other major components like cellulose and hemicellulose. This review presented a state-of-the-art on the lignin polyphenols in biomass and a pathway on how it can be practically integrated in food-related applications such as: natural antioxidants, antibacterial film, hydrogels, improving intestinal flora, etc. Furthermore, details on the mechanism of action, production process, characterization methods, limiting factors, advantages, and prospects are provided. Depolymerization of large unit’s lignin polyphenols such as p-hydroxyphenyl, guaiacyl, and syringyl, produces ferulic acid, vanillin, syringaldehyde, etc., which has high antioxidant and antibacterial potential and can improve the gut microbiota. Lignin polyphenols can be preferable to other natural antioxidants because they act as a physical barrier that prevents oxidation of nearby molecules. The antimicrobial activity of lignin is due to its binding to the adhesin, thereby reducing the bacteria's adherence to the host cell and the interaction of the lignin functional groups with the peptidoglycan layers of the bacterial cell wall.
+

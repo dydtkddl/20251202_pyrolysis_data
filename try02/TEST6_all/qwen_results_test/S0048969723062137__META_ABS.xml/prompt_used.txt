@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The role of chemical and solvent-based recycling within a sustainable circular economy for plastics Chemical and solvent-based recycling of plastic waste may help overcome some of the challenges faced by predominantly applied mechanical recycling techniques. This study quantifies the environmental impacts of chemical and solvent-based recycling as a function of varying process parameters and product composition using life cycle assessment. Furthermore, potential benefits and impacts on a system level are determined. To that end, a high-resolution material flow analysis is conducted for the reference system of Switzerland, covering all main plastic types and applications. In a scenario for the year 2040, we employ environmentally beneficial mechanical recycling where possible and convey suitable remaining waste streams to chemical or solvent-based recycling processes. Applying chemical or solvent-based recycling as a complement to maximum mechanical recycling, instead of thermal treatment with energy recovery, may achieve a reduction in the climate change impact of the system ranging from less than 10 % to almost 40 %. For achieving high environmental benefits, proper process choice and configuration are crucial. Dissolution or depolymerization provide higher benefits relative to other chemical recycling processes, but can only treat certain waste streams and require prior sorting into plastic types. Pyrolysis and gasification appeared to only have the ability to achieve substantial benefits over incineration if their output products can substitute high-impact chemicals and provided that efficient heat transfer and recovery is warranted when implemented on a large scale. As industrial-scale plants for chemical or solvent-based plastic recycling are still lacking, the upscaling potential and the environmental benefits achievable in practice are highly uncertain today.
+

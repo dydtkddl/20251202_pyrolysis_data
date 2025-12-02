@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Progress and key challenges in catalytic combustion of lean methane As a primary type of clean energy, methane is also the second most important greenhouse gas after CO2 due to the high global warming potential. Large quantities of lean methane (0.1–1.0 vol%) are emitted into the atmosphere without any treatment during coal mine, oil, and natural gas production, thus leading to energy loss and greenhouse effect. In general, it is challenging to utilize lean methane due to its low concentration and flow instability, while catalytic combustion is a vital pathway to realize an efficient utilization of lean methane owing to the reduced emissions of polluting gases (e.g., NO x and CO) during the reaction. In particular, to efficiently convert lean methane, it necessitates both the designs of highly active and stable heterogeneous catalysts that accelerate lean methane combustion at low temperatures and smart reactors that enable autothermal operation by optimizing heat management. In this review, we discuss the in-depth development, challenges, and prospects of catalytic lean methane combustion technology in various configurations, with particular emphasis on heat management from the point of view of material design combined with reactor configuration. The target is to describe a framework that can correlate the guiding principles among catalyst design, device innovation and system optimization, inspiring the development of groundbreaking combustion technology for the efficient utilization of lean methane.
+

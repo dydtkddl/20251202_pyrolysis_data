@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Combining pyrolysis–two-dimensional gas chromatography–time-of-flight mass spectrometry with hierarchical cluster analysis for rapid identification of pyrolytic interactions: Case study of co-pyrolysis of PVC and biomass components Co-pyrolysis of plastic/lignocellulosic biomass mixtures produces an extremely complex assortment of pyrolyzates. In the present work, co-pyrolysis of PVC with cellulose or xylan or milled wood lignin was conducted by employing pyrolysis–two-dimensional gas chromatography–time-of-flight mass spectrometry (Py-GC × GC-TOFMS) with the aim of achieving high throughput and comprehensive analysis of the complex pyrolyzates. Then, hierarchical cluster analysis (HCA), which is an algorithm that groups similar objects into groups called clusters, was applied to accomplish rapid screening for compounds influenced by pyrolytic interactions. This combined approach improved compound separation and identifiability and allowed the subsequent easy identification of new compounds and compounds increased or decreased by pyrolytic interactions during co-pyrolysis. The change in distribution during co-pyrolysis clearly suggests the occurrence of HCl-catalyzed dehydration of anhydrosugars and conversion of methoxyphenols into phenolic compounds. Thus, this study reveals the effectiveness of the approach combining Py-GC × GC-TOFMS with HCA, which promises to contribute to the acceleration of research on pyrolytic interactions. The understanding of pyrolytic interactions gained thereby will be crucial for maximizing the yield and quality of desired chemicals and fuels from plastic/lignocellulosic biomass.
+

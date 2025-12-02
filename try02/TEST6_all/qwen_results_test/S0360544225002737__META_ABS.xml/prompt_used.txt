@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Performance regulation of biomass-derived coke for metallurgical applications based on the fractional utilization of biomass pyrolysis oil The high reactivity and low mechanical strength of conventional biochar and biocoke are the main factors limiting their addition rate to substitute the coal coke in metallurgical applications. In this work, coupled with the fractional utilization of biomass pyrolysis oil, a novel regulation method of biocoke without exogenous substance has been proposed and comprehensively studied. Acidic light oil and high-viscosity heavy oil were respectively used for acid leaching and briquetting pretreatments of biochar before the final coking. The addition of 20 wt% heavy oil has increased the biocoke yield by 16.6 % and improved the compressive strength of biocoke to 5.3 MPa, approaching that of coal coke. In addition, the combustion and gasification reactivity of biocoke was strongly decreased due to the effective removal of 41.6 % alkali and alkaline earth metal by light-oil leaching and the increased particle size through briquetting. Through further adding re-pyrolysis of briquetted biochar before coking to control the release rate of heavy oil, lower combustion reactivity and higher gasification reactivity of biocoke were achieved compared to coal coke. Finally, the optimized biocoke has 38.3 % coke reactivity index and 40.2 % coke strength after reaction, closing gap with metallurgical coke, enhancing replacement potential.
+

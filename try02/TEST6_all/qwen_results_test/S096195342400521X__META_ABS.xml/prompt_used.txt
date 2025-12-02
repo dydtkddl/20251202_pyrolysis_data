@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An overview of advancements in biomass pyrolysis modeling: Applications, challenges, and future perspectives in rotary reactors Biomass pyrolysis holds promise for both economic value and environmental benefits, while rotary reactors offer advantages in material handling and heat transfer. Efficient pyrolysis requires addressing performance metrics, and modeling plays a key role in improving yield and manageability. However, the complexity of biomass composition has limited the effectiveness of many existing models, despite significant progress in the field. This study examines the distinct operational conditions of rotary reactors, offering an extensive overview of the present state of biomass pyrolysis modeling while investigating possible approaches to enhance the accuracy of these models. Additionally, the paper highlights experimental research and advancements in CFD modeling related to biomass pyrolysis within rotary reactors. The paper begins with a detailed introduction to the biomass particles’ motion behavior and the heat transfer mechanisms within rotary reactors. Following this, a critical evaluation of existing biomass pyrolysis modeling methods, including macroscopic kinetic modeling, molecular dynamics modeling, CFD modeling, and machine learning algorithms, is presented. Specifically addressing biomass pyrolysis in rotary reactors, the paper summarizes relevant experimental studies, discussing optimal conditions for producing pyrolysis oil under different operational parameters. Furthermore, it provides an in-depth discussion on the development and application of predictive modeling tools based on the two-fluid model and coupled CFD-DEM (Discrete Element Method). Finally, the paper highlights challenges in biomass pyrolysis modeling and recommends focusing on particle model optimization, refining chemical reaction kinetics, and improving parallel computing efficiency for future research on modeling pyrolysis in rotary furnaces.
+

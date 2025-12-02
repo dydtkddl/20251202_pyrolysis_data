@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of sewage sludge with hydrogen-rich polythene: Effects on synergistic promotion and bio-oil quality Co-pyrolysis of biomass with hydrogen-rich feedstock is a promising technology to improve bio-oil quality, in which understanding the synergistic effects and product of sewage sludge (SS) with two types of plastic waste (HDPE, LDPE) is essential to develop co-pyrolysis technology. This work used in situ tracking to detect co-pyrolysis promotion/inhibition effects with different mixed feedstocks and mixing ratios, and analyzed volatile and bio-oils in detail. The results show that co-pyrolysis synergistic promotion was mainly created by the release of a large amounts of free radicals, and the largest promotion occurred near the maximum mass loss rate (DTGmax). The synergistic promotion effect was 190 % higher for SS mixed with HDPE (S–H) than for SS mixed with LDPE (S-L). Co-pyrolysis reduced polluting gases (e.g., NO2, and SO2), enhanced the degradation of oxygenated functional groups, contains 2.7 times of hydrocarbons in bio-oil than SS mono-pyrolysis. S-L promoted short-chain generation and produced more naphthalene compounds (e.g., methylnaphthalene and 2-methylnaphthalene) in hydrocarbons. However, S–H tends to produce longer chains and more monocyclic aromatic hydrocarbons (e.g., alkylbenzenes). The gasoline fraction in bio-oil could reach 89.7 % (S7L3) and 55.8 % (S5H5). This information helps to promote clean disposal and resource utilization of sewage sludge and plastic waste through co-pyrolysis.
+

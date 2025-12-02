@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of model plastic component polypropylene to hydrogen over mesoporous alumina catalysts: Effect of pluronic structure directing agents Catalytic pyrolysis of the large and complex polymeric structure of plastic to gaseous fuel has been investigated in this work. A two-stage pyrolytic system is reported for cracking model waste plastic, polypropylene, over mesoporous alumina catalyst to produce H2 and CH4. The experiments have been conducted in the temperature range of 750–900 °C and various catalyst-to-plastic ratios under atmospheric pressure. The alumina-based catalysts were synthesized via the one-pot evaporation-induced self-assembly (EISA) method using four different structure-directing agents (SDA) namely PEG-1000, PEG-4000, P123, and F127 to understand the effect on catalytic properties and performance evaluation. Results revealed that the structured directing agents improve the catalyst's surface properties and affect the product yield. All synthesized catalysts were characterized for crystallinity, topography, and surface properties using X-ray diffraction analysis (XRD), Scanning Electron Microscope (SEM), Brunauer–Emmett–Teller (BET), Pyridine-Transmission Fourier transform infrared (Py-FTIR) spectroscopy, and atomic force microscopy (AFM) analysis. A significant effect of SDA was observed on the surface area of the synthesized mesoporous alumina (SMA) catalyst. The decreasing order in terms of the surface area of the SMA is SMAF127 >SMAP40 >SMAP123 >SMAP10> Alumina (without SDA). Approximately, a tenfold increase in surface area was observed with SMAF127 (mesoporous alumina) compared to non-mesoporous alumina. A maximum yield of hydrogen∼40.79 mmol/gram polypropylene was obtained with a catalyst-plastic (C/P) ratio of 1:2.5 at a temperature of 900 °C using SMAF127 owing to its high surface area, and other physiochemical properties.
+

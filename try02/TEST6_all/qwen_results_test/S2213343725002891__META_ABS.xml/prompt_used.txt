@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Advancing photocatalytic strategies for microplastic degradation in aquatic systems: Insights into key challenges and future pathways Microplastic pollution has become a global environmental concern due to its persistence, ubiquity, and potential adverse effects on ecosystems and human health. With global plastic production projected to quadruple from 380 million metric tons in 2015 to 1520 million metric tons by 2050, and 80 % of plastic waste accumulating in the environment, photocatalysis has emerged as a promising approach for addressing this challenge, offering the ability to degrade microplastics into less harmful byproducts through light-activated chemical reactions. This review comprehensively analyzes advancements in photocatalytic systems for microplastic degradation, emphasizing the development of innovative materials such as doped semiconductors, heterojunctions, and metal-organic frameworks, which enhance light absorption, charge separation, and catalytic efficiency. This review explores how these advancements improve performance, addressing key limitations of conventional photocatalysts. Integration of photocatalysis with other technologies is discussed, to improve degradation rates and energy efficiency while mitigating secondary pollution. Challenges related to scaling photocatalytic technologies for real-world applications, such as the need for efficient reactor designs and consistent performance under natural conditions are critically evaluated. Additionally, the environmental implications of byproducts generated during microplastic degradation are examined, emphasizing the importance of standardized methodologies to assess catalyst efficiency and ensure environmental safety. This review highlights emerging strategies to valorize degradation byproducts into useful resources, advancing the sustainability of photocatalytic processes. By addressing gaps in hybrid system innovation, scalability, and resource recovery, this review provides unique insights that integrate these critical aspects for advancing the practical application of photocatalytic technologies.
+

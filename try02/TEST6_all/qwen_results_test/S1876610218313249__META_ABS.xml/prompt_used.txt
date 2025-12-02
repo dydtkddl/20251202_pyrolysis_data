@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Solar Assisted Pyrolysis of Plastic Waste: Pyrolysis oil Characterization and Grid-Tied Solar PV Power System Design The principal objective of this study is to test the performance of plastic waste pyrolysis reactor and to design a grid-tied solar PV power system to serve the energy demand of the reactor. The goal is to convert solid waste to alternative fuels and to use renewable energy to assist in the thermal chemical conversion process. For the experimental study, plastic particles (3-4 mm in diameter) are pyrolyzed in a small laboratory reactor at atmospheric pressure and temperature of 500oC to produce liquid fuel (pyrolysis oil), hydrocarbon gas fuel (syngas), and solid residues (char). The amount of pyrolysis oil and syngas produced are determined. The physical and chemical properties of the pyrolysis oil (density, dynamic viscosity, the calorific value and chemical composition) are measured and compared with standard Diesel fuel. The daily energy demand of the pyrolysis reactor (5.1 kWh/day) is determined based on the voltage and current measurements of the heater system of the reactor. Modeling and simulation analysis using grid-tied solar PV energy system to power the pyrolysis reactor was investigated. The performance and life cycle cost of the hybrid power system was determined. The results show that solar PV can be used to assist the thermochemical conversion process. Solar PV system can generate up to 52% of the total power demand of the reactor AC load. The proposed grid-tied power system with the excess power from solar PV system sold back to the grid is sustainable (the renewable fraction is 50.4%), economically viable (86$/MWh), and produce low greenhouse gas emissions (162 kg CO2/MWh).
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Research on the in-situ catalytic pyrolysis of heavy oil by 2D layered MOF and its catalytic mechanism China possesses abundant heavy oil resources, yet faces challenges such as high viscosity, underdeveloped production technologies, and elevated development cost. Although the in-situ catalytic viscosity-reduction technology can address certain technical, environmental, and cost problems during the extraction process, the catalysts often suffer from poor stability and low catalytic efficiency. In this study, a green and simple room-temperature stirring method was employed to synthesize a class of highly efficient and stable 2D MOF catalysts, which possess the capability to conduct in-situ catalytic pyrolysis of heavy oil and reduce the viscosity. Under the condition of 160 °C, a catalyst concentration of 0.5 wt%, and a hydrogen donor (tetralin) concentration of 2 wt%, the viscosity-reduction rate of Fe-MOF is as high as 89.09%, and it can decrease the asphaltene content by 8.42%. In addition, through the structural identification and analysis of crude oil asphaltenes, the causes for the high viscosity of heavy oil are explained at the molecular level. Through the analysis of catalytic products and molecular dynamics simulation, the catalytic mechanism is studied. It is discovered that Fe-MOF can interact with heavy oil macromolecules via coordination and pore-channel effects, facilitating their cracking and dispersal. Furthermore, synergistic interactions between Fe-MOF and the hydrogen donor facilitates hydrogenation reactions and enhances the viscosity-reducing effect. This study provides a novel strategy for boosting heavy oil recovery and underscores the potential of 2D MOFs in catalytic pyrolysis applications.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Bisphenol-A-diglycidyl ether modified chitosan/nano-SiO2 via hydrothermal process: A statistical modeling and adsorption mechanism for reactive orange 16 dye removal In this study, chitosan/nano SiO2 (CTS/NS) was chemically modified with bisphenol A diglycidyl ether (BADGE) cross-linker-assisted hydrothermal process to create an effective adsorbent, CTS-BADGE/NS, for the removal of reactive orange 16 (RO16) dye from aquatic systems. Box-Behnken design (BBD) was used to optimize the adsorption process by varying the adsorbent dose (0.02–0.1 g/100 mL), pH (4–10), and time (20–360 min). The adsorption isotherm results indicated that the Langmuir model fits the experimental data well, suggesting that the adsorption process involves a monolayer formation of RO16 on the surface of CTS-BADGE/NS. The kinetic modeling of RO16 adsorption by CTS-BADGE/NS demonstrated that the pseudo-first-order model fits the adsorption data. CTS-BADGE/NS achieved an adsorption capacity of 97.8 mg/g for RO16 dye at optimum desirability functions of dosage 0.099 g/100 mL, solution pH of 4.44, and temperature of 25 °C. Overall, the π-π electron donor-acceptor system significantly improved the adsorption performance of the CTS-BADGE/NS. The results of the regeneration investigation demonstrate that the CTS-BADGE/NS exhibits effective adsorption of RO16, even after undergoing five consecutive cycles. The results of this study suggest that the developed CTS-BADGE/NS composite can be a promising adsorbent for water purification applications.
+

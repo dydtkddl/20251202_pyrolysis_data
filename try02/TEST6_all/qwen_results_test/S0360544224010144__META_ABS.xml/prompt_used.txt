@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Highly selective production of light aromatics from co-catalytic fast pyrolysis of pre-deoxygenated biomass and hydrogen-rich polyethylene using a dual-catalyst system Co-catalytic fast pyrolysis of torrefaction deoxygenated pine wood (PW) and high-density polyethylene (HDPE) in dual-catalyst (metal oxidize and zeolite) system is an effective technology to produce renewable bio-aromatics. In this work, the torrefaction deoxygenation pretreatment (TDP) was carried out to remove oxygen element from PW prior to catalytic fast pyrolysis (CFP). 56.90 % oxygen could be removed at TDP temperature of 300 °C, releasing in the oxygen carrier of CO2, CO, H2O, alcohols, acids, phenols, etc. Then, the synergistic effect between the metal oxide and the HZSM-5 in dual-catalyst system was also investigated. Among these metal oxides (Al2O3, MgO, CaO, ZnO, and Fe2O3) and hierarchical HZSM-5, the dual-catalyst of CaO and hierarchical HZSM-5 (treated by 0.2 M NaOH) was the optimal combination. The layout mode between feedstock and dual catalyst was also optimized. The highest yield of aromatics was produced in layout Mode 8, where the CaO was mixed with torrefied PW, but the hierarchical HZSM-5 and HDPE were laid in separated layers. The mixing of CaO and torrefied PW promoted the conversion of the macromolecular oxygenates into micromolecular oxygenates. Then, these small-molecular oxygenates could enter the hierarchical channel of HZSM-5, being converted into aromatics by undergoing the Diels-Alder reaction.
+

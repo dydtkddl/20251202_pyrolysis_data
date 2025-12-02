@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comparative study on the slow pyrolysis of Miscanthus (Miscanthus×giganteus Greef et Deu.) cultivated on agricultural and contaminated soils: Assessment of distribution of final products This study aims to investigate the slow pyrolysis behavior of uncontaminated (MSC-I - reference) and heavy metals contaminated (MSC-R) samples with heavy metals from the tailings of a Pb-Zn-Cu flotation mine, consisting of whole stems of Miscanthus. Physicochemical properties of raw materials were investigated through instrumental characterization techniques (Atomic Absorption Spectrometry (AAS), Scanning Electron Microscopy (SEM), Fourier Transform Infrared (FTIR) spectroscopy, and X-ray diffraction (XRD)), while the pyrolysis process was monitored by simultaneous thermal analysis techniques (thermogravimetry (TG) – derivative thermogravimetry (DTG)), coupled with Mass spectrometry (MS), for evolved gas analysis. After determination of the lignocellulose content (cellulose, hemicellulose, and lignin) and extractive of the MSC-I and MSC-R samples, it was found that Pb, Zn, Fe, and Mn in MSC-R lead to very fast decomposition of extractive fraction, which facilitates their distribution in formed bio-char, together with lignin char-participation, acting catalytically. It was established that a much greater fraction of extractives decomposition products and non-volatile heavy metals are incorporated in MSC-R bio-char increasing its yield (23 %), compared to MSC-I bio-char yield (21.5 %). It was identified that MSC-R has increased production of H2, CO, and CO2, while decreased production of CH4, influenced by Fe (Fe has a significant positive effect on CO2 evaluation during MSC-R pyrolysis, enhancing decarboxylation process). It was established that CH4 reforming reactions catalyzed by iron additionally affect methane reduction, and increase production of H2, compared to the reference sample. Isoconversional kinetic analysis showed that pyrolysis reactions profile was strongly conditioned by the presence of heavy metals, such as Cd, Pb, and Zn, because they affect the modification of biomass lignocellulosic structure. Also, it was found that small amounts of Cd present in MSC-R can increase pyrolysis activation energy of three pseudo-components, and inhibit their deoxygenation, thus increasing yield of bio-char.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis and copyrolysis of three lignocellulosic biomass residues from the agro-food industry: A comparative study In this study, pyrolysis of residual biomass from the agro-alimentary industry of Argentina was investigated. The studied biomasses were rice husk, peanut shell and wheat straw. The effect of pyrolysis temperature over solid (bio-char), liquid (bio-oil) and gas (bio-gas) fractions weight yields were evaluated for each biomass, in the range of 350–650 °C. The maximum yield of bio-oil was obtained at 550 °C for rice husk (45 wt%) and wheat straw (58 wt%), and at 500 °C for peanut shells (51 wt%). At those temperatures, the data recorded the smallest spread around the mean. Different characterization techniques of raw biomass were reported, namely, thermal behavior; proximate and ultimate analysis; content of Ca, Al, K, Si and Fe; and hemicellulose, cellulose and lignin composition. Bio-oils characterization included water content and chemical compounds identification. Furthermore, bio-char HHV and BET surface area were measured. Rice husk bio-oil showed 21% selectivity towards furans of which 75% corresponded to furfural and 5-HMF. Peanut shell bio-char presented the highest Higher Heating Value (7250 kcal/kg) and BET surface area (215 m2/g). In addition, co-pyrolysis reactions and the synergistic effects over obtained products completed this study. Co-pyrolysis bio-oils yields varied between 41 and 46 wt%, for all the mixtures. Bio-oil water content decreased up to 15% for rice husk mixed with peanut shell or wheat straw. Moreover, 5-HMF was detected in all bio-oils, and furfural selectivity was higher than 5% in the three mixtures investigated.
+

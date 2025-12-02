@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Long-lasting performance of high-flux perovskite membrane for catalytic degradation of organic pollutants Membrane separation for wastewater remediation has been perplexed by membrane fouling, and the design of highly antifouling membranes for high-flux operation remains challenging. Herein, Sm0.5Sr0.5CoO3-δ (SSC700) membrane was coupled with peroxymonosulfate (PMS) catalysis. SSC700 demonstrated superb efficacy in batch and fixed-bed reactions, generating sulfate radicals (SO4 −•) and hydroxyl radicals (HO•) for pollutants oxidation. Additionally, in robust SSC700 membrane/PMS systems, Rhodamine B (RhB) realized > 91% removal for 50 h from laboratory wastewater under fluxes above 368 L/(m2·h), and strikingly, ciprofloxacin, RhB and sulfamerazine in the secondary effluent attained 60–80% (50 h), almost 100% (100 h) and 50–60% (50 h) removal under fluxes around 1000, 600 and 900 L/(m2·h), respectively. The highly reactive Co2+/Co3+/Co4+ redox couples accounted for the prominent activity, stability and antifouling capability of SSC700 membranes. Apart from Co species, Sm/Sr played significant roles in organics degradation. Also, bio-toxicity evolution during ciprofloxacin mineralization was monitored. This study dedicates to the design of functional membranes/PMS integrated systems for synergistic wastewater decontamination and membrane defouling.
+

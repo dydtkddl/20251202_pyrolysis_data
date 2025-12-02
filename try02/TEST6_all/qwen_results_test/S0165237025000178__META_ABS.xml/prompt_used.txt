@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Production of low-aromatic oil from catalytic pyrolysis of waste plastics-derived wax Chemical recycling of waste plastics into diesel fuel and other precursors that can be used to generate new plastics reduces reliance on conventional fossil energy sources and ensures a circular economy. In this study, we investigated the catalytic pyrolysis of waste plastics-derived pyrolysis wax (PW) into low-aromatic oil, focusing on naphtha (C5-C12)- and diesel (C13-C22)-range hydrocarbons, by examining the effects of commercial catalysts (i.e., Al2O3, HZSM-5 (SiO2/Al2O3: 50, 80), and HY (SiO2/Al2O3: 60, 80)) and mixed catalysts (i.e., 1CaO/1HY (80), 1MgO/1HY (80), 1CeO2/1HY (80)) on product distribution. The use of catalysts significantly enhanced wax conversion compared to non-catalytic test by facilitating the cracking of long-chain polymers. HY (80) achieved the highest performance with 92.2 wt% wax conversion and 57.2 wt% oil yield, producing oil with the lowest aromatic content (38.6 %) and significant naphtha (45.4 %) and diesel-range (14.7 %) hydrocarbons. This can be attributed to its moderate acidity and well-developed structure among zeolite catalysts. Mixed catalysts, especially 1CeO2/1HY (80), showed improved performance by reducing aromatic selectivity to 20.4 % and increasing the diesel fraction to 23.6 %, while maintaining comparable wax conversion, oil yield, and naphtha production to HY (80). This improvement is attributed to the alkaline and redox properties of CeO2. The enhanced wax conversion and oil yield compared to the theoretical values obtained using binary catalysts, especially 1CeO2/1HY (80), confirmed the synergistic effect of combining metal oxides with HY (80) in producing low-aromatic oil. Examining of various CeO2-to-HY ratios identified 2/1 as the optimal ratio to produce low-aromatic oil. The use of inexpensive and readily available metal oxides with zeolites as mixed catalysts for PW pyrolysis to produce low-aromatic oils provides a commercially viable solution for PW management.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Molecular dynamics study of waste tire pyrolysis: Focus on intermediate product evolution and sulfur migration law With the rapid development of the automotive industry, the large number of waste tires poses significant environmental and health pressures. Pyrolysis technology offers a way to resourcefully utilize waste tires by converting them into pyrolysis oil, pyrolysis gas, and pyrolysis char, which has promising application prospects. However, there are still considerable challenges in the application of this technology, such as unclear reaction mechanisms and the high sulfur content of the products, which limit its practical implementation. Although some research has elucidated the pyrolysis mechanisms, there remain significant gaps in understanding the evolution paths of key intermediate and final products, as well as the detailed migration and transformation patterns of sulfur. This study uses reactive molecular dynamics simulation to investigate the pyrolysis process of tires. A three-dimensional polymer molecular model was constructed to study the pyrolysis process of waste tires at different temperatures, focusing on the evolution of key products, intermediate products, and sulfur-containing components. The results indicate that CH4 and ·CH3 radicals collide with unsaturated hydrocarbons through carbon-hydrogen transfer reactions and radical chain reactions, leading to polymerization. During the initial stage of pyrolysis, sulfur primarily exists in the form of sulfur-containing hydrocarbons (CHS). As pyrolysis progresses, the quantity of CHS decreases. With increasing pyrolysis temperature, the proportion of sulfur in the S form far exceeds that of CHS. At a pyrolysis temperature of 3000 K, the proportion of S is 64 %, while the proportion of CHS is 23 %.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Flexible activated carbon fabrics from commercial textiles for electrochemical and adsorptive applications This study presents a comprehensive approach to developing flexible, highly conductive activated carbon fabric (AC-Fab) from commercial textiles, optimized for electrochemical applications. To ensure precursor compatibility, an efficient screening strategy combining experimental and spectroscopic analyses was introduced. ATR-FTIR effectively identified 100 % cotton fabrics as the only viable precursors, highlighting its potential as a fast, non-destructive screening tool. The synthesis process, involving pyrolysis, physical activation, and annealing, was optimized using Response Surface Methodology (RSM). Key responses — electrical conductivity (EC), specific surface area (SSA), and specific capacitance (Cs) — were modeled as functions of five synthesis factors, with high predictive accuracy. Optimal conditions (activation temperature: 850 °C, activation time: 90 min, H2O concentration: 1.85 %, total gas flow: 400 sccm, annealing temperature: 1000 °C), derived from a combined desirability score with customized weighting, yielded strong agreement between predicted and experimental values (EC ≈ 220–230 S m−1, SSA ≈1620–1740 m2 g−1, Cs ≈ 90–100 F g−1). Electrochemical validation confirmed outstanding performance in both supercapacitor and membrane capacitive deionization (MCDI) devices. Supercapacitor electrodes exhibited a wide potential window (≈1.2 V), high Cs (≈100 F g−1), fast frequency response (τ0 ≈ 1 s), and remarkable cycling stability (≈98 % retention after 10,000 cycles). In MCDI, stable desalination was achieved across a broad voltage range, with maximum salt adsorption capacities of ≈12 mg g−1 at 1.5 V and ≈7.5 mg g−1 at 1.2 V. Optimal balance between adsorption capacity (SAC ≈4–5 mg g−1) and rate (SAR ≈3 mg g−1 min−1) occurred at a half-cycle time of ≈1.3 min (1.2 V). These findings highlight the effectiveness of RSM in application-based optimization of AC-Fab synthesis and underscore AC-Fab's potential for electrochemical energy storage and water treatment.
+

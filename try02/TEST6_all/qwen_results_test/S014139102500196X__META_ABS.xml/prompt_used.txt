@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Joint physicochemical effects of UV-B irradiation on microplastics formation: The case of poly(vinyl chloride) and poly(methyl methacrylate) The combination of rapid growth in global plastic production and insufficient waste management has led to severe environmental pollution and resource depletion, rendering the degradation of plastics into microplastics (MPs) an intensified concern. Among the different mechanisms driving the MP formation, UV-induced photodegradation holds a crucial role, since it facilitates the initiation of chemical transformation, such as chain scission, oxidation, and crosslinking reactions, which result in physicochemical alterations and fragmentation of polymers. With the most expanded research been conducted on polyolefins, there still remains a gap in understanding the photodegradation mechanisms of other widely used polymer types, such as poly(vinyl chloride) (PVC) and poly(methyl methacrylate) (PMMA). Herein, the UV-B-induced aging of PVC and PMMA thin films was investigated over a two-month period. An inclusive sequence of characterization and analytical techniques, such as Fourier-transform Infrared Spectroscopy (FTIR), Differential Scanning Calorimetry (DSC), X-Ray Diffraction (XRD), Scanning Electron Microscopy (SEM), and Pyrolysis–Gas Chromatography/Mass Spectrometry (Py–GC/MS), was employed to evaluate the physicochemical, thermal, morphological, and chemical changes of the studied polymers. Significant structural and chemical alterations were found in both studied polymers, underscoring their vulnerability to UV-induced oxidation processes with the FTIR spectra's identification of new oxidation products. While mechanical performance deterioration during UV irradiation suggested the progressive fragmentation of polymers, potentially causing the formation of MPs, SEM images and water contact angle values showed the notable morphological and hydrophilicity changes of the irradiated samples in comparison to the virgin one. Additionally, according to Py–GC/MS analysis, the relative abundance of pyrolysis products changed during the UV exposure testing as well. Furthermore, during photo-aging, there were notable variations in the quantities of pyrolytic marker compounds, which are frequently utilized in MPs analysis in ongoing research. All aspects considered, these results highlight the necessity of deepened research into the aging processes of common polymer types since they present significant obstacles to the precision and reliability of MPs quantification in real environmental samples.
+

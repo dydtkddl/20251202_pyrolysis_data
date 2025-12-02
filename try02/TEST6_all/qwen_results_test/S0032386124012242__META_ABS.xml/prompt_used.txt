@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical recycling of polystyrene resin and its single-used products via nitric acid oxidation: Mechanisms and effects of other plastic contaminations Polystyrene (PS) is a widely used plastic, especially in single-use items, leading to a large accumulation of waste and serious environmental problems. A promising solution to this is an advanced recycling process to circularly use the material. In this study, the chemical recycling of PS resin (GP110) and commercial PS products via nitric acid oxidation is investigated. In addition, the effects of HDPE, PP, and PVC as contaminants in PS on the reaction mechanisms and product compositions are examined. Small-scaled reactions at 150–190 °C in a 50 mL hydrothermal autoclave revealed that GP110 is oxidized and mostly converted to benzoic acid (BA), 4-nitrobenzoic acid (4NB), and 3-nitrobenzoic acid (3NB) with a reaction time shorter than 8 h. The conversion of BA to 3NB is more favorable at high temperatures. The reactions at 170 °C for 4 h on commercial PS products, i.e., spoons, boxes, and cups, led to a much lower carbon recovery (∼24–29 %) than GP110 resin (∼42 %). A reaction time shorter than 4 h is required to reduce carbon loss, as these products are fabricated from lower molar mass PS. The oxidation of SB as a model PS waste in a larger scaled reaction, i.e., a 250 mL hydrothermal reactor, is used to assess the feasibility of applying the process for chemical recycling of PS waste. The processes (at 170 and 180 °C for 3 h) provided 53–80 % carbon recovery. The suitable ratios of solid to aqueous solution (0.23 g/mL nitric) and PS to nitric acid are in the range of ∼1/12 to 1/16 g/mL and 1/2.8 to 1/4.2 g/g, respectively, depending on the reaction conditions and the pressure limitation of the reactor. Concerning PS waste contaminated with other plastics, the results suggest that contamination with PP should be avoided in depolymerizing PS, as this can cause adverse effects, especially excessively built-up pressure in the system due to the generation of excess gaseous products.
+

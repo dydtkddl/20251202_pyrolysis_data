@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Review on synergistic effects during co-pyrolysis of biomass and plastic waste: Significance of operating conditions and interaction mechanism The quantity of organic solid waste (OSW) discharged by the public has increased significantly in recent years. Herein, we consider bio-waste and plastic waste. Bio-waste, also known as biomass, is a sustainable and abundant energy source available in diverse forms. Plastic waste is a cheap hydrogen source contained within OSW. The transformation of OSW via pyrolysis involves the thermochemical conversion of biomass and plastic. This conversion can mitigate waste accumulation issues and lead to synergistic product improvements for fuels and chemicals. This paper reviews the occurrence and extent of the synergistic/interactive effect during the co-pyrolysis of plastic waste and biomass. The influence of various factors, including the plastic type, biomass type, mixing ratio, reactor type, heating rate, reaction temperature, and catalysts, on the synergistic effect is considered. Furthermore, reasonable interaction mechanisms related to the synergistic effect during co-pyrolysis are presented. The outcome of this review revealed that the interaction mechanisms by which the synergistic effect may occur are the transfer of active hydrogen radicals from plastic to the biomass unstable oxygenated radicals, the catalytic activity of the alkali/alkaline earth metal species in biomass, and the heat and mass transfer during the co-conversion. Biomass pre-treatment, the use of catalysts, and the similarity between the chemical structure of the biomass and the plastic used can strengthen the interactions. Synergistic effects are likely to occur to a great extent at a low heating rate at high temperatures. The conclusions regarding the blend ratio are inconclusive.
+

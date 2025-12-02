@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Review of selective laser melting of magnesium alloys: advantages, microstructure and mechanical characterizations, defects, challenges, and applications As one of the light materials with superior biocompatible properties, magnesium has drawn more attention in recent years. More industries, such as the automotive, aerospace, and medical, are adopting new strategies to employ this material. Mg-based batteries with potential advantages over Li-based batteries are also predicted to be used in electric vehicles shortly. However, significant problems in the production of Mg, such as its low ductility at ambient temperature and high oxidation and flammability at high operating temperatures, have limited its application. Therefore, selecting an appropriate manufacturing method can lessen or resolve Mg's drawbacks. Castings, different traditional forming and Severe Plastic Deformation (SPD) methods, and alloying of Mg with other elements are among the most popular fabrication and processing techniques to improve Mg properties and expand its application. However, as an innovative Additive Manufacturing (AM) method, the Selective Laser Melting (SLM) is considered a more reliable way of producing Mg-based products, especially for applications with complex geometry design, the least amount of waste, and no need for molds and accessories. Of course, SLM also has its challenges, such as the strong dependence of the properties on printing parameters and the raw material; however, apparent horizons can be imagined for SLM of Mg according to recent developments and research. This paper summarizes the SLM of Mg by introducing the SLM parameters, properties, defects, and applications of SLMed Mg alloys and discussing the challenges and solutions of this method. The impact of the SLM parameters and initial Mg powder characteristics as the primary inputs of this method on the resultant properties of the SLMed Mg components and the potential defects are thoroughly discussed. The thermal zones produced in the SLM process of Mg are divided into four categories, which are strongly influenced by the printing parameters and, on the other hand, affect the quality of the final product so that a high relative density of 99% and the much better mechanical and microstructural properties than those produced via other conventional methods, such as casting are achieved by adjusting the printing parameters. The characterization of the primary powder is divided into two categories: morphology and particle size, along with chemical composition. Morphology and chemical composition play an essential role in the final part by affecting the alloy's flowability, oxidation, and ignition. Characterization of properties is also reviewed in three general densifications, mechanical properties, and microstructure of SLMed samples and their dependence on parameters and input materials. Finally, the defects and challenges are briefly discussed, and the applications of Mg alloys in two widely used areas, including automotive and medicine, are presented.
+

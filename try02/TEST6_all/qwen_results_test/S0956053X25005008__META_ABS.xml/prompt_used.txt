@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermochemical conversion of mixed plastics from car dismantling by pyrolysis and distillation and potential applications of the products The complete disposal of waste plastics (WPs) is a serious challenge in today’s world. One of their streams originates in growing number of end-of-life vehicles, where these materials are often mixed, and their mechanical recycling is practically impossible. However, their complete neutralization can be achieved by the process of thermochemical conversion. The obtained pyrolytic oil can enter into the supply chain after the cracking process in the petrochemical industry. The paper draws attention to the prospects of using various fractions obtained after distillation of oil from the pyrolysis process of mixed waste plastics from end-of-life cars, including polyethylene (PE), polypropylene (PP) and acrylonitrile–butadiene–styrene (ABS), which are currently difficult to process in a traditional way. Four types of waste were tested: polyolefin waste (POW) in the form of a 1:1 PE:PP blend, ABS and POW-ABS blends in the ratios of 4:1 and 3:2. Their physicochemical properties were investigated and thermogravimetric analyses (TG/DTG/DSC) coupled with Fourier transform infrared (FTIR) were performed. As a result of pyrolysis, a broad hydrocarbon fraction (BHF) was isolated, which was subjected to atmospheric distillation leading to wax, naphtha and gasoline fractions. Their properties were determined and some applications indicated. Mixing polyolefin waste with ABS in a 4:1 ratio in the pyrolysis process increased the yield of liquid products (BHF) by approximately 18 % and reduced the amount of pyrolysis gas by approximately 64 % compared to the amount from POW pyrolysis; in the case of a 3:2 ratio, the effects were much smaller – 4 % and 25 %, respectively. Moreover, naphtha fractions were mixed in various proportions with diesel oil to determine the possibility of using it as an additive to diesel fuel. The mixture in the proportions of 20 % POW-ABS 4:1 naphtha fraction + 80 % diesel oil is characterized by properties most similar to standard diesel oil, and meets the PN-EN 590:2022–08 standard. The obtained results show the reasonability of thermochemical conversion of plastic waste containing ABS + PE/PP and indicate the applications of its products.
+

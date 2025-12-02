@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sugarcane leaf-derived organosolv lignin as antibacterial and antioxidant agents of natural rubber composites To enhance the sustainability and carbon neutrality of natural rubber (NR) derived product, lignin extracted from sugarcane leaf (SCL) was incorporated into NR to prepare environmentally friendly antibacterial (AB) and antioxidant (AO) lignin/NR composites. In this study, SCL lignin was isolated via an organosolv process at different temperatures (140 – 180 °C) and using various organic solvents (ethanol, acetone, and isopropyl alcohol (IPA)). Disk diffusion susceptibility tests, minimum inhibitory concentration (MIC), and minimum bactericidal concentration (MBC) demonstrated the AB efficacy of SCL organosolv lignin against Gram-positive bacteria (S. aureus) compared to Gram-negative bacteria (E. coli and S. Typhimurium). The choice of solvent gradually influenced the AB and AO performances of the lignin. Py-GC/MS analysis revealed that SCL organosolv lignin predominantly comprised p-hydroxyphenyl (H’) and guaiacyl (G’) with a minor presence of syringyl (S’) lignin. The incorporation of SCL organosolv lignin into NR showed that NR vulcanizates exhibited enhanced mechanical, AO, and AB properties, depending on the solvent type used in the organosolv process. The NR vulcanizates incorporated with L-Acetone showed dominant aging properties and AB efficacy. On the other hand, the tensile strength and elongation at break of the NR composites were significantly improved by L-IPA and L-Ethanol. These results suggest that SCL organosolv lignin, particularly L-IPA, could be an excellent alternative bio-filler for enhancing the mechanical, AO, and AB properties of NR composites.
+

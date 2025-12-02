@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An updated review on synthetic approaches of green nanomaterials and their application for removal of water pollutants: Current challenges, assessment and future perspectives Green nanotechnology is an emerging multidisciplinary field for the implementation of sustainable principles employing biosynthesized nanomaterials. Nowadays, because of environmental concerns, safe, energy-efficient processes, reduce waste, and lessen greenhouse gas emissions are in trend. Moreover, green nanomaterials (GNMs) are biocompatible, harmless, cost-effective, biodegradable, eco-friendly, and easily tuneable. Different parts of plants (leaves, seeds, fruit, and flower), microorganisms (bacteria, algae, and fungi), agricultural and diverse waste materials are being used for their generation. Raw materials and reaction parameters are deciding factors for the properties of GNMs with peculiar characteristics of high surface activity, specific size, and purity that strengthen their multifunctional use in industries and environmental remediation. Several pollutants of organic and inorganic origin like polycyclic aromatic hydrocarbon, dyes, pesticides, heavy metals, phenols, and pharmaceutical waste pose a negative/huge adverse impact and threat to the environment and human beings on exposure. Photodegradation and adsorption, and complex formation were the likely mechanisms in the efficient removal of contaminants. Because of increasing demands and environmental benefits, it is fruitful to review and summarized articles into a single packet on the updated status of GNMs, including classification, synthetic methodologies with mechanism, and their use in the elimination of contaminants. Scientific assessments of research conducted in the last 5-years for this burning area have been stretched, plus a comparison of pros-cons of traditional NMs and GNMs. Finally, the review paper discussed the possible safety and toxicity assessment of such nanomaterials and concluded beneficial aspects of GNMs for advanced research and future recommendations to be implemented.
+

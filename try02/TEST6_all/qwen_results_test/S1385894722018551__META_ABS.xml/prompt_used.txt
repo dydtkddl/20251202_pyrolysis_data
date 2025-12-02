@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Polyethylene upcycling to fuels: Narrowing the carbon number distribution in n-alkanes by tandem hydropyrolysis/hydrocracking The extensive use of plastics in modern life has resulted in a global waste crisis to the environment. Polyethylene (PE) is one of the most popular and hardest plastics to recycle because of its strong C(sp3)-C(sp3) bonds. In this report, a tandem conversion process, i.e., hydropyrolysis and subsequent vapor-phase hydrocracking of primary intermediates (Cn>5 alkenes and long-chain alkanes), was conducted via a two-step pressurized flow-through fixed-bed reactor over a CoAl2O4 spinel-derived catalyst. The product distribution could be flexibly tuned by regulating operating parameters in the cascade fixed-bed reactor and Co/Al molar ratio in CoAl2O4 spinel catalysts. Under optimal reaction conditions (0.2 MPa H2, 550 °C for hydropyrolysis in the 1st reactor, 300–325 °C for hydrocracking in the 2nd reactor, 20 s−1 of gas hourly space velocity), the maximum single-pass yields of gasoline (C5-C12) and jet-fuel (C8-C16) range n-alkanes reached 86.0 wt% and 68.1 wt%, respectively. The CoAl2O4 spinel catalysts also gained high activity in degrading realistic post-consumer plastics such as linear low-, low-, and high-density PE, and a ∼ 73.1 wt% gasoline yield and a ∼ 54.7 wt% C8-C16 yield were retained even after 3 cycles in-situ regeneration of deactivated CoAl2O4 catalysts. This work provides an efficient and tunable approach to upcycle PE wastes into liquid fuels with an ideal carbon length.
+

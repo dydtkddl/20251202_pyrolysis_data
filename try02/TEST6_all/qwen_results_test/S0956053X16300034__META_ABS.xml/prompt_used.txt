@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Possibilities and limits of pyrolysis for recycling plastic rich waste streams rejected from phones recycling plants The possibilities and limits of pyrolysis as a means of recycling plastic rich fractions derived from discarded phones have been studied. Two plastic rich samples (⩾80wt% plastics) derived from landline and mobile phones provided by a Spanish recycling company, have been pyrolysed under N2 in a 3.5dm3 reactor at 500°C for 30min. The landline and mobile phones yielded 58 and 54.5wt% liquids, 16.7 and 12.6wt% gases and 28.3 and 32.4wt% solids respectively. The liquids were a complex mixture of organic products containing valuable chemicals (toluene, styrene, ethyl-benzene, etc.) and with high HHVs (34–38MJkg−1). The solids were composed of metals (mainly Cu, Zn, and Al) and char (≈50wt%). The gases consisted mainly of hydrocarbons and some CO, CO2 and H2. The halogens (Cl, Br) of the original samples were mainly distributed between the gases and solids. The metals and char can be easily separated and the formers may be recycled, but the uses of the char will be restricted due to its Cl/Br content. The gases may provide the energy requirements of the processing plant, but HBr and HCl must be firstly eliminated. The liquids could have a potential use as energy or chemicals source, but the practical implementation of these applications will be no exempt of great problems that may become insurmountable (difficulty of economically recovering pure chemicals, contamination by volatile metals, etc.)
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Complete defluorination of perfluorooctanoic acid (PFOA) by ultrasonic pyrolysis towards zero fluoro-pollution Advanced oxidation/reduction of PFAS is challenged and concerned by the formation of toxic, short-chain intermediates during water treatments. In this study, we investigated the complete defluorination of PFOA by ultrasound/persulfate (US/PS) with harmless end-products of CO2, H2O, and F‒ ions. We observed 100% defluorination after 4 h of US treatment alone with a power input of 900 W. PS addition, however, suppressed defluorination. We demonstrated by kinetics-fitted Langmuir-type adsorption modeling, the added PS increased competition with PFOA for adsorption sites on the bubble-water interface where radical oxidation and pyrolysis may occur. Providing sulfate (SO4 •–) and hydroxyl (•OH) radicals by means other than US did not defluorinate PFOA, indicating that pyrolysis likely contributes to the high defluorination performance. Bond dissociation energies for CC and CF were independent of pressure but decreased at elevated temperatures within cavitation bubbles (i.e., 5000 K) favoring the pyrolysis reactions. Furthermore, bond length calculations indicated that PFOA cleavage only begins to occur at temperatures in excess of those generated at the bubble interface (i.e., >1500 K) at the femtosecond level. This suggests that PFOA vaporizes or injects by nanodrops upon attachment to the cavitation bubble, enters the bubble, and is then cleaved within the bubble by pyrolysis. Our research in low-frequency ultrasonic horn system challenges the previous founding that defluorination of PFOA initiates and occurs at the bubble-water interface. We describe here that supplementing US-based processes with complementary treatments may have undesired effects on the efficacy of US. The mechanistic insights will further promote the implementation of US technology for PFAS treatment in achieving the zero fluoro-pollution goal.
+

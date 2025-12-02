@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Innovative Ex-Situ catalyst bed integration for LDPE plastic Pyrolysis: A thermodynamically closed system approach The recycling of Low-Density Polyethylene (LDPE) poses a significant challenge due to its resistance to degradation and presence of impurities among the waste LDPE. This study introduces an innovative method for LDPE pyrolysis, aiming to enhance the efficiency of LDPE recycling and contribute to the circular economy of plastics. We utilized an HZSM-5 catalyst within a unique setup that incorporates a catalyst bed constructed from a quartz fibre membrane filter. This innovative hybrid method, a combination of in-situ and ex-situ modes, was designed to shield the catalyst from direct contact with undesired materials, thereby facilitating easy catalyst separation at the end of the process. Experiments were conducted in a high-pressure batch reactor, heated to 400 °C within a closed thermodynamic system. Parallel runs were performed for both pure and waste LDPE, with and without the catalyst. The catalytic pyrolysis resulted in an oil output of 40.3 % for waste LDPE and 43.5 % for pure LDPE, with a significant increase in aromatics when comparing thermal to catalytic pyrolysis. The calorific values of the pyrolysis liquids were found to be 46.2 for pure LDPE and 46.1 for waste LDPE, indicating their potential for sustainable hydrocarbon fuel synthesis. Following the catalytic pyrolysis, the spent catalyst underwent stepwise oxidation as a regeneration method, indicating a partial loss of activity but a similar influence on the degradation temperature as the fresh catalyst. This study not only presents a promising approach to LDPE recycling but also offers a comprehensive analysis of both the pyrolysis outputs and the spent catalyst. Such detailed analysis is crucial for refining the LDPE pyrolysis process and facilitating its scale-up for industrial applications.
+

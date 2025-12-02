@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical interactions between NO and soot/gaseous hydrocarbon precursors in the pyrolysis of C2H4/NO mixtures A combined experimental and Reactive Force Field molecular dynamics (ReaxFF MD) study is conducted to investigate the chemical interactions between NO and large hydrocarbon species (e.g., soot and its gaseous precursors). Co-pyrolysis experiments of C2H4/NO mixtures are carried out based on a plug flow reactor (PFR) and the outlet concentrations of C2H4 and C2H2 as well as C6H6 are measured using gas chromatograph (GC). Then ReaxFF MD simulations are performed to depict the time-resolved process, including fuel thermal decomposition, formation and growth of PAHs, as well as soot formation in the co-pyrolysis of C2H4/NO mixtures. It is experimentally observed that NO addition reduces the rate of thermal decomposition and conversion of C2H4. In addition, the addition of NO inhibits the formation of C2H2, C6H6 and soot. The ReaxFF MD results reveal that most NO molecules (92 %) initially undergo the separation of N and O atoms by reacting with hydrocarbons or H/H2 species, thus converting NO into nitrogen-containing species (mainly NH and NH2 radicals) and oxygen-containing species (mainly O2 and OH radicals). Especially, the chemical interaction between NO and large hydrocarbon species (such as C3H5, C6H3 and C12H5) is observed first, which suggests the existence of richer reaction pathways than those in the current reaction mechanism and provides new insights for improving it. At the end of the simulations, the majority of N atoms (87 %) exist in the form of HCN or C2N, while O atoms are present in CO and H2O. Importantly, direct oxidation of NO on soot particles is not observed, revealing that the formation of HCN and CO reduces the migration of C atoms into larger hydrocarbons, thereby decreasing soot formation.
+

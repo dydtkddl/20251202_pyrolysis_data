@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comics’ VOC-abulary: Study of the ageing of comic books in archival bags through VOCs profiling In the last years, the price of several collectible comic books reached the record value of millions of dollars. Since the value of collectible comic books is strictly related to their state of preservation, specialized rating agencies certificate their quality and condition, and for the same reason comics books are commonly encapsulated in sealed containers or bags for preservation and protection. Nonetheless, recent studies regarding micro-climate frames for the exhibition or storage of artworks as paintings suggest that the storage of any composite object made of organic materials in a sealed environment could lead to the presence of a significant concentration of volatile organic compounds (VOCs) in the enclosed micro-climate, that can be related to unexpected degradation pathways, or to an increase in the ageing rate of materials. In this study, we characterized the volatile organic compounds (VOCs) emitted by comic books stored in archival bags for the first time in the literature. In particular, we analyzed the VOCs emitted by comic books printed in the last six years by the same publisher. We applied solid phase micro extraction (SPME) to characterize the VOCs profile inside archival bags containing comic books by gas chromatography/mass spectrometry (GC/MS). The semi-quantitative data obtained on more than 60 individual VOCs were elaborated by principal component analysis (PCA) allowing us to highlight a variation in the profiles of the emissions of the series of comics books printed from 2012 to 2018 and stored in sealed archival bags immediately after the purchase. Select ion flow tube mass spectrometry (SIFT-MS) was also used to obtain quantitative results in real time, as an alternative to the SPME sampling step. This study represents the first reported application of SIFT-MS in heritage science. The study contributed to identify VOC profiles and molecular markers that can be used to study the emission of comic books in sealed bags, and can ultimately be correlated to the degradation processes of the materials used in their production.
+

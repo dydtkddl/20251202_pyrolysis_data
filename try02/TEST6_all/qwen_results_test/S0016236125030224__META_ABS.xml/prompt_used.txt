@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic pyrolysis of low-density polyethylene to produce iso-alkane sustainable aviation fuel fractions: Comparison of in-situ and ex-situ pyrolysis modes It is crucial to develop a simple and rapid process for producing iso-alkane-rich sustainable aviation fuel (SAF) without relying on external hydrogen supply. This study investigates the catalytic pyrolysis of low-density polyethylene (LDPE) for SAF fractions production using zeolite catalysts including HZSM-5, HBeta, HY, and MCM-41 in both in-situ and ex-situ modes. The results demonstrate that the HY catalyst yields the highest isomeric SAF fractions (31 area%) in the in-situ mode, whereas the HBeta exhibited maximal aromatic SAF selectivity (65 area%) in ex-situ mode, with complete absence of iso-alkanes. In the in-situ mode, the brief contact between iso-alkanes and acid sites on catalyst effectively suppresses the secondary cracking. However, for zeolites such as ZSM-5 with high acid concentration, isomerized alkanes are still difficult to retain. These results indicate that the effective production of iso-alkanes must be conducted under in-situ mode and requires zeolites with well-balanced acidity. The optimized distribution of acid sites in HY zeolite is found to be LAS/BAS = 3.42, which enhanced the production of iso-alkanes. Moreover, while the type of SAF fractions remained unchanged regardless of the polyolefin plastic used, polypropylene (PP) exhibited greater aromatic selectivity owing to its methyl-branched structure. This work provides a robust framework for converting plastic wastes into SAF, emphasizing acid sites and pyrolysis modes as key enablers.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Converging waste streams: dual valorization of azeotropic effluents and bioplastic solids The efficient valorization of industrial wastewater and plastic solid waste constitutes a major challenge in sustainable chemical manufacturing. This study presents an integrated strategy that concurrently tackles the separation of dioxane–ethanol–water ternary azeotropes and the upcycling of polylactic acid (PLA) waste. By employing potassium carbonate (K2CO3) as a bifunctional agent, we combine salting-out separation and base-catalyzed alcoholysis into a single process. K2CO3 not only facilitates phase separation, achieving >99 % recovery of both dioxane and ethanol with a residual water content below 0.67 wt%, but also catalyzes the depolymerization of PLA within the organic-rich phase. The dehydrated extract serves as a reactive medium, efficiently converting PLA into ethyl lactate with a yield of 65.18 %. This approach establishes a novel reactive azeotrope-breaking pathway. The resulting ethyl lactate and dioxane can be separated via fractional distillation without requiring external solvents or further purification. This integrated methodology transforms two challenging waste streams, namely azeotropic solvent effluents and PLA plastics, into value-added products through a consolidated and solvent-minimized process. Our work provides a blueprint for coupling separation science with catalytic valorization in waste-intensive industries.
+

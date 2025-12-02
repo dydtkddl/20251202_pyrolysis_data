@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetic investigation of NH3 decomposition over Ru-based catalysts: The limiting role of H* surface coverage and its impact on reactor engineering H2 production via green NH3 decomposition is a key process in the value chain of renewable energy storage and distribution, but reactor engineering studies are at an early stage due to the still open research on catalyst formulation and reaction kinetics. In this work, the kinetics of NH3 decomposition are studied over Ru/MgAl2O4, Ru/γ-Al2O3 and Ru/MgO catalysts, that combine the best-known active metal, Ru, and supports suitable for industrial applications. For all the formulations, NH3 concentration and H2-cofeed are found to negatively affect the conversion, in line with the literature; however, original experiments at varying NH3 concentration with large H2-cofeed unambiguously show that, in the presence of H2-rich streams representative of the catalyst application, the intrinsic kinetics have a linear dependence on NH3 partial pressure and a negative order (−1.5) with respect to H2 partial pressure, consistent with the hypothesis that ammonia dehydrogenation is rate determining and H* is the most abundant surface intermediate. The same kinetic dependences were obtained over a commercial Ru-based catalyst. The kinetic relevance of hydrogen coverage and the intrinsic first order dependence on NH3 have two important implications: on a methodological plane, the performance and kinetics of the catalyst under industrially relevant conditions (e.g. pure ammonia) can be captured even under highly diluted NH3 feeds (which guarantee the rigorous isothermal conditions) provided that the large H2 contents are experienced; on a more applicative plane, both kinetic and thermodynamic factors play negatively at increasing concentration and pressure, thus large sizing (with GHSV values as low as 2500 Nl/kg/h) is needed to obtain complete ammonia conversion below 500 °C.
+

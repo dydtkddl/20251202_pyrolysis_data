@@ -1,0 +1,47 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis**  
+   - Thermal or catalytic decomposition  
+   - Pyrolysis reactor / heating system / temperature range (e.g., 400–800 °C)  
+   - Keywords: pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization, waste-to-fuel, plastic-to-oil, etc.
+
+2. **Lab-scale experimental work (MANDATORY)**  
+   The study must involve **physical experiments** at laboratory scale, such as:  
+   - Bench-scale pyrolysis reactor  
+   - Lab-scale fixed-bed reactor / batch reactor / fluidized bed / microwave reactor  
+   - Catalyst tests with actual reactors  
+   - Real measured outputs (liquid/oil/wax yields, gas composition, char yield, etc.)  
+   - Hands-on characterization (GC-MS, FTIR, TGA, DSC, XRD, SEM, BET, etc.)
+
+   → If the study is purely computational, simulation-based, theoretical, review, modeling-only, LCA-only, ML-only, or process optimization without experiments → **Return NO**
+
+3. **The study should contain or enable actual experimental data extraction**  
+   - Yield values  
+   - Catalyst performance comparisons  
+   - Product distributions  
+   - Temperature–yield relationships  
+   - Measured chemical composition  
+   - Engine test results from produced fuel  
+   - Any quantitative experimental dataset
+
+   → If the abstract does not clearly indicate measurable experimental data, return **NO**.
+
+Your Output:
+Return STRICT JSON with fields:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one sentence explaining why>"
+}
+
+Rules:
+- If ANY of the three criteria is missing or ambiguous → return "NO".
+- The reason must be only one sentence.
+- NO extra text outside JSON.
+- Reason must reflect the key decisive factor (e.g., “no real experiments”, “not about pyrolysis”, “modeling only”).
+
+
+Hydrothermal formation of 1,2,4-benzenetriol from 5-hydroxymethyl-2-furaldehyde and d-fructose Thermolysis of 0.05 M aqueous 5-hydroxymethyl-2-furaldehyde (HMF) at 27.5 MPa and 290 to 400°C led to the formation of 1,2,4-benzenetriol in yields of up to 46% at 50% HMF conversion. The reaction temperature and water density have a significant effect on the product composition. Pseudo-first-order reaction rate constants for HMF conversion under these conditions range from 0.107 to 0.308 min−1. For the region 290 to 350°C, the activation energy for HMF conversion was found to be 47.7 kJ.mol−1. When subjecting d-fructose to hydrothermolysis, the main products are HMF, 1,2,4-benzenetriol, and furfural.

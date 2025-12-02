@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biorefinery approach for rhamnolipid production by metabolically engineered Pseudomonas taiwanensis VLB120 Most biorefinery processes based on lignocellulosic biomass (LCB) focus only on the utilization of sugars hydrolysate from the pre-treated biomass, thus underutilizing or not utilizing lignin. Although there is considerable focus on metabolic engineering for bioconversion of synthetic lignin-related aromatics, it has been far less on using depolymerized lignin as a substrate due to its complex nature. In this work, we demonstrate an integrated biorefinery approach to co-utilize all components of corncob biomass for bioconversion to rhamnolipids by using a metabolically engineered Pseudomonas taiwanensis VL120. Our results show that sequential processes of steam explosion, enzymatic hydrolysis, and base catalysis could result in sugar-rich and lignin-rich streams that can be used for rhamnolipid production. We first show that base-catalyzed depolymerization of lignin-rich fraction of corncob (leftover from the cellulose hydrolysis of pre-treated corncob LCB) results in 5.6 g/L of p-coumarate as the predominant monomer in the aromatic mixture. This was used as a substrate by P. taiwanensis VL120 to achieve 500 mg/L of rhamnolipid. In addition, the sugar-rich hydrolysate obtained from corncob with glucose and xylose as major sugars was used to produce 1.4 g/L rhamnolipids. Further, 650 mg/L rhamnolipid production was achieved from a substrate mixture containing the sugar-rich hydrolysate and p-coumarate-rich depolymerized lignin. This is the first report demonstrating rhamnolipid production in a single-pot fermentation by utilizing all three major monomers from hydrolyzed corncob biomass.
+

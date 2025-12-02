@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Two-step co-pyrolysis of enteromorpha and marine waste polypropylene catalyzed by various modified HZSM-5 catalysts To utilize the marine waste biomass and marine waste plastic efficiently, a new two-step catalytic co-pyrolysis process was proposed for considering the different pyrolysis characteristics of each biomass component. Marine waste polypropylene (PP) and Enteromorpha (EP) were chosen as raw materials. The widely used molecular sieve HZSM-5 catalyst was modified by different metal and characterized by SEM, XRD and BET. The effects of different modified catalysts on the two-step co-pyrolysis product distribution were investigated by a fixed-bed pyrolysis reactor. The results showed that the Fe, Cu, and Co were successfully entered into the interior of the HZSM-5 catalyst pores and reduced the specific surface area and pore volume. Compared with HZSM-5, Cu/HZSM-5 increased the average pore size, which could decrease the diffusion resistance on the inner surface of the catalyst. The catalytic pyrolysis experiment results indicated that the modified catalysts decreased the oil yield but increased the gas yield. Moreover, the content of aromatic hydrocarbons in the oil was improved significantly by the catalysts, which decreased the contents of oxygen-containing and nitrogen-containing compounds due to the deoxygenation and denitrification effects. Especially, in the second step, Cu/HZSM-5 achieved the highest content of aromatics (89.37 %), which was much higher than that of the raw material (66.16 %). Fe/HZSM-5 showed the best deoxygenation effects, and Cu/HZSM-5 had the best denitrification effects. The selectivity of H2 in the gas product was improved to (48.52 %) by Cu/HZSM-5, and the highest CO selectivity (21.17 %) was achieved by Fe/HZSM-5 in the second step. Under the influence of the catalyst, biochar retained good aromaticity stability, and high hydrophilicity. Based on the product distribution, a preliminary analysis was conducted on the formation pathways of aromatic hydrocarbons during the two-step catalytic co-pyrolysis of EP and PP.
+

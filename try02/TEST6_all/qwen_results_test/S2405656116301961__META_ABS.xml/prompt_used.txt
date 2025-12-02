@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+CO2 utilization: Developments in conversion processes Carbon dioxide capture, utilization and storage (CCUS) –including conversion to valuable chemicals-is a challenging contemporary issue having multi-facets. The prospect to utilize carbon dioxide (CO2) as a feedstock for synthetic applications in chemical and fuel industries -through carboxylation and reduction reactions-is the subject of this review. Current statute of the heterogeneously catalyzed hydrogenation, as well as the photocatalytic and electrocatalytic activations of conversion of CO2 to value-added chemicals is overviewed. Envisaging CO2 as a viable alternative to natural gas and oil as carbon resource for the chemical supply chain, three stages of development; namely, (i) existing mature technologies (such as urea production), (ii) emerging technologies (such as formic acid or other single carbon (C1) chemicals manufacture) and (iii) innovative explorations (such as electrocatalytic ethylene production) have been identified and highlighted. A unique aspect of this review is the exploitations of reactions of CO2 –which stems from existing petrochemical plants-with the commodity petrochemicals (such as, methanol, ethylene and ethylene oxide) produced at the same or nearby complex in order to obtain value-added products while contributing also to CO2 fixation simultaneously. Exemplifying worldwide ethylene oxide facilities, it is recognized that they produce about 3 million tons of CO2 annually. Such a CO2 resource, which is already separated in pure form as a requirement of the process, should best be converted to a value-added chemical there avoiding current practice of discharging to the atmosphere. The potential utilization of CO2, captured at power plants, should also been taken into consideration for sustainability. This CO2 source, which is potentially a raw material for the chemical industry, will be available at sufficient quality and at gigantic quantity upon realization of on-going tangible capture projects. Products resulting from carboxylation reactions are obvious conversions. In addition, provided that enough supply of energy from non-fossil resources, such as solar [1], is ensured, CO2 reduction reactions can produce several valuable commodity chemicals including multi-carbon compounds, such as ethylene and acrylic acid, in addition to C1 chemicals and polymers. Presently, there are only few developing technologies which can find industrial applications. Therefore, there is a need for concerted research in order to assess the viability of these promising exploratory technologies rationally.
+

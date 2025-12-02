@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic co-pyrolysis of keyboard plastic and sawdust toward petrochemical-grade hydrocarbons over niobium-loaded zeolite catalyst This study examines for the first-time the in-situ co-pyrolysis of e-waste plastic, keyboards (KB) and sawdust (SD) in different blending ratios (2/1, 1/1, and 1/2) using a tandem microreactor–gas chromatography/mass spectrometry system at 600 ℃. The blend with SD/KB = 2/1 exhibited a positive synergistic effect in the fractionation of the components and production of valuable aromatics, such as benzene, toluene, ethylbenzene, xylene (BTEX), with a significant lowering of oxygenates. For the catalytic co-pyrolysis, Hβ(25) exhibited prominent results toward the BTEX production compared to HZSM-5(30) and Hβ(38). Among the metal-loaded (Nb, Zn, and Fe) Hβ(25), the maximum amount of BTEX was determined over Nb/Hβ(25) with catalyst/feedstock = 3/1. The results of the ex-situ micropyrolyzer configuration highlighted the prominent significance of the in-situ mode toward the activation in breaking the KB polymeric structure. Moreover, the lab-scale co-pyrolysis results exhibited a maximum positive synergistic effect (21.54 %) in the quantified yield of BTEX over the Nb/Hβ(25) catalyst. Furthermore, the Nb/Hβ(25) catalyst was also subjected to the three lab-scale catalytic co-pyrolysis cycles to evaluate its structural stability and durability.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Rice straw–derived lignin–N–O–Fe cathode for enhanced in-situ H₂O₂ production and electro-Fenton degradation of emerging contaminants This paper proposes a sustainable strategy to convert lignin from rice straw into high-performance cathode material for heterogeneous electro-Fenton process (HEF) for the treatment of emerging pollutants (ECs). Lignin-based activated carbon is activated by KOH with N/O co-doping, followed by in situ anchoring of Fe nanoparticles to form Fe–Nx and FeO centers uniformly dispersed on the mesoporous conductive carbon framework. Characterizations (BET, XRD, Raman, XPS, SEM/TEM, EIS, CV) showed that the optimized Fe-60 electrode (60 % active material, PTFE binder) had a specific surface area of 2899 m2/g, rich in pyridinic-N/graphitic-N and Fe–Nₓ centers, thereby promoting the 2e− selective ORR to generate H₂O₂ and the efficient Fe2+/Fe3+ cycle. At approximately neutral pH, Fe-60 achieved outstanding degradation efficiencies for sulfamethoxazole (96 %), diclofenac (94 %), and carbamazepine (90 %) after 90 min, while maintaining high efficiency at an initial concentration of 20 mg L−1 (≥88 % SMX, ≥79 % DCF, ≥75 % CBZ). Mechanistic studies of H₂O₂ quantification, •OH detection by EPR/ESR and electrochemical analysis confirmed the synergy between ORR activity, heterogeneous Fenton activation and mass/electron transfer in the capillary network. The optimal conditions were determined to be pH ≈ 6, current density 30–40 mA and C₀ ≤ 10 mg L−1; the system operated with low energy consumption (EEC 0.32–0.60 kWh m−3; SECCOD 3.2–4.6 kWh kgCOD−1). The results demonstrate the potential for scaling up the method to efficiently convert lignin waste into HEF electrodes, providing high treatment efficiency, wide operating pH range and low energy cost, promising for sustainable wastewater treatment applications.
+

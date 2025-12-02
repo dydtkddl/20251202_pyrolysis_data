@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis studies of PP/PE/PS/PVC/HIPS-Br plastics mixed with PET and dehalogenation (Br, Cl) of the liquid products Pyrolysis of polypropylene (PP)/polyethylene (PE)/polystyrene (PS)/poly(vinyl chloride) (PVC)/high impact polystyrene with brominated flame retardant (HIPS-Br) plastics mixed with poly(ethylene terephthalate) (PET) was performed at 430°C under atmospheric pressure using a semi-batch operation. The presence of PET in the pyrolysis mixture of PP/PE/PS/PVC/HIPS-Br affected significantly the formation of decomposition products and the decomposition behavior of the plastic mixture. We observed the following effects of PET on the pyrolysis of PP/PE/PS/PVC/HIPS-Br mixed plastics: (i) the yield of liquid product decreased and the formation of gaseous products increased; (ii) a waxy residue was formed in addition to the solid carbon residue; (iii) the formation of SbBr3 was not detected in liquid products; (iv) the yield of chlorinated branched alkanes increased as well as vinyl bromide and ethyl bromide were formed. The use of calcium carbonate carbon composite (Ca-C) completely removed the chlorine and bromine content from the liquid products during PP/PE/PS/PVC/HIPS-Br pyrolysis, however in the presence of PET, the catalytic experiment (Ca-C, 8g) yielded liquid products containing 310ppm of Br and 20ppm of Cl. In addition, the Ca-C increased the yield of liquid products about 3–6wt.%, as well as enhanced the gaseous product evolution and decreased the yield of residue. The halogen free liquid hydrocarbons can be used as a feedstock in a refinery or as a fuel.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+PP upcycling employing FCC spent catalyst: The role of contaminants, atmosphere and pressure Innovative and sustainable approaches are being pursued to convert plastic waste into high-value fuels, particularly without using noble metal catalysts or external hydrogen sources. In this scenario, we explored the utilization of a spent fluid catalytic cracking (FCC) catalyst (ECAT), aiming to enhance the yield and quality of products through catalytic cracking of Polypropylene (PP) under different reaction conditions. Under a 20 bar H2 atmosphere, ECAT efficiently cracked PP into alkanes (71.6 %) and aromatics (25.5 %), with minimal alkenes (2.2 %) production. Similarly, under a 20 bar N2 atmosphere, ECAT achieved comparable conversion levels, producing mainly saturated hydrocarbons, which was intriguing. However, tests conducted at 1 bar N2 pressure showed that PP conversion remains unaffected but presents higher olefins’ yield and lower aromatics than ECAT. Thus, pressure seems to favor aromatization and in situ hydrogen transfer. By comparing the performance of ECAT with commercial CBV 712 zeolite, we propose that PP acts as an internal hydrogen source, eliminating the need for external supply improving efficiency and selectivity. Interestingly, mechanistic insights suggested that dehydroaromatization and hydrogen transfer within zeolite pores were dominant, and pressure (H2 or N2) could have helped it. In addition, contrary to previous studies that claim that metal contaminants in ECAT are essential for the hydrogenation process, our findings suggest that for this particular ECAT composition, we do not observe any boost in alkane yield due to the presence of these metals. Hence, our study comprehensively evaluates different strategies that can be employed to promote PP upcycling promoted by ECAT.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic cracking of polyethylene over nanocrystalline HZSM-5: Catalyst deactivation and regeneration study In this work, catalytic cracking of low density polyethylene (LDPE) over nanocrystalline HZSM-5 zeolite in a batch reactor at 340°C was carried out with the aim of study both the catalyst resistance to deactivation and the catalyst regeneration process. For looking into the catalyst deactivation, consecutive polyethylene cracking experiments were carried out. Subsequently, the same reactions has been also performed but by regenerating the zeolite after each experiment by promoting coke combustion at 550°C under air flow. Zeolites used were two samples of nanocrystalline HZSM-5 with very different textural properties (sample A, with most of its surface corresponding to zeolitic micropores and sample B with a considerable amount of external surface, mesopores and super-micropores) in order to study the effect of their textural properties in the deactivation and regeneration experiments. Although conversion and activity values reached over both samples are quite high taking into account the mild conditions used, sample B shows a very much higher initial activity than A due to its improved textural properties. In both samples two different deactivation mechanisms occur: a reversible deactivation by coke deposition removable by the regeneration procedure, and an irreversible or permanent deactivation by other factors. Deactivation of sample B occurs faster due to the higher amount of coke deposited on this material. However, the improved textural properties of this catalyst supposes an advantage for the regeneration process, since coke deposited either on the external surface or on the super-micropores and mesopores, makes easier the regeneration procedure.
+

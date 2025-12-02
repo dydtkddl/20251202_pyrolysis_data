@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Reaction kinetics and product distributions in thermal and catalytic pyrolysis of agricultural mulch films over HZSM-5 zeolite Mulch films support crop growth and food security by conserving resources, yet spent films contribute to microplastic pollution, posing disposal challenges. Pyrolysis offers a promising way to recycle these films, often mixed with soil and organic residues. This study explores thermal and catalytic pyrolysis of spent mulch films (over HZSM-5 zeolite), to assess reaction kinetics and product distribution. Characterization of fresh and spent films showed minor physical degradation and slight oxidation in the latter. Thermogravimetric analysis revealed similar thermal degradation patterns for both film types, though HZSM-5 reduced the peak temperature by 40–60 °C, with a more marked reduction in the mass loss rate for spent films. Kinetic analysis using a single-step model indicated that HZSM-5 lowered the activation energy from 144.5 kJ mol−1 to 89.8 kJ mol−1, underscoring its catalytic effect. Mulch film pyrolysis can be described by the Avrami model. Thermal pyrolysis generated ethene, propene, and liquid hydrocarbons with a wide carbon number range. In-situ catalytic pyrolysis enhanced gas yields rich in propane and propene, while ex-situ pyrolysis promoted H₂, C₁–C₃ hydrocarbons in the gas phase and naphthalenes in the condensed phase. The large number of hydrocarbons in the liquid phase reflected the roles of free radical and carbenium ion mechanisms (especially in in-situ pyrolysis), while polyaromatic hydrocarbons resulted from the catalyst's Brønsted acidic sites and high temperatures. Contaminants in spent films affected catalyst efficiency, suggesting a need for optimizing pyrolysis conditions. These findings provide insights into catalytic pyrolysis for sustainable mulch film recycling.
+

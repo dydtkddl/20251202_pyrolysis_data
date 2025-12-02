@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical characterization of mixed plastic pyrolysis oils relevant for cracker reintegration by advanced two-dimensional gas chromatography Pyrolysis oils are the crucial link between waste and chemicals in plastic recycling via pyrolysis. Oils from mixed plastic waste pyrolysis are complex mixtures of organic compounds typically containing impurities of nitrogen, oxygen, and chlorine. Therefore, their characterization is challenging. This study presents a tailored two-dimensional gas chromatography method supporting in-depth analysis of the chemical composition. It covers a boiling range from the naphtha cut to the middle distillate. These fractions represent the preferred feedstocks to be substituted by plastic pyrolysis oils in the future. The oil characterization is complemented by elemental analyses, nuclear magnetic resonance spectroscopy, and simulated distillation. The enhanced separation by two-dimensional chromatography results in significantly higher resolution than conventional one-dimensional methods. The most relevant oil compounds can be clustered, distinguished, and quantified based on compound grouping. Depending on the boiling range of the pyrolysis oils, 77 wt% to 96 wt% of the sample composition can be elucidated. Detecting main heteroatom-containing species such as benzoic acid, ε-caprolactam, acetophenone, and various aromatic nitriles provides detailed information for further pyrolysis oil utilization. The combination of the developed method with common analyses offers an advanced approach to evaluate the reintegration of contaminated mixed plastics oils into existing petrochemical value chains.
+

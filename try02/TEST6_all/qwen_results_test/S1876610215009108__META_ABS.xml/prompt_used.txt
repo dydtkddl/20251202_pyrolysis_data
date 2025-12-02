@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermochemical Conversion of Microalgae: Challenges and Opportunities Research in Advanced Biofuels steadily developed during recent years. A number of highly innovative technologies have been explored at various scale: among these, lignocellulosic ethanol and CTO (Crude Tall Oil)-biofuel technologies already achieved the early-commercial status, while hydrotreating of vegetable oils (HVO, or HEFA) can be considered today fully commercial. However, despite the level of innovation in each specific technological process under consideration, the feedstock maintains a central role in making a biofuel chain really sustainable. In this context, microalgae grown in salt-water and arid areas offers a considerable opportunity for advanced biofuel production: at the same time, however, they also represent a considerable challenge. Processing microalgae in an economic way into a viable and sustainable liquid biofuel (a low-cost mass-produced product) is not trivial. So far, the main attention has been given to cultivating the microorganism, accumulating lipids, extracting the oil, valorising co-products, and treating the algae oil into biodiesel (through esterification) or HEFA (Hydrotreated Esthers and Fatty Acids), this second one representing a very high quality biofuels, almost a drop-in fuel (suitable either for road transport or for aviation), which production exceed 2 Mt y-1 today. However, extracting the algae oil at low cost and at industrial scale is not yet a full industrial mature process, and the still limited market size of algae-to-biofuels makes difficult the development of industrial-scale systems. Nevertheless, another option can be considered, i.e. processing the whole algae into dedicated thermochemical reactors, thus approaching the downstream processing of algae in a completely different way from separation. The present work examines the possible routes for thermochemical conversion of microalgae, distinguishing between dry-processes (namely pyrolysis and gasification) and wet-processes (near critical water hydrothermal liquefaction and hydrothermal gasification). Typical expected elementary composition of major products is given. Main peculiarities of batch versus continuous processing are also discussed from an engineering point of view. Major engineering advantages and challenges in thermochemically conversion of algae are identified and discussed, in view of the production of a transport biofuel. Finally, future perspectives for each route are given in terms of current and expected technological readiness level.
+

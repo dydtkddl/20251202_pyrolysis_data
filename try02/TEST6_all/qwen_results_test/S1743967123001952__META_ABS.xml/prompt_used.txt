@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermo-catalytic pyrolysis of Azadirachta indica seeds over CaO and CuO: Pyrolysis kinetics, impact of catalysts on yield, fuel properties and its chemical compositions Pyrolysis oil and distribution is still in the incipient stages, though it is a potential source of energy and valueable chemicals. The current work focused on the kinetics study and thermo-catalytic pyrolysis of Azadirachta indica seeds (AZI) over CaO and CuO. The kinetic behaviour of AZI is studied in a TGA under an inert atmosphere at dynamic heating rates (10, 20 and 30 °C min−1) using Starink method (ST) and Vyazovkin model (VM). Further, AZI were pyrolyzed in a semi-batch tubular reactor at 500 °C, 50 °C min−1 heating rate and 100 mL min−1 nitrogen flow rate at 20 wt% catalyst loading. The biomass and pyrolysis liquid were characterised via proximate analysis, elemental analysis, thermal stability, FTIR, viscosity, density, acidity, moisture content, GC-MS etc. Kinetic analysis of AZIs confirmed that biomass decomposition takes place in a multifaceted route, and the activation energy is associated with conversion and temperature. Thermal pyrolysis exhibited 39.53 wt% liquid yields; however, introducing 20 wt% catalyst has improved the yield to 46.53 wt% and 45.36 wt% for CaO and CuO, respectively. The findings of the thermal and catalytic pyrolytic oil demonstrated that the addition of catalysts significantly enhanced the properties of pyrolytic oil by lowering viscosity and oxygen content while raising heating value and acidity. Finally, GC-MS results displayed that the use of catalysts resulted in a considerable decline in the proportion of oxygenated compounds, acids, and phenols and an increase in the proportion of hydrocarbons, aldehydes and alcohols.
+

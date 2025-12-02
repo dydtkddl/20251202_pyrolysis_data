@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The catalytic performance for LDPE destruction over aluminum-incorporated mesoporous silicates The aim of this study was to investigate the aluminum-incorporated mesoporous silicate (Al-MPS) as a thermal catalyst for the destruction of low density polyethylene (LDPE). Various Al-MPS (Si/Al molar ratios=117.6, 58.8, 39.2 and 29.4) materials were successfully synthesized without any structural damage. With regard to the X-ray diffraction (XRD) pattern, the main peak of 2θ =64.0 in Al2O3 did not show until the incorporation of Si/Al=58.8. This result implies the aluminum ions were stably substituted into the silicon site of the mesoporous framework. The hexagonal straight pore size increased to about 8.0nm in Al (Si/Al=58.8)-MPS, but then decreased in the range of 3.0–5.0nm in Al (Si/Al=29.4)-MPS. In relation to the amount of incorporated aluminum, the Al-MPS absorbed many pyridine molecules, implying the acidities on the external surfaces up to Si/Al=58.8, but this amount decreased somewhat above a Si/Al ratio of 39.2. The catalytic decomposition of LDPE was enhanced in Al (Si/Al=58.8)-MPS and particularly, the selectivity to light hydrocarbons below C4 reached 43%.
+

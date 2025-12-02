@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic microwave pyrolysis of waste engine oil using metallic pyrolysis char Microwave pyrolysis was performed on waste engine oil pre-mixed with different amounts of metallic-char catalyst produced previously from a similar microwave pyrolysis process. The metallic-char catalyst was first prepared by pretreatment with calcination followed by analyses to determine its various properties. The heating characteristics of the mixture of waste oil and metallic-char during the pyrolysis were investigated, and the catalytic influence of the metallic-char on the yield and characteristics of the pyrolysis products are discussed with emphasis on the composition of oil and gaseous products. The metallic-char, detected to have a porous structure and high surface area (124m2/g), showed high thermal stability in a N2 atmosphere and it was also found to have phases of metals and metal oxides attached or adsorbed onto the char, representing a potentially suitable catalyst to be used in pyrolysis cracking process. The metallic-char initially acted as an adsorptive-support to adsorb metals, metal oxides and waste oil. Then, the char became a microwave absorbent that absorbed microwave energy and heated up to a high temperature in a short time and it was found to generate arcing and sparks during microwave pyrolysis of the waste oil, resulting in the formation of hot spots (high temperature sites with temperature up to 650°C) within the reactor under the influence of microwave heating. The presence of this high temperature metallic-char, the amounts of which are likely to increase when increasing amounts of metallic-char were added to the waste oil (5, 10, and 20wt% of the amount of waste oil added to the reactor), had provided a reducing chemical environment in which the metallic-char acted as an intermediate reductant to reduce the adsorbed metals or metal oxides into metallic states, which then functioned as a catalyst to provide more reaction sites that enhanced the cracking and heterogeneous reactions that occurred during the pyrolysis to convert the waste oil to produce higher yields of light hydrocarbons, H2 and CO gases in the pyrolysis products, recording a yield of up to 74wt% of light C5–C10 hydrocarbons and 42vol% of H2 and CO gases. The catalytic microwave pyrolysis produced 65–85wt% yield of pyrolysis-oil containing C5–C20 hydrocarbons that can potentially be upgraded to produce transport-grade fuels. In addition, the recovered pyrolysis-gases (up to 33wt%) were dominated by aliphatic hydrocarbons (up to 78vol% of C1–C6 hydrocarbons) and significant amounts of valuable syngas (up to 42vol% of H2 and CO in total) with low heating values (LHV) ranging from 4.7 to 5.5MJ/m3, indicating that the pyrolysis-gases could also be used as a gaseous fuel or upgraded to produce more hydrogen as a second-generation fuel. The results indicate that the metallic-char shows advantages for use as a catalyst in microwave pyrolysis treatment of problematic waste oils.
+

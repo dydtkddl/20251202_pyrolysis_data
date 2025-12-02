@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic and thermal pyrolysis of polycarbonate in a fixed-bed reactor: The effect of catalysts on products yields and composition A meaningful and advanced method concerning the management of waste electrical and electronic equipment (WEEE) becomes a necessity, mainly due to their increased production, applications and their short life. Thermal methods have been an attractive option and for this reason the investigation of pyrolysis and catalytic pyrolysis as a potential method for the recycling of polycarbonate (PC) based plastics has been the aim of the current study. Nine different catalysts with variations in properties (such as porosity and acidity/basicity) were introduced in a bench scale pyrolysis system together with the polycarbonate polymeric material and the pyrolysis fractions were collected and analyzed. The liquid product consisted mainly of phenols and substituted phenols as well as the original monomer and, due to the commercial value of these products in the chemical industry, it is expected to enhance the economic viability of the process. Results showed a reduction in the degradation temperature in the presence of all catalytic materials, depending on the pore characteristics and the acidic nature of the solid. It seems that in the presence of the basic catalysts, PC degradation leads to lower molecular weight compounds and high phenolic fractions in the liquid produced. In terms of reduction in the production of the monomer, pore size rather than acidity appears to be the determining factor.
+

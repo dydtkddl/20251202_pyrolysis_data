@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental investigation and modeling of the impact of random packings on mass transfer in fluidized beds This study investigates the impact of two novel settings of bubbling fluidized beds equipped with random metal packings on the mass transfer. To do this, a comprehensive approach is applied that integrates experiments and modeling and explores the relevance of the different underlying mechanisms involved in interphase mass transfer in fluidized beds. Firstly, the mass transfer of water from moisturized silica gel particles to dry air is studied in both a packed-fluidized bed and a freely bubbling bed with no packing. The experimental set-up consists of a cylindrical bubbling fluidized-bed column with an inner diameter of 22 cm. Silica-gel particles with a mean particle diameter of 797 μm are used as bed material. The total bed amount ranges from 4 to 8 kg, while the fluidization number (F) varies between 1.7 and 2.3. Two types of packing, RMSR (stainless steel thread saddle rings) and Hiflow (stainless steel pall rings) are examined and compared to the reference case of a bubbling bed with no packing. The height of the packed section is maintained at 60 cm. The results show that, at all operating conditions, the use of packings enhances the amount of desorbed water in the fluidized bed. The increase is up to 17%, as compared to the bed without packing. The effect is believed to be inhibition of bubble growth in the packed-fluidized bed. To study this further, a mass-transfer model is introduced to analyze the different mass-transfer steps (intra-particle, particle surface to emulsion gas, and emulsion gas to bubble gas) in packed-fluidized beds compared to beds with no packing. TGA experiments are applied to describe the intra-particle mass transfer through a desorption kinetic model. Model analysis shows that the main resistance for mass transfer occurs across the bubble-emulsion boundary. The calculated value of the mass transfer coefficient for this, K b , at reference conditions (6 kg of silica gel and F = 2.3) is 7.6e-5 s−1 with packings (in average) and 6.2e-5 s−1 without packings, i.e. a 23% improvement in the governing mass-transfer coefficient.
+

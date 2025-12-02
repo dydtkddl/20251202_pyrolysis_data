@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microplastic contamination in kidney transplant donor tissues and its association with early post-transplant blood pressure changes in recipients: A multi-modal analytical study Microplastic (MP) contamination in human tissues is an emerging environmental and clinical concern, yet its relevance to organ transplantation remains poorly understood. This study characterized MPs in kidney transplantation-associated donor tissues and examined their relationship with early postoperative blood pressure (BP) in recipients. Tissue samples, including kidney, adrenal gland, renal artery, renal vein, and ureter, were collected from 28 kidney transplant donors. MPs were extracted from each tissue and analyzed using a multimodal strategy: pyrolysis-gas chromatography-mass spectrometry for polymer quantification, laser direct infrared spectroscopy (LD-IR) for particle identification, and scanning electron microscopy (SEM) for morphological assessment. Polyethylene (PE) and polyvinyl chloride (PVC) were consistently the most abundant polymers by mass, with PE concentrations ranging from 25.7 to 98.9 μg/g and PVC from 31.2 to 65.4 μg/g across tissues. LD-IR analysis showed that kidney tissue contained 293 MP particles (6 polymer types), adrenal gland 2017 (9 polymer types), renal artery 881 (8 polymer types), renal vein 1528 (10 polymer types), and ureter 1672 (10 polymer types). MPs measuring 20–100 μm accounted for 47.1–54.9 % of its content across tissues, while 100–500 μm MPs comprised 45.1–52.9 %. Postoperative BP was assessed 15 days post-transplantation. While moderate, tissue-specific correlations between certain MP types and BP were observed (e.g., natural rubber in adrenal glands, polycarbonate in renal arteries, polypropylene in renal veins, and butadiene rubber in ureters), most associations were not statistically significant. Negative values were obtained for linear regression and FDR correction, emphasizing the preliminary nature of the results. This highlights the need for further investigation of the clinical impact of MP.
+

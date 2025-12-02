@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The pyrolysis of oak with polyethylene, polypropylene and polystyrene using fixed bed and stirred reactors and TGA instrument The pyrolysis of Iranian oak wood and waste plastics has been studied under different oak/plastic ratios and using different zeolite based catalysts. Pyrolysis of oak/plastics using a fixed bed reactor, resulted in the production of a liquid with a high oxygen content. The resulting organic liquids were re-pyrolyzed and deoxygenated using the zeolite catalysts in a batch stirred reactor under initial pressure of hydrogen and nitrogen (20 bars). The pressurized pyrolysis using HZSM-5 with a medium pore size of the 0.55 nm pore size gave the best de-oxygenation performance in comparison with the other catalysts. In TGA study, the slope of TGA curve and the onset temperature of degradation helped to assess degradation mechanisms and the related thermal stability. During thermal copyrolysis, the polymer melt penetrated and covered the oak particles and acted as an insulator. In addition to insulation, polypropylene and polystyrene partially and simultaneously degraded with cellulose, which led to increased cross interactions compared to polyethylene. Degradation of deposited melt polymer on the oak particles led to the formation of a thin layer coke covering the oak particles. The coke layer further increased the thermal stability of the remaining cross-linked lignin and resulted in a slower degradation.
+

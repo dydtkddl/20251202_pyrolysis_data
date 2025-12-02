@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Functional specialization and enzymatic mechanisms of poly(3-hydroxybutyrate-co-3-hydroxyhexanoate) (PHBH) degradation in anaerobic digesters: Insights from shotgun metagenomics and molecular modeling This study investigates the anaerobic degradation of poly(3-hydroxybutyrate-co-3-hydroxyhexanoate) (PHBH) using shotgun metagenomics and molecular docking to analyze temporal shifts in microbial communities and key enzymes under batch and semi-batch conditions. Comparative analysis of the microbial communities revealed a decline in generalist taxa and an increased contribution of Bacteroidota, Chloroflexota, and methanogenic Euryarchaeota. KEGG-annotations suggested that modules affiliated with depolymerases, esterases, β-oxidation and methanogenic pathways would be co-activated. Furthermore, PlasticDB-based computational analysis evidenced a stepwise enrichment of PHB- and PHA-related enzymes, which confirmed the substrate-mediated microbial specialization. A prominent metagenomic depolymerase (R1_379815) showed well-conserved catalytic residues (Ser134, His284, Asp211) and a substrate-binding affinity comparable to the native counterpart 9BYU, confirming its substrate preference and functional identity with previously reported PHB depolymerases. Collectively, this integrative metagenomic and computational approach provides mechanistic insights into PHBH biodegradation under anaerobic conditions, aiding in the identification of potential target enzymes for enhancing plastic degradability and methane recovery in anaerobic digestion systems. These findings contribute to the advancement of sustainable bioplastic waste management through process-level and enzymatic optimization.
+

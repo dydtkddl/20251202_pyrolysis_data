@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+CO2-assisted gasification of polyethylene terephthalate with focus on syngas evolution and solid yield Polyethylene terephthalate (PET) contributes to majority of the global plastics wastes generated and its lack of sustainable recycling calls for the development of pathways for this waste transformation to energy and chemicals extraction that will help avoid landfilling of this waste. In this paper, CO2 assisted gasification of PET was investigated at 800 °C to 950 °C using a fixed bed reactor to understand the feasibility of this pathway for PET waste management. Evolutionary behavior of the yields of H2, CO, CH4, total C2-C3 gases and total syngas from fixed bed reactor were investigated to understand the influence of temperature on isothermal conversion. Gasification composition and total accumulative syngas rate were also calculated and compared. Solid residues from gasification were analyzed for morphological characteristics and CO2 consumption. Evolution rate and yield of H2, CO, CH4 and total syngas from fixed bed reactor changed with increase in reaction time and temperature. CO yields increased from 0.5 to 0.9 g/g (gas mass yield per unit mass of PET), which accounted for 89.9 to 95.2 wt% of the total syngas yield with increase in temperature from 800 °C to 950 °C. The CO mole fraction accounted for about 73.3 to 79.4 vol% of their total syngas at the different temperatures examined. Brunauer-Emmett-Teller (BET) surface area of solid resides from CO2 gasification increased from 434 to 936 m2/g with increase in temperature. These results showed thermal decomposition behavior under CO2 gasification influenced the char structure and the effect became more pronounced with increase in temperature. CO2 gasification of each mass unit of PET provided with the capability to convert about 0.1 to 0.7 mass unit of CO2 into valuable syngas (a precursor for various value-added products) which reveals the synergistic possibility of PET waste management along with CO2 utilization in this process of energy and value-added product recovery.
+

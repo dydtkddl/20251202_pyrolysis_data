@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental investigation on in-situ hydrogenation induced gasification characteristics of acrylonitrile butadiene styrene (ABS) microplastics in supercritical water In order to solve the ecological and environmental problems caused by microplastics remaining in the ocean and improve the gasification efficiency of plastics, the gasification experiments of acrylonitrile butadiene styrene (ABS) microplastics were carried out in supercritical water and the novel in-situ hydrogenation induction gasification was used to achieve optimal gasification. In this paper, the effects of different operating conditions (temperature, time, feedstock concentration, pressure) on gasification performance were investigated. The in-situ hydrogenation induction gasification of organic acid (formic acid) and inorganic acid (hydrochloric acid) were introduced to compare the effects of in-situ hydrogenation on gasification with traditional pyrolysis and supercritical water. The experimental results showed that increasing the gasification temperature, prolonging the reaction time and reducing the feedstock concentration can effectively improve the gasification efficiency of the microplastics, and the change in reaction pressure has no effect on the gasification efficiency. It is found that the valuable results that in-situ hydrogenation induction gasification significantly improved the gasification performance of ABS microplastics in supercritical water, in which the catalytic performance of organic acid (formic acid) was the most significant, followed by inorganic acid (hydrochloric acid). In-situ hydrogenation promoted the cracking of unsaturated chain hydrocarbons and polycyclic aromatic hydrocarbons. Finally, it was considered that the optimum gasification condition was at a temperature of 800 °C, a time of 60 min, a feedstock concentration of 3 wt%, a pressure of 23 MPa, and a solution of 1 wt% formic acid, the carbon conversion rate of the microplastics reached 97.0 wt%.
+

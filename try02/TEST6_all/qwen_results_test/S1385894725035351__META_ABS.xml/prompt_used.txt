@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Reactive extrusion recycling of polymethyl methacrylate to methyl methacrylate and methacrylic acid The global production of polymethyl methacrylate (PMMA) reached 4 million tonnes annually, yet only 10% of PMMA, primarily post-industrial scraps, is recycled. Recycling end-of-life PMMA, which often contains additives or composite components, poses challenges in achieving crude methyl methacrylate (MMA) monomer with comparable purity to post-industrial scraps. Hydrolyzing end-of-life PMMA presents a viable alternative to produce methacrylic acid (MAA) and simplifies the purification process of crude MMA. However, current PMMA hydrolysis is limited to lab-scale and batch operations in fluidized/fixed beds and stirred tank reactors. In this study, we demonstrate a pilot-scale, two-stage reactive hydrolysis extrusion system for the continuous conversion of injection- and extrusion-grade PMMA scraps into MMA and/or MAA at 330°C to 370°C. Residence time distribution (RTD) tests characterized the hydrodynamics of the screw configuration for PMMA extrusion, revealing that lower screw speed and feeding rate increase reaction time. A Plackett-Burman design identified temperature and catalyst type as significant factors for MMA hydrolysis. Under optimized conditions, hydrolysis extrusion without any catalysts achieved the highest MMA yield of 89% and 96% PMMA conversion. Hydrolysis extrusion with 10% H-type zeolite Y with an SiO2/Al2O3 ratio of 80 at 370°C resulted in a 5.3% MAA yield, a 67% MMA yield, and near-complete PMMA conversion. Liquid acid catalysts directly hydrolyzed PMMA to poly(MMA-co-MAA) copolymer and/or PMAA, followed by dehydration of two adjacent acid groups to form six-member glutaric anhydride. KOH solution hydrolyzed PMMA to poly(MMA-co-MAA) and/or PMAA potassium salt.
+

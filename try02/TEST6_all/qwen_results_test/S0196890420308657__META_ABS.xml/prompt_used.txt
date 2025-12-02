@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Lessening coke formation and boosting gasoline yield by incorporating scrap tire pyrolysis oil in the cracking conditions of an FCC unit We have studied the effect of adding scrap tire pyrolysis oil (STPO) as feed or co-feed in the cracking of vacuum gasoil (VGO) using a commercial equilibrated catalyst. The cracking experiments were performed in a laboratory scale fluid catalytic cracking (FCC) simulator using VGO, STPO, or a blend of the two (20 wt% of STPO), contact time = 6 s, catalyst/feed ratio = 5, and 530 °C. The composition of the different feeds has been correlated with the yield of products and the amount-location-nature of the deactivating species (coke). Our results indicate that adding STPO increases proportionally the gasoline yield, synergistically increase the yield of light cycle oil while uncooperatively decrease the yields of heavy cycle oil and coke. We further investigated the effect on coke formation, characterizing deeply the coked catalyst and coke. In fact, the coke deposited under the cracking of STPO is more aliphatic, lighter, and located in the micropores of the catalyst. The complete analysis of the coke fractions (soluble and insoluble) have lighted the peculiar chemistry of these species as a function of the type of feed used. The results point to a viable and economically attractive valorization route for discarded tires.
+

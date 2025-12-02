@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sulfur isotopic composition of gas-phase organic sulfur compounds provides insights into the thermal maturation of organic-rich rocks Volatile and gas phase organic sulfur compounds (VOSCs) are important components in subsurface reservoir fluids and despite their relatively low concentrations, can provide important information about organic matter origin, diagenetic transformation, thermal maturation, and oil and gas generation, expulsion, and migration. We present an approach for the utilization of VOSC concentration and compound specific S isotopes ratio (δ34S) data as a new geochemical tool to study natural gas origin and formation. We studied the formation pathways of VOSCs, their δ34S values, and interaction with an organic-rich sedimentary rock (or ‘source rock’) from the Ghareb Formation (Type II-S kerogen) deposited in an upwelling marine environment. The immature source rock was subjected to laboratory controlled thermal maturation. We used a semi-open, non-isothermal pyrolysis system heated between 200 and 440 °C, and analyzed the molecular composition and compound specific δ34S values of the evolved gases at various thermal maturity stages. Formation of VOSCs commenced at 206 °C, a temperature generally associated with less thermally mature systems, and typically before the onset of oil generation for similar organic-rich source rocks, allowing study of low thermal maturity conditions (∼0.3 %Roeq). Overall, the VOSCs obtained had δ34S values similar to the bulk kerogen values (mostly within 4‰). However, thiol (or mercaptan) δ34S values closely followed those of H2S (Δ34Sthiols-H2S = −1 ± 1‰) throughout the experiment. Ab-initio calculations for the S isotopic exchange between H2S and thiols were close to the experimental observations. This suggests that thiols rapidly attained equilibrium with H2S despite their very short residence time in the system (minutes to hours). Furthermore, throughout the experiment, the concentrations of the six different thiols were found to be proportional to the coexisting, concentration ratio of [H2]/[H2S]. The proportionality factors of the 6 different thiols strongly correlate with reported heats of formation (ΔHf°), further supporting the notion that the generation of thiols in the system rapidly reached equilibrium. At pyrolysis temperatures up to 350 °C, δ34S and concentration values of other VOSCs produced in the gas phase, including sulfides and thiophenes, probably represent generation from S-containing moieties in kerogen and bitumen with limited interaction with co-existing H2S. The reaction of hydrocarbons and H2S to produce VOSCs is inversely correlated with thermal stability, i.e. thiols > sulfides > thiophenes. Therefore, the δ34S values, concentrations and distributions of VOSCs can be utilized as a proxy for reaction extent and formation mechanism of petroleum and H2S, including primary generation by thermal maturation, or potentially other processes such as migration and thermochemical sulfate reduction. This work demonstrates a novel and useful geochemical tool to study the source and fate of natural gas in the subsurface.
+

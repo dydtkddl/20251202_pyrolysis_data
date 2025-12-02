@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fabricating MOF-derived CoNC@FeNC phase change nanocomposites by layered self-assembly strategy for energy storage, photothermal conversion, and microwave absorption In the context of the rapid development of 5G base stations and electronic devices, developing composite phase change materials that integrate thermal management, photothermal conversion, and electromagnetic wave absorption is essential. In this study, a double-shell hollow ZIF-67@MIL-101(Fe)-NH2 was prepared using a two-step method involving tannic acid (TA) etching and self-assembly. Subsequently, after carbonization, n-dodecane (n−22) loading, and silica encapsulation, a composite phase change material n−22@CoNC@FeNC@SiO2 was developed, integrating phase change energy storage, photothermal conversion, and microwave absorption functionalities. TA was utilized both to etch ZIF-67 and to provide nucleation sites for the epitaxially grown MIL-101(Fe)-NH2 by chelating Fe3+. The CoNC@FeNC exhibited a typical hollow hierarchical porous structure achieved through controlled coating cycles and carbonization temperatures, resulting in a phase change enthalpy of up to 163.6 J/g after n−22 loading. Importantly, the composite phase change material demonstrates a photothermal conversion efficiency of 91.25 %. This performance is significantly attributed to the synergistic effects of localized surface plasmon resonance (LSPR) from metal nanoparticles such as CoFe alloy and Fe3O4. More attractively, CoNC@FeNC uniformly distributes various magnetic particles, creating rich heterogeneous interfaces that facilitate excellent microwave absorption performance through dielectric loss and magnetic loss mechanisms. The n−22@CoNC@FeNC@SiO2 achieved a minimum reflection loss (RLmin) of −29.31 dB and an effective shielding bandwidth of 5.91 GHz (RL < 10), covering the entire Ku-band. This material has significant potential in the thermal management of electronic devices and in protecting against electromagnetic interference in radar and base stations.
+

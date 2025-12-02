@@ -1,0 +1,52 @@
+You are performing STRICT VERIFICATION for ONE experiment group.
+
+You MUST ensure that every variable, constant, and evidence sentence is supported by PAPER_TEXT.
+
+===========================================================
+PAPER TEXT:
+{{PAPER_TEXT}}
+===========================================================
+
+EXTRACTED GROUP TO VERIFY:
+{{GROUP_JSON}}
+===========================================================
+
+TASK:
+
+1. VARIABLE:
+   - If variable is NOT explicitly stated in PAPER_TEXT → set to "not_explicitly_stated".
+
+2. CONSTANTS:
+   - A constant MUST have at least one evidence sentence that appears in PAPER_TEXT.
+   - If not found → REMOVE the constant.
+
+3. EVIDENCE SENTENCES:
+   - If any evidence sentence does NOT exactly match PAPER_TEXT → REMOVE it.
+
+4. If no variable AND no constants AND no evidence remain:
+   → remove the entire group and output:
+     {"removed": true}
+
+OUTPUT FORMAT (STRICT JSON ONLY):
+
+{
+  "verified_group": {
+      "group_name": "",
+      "variable": "",
+      "constants": [
+        {
+          "name": "",
+          "evidence_sentences": [""]
+        }
+      ],
+      "evidence_sentences": [""]
+  },
+  "changes_made": ""
+}
+
+RULES:
+- NO reasoning.
+- NO guessing.
+- NO paraphrasing.
+- JSON ONLY.
+

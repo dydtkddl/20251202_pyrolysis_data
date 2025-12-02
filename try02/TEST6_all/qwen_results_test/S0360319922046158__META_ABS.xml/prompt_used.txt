@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Invisible active sites of Ni-Co alloy to toluene pyrolysis and hydrogen production at ultra-low temperature Environmental problems caused by the utilization of fossil energy are becoming more and more serious, so now more attention has been paid to the use of renewable energy. Pyrolysis of biomass is a method that convert biomass energy into hydrogen, but this method is subject to the performance of the catalyst for the pyrolytic reaction. In this study, NiCo2O4 was synthesized by coprecipitation method and examined by microstructure and textual characterizations. The ability of NiCo2O4 to pyrolyze toluene and produce hydrogen was evaluated by temperature-programmed experiment and lifetime test. It was found that the sample could pyrolyze toluene at the concentration of 1500 ppm at 300 °C with a hydrogen production of 0.6%, suggesting toluene was completely pyrolyzed. In the longevity test, toluene can be completely pyrolyzed for at least 5 h at 400 °C, with a high hydrogen yield of above 80% maintained during the pyrolysis process. As the pyrolysis reaction progresses, NiCo2O4 was gradually reduced to nickel-cobalt alloy by hydrogen from the pyrolysis of toluene, indicating the actual active site of nickel-cobalt alloy. This study gives a hint for developing a good catalyst for the ultra-low temperature biomass pyrolysis to produce hydrogen.
+

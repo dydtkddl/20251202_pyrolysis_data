@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Tea waste management: A global review of sustainable resource recovery and applications Tea, as one of the world's most consumed beverages, generates substantial volumes of waste, primarily spent tea leaves and processing by-products. This represents a significant environmental challenge, with millions of tonnes disposed of annually, contributing to landfill burden and greenhouse gas emissions. However, tea waste is a rich source of valuable compounds, including lignocellulose, polyphenols, and caffeine, making it a highly promising feedstock for valorization within a circular bioeconomy framework. This comprehensive review synthesizes the most recent advancements (primarily from 2020 onwards) in converting tea waste into value-added products. It systematically explores diverse valorization pathways, including energy production (biofuels, syngas), environmental remediation (adsorbents for heavy metals, dyes, emerging contaminants), material science (biocomposites, construction materials, nanomaterials), and the extraction of high-value bioactive compounds. Beyond merely compiling findings, this review critically discusses the performance, mechanisms, and competitive advantages of tea waste-derived products compared to conventional alternatives. Crucially, it identifies and elaborates upon the fundamental challenges to industrial implementation and scalability, such as feedstock variability, economic viability, and the need for comprehensive life cycle assessments. The review also highlights essential future research directions, including the development of integrated biorefinery concepts, the application of artificial intelligence and machine learning for process optimization, and the exploration of novel applications, drawing lessons from successful methodologies applied to other lignocellulosic biomasses. This work underscores the immense potential of tea waste as a sustainable resource, aiming to accelerate the transition towards a more resource-efficient and environmentally responsible future.
+

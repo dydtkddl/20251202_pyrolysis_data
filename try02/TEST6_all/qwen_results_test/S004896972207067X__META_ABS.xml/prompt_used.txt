@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Anaerobic co-digestion of three commercial bio-plastic bags with food waste: Effects on methane production and microbial community structure The emergence of bioplastic bags as a replacement for traditional petroleum-based plastic bags is promising for their simultaneous anaerobic digestion with food waste. In this study, the degradation of three bioplastic bags is evaluated during anaerobic co-digestion with food waste under mesophilic/thermophilic conditions, and the results indicated PBAT/PLA/starch > PLA > PBAT for methane production rate. The PBAT/PLA/starch mixture produced 23.4 ml/g of methane at 55 °C, and the cumulative methane production increased by 28.4 % compared to the control. In addition, the lag time before methane production was reduced by one to four days when anaerobic co-digestion was performed under thermophilic conditions, and the conversion of the bioplastics improved by 9.11–11.2 %. Microscopy further showed obvious physical degradation of the PBAT/PLA/starch material. The FTIR analysis showed that the characteristic peaks of the material at 3320, 2957, and 934 cm−1 decreased significantly after anaerobic fermentation. The biodegradability of the polymer decreased with an increase in the content of the crystalline area in the structure. The addition of a comonomer reduced the crystallinity of the polymer. In addition, the biodegradability was increased by adjusting the hydrolysis reaction and microbial activity of the polymer surface. An analysis of the structural features of the microbial communities revealed that Archaea exhibited different biodiversity at distinct temperatures. In particular, under thermophilic conditions, the relative abundance of Methanothermobacter was 56.0 %, and it plays an important role in the anaerobic degradation of PBAT/PLA/starch materials, while bacterial communities showed smaller differences. Overall, the bioplastic was able to be co-digested anaerobically with food waste to produce renewable energy. This study provides a plan for the practical application of biodegradable plastic bag collection for the combined treatment of food waste in anaerobic digesters. It provides a theoretical basis for modifications of bioplastic and domestication of anaerobic microorganisms.
+

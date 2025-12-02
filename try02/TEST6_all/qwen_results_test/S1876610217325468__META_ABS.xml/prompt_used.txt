@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A Comparative Study on Waste Plastics Pyrolysis Liquid Products Quantity and Energy Recovery Potential Plastics thermal processing is an important application for both energy recovery and feedstock recycling. In this study effects of type of plastic (HDPE, LDPE, PET, PP, PS), pyrolysis process temperature and plastic waste prewashing on pyrolysis liquid product (oil) fraction, its hydrocarbon (HC) contents and heat values were investigated. Caustic washing and batch-pyrolysis were applied by keeping pyrolysis heating rate and other conditions constant. Oil yields, C10-C40 HCs, heat values were measured and compared. HDPE type plastic wastes produced the highest oil yield while PET and PP produced the lowest yields. C10-C40 HC contents of pyrolysis oils were strongly affected from the pyrolysis temperatures and pre-washing process under identical pyrolysis conditions. The highest C10-C40 HCs were produced by HDPE pyrolysis. Statistical analysis indicated that the effect of pre-washing process on the pyrolysis oil heat value is significant for HDPE and PP type plastics. Pyrolysis temperature had almost no effects on oil heat values for washed PET and unwashed PS wastes, whereas for other plastic samples, as pyrolysis temperature increased oil heat values increased. HDPE, LDPE, PP and PS pyrolysis oils have higher calorific values than wood and some coal types. These refer to energy recovery from those types of plastics.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of vancomycin fermentation residue and waste plastics: synergistic effects on pyrolysis behavior, product characteristics, and bio-oil quality enhancement The treatment of antibiotic fermentation residue (AFR) is a global environmental challenge due to its hazardous nature. Pyrolysis is a promising technique for harmless treatment of AFR, achieving simultaneous detoxification of waste and energy recovery. However, the pyrolysis of AFR is hindered by low hydrocarbon content and excessive generation of N/O-containing byproducts in the bio-oil. This study developed an innovative co-pyrolysis strategy for Vancomycin fermentation residue (VFR) with waste plastics, such as waste polyolefin plastics (polypropylene (PP), high-density polyethylene (HDPE), and low-density polyethylene (LDPE)), to synergistically enhance the quality of bio-oil through hydrogen supplementation while suppressing the generation of N/O-containing byproducts. The results showed that, compared to mono-pyrolysis of VFR, the co-pyrolysis increased the gas yields by 24.58 %, with the yields of CH4 and C2+ gases increasing by 42.96 % and 284.77 %, respectively. More importantly, the bio-oil yield increased by 34.97 % while drastically reducing the contents of oxygen (87.50 %) and nitrogen (83.41 %). In particular, HDPE demonstrated better enhancement in the quality of bio-oil, achieving 99.78 % and 85.93 % reductions in N- and O-containing compounds and elevating hydrocarbons to 96.76 % in light oil while increasing the average values of effective hydrogen/carbon ratio by 5.18 % for heavy oil. The added plastics significantly reduced the content of N/O-containing functional groups of the char. The mechanism analysis attributed the synergy to radical-mediated interactions where plastic-derived alkyl/hydrogen radicals inhibited Maillard reactions through hydrogen transfer and conversion of oxygen species, ultimately suppressing the formation of N-products. This study solves the problem of waste plastics treatment, and also provides a new way for the value-added utilization of AFR, which has significant environmental and economic significance.
+

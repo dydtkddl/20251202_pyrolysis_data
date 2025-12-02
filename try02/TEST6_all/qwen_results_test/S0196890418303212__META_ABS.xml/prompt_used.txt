@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis study of waste phenolic fibre-reinforced plastic by thermogravimetry/Fourier transform infrared/mass spectrometry analysis Pyrolysis is considered to be a promising method to dispose waste plastics by thermal cracking into chemicals. Previous studies focus on pyrolysis recycling of waste thermoplastics. The pyrolysis of waste thermosetting plastics, which may be different from that of waste thermoplastics, receives little attention. In order to provide guidance for reactor design and thermo-chemical process management for the pyrolysis recycling of waste thermosetting plastics, the pyrolysis kinetics, volatile products and reaction mechanisms of one typical waste thermosetting plastics namely phenolic fibre-reinforced plastic (phenolic FRP) are studied in the present study. Thermogravimetric analysis (TGA), in situ Fourier transform infrared (FTIR) and online TGA-FTIR-mass spectra (MS) analyses are employed. Results indicate that the pyrolysis of waste phenolic FRP in inert atmosphere may be divided into two stages with the threshold conversion rate of 0.2. The average values of activation energy in the first, second and whole pyrolysis process were 174.66 kJ/mol, 233.62 kJ/mol and 223.22 kJ/mol, respectively. The crosslinking between phenol derivatives and breakage of branched chain may result in the occurrence of the first stage, while the occurrence of the second stage may be due to the breakage of chain backbone and oxidation of methylene and hydroxymethyl. Four kinds of gases including H2O, alcohols, aliphatic compounds and carboxylic acids mainly constitute the volatile products in the first stage. The volatile products in the second stage mainly consist of CO, CO2, carboxylic acids and aromatic compounds. The amount of the volatile products in the second stage is much larger than that in the first stage. The maximum amount of these seven gases in the order of most to least is CO2 > CO > alcohols > carboxylic acids > aliphatic compounds > water vapour > aromatic compounds. It may be better to recover the waste phenolic FRP for valuable gases either as fuel or chemical feedstock in the first stage than the second stage.
+

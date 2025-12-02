@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Primary products from kinetic-limited high-density polyethylene pyrolysis at near vacuum Pyrolysis offers a sustainable pathway to recycle plastic waste, including high-density polyethylene (HDPE), a widely used thermoplastic. However, product distributions from HDPE pyrolysis often vary, even from the experiments conducted at the same temperature and time, highlighting the complex interplay between chemical kinetics and mass transfer. This study investigates HDPE pyrolysis at control pressures at or below 1 atm and temperatures at 500 and 550 °C using a microreactor. The effects of reaction pressure on product formation and escape were examined. Our experiments demonstrated that near-vacuum conditions would give a product distribution closer to that obtained from the kinetic-limited regime representing primary products, where secondary decomposition reactions in the melt and headspace are minimized. In contrast, increasing pressure promotes the formation of lighter hydrocarbons through continued decomposition of the oligomers in the melt phase and of gaseous products in the headspace directly above the vapor–liquid interface, where the latter was found more dominant under our reaction conditions. A Damköhler number analysis quantifies the competition between a species’ mass transfer and its further pyrolysis, showing that at low pressures, volatile products escape rapidly without further pyrolysis, whereas higher pressures decelerate outflow in the headspace, enabling continued decomposition. This work identifies pressure-dependent product cutoffs and provides insights into optimizing pyrolysis conditions for desired product distributions. The findings serve as a framework to advance pyrolysis technologies, facilitating plastic recycling and upcycling to achieve full circularity.
+

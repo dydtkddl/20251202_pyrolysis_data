@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Aliphatic polycarbonates derived from epoxides and CO2: A comparative study of poly(cyclohexene carbonate) and poly(limonene carbonate) The ring-opening copolymerization (ROCOP) of epoxides and CO2 provides an alternative approach towards polycarbonates and due to their aliphatic nature, they represent an interesting alternative to bisphenol-A based polycarbonates. A Lewis acidic β-diiminate (BDI)CF3-Zn-(SiMe3)2 complex 1 is used in the ROCOP of CO2 with cyclohexene oxide (CHO) and limonene oxide (LO), respectively. The knowledge gained from polymerizations monitored via in situ IR spectroscopy was used to upscale the reactions to a 1 L reactor. The two products poly(cyclohexene carbonate) (PCHC) and poly(limonene carbonate) (PLC) were then characterized via thermal analysis, a multiaxial pressure test, and dynamic mechanical analysis and compared with commercial polymers. While PCHC and PLC were both thermally stable at 150 °C for 20 min and only minor decomposition occurred at 180 °C, PLC is prone to cross-linking at elevated temperatures. This could be prevented by hydrogenation of the double bond or by the addition of an antioxidant. In the mechanical performance, the aliphatic polymers ranged between the highly impact resistant Durabio® and the brittle PMMA but broke without a splintering of the material. Overall, this study enabled a classification of CO2-based polycarbonates, especially of the novel PLC. Additionally, complex 1 was active in the terpolymerization of CHO, LO, and CO2. The formation of an actual terpolymer was confirmed via aliquot gel-permeation chromatography and diffusion-ordered NMR spectroscopy. High-pressure NMR techniques reveal an interesting kinetic feature. CHO gets copolymerized with CO2 exclusively, and LO incorporation only starts when CHO is fully consumed.
+

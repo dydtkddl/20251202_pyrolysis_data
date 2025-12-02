@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+In-situ photocatalytic degradation of low-density polyethylene: A pathway towards eco-sustainability and circular economy The present study demonstrates the accelerated rate of photo-degradation in low-density polyethylene (LDPE) films using nanomaterials like titanium dioxide (TiO2) in a photochemical reactor, an efficient, environmentally benign, and sustainable chemical. The effect of various parameters such as source of light, catalyst loading, pH, and temperature was investigated to achieve maximum degradation on a laboratory scale. The surface morphology with molecular and chemical structure changes in the nanocomposite films was monitored before and after degradation using various analytical techniques. It is found that the degradation reaction rate is greatly affected by pH and temperature and follows the first-order photo-thermal kinetics reactions. The calculated activation energies for the different properties range from 77.6 kJ/mol for carbonyl group formation to 55 kJ/mol for vinyl group formation at an optimum pH of 4 and temperature of 30 °C, respectively. The optimized sample's storage modulus (E sm ) increased from 17.76 to 210 MPa, demonstrating the loss of tensile strength after irradiation and increased elasticity. Thus, it clearly demonstrated that the LDPE sample loaded with 12% catalyst and exposed to 288 h at pH 4 and 30 °C temperature degraded most efficiently with 6.25% weight loss. In addition, there is a high correlation between the area of degradation and carbonyl index with R2 > 0.96, which helps in validating the fact that during the degradation process, there is volatilization of degradation products that leads to the formation of 0.523 mm (in length) of holes (microscopic analysis). This study brings new insights into reducing plastic pollution by minimizing waste prevention and generation at the source by promoting the usage of intermediates (formed during degradation) as a secondary material for producing new plastic products.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluation of optical and thermal properties of benzylcyanocoumarin and its application in NIR reflective black coatings for automotive LiDAR detection The LiDAR detection performance of autonomous vehicles is highly influenced by the optical properties of exterior coatings. In this study, a bilayered black coating system, consisting of an organic dye coating and a white reflective coating, was designed to maintain a visually black appearance while achieving high near-infrared reflectance. Benzylcyanocoumarin derivative dyes were synthesized and blended with the highly durable PB15 pigment to fabricate black coatings. The resulting films exhibited a reflectance below 5 % in the visible range, while achieving reflectance values of at least 67.8 % and 48.8 % at the primary LiDAR wavelengths of 905 nm and 1550 nm, respectively—representing up to an eightfold improvement in detection performance compared to conventional carbon black coatings. This enhancement was also accompanied by a significant NIR photothermal blocking effect which can reduce the vehicle interior temperature. The photophysical properties of the dyes varied depending on the amine substituent structure, as confirmed by UV–Vis spectroscopy and time-dependent density functional theory calculations. Among the tested coatings, Dm-Black and De-Black both maintained a color-difference below 1 after 216 h of UV irradiation, demonstrating high photostability. This work demonstrates the feasibility of stable, dye-based black coatings for autonomous vehicle LiDAR detection. It also offers potential to reduce heat accumulation on vehicle exteriors, thereby contributing to energy savings and improved thermal management.
+

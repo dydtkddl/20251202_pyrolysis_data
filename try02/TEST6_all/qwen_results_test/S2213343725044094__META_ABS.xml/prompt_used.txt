@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Innovative photothermal membrane distillation: Mitigating temperature polarisation with rice husk biochar This study presents an innovative dual-layer hollow fibre (DLHF) polymeric membrane for photothermal membrane distillation (PMD), incorporating extracted carbon from rice husk char (RHC) as a sustainable photothermal additive to address two critical challenges in MD desalination: temperature polarisation (TP) and limited flux efficiency. The approach integrates optimisation of pyrolysis temperature, carbon extraction, and performance evaluation of the fabricated membranes. Results revealed that a high pyrolysis temperature (700°C) yielded RHC with enhanced physical properties for photothermal conversion and membrane integration, while a lower temperature (500°C) produced RHC with high carbon content and superior optical traits. RHC synthesised at 600°C provided the best balance of carbon content, particle structure, and light absorption, and was selected for carbon extraction. The extracted carbon (RHC 600-EC) exhibited notable improvements, including a 26.1 % reduction in particle size, a 66.3 % increase in Brunauer–Emmett–Teller surface area, and a 94.4 % rise in total pore volume. It also demonstrated high carbon content (92.3 % by energy-dispersive X-ray analysis, 81.1 % by carbon, hydrogen, nitrogen, and sulfur analysis) and excellent optical properties, with minimal reflectance (< 5 % in the ultraviolet and < 3 % in the visible-near infrared range). The photothermal membrane, fabricated with 5 wt% RHC 600-EC, achieved a 117 % rise in surface temperature and a solar-driven flux of 3.42 kg/m2·h under 0.5 kW/m2 irradiation, representing a 25-fold improvement over the pristine membrane. It further demonstrated a 39.3 % increase in energy efficiency, 59.4 % solar utilisation efficiency, and over 99.5 % salt rejection, highlighting its promising potential for efficient desalination.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sludge-derived biochars: A review on the influence of synthesis conditions on pollutants removal efficiency from wastewaters Pyrolysis is a thermochemical process that permits the conversion of biomasses into energy (bio-oil and biogas) and a solid residue called biochar. The generation of biochar from lignocellulosic materials has been, for longtime, the predominant research focus. Wastewater treatment plants produce huge amounts of sludge biomass and there exists an increasing evidence for their possible reuse as a promising pyrolysis feedstock in recent literature. Though the valorization of biochars generated from lignocellulosic biomasses has been the subject of many reviews, there exists a critical knowledge gap regarding the effect of synthesis conditions of the sludge-derived biochars (SDBs) on their efficiency in the treatment of wastewater. This review critically analyzes the available literature related to SDBs characteristics and application to adsorb inorganic and organic pollutants from effluents. The physico-chemical properties and adsorption efficiency of SDBs are mainly tuned by the nature of raw sludge, pyrolysis conditions, and pre/post-treatments. Indeed, biochars originating from digested sludge have better adsorption capacities towards nutrients and heavy metals compared to those obtained from the non-digested sludge. The nutrients recovery from urban wastewater could be significantly improved when the raw sludge is mixed with lignocellulosic biomass and Mg/Ca rich materials. On the other hand, the chemical activation of sludge at reagent/sludge ratios higher than 2:1 permits to generate SDBs with adsorption capacities comparable and even better than commercial activated carbons. Moreover, the embedment/coating of SDBs with specific nanomaterials and tailored functional groups could significantly improve the adsorption capacities of various organic toxic pollutants and at the same time enhance their chemical degradation. The effect of the nature of target pollutants (organic or inorganic) on the underlying adsorption mechanisms by SDBs was also deeply reviewed. Finally, this paper provides the main application challenges as well as insights regarding the promising future directions for SDBs research and development.
+

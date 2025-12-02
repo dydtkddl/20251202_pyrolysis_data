@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic transformation: Kinetic and thermodynamic evaluation of co-pyrolysis for low-rank bituminous coal and polyurethane foam waste Co-pyrolysis is regarded as a sustainable and ecologically friendly method of improving waste management, pollution control, and renewable energy security. This investigation reports a thermo-kinetic study of low-rank coal-polyurethane foam waste (C-PU) blends through co-pyrolysis and was characterized using a number of techniques such as CHNS-O, GCV, and FTIR. The thermal degradation behavior of C-PU blends during co-pyrolysis via TGA is studied, whereas the degradation process happens in three stages i.e. moisture, devolatilization, and slow degradation of the char in the temperature ranges viz. (25 –140 °C), (140 – 580 °C), and (580 – 900 °C) respectively. Synergistic effects observed may improve product qualities compared to those from separate pyrolysis. The presence of synergistic effects during co-pyrolysis was demonstrated by the positive variation in WL% and DTGmax values. The Coats-Redfern integral method was utilized to investigate the thermo-kinetic parameters of C-PU blends through twelve (12) reaction mechanism models. The activation energy (E a ) for 100C and 100PU was 60.08 kJ/mol and 100.8 kJ/mol via F2 and F3 models, although the optimum blend (50 C-50PU) showed 67.01 kJ/mol and 26.74 kJ/mol via F2 and D3 model in the first and second stage. Thermodynamic characteristics i.e. ( ∆ G ) and ( ∆ H ) displayed positive values, while ( ∆ S ) for each C–PU blend was negative, but the best blend further lowered it. It was found that the fuels could be ranked in the following order 100PU> 50 C-50PU> 100 C based on mean reactivity and pyrolysis factor. The co-pyrolysis of polyurethane foam waste with low-rank coal to develop alternative energy sources has been proposed as a potential method and is critical for designing an effective large-scale reactor system thus understanding the solid-state co-pyrolytic kinetics.
+

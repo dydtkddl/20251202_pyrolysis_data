@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A novel process for the removal of bromine from styrene polymers containing brominated flame retardant High-impact polystyrene (HIPS) is one of the main plastic fractions of waste electric and electronic equipment (WEEE). Although recycling of this material is desirable, the presence of brominated flame retardants requires the removal of bromine prior to further treatment steps in order to avoid deterioration. In this study, a new method was developed for the removal of bromine from the polymer without destroying the polymer matrix. Organic bromine from the flame retardant (decabromodiphenyl ethane) was converted into inorganic bromide using a solution of NaOH in ethylene glycol (NaOH(EG)). Using a stirred flask as the reaction vessel, a debromination ratio of 42% was obtained at 190 °C regardless of the NaOH concentration. The same reaction in a ball mill reactor reduced the bromine content in the HIPS to 0.02 wt%. The conversion of organic bromine into inorganic bromide reached 98%. Degradation products from the flame retardant were identified using high performance liquid chromatography coupled with mass spectrometry. In both the flask and ball mill reactor, the reaction was diffusion controlled with an activation energy of about 205 kJ mol−1. The thermal stability of the residual plastic was enhanced during the treatment, which opens up the possibility of reusing waste HIPS by mechanical recycling.
+

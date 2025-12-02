@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Spectroscopic comparisons of two different terrestrial basaltic environments: Exploring the correlation between nitrogen compounds and biomolecular signatures Life detection in the solar system relies on the unambiguous identification of signatures of life and habitability. Organic molecules are essential to life as we know it, and yet many organic compounds are ubiquitous in the solar system and can be synthesized abiotically; thus, their presence alone is not indicative of life. On Earth, chemical signatures of life's processes are often left behind in minerals through the biologically induced formation of secondary minerals or intermediary organic complexes. In natural rocks biomolecules and organic species often co-occur with minerals, and their overlapping peaks can create difficulties in interpretation. In the process of identifying the minerals and organic species in our basaltic samples we noticed signatures for cyanates co-occurring with organic molecules. Cyanates are an overlooked group of nitrogen compounds in which C is bonded to N (e.g., OCN− or SCN−) that often co-occur with urea and ammonium in environments where microorganisms are present. These compounds are common in many terrestrial and oceanic environments and play an important role in biogeochemical nitrogen cycling. In natural systems, these compounds form as the result of multiple biogeochemical pathways, often from the interaction of microbes with a chemically active environment. These interactions leave behind signatures in the form biotic breakdown products such as urea or ammonium and organic reaction byproducts that are observable with spectroscopic methods. To explore these relationships, we used field-portable Raman spectrometers and laboratory micro-Raman imaging to characterize and compare samples collected from two different terrestrial basaltic environments, a lava tube on Mauna Loa, Hawaii, dominated by the precipitation of sulfate minerals and a geothermal stream at Hveragil, Iceland dominated by the precipitation of carbonate minerals. The Raman (RS) measurements were complemented by laser induced breakdown spectroscopy (LIBS), Long-wave Infrared (IR) LIBS, with the addition of gas chromatograph mass spectrometry (GC–MS) and inductively coupled plasma-mass spectrometry (ICP-MS) to identify cyanate compounds, biomolecules, and other nitrogenous compounds related to the breakdown or production of cyanate in host basalts and secondary precipitates. The RS data suggest that the reason for RS cyanate signatures in the carbonate samples could be due to luminescence artifacts while those detected in the host basalts may be due to hydrolysis chemistry. The cyanate signatures detected in the lava tube samples dominated by sulfates do not seem to be luminescence artifacts but may in fact be evidence of an active microbial nitrogen cycle. Our results inform the spectroscopic detection of cyanates in planetary analog environments and the challenges in their identification. Further work is needed to understand their potential as biosignatures on other planetary bodies.
+

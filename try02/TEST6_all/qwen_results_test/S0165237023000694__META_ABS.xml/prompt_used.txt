@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Using an optimized relative response factor database to simplify a pyrolyzer/thermal desorption-gas chromatography-mass spectrometry method of screening for phthalate esters, polybrominated diphenyl ethers, and polybrominated biphenyls in polymers The international analytical standard IEC 62321–3–3 describes a method for the screening analysis of phthalate esters, polybrominated diphenyl ethers (PBDEs), and polybrominated biphenyls (PBBs) in polymers by pyrolyzer/thermal desorption-gas chromatography-mass spectrometry (Py/TD-GC/MS). The IEC 62321–3–3 method uses a database of relative response factors (RRFs) (calculated by dividing the response factor (RF) for a target compound by the RF value for a substitute compound (SC) selected from among all target compounds) to quantitate each targeted analyte. A drawback of this method is that a separate RRF database must be created from expensive standard solutions that contain each targeted compound for each instrument, which is a labor-intensive task. In this study, we have developed a “ready-to-use” RRF database that can be used on multiple different instruments. This method eliminates the need to create an RRF database for each instrument and greatly simplifies the screening workflow described in the IEC 62321–3–3 standard. Because it only requires a mixed n-alkane solution and polymer reference materials, which are generally easy to procure and easy to use, the method is highly convenient and suitable for general-purpose use. Assigning tetra-BDE, penta-BDE, deca-BDE, or deca-BB as the SC for each PBDE and PBB analyte allowed the variance in RRFs between instruments to be reduced to a degree suitable for screening analysis. When this method was applied, recovery rates of individual PBDEs and PBBs remained within the range of 74–130 % over an extended period of 54 months. Simultaneous analysis of phthalate esters, PBDEs, and PBBs in various polymer reference materials was also performed with the optimized method on four different instruments and recovery rates of each targeted compound were evaluated. The recovery rates for each phthalate ester, total PBDEs, and total PBBs were within the range of around 100 ± 30 % for all tested samples.
+

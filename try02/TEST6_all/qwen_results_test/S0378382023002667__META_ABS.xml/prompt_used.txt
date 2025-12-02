@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Upgradation, product analysis and engine performance of hydrocarbon fuels produced through pyrolysis of thermoplastic polymers with Si and ZSM-5 modified catalysts Waste plastic mitigation is one of the major concerns for achieving a sustainable environment. The present study reported the conversion of mixed waste plastics into hydrocarbon fuels through catalytic pyrolysis using DOL, SiDOL, ZSM-5, and ZSMDOL catalysts. Doping of Si and ZSM-5 enhanced the surface area as well as improved catalytic activity. The NMR analysis confirmed that pyro-oil contains 8.31–12.61, 17.53–29.12, and 62.38–69.86 (v/v)% of aromatics, olefins, and paraffin's hydrocarbons, respectively. FTIR analysis identified the presence of alkane, alkene, and aromatic hydrocarbons. The mass spectroscopy analysis revealed that pyro-oil contained a lower range (<C12) of hydrocarbon (up to ∼89%) when the catalyst was used. The fluidity properties such as density, viscosity, and pour point were reduced significantly in the catalytic pyro-oil due to the further cracking of intermediate hydrocarbons formed during the pyrolysis. The pour point was found to be the lowest (below -40 °C) for pyro-oil obtained with ZSM-5 catalyst. The highest calorific values of ∼50.9 MJ/kg and lowest carbon residues of ∼0.11 wt% were estimated for catalytic pyro-oils. The DI diesel engine performance showed that catalytic pyro-oils had better engine performance and combustion process compared to other fuels. Also, the emissions of harmful gases such as CO, HC, and NOx were found to be lower than commercial diesel when pyro-oil was blended with CD.
+

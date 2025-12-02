@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The high-temperature pyrolysis of 1,3-hexachlorobutadiene Comprehensive product yield determinations from the high-temperature, gas-phase pyrolysis of 1,3-hexachlorobutadiene (C4Cl6) using two fused-silica tubular flow reactors are reported. The effects of reactor surface-area-to-volume (S/V) ratio were evaluated by conducting detailed product analyses with 0.1 cm i.d. and 1.0 cm i.d. reactors (high and low S/V ratio, respectively). Under low S/V ratio, initial decomposition was observed at 1023 K with formation of tetrachlorovinylacetylene (C4Cl4), tetrachloroethene (C2Cl4), and carbon tetrachloride (CCl4), and molecular chlorine (Cl2). Hexachlorobenzene (C6Cl6(cy)), C8Cl8(cy), and C12Cl8(cy) were also observed as products at higher temperatures. Under high S/V ratio, C2Cl4 decomposition was initiated at 873 K. In addition to the products observed under low S/V ratio, C3Cl4, C5Cl6, C12Cl10, and C16C10 were also observed. As in the case of C2 chlorinated hydrocarbons we have studied, organic product yields were higher for the low S/V ratio experiments. Previously published detailed pyrolysis mechanisms for trichloroethene (C2HCl3) and C2Cl4 were used to provide predictions of the high-temperature reaction behavior of C4Cl6. Minor revisions of the C2Cl4 model produced reasonable agreement with observed C4Cl6 product distributions without compromising previous agreement with C2Cl4 product distributions. The model predictions were in better agreement with product distributions obtained using the lower S/V ratio reactor, a result also observed for C2HCl2 and C2Cl4 pyrolysis. Plausible radical-molecule addition reactions leading to C2Cl4, C4Cl4, C6Cl6 (cy), C8Cl8 (cy), and C12Cl8 (cy) formation were identified with the assistance of sensitivity analysis and production rate calculations.
+

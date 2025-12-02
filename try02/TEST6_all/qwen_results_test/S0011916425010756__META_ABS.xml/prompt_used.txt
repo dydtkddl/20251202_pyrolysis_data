@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The rise of MXenes: Synthesis, properties, and fabrication of advanced membranes MXenes, a class of two-dimensional transition metal carbides, nitrides, and carbonitrides, have emerged as promising materials for advanced membrane separations due to their tunable physicochemical properties, high electrical conductivity, and hydrophilicity. This review comprehensively explores MXene synthesis methods, including etching, top-down, and bottom-up approaches, and their applications in membrane-based separations for wastewater treatment, desalination, and organic solvent nanofiltration. MXene-based membranes have demonstrated water permeability values ranging from 37 to 800 LMH/bar, which are up to five times higher than those of conventional polymeric membranes, while achieving >90 % rejection of dyes and multivalent ions. For example, Ti3C2Tx and Nb2CTx membranes show selective ion rejection exceeding 95 % for Mg2+ and SO4 2-, along with stable performance over >120 h continuous operation without notable flux decline. These quantitative indicators underscore the superior permeability–selectivity balance and enhanced operational durability of MXene-based systems. However, challenges such as the scalability of synthesis, long-term stability in aqueous environments, and susceptibility to oxidation hinder their widespread adoption. Innovative strategies, including cross-linking, polymer encapsulation, and hybrid composites, are explored to address these limitations. The review also highlights MXenes multifunctional potential in smart membranes, catalytic degradation, and self-cleaning applications, underscoring their role in bridging conventional and modern separation technologies. Future research should focus on sustainable synthesis, large-scale production, and integration into industrial processes to realize their full potential.
+

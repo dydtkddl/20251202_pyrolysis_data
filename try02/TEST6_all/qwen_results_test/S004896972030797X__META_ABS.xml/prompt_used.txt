@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Impervious and influence in the liquid fuel production from municipal plastic waste through thermo-chemical biomass conversion technologies - A review Plastic waste is an environmental burden substance, which poses a high threat to the society during disposal. Rather than disposal, recycling of this waste to liquid fuel gains importance owing to its high utility. Among various techniques, thermo-chemical recycling techniques hold more benefits in generating high value added liquid fuels. In this review, the details of municipal plastic waste generation are provided with a brief description of the plastic waste management option and importance of recycling is explained. The overview of the thermo-chemical treatment focusing on the pyrolysis, gasification and hydrocracking process was elaborated. Catalysts mediated pyrolysis have wide-open their prospective for the generation of bio-oil, hydrocarbons, syngas and deterioration of undesired substances. Generally, advance development of enthusiastic catalysts for the synthesis of bio-oil would be vital for scaling up the pyrolysis process to succeed in commercial manufacture of biofuels from waste plastics. Overall rate treatment depends on operating parameter which determines the process efficiency and product yield. Hence, critical assessment of various parameter that has remarkable effect in the thermo-chemical treatment process was documented in detail. Moreover, endorsements of liquid fuel production, economic viability, and energy requirement of the treatment process, were delivered to attain effectual plastic wastes management.
+

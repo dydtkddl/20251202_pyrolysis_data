@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characterization and Utilization of Char Derived from Fast Pyrolysis of Plastic Wastes HDPE plastic wastes were fast pyrolyzed at temperature of 400-450°C and char (solid residues) obtained were collected and analyzed. Proximate and ultimate analyses showed that pyrolysis char had a large amount of volatile matter (51.40%) and fixed carbon (46.03%), small amount of moisture (2.41%) and little amount of ash (0.16%). Contents of carbon, hydrogen and nitrogen were found to be 42.65, 3.06, 0.43%, and 1.80%, respectively. Calorific value and density of the char were also determined and reported as 4,500cal/g and 1.59g/cm3, respectively. Char derived from the fast pyrolysis of HDPE plastic wastes was crushed into powder and extruded to produce briquettes. One kilogram of the char based briquette was used as a fuel for the combustion process (boiling water). Atmospheric-pressure thermal activation at 900°C for 3hours was performed to promote surface area and specific pore volume of the char. Undergoing such an activation process, BET surface area and pore volume of the char were increased by 55% and 44% whereas pore size was reduced by 5%, corresponding to the values of 16.77 m2/g, 0.2080 cm3/g and 496°A, respectively.
+

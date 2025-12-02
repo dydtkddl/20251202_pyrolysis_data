@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Giving credit to residual bioresources: From municipal solid waste hydrolysate and waste plum juice to poly (3-hydroxybutyrate) Municipal solid waste (MSW) is massively generated all over the world. Its organic fraction (OFMSW), which represents a high percentage of MSW, mainly contains biodegradable materials, namely food waste, paper and garden waste. The social cost of OFMSW treatment and/or disposal is a serious and widespread problem, particularly in highly populated areas. Thus, effective and innovative solutions, which include the upgrading of OFMSW, are being currently sought. In fact, the OFMSW abundance, availability and average composition suggest its considerable potential within the circular economy desideratum, paving the way to valorisation approaches. In this context, an OFMSW sugar-rich hydrolysate and its validation as a substrate for the production of the polyester poly(3-hydroxybutyrate) (P(3HB)), to date the only bioplastic easily biodegradable in marine environment, were successfully obtained in a previous study. Based on those results, this work addresses the upscaling of the fermentative production, in fed-batch mode, of P(3HB) by Burkholderia sacchari. The OFMSW hydrolysate was used as cultivation medium due to its balanced nutrient composition, while a plum waste juice, also rich in sugars, was applied as feed to the bioreactor. By implementing this strategy, a maximum P(3HB) production of 30 g·L−1 with an accumulation of 43% g (P(3HB))/g cell dry weight (CDW) after 51 h, was achieved. The use of the hydrolysate as initial medium resulted in higher CDW (71 g·L−1) than that of the simulated hydrolysate (62 g·L−1 in average), probably because the OFMSW hydrolysate favours biomass growth in detriment of P(3HB) production.
+

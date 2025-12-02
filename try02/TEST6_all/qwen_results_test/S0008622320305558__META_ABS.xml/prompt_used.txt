@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Transition metal impurities in carbon-based materials: Pitfalls, artifacts and deleterious effects From carbides in steel to cobalt–carbon covalent bonds in vitamin B12, transition metal (TM)–carbon interactions play a critical role in so many aspects of human life that we rarely realize it. While insoluble in organic and inorganic solvents, elemental carbon does dissolve in transition metals of specific valence electron configurations. This property, accompanied by carbon’s low vapor pressure, high melting/sublimation point, resistance to corrosion and reducing properties create both challenges and opportunities for the handling and separation of carbon–TM systems. Natural and synthetic carbon-based materials are contaminated by transition metals to various extents, which hinders or totally precludes their advanced applications. Whether it is high-rank coal to be burned in power plants, graphite for electric car batteries or nuclear reactors, or graphene and single-wall carbon nanotubes (SWCNTs) for nanoelectronics or medical purposes – TM impurities can cause a range of unexpected deleterious effects even at parts per billion levels. Despite impressive progress in the field of carbon-based material chemistry and physics, a commercial breakthrough in advanced carbon-based technology has not yet been achieved. One of a few major reasons for this failure is that the industrial production of homogeneous and truly metal-free carbon (nano)structures with particular properties remains a great challenge yet to be overcome and hence impedes high-end applications. A part of the scientific community erroneously considers the purification of carbon (nano)structures a resolved issue, however there is still much to be done in this area. Herein we discuss the problem of TM impurities in carbon-based (nano)materials in a broad context concerning the vast spectrum of materials from natural high-rank coals and graphite to synthetic SWCNTs and graphene. Fundamental considerations on TM–carbon interactions, artifacts and deleterious effects of TM impurities (e.g. in catalysis or medical applications), analytical techniques for the assessment of their concentration, purification and demetalation of carbonaceous materials and catalyst-free synthesis of carbon nanostructures are discussed in detail. Finally, we also show how seemingly detrimental TM impurities may present unexpected benefits.
+

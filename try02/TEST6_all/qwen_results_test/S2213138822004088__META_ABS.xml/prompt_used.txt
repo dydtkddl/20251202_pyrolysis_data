@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Techno-economic analysis and life cycle assessment of microwave co-pyrolysis of food waste and low-density polyethylene This paper presents a techno-economic analysis (TEA) and life cycle assessment (LCA) of microwave (MW) co-pyrolysis of comingled food waste (FW). Lab scale (capacity- 1 kg/d) MW co-pyrolysis studies of FW and low-density polyethylene (LDPE) yielded 42 wt.% of bio-oil, 42 wt.% of biochar and 16 wt.% of pygas. The fixed and monthly operating cost of the lab scale MW co-pyrolysis reactor was 10,00,000 INR/kg and 8,248 INR/kg, respectively. The respective cost of a commercial MW co-pyrolysis plant (capacity-100 kg/d) was estimated as 53,12,585 INR/kg and 24,420 INR/kg. It was estimated that with 7 % of the internal rate of recovery (IRR), the breakeven point would be achieved within 4 years. The LCA of the commercial MW co-pyrolysis plant evaluated that the drying and pyrolysis unit consumed 91 % of total energy and contributed most to environmental impact. Thus, emission of 38.92 kg CO2 eq, 48.00*10-3 kg SO2 eq, 7.70*10-3 kg PO4 -3 eq, 1100.10*10-3 kg dichlorobenzene (DCB) eq and 3.50*10-3 kg C2H6 was projected for MW co-pyrolysis of 100 kg FW and LDPE. Overall, TEA and LCA suggested that the commercial MAP plant would provide higher conversion efficiency, lower energy consumption (0.54 kWh/kg) and environmental risk with an attractive economic return by selling bio-oil + biochar at the rate of 40 INR/kg.
+

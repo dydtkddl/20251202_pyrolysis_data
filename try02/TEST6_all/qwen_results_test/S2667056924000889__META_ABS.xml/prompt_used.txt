@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biomedical application of carbon quantum dots: A review The many beneficial properties of carbon quantum dots (CQDs) have led to their increased interest as a potential material for use in various biomedical applications. These properties include fluorescence, biocompatibility, low toxicity, small size, ease of modification, low production costs when scaled up, and versatile conjugation with other nanoparticles. In addition, the development of theranostic nanomedicine, bio-imaging of cells and bacteria, and multifunctional diagnostic platforms have all shown promise. Optical imaging, cancer therapy, drug delivery systems, gene delivery, antimicrobial activity, bioimaging and biosensors, photothermal and photodynamic therapy, pharmaceutical formulations, and more are all parts of CQD research that this review succinctly summarises. The literature primarily describes two approaches for synthesizing CQDs: the top-down approach, which involves disassembling a larger carbon structure into nanoscale particles, and the bottom-up approach, which involves creating CQDs from smaller carbon units (small organic molecules). The literature has a large number of review articles about the synthesis and uses of CQDs. Nevertheless, there isn't a comprehensive paper like this that goes over the entire process of creating and using CQDs made of tiny organic compounds. Based on the available literature, we have compiled the research progress on CQDs in this review, including its synthesis from small organic molecules (bottom-up approach), applications in the fields of bioimaging, drug/gene delivery systems, photocatalytic reactions, photodynamic therapy (PDT), and photothermal (PTT) therapy, as well as methods of thermal decomposition and microwave irradiation and ultrasonic treatment. Lastly, the difficulties and potential course of CQDs are explored. Our conversation also broadens to cover CQDs function in nanomedicine, the field that many believe will shape biomedicine in the years to come. The results of this study will help the biomedical research community realise the potential of CQDs to solve many present-day technological issues.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Solvent fractionation of softwood and hardwood kraft lignins for more efficient uses: Compositional, structural, thermal, antioxidant and adsorption properties This work summarizes the impact of solvent fractionation on the chemical structure, antioxidant activity, heating values, and thermal and adsorption properties of industrial hardwood and softwood kraft lignins. The aim of the research was to develop a simple approach for obtaining lignin fractions with tailored properties for applications in certain materials. Four common industrial solvents, namely, ethyl acetate, ethanol, methanol and acetone, in various combinations, were found to be efficient for separating spruce and eucalyptus kraft lignins into fractions with low polydispersities. The ethanol fraction of spruce and the ethyl acetate fraction of eucalyptus afforded the highest yields. Gel-permeation chromatography analysis was used to evaluate the efficiency of the chosen solvent combination for lignin fractionation. The composition and structure of the lignin material was characterized by elemental analysis, analytical pyrolysis (Py-GC/MS/FID) and 31P NMR spectroscopy. The thermal properties of the lignin samples were studied using thermogravimetric analysis. Proximate analysis data (ash, volatile components, organic matter and fixed carbon) was obtained through the direct measurement of weight changes in each experimental curve, and the high heating values (in MJ/kg) were calculated according to equations suggested in the literature. The adsorption properties of fractionated kraft lignins were studied using methylene blue dye. The correlations observed between molecular weight, composition and functionality and the thermal, radical scavenging and adsorption properties of the lignin fractions provides useful information for selecting the appropriate solvent combinations for specific applications of lignin raw materials (including their use as antioxidants, biofuels or sorbents in water treatment processes).
+

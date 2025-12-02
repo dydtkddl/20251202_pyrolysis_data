@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unlocking the potential of cellulose-based composite materials for supercapacitors and sensing technologies: A Review Cellulose aerogels exhibit a specific surface area (10–975 m² g −1), porosity (84.0–99.9 %), and density (0.0005–0.35 g cm-³) comparable to synthetic polymer aerogels, but uniquely offer higher compressive strength (5.2 kPa–16.67 MPa) alongside superior biodegradability. Cellulose-based aerogels have experienced significant growth in research interest over the past decade. Publications in this field have dramatically increased from 19 in 2010 to over 385 in 2024, highlighting their unique physicochemical characteristics. Renowned for their porous structure, low thermal conductivity, low density, and exceptional adsorption capabilities for water and organic solvents, cellulose aerogels hold substantial promise for high-performance materials. This review, therefore, aims to illustrate three key aerogel processing routes: dispersion, regeneration, and cellulose derivative methods, alongside five prominent modification techniques for aerogel composites. Furthermore, it briefly discusses the application of cellulose aerogels as a core component in supercapacitors (electrodes, separators, and electrolytes), showcasing examples like fluorine-treated CNF achieving 409 F g⁻¹ specific capacitance with 91 % retention after 10,000 cycles. The review also examines the utilization of these aerogels in electrochemical, pressure, piezoelectric, humidity, and environmental sensors, concluding with a discussion of their potential future implications and applications.
+

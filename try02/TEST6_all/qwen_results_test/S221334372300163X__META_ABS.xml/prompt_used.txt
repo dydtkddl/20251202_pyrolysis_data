@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Assessing bioplastics biodegradability by standard and research methods: Current trends and open issues Bioplastics are currently and increasingly used as substitutes of conventional plastics; furthermore, they are mainly utilised in order to cope with problems related to plastic-based pollution. Certified international standard methods identify the criteria a bioplastic must comply with in order to be labelled as compostable and/or biodegradable. In addition, this is particularly the case when operating under the conditions that are expected in full-scale waste facilities. However, biodegradation in natural environments occurs under a manifold of different conditions, such that the aim of research studies is to estimate the extent to which a bioplastic can biodegrade under simulated natural conditions. For this reason, specific indexes are used to quantitatively estimate the degree of degradation. In the present paper, a description of the standard methods, research methods, and the indexes used to assess the biodegradability of bioplastics under different environmental conditions is provided. By summarising the results obtained by this study, it can be concluded that: (i) biopolymers claimed as biodegradable bioplastics may not degrade in full-scale plants due to the fact that the process conditions present in industrial waste treatment plants cannot completely reproduced at lab-scale; (ii) the static conditions set by the standard methods are not representative of the dynamic processes that occur in natural or industrial environments; and (iii) experimental tests are difficult to compare to one other due to the differences in the multitude of matrixes that can be used (i.e., inocula, soils, and biopolymers).
+

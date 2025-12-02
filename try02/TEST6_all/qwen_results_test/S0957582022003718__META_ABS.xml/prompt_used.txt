@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation on the pyrolysis process, products characteristics and BP neural network modelling of pine sawdust, cattle dung, kidney bean stalk and bamboo To realize resource utilization of waste and alleviate associated environmental pollution, the pyrolysis behaviour of pine sawdust (PS), cattle dung (CD), kidney bean stalk (KS) and bamboo (BA) was investigated. The mass loss, gaseous product evolution and kinetic parameters of these four materials during pyrolysis were analysed via TG-MS. According to the TG-MS results, a back propagation (BP) neural network model was developed for the mass loss prediction of different biomass pyrolysis. More importantly, FTIR and SEM-EDX were used to analyse the characteristics of bio-oil and biochar to facilitate further utilization of these pyrolysis products. The results indicated that PS exhibited the highest mass loss (87.25%) during pyrolysis at 800 °C, and the higher D value (1.23E-05) indicated that PS was more easily decomposed than other materials. In terms of gaseous products, PS produced more H2, C2H6, C3H8 and CO2 than did the other materials during pyrolysis, while BA produced more CH4 and H2O. In addition, the content of phenols or aromatic compounds in PS bio-oil was the highest, and the surface pores in the obtained PS biochar were uniform and regular, which verified that PS achieved a higher utilization value than that of the other materials considered. Finally, the established BP neural network models realized a satisfactory mass loss prediction performance with increasing temperature.
+

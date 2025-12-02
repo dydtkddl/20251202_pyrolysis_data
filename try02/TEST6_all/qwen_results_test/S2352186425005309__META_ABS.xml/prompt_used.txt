@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhanced effects of biochar-immobilised dual-functional E. quasihormaechei on PPST degradation and nitrogen conservation in nitrogen-deficient composting The inherently high C/N ratio of polyester plastics, such as PPST, creates a severe nitrogen (N) deficiency during composting, while thermophilic conditions exacerbate N loss. These dual constraints critically limit the biodegradation efficiency and compost quality. In this study, a novel dual-functional strain Enterobacter quasihormaechei (EQ1) demonstrated the capability of utilizing PBAT (a key component of PPST) as its sole carbon source while concurrently performing biological nitrogen fixation, which was first identified and isolated from plastic compost. To enhance its efficacy and stability, EQ1 was also immobilized on biochar (forming CEQ) and introduced into nitrogen-deficient PPST composting systems. The CEQ amendment significantly boosted PPST degradation rates to 85.7 %-93.8 %, overcoming the nitrogen limitation barrier. Simultaneously, CEQ dramatically mitigated nitrogen loss by 16.3 % and accelerated the transformation of compost N into available forms (NH4 +-N/NO3 --N), significantly enhancing compost maturity (GI=99 %). Metagenomic analysis revealed PPST hydrolysis by lipase/carboxylesterase, producing characteristic oligomers, such as 6-(4-hydroxybutoxy)-6-oxohexanoic acid and 2-((2-hydroxypropanoyl)oxy) propanoic acid, etc. The co-activation of nitrogen cycling was evidenced by the improved indicators, such as nitrogen-fixing enzyme (218 IU/L), nitrite oxidoreductase (85.2 IU/L), and the related genes nifH (6.3 ×10⁴ copies/mg) and nxrA (7.6 ×10⁴ copies/mg). Microbial community analysis confirmed that CEQ selectively enriched bacterial consortia with dual plastic-degrading and nitrogen-cycling functionalities (e.g., Sphingomonas, Flavihumibacter) both in the compost bulk and the plasticsphere, enhancing functional diversity. In conclusion, this sustainable approach provides a viable route for transforming plastic waste into valuable compost, advancing plastic circularity.
+

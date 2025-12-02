@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental, Grand canonical Monte Carlo, and Density Functional Theory studies for comparing halloysite and kaolinite on heavy metals fate during pyrolysis of solid waste In this study, we utilized low-cost halloysite (Hal) for the first time to enhance the solid-phase enrichment and stability of heavy metals (HMs) during solid waste pyrolysis through experimental and theoretical methods, and compared with kaolinite (Kao). Experimental results demonstrated that Hal was superior to Kao in improving the solid-phase enrichment of HMs. Specifically, the solid-phase enrichment of Cd increased by 32.6 % (500 °C) and 25.94 % (600 °C), while that of Pb and Zn increased by 17.37 %/16.83 % and 19.82 %/22.37 % (700/800 °C), respectively. Adding Hal reduced the proportion of HMs in the unstable fraction (F1 + F2), consequently lowering the environmental risk of biochar and the extractable state of HMs. Through Grand canonical Monte Carlo and Density Functional Theory (DFT) simulations, we analyzed the adsorption amounts, adsorption sites, and adsorption mechanisms of Cd/Pb compound on Hal/Kao surfaces, revealing that the primary factor influencing the adsorption performance of Hal and Kao was the difference in specific surface area. The adsorption amounts of HMs by Hal were significantly higher than Kao and decreased with increasing temperature, while the difference in adsorption performance caused by structural bending was negligible. The DFT results indicated that Cd and Pb monomers were stabilized by establishing covalent bonds with OH or reactive O atoms on the Al-(001) surface, whereas the covalent bonds with ionic bonding properties formed between Cl atoms and unsaturated Al atoms played a crucial role in stabilizing HM chlorides. Furthermore, the adsorption energy of Hal on HMs increased with the removal rate of OH. Our study highlights the potential of Hal in stabilizing HMs during pyrolysis without requiring any modifications, thereby avoiding the generation of modified waste solutions and unnecessary cost loss.
+

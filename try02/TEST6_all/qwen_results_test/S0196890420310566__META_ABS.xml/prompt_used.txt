@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Progress in catalytic pyrolysis of municipal solid waste Municipal solid wastes occupy lands and create environmental issues, which has stimulated interest from governments to research community for converting them into useful products such as fuels, chemicals and electricity through the thermochemical methods including pyrolysis, gasification, etc. Pyrolysis converts municipal solid wastes into fuels in gaseous, liquid and solid form. Owing to the unsatisfactory quality of fuels from non-catalytic pyrolysis, catalytic pyrolysis was proposed to improve especially the properties of liquid fuel in the presence of catalyst. Catalyst is thus an essential parameter in catalytic pyrolysis, as the specifications of catalysts could show profound influence on composition of the liquid fuel. Specifically, the formulation of catalyst, the exposed surface species, the acidic sites, the porous structures, etc all affect catalytic performances in pyrolysis of municipal solid waste. Up to now, there have been a number of catalysts developed for catalytic pyrolysis of the mixture of municipal solid waste. These catalysts, depending on their specifications, show the distinct catalytic performances in catalytic pyrolysis of municipal solid waste and also varied lifetime span in the pyrolysis, etc. The feasibility of the catalysts in especially the application in industrial scale needs further evaluation and verification. This review dedicates to the progress of the development of the catalysts for catalytic pyrolysis of mixed municipal solid waste. The advantages and disadvantages of each types of catalysts are discussed and compared. Suggestions were given for the future stages of developments of catalyst for the small to large-scale operation of catalytic pyrolysis of municipal solid waste. The results of techno-economic review showed that catalyst could reduce the amount of emission and produce more valuable products. However, the cost of regeneration might increase the cost of operation significantly.
+

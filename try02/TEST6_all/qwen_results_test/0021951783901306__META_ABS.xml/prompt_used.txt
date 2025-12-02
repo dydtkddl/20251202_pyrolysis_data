@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Spectroscopic investigation of a polymerization catalyst: Tetra(neophyl)zirconium reacted with alumina Tetra(neophyl)zirconium (TNZ) reacted with alumina, one of a family of high activity, innocuous, and thermally stable polymerization catalysts, was studied using transmission infrared and uv-visible diffuse reflectance spectroscopy (DRS) with the goal of understanding the synthesis of the catalyst and its evolution at the high temperatures of use. (Neophyl is the 2-methyl-2-phenylpropyl group.) Reaction of TNZ with the free hydroxyls present at the surface of alumina to bind the zirconium was observed. Hydrogen bonded hydroxyls were unreactive during synthesis but can serve as catalyst poison at elevated temperatures. High neophyl contents of catalysts prepared with thermally dehydroxylated aluminas imply other modes of TNZ binding are possible on these aluminas. No organic species other than intact neophyl ligands were observed on the untreated catalyst. Heat treatment of the catalyst in vacuum caused loss of neophyl ligands and reduction of the Zr oxidation state. An absorption at 360 nm is seen in the DRS of reduced catalysts. Heat treatment in hydrogen caused hydrogenation of the phenyl group of the ligand, loss of ligands, but no appearance of DRS features characteristic of catalyst reduction. An infrared absorption at 1900 cm−1 is produced on hydrogenation of the catalyst and is assigned to a Zr hydride species on the basis of its frequency and response to exposure to air, water, and ethylene. Catalysts containing reduced Zr or Zr hydride sites were active in the polymerization of ethylene. The high temperature activity is suggested to result from the preserved activity of the decomposition products of the original catalyst.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microstructure and thermomechanical behavior of Heusler phase Ni2AlHf-strengthened NiAl-Cr(Co) alloy produced by HIP of plasma-spheroidized powder This study demonstrates that homogeneous high-purity micropowders with grain size of 10–45 µm from refractory NiAl-Cr(Co)-Hf alloy can be produced by combustion elemental synthesis and further treated in a thermal plasma flow. The optimal parameters of plasma spheroidization of the synthesized powders are shown at which the resulting spherical alloy particles are characterized by high sphericity (~ 98%) and the absence of satellites or internal porosity. The spherical powders were consolidated by HIP. The alloy structure was investigated by scanning electron microscopy (SEM) and high-resolution transmission electron microscopy (HRTEM). The fine structure and features of segregation of hardening nanoparticles of Ni2AlHf (the Heusler phase) and hafnium solid solution (ssHf) in the NiAl matrix were thoroughly studied. Furthermore, in situ examination of structural phase transformations occurring in the as-HIP NiAl-based alloy was carried out upon heating in the temperature range of 25–850 °C. The α-Cr phase nanoparticles are formed inside the NiAl grains via two different mechanisms: (1) spinodal decomposition of solid solution at 250–450 °C resulting in segregation of the Guinier-Preston zone rich in Cr and its subsequent transformation into α-Cr precipitates 25–170 nm in size; (2) heterogeneous nucleation and growth of α-Cr nanocrystallites 7–40 nm long on prismatic dislocation loops at 750–850 °C. The thermomechanical properties of the alloy were studied in the temperature range of 596–1100 °C on a Gleeble System 3800 testing system. The correlation between the thermal load and the high-temperature creep rate, as well as the temperature dependences of the Young's modulus (E), the offset yield strength (σ0.2), and the rate sensitivity coefficient (m), were ascertained. The Young's modulus (E), the ultimate tensile strength, the offset yield strength σ0.2, and the proportional limit of the alloy being examined during uniaxial compression test of a cylindrical sample at 750 °C and at true strain rate of ~ 0.01 s−1 were as high as 137.8 GPa, 682, 455 and 358 MPa, respectively.
+

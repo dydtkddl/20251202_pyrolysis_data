@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Identification of the coke deposited on an HZSM-5 zeolite catalyst during the sequenced pyrolysis–cracking of HDPE The pyrolysis–cracking of high-density polyethylene (HDPE) has been studied in two sequenced steps: (1) flash pyrolysis in a conical spouted bed reactor, and (2) catalytic cracking of the volatiles (waxes) in a fixed bed reactor containing a HZSM-5 zeolite catalyst, aiming light olefins as final products. The pyrolysis and cracking have been carried out isothermally at 500°C, with a continuous feed of HDPE (1gmin−1) for up to 5h (300g of HDPE fed). We have correlated the catalytic deactivation by coke (carbonaceous deposits), in terms of amount and composition, with the profiles of gas composition along time on stream and space time. The amount and composition of coke in three axial positions of the catalytic bed have been elucidated using thermogravimetric (TG-TPO) and spectroscopic techniques (13C CP-MAS NMR, Raman, FTIR, FTIR-TPO-MS and FTIR-pyridine). Our results show that there are two pathways of coke formation: (i) initiation, during the first hour on stream and particularly in the inlet of the catalytic reactor; and (ii) steady coke formation, after the first hour on stream which is more severe in the last axial position of the catalytic reactor. The initiation step stems from the degradation of the waxes produced in the pyrolysis of HDPE and causes a dropping in the mesopore area of the catalyst. The steady coke formation step is caused by the condensation of light olefins and causes the degradation of the micropore area and the Brønsted acidity of the catalyst.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Gasification of leached orujillo (olive oil waste) in a pilot plant circulating fluidised bed reactor. Preliminary results Nearly a quarter of the world's olive oil production takes place in Spain, where energy companies are starting to exploit the potential of the residues from this industry as biomass fuel for energy production. Approximately, 2 milliont/yr of orujillo (a residual by-product of the olive oil production industry) are generated in Spain. Fluidised bed gasification is considered to be the most advanced method for thermochemical conversion of various biomass fuels to energy. Ash-related problems such as sintering, agglomeration, deposition, erosion and corrosion, which are due to the low melting point of ash in the agroresidues, are the main obstacles for economical and viable application of this conversion method for energy exploitation of the specific residues. The leaching (washing) of inorganic constituents from biomass leads to changes in inorganic composition and substantial improvements in ash thermal behaviour under gasification conditions. Leached orujillo has been tested in a 300 kW th atmospheric circulating fluidised-bed (CFB) gasification facility using air as a fluidisation agent. In this paper, the effect of experimental conditions on gasification process with the aim of enhancing the gas production and improving its composition and energetic content was analysed. The first tests have demonstrated that the CFB test rig operates adequately and makes it possible to carry out gasification experiments with orujillo as a fuel. The lower heating value of the producer gas obtained is 3.8 MJ/Nm 3 at the lowest temperature (780°C). The carbon conversion in orujillo gasification at the 800°C set points was in the range of 81.0–86.9%. The increase in equivalence ratio did not improve carbon conversion significantly. The gas yield increases when equivalence ratio increases.
+

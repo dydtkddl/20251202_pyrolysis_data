@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Nonthermal plasma treatment of Aspergillus spp. spores on hazelnuts in an atmospheric pressure fluidized bed plasma system: Impact of process parameters and surveillance of the residual viability of spores In this study, the impact of fluidized bed reactor diameters and plasma forming gases on inactivation efficiency of the Atmospheric Pressure Fluidized Bed Plasma (APFBP) system for aflatoxigenic spores of Aspergillus flavus and Aspergillus parasiticus on hazelnuts were investigated. Hazelnuts were artificially contaminated with A. flavus and A. parasiticus and then treated with dry air or nitrogen plasma for up to 5 min in two different fluidizing bed reactors of APFBP system at various plasma parameters. The decontamination effect of APFBP on Aspergillus spp. spores increased with the applied reference voltage and the frequency. The killing effect of plasma on the spores decreased as the diameter of the fluidized bed reactor increased. The fungicidal effects on A. flavus (4.17 log) and A. parasiticus (4.09 log) were found for air plasma treatment after 5 min. Due to the formation of active plasma species in the presence of oxygen, the air plasma generated at APFBP system was more effective than nitrogen plasma on decontamination of Aspergillus spp. spores, as expected. The total inactivation of the natural background microbiota of hazelnuts was obtained within maximum 2 min APFBP treatment. The aflatoxigenic spores that remained on hazelnuts after plasma process were considered as damaged cells, because they could not continue growing during storage at 25 °C for 30 days. The damage caused by APFBP treatment on Aspergillus spp. spore cells was demonstrated by using scanning electron microscopy.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A systematic literature review on the conversion of plastic wastes into valuable 2D graphene-based materials Increasing the economic attractiveness of plastic waste reusing/recycling is expected to contribute towards reducing their input in the environment. The use of plastic wastes as feedstock for the synthesis of added-value carbon materials has been studied in this context. However, there is a lack of a systematic review of the published works on this topic. Bearing this in mind, a systematic review was carried out in this study, covering the available literature on the conversion of plastic wastes into carbon materials. Clearly defined methodologies/criteria were accordingly established. 142 studies were selected for qualitative/overall analysis, including type/condition of plastic (pristine or waste), and type of carbon materials obtained. It was found that most of the studies report the utilization of plastic wastes (75%); and that the most representative materials obtained are carbon nanotubes (CNTs; 47.1% of the studies under evaluation), activated carbons (ACs; 22.2%) and 2D graphene-based materials (9.2%). Nevertheless, despite already being the third most significant group of carbon materials produced from plastic wastes, none of the 12 review articles available in the literature is fully devoted to the conversion of plastic wastes into 2D graphene-based materials. Therefore, the literature available on this topic was thoroughly reviewed for the first time. These studies report the synthesis of monolayer, few-layer and multi-layer graphene (including flash graphene) obtained through 4 main synthesis methodologies: (i) thermal decomposition of the plastics directly over a metal substrate; (ii) prior thermal decomposition of the plastics, with the resulting hydrocarbon gases released being fed to a chemical vapour deposition (CVD) system containing the metal substrate; (iii) thermal decomposition followed by ball milling and microwave sintering; and (iv) flash Joule heating (FJH).
+

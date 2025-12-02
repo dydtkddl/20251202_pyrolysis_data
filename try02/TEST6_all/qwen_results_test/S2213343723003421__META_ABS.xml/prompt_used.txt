@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sequential pyrolysis of spirulina and sawdust: Interactions of volatiles from upper-bed feedstock to lower-bed biochar Co-pyrolysis of mixed feedstocks is a common practice in research and industrial operation. Cross-interactions of volatiles of varied origins have been well documented in many existing studies. However, it remains a challenge to understand the transfer of volatiles from feedstock A to biochar of feedstock B during co-pyrolysis, due to the complexity of the reaction network. To examine this issue, sequential pyrolysis of spirulina and sawdust with up-down configured dual beds was conducted to probe specifically how volatiles from one feedstock could impact the biochar from another feedstock. The results confirmed the interactions of volatiles with biochar of the other feedstock, which diminished oxygen/nitrogen-containing compounds and heavy π-conjugated components in the bio-oils. Carbonaceous deposits were also observed, enhancing yields of biochar but at the expense of bio-oil. The transfer of inorganic species and N-containing species from spirulina to sawdust-biochar as well as the carbon-rich coating of the spirulina-biochar from the deposition of sawdust volatiles were observed, making the biochars more hydrophobic. Additionally, these interactions also remarkably enhanced the thermal stability of the sawdust-biochar. The transfer of organics and inorganics during sequential pyrolysis also resulted in the coarse surface of biochars dotted with many small particulate matters with an average particle size of 2.0–3.8 µm.
+

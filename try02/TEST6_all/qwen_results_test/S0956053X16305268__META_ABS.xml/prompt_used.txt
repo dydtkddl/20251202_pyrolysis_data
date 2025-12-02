@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of temperature and reaction time on the conversion of polystyrene waste to pyrolysis liquid oil This paper aims to investigate the effect of temperature and reaction time on the yield and quality of liquid oil produced from a pyrolysis process. Polystyrene (PS) type plastic waste was used as a feedstock in a small pilot scale batch pyrolysis reactor. At 400°C with a reaction time of 75min, the gas yield was 8% by mass, the char yield was 16% by mass, while the liquid oil yield was 76% by mass. Raising the temperature to 450°C increased the gas production to 13% by mass, reduced the char production to 6.2% and increased the liquid oil yield to 80.8% by mass. The optimum temperature and reaction time was found to be 450°C and 75min. The liquid oil at optimum conditions had a dynamic viscosity of 1.77mPas, kinematic viscosity of 1.92cSt, a density of 0.92g/cm3, a pour point of −60°C, a freezing point of −64°C, a flash point of 30.2°C and a high heating value (HHV) of 41.6MJ/kg this is similar to conventional diesel. The gas chromatography with mass spectrophotometry (GC–MS) analysis showed that liquid oil contains mainly styrene (48%), toluene (26%) and ethyl-benzene (21%) compounds.
+

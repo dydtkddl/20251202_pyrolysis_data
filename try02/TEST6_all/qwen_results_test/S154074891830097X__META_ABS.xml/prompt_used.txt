@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of feedstock water leaching on ignition and PM1.0 emission during biomass combustion in a flat-flame burner reactor In this work, the effects of feedstock water leaching on ignition and PM1.0 emission during biomass combustion were studied, for the first time, in a Hencken flat-flame burner reactor (HFFBR). A high-speed video camera and high-resolution electrical low-pressure impactor were respectively employed to diagnose ignition and PM1.0 along the height of the burner. The mineral composition of PM10+ was measured as a function of height to demonstrate the potassium release during the early stage of biomass combustion. The results show that water leaching does not change the functional group of the biomass (straw), but increases the BET surface area and pore volume. Water leaching removes 90% of the potassium and all the chlorine, reducing the same amount of PM1.0 emission. The effect of water leaching on ignition delay observed in the flat-flame burner reactor agrees with the delay of biomass-devolatilization in TGA. Profiles of mineral composition in the PM10+ with height shows that a large amount of the potassium is released before biomass ignition. This indicates that, at realistic heating rates, the catalytic promotion of water-soluble minerals on biomass ignition is primarily through promoting devolatilization. The ignition delay of biomass particles caused by water leaching is more significant at lower temperature, e.g., ignition is delayed from 20 to 24 ms at 1000 °C, and from 9.2 to 10.2 ms at 1300 °C.
+

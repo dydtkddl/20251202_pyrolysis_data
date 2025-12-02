@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Steam cracking of sulfur containing compounds: A fundamental modelling study Sulfur-containing additives are commonly used in industrial steam cracking to mitigate carbon monoxide (CO) formation. Their impact on solid coke deposition in reactors is well-studied but not fully understood. This study investigates the decomposition of five common sulfur compounds (DMDS, DMS, DMSO, CS2, COS) in both inert and hydrocarbon environments within the steam cracking industry. To achieve this, an in-house automated network generation tool called Genesys and a validated ab initio methodology at the CBS-QB3 level are used. This combination generates a comprehensive kinetic model with precise thermodynamic and kinetic parameters. The kinetic model is rigorously validated against experimental data from prior studies under various conditions, including inert nitrogen atmospheres and hydrocarbon matrices (using ethane and heptane). Experimental setups involve bench-scale annular quartz reactors and pilot-scale stainless steel reactors. Remarkably, the kinetic model accurately predicts primary products and captures secondary product trends across diverse conditions without parameter adjustments. Rate of production analyses reveal critical decomposition pathways during sulfur-containing additive pyrolysis and the influence of hydrocarbon matrices. Notably, these additives primarily yield H2S upon decomposition, with CS2, SO2 and thiophene as minor products. In conclusion, the developed fundamental kinetic model accurately predicts product formation during the pyrolysis of DMS, DMDS, DMSO, CS2 and COS, whether in nitrogen or a hydrocarbon matrix, without altering core thermodynamic and kinetic parameters.
+

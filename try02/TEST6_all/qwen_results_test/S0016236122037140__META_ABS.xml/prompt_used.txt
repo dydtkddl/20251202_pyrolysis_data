@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A critical review on pyrolysis method as sustainable conversion of waste plastics into fuels Plastic production has increased globally, and many of these plastic items are no longer in use. The plastic wastes end up as garbage, disposed of in landfills, or scattered, posing major health and environmental risks. In terms of sustainability, converting plastic trash into fuels or any other better option, individual monomers, is a far more environmentally friendly waste management option than landfill dumping. Nearly 1.3 billion metric tonnes of plastic are produced annually as businesses strive to meet the demands of consumers. Plastic is made through a process called polymerization, in which hydrocarbons are rearranged into new molecules. These hydrocarbons often have a high molecular mass, and they may also contain other chemicals to boost their performance. Plastic is a useful material because, among other things, it is durable, lasts a long time, is inexpensive, and has many other benefits. Because plastic can take decades to degrade if left alone, effective waste plastic disposal should be a top priority for every-one. Yet, growing industrialization and urbanization have contributed to a discernible rise in fuel demand. Finding renewable energy sources to replace fossil fuels is now a critical global priority. Plastics-to-gasoline conversion provides a means to solve both of these problems. By applying intense heat (more than 370 °C) and an oxygen-free environment, pyrolysis thermochemically decomposes organic materials. The byproducts of pyrolysis are carbon black, hydrocarbons, and pyrolysis oil. This review focuses on pyrolysis as it is the most popular and efficient method for turning polymers into fuels in comparison with other methods. This review comprises the knowledge of different types of plastics and their properties. The major discussion was focused on pyrolysis methods for recycling plastics. To have better knowledge competitive recycling method were discussed. The optimization parameter for recycling process, by-products of plastics, advantages and disadvantages of pyrolysis process are discussed to identify the drawbacks and research gaps. The pyrolysis method are potential for addressing waste plastic management and highlights the need for a reliable alternative fuel source.
+

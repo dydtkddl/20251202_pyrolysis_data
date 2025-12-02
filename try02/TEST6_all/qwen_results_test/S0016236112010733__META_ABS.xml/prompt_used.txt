@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Gasification of polyethylene in a bubbling fluidized bed operated with the air staging Gasification is a thermochemical process that converts different solid fuels into a synthetic gas (syngas) that can be utilized for different purposes. The possibility to gasify different kind of waste, as alternative to the traditional combustion processes, is attractive for several reasons, by way of an example the small scale of plants and the related social acceptability can be cited. Main constraint to a wide utilization of gasification is the parallel and undesired production of by-products that are mainly constituted by heavy hydrocarbons condensable at ambient temperature (tar) and carbonaceous particle fines. This work is conceptually divided into two parts: a description of the main reaction pathways occurring in a bubbling fluidized bed reactor operated as gasifier (BFBG) with the aim to highlight what is the pathway (and the reactor zone) that favors the heavy hydrocarbons formation; a discussion about experimental results obtained by operating a pre-pilot BFB gasifier under different operating conditions with the aim to reduce the formation of heavy hydrocarbons. The experimental tests have been carried out by feeding polyethylene in a BFB gasifier and by injecting the air stream, utilized as gasifying agent, in different positions: (a) at bed bottom (indicated also as primary zone) without any splitting of the flow rate; (b) at bed bottom and in the splashing zone, that is the volume just above primary zone, by splitting into two streams the necessary air flow rate; (c) at bed bottom, in the splashing zone and in the freeboard region, by splitting into three streams the air flow rate. Results indicate that staging of air stream can be a valid method to impede or reduce the formation of condensable compounds provided that air is well distributed in order to avoid segregation, the injection is made in the zone were heavy stable hydrocarbons are not yet formed and the splitting rates between primary and secondary streams is accurately calculated.
+

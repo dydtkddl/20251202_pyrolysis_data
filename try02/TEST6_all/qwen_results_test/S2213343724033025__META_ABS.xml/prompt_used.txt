@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Upcycling HDPE plastic into value-added products via γ-alumina catalyzed steam cracking in a fountain confined spouted bed This paper proposes an alternative approach for plastic wastes valorization towards light olefins in a novel reactor design, which avoids the use of high temperatures (800–900 °C) and zeolite catalysts, as is the case in thermal and catalytic cracking, respectively. Thus, the steam cracking of HDPE was studied in a fountain confined spouted bed reactor (FCSBR) using γ-alumina as in-bed catalyst due to its moderate activity for hydrocarbons cracking reactions and relatively low cost. This reactor design enables operation with continuous plastic feed without defluidization problems and preventing elutriation of fine catalyst particles. The cracking temperature was optimized between 650 and 750 °C to maximize the production of valuable chemicals, such as light olefins and BTX. The results showed that high temperatures enhance the breaking down of long chain hydrocarbons into shorter compounds, narrowing the product distribution. The product stream was composed of mainly C2-C4 olefins, with a maximum yield of 40.3 wt% at 700 °C. Propylene was the major olefinic compound at 650 °C (15.9 wt%), but the distribution shifted towards ethylene (24.5 wt%) at 750 °C, at the expense of decreasing the content of C3-C4 paraffins and olefins. Apart from typical cracking products, CO and CO2 were also obtained, yielding 4.9 and 15.9 wt% at 750 °C. In addition to promoting cracking and steam reforming reactions, high temperatures also favoured other secondary reactions. Thus, Diels-Alder cyclization and condensation reactions were observed, leading to a BTX yield of 16.7 wt% at 750 °C. Considering the combined yield of all high-value chemicals, 700 °C turned out to be the optimum temperature, enabling to recover 53.5 wt% of high added value products. Upcycling plastic waste into valuable chemicals like olefins and BTX is a promising and sustainable solution to address plastic pollution crisis, promote natural resource preservation and progress towards circular economy.
+

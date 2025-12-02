@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetic and volatile products study of micron-sized PMMA waste pyrolysis using thermogravimetry and Fourier transform infrared analysis Much attention has been devoted to disposing traditional-sized poly(methyl methacrylate) (PMMA) waste by pyrolysis for methyl methacrylate (MMA). The pyrolysis of micron-sized PMMA waste, which may be different from that of traditional-sized PMMA waste, received little concern. The present study investigated the kinetics and volatile products of micron-sized PMMA waste pyrolysis in inert atmosphere using thermogravimetry and Fourier transform infrared analysis. A global optimization algorithm namely Shuffled Complex Evolution (SCE) was employed to simultaneously optimize the kinetic parameters. Results indicated that one shoulder and one peak occurred in the MLR variations with temperature. The values of the MLR at the shoulder and peak, the average MLR all increased with the heating rate. The optimized kinetic parameters by SCE can be utilized to well reproduce the experimental thermogravimetric data. The values of activation energy and natural logarithm of pre-exponential factor were in the range of 235.95–248.61 kJ/mol and 16.96–28.76 min−1, respectively. The value of activation energy of micron-sized PMMA waste pyrolysis under the present study was greater than that of the traditional-sized PMMA pyrolysis in the previous studies. MMA and CO2 were the major volatile products generated from the micron-sized PMMA waste pyrolysis. The volatile products yield at peak was much larger than that at shoulder. The MMA and CO2 yield were in the range of 87.98–93.54% and 6.46–12.02%, respectively. High MMA yield may be obtained from the pyrolysis of micron-sized PMMA waste in inert atmosphere by appropriately increasing the heating rate adopted in the reactors in the practical applications.
+

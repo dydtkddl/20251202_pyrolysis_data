@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of poly(ethylene terephthalate) on the pyrolysis of brominated flame retardant containing high impact polystyrene and catalytic debromination of the liquid products The pyrolysis of brominated flame retardant containing high impact polystyrene (HIPS-Br) mixed with poly(ethylene terephthalate) (PET) was performed at 430°C under atmospheric pressure by a batch operation. The addition of PET to HIPS-Br affected significantly the formation of decomposition products and the degradation behavior of HIPS-Br. We have found the following observations on the addition of PET during the pyrolysis of HIPS-Br: (i) the rate of formation and the yield of liquid products decreased, (ii) the residue and gaseous products formation increased, (iii) the average carbon number (Cnp) of liquid products reduced from 12.5 to 9.1, (iv) the yield of high molecular weight hydrocarbons (C16–C20) decreased and the amount of hydrocarbons from C6 to C10 doubled, (v) heavy waxy compounds were formed on the top of the glass reactor wall in addition to the solid residue on the bottom of the reactor, (vi) antimony compounds were observed in the solid residue, as opposed to the formation of antimony tribromide (SbBr3) detected in the liquid products of HIPS-Br in the absence of PET. We attempted the debromination of brominated liquid hydrocarbons using iron and calcium based carbon composites for the production of halogen free liquid hydrocarbons, which can be used as a feedstock in a refinery or as a fuel.
+

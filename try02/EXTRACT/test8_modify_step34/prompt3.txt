@@ -1,0 +1,56 @@
+You are performing STRICT VARIABLE/CONSTANT EXTRACTION from a scientific paper.
+
+You MUST extract information ONLY from PAPER_TEXT.
+You MUST NOT guess, assume, or infer any experimental conditions.
+If something is not explicitly described in PAPER_TEXT, DO NOT output it.
+
+===========================================================
+PAPER TEXT:
+{{PAPER_TEXT}}
+===========================================================
+
+Your TASK:
+For each experiment group in the JSON below (EXTRACTION_JSON):
+
+1. Identify the **single experimental variable** (the thing that changes).
+   - MUST be supported by evidence sentences in PAPER_TEXT.
+   - If no explicit variable is described, set:
+     "variable": "not_explicitly_stated"
+
+2. Identify experimental **constants** (conditions held fixed).
+   - Only include constants explicitly mentioned in PAPER_TEXT.
+   - Each constant MUST be linked to at least one evidence sentence.
+   - If no constants are explicitly mentioned, output:
+     "constants": []
+
+3. Every item in "evidence_sentences" MUST be exact sentences copied from PAPER_TEXT.
+
+4. Output ONLY valid JSON in the following structure:
+
+{
+  "groups_with_variables_and_constants": [
+    {
+      "group_name": "",
+      "variable": "",
+      "constants": [
+        {
+          "name": "",
+          "evidence_sentences": [""]
+        }
+      ],
+      "evidence_sentences": [""]
+    }
+  ]
+}
+
+RULES (MANDATORY):
+- DO NOT add scientific knowledge not present in PAPER_TEXT.
+- DO NOT guess reactor type, purge gas, temperature, pressure unless explicitly mentioned.
+- DO NOT rephrase evidence sentences.
+- DO NOT summarize anything.
+- STRICT extraction only.
+- JSON ONLY.
+
+BEGIN EXTRACTION_JSON:
+{{EXTRACTION_JSON}}
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic effect on the co-gasification of petroleum coke and carbon-based feedstocks: A state-of-the-art review With the rapid development of the economy and the increasing demand for carbon emission reduction, syngas production from petroleum coke (PC) gasification has attracted extensive attention. The current paper aimed to summarize the synergistic effects of the co-gasification of PC with various carbon-based feedstocks on gasification reactivity, syngas production, and mineral transformation. The key parameters, including feedstock types, temperature, gasification atmosphere, etc., were reviewed in detail. The main approaches affecting the synergy comprised the following: (1) high temperatures favored the synergistic effect; (2) high volatile content and alkali index of blended feedstocks were preferred for non-isothermal gasification, whereas the presence of alkali and alkaline earth metals promoted synergy during isothermal gasification; (3) strong gasification agent weakened the synergistic effect of blended feedstocks on PC. Meanwhile, the two main synergy mechanisms, including mineral and organic matter catalysis, were discussed. The improvement of syngas quality required the following: (1) increasing the gasification temperature to attain conditions conducive to the production of H2 and CO; (2) optimization of the gasification agent/fuel ratio; (3) blending of feedstocks with low ash content and high volatile matter. For mineral transformation, (1) blending with coal can generate low-melting substances and convert Ni3S2 to Ni particles, thereby alleviating liquid slagging and fouling problems; (2) blending with biomass needs to be elevated to inhibit the formation of V2O3. Further work is encouraged to address the experimental verification of the synergy mechanism and the influence of tar on the quality of syngas and to deal with the co-gasification of PC and emerging feedstocks. Meanwhile, in-depth studies on mineral transformation and life cycle assessment for integrated PC co-gasification must be conducted.
+

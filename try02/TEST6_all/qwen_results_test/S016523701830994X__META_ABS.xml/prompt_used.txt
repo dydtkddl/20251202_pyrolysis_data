@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Isothermal fast pyrolysis kinetics of synthetic polymers using analytical Pyroprobe In this study, the global kinetics of fast pyrolysis of three synthetic polymers, viz., poly(methyl methacrylate) (PMMA), polystyrene (PS) and ultra-high molecular weight polyethylene (UHMWPE), were studied in an analytical Pyroprobe® by collecting isothermal mass loss data at short timescales of 2–150 seconds. The apparent activation energy and pre-exponential factor were determined using integral reaction models. PMMA fast pyrolysis was best described by the contracting cylinder model, while sigmoidal Avrami-Erofeev model was used to describe the fast pyrolysis of PS and UHMWPE. The apparent activation energies (in kJ mol−1) of fast pyrolytic decomposition of PMMA, PS and UHMWPE were 43.7, 52.6 and 48.4, respectively. The low values indicate that fast pyrolysis is a diffusion-limited process in the Pyroprobe® reactor. Statistical kinetic compensation effect, i.e. ln(A) = a*Ea +b, was established for the three polymers by considering a large number of experimental data from the literature. In order to understand the time evolution of pyrolysate functional groups at short timescales, Pyroprobe® was coupled with an in situ Fourier transform infrared spectrometer (FTIR). The time taken for maximum evolution of vapors was 12–18 s and 35–45 s for PMMA and PS fast pyrolysis, respectively, at 500 °C, while it was 20–22 s for UHMWPE at 600 °C. The Pyroprobe® was also interfaced with gas chromatograph/mass spectrometer (GC/MS), and the major pyrolysates at 500 °C from PMMA, PS and UHMWPE were identified as methyl methacrylate, styrene and a range of C5-C21 alkanes and alkenes, respectively.
+

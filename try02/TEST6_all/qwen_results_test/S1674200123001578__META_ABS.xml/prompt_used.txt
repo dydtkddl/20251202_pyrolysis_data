@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kaoline-based catalyst for a high stability desulfurization of sour heavy naphtha in a three-phase oscillatory baffled reactor To meet the rapidly increasing demand for energy and the dramatic depletion of conventional crude oil, it is imperative to utilize sour naphtha. With no coke being produced, oxidative desulfurization (ODS) of naphtha lowers its sulfur content and average molecular weight. In this article, we outline a method for heavy naphtha non-extractive ODS using a very stable catalyst. The technique involves the use of a solid catalyst with oxygen gas as the oxidant. This necessitated relatively high mixing intensities; hence a three-phase Oscillatory Baffled Reactor (OBR) was used. The catalyst was based on the zeolite ZSM-5, prepared from natural kaolin by a series of delamination and activation steps and impregnated with Fe. A TiO2 nanolayer was applied, using the sol-gel method, to prevent rapid deactivation. The reactor performance was evaluated to minimize the sulfur content in the naphtha fuel. Due to the protective coating, the sulfur conversion stabilized at 90%. The results of this work establish the use of natural clay-based catalysts in a continuous, three-phase ODS, particularly with regard to proving long-term stability. It also showed that modest ODS can be achieved using an environmentally friendly oxidant, at mild operating conditions, whilst maintaining stability.
+

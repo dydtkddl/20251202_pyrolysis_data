@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis gases produced from individual and mixed PE, PP, PS, PVC, and PET—Part I: Production and physical properties This article describes the production and properties of gases produced by the pyrolyses of poly(ethylene terephthalate) (PET), polypropylene (PP), polyethylene (PE), poly(vinyl chloride) (PVC), and polystyrene (PS), and three of their mixtures at process temperatures of 500, 700, and 900 °C. The overall aim was to characterize all 24 gases in terms of their production and physical properties, and compare the data obtained to those of traditional fuels, namely natural gas (NG) and propane. In addition to experimental and analytical approaches for determining quantities and compositions of the pyrolysis products, various mathematical methods and their combinations were also used to determine product properties. The highest conversion of material into gas occurred during the pyrolysis of PP at 900 °C (66.88 wt% conversion into gaseous products). The pyrolyses of PE and PP at 500 °C were found to generate pyrolysis gases with the highest energy, with gross calorific values of 86.58 and 81.09 MJ m−3 N, respectively. The highest chemical energy yield was obtained by the pyrolysis of PP at 900 °C. Gases produced from PVC had a high thermal conductivity of about 104.83 mW m−1 K−1. The gas generated from PP at 500 °C exhibited a high specific heat of 2.94 kJ m−3 N K−1, and that obtained from PS at 500 °C had a very low kinematic viscosity (5.28 10−6 m2 s−1) and thermal diffusivity (7.90 10−6 m2 s−1). Even though numerous reports have dealt with pyrolysis gases, there is still not sufficient information about the specific physical properties of these gases. This article attempts to fill this gap and induce scientific interest in this field.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Towards integrated sustainable biofuel and chemical production: An application of banana pseudostem ash in the production of biodiesel and recovery of lignin from bamboo leaves This study investigated an integrated approach to the biowaste transformation and valorization of byproducts. Biochar obtained from the banana pseudostem was calcined to synthesize a heterogeneous catalyst and sustainably prepare a highly alkaline solution. The ash was utilized directly as a heterogeneous catalyst in biodiesel production from waste cooking oil. At the same time, an alkaline solution prepared from the ash was used for delignification and recovery of lignin from bamboo leaves by the hydrothermal reaction. Techniques like Fourier-transform infrared spectroscopy (FTIR), Field emission scanning electron microscopy (FESEM), Brunauer-Emmett-Teller (BET), Transmission electron microscopy (TEM), and Energy dispersive X-ray (EDX) were applied to characterized the catalyst. The alkaline solution was analyzed with Atomic absorption spectroscopy (AAS). The Response surface methodology (RSM) technique was considered for the optimization of different parameters in the transesterification and hydrothermal reaction. Under the optimized condition, waste cooking oil (WCO) to Fatty acid methyl ester (FAME) conversion was 97.56 ± 0.11%, and lignin recovery was 43.20 ± 0.45%. While at the best operating pyrolysis temperature, the liquid fraction yield from the banana pseudostem (500 °C) was 38.10 ± 0.31 wt%. This integrated study approach encourages the inexpensive, sustainable, and environment-friendly pathway for synthesizing catalysts and preparing a highly alkaline solution for the valorization of biowaste into biofuel and biochemicals.
+

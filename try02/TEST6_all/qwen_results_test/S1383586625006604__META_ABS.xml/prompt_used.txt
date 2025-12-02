@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Efficient removal of carbon monoxide from low-temperature sintering flue gas by non-thermal plasma catalytic coupling system Plasma coupled CuMnOx enhances catalytic activity of CO in low-temperature flue gas. Without plasma, the CO conversion rate is 4 % at room temperature, which exceeds 50 % under the optimal discharge condition of 350 J/L, increasing 12 times. Additional, the conversion rate is close to 100 % at a sintering flue gas temperature of 110℃. The turnover frequency of Mn sites increased from 0.0193 h−1 to 0.0233 h−1, and CO reaction rate increased from 0.20 to 1.31 μmol/(g*s), increasing 7.5 times. Dynamics studies shown that NTP coupling reduces the Ea of CO oxidation reaction from 40.8 kJ/mol to 17.4 kJ/mol, improving the low-temperature reaction activity. Research found that the enhanced effect of electron cloud overlap causes Coulomb repulsion, leading to lattice rupture after non-thermal plasma treatment. The high-energy particles by ionization undergo ionization and recombination of transition metal atoms through continuous bombardment, eliminating phase separation phenomena and forming more active Cu–O-Mn phase structures, efficiently reactivating inert lattice oxygen, thereby overcoming the limitations associated with thermal deactivation. Meanwhile, plasma induced electron injection, increasing the electron density of transition metal d-orbitals, causing the center of the d-band to shift upwards, leading to the transfer of electron clouds to antibonding orbitals and triggering the electron scissor effect, thereby reducing the stability of CO adsorption. It results in the release of Cu+ sites on the surface, which act as Lewis acid sites and participate in the adsorption and decomposition of O3 and other oxidation discharge products. The above effects collectively transform CO oxidation from a single mechanism to a synergistic effect of multiple mechanisms. This also provides new ideas for the design of subsequent flue gas treatment processes.
+

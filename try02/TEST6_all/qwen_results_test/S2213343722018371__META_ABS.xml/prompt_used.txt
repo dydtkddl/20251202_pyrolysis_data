@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A study on the co-combustion of excavated waste and municipal solid waste: Thermogravimetric characteristics and gaseous pollutants emission To investigate the co-combustion behavior, a thermogravimetric analyzer combined with Fourier transform infrared (TG-FTIR) analysis was conducted on the blending samples of excavated waste (EW) and municipal solid waste (MSW) at different ratios. In addition, the co-combustion experiment at 700, 800, and 900 °C was carried out on a fixed bed reactor to determine the typical gaseous pollutants emission. The degree of interaction is evaluated by the weight loss deviation rate of co-combustion and individual combustion. The greater the deviation rate indicates the more significant interaction effect. The results showed that there were significant interactions between MSW and EW during the co-combustion process. Co-combustion with MSW improved the ignition, burnout and comprehensive combustion performance of EW samples, and the improvement of the co-combustion performance of EW which was landfilled in 2005 (05-EW) was more obvious than that landfilled in 2015 (15-EW). The blending ratio of MSW below 40% can avoid the obvious incremental effect on the generation of HCl, SO2 and NOx, and the above gaseous pollutants were significantly suppressed at 700–800 ℃. Furthermore, co-combustion of 15-EW with MSW was more likely to exhibit inhibitory effects on gaseous pollutant emission. Based on the results of thermogravimetric analysis and pollutant emission experiment, the low MSW blending ratio (below 40%) and low combustion temperature (between 700 and 800 °C) could improve the combustion conditions of EW and suppress the emission of gaseous pollutants.
+

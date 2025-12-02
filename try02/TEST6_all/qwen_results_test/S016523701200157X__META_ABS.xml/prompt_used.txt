@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of biocollagenic wastes of vegetable tanning. Optimization and kinetic study Three solid wastes generated from the vegetable tanning of bovine skin in the Leather Industry (shavings, trimmings and buffing dust) were mixed together in the same proportions in which they were produced and the mixture was then used as a pyrolysis precursor for this research study. The optimal pyrolysis conditions for obtaining energy from the generated fractions (char, tar and gas fraction), and the preparation of activated carbons from the carbonaceous material (char), were established. The final conditions were chosen from two different points of view, the thermogravimetric results (TG/DTG) obtained at different heating rates (2–20°C/min) and an optimization of the pyrolysis parameters by means of experiments carried out in a conventional furnace. The pyrolysis conditions finally selected were: heating rate (5°C/min), final temperature (750°C), and time at final temperature (60min) and inert gas flow (N2 150ml/min). The carbonaceous material (char) obtained exhibits good properties as a solid fuel due to its high calorific value and relatively low ash content. It also shows suitable characteristics as a precursor for the preparation of activated carbons. The condensable fraction has a predominantly phenolic nature and contains significant amounts of nitrogen compounds (nitriles, diketopiperazines, etc.), alkanes, alkenes, acids and esters, derived from the decomposition of tannins and collagen, with possible industrial applications in the preparation of chemical products. The gaseous phase is rich in carbon monoxide and carbon dioxide, and also contains a certain amount of methane and hydrogen. The syngas content increases with the pyrolysis temperature. A kinetic study of the pyrolysis was carried out using a model of independent reactions. The variation in the heating rate produced a slight shift to higher temperatures of the decomposition peaks, although this did not significantly affect either the kinetic parameters of the degradation processes or the percentage weight losses.
+

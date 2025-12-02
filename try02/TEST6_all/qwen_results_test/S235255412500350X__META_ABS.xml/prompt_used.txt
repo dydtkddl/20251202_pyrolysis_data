@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+High quality terephthalic acid produced via a single step depolymerization-purification process of postconsumer polyethylene terephthalate for co-crystallization applications Efficient and simple steps chemical recycling technologies are surfacing as promising and sustainable pathways toward realizing circular economies for postconsumer plastic waste. Herein, a single step alkaline hydrolytic depolymerization and product purification of postconsumer polyethylene terephthalate (PET) plastics was performed under conventional heating. Activated carbon (AC) was incorporated during the reaction itself to produce a high-quality monomer with significantly reduced number of purification steps. Within 40 min, the proposed one step depolymerization-purification technology was able to facilitate ≈99 % conversion of PET to TPA monomer with improved yield (reaching 93 %), colour properties (92 % optical transmittance) and acid value (670–672 mgKOH/gTPA). Activated carbon played a crucial role in maintaining the quality of the produced TPA during the course of the reaction while the reaction time and volume of EG had the upper hand in determining the percentage of PET conversion and yield of TPA. First order reaction kinetics were able to describe the proposed PET depolymerization process with average activation energy of 28.5 kJ/mol. The reagents utilized in the depolymerization and purification purposes were also regenerated and their performance in another cycle of depolymerization indicated acceptable results with respect to PET conversion (92–98 %) and TPA yield (89–90 %). Furthermore, the obtained high-quality TPA was utilized in the co-crystallization of the anti-tuberculosis drug; Isoniazid (IZA). The different characterization techniques indicated the successful fabrication of IZA-TPA co-crystals. Thus, proving that the proposed single step depolymerization-purification route can offer an appealing economic and ecologically sustainable solution for postconsumer PET recycling and upcycling.
+

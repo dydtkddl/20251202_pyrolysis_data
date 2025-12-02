@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermodynamic evaluation of nonstoichiometric oxides for efficient and practical solar thermochemical hydrogen production Efficient solar-to-fuel conversion is of paramount importance to gauge the competitiveness of solar fuel production methods and technologies. Solar thermochemical cycling (STC) has tremendous potential in this regard, yet the realization of which is critically contingent upon the synergy between the redox oxides and reactors of the STC. The evaluation and screening of redox oxides for practical high-efficiency STC shall take the interactions between the oxide's thermodynamic properties and the reactor's effective mass and energy transport into account. In this study, we assess the STC performance of a selection of benchmark nonstoichiometric oxides (ceria, Zr-doped ceria, and perovskite oxides) from the perspective of material-reactor interaction based on an experimentally validated numerical model. We demonstrate material-specific differences in solar-to-fuel efficiency under practical operating conditions and reveal their close yet inevident connection with the design considerations of STC reactors, in addition to the thermodynamic properties of materials. The results show that the efficiencies of neat and Zr-doped ceria are sensitive to higher reduction temperatures, whereas the efficiencies of selected perovskite oxides are more sensitively limited by the flow rate of water. The findings essentially reveal an underlying yet important interconnection between energy consumption and hydrogen productivity, predominantly governed by the thermodynamic properties of oxides and the operating conditions of reactors. Within the constraints of actual fixed-bed reactor operation, optimization of solar-to-fuel efficiency is conducted at reduction temperatures of 1300–1600 °C. Neat ceria exhibits the highest solar-to-fuel efficiency of 4.4% for reduction at 1300 °C and 16.2% at 1600 °C. The perovskite oxides exhibit notably lower solar-to-fuel efficiency than neat and Zr-doped ceria, which is correlated with their lower reduction enthalpy change, higher specific heat, and greater water consumption. This study further investigates the thermodynamic properties of ideal hypothetical oxides to enhance the solar-to-fuel efficiency in practical applications. The solar-to-fuel efficiency of the idealized ceria-based oxide, which has higher reduction enthalpy and entropy changes than those of neat ceria, can reach up to 30.6% (without heat recovery). This study provides new thermodynamic insights into the material design and screening for efficient STC reactors and systems.
+

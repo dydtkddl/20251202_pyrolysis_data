@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of sewage sludge and sodium lignosulfonate: Kinetic study and methylene blue adsorption properties of the biochar Co-pyrolysis of sewage sludge (SS) and lignin is a promising method to dispose of SS and obtain valuable biochar, however, the synergy effect has been rarely reported. In this paper, lignin of sodium lignosulfonate (SL) was blended with SS for co-pyrolysis. Thermogravimetric analyzer/differential scanning calorimetry (TGA/DSC) was used to investigate the reaction kinetics during co-pyrolysis. And the adsorption performance of co-pyrolysis biochar on methylene blue (MB) was determined. Results showed that the SS decomposition was promoted with SL addition. Kinetic analysis using the Coats-Redfern method indicated the reaction order model to be the primary pyrolysis kinetic mechanism. The synergistic effect of promotion was caused by catalytic metals, and inhibition was caused by ash and tar adhesion. The specific surface area of biochar was improved during co-pyrolysis from 62.53 to 243.22 m2 g−1, while SL ratio of 80% achieved the maximum specific surface area. Co-pyrolysis showed an inhibition effect on porosity formation when SL ratio was below 60%, while a promotion effect was found when SL ratio exceeded 60%. Co-pyrolysis elevated the MB adsorption capacity of SS-derived biochars from 12.48 to 154.06 mg g−1, and was indicated as a promising method for adsorbents production.
+

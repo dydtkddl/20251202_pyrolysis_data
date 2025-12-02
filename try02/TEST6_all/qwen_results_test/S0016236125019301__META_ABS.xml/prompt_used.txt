@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Research on performance optimization of Alkali-Metal-Rich biomass chemical looping gasification using Ex-Situ process In the process of biomass chemical looping gasification(BCLG), the interactions between alkali metals and OC are complex and multifaceted. To clarify the mechanisms of these interactions, this study proposes an ex-situ process, where biomass and OC are separately configured. BCLG experiments were conducted in a fixed-bed reactor, and the effects of different alkali metal concentrations and different reaction modes on the gasification process were analyzed. The results indicated that the carbon conversion rate in CLG increased from 66.5 % to 72.9 %, and the gasification efficiency improved from 81.8 % to 85.4 % after the addition of alkali metals. The introduction of alkali metals effectively catalyzes the cleavage of biomass macromolecules and the redox reactions of the oxygen carrier, thereby increasing the yield of products from BCLG. Under the ex-situ mode, the carbon conversion rate of rice husks loaded with 5 % KCl was the highest at 77.5 %, with H2 production and gasification efficiency reaching 614.7 ml/g and 96 %, respectively. After 10 cycles, the gasification efficiency decreased to 88.6 %, which was still higher than that of the initial reaction under the in-situ mode. Moreover, the oxygen carrier’s crystal phase and microstructure did not change significantly, demonstrating better reaction performance and cyclic stability.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Design of a 1-D auger reactor for upcycling polystyrene to styrene via pyrolysis As the global plastic waste crisis intensifies, upcycling polystyrene (PS) into styrene via pyrolysis emerges as a potential solution. Yet, the lack of optimised reactor designs has limited its large-scale implementation. This manuscript addresses this gap by modelling an auger pyrolysis reactor, focusing on mass and heat transfer to enhance PS upcycling efficiency. The one-dimensional model assumes heating from the reactor wall with a baseline temperature of 723 K and an activation energy for PS depolymerisation of 192.9 kJ/mol, reflecting direct PS conversion to styrene. Mass transfer calculations identify a temperature window of 633–733 K is required for complete PS conversion, while the heat transfer model is further developed to explore methods for achieving this temperature range. As the primary heat source, the wall temperature dictates the PS temperature along the reactor length and influences reactor design. Also, increasing the shaft temperature from 423 to 698 K significantly enhances heat transfer and PS conversion, as it acts as a secondary heat source rather than a heat sink. For catalytic reactions where activation energy may decrease to as low as 130 kJ/mol, the reactor length can be reduced to less than 0.2 m under the assumed conditions, highlighting the importance of catalysts in reactor design and capital investment. The model indicates with an activation energy of 160 kJ/mol, auger and wall temperatures set at 473 K and 723 K respectively, a complete PS conversion can be achieved within a reactor length of 0.75 m, corresponding to a processing time of approximately 25 min. This design enables a throughput of 1.89 kg/h of pure PS, equivalent to 94.5 L/h of expanded PS, demonstrating both scalability and potential for large-scale waste management and resource recovery. The compact reactor design also offers portability, facilitating on-site processing of PS waste.
+

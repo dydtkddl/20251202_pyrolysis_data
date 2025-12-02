@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Activated char from the co-pyrolysis of polystyrene and olive stone mixtures for the adsorption of CO2 Yogurt plastic containers made of polystyrene (PS), olive stone, and mixtures of both have been converted into activated carbon materials transforming them firstly into char via pyrolysis and secondly with activation using either KOH or H2SO4. The pyrolysis of the olive stone gave a higher yield of material than the plastic PS. However, the activation of the PS char with KOH was more effective, reaching surface areas of 508 vs 194 m2 g−1 of the corresponding prepared with olive stone. The prepared materials were tested as CO2 adsorbent in thermobalance and fixed-be column assays. The materials activated with H2SO4 slightly enhanced the adsorption ability of the original char but were far from the performance obtained with KOH activation. The CO2 isotherms showed high synergy of CO2 uptake and selectivity when using activated chars prepared with the char from the mixture of raw materials, specially at a 1:1 mass ratio. The isosteric heat of adsorption values were those expected for a physisorption process. Further experiments in a fixed-bed column were also studied at atmospheric pressure at different inlet CO2 concentrations (10–50%). The CO2 retention increased as the partial CO2 pressure rose. Besides, a very similar performance of the material prepared with plastic and olive stones was obtained at 50%, i.e. 220 and 197 mg g−1 respectively. At low CO2 concentrations, the materials enriched with plastic displayed better performance than those prepared with olive stone. Cycles of adsorption-desorption were carried out in the column to assess the stability of the materials. The curves obtained did not display any substantial change, demonstrating the lack of adsorption retention.
+

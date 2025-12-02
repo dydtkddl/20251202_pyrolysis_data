@@ -1,0 +1,76 @@
+You are an information extraction system specialized in scientific experiment structuring.
+You must extract strictly factual elements **only if explicitly present in the PAPER TEXT**.
+Never infer, assume, generalize, or guess. Never create numbers or conditions not directly stated.
+
+======================
+PAPER TEXT (DO NOT SUMMARIZE)
+======================
+{{PAPER_TEXT}}
+
+======================
+EXTRACTION RULES
+======================
+
+Your task is to extract exactly **one experiment definition** from the paper.
+
+An experiment is defined as:
+- 1 input variable (what is changed)
+- N input levels (how it is changed)
+- A set of constants (everything that is fixed)
+- A set of outcome groups (dependent measurements)
+
+You must follow this schema:
+
+{
+  "experiment": {
+    "input_variable": "...",
+    "input_levels": ["...", "..."],
+    "constants": [
+      {
+        "name": "...",
+        "evidence_sentences": ["...", "..."]
+      }
+    ],
+    "outcome_groups": [
+      {
+        "group_name": "...",
+        "description": "...",
+        "evidence_sentences": ["...", "..."]
+      }
+    ]
+  }
+}
+
+======================
+STRICT EXTRACTION REQUIREMENTS
+======================
+
+1. **Every item extracted MUST have direct evidence sentences from the PAPER TEXT.**
+   - If a sentence is not present, do not include the item.
+   - Evidence sentences must be exact spans copied from the text.
+
+2. **The experiment must remain singular.**
+   - Even if there are many outcome analyses (oil yield, distillation, fuel properties), all of them belong to the same experiment.
+   - Do NOT treat them as separate experiments.
+
+3. **input_variable must be the one factor intentionally varied.**
+   - In this text, the varied factor is HDPE ratio (sample codes PPO111, PPO211, PPO411, PPO811).
+
+4. **constants must include ONLY conditions that remain unchanged across input levels.**
+   Example: temperature, heating rate, reactor pressure, condenser temperature, distillation settings, etc.
+
+5. **Outcome groups must categorize any set of dependent variables.**
+   Examples:
+   - Oil yield  
+   - Distillation fractions  
+   - Fuel properties (KV, density, CI, HHV)  
+   - Aromatic hydrocarbons (AH/PAH)
+
+6. **ABSOLUTELY NO HALLUCINATION.**
+   - If any information is missing, omit it.
+   - Do not make up values or restate inferences.
+
+======================
+NOW PRODUCE THE JSON ONLY.
+======================
+

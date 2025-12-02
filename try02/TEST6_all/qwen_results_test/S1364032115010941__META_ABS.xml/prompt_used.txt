@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Plastics to fuel: a review The thermal and catalytic processes of converting waste plactics into fuels are promising techniques to eliminate the refuse which otherwise is harmful to the enivironment, and decrease the dependence on fossil fuels. Thermal degradation decomposes plastic into three fractions: gas, crude oil, and solid residue. Crude oil from non-catalytic pyrolysis is usually composed of higher boiling point hydrocarbons. The optimization of conversion parameters such as the choice of catalyst, reactor design, pyrolysis temperature, and plastic-to-catalyst ratio plays a very important role in the efficient generation of gasoline and diesel grade fuel. The use of a catalyst for thermal conversion lowers the energy required for conversion, and the catalyst choice is important for efficient fuel production. The suitable selection of catalysts can increase the yield of crude oil with lower hydrocarbon content. Co-pyrolysis of plastics with coal or shale oil improves crude oil quality by decreasing its viscosity. A large number of publications have appeared on various processes, and continued improvements and/or innovations are expected in the future. Further investigations on the catalytic systems are required in order to advance the field, particularly to enhance the added value of fuels and to minimize the use of energy. This review aims to provide both the highlights of the remarkable achievements of this field and the milestones that need to be achieved in the future.
+

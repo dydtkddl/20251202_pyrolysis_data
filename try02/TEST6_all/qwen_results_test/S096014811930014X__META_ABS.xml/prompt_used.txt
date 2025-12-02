@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis technologies for pomegranate (Punica granatum L.) peel wastes. Prospects in the bioenergy sector An unpublished low-cost industrial biomass waste, pomegranate peel, as alternative and sustainable fuel source was studied. A horizontal tubular furnace of original design for conventional and flash pyrolysis was carried out. The bio-char yields from both processes were similar, but the bio-oil and bio-gas yields were higher in flash pyrolysis, depending on the temperature. The bio-char obtained show that it could be used as a fuel (higher heating values ≥ 28.0 MJ/kg) and as a potential precursor of activated carbon. It was also found that the lower temperature of the flash pyrolysis was, the greater the bio-oil yield (∼53%) and that the higher was, the greater the biogas yield (∼50%). The bio-oil from conventional pyrolysis has a predominantly furanic nature and contained significant amounts of the phenols and benzenes. In contrast, the bio-oil from flash pyrolysis is similar to that of “anthracene oil”, both of them being composed mainly of polycyclic aromatic hydrocarbons. The bio-gas obtained by flash pyrolysis is of a higher quality than that obtained by conventional pyrolysis because it has a lower CO2 content (32.4% vs 66.6%) and higher syngas content (CO + H2) (50.8% vs 26.8%). Flash pyrolysis is better in CH4 production (11.6% vs 4.6%).
+

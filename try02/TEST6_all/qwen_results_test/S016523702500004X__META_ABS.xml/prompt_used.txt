@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study of synergistic effects in co-pyrolysis of biomass and plastics from the perspective of phase reactions Co-pyrolysis is an important direction for the high-value conversion and utilization of biomass and plastics. Research on the mechanisms underlying synergistic effects contributes to the regulation of co-pyrolysis processes and enables targeted production of products. The synergistic effect is primarily determined by the physicochemical properties of the feedstocks as well as chemical reactions occurring during pyrolysis. This study designed co-pyrolysis experiments with varying mass transfer processes, aiming to classify and identify physical and chemical changes in co-pyrolysis from a reactive perspective, thereby obtaining methods for regulating the co-pyrolysis process. The research findings indicate that solid-phase contact and reactions between gas phase and solid phase are major factors influencing pyrolytic behavior and variations in pyrolytic products, independent of feedstock types. The type of feedstock affects specific reaction processes. In terms of thermal weight loss, both PP and PET can facilitate the pyrolysis of cellulose, but the molten PET, due to its higher viscosity, can encapsulate cellulose, preventing the release of volatile components and promoting secondary reactions. Regarding surface structure characteristics of biochar, the main difference between the two plastics lies in the hydroxyl group content. PETV can reduce the hydroxyl group content on the biochar surface through esterification reaction, while also fixing itself on the biochar surface, thereby increasing the biochar yield. PPV primarily reacts with unsaturated structures such as carbonyl groups, increasing the hydroxyl group content. As for the liquid phase products, both plastics can promote the deep decomposition of CE, producing more small molecular substances. This synergistic effect primarily originates from the interaction between plastic volatiles and CE.
+

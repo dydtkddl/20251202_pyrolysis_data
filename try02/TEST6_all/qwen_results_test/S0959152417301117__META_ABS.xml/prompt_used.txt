@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimal control of dilute acid pretreatment and enzymatic hydrolysis for processing lignocellulosic feedstock Lignocellulosic feedstock is one of the potential renewable sources for producing ethanol for transportation. The process steps viz., acid pretreatment and enzymatic hydrolysis in bio-chemical process route are intended to produce fermentable sugars, which can be readily fermented for producing ethanol. However, the dilute acid pre-treatment and enzymatic hydrolysis process steps are found to be economically inefficient. The present work aims at optimizing these process steps for improving the process performance. Such optimization is expected to increase conversion, reduce energy or material requirement, thereby improving the economics. The kinetic models of acid pretreatment and enzymatic hydrolysis for lignocellulosic feedstock processing are adapted from literature. Subsequently, these kinetic models are augmented by associated mass and energy balances, to develop a batch reactor model and fed-batch reactor model for dilute acid pretreatment and enzymatic hydrolysis processes, respectively. Optimal control with Pontryagin's maximum principle has been implemented to determine the optimal time dependent profiles of heating and cooling fluid flow rates and operating temperatures for acid pretreatment and substrate feed rate profile for enzymatic hydrolysis to optimize the respective processes performance. Different objective functions such as maximizing concentration of desired product, minimizing the batch time, and maximizing profit have been considered. The simulation results yielded an increase of 6.7% and 8.8% in final concentration of desired product; 43% and 42.5% reduction in batch processing time for pretreatment and enzymatic hydrolysis processes, respectively. Finally, the simulation results have also provided optimal operating policies which have increased the profit of pretreatment by 124% and enzymatic hydrolysis by 150%, thereby improving the techno-economic feasibility for processing lignocellulosic feedstock.
+

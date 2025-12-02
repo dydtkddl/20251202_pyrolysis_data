@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Conceptualization and design of a small pyrolysis plant for the sustainable production of paraffin from plastic waste Energy shortages and rapid increase in its demand are amongst the major problems facing the world today. In response to the rapid depletion of fossils fuels, other alternative energy sources have been explored. One of the methods of generating energy is converting plastics into usable fuel. Two major problems facing the world today prompting to pyrolysis are disposal of plastic waste due to their non -biodegradable nature and depletion of fossil fuels as a result of the continuously rising demand. The feedstock for the pyrolysis plant was selected to be Polyethylene Terephthalate (PET) in the form of flakes ranging from 8 – 12 mm and were supplied by PETRECO. The binary dominance matrix was used to examine the optimal heat exchanger. The helical heat exchanger was designed to reduce cost by elimination of a water pump as the heat transfer fluid lost heat to the atmosphere. It was easier to obtain liquid paraffin from the chosen raw materials since it was already in the paraffin chemical structure. In the pyrolysis plant, the temperature in the reactor increased at a maximum rate of 6˚C/min regulated by a temperature controller and each batch took 60 minutes. The percentage weight of paraffin yield was a maximum of 40% weight of the feedstock. Therefore, 1 kg of plastic waste was converted to 286 ml of paraffin fuel. The presence of oxygen in the PET structure enhanced the solid residue of the product. The properties of the solid residue left in the reactor were sufficient to recommend for PET bricks. The solid residue had a maximum compressive strength of 10 N/mm2 which was within the standard range and had less water absorbing tendencies and hence a longer lifespan. Catalytic pyrolysis can also be explored for future research in order to improve product quality.
+

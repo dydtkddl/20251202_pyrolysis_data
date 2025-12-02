@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrogen production from plastic waste: A comprehensive simulation and machine learning study Gasification, a highly efficient method, is under extensive investigation due to its potential to convert biomass and plastic waste into eco-friendly energy sources and valuable fuels. Nevertheless, there exists a gap in comprehension regarding the integrated thermochemical process of polystyrene (PS) and polypropylene (PP) and its capability to produce hydrogen (H2) fuel. In this study a comprehensive process simulation using a quasi-equilibrium approach based on minimizing Gibbs free energy has been introduced. To enhance H2 content, a water-gas shift (WGS) reactor and a pressure swing adsorption (PSA) unit were integrated for effective H2 separation, increasing H2 production to 27.81 kg/h. To investigate the operating conditions on the process the effects of three key variables in a gasification reactor namely gasification temperature, feedstock flow rate and gasification pressure have been explored using sensitivity analysis. Furthermore, several machine learning models have been utilized to discover and optimize maximum capacity of the process for H2 production. The sensitivity analysis reveals that elevating the gasification temperature from 500 °C to 1200 °C results in higher production of H2 up to 23 % and carbon monoxide (CO). However, generating H2 above 900 °C does not lead to a significant upturn in process capacity. Conversely, an increase in pressure within the gasification reactor is shown to decrease the system capacity for generating both H2 and CO. Moreover, increasing the mass flow rate of the gasifying agent to 250 kg/h in the gasification reactor has shown to be merely productive in process capacity for H2 generation, almost a 5 % increase. Regarding pressure, the hydrogen yield decreases from 22.64 % to 17.4 % with an increase in pressure from 1 to 10 bar. It has been also revealed that gasification temperature has more predominant effect on Cold gas efficiency (CGE) compared to gasification pressure and Highest CGE Has been shown by PP at 1200 °C. Among the various machine learning models, Random Forest (RF) model demonstrates robust performance, achieving R2 values exceeding 0.99.
+

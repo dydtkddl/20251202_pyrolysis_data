@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+ReaxFF molecular dynamics study of N-containing PAHs formation in the pyrolysis of C2H4/NH3 mixtures The reactive force field molecular dynamics (ReaxFF MD) simulations are performed to depict the whole process including fuel pyrolysis, the formation and growth of PAHs/NPAHs and soot formation in the pyrolysis of C2H4 and C2H4/NH3 mixtures. NH3 doping increases the concentration of H radicals through the decomposition of NH3. These H radicals then promote the consumption of C2H4 by participating in H-abstraction reactions. The formation of C-N species (mainly HCN, H2CN, C2N, CH3CN, NCCN, and HC3N) removes the C atoms participating in the formation of PAHs and soot, thus inhibiting the formation of soot. And such inhibitory effect is strengthened with increasing temperature due to the promoted formation of C-N species. Most importantly, the structure, formation and evolution paths of N-containing PAHs (NPAHs) are identified based on the experimental and simulation results for the first time, revealing that N atoms in the NPAHs are almost always present in the carbon chains attached to the aromatic rings while barely enter the rings to form heterocyclic structure. The simulations further reveal that when the temperature is less than 2500 K, the first N-containing aromatic ring is formed through the reaction of phenyl with small C-N species (such as HCN and CN radicals), followed by the increase of new rings primarily via the HACA mechanism. At temperatures greater than 2500 K, the formation and growth of NPAHs are dominated by the continuous attachment of N-containing carbon chains and cyclic polycondensation-cyclization reactions. The identification of new C-N species especially NPAHs would help improve the kinetic mechanisms for ammonia blending combustion.
+

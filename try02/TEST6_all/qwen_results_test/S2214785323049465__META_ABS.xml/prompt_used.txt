@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Preparation of novel adsorptive membrane using spent spices waste-derived biochar to treat synthetic wastewater This research work focuses on the development of biochar-infused polymeric mixed matrix membranes, where the biochar is derived from spent spice wastes. While essential oils and fatty acids extracted from spices are used as main ingredients in food items, cosmetics, and pharmaceuticals, the leftover spent spice waste is discarded in landfills. Potentially, the biochar derived by utilizing this spice waste can be used to remove pollutants from industrial wastewater. Although there is literature that uses this biochar to adsorb pollutants, very few investigate adsorption by trapping biochar in a polymer matrix. Here, we test the waste-derived biochar-polymer mixed matrix membranes (MMM) to remove dyes from wastewater to develop a circular economy. Biochar is prepared by pyrolyzing the mixture of spent spices at 350 °C, and then activating it thermally and chemically to increase the surface area available for adsorption, as seen in the FESEM images. It is then mixed with PMMA solution and spin-coated on an inert substrate. The deposited mixed matric membrane is peeled off the substrate and exposed to synthetic wastewater in a vacuum filtration setup. We conclude that not only is the adsorption efficiency of the MMM method comparable within 10% of dye removal efficiency to the batch method, it is also significantly faster and has the potential to continuously treat large volumes of wastewater.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Insight into the synergistic performance during ex-situ catalytic co-pyrolysis of poplar sawdust and polypropylene over Fe-Ni/ZSM-5 for the enhancement of aromatics Hydrogen-deficient and oxygen-rich biomass result in low hydrocarbon production during pyrolysis. This work aims to enhance aromatics in bio-oil through ex-situ catalytic co-pyrolysis of poplar sawdust (PS) and polypropylene (PP) over Fe-Ni/ZSM-5 and gain an understanding of the synergistic pyrolysis performance. The results showed that adding PP improved the comprehensive pyrolysis performance of the PS and PP blends. The deviation between the experimental and calculated mass loss of the blends confirmed the interaction between PS and PP, with a more positive synergistic effect at a biomass/plastic mass ratio of 3:2. The average activation energy of PP was 211.6 kJ·mol−1, which is 28.2 % higher than that of PS. As the proportion of PP increases, the activation energy required for the blends increases. The established artificial neural network model accurately predicts the mass loss of the blends (R2 ≥ 0.999) by providing the mixing ratio, heating rate, and temperature. The addition of hydrogen-rich feedstock increased aromatic yield in the volatile products, indicating the positive synergy between PS and PP during catalytic co-pyrolysis over Fe-Ni/ZSM-5. As the targeted products among the aromatics, the total yields of benzene, toluene, and xylene ranged from 58.43 to 251.03 mg·g−1 in the PS and PP blends, respectively.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Low chlorine oil production through fast pyrolysis of mixed plastics combined with hydrothermal dechlorination pretreatment Fast pyrolysis of the mixed plastics (PE: PP: PS: PVC = 0.5: 0.3: 0.15: 0.05) with and without hydrothermal dechlorination pretreatment were investigated in a fixed bed reactor to determine the effects of pyrolysis parameters (temperature, carrier gas flow rate and particle size) on the distribution and the quality of the products. The results showed that high pyrolysis temperature, high carrier gas flow rate and small particle size promoted the migration of organic chlorine in condensable products to inorganic chlorine in gas products. And the optimal conditions for fast pyrolysis of mixed plastics to produce oil were the pyrolysis temperature of 500 °C, carrier gas flow rate of 40 ml/min and particle size of 0.1–0.15 mm with the maximum oil yield of 67.88 wt%. Hydrothermal pretreatment of mixed plastics has shown an excellent dechlorination efficiency of 99.9 %. Furthermore, the total yield of oil and wax was increased by 7.06 wt%, meanwhile the content of C5-C9 components in the pyrolysis oil showed an upward trend when compared with fast pyrolysis without pretreatment. Besides, the concentration of methane achieved 50.68 % due to the possible weakening effect of hydrothermal pretreatment on CC bond energy of β-position.
+

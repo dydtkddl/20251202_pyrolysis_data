@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic effect on low-pressure pyrolysis of biomass-plastic mixture as representative of Tibetan tourism solid waste Tibetan tourism solid waste (TSW) has attracted worldwide attention due to its increased production and the potential environmental risks associated with its improper disposal. According to a survey on TSW, catering industry is the main source of TSW, thus a mixture of starch and low-density polyethylene (LDPE) was selected to simulate Tibetan TSW, and pyrolysis of single and mixed components has been performed in a vertical tube furnace with variable pressure. The effects of temperature (400–700 ℃) and pressure (0.02–0.1 MPa) on the distribution of pyrolysis products and the composition of the gas and liquid phases were investigated. The results show that the simulated TSW pyrolysis has a synergistic effect, more obviously, promoting the production of C1-C3 hydrocarbons in the gas phase and inhibiting the production of oxygenated organic matter in the liquid phase. In addition, the properties of the simulated TSW pyrolysis process and the time evolution of various functional groups were studied by TG-FTIR, and it was observed that the simulated TSW pyrolysis followed two stages of degradation: biomass degradation from 250° to 370 °C and then plastic degradation from 420° to 510 °C. This study provides basic knowledge of thermochemical process in Tibet, thus paving the way for clean and efficient treatment of TSW.
+

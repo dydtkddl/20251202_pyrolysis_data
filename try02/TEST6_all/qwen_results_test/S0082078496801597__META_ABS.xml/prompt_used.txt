@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A general model for devolatilization of large coal particles There have been several studies on the devolatilization of large coal particles under laboratory conditions simulating large-scale fluidized or fixed-bed combustion conditions, all of which demonstrate that the process of devolatization of large coal particles occurs over a much longer timescale than that of pulverized coals under the same conditions. This paper reports the development of a model for large coal particle devolatilization under fluidized and fixed-bed combustion conditions. The model combines a heat transfer model with a general and comprehensive coal devolatilization model, FG-DVC. It inherits the generality of FG-DVC and can be applied to coals of various types without extensive prior knowledge of the coals. This model includes a detailed treatment of coal pyrolysis reactions including the yields of individual gas species, tar yields, and tar molecular weight distributions. The changes in coal physical properties are modeled with the application of Merrick's coal physical property submodels for specific heat and thermal conductivity. Both the convective and radiative heat transfer between the gas phase and coal particles are considered and Gunn's correlation for the surface heat transfer coefficient is used. Model predictions are compared with the data of large coal particle devolatilization measured in fluidized beds and tubular reactors, for particle thermal response, total weight loss, and individual gas evolution rates. In general, the agreement with the data is very good for the particle center temperature and weight loss curves and is fair for the individual gas evolution curves.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Highly mesoporous K2CO3 and KOH/activated carbon for SDBS removal from water samples: Batch and fixed-bed column adsorption process This manuscript evaluates the behavior of activated carbon (AC) prepared from the cones biomass of Iranian pine trees, with high mesoporosity and a large specific surface area, as a high potential adsorbent for sodium dodecylbenzene sulfonate (SDBS) in batch and continuous systems. The AC samples were prepared from pine tree cones by chemical activation with different impregnation ratios of K2CO3 and KOH. The materials were characterized by Boehm titration, approximate elemental, SEM, FT-IR, TGA, XRF analyses and BET surface area measurement. In a batch process, the effects of various parameters such as adsorbent dose, pH, contact time and initial SDBS concentration and temperature were considered. Six different adsorption isotherms were applied to equilibrium data. Pseudo-first-order, pseudo-second-order and intraparticle diffusion models were used to estimate the adsorption kinetic data. The experimental data resulted in excellent fits with the Redlich-Peterson isotherm and that the pseudo-second-order described the best description of adsorption data. Thomas and Yan models were used in describing the experimental data in a continuous system. The thermodynamic parameters such as Gibbs free energy (ΔG°), enthalpy (ΔH°), entropy (ΔS°) and activation energy (Ea) were analyzed. The contrasting negative and positive values of ΔG° and ΔH°, respectively, indicated that adsorption was spontaneous and endothermic in nature, and the obtained Ea confirmed chemisorption of SDBS adsorption onto AC. The adsorptive behavior of AC was also investigated with different bed heights, flow rates and the initial concentrations of SDBS. These results, by the recovery of 88% after five successive cycles, indicated that the combination of sulfuric acid and ethanol with a ratio of 4:6 is suitable for desorbing SDBS from AC.
+

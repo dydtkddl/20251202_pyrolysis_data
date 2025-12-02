@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+High-value products from chickpea residues by thermal pyrolysis and its environmental impacts High value products could be obtained from chickpea residues (CR) by thermal pyrolysis. Biomass was previously characterized in terms of chemical composition and thermal behavior by elemental analysis, infrared spectroscopy (FTIR) and thermogravimetric studies. From temperature effect on products, 500 °C showed the highest yield to bio-oil (44 wt%). While higher temperatures promoted gas emissions from secondary cracking reactions. At this temperature, hydrocarbons, furans and alcohols, considered as desirable molecules, were improved in the liquid. From them, 2,5-dimethylfuran (DMF) showed an important production. This compound is considered a second-generation biofuel. In the gases, CO2 was the most emitted compound at this temperature, followed by CO from the thermal decomposition of cellulose and hemicellulose. On the other hand, CH4 emission is caused by the degradation of lignin and its concentration increases with temperature. In addition, volatile organic compounds (VOCs) in the gas phase, including toluene, 2-methylbutanal, 3-methylbutanal, 2-methylfuran, octane, 2-octene, dimethyl disulfide and 4-methylpentanenitrile, were identified under the experimental conditions in this study. The solid product, bio-char, shows useful properties including a Higher Heating Value (HHV) of 19.19 MJ/kg and a functional composition analyzed by FTIR and X-ray photoelectron spectroscopy (XPS) with a higher proportion of non-oxygenated groups. It could be considered for energy production, soil amendment and water or air treatment. Its highest yield (43 wt%) was obtained at 400 °C. Therefore, the three reaction products of CR pyrolysis reported several value-added compounds from renewable sources of great interest for industrial and chemical purposes.
+

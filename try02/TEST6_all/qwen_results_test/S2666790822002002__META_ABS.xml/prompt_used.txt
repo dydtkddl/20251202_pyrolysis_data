@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Reaction temperature, heat of combustion, and main chemicals produced by hydrothermal oxidation of polypropylene Plastic pollution is a global emergency. Since the 1950s around 4900 Mt of plastic waste has been lost to the environment, and chances to find it in the open ocean have increased fivefold since the 1990s. Clean technologies are needed to convert plastic waste into less environmentally harmful substances. There are advanced technologies reported in the literature for plastic waste treatment, but hydrothermal oxidation (HO) is generally missing. HO can be regarded as an intermediate technology between incineration and waste conversion. It is clean because it minimizes CO2 and toxic emissions in comparison with incineration, generate enough heat to self-maintain the process, and retains low molecular weight organic compounds that could be further processed into bioplastics, biomethane or added value chemicals. This study reports our initial investigations towards developing clean HO technology for conversion of plastic waste into water soluble organic compounds. Two different HO reactors were used: a fluidized sand bed system for batch oxidation with short residence time, and a reaction calorimeter for measuring oxidation rates as function of the temperature. The experiments were designed to characterize heat and mass balances, which are necessary for optimizing the process. A main distinction from published literature is that the proposed HO technology aims at retaining as much organic compounds in the water as possible, contrary to traditional HO technologies aiming at producing clean effluents from waste. It was concluded that acetic acid appears to be a refractory intermediate which limits the oxidation rate, thus high temperatures and residence times are required to produce clean effluents. On the contrary, using lower temperatures and residence times will positively increase the production of organic compounds in the proposed technology, as well as reduce capital and operation costs. The next step of the research is to determine the lowest temperature and residence time that produce the highest yield of organic compounds.
+

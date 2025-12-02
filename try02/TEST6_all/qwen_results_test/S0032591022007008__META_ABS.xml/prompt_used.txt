@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+100 years of scaling up fluidized bed and circulating fluidized bed reactors This year, 2022, we celebrate the 100-year anniversary of the commercialization of the fluidized bed reactor. In those years, many new processes have been developed, with many of them considered breakthrough technologies, replacing technologies that were no longer considered competitive. Fluidized beds have the advantages of superior heat transfer and the ability to continuously move solids during operation, along with a list of other attributes. As a result, processes spanning coal and biomass gasification, pyrolysis, fluidized catalyst cracking, acrylonitrile, polyethylene, oxychlorination, and polycrystalline silicon have prospered with the application of fluidized bed technology. Expect that list to continue with current efforts in chemical looping, plastic pyrolysis, methane pyrolysis, and propane dehydrogenation, to name a few. In the past 100 years, the landscape of fluidized beds and circulating fluidized bed reactors has grown in numbers and applications. With those applications comes 100 years of scaling up and optimizing those fluidized beds. We have seen engineering go from an incremental approach to a more fundamental approach using sophisticated models and relevant cold flow experimentation. That engineering work process is still changing. With the onset of better computational platforms, models, and experimental techniques, combined with better statistical tools (e.g., machine learning) and control systems (e.g., artificial intelligence), the application of fluidized bed technology will require less capital, less operating costs, and allow for commercialization in less time.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental measurements, convolutional deep neural networks, and thermo-kinetic analyses of the thermal decomposition of Phoenix dactylifera L./polylactic acid composites The study provides a thorough evaluation of the thermal decomposition of Phoenix dactylifera L. (PDL), polylactic acid (PLA), and their bio-composite (PDL/PLA), employing machine learning convolutional deep neural networks (CDNN) and analyzing the kinetics and thermodynamics of the process. The experimental measurement data used in this study were obtained from thermogravimetric analysis (TGA) of the samples at heating rates of 10, 20, and 40 °C·min⁻¹ , with degradation temperatures ranging from 25 to 600 °C. The experimentally measured data indicated that sample weight loss shifted to higher temperatures with increased heating rates and higher proportions of PLA plastic content. The application of the machine learning CDNN technique for analysing this process resulted in learning algorithms and arbitrary constants that effectively captured the thermal decomposition behaviour of the materials, achieving an accuracy of R² ∼ 0.99. A CDNN framework comprising eight hidden neurons was identified as the most effective architecture, significantly reducing the overall cost function during training from 47.37 to 0.48 and determining sample composition as the most influential operating parameter driving the thermal degradation process. The kinetic parameters of the process were estimated using the regular integral isoconversional kinetic methods, specifically the Flynn-Wall-Ozawa (FWO) and Kissinger-Akahira-Sunose (KAS) model-free kinetic approaches. The overall activation energies for the process, as estimated using the FWO and KAS kinetic methods, are 124.31 kJ·mol⁻¹ and 120.54 kJ·mol⁻¹ , respectively. Furthermore, the estimated values of activation enthalpy (105.62 – 135.97 kJ·mol⁻¹), Gibbs free energy of the activated complex (164.66 – 194.79 kJ·mol⁻¹), and entropy of activation (-0.13 to −0.09 kJ·mol⁻¹·K⁻¹) indicate that the formation of activated complexes from the reactants is characterized as endothermic, non-spontaneous, and associated with less disorder. This study aims to provide valuable insights to energy experts, environmental engineers, plastic manufacturers, and policymakers regarding the efficient utilization of Phoenix dactylifera L. to facilitate energy reduction in the thermal degradation of plastics.
+

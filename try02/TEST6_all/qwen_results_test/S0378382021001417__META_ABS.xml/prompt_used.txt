@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The effect of thermal aging on the composition of pyrolysis oil fuel derived from typical waste plastics This study reveals the influence of thermal aging on the pyrolysis oil fuel components of typical waste plastics, including polyethylene (PE), polypropylene (PP), and polyvinyl chloride (PVC). Plastic samples were continuously heated in an aging oven at 100 °C to simulate thermal aging. The pyrolysis volatile compositions of fresh and aged plastic samples were comparatively studied by pyrolysis-gas chromatography/mass spectrometry (Py-GC/MS) at 500 °C. The volatile composition analysis results showed that thermal aging changes the pyrolysis oil composition, and the influence strongly depends on the type of plastic. For PE and PP, which underwent random scission after thermal aging treatment, the influence of thermal aging on the heavy oil fraction was more obvious than that on the light oil and diesel oil fractions. For PVC samples, the thermal aging process caused structural defects and turned the color of the PVC light yellow. After 128-h thermal aging, the maximum weight loss rate decreased by 35.8%, and the fraction of C5-C9 components and aromatics first increased and then decreased. The maximum values were 80.21 ± 1.62% and 73.69 ± 0.73%, and the minimum values were 65.58 ± 2.63% and 63.98 ± 0.39%, respectively.
+

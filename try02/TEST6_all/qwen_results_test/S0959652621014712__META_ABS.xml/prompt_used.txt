@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enabling high-quality carbon fiber through transforming lignin into an orientable and melt-spinnable polymer Compared to carbon fibers made from conventional petroleum-based precursors, lignin-based carbon fibers can lower the production cost while enabling cleaner manufacturing. The use of lignin-based carbon fibers is currently hindered by their poor mechanical properties that are mainly attributed to the lack of orientability in lignin structure. Herein, we demonstrated a novel method of producing high-quality carbon fiber, by which lignin is first transformed into a new precursor polymer with a linear molecular orientation, and the precursor is subsequently melt-processed. Specifically, a raw red oak lignin bio-oil consisting of multifunctional compounds with distributed molecular weights was converted into a lightly branched, acrylate polymer via a hybrid functionalization followed by controlled radical polymerization. By carefully investigating different synthesis parameters and determining the effects of the intrinsic properties of the crude lignin bio-oil have on the polymerization, a melt-spinnable thermoplastic polymer could be obtained in high yield. The new polymer was then used to produce carbon fiber with average tensile strength of 1.70 GPa and tensile modulus of 182 GPa. Our analysis results indicated that the new precursor structure can improve the degree of graphitization and reduce structural defects in the resulting carbon fiber. Structural analyses showed that the carbon fiber contains a highly ordered and well-stacked turbostratic structure. Overall, this study presents a promising approach to produce low-cost, high-quality carbon fiber that may have applications in the automobile industries.
+

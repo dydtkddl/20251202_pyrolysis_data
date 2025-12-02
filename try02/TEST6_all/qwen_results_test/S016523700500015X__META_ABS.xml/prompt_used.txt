@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An investigation into the catalytic cracking of LDPE using Py–GC/MS Pyrolysis coupled with gas chromatographic separation and mass spectrometry detection (Py–GC/MS) has been used to study the catalytic degradation of low-density polyethylene (LDPE). This novel approach allowed rapid screening of the catalytic activity of different acid solids and permitted a straightforward analysis of the resulting products. The results obtained are comparable to those reported by other authors while very small sample and catalysts masses (less than 0.2mg) were required. For the purpose of this work, three acid solids differing in their textural and acid properties (micrometer HZSM-5, nanocrystaline n-HZSM-5 and Al-MCM-41) were synthesized, characterised for their chemical and structural characteristics and tested for their thermal stability between 550 and 800°C. Thermogravimetric (TG) analysis was then employed to evaluate their catalytic activity in the degradation of pure LDPE. This activity was related to their capacity to shift the degradation reaction to lower temperatures. Py–GC/MS analysis of pure LDPE at 700°C generated a pyrogram with characteristic triplets corresponding to straight chain diene, alkene and alkane hydrocarbons of varying lengths. Catalytic degradation of LDPE over micrometer and nanocystalline HZSM-5 zeolites generated a similar range of degradation products with a marked increase in the light olefins and aromatic fractions (e.g. benzene, toluene, xylene) and complete elimination of heavier olefin and paraffin hydrocarbons. Despite its high catalytic activity, as determined by TG analysis, mesoporous Al-MCM-41 exhibited no shape selectivity in the products generated with a low proportion of aromatics and a higher content of olefin and paraffin species.
+

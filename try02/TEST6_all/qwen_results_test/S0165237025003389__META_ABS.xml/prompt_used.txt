@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of reservoir moisture on underground in-situ pyrolysis of tar-rich coal: Experimental investigation and ReaxFF MD simulation Different moisture content is an important aspect of underground coal seam heterogeneity, which would affect the underground in-situ pyrolysis of tar-rich coal. The pyrolysis characteristics and product distribution of water-bearing tar-rich coal were investigated by the fixed bed pyrolysis experiments. Based on the ReaxFF MD simulation, the pyrolysis characteristics and reaction mechanism were explored from a microscopic perspective. The results showed that the pyrolysis characteristic index (D i ) continued to decrease with increasing moisture content, indicating that H2O could increase the release difficulty of pyrolysis volatiles. As the moisture content increased from 1 wt% to 15 wt%, the tar yield and lighter tar proportion increased from 4.39 wt% and 49.75 % to 11.95 wt% and 61.25 %. Therefore, the two obtained with higher moisture content would be also higher. The above results showed that H2O could promote the pyrolysis of coal. The tar yield and lighter tar proportion obtained under the CO2 atmosphere were further improved. The results of the ReaxFF MD simulation showed that the changing trends of pyrolysis product distribution were consistent with experimental results. The statistical results of chemical bonds showed that H2O could promote the cracking of C-C and C-O bonds within the pyrolysis system. By analyzing the typical pyrolysis reaction mechanism, the results of pyrolysis experiment and ReaxFF MD simulation were further confirmed. Based on the comprehensive analysis of the above results, it could be concluded that the most suitable reaction conditions for water-bearing tar-rich coal pyrolysis were moisture content: 5 wt%∼10 wt%, N2 atmosphere.
+

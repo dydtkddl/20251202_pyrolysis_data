@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical upcycling of PVC-containing plastic wastes by thermal degradation and catalysis in a chlorine-rich environment Chlorine (Cl)-containing chemicals, including hydrogen chloride, generated during thermal degradation of polyvinyl chloride (PVC) and corresponding mixture impede the chemical recycling of PVC-containing plastic wastes. While upgrading plastic-derived vapors, the presence of Cl-containing chemicals may deactivate the catalysts. Accordingly, herein, catalytic upgrading of pyrolysis vapor prepared from a mixture of PVC and polyolefins is performed using a fixed-bed reactor comprising zeolites. Among the H-forms of zeolites (namely, ZSM-5, Y, β, and chabazite) used in this study, a higher yield of gas products composed of hydrocarbons with lower carbon numbers is obtained using H-ZSM-5, thus indicating further decomposition of the pyrolysis vapor to C1–C4 hydrocarbons on it. Although the formation of aromatic compounds is better on H-ZSM-5, product distributions can be adjusted by further modifying the acidic properties via the alteration of the Si/Al molar ratio, and maximum yields of C1–C4 compounds (60.8%) and olefins (64.7%) are achieved using a Si/Al molar ratio of 50. Additionally, metal ion exchange on H-ZSM-5 is conducted, and upgrading of PVC-containing waste-derived vapor to aromatic chemicals and small hydrocarbon molecules was successfully performed using Co-substituted H-ZSM-5. It reveals that the highest yield of gas products on 1.74 wt% cobalt (Co)-substituted H-ZSM-5 is acquired via the selection of an appropriate metal and metal ion concentration adjustment. Nevertheless, introduction of excess Co into the H-ZSM-5 surface decreases the cracking activity, thereby implying that highly distributed Co is required to achieve excellent cracking activity. The addition of Co also adjusted the acid types of H-ZSM-5, and more Lewis acid sites compared to Brønsted acid sites selectively produced olefins and naphthenes over paraffins and aromatics. The proposed approach can be a feasible process to produce valuable petroleum-replacing chemicals from Cl-containing mixed plastic wastes, contributing to the closed loops for upcycling plastic wastes.
+

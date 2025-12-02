@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Multi-aspect evaluation of integrated forest-based biofuel production pathways: Part 1. Product yields & energetic performance Forest-based biofuels are strategically important in forest-rich countries like Sweden but the technical performance of several promising production pathways is poorly documented. This study examines product yields and energy efficiencies in six commercially relevant forest-based “drop-in” and “high blend” biofuel production pathways by developing detailed spreadsheet energy balance models. The models are in turn based on pilot-scale performance data from the literature, supplemented with input from technology developers and experts. In most pathways, biofuel production is integrated with a market pulp mill and/or a crude oil refinery. Initial conversion is by pyrolysis, gasification or lignin depolymerization and intermediate products are upgraded by hydrotreatment or catalytic synthesis. While lignin oil (LO) hydrodeoxygenation had the highest expanded system efficiency, considerable uncertainty surrounds product yields owing to absence of suitable experimental data on LO upgrading. Co-feeding vacuum gas oil and fast pyrolysis oil in a fluidized catalytic cracker has a complex and uncertain effect on fossil yields, which requires further investigation. Co-locating bio-oil hydrotreatment at the refinery improves heat utilization, leading to higher system efficiencies. Explicit consideration of mill type and energy requirements is required to avoid performance misestimation as an assumption of energy surplus can confer a definite advantage.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Novel synthesis and application of biochar for controlling release and exposure of mercury in the farmland: From human health risk perspective Mercury (Hg)-contaminated farmlands have received wide attention because of the adverse risks posed to food security and human health. In addition, climate change altered the mobility of Hg in the soil, limiting soil productivity and nutrient bioavailability, hence elevating health risks. To adapt to these risks, pot experiments were employed to showcase the impacts of single-pyrolytic synthesized biochar with nitrogen and phosphorus impregnation (NPBC) on the nutrient accessibility, Hg immobilization, and human health risks, compared to pristine and control groups. Results revealed that, with increased surface area and abundant function groups, impregnation amplified bulk nitrogen, phosphorus, and oxygen content from 0.47, 0.25, and 9.47 % to 3.01, 4.50, and 21.4 %, respectively. The pot experiments indicated the effectiveness of NPBC900 in immobilizing soil Hg, hence reducing Brassica rapa chinensis’ Hg uptake by 88 %. Notably, NPBC transformed ∼93 % of water soluble and exchangeable Hg species to stable fractions, enhancing the residue concentration three-fold higher than the control. Additionally, NPBC700-900 showcased characteristic phosphorus and nitrogen slow-release (best at NPBC900 and NPBC500, respectively; 5 %) contributing to controlled soil available nutrients. Hg bioaccessible fraction exhibited a notably higher level (1.7 mg kg−1) in the control group measured against BC (0.8 mg kg−1) and NPBC treatments (∼0.1 mg kg−1). Through dietary and soil ingestion pathways, NPBC900 treatment demonstrated the best health risk reduction for farmers and the public by ∼93 and 69 %, respectively. With versatile capabilities, NPBC emerges as a practical, green, and sustainable alternative in Hg remedy technologies, a breakthrough for climate change adaptation.
+

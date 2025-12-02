@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermo-chemical disposal of plastic waste from end-of-life vehicles (ELVs) using CO2 The source reduction of plastic waste could be an effective means to attenuate hazardous environmental problems triggered by microplastics. Energy recovery from plastic waste through thermochemical processes is a desirable valorization route. To realize the grand challenges, plastic waste derived from end-of-life vehicles (ELVs) was pyrolyzed. To propose a greener feature, CO2 was introduced as a mediator to maximize carbon allocation to the gaseous pyrogenic product (syngas) by CO2 reduction to CO and concurrent oxidation of volatile matter (VM) that was evolved from the thermolysis of plastic waste. As such, fundamental and systematic works were conducted to delineate the CO2 effects on conversion of VMs. This study experimentally proved that CO2 promotes thermal cracking in line with C–C bond scissions. However, the reaction rate for the conversion of CO2 and VM into CO via homogeneous reaction was not fast. Therefore, a Ni-based catalyst was employed to accelerate the reaction rate. However, there was coke deposition on the catalyst surface. To prevent coke formation, we chose a method to enhance CO2 reduction to CO and the oxidation of VM. Thus, three bimetallic catalysts were used for catalytic pyrolysis. Among the three bimetallic catalysts, Rh0.1Ni1/SiO2 was the most effective.
+

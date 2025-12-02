@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis-catalytic upgrading of brominated high impact polystyrene over Fe and Ni modified catalysts: Influence of HZSM-5 and MCM-41 catalysts The pyrolysis-catalytic upgrading process of brominated high impact polystyrene (Br-HIPS) was performed using Fe and Ni modified ZSM-5 and MCM-41 catalysts in a two-stage fixed bed reactor. The characterization of catalysts, the product yield and debromination performance in relation to different catalysts were investigated. The results showed that the addition of HZSM-5 and MCM-41 reduced the yield of oil from 69.0 wt % to 64.4 wt % and 62.3 wt %, respectively. The modified catalysts of Fe/ZSM-5 and Ni/ZSM-5 exhibited prominent cracking performance, resulting in the decrease of the oil to 63.2 wt % and 61.2 wt %, respectively, corresponding with an increase of gas products from 7.7 wt % to 16.1 wt % and 20.3 wt %, respectively. However, the mesoporous catalysts of Fe/MCM-41 and Ni/MCM-41 tended to preserve the yield of oil to 65.9 wt % and 65.3 wt %, respectively. In terms of the composition of the oils, a higher yield of single ring aromatics was obtained with Fe modified catalysts, while the addition of ZSM-5 and Ni/ZSM-5 catalysts promoted increased formation of 2 ring aromatics at the expense of single ring aromatics. In addition, the modified catalysts were found to be highly effective at removing bromine from the oils. The Fe modified catalysts exhibited a better debromination performance than Ni modified catalysts, which was in favor of capturing more inorganic bromine and removing bromine from the oils.
+

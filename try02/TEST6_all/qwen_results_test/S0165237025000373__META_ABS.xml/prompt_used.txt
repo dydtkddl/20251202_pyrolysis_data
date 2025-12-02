@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave-assisted pyrolysis of waste LDPE: Unveiling the role of induced gas-solid thermal gradients on pyrolysis oil product distribution Microwave-assisted heating plays an important role in minimizing the high energy consumption of traditional thermochemical recycling processes. Its application to plastic waste recycling routes enables a more efficient production of new renewable feedstocks for the petrochemical industry. This work presents the experimental assessment of low-density polyethylene (LDPE) waste recycling in a microwave-assisted pyrolysis (MAP) fixed bed reactor and the in-depth evaluation of the obtained pyrolysis oils in comparison with conventional plastic waste pyrolysis oils. The role of main process variables (temperature, nitrogen flow rate and susceptor-to-LDPE ratio) on the pyrolysis oil yield and composition was addressed. The maximum attained oil and wax yields were of 60–75 wt%. As a general trend, the microwave-assisted process led to a distinct chemo-selectivity compared to that of traditional LDPE pyrolysis, shifting the products distribution from saturated paraffins to olefinic species and longer molecular chains. Olefins content rose from 28 % under conventional pyrolysis to 75 % under MAP. The negligible content of aromatic compounds in MAP oils offers great potential to serve as a recycled feedstock for steam crackers. These findings are ascribed to gas-phase reactions quenching due to the microwave-induced thermal gradient between the selectively heated bed and the comparatively colder surrounding atmosphere. A statistical parametric analysis and regression model have been implemented to further evaluate the impact of each variable, and mechanistic considerations were considered on the experimental microwave-induced thermal gradients and fixed bed mass and heat transfer properties. By integrating real polyolefin waste streams as feedstocks for chemical building blocks through microwave-assisted pyrolysis, this study helps paving the way for a transition to circularity in petrochemical industries.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Transforming disposable masks to sustainable gasoline-like fuel via pyrolysis The past COVID-19 pandemic has led to a surge in the use of disposable masks, posing a significant environmental challenge due to the swift accumulation of waste. This study explores the potential of pyrolysis to transform this waste into valuable pyrolysis oil with characteristics akin to gasoline, addressing both waste management and energy derivation concerns. Pyrolysis, a thermal decomposition process, was applied to mask materials, producing an oil with a high calorific value of 45.93 MJ/kg. The chemical makeup of this pyrolytic oil was meticulously characterized using Pyrolysis-Gas Chromatography-Mass Spectrometry (PY-GC/MS) and Fourier-transform Infrared Spectroscopy (FTIR), confirming the presence of hydrocarbons similar to those found in gasoline. Achieving an efficiency of 41.865 %, the pyrolytic approach demonstrated a promising potential for not only managing mask waste but also creating an alternative energy carrier. However, the study advises that before considering this pyrolytic oil for engine use, a thorough evaluation of its combustion quality, engine compatibility, and environmental impact is essential. This investigation advances the discussion on sustainable waste management, offering insights into the generation of alternative fuels from daily waste streams, while also highlighting the necessity for comprehensive analyses to ensure the practicality and efficiency of such novel energy solutions.
+

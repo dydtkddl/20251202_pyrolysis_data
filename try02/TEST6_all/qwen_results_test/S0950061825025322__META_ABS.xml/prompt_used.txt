@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on the influence of carbide slag incorporation on the carbon sequestration efficiency and material properties of fly ash-based carbon-negative filling materials The increasing number of abandoned mines, the accumulation of industrial solid waste, and the urgent need for CO2 reduction underscore the importance of developing efficient carbon sequestration materials to achieve the "dual-carbon" goals. However, traditional fly ash-based materials exhibit low carbon sequestration efficiency, and challenges such as the high cost and corrosiveness of alkaline activators (e.g., NaOH) hinder their large-scale application. This study introduces a novel negative carbon filling material (Negative Carbon Filling Material, NCFM), which utilizes low-calcium fly ash as the primary raw material and carbide slag as a low-cost, low-corrosive alkaline activator, combined with CO2 mineralization technology at 2 MPa pressure. The study systematically examines the effects of carbide slag content (0–50 %) on the material's working properties, microstructure, and carbon sequestration performance. The results indicate that under non-CO2 conditions, the adsorption capacity reaches its optimum when the carbide slag content is 20 % (40.53 ml·g−1). Fractal dimension analysis reveals that the addition of carbide slag reduces pore complexity and surface roughness, thereby diminishing the effectiveness of the adsorption sites. In terms of carbon sequestration performance, carbide slag significantly enhances the carbon sequestration capacity, with the highest carbon sequestration amount (26.06 mg CO2/g) observed at 40 % content, achieving an efficiency of 41.96 %, a 100.15 % increase compared to the group without carbide slag. Considering overall engineering applicability, the NCFM with 20 % carbide slag content offers an optimal balance between strength (0.9 MPa), carbon sequestration (15.99 mg/g, 26.68 %), and cost. This study addresses the limitations of traditional reliance on high-cost chemical reagents by utilizing carbide slag (industrial solid waste) as an activator, which serves a dual role as both an alkaline activator and a calcium source. The proposed "carbide slag-fly ash synergistic mineralization technology" provides an innovative solution for the reutilization of abandoned mines, the recycling of solid waste resources, and CO2 mineralization sequestration. This technology positively impacts the achievement of the "dual-carbon" goals and fosters sustainable development.
+

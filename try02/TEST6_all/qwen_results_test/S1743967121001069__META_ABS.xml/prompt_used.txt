@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Quality assessment of bio-oil and biochar from microwave-assisted pyrolysis of corn stover using different adsorbents Biofuels in the form of bio-oil and biochar have been produced by microwave heating of corn stover. Different adsorbents such as silicon carbide (SiC) and activated carbon (AC) with different ratios (10%, 20%, and 30%) to corn stover are investigated with the aims of enhancing the absorption of the microwave, maximizing the yields of the desirable products i.e. bio-oil followed by biochar as well as improving their qualities. Use of both the adsorbents improved the heating performance through increase in the maximal temperature and heating rate by 170 °C and 36 °C/min respectively compared to without adsorbent. Use of AC increased the yield of bio-oil up to 45 wt% while SiC increased the gas yields up to a maximum value of 48 wt%. The better physical properties such as 37%, 5.3, 2.9 mPa s, and 1 g/mL for water content, pH, viscosity and density respectively of bio-oil were obtained when using AC as an adsorbent. Also, use of AC helped in producing bio-oils which contained higher carbon and hydrogen contents as well as high calorific value (17 MJ/kg). Similarly, use of AC increased the contents of hydrocarbons and phenols in the bio-oil up to 36% and 28% respectively with low oxygen-containing compounds (2%). Also, use of AC produced the biochar having cleanest pores that were almost free of carbon-like impurities with a higher surface area of the pore (105.2 m2/g). In addition, biochar having low ash content, high carbon content, and calorific value (28 MJ/kg) were achieved. The net energy recovery with respect to raw corn stover was calculated to be of maximum value i.e., 55% when using AC. The AC and SiC were reused for further runs of the experiments (5 times) with few changes in the heating behavior and the yields of the pyrolytic products.
+

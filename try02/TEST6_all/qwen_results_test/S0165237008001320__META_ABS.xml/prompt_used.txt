@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of the rejects of a waste packaging separation and classification plant Plastic wastes coming from a waste packaging separation and classification plant have been pyrolysed in a semibatch nonstirred autoclave, swept by a continuous flow of N2. The plastic waste contains 39.5% PE, 34.2% PP, 16.2% PS and EPS, and some other minor materials. Temperatures in the range 400–600°C have been explored, and it has been found that over 460°C total thermal decomposition of the waste plastics takes place. Three catalysts have been tested: HZSM-5, red mud and AlCl3. Solid yields about 5–7%, liquid yields in the range 40–70% and gas yields in the range 12–24% were obtained. The liquid products were a mixture of C5–C20 compounds with a very high proportion of aromatics (>70%). Such liquids contain significant amounts of valuable chemicals such as styrene (20–40%), toluene (9–15%) and ethylbenzene (7–16%) and have rather high GCV (40–43MJkg−1). Thermal pyrolysis oils were a wax-like product which solidified at room temperature, whereas the oils obtained with any of the catalysts were less viscous and maintained in liquid state at room temperature. HZSM-5 favoured gas production and, increased the aromaticity and decreased the carbon number of the oils. AlCl3 did not modify pyrolysis yields but gave rise to lighter liquids. Red mud produced higher liquid yields and the liquids were less viscous, but it was not observed a clear effect on the carbon number of the oils.
+

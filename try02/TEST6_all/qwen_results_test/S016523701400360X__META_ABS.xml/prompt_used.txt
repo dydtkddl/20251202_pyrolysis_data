@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fast pyrolysis of low and high ash paper waste sludge: Influence of reactor temperature and pellet size Paper waste sludge (PWS) is a waste produced in large quantities by the pulp and paper industry, and is usually disposed by landfilling. This study investigates the pyrolytic conversion of PWS as an alternative to its valorisation. Low and high ash PWSs (8.5 and 46.7wt%) were subjected to fast pyrolysis conversion to maximise the bio-oil yield by optimising the reactor temperature and pellet size. Maximum bio-oil yields of 44.5±1.7daf, wt% at 400°C, and 59.9±4.1daf, wt% at 340°C, for an intermediate pellet size of 4.84±0.15mm, were attained from the conversion of the low and high PWS, respectively. The low optimal reactor temperatures, as well as the high bio-oil yields, make valorisation via fast pyrolysis conversion promising. A significant reduction in the O/C molar ratio of up to 35%, from the high ash PWS to its bio-oil product, led to a 65% increase of the higher heating value. A thermogravimetric study was implemented to investigate the pyrolytic mechanisms behind the increase in bio-oil yield with intermediate pellets sizes. It revealed that the observed increase in non-condensable gas yield, which corresponded to a decrease in the bio-oil yield, was due to the promotion of exothermic reactions for high heating rates using smaller pellet sizes.
+

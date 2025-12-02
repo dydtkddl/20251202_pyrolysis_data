@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Revolution of coarse-grained CFD-DEM technology and its application in fluidized beds: A comprehensive review Due to their superior mixing and heat transfer capabilities, fluidized beds are extensively utilized in chemical engineering, power generation, etc. Numerical simulations have long been essential for elucidating the nonlinear multiphase transfer processes within reactors. However, as the research perspective expands from lab-to pilot- and industrial-scale, the exponential increase in particle numbers constrains the applicability of multiphase flow models such as discrete element method (DEM), direct numerical simulation, etc. As an extension of traditional DEM methods, the coarse-grained (CG) DEM strategy effectively balances computational efficiency and accuracy. In order to promote the advancement of CG DEM in the field of fluidized beds, its development and applications are comprehensively reviewed in this work. First, the foundational principles of the CG method—similarity and energy conservation—are outlined. The scaling paradigms of the collision parameters, force formulations, and gas-solid properties are systematically listed in chronological order. Subsequently, the applications of the CG method across lab-, pilot-, and industrial-scale fluidized beds under both cold and heated conditions are summarized. Finally, future challenges and opportunities are highlighted. This review aims to accelerate the adoption of CG techniques in industrial-scale reactors while providing theoretical insights for optimizing existing models and developing novel scaling laws.
+

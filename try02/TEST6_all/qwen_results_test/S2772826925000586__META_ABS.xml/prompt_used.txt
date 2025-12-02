@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic effect of Fe-promoted catalyst and low-rank coal absorber in microwave-assisted plastic pyrolysis The escalating accumulation of plastic waste has become a pressing environmental crisis, requiring innovative valorization strategies. This study investigated a microwave-assisted pyrolysis (MAP) system employing low-rank coal (LRC) as a microwave absorber, HZSM-5 as an acidic catalytic matrix, and iron (Fe) as a redox promoter to convert polystyrene (PS), polypropylene (PP), and polyethylene (PE) into high-quality liquid fuels. Proximate analysis confirmed the high volatility of the plastics and the dual role of LRC as both a microwave susceptor and carbon co-reactant. Systematic variation of microwave power (300–800 W) and residence time (30–180 min) revealed that higher powers enhanced oil yield, with reactivity following the order PS > PP > PE. The Fe/HZSM-5 catalyst delivered the most significant improvements, reducing density and viscosity while increasing °API gravity (>35) and calorific value (>50 MJ/kg), thereby meeting or surpassing conventional light fuel specifications. GC–MS and FTIR analyses confirmed distinct product distributions: PS-derived oils rich in aromatics, PE dominated by linear alkanes/olefins, and PP producing mixed hydrocarbons, with very low oxygenated species. The synergistic interplay of LRC for rapid heating, HZSM-5 for catalytic cracking, and Fe for dehydrogenation/aromatization enabled the selective production of light hydrocarbons. Collectively, the findings establish the Fe/LRC/HZSM-5 system as a technically viable and energy-efficient platform for valorizing segregated plastic waste streams into petroleum-like fuels. While the present study focused on single-polymer feedstocks, future work will extend to binary and ternary blends under microwave heating, explore continuous-flow reactor integration, and assess techno-economic feasibility at larger scales, advancing both waste management and renewable energy agendas.
+

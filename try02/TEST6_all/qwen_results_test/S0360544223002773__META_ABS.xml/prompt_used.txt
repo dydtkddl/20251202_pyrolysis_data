@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Prediction and optimization of syngas production from Napier grass air gasification via kinetic modelling and response surface methodology In this research, a kinetic model was developed for Napier grass air gasification using Aspen Plus software and thereafter collated and validated with experimental results obtained from a lab-scale fluidized bed reactor. Herein, the model was further employed to investigate the effect of gasification operating parameters, including temperature (650–850) °C, equivalence ratio (0.2–0.4), and moisture content (0–18) wt.% on products’ yields and syngas quality. The model was segregated into four sections: the drying, devolatilization, combustion, and reduction sections. The outputs of tar, gas, and char from the devolatilization section were defined by external Microsoft Excel subroutine. Kinetic parameters were incorporated in the combustion and reduction sections to simulate tar cracking, oxidation, and reduction reactions. A good agreement was observed between the predicted and experimental results. Furthermore, response surface methodology (RSM) was employed to analyze the mutual effects of process variables and perform multi-objective optimization to maximize producer gas yield, higher heating value, carbon conversion efficiency, and cold gas efficiency by incorporating the predicted results from the developed kinetic model. The optimized syngas yield and HHV were 69.42 wt% and 8.14 MJ/Nm3 at 850 °C, 0.3021, and 15.69 wt% for temperature, ER, and moisture content, respectively.
+

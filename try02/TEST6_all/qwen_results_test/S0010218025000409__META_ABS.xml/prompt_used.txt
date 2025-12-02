@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental study of ethylene carbonate (EC) pyrolysis and oxidation in jet-stirred reactor by SVUV-PIMS Ethylene carbonate (EC) is a major component of the widely used lithium-ion battery (LIB) electrolytes, therefore it is of great importance for the risk assessment of LIB fires. In this work, the pyrolysis and oxidation of EC (equivalence ratio of 0.5) was investigated in a jet-stirred reactor (JSR) coupled to synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS) and gas chromatography at atmospheric pressure, with initial EC mole fraction of 0.0021 and residence time of 2 s. The mole fraction profiles of reaction products measured in this work, including hydrogen, water, carbon monoxide, carbon dioxide, C1 C2 hydrocarbons, formaldehyde, acetaldehyde, ketene and etc., were utilized to validate the recently proposed electrolyte surrogate models in the literatures. The results showed that the prediction of ketene yield in EC pyrolysis, as well as the prediction of EC reactivity in EC oxidation, are poor using the previous models. Therefore, based on reaction pathway analysis and sensitivity analysis in JSR, the kinetic model of EC in the literature was improved by updating and tuning the rate constants of some key reactions related to the formation and consumption of formyl methyl radical (ĊH2CHO) and ketene. The updated model could predict EC consumption and the yield of major species better than those predicted by models in the literatures. In addition, from the oxidation results of EC, we found that the reactivity of EC could be significantly enhanced by hydroxyl radical (ȮH) produced by the reaction of formyl methyl radical with oxygen.
+

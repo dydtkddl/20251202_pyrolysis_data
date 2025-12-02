@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The chemistry of chemical recycling of solid plastic waste via pyrolysis and gasification: State-of-the-art, challenges, and future directions Chemical recycling of solid plastic waste (SPW) is a paramount opportunity to reduce marine and land pollution and to enable the incorporation of the circular economy principle in today's society. In addition to more conscious behaviors and wiser product design (“design for recycling”), a key challenge is the identification of the leading recycling technologies, minimizing the global warming potential in an industrially relevant context. Chemical recycling technologies based on pyrolysis and gasification are leading the way because of their robustness and good economics, but an improved understanding of the chemistry and more innovative reactor designs are required to realize a potential reduction of greenhouse gas emissions of more than 100 million tonnes of CO2-eq., primarily by more efficient use of valuable natural resources. The feed flexibility of thermal processes supports the potential of pyrolysis and gasification, however, the strong variability in time and space of blending partners such as multiple and co-polymers, additives, and contaminants (such as inorganic materials) calls for accurate assessment through fundamental experiments and models. Such complex and variable mixtures are strongly sensitive to the process design and conditions: temperature, residence time, heating rates – severity, mixing level, heat and mass transfer strongly affect the thermal degradation of SPW and its selectivity to valuable products. A prerequisite in improving design and performance is the ability to model conversion profiles and product distributions based on accurate rate coefficients for the dominating reaction families established using first-principle derived transport and thermodynamic properties. These models should also help with the “design for recycling” strategy to increase recyclability, for example by identifying additives that make chemical recycling difficult. Fundamental experiments of increased quality (accuracy, integrity, validity, replicability, completeness) together with improved deterministic kinetic models, systematically developed according to the reaction classes and rate rules approach, provide insights to identify optimal process conditions. This will allow shedding some light upon the important pathways involved in the thermal degradation of the feedstock and the formation/disappearance of desired or unwanted products. In parallel, the intrinsic kinetics of the dominating elementary reaction steps should be determined with higher accuracy, moving beyond single step kinetics retrieved from thermogravimetric analysis experiments. Together with more accurate kinetic parameters, better models to account for heat and mass transfer limitations also need to be further developed, since plastic degradation involves at least three phases (solid, liquid, gas), whose interactions should be accounted for in a more rigorous way. Novel experimental approaches (e.g. detailed feedstock and product characterization using comprehensive chromatographic techniques and photoionization mass spectrometry) and available computational tools (e.g. kinetic Monte Carlo, liquid phase, and heterogeneous theoretical kinetics) are needed to tackle these problems and improve our fundamental understanding of chemical recycling of SPW.
+

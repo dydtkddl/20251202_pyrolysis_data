@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+On the petrographic distinction of bituminite from solid bitumen in immature to early mature source rocks The oil-prone maceral bituminite (and its equivalents: ‘amorphous organic matter’, ‘sapropelinite’, ‘amorphinite’, etc.) converts to petroleum during thermal maturation of source rocks, resulting in formation of a mobile saturate-rich hydrocarbon and a polar-rich residue of solid bitumen. Evidence of this transition is preserved in immature to early mature source rocks (e.g., Alum, Bakken, Kimmeridge, New Albany, Ohio shales, among many others), where organic petrography reveals a continuum of textures, reflectance, and fluorescence intensity occurring between bituminite and solid bitumen. Bituminite generally is characterized by high(er) intensity fluorescence, low contrast to the inorganic matrix, lower reflectance (compared to solid bitumen), and heterogeneous wispy or ‘schlieren’ textures. In comparison, solid bitumen generally shows lower intensity or no fluorescence compared to bituminite, a distinct contrast to the mineral matrix which usually includes a gray homogeneous surface of low to moderate reflectance, and may possess void-filling, embayment or groundmass textures suggesting evidence of migration or its in situ exsolution. However, these properties may manifest across a continuous spectrum in a sample or in a single microscope field, often making identification inconclusive. Unambiguous identification is further hampered by sample preparation, e.g., mechanical polish may improve homogeneity of larger accumulations, whereas smaller accumulations, or those sheltered by hard minerals, may appear more heterogeneous, leading to identification of the same organic matter as solid bitumen or bituminite, respectively. The disruptive innovation of ion milling in shale sample preparation leads to increased organic reflectance and surface homogeneity, causing bituminite and other oil-prone macerals, e.g., alginite, to develop a gray reflecting surface which is easy to confuse with solid bitumen, especially when obvious void-filling or embayment textures of the latter are absent. Herein we review distinction of solid bitumen from bituminite and alginite in immature to early mature source rocks, providing examples from nine samples illustrated by typical organic petrography images, including samples from hydrous pyrolysis experiments. Based on a review of the literature, we observe an arbitrary reflectance limit of 0.30% in mechanically polished samples seems to differentiate bituminite (<0.30%) from confident identifications of homogeneous solid bitumen (which otherwise lacks obvious void-filling or identifying embayment textures) as individual macerals on a continuous spectrum in immature and early mature source rocks. Future work conducted by governing bodies such as the International Committee for Coal and Organic Petrology (ICCP) should consider interlaboratory studies conducted on multiple immature source rock samples to develop consensus guidelines for bituminite and solid bitumen discrimination.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of metal-loaded ZSM-5 catalysts on gas-phase products and PAHs formation characteristics during the co-pyrolysis of plastic with biomass With the urbanization and population growth, the disposal of plastic waste has become a significant challenge, as the traditional methods often result in pollution and resource wastage. Pyrolysis technology offers a sustainable solution by converting the waste plastics into valuable gas or liquid fuels. The co-pyrolysis of plastics and biomass is an effective approach for synergistically managing these two types of solid waste. The polyethylene (PE) and salix psammophila (SP) was used to investigate the gas production characteristics and polycyclic aromatic hydrocarbons (PAHs) formation during the co-pyrolysis. Additionally, Cu/ZSM-5, Co/ZSM-5, and Ni/ZSM-5 catalysts were employed to investigate the effects of different metal-loaded catalysts on the co-pyrolysis process. The results indicate that, with the increase of the pyrolysis temperature, the yield of gas-phase products gradually increases, solid residue decreases, and liquid-phase products initially increase before declining, reaching their maximum at 500 °C. The synergistic effect promotes the formation of C2Hm (C2H2, C2H4, C2H6) and CH4, leading to the increase of the gas-phase product yields compared to the individual pyrolysis. The addition of catalysts further enhances the gas production: Cu/ZSM-5 boosts H2 yield, Co/ZSM-5 shows selectivity for CH4 and C2Hm, and Ni/ZSM-5 exhibits better selectivity for CO and H2. Under the various pyrolysis conditions, aromatic compounds and aliphatic hydrocarbons consistently dominate the liquid-phase products. With the increase of the pyrolysis temperature, the proportion of aliphatic hydrocarbons decreases, while the proportion of aromatic compounds increases. The addition of catalysts reduces the proportions of both aliphatic and aromatic compounds. PAHs generation is temperature-dependent, significantly increasing at 700 °C. At the low pyrolysis temperatures, the co-pyrolysis reduces PAHs yield, but at high temperatures, PAHs formation increases. The addition of catalysts decreases PAHs yield and toxicity equivalency. Cu/ZSM-5 promotes the cracking of two-ring PAHs, reducing two-ring PAHs yield. Co and Ni catalysts enhance the selective aromatization of small hydrocarbon molecules, forming low-ring PAHs and limiting PAHs aggregation. Overall, Ni/ZSM-5 demonstrates the best performance in enhancing gas production and reducing PAHs emissions, followed by Co/ZSM-5 and Cu/ZSM-5.
+

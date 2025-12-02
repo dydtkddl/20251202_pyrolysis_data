@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Elemental nitrogen balance, reaction kinetics and the effect of ethanol on the hydrothermal liquefaction of soy protein Hydrothermal liquefaction (HTL) is a thermochemical method to convert wet biomass and bio-waste into renewable crude and other valuable products. During HTL, water near critical point acts as a reaction medium and as a catalyst, breaking and hydrolysing bio-macromolecules into smaller compounds which interact and re-condense into different components and phases. Proteins as one of the key components in biomass plays a crucial role in the HTL process and products. Proteins are the source of nitrogen content in the HTL renewable crude, which generates environmental problems because of potential NOx emissions from combustion. Proteins also increases the pH of the aqueous phase, as over 60% of contained nitrogen is recovered in the aqueous phase as ammonia, nitrate, and soluble organic nitrogen compounds. However, the nitrogen reaction mechanism and equilibrium under HTL conditions have not been fully understood. In this study, the reaction kinetics for the product phases and nitrogen migration/transformation are elucidated by examining the yields and composition of the renewable crude and aqueous phases of HTL experiments run with a model compound soy protein, in a batch reactor at 250, 300 and 350 °C with 15% by mass feedstock. Furthermore, a co-solvent/homogeneous catalyst system has been included as a fully renewable solution to enhance the renewable crude yield, energy recovery, nitrogen content, and clarify the reaction mechanism and kinetic effects.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental studies of ignition behaviour and combustion reactivity of pulverized fuel particles A pulse ignition technique, whereby a small mass of fine coal or char particles is fed into a drop-tube furnace, was used to evaluate the ignition characteristics of pulverized fuel particles. Combustion rates were estimated from the ignition temperatures and were compared with rates determined experimentally using a fixed-bed reactor, DTG, and an entrained-flow reactor. Three Australian coals, two chars prepared from these coals and a petroleum coke were used. Coal rank and particle size were found to influence the ignition temperatures of the coal and char particles. However, these effects were reduced at high oxygen concentrations. In pure oxygen, the ignition temperatures of the chars and their parent coals were similar. Heterogeneous and homogeneous ignition theories indicated that at low O2 concentrations ignition was controlled by a homogeneous mechanism, whereas at high O2 concentrations heterogeneous ignition became dominant. The combustion rates of the chars determined by the four techniques were compared at an oxygen partial pressure of 10.1 kPa. The results of the fixed-bed, DTG and entrained flow experiments were consistent with each other and spanned the range of kinetic control from regime I at low temperature (fixed bed) to regime II at high temperature (entrained flow). The drop-tube experiments indicated consistently higher combustion rates than did the other techniques. The pulse ignition measurements therefore, while providing a valid means of characterizing coal and char ignition behaviour, result in overestimation of the char combustion rate.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Innovative bio-pyrolytic method for efficient biochar production from maize and pigeonpea stalks and their characterization Agricultural residues in excess of livestock fodder are garnering global attention and stern concerns owing to their accountable share in environmental hazards due to the lack of effective disposal mechanisms and indiscriminate burning. Recycling these residues for biochar production using pyrolysis is a cost-effective and locally feasible technique which offers a twin-prong solution addressing both climate and soil health issues. This research work compares a portable kiln prototype that is affordable and easy to use, with a muffle furnace at three distinct pyrolytic temperatures (400 °C, 500 °C, and 600 °C) to produce biochar from the stalks of maize and pigeonpea. The biochar properties were characterized using Electron Microscopy-Electron Dispersive X-ray (SEM-EDX), X-ray Diffraction (XRD), Fourier Transmission Infrared Spectroscopy (FTIR), and Thermogravimetric Analysis (TGA). The findings indicate significant variations in biochar properties based on raw material source, pyrolytic method, and varied temperatures. Higher pyrolysis temperatures were found to reduce the amorphous organic phase and alter the ultrastructure of biochar, as evidenced by XRD analysis. SEM imaging showed macropores in oval and round shapes with crystalline deposits. The carbon content, as per EDX, decreased with increasing temperature, aligning with changes in functional groups. Edinburgh's stability test revealed that kiln biochar has more stable carbon content compared to biochar produced using muffle furnace and the stable carbon increased with the rise in temperature. A comparative analysis demonstrated that biochar quality at 400–500 °C in a muffle furnace was on par with that produced in the portable kiln at 400 °C. Therefore, considering the kiln's portability, efficiency, cost-effectiveness, and scalability, it is a promising decentralized method for biochar production, offering a cutting-edge solution for agricultural waste management and soil carbon enhancement.
+

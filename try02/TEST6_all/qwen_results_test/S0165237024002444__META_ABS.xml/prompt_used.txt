@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic co-pyrolysis of woody biomass with polypropylene: Effects of Korean loess hybrid catalysts and pyrolysis temperatures This paper describes an effort to improve the catalytic characteristics of Korean loess (KL) for the co-pyrolysis of biomass and polypropylene, resulting in a unique multifunctional catalyst. Korean loess was physically and chemically transformed into a microporous structure (ZSM) fitting for co-pyrolysis. Using the catalysts manufactured above, analytical co-pyrolysis was carried out using a Py-GC/MS system with pinewood sawdust and polypropylene mixed at a ratio of 1:1 (w/w). To investigate the impacts of the use of catalysts and the pyrolysis temperatures on the distribution of volatile pyrolytic products, the experiments were designed to mix 2- or 8-fold catalyst mass quantities with feedstock and pyrolyze at temperatures of 500 °C, 600 °C, and 700 °C. Compared to pure Korean loess, the catalytic activity of the optimal hybrid catalyst (0.2KL/ZSM) favored decarbonylation over dehydration, making it more effective than mesoporous ZSM. Pyrolytic products generated using the hybrid catalyst (0.2KL/ZSM) had a higher hydrogen concentration (9.8 wt%) than pyrolytic products produced using ZSM catalysts (6.5 wt%). Because of this, the pyrolytic products were expected to be more compatible as a fuel over 0.2KL/ZSM, with an HHV of 27.4 MJ/kg as opposed to 26.5 MJ/kg over ZSM. Zeolite framework catalysts could promote the production of aromatic chemicals (3.0 mg/g for non-catalyst, 34.7 mg/g for KL, and 53.9 mg/g for 0.2KL/ZSM) in the co-pyrolysis of PP with pine, which synergistically enhance oligomerization, cyclization, and aromatization reactions at catalyst acid sites. Concerning aromatic hydrocarbon yields, 0.2KL/ZSM could be expected to perform very similarly to ZSM in producing 74.7 mg/g of MAH+PAH at 600 °C.
+

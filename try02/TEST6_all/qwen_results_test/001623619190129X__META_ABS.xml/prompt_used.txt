@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal reactivity of sulphur forms in coal X-Ray absorption near edge structure spectroscopy (XANES), X-ray photoelectron spectroscopy (XPS) and temperature programmed decomposition (TPD) have been used to follow the chemical transformation of sulphur that takes place during the low temperature pyrolysis of coals of varying rank. This chemistry takes place under milder pyrolysis conditions than those required for the production of almost all of the other organic volatile matter of coal. The results provide evidence for the conversion of aliphatic sulphides to aromatic forms below 400 °C in addition to the elimination of some of the aliphatic sulphur forms as H2S. Results between temperatures of 400 and 750 °C indicate that a considerable amount of the aromatic sulphur forms identified by XPS and XANES in the chars made at 400 °C subsequently react (by 750 °C) to produce H2S. For some low rank coals, a direct relationship cannot be made between the initial aliphatic sulphur content and the total amount of H2S produced below 750 °C. A comparison of the TPD pattern of H2S evolution for high rank coal with those of chars made from lower rank coals at 400 °C shows that they are remarkably similar and suggests that the thermal reactions induced in sulphur species in laboratory pyrolysis experiments could be related to those that occur as a result of thermal reactions during coal metamorphism.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Performance evaluation of existing and advanced processes for remediation of microplastics: A comprehensive review Microplastics (MPs) raise concerns due to their impacts on ecosystems and human health. This review provides a comprehensive analysis of the nature, classification, sources, and distribution of MPs. It highlights the significant contribution of developed and developing countries to the release of MPs, influenced by plastic consumption patterns and waste management practices. Furthermore, the various sources of MPs, including industrial processes, synthetic fibers, personal care products, and agricultural activities, as well as their accumulation in wastewater treatment plants and the environment have been elaborated. The environmental fate and transport of MPs in aquatic and terrestrial ecosystems are discussed, emphasizing their potential to infiltrate the food chain and biological systems. The review also examines current and emerging remediation technologies for Microplastics, including advanced filtration, separation methods, and innovative approaches like advanced oxidation processes and biodegradation. The economic impact of MPs on healthcare, environmental clean-up, and tourism is also addressed. Finally, government policies and campaigns aimed at curbing microplastics/nanoplastics pollution are reviewed, alongside recommendations for preventing microplastic generation, improving treatment processes, and conducting life cycle assessments to mitigate their environmental footprint.
+

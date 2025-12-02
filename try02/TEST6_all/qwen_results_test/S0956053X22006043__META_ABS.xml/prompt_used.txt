@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of biological pre-digestion of sewage sludge processed by fast pyrolysis on bio-oil yield and biochar toxicity Studies on the evaluation of sewage sludge (SS) as a feedstock through thermochemical processes have gained momentum. Due to the complex structure of SS, it is necessary to determine SS treatment stage to which thermochemical processes will be added to the wastewater treatment plants and to configure the optimum process scheme. The pyrolysis process is an important process for resource recovery as bio-oil and biochar. While bio-oil is important source of the value-added products, biochar is widely evaluated as soil improver. With the aim of the designation of the optimum process scheme for pyrolysis of three different sewage sludges (SSs): raw SS (RSS), anaerobically digested SS (ANSS), and aerobically digested SS (AESS); after the investigation of thermal behaviors by thermogravimetric analysis (TGA), the optimum process conditions were investigated to obtain maximum possible bio-oil yield from fast pyrolysis of SSs. By applying the central composite design in the response surface methodology, optimum fast pyrolysis operating conditions were determined for each SS type and the fast pyrolysis products obtained under optimum conditions were characterized. While the highest HHV was achieved for RSS, lowest activation energy (Ea) and maximum bio-oil yield was achieved for AESS. The optimum fast pyrolysis operating conditions for obtaining maximum bio-oil yield as 35.75 % were determined as 485 °C and 100 mL min−1 carrier gas flowrate for AESS. While the bio-oil produced from ANSS was determined as a resource for oleic acid production, the toxicity test results revealed that biochar produced from fast pyrolysis of AESS is suitable for soil amendment.
+

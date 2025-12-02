@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comprehensive review on the sustainable valorisation of animal waste into heterogeneous catalysts for biodiesel production The growing demand for sustainable energy alternatives has accelerated the search for cost-effective and environmentally benign catalysts in biodiesel production. This review provides a comprehensive evaluation of animal waste—including bones, shells, fats, and other organic residues—as a promising resource for developing heterogeneous catalysts used in esterification and transesterification reactions. It explores various preparation methods such as calcination, hydrothermal treatment, and acid/base modifications, with a focus on their influence on catalyst surface properties, thermal stability, and catalytic activity. In contrast to conventional catalysts, animal-waste-derived materials demonstrate high performance with feedstocks rich in free fatty acids, achieving biodiesel yields exceeding 90 % while offering strong reusability and reduced environmental burden, in other words, the sentence demonstrates that high biodiesel yields are achieved without compromising catalyst reuse or reducing the environmental impact of the process, illustrating how both can occur at the same time. A distinguishing aspect of this review is the integration of performance comparisons with traditional and nanostructured catalysts, as well as discussions on the alignment of these catalysts with circular economy strategies. The potential role of artificial intelligence in optimizing catalyst design, reaction conditions, and real-time process control is also examined. This review provides a comprehensive assessment of the use of animal waste as heterogenous catalysts for biodiesel production. It focuses on the environmental and economic benefits associated with the use of these sustainable catalysts and waste reduction.
+

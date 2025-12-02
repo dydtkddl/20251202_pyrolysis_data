@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Snow dumping station – A considerable source of tyre wear, microplastics, and heavy metal pollution Snow dumping stations can be a hotspots for pollutants to water resources. However, little is known about the amount of microplastics including tyre wear particles transported this way. This study investigated microplastics and metals in snow from four snow dumping stations in Riga, Latvia, a remote site (Gauja National Park), and a roof top in Riga. Microplastics other than tyre wear particles were identified with Attenuated Total Reflection Fourier Transform Infrared (ATR-FTIR) (>500 µm) and focal plane array based micro-Fourier Transform Infrared (FPA-µFTIR) imaging (10–500 µm), tyre wear particles by Pyrolysis Gas Chromatography-Mass Spectroscopy (Py-GC–MS), and total metals by Inductively Coupled Plasma with Optical Emission Spectroscopy (ICP-OES). Microplastics detected by FTIR were quantified by particle counts and their mass estimated, while tyre wear particles were quantified by mass. The concentrations varied substantially, with the highest levels in the urban areas. Microplastic concentrations measured by FTIR ranged between 26 and 2549 counts L−1 of melted snow with a corresponding estimated mass of 19–573 µg/L. Tyre wear particles were not detected at the two reference sites, while other sites held 44–3026 µg/L. Metal concentrations varied several orders of magnitude with for example sodium in the range 0.45–819.54 mg/L and cadmium in the range 0.05–0.94 µg/L. Correlating microplastic measured by FTIR to metal content showed a weak to moderate correlation. Tyre wear particles, however, correlated strongly to many of the metals. The study showed that snow can hold considerable amounts of these pollutants, which upon melting and release of the meltwater to the aquatic environment could impact receiving waters.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Exploring the potential of chemical recycling using a distributed model in the UK – A life cycle assessment perspective The study investigates the potential of chemical recycling of plastic waste in the UK, specifically through a small-scale, decentralised pyrolysis process that incorporates in-situ upgrading. With rising plastic production and limited capacity for mechanical recycling, chemical recycling (CR) emerges as a complementary solution for handling complex waste streams, such as multi-layered or contaminated plastics. The research focuses on the life cycle assessment (LCA) of a 165 kg/hr plant designed to convert mixed plastic waste (MPW) into naphtha, which can be used as a substitute of virgin petroleum feedstock in the production of plastic films. The LCA evaluates both waste and product perspectives, comparing chemical recycling with conventional waste management methods, including incineration with energy recovery (waste-to-energy) and a mixed end-of-life scenario (waste perspective) and with virgin plastic film (product perspective). Results show that chemical recycling significantly reduces climate change impacts—by 1284 kg CO2-eq./tonne compared to waste-to-energy and by 430 kg CO2-eq./tonne against the mixed end-of-life option. From the product perspective, chemically recycled naphtha results in up to 2977 kg CO2-eq./tonne or 636 kg CO2-eq./tonne lower impacts compared to virgin plastic production. The study highlights the use of small-scale, decentralised CR plants, however, challenges remain, such as the environmental impacts of by-products. The research concludes that chemical recycling offers a viable pathway to greenhouse gas emissions reductions compared to conventional waste management and virgin plastic production, albeit with interlinked trade-offs observable in other impact categories, highlighting that further optimisation and policy support are essential.
+

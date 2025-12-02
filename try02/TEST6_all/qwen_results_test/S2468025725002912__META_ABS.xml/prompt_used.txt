@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Degradation and Utilization of Polyvinyl Chloride (PVC): Challenges and Opportunities Toward a Circular Economy Polyvinyl chloride (PVC) poses persistent environmental and recycling challenges due to its high chlorine content, complex additives, and structural resistance to degradation. Recent research has shifted focus from traditional disposal methods toward chemically informed strategies that valorize PVC within the framework of a circular economy. This review systematically summarizes three emerging pathways for PVC transformation. The first involves catalytic deconstruction into small molecules such as chlorinated olefins, hydrocarbons, and oxygenates through thermal, photocatalytic, and electro-assisted processes. The second explores backbone-preserving reconstruction into functional materials including porous carbons, membranes, ion-conducting films, and vitrimer-type polymers by leveraging selective dechlorination and structural reprogramming. The third addresses the co-processing of PVC with mixed plastic wastes through synergistic catalytic systems that tolerate chlorine-rich streams and promote selective transformation. Across all pathways, emphasis is placed on structure–property correlations, chlorine management, additive compatibility, and downstream utility. Summary tables and schematic diagrams are included to compare system efficiencies, product selectivities, and application scopes. By integrating mechanistic understanding with materials innovation, this review highlights how PVC can be reimagined as a tunable molecular platform rather than a persistent pollutant.
+

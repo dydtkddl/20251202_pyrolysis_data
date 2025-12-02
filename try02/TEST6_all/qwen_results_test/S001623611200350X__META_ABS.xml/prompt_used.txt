@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental investigation of performance, emission and combustion characteristics of an indirect injection multi-cylinder CI engine fuelled by blends of de-inking sludge pyrolysis oil with biodiesel De-inking sludge can be converted into useful forms of energy to provide economic and environmental benefits. In this study, pyrolysis oil produced from de-inking sludge through an intermediate pyrolysis technique was blended with biodiesel derived from waste cooking oil, and tested in a multi-cylinder indirect injection type CI engine. The physical and chemical properties of pyrolysis oil and its blends (20 and 30vol.%) were measured and compared with those of fossil diesel and pure biodiesel (B100). Full engine power was achieved with both blends, and very little difference in engine performance and emission results were observed between 20% and 30% blends. At full engine load, the brake specific fuel consumption on a volume basis was around 6% higher for the blends when compared to fossil diesel. The brake thermal efficiencies were about 3–6% lower than biodiesel and were similar to fossil diesel. Exhaust gas emissions of the blends contained 4% higher CO2 and 6–12% lower NOx, as compared to fossil diesel. At full load, CO emissions of the blends were decreased by 5–10 times. The cylinder gas pressure diagram showed stable engine operation with the 20% blend, but indicated minor knocking with 30% blend. Peak cylinder pressure of the 30% blend was about 5–6% higher compared to fossil diesel. At full load, the peak burn rate of combustion from the 30% blend was about 26% and 12% higher than fossil diesel and biodiesel respectively. In comparison to fossil diesel the combustion duration was decreased for both blends; for 30% blend at full load, the duration was almost 12% lower. The study concludes that up to 20% blend of de-inking sludge pyrolysis oil with biodiesel can be used in an indirect injection CI engine without adding any ignition additives or surfactants.
+

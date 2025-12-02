@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation of melt pool dynamics and solidification microstructures of laser melted Ti-6Al-4V powder using X-ray synchrotron imaging Titanium alloy (Ti-6Al-4V) is widely used in additive manufacturing (AM) industry. However, as laser powder-bed fusion (PBF-L) additive manufacturing (AM) advances towards reliable production of titanium parts, a thorough understanding of the process-structure-properties (PSP) relationships remain to be fully understood. A study of the laser melting was paired with high-speed X-ray synchrotron imaging at the 32-ID beamline of the Advanced Photon Source at Argonne National Laboratory. Simultaneous melting and imaging was carried out on a Ti-6Al-4V powder layer held in a custom device designed to mimic single-track scans of the PBF-L process at different laser power levels, powder size distributions, and cover gas environments (Ar and He) on top of AM Ti-6Al-4V base metal. It was found that the thickness of the powder layer significantly affected the melt behavior: too much powder led to the formation of molten droplets that wetted the surface of the titanium, yet did not contribute to a uniform melting profile. Residual gas pores in the atomized powder were also observed to contribute to the pores observed in the melt pool, with the porosity of the powder (defined as volume of pores divided by total material volume) constant with powder size distribution (i.e., larger particles contained more entrapped gas, which increased final part porosity). When varying Ar or He through the same gas flow meter settings and nozzle, the difference in flow rates likely contributed more to the resultant porosity of the solidified material than did the thermal conductivity of the gasses, with He being the greater contributor to porosity. The microstructure of the heat affected zone contained α ′ , α, and an increased β phase fraction relative to the base material. The crystallographic texture of the melt pool region adopted that of the base metal.
+

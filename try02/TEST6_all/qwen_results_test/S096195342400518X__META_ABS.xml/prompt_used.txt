@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Oxygen carrier aided combustion with copper smelter slag as bed material in a semi-commercial wood-fired circulating fluidized bed Fluidized bed combustion (FBC) is a well-established technology in Sweden for the conversion of biomass and waste-derived fuels. Recent research has shown that the process can be upgraded by using oxygen-carrying bed material, for example in the form of iron oxide-containing minerals and slags. The concept, called Oxygen Carrier Aided Combustion (OCAC), has demonstrated enhanced oxygen distribution and thermal efficiency in commercial boilers, using the iron-titanium ore ilmenite as oxygen carrier. This study demonstrates the first large-scale utilization of a commercial copper slag product (Järnsand) as oxygen carrier in a 12 MWth circulating fluidized bed boiler. By exchanging between 21 and 100 % of the silica sand bed with Järnsand it was possible to successfully reduce the air-to-fuel ratio from 1.2 down to 1.08 with CO emissions remaining low, at concentrations of around 20 mg/nm3 at 6 % O2. In contrast, an air-to-fuel ratio of 1.08 with silica sand bed gave a 5-min average CO concentration of 800 mg/nm3 at 6 % O2. The NO emissions were also reduced by about 30 % with the introduction of Järnsand. For 3.5 days of the campaign, the boiler was operated with a 100 % Järnsand bed without any bed material regeneration. K was absorbed by Järnsand, and a K concentration of 3.5 wt.-% was reached. No agglomeration or increasing CO emissions were observed. K-saturation was not reached, and a longer lifetime than the studied 3.5 days is suggested. In conclusion, similar performance as ilmenite is suggested for Järnsand as an oxygen carrier in OCAC operation.
+

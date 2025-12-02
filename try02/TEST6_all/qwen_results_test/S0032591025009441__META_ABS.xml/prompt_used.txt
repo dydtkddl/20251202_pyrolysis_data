@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of particle attrition on gas-solid flow and heat transfer characteristics with a developed CFD-DEM model The present study employs the CFD-DEM method coupled with heat transfer and a self-developed fluidized attrition sub-model to simulate the fluidization process of particles in a fluidized bed. The accuracy of the attrition model is validated through comparative analysis with experimental data. First, the effects of different attrition mechanisms on particle abrasion, fragmentation, and gas-solid flow behavior are investigated under cold conditions. Subsequently, the effects of these mechanisms on gas-solid heat transfer characteristics are systematically investigated under thermal conditions. Thus, it provides a theoretical foundation for optimizing the gas-solid heat transfer process. The results indicate that fluidized attrition significantly affects the particle size distribution. The degree of particle abrasion is closely related to its motion patterns. Particle fragmentation primarily occurs within the range of 1.3 to 2.1 times the static bed height of the fluidized bed. Additionally, by performing a time-averaged statistical analysis of the particle volume fraction at different reaction stages, the potential erosive impact of the particles on the bed material is revealed. Under thermal conditions, the temperature response characteristics and temperature levels of particles exhibit direct correlations with their abrasion degree. Furthermore, the abrasion mechanism effectively enhances the temperature uniformity of the bed, whereas the fragmentation mechanism reduces it.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Preferable and feasible tests on phosphorus release/recovery from anaerobically digested bacterial and algal-bacterial aerobic granular sludges This study underscores the role of waste sludge in sustainable wastewater management and resource recovery by comparing the feasibility of using anaerobic digestion (AD) as pretreatment to release phosphorus (P) from bacterial and algal-bacterial aerobic granular sludge (AGS). The AD performance, degradation of proteins (PN) and polysaccharides (PS) in both types of granules and extracellular polymeric substances (EPS), P release in both digestates and stratified EPS from both AGS were compared by 30-day batch biomethane potential tests. Results show that bacterial AGS is desirable for P enrichment, release, and recovery, demonstrating higher biodegradability (54 %), PN degradation (64 %), and greater EPS-based P recovery potential. While algal-bacterial AGS exhibits similar cumulative methane production (193 mL/g-VSadded), it outperforms in PS degradation (87 %), methane content, and theoretical maximum methane production value. Distinctions in granular structure, microbial metabolic activity, and substrate degradability primarily differentiate carbon fate, methane production pathways, and P release. Notably, the microbial synergy in algal-bacterial AGS has yet to be fully exploited, presenting substantial potential for further optimization. Additionally, preliminary analysis of the precipitates generated from the P-rich digestate evidences its potential for P recovery. These findings can provide valuable insights into sustainable waste-to-resource conversion for excess AGS.
+

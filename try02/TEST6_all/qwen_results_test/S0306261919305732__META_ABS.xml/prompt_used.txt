@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Plastic/rubber waste-templated carbide slag pellets for regenerable CO2 capture at elevated temperature Plastic/rubber waste-templated carbide slag pellets were prepared via an extrusion-spheronization method for high-temperature CO2 capture. Four types of common plastic and rubber wastes (i.e. waste plastic bottle composed of polyethylene terephthalate, disposable plastic cup composed of polypropylene, waste plastic pipe composed of polyvinyl chloride and scrap tire composed of rubber, sulfur and carbon black) were selected as the templating materials. It is found that the addition of waste plastic pipe can cause inferior CO2 capture performance for carbide slag pellets (merely 0.123 g CO2/g sorbent after 25 cycles). It is mainly attributed to the deactivation of carbide slag pellets as a result of the interaction between CaO and the chlorine released from waste plastic pipe. The other chlorine-free plastic and rubber wastes are effective to improve the cyclic CO2 capture performance of carbide slag pellets via altering their porosities. Particularly, the carbide slag pellets doped with 5 wt% of waste plastic bottle exhibit the highest CO2 capture capacity of 0.277 g CO2/g sorbent after 25 cycles, compared to 0.218 g CO2/g sorbent for carbide slag pellets. Moreover, the pre-calcination atmosphere plays an important role on the cyclic CO2 uptake of plastic/rubber waste-templated pellets. The CO2 capture capability of plastic/rubber waste-templated pellets pre-calcined in air is inferior to that pre-calcined in N2. It is mainly due to the heat released from the combustion of plastic or rubber wastes in air accelerates severe sintering for the plastic/rubber waste-templated carbide slag pellets.
+

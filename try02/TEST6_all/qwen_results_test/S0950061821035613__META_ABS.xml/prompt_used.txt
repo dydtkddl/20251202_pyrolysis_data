@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of vermiculite on in-situ thermal behaviour, microstructure, physical and mechanical properties of fired clay bricks Vermiculite is a hydrous clay mineral that occasionally occurs in raw materials for brickmaking. The presence of vermiculite affects the drying and firing processes of brick production; thus, the functions of this clay mineral should be clarified. In this study, vermiculite from 0 wt% to 30 wt% have been added to clay mixtures for brick button firing. Through effective integration of in-situ XRD, thermogravimetric and dilatometric analyses, the real-time thermal behaviours have been interpreted, and the microstructure, physical and compressive characteristics of brick buttons have been investigated. The incorporation of vermiculite has changed the temperatures of kaolinite dehydroxylation and rutile formation. Enstatite, cordierite and amorphous contents increased in fired brick buttons, while mullite, quartz and cristobalite decreased. Vermiculite retained a partial sheet-like morphology at 1150 °C firing. From 25 to 1150 °C, five weight loss steps have been defined with six shrinkage/expansion processes observed. Cracks appeared on brick button surfaces when 30 wt% of vermiculite was added. The colour of fired brick buttons changed from “light camel” to “black olive”. Drying shrinkage, firing shrinkage and bulk density increased with an increased proportion of vermiculite. The maximum compressive strength reached 150.94 MPa (a rise of 21.6% towards the control sample) when 5 wt% of vermiculite was added.
+

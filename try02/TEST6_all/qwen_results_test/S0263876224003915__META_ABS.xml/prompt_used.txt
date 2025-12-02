@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+2D CFD modeling for pyrolysis of a large biomass particle: Effect of L/D ratio, internal convection and shrinkage A transient 2D kinetic-heat transfer model for the pyrolysis of a large biomass particle, incorporating, primary and secondary reaction kinetics, internal convection and shrinkage in particles was developed and validated with experimental results. The RMS errors between the predicted and experimental temperature and residual mass fraction were estimated to be small - 0.020, 0.017, 0.011, 0.018 and 0.024, 0.022, 0.016, 0.025 at reactor temperatures of 573, 623, 673, 723 K, respectively. The pyrolysis behaviour was explained by the computed spatial distributions of velocity, pressure, temperature and residual mass fraction within the biomass particle. At a high L/D (∼5), two symmetric hot spots were formed near the two axial flat edges after 400 s, which formed a single dumbbell-shaped in the axial central core after 600 s and existed for a long time of 1500 s. It merged into a single spherical hot spot at the centre after a long reaction time. For a low L/D (∼1), however, an elliptical-shaped hot spot formed after 400 s changes to a spherical hot spot at the particle centre after 500 s. Uniformity in temperature inside the particle was attained much earlier at a smaller L/D ratio.
+

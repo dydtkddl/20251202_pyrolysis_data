@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of using zeolite as a catalyst on syngas produced from different wastes using pyrolysis technology Pyrolysis is a promising thermochemical process for converting organic waste into valuable products syngas, bio-oil, and biochar under oxygen-free conditions. Syngas, a combustible mixture rich in hydrogen (H 2 ), carbon monoxide (CO), and methane (CH4), offers significant potential as a renewable energy carrier. This study investigates the catalytic effects of zeolite on syngas production from three distinct waste feedstocks: polyethylene (PE), olive pomace, and water hyacinth, using a fixed-bed pyrolysis reactor (600 °C, 3 h residence time, N 2 atmosphere). Experiments were conducted with zeolite concentrations of 10 %, 20 %, and 30 % (by weight) to assess its role in enhancing gas yield and quality. Results demonstrate that zeolite significantly improves syngas production by promoting cracking and deoxygenation reactions, leading to higher yields of H 2 and CO (key syngas components), reduced CO 2 and tar formation (undesirable byproducts), and feedstock-dependent performance, with polyethylene achieving the highest syngas yield (68 % at 30 % zeolite), followed by olive pomace (62 %) and water hyacinth (54 %). The study highlights zeolite’s effectiveness in optimizing waste-to-energy conversion, offering a sustainable solution for managing agricultural, plastic, and aquatic waste. These findings advance the development of efficient, scalable pyrolysis technologies and contribute to cleaner waste valorization strategies.
+

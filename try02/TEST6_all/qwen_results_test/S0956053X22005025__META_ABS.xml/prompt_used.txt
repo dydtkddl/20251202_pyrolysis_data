@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A rational and feasible approach to the co-management of condensates from biomass torrefaction and carbon-rich fly ash from fluidized-bed coal gasification This study explored a promising approach to the co-management of torrefaction condensates (TCs) from biomass and carbon-rich fly ash (FA) derived from an industrial fluidized-bed coal gasifier. TC was a low-quality liquid product consisting mostly of water and a small amount of organic acids and other oxygenated organics. FA was the ultra-fine particulates with high carbon content (40–70%) and some extreme characteristics such as ultra-low volatiles, low reactivity, and high ignition temperature. The blending of FA and TC induced most of the organic components in TC to be chemically or physically adsorbed by FA, accounting for 3–13 wt% of the resultant mixtures of FA and TC (FATCs) and 11–33 wt% of the TCs. The acidic components in TC dissolved locally aggregated Ca minerals in FA, resulting in more evenly dispersed Ca on the surface of FA as an in-situ catalyst. As a result, FATCs exhibited a many-fold improvement in CO2 gasification reactivity compared to FA. And the syngas evolution rate of FATC gasification in steam-oxygen atmosphere was also remarkably elevated. In addition to the promoting effect on gasification, the combustion performance of FATCs was also greatly improved. Specifically, the ignition and burnout temperatures of FATCs were 46.5–68.5 °C and 12.4–31.7 °C lower than those of raw FA, respectively. The lower activation energy also demonstrated the higher reactivity of FATC gasification and combustion.
+

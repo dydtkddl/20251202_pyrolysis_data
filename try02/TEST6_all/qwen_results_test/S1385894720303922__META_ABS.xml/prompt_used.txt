@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Valorization of biomass waste to engineered activated biochar by microwave pyrolysis: Progress, challenges, and future directions Biomass waste represents the promising surrogate of fossil fuels for energy recovery and valorization into value-added products. Among thermochemical conversion techniques of biomass, pyrolysis appears to be most alluring owing to its low pollutant emission and diverse products formation. The current pyrolysis applications for valorization of biomass waste is reviewed, covering the key concepts, pyrolysis mode, operating parameters and products. To date, existing types of pyrolysis include conventional pyrolysis (poor heat transfer due to non-selective heating), vacuum pyrolysis (lower process temperature because of vacuum), solar pyrolysis (entirely “green” with solar-powered), and a newly touted microwave pyrolysis. In microwave pyrolysis of biomass, the heat transfer is more efficient as the heat is generated within the core of material by the interaction of microwave with biomass. The plausible mechanisms of microwave heating are dipole polarization, ionic conduction and interfacial polarization. The lack of top-tier reactor design is identified as the main obstacle that impedes the commercialization of microwave pyrolysis in biomass recycling. Based on the existing works, it is surmised that microwave pyrolysis of biomass produces solid biochar as a main product. To confront the great market demand of activated biochar, it is proposed that the solid char could be upgraded into engineered activated biochar with desirable properties for wide application in pollution control, catalysis and energy storage. Hence, the production of engineered activated biochar from microwave pyrolysis process and its applications are reviewed and explicitly discussed to fill the research gap, and the key implications for future development are highlighted.
+

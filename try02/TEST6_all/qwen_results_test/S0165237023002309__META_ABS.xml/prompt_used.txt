@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Crucial correction of the Faix method for the determination of carbonyls in pyrolysis and hydrothermal liquefaction bio-oils with high nitrogen content Accurate and reliable determination of carbonyl content in bio-oils from pyrolysis and hydrothermal liquefaction (HTL) of biomass is crucial not only for estimating the storage stability of the sample but also for creating an adequate design of the hydrotreatment process allowing long-term operation. The composition of bio-oils from various feedstocks can, however, significantly differ from woody bio-oils, which were utilized to develop the Faix method, the most frequently used for carbonyl determination. In this study, we present a limitation of this method when used for the analysis of bio-oils prepared from protein-rich biomass. These bio-oils are known to have a high nitrogen content, which can be present in the form of possibly interfering compounds. In this study, nitrogen interferences were identified, and a correction step mitigating the underestimation of carbonyl content was introduced. This novel approach was tested for 13 crude bio-oils prepared by pyrolysis or HTL from 10 different feedstocks with a wide range of nitrogen content. Besides crude bio-oils, five hydrotreated HTL oils from sewage sludge were also analyzed. For bio-oils or hydrotreated products with increased nitrogen content but containing less than 0.5 mmol/g of carbonyls, without the correction step, the method can provide zero and in extreme cases even negative values. Statistical analysis of results showed that the introduction of the correction step can be crucial for bio-oils containing more than 2 wt% of nitrogen and especially hydrotreated bio-oils from protein-rich biomass.
+

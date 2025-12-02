@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Membrane filtration of kraft lignin: Structural charactristics and antioxidant activity of the low-molecular-weight fraction Lignin, which is the second most abundant biomass component and has carbon-rich phenolic content, is a promising renewable raw material for multiple applications, such as carbon fibers, adhesives, and emulsifiers. To use lignin efficiently, it is important to ensure its purity and homogeneity. As a result, the separation of lignin into fractions with high purity and narrow molecular-weight distributions is likely a prerequisite for several applications. Ultrafiltration using ceramic membranes has many advantages, including enabling direct lignin extraction from Kraft pulp cooking liquors without pH and temperature adjustment. One challenge with membrane filtration using such a system is the potential for reduced membrane performance over time, which is associated with fouling. In this study, LignoBoost Kraft lignin was fractionated using a ceramic membrane with a molecular weight cut-off of 1kDa. The separation behavior during ultrafiltration fractionation was investigated and the antioxidant properties of the recovered low-molecular-weight (low-MW) lignin samples were evaluated. Using this model system, the permeate fluxes were unstable during the 100h of membrane operation. However, a decrease in the average MW in the permeate over time was observed. The shift in MW was most pronounced for virgin membranes, while a more stable MW distribution was evident for membranes subjected to multiple cleaning cycles. According to 2D NMR analysis, low-MW lignin that was recovered after 100h of operation, consisted of smaller lignin fragments, such as dimers and oligomers, with a high content of methoxy-groups. This was confirmed using the size exclusion chromatography method, which indicated an weigh average molecular weight in the range of 450–500Da. 31P NMR spectroscopy showed that, despite the lower total content of phenolic OH groups, the low-MW sample had a higher proportion of non-condensed phenolic OH groups. The results of the antioxidant tests demonstrated the strong potential of lignin and its low-MW fraction as a natural antioxidant, particularly for lipid-containing systems. The low-MW lignin fraction showed better antioxidant activity than the non-fractionated LignoBoost lignin in the kinetic oxygen radical absorbance capacity (ORAC) test and demonstrated three-fold stronger inhibition of the substrate (fluorescein) than the reference antioxidant Trolox (a water-soluble derivative of vitamin E).
+

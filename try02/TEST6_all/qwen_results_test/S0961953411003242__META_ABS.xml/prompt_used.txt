@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biomass gasification as the first hot step in clean syngas production process – gas quality optimization and primary tar reduction measures in a 100 kW thermal input steam–oxygen blown CFB gasifier Syngas production based on biomass gasification is an attractive, feasible alternative to fossil fuel feedstock for the production of transportation fuels. However, the product gas from biomass gasification must be cleaned and tailored to comply with strict syngas quality requirements, as it consists of a wide variety of major and minor components and impurities. The characterization of such species is important to determine downstream gas treatment steps, and to assess the efficiency of the gasification process. This paper gives an overview of the results obtained during experiments on steam–oxygen gasification of biomass using 100kW maximal thermal input circulating fluidized bed gasifier (CFBG) that have been performed at Delft University of Technology during the CHRISGAS project. The unit is also equipped with a high-temperature ceramic gas filter and downstream reactors for upgrading of the gas. In the experiments biomass types of both woody and agricultural origin have been used. They were represented by clean wood, demolition wood, an energy crop species (miscanthus) and a true residue (Dutch straw), respectively. Moreover, different bed materials have been applied, namely quartz sand, treated and untreated olivine and magnesite. During the experiments extensive measurements of gas composition have been carried out throughout the integrated test rig. The gas characterization included major gas components as well as certain minor species and tar. The results show that with the use of magnesite as bed material, remarkable increases of hydrogen yield were attained, as compared to sand or olivine; up to a volume fraction of almost 40% (dry, nitrogen-free basis). Also the H2:CO ratio increased from values near or lower than 1 to 2.3–2.6. This is near the values needed, for e.g., Fischer–Tropsch diesel production, indicating a potential for simplification of the gas upgrading. Furthermore, by using magnesite tar content of the raw gas was reduced to values near 2gm−3 (STP). Moreover, magnesite complied with the expectation to have a positive impact on agglomeration prevention for the agricultural fuels containing alkali and chlorine in the ash. The kind of olivine applied during the experiments did not yield the expected tar reduction; the measured tar concentration was even higher than when quartz sand was used as bed material. Finally kaolin proved to be an effective additive to counteract the agglomeration when fuels with high alkali content in the ash are gasified using bed material that is rich in silica, as it is the case with quartz sand and olivine.
+

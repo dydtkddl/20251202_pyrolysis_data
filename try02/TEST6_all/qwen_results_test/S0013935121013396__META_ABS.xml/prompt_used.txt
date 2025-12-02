@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+One-step synthesis of carbonaceous adsorbent from soybean bio-residue by microwave heating: Adsorptive, antimicrobial and antifungal behavior In this work, the transformation of soybean industrial bio-residue with limited practical applications, into a multifunctional carbonaceous adsorbent (SBAC) via one-step microwave-irradiation has been succeeded. The surface porosity, chemical compositions, functionalities and surface chemistry were featured by microscopic pore-textural analysis, elemental constitution analysis, morphological characterization and Fourier transform infra-red spectroscopy. The adsorptive performance of SBAC was evaluated in a batch experiment by adopting different classes of water pollutants, specifically methylene blue (MB), acetaminophen and 2,4-dichlorophenoxyacetic acid (2,4-D). The equilibrium uptakes were analyzed with respect to the non-linearized Langmuir, Freundlich and Temkin isotherm equations. The unique features of SBAC, specifically the antimicrobial and antifungal efficacies were examined against gram-positive/negative bacteria and fungi species. An ordered microporous-mesoporous structure of SBAC, with the BET surface area and total pore volume of 1696 m2/g and 0.94 m3/g, respectively, has been achieved. The equilibrium data of MB and acetaminophen were found to be in good agreement with the Langmuir isotherm model, with the monolayer adsorption capacities (Q o ) of 434.57 mg/g and 393.31 mg/g, respectively. The adsorptive experiment of 2,4-D was best fitted to the Freundlich isotherm equation, with the Q o of 253.17 mg/g. The regeneration performance of the spent SBAC under microwave-irradiation could maintain at 69.42–79.31%, even after five (5) adsorption-regeneration cycles. SBAC exhibited excellent inhibition efficiencies against gram-positive/negative bacteria and fungi species, with the inhibition zones at 14.0–28.0 mm. This newly developed SBAC appears to be a new powerful candidate for the remediation of different classes of water contaminants, and novel antibacterial and antifungal agents against biological contaminations. The novel concept of “turn waste into wealth” in a cost-effective and energy saving manner for environmental preservation has been successfully accomplished.
+

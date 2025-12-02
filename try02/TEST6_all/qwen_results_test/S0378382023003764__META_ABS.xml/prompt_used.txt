@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sustainable carbon-based nickel catalysts for the steam reforming of model compounds of pyrolysis liquids Steam reforming of biomass-derived pyrolysis liquids (bio-oil) to produce hydrogen with carbon-based Ni catalysts is gaining attention due to their advantages in terms of cost, sustainability and activity. However, the catalytic activity at long times on stream is compromised by either coke deposition or gasification of the support. To face these drawbacks, two activated carbons have been studied as Ni catalyst support: a microporous carbon of high purity and a mesoporous carbon with phosphorus surface groups. The activity and long-term stability of these catalysts have been studied for the steam reforming of model compounds of bio-oil. The microporous support provided a slightly higher H2 production and lower contribution of methanation reaction. However, gasification of this support after 20 h led to a decline in the activity, and massive formation of carbon nanotubes and coke. Nevertheless, the resulting material maintained an outstanding stability with high and stable H2/CO ratio for 50 h. The P-containing catalyst showed a remarkable long-term stability, but lower H2/CO ratio. Carbon gasification was less significant in this catalyst due to the presence of surface phosphorus groups, and the generation of nickel phosphides, which hampers the growth of pyrolytic carbon and carbon nanotubes, leading to a superior stability.
+

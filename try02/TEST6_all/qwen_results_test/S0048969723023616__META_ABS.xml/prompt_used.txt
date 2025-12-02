@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Ball-milled PET plastic char as an electron shuttle accelerated anaerobic degradation of 2,4,6-trichlorophenol in water environment 1 1 The number behind BMPC denotes the pyrolysis temperature. The combination of carbonaceous materials and microbial degradation is an attractive measure in improving the removal efficiency of organic pollutants in water environment. In this study, the anaerobic dechlorination in a coupled system of ball-milled plastic chars (BMPCs) and the microbial consortium were investigated. The anaerobic microorganism cultured from raw sludge (CAM) contributed to the dechlorination of the 2,4,6-trichlorophenol (2,4,6-TCP) into 4-chlorophenol (4-CP) as the final product via ortho-dechlorination in all testing groups. The dechlorination rate was accelerated in different BMBC plus CAM groups than that in only CAM group (0.048 d−1), of which, it was greater in BMPC-500 plus CAM group (0.375 d−1) than that in BMPC-700 plus CAM group (0.171 d−1). The electron exchange capacity (EEC) of BMPCs decreased with the increase of pyrolysis temperature (0.053 mmol e−/g for BMPC-500 and 0.037 mmol e−/g for BMPC-700), which directly affected anaerobic dechlorination. Direct interspecies electron transfer (DIET) of BMPCs also boosted the biogas yield by 1.5 times compared to that without BMPCs. Microbial community analysis illustrated that BMPCs helped to enrich the putative dechlorinating bacteria. The abundance of Clostridium_aenus_stricto_12, as a dominant dechlorinator, significantly increased from 0.02 % to 11.3 % (without BMPCs), 39.76 % (BMPC-500) and 9.3 % (BMPC-700), and followed by， Prevotella and Megaspheara, which was reported to take part in anaerobic dechlorination and digestion as H2 producers, also increased in the presence of BMPC. This study contributes to the realization of 2,4,6-TCP in-situ reduction technology and provides a scientific reference for anaerobic dechlorination by cultured anaerobes combined with BMPCs.
+

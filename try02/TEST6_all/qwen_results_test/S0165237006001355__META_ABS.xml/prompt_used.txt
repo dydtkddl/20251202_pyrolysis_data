@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Analysis of products from the pyrolysis of plastics recovered from the commercial scale recycling of waste electrical and electronic equipment Three plastic fractions from a commercial waste electrical and electronic equipment (WEEE) processing plant were collected and investigated for the possibility of recycling them by batch pyrolysis. The first plastic was from equipment containing cathode ray tubes (CRTs), the second plastic was from refrigeration equipment, and the third plastic was from mixed WEEE. Initially, the decomposition of each of the plastics was investigated using a TGA linked to a FT-ir spectrometer which showed that the CRT plastic decomposed to form aliphatic and aromatic compounds, the refrigerator plastic decomposed to form aldehydes, CO2, aromatic, and aliphatic compounds, and the mixed WEEE plastic decomposed to form aromatic and aliphatic compounds, CO2, and CO. Each plastic mixture was also pyrolysed in a batch reactor to determine the halogen and metal content of the pyrolysis products, additionally, characterisation of the pyrolysis oils was carried out by GC–MS and the pyrolysis gases by GC–FID and GC–TCD. It was found that the halogen content of the oils was relatively low but the halogen and metal content of the chars was high. The pyrolysis oils were found to contain valuable chemical products and the pyrolysis gases were mainly halogen free, making them suitable as a fuel.
+

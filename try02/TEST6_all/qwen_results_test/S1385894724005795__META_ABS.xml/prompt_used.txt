@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Design and optimization of a solar-driven methane dry reforming reactor by developing an optical-thermal-chemical model The reactor plays a crucial role in solar-driven methane dry reforming. To improve the reactor performance, a cavity reactor with a hemispherical porous absorber and a secondary concentrator was designed and optimized by developing an optical-thermal-chemical coupled model. Using this model, the effects of different pore parameters on the reactor performance were firstly investigated, finding that porosity and pore size significantly influence the distributions of solar energy and temperature but mildly influence the reforming performance. Considering the optical-chemical efficiency as the optimization objective, the reactor with the porosity of 0.85 and the pore size of 1 mm was suggested as the optimal design. Then, the influences of the CO2:CH4 feed molar ratio, incident power, and the inlet volumetric flow rate were analyzed, revealing that they dramatically influence the reactor performance in complex ways. To make a compromise between the optical-chemical efficiency and carbon deposition, the operating condition with the CO2:CH4 feed molar ratio of 1:1, the inlet volumetric flow rate of 0.6 L·s−1, and the incident power of 3 kW was selected as the optimal one. Finally, the performance of the optimal reactor was evaluated at the optimal condition, finding it can achieve quite high methane conversion ratio, optical-chemical efficiency, and optical-thermal efficiency of 36.71 %, 30.88 %, and 59.05 %, respectively. Results from present work can provide valuable insights for the design and optimization of solar reactors.
+

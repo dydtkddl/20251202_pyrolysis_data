@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Revealing the synergistic effect of feedstock compositions and process parameters in co-pyrolysis: A review based on bibliometric analysis and experimental studies Waste considers as a liability, but its potential as an asset can be achieved through proper valorization. This study analyzed one of the valorization process, ‘co-pyrolysis,’ using insights from the bibliometric analysis and experimental literature sources. The analysis primarily focuses on understanding the impact of process parameters, catalysts, and feedstock characteristics. The empirical findings highlight the significance of polymer-to-biomass ratios in feedstock, where a higher plastic content leads to increased oil production, while greater biomass ratios tend to enhance char generation. The effect of temperature and resident time on co-pyrolysis yield is also apparent. Specifically, high temperature and resident time result in better oil production and reduced char formation during co-pyrolysis. Optimal oil yield occurs with intermediate resident times of 50–100 min with higher temperatures ranging from 450 to 700 °C. While the prime conditions for optimal char yield ranges within a residence time of 30–60 min and temperatures 400–500 °C. Moreover, the introduction of catalysts into the reaction enhances both oil yield and quality within the co-pyrolysis process. However, challenges pertaining to feedstock availability and sorting remain significant hurdles. Hence, the outcome reveals that higher amount of plastic waste, with higher temperature and appropriate resident time can increase the amount of oil in the co-pyrolysis process.
+

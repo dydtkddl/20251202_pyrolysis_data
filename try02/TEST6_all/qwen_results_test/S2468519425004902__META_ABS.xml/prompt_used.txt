@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+CoSe2/MoSe2 heterojunction as an efficient electrocatalyst for energy-saving hydrogen production and electro-treatment of organic molecules In this work, CoSe2/MoSe2 bifunctional electrocatalyst with p-p heterojunction and hollow structure was prepared by precipitation-hydrothermal method. In the standard three-electrode system, when the current density reaches 50 mA cm−2, the reaction potentials of oxygen evolution reaction (OER), urea oxidation reaction (UOR) and lactic acid oxidation reaction (LOR) are 1.58, 1.45 and 1.44 V versus reversible hydrogen electrode (vs. RHE), respectively. In the test of hydrogen evolution reaction (HER), when the current density is 50 mA cm−2, the overpotential of hydrogen evolution reaction in 1 M KOH is 197 mV. After adding 0.5 M urea or 0.125 M lactic acid to 1 M KOH, the overpotentials of HER are 175 mV and 165 mV, respectively. The two-electrode overall water splitting shows that it takes 1.72 V, 1.68 V and 1.67 V to drive 50 mA cm−2 in three electrolytes respectively. It is particularly noteworthy that when polylactic acid (PLA) pipette is used as the lactic acid source, the system can still maintain a low operating voltage of 1.69 V, meanwhile shows excellent stability in 100 h of continuous testing, highlighting a certain industrialization potential. Density functional theory (DFT) and experimental data well reveal the mechanism of the enhanced electrocatalytic performance for CoSe2/MoSe2 heterojunction due to its strong chemical interactions between CoSe2 and MoSe2. The charge rearrangement at this heterojunction between CoSe2 and MoSe2 forms a local electric field, which significantly improves the charge transfer efficiency and accelerates the reaction rate. In this study, the resource utilization of waste biomass (PLA) and nitrogen-containing wastewater (Urea) is organically combined with the hydrogen production process of electrolytic water, which provides a new idea for simultaneous pollutant degradation and green hydrogen production in energy conversion field.
+

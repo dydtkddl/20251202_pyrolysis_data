@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Advancement of thermochemical conversion and the potential of biomasses for production of clean energy: A review This study delves into the promising realm of clean energy production through thermochemical conversion and chemical advancements. As the global demand for sustainable energy intensifies, exploring innovative technologies becomes imperative. The focus here is on harnessing the potential of thermochemical conversion, coupled with advancements in chemical processes. This dual approach holds significant promises for generating clean energy. The abstract underscores the critical role of these technologies in meeting escalating energy needs while shedding light on the advancements, challenges, and opportunities that pave the way for their successful implementation. Waste biomass represents an excellent bioresource that can be harnessed to produce numerous types of energy carriers, including bio-oil, bio-crude oil, biodiesel, syngas, biochar, and hydrogen. This article reviews the potential of various types of biomasses, including food waste, agricultural and forestry biomass, energy crops & oilseed crops, municipal solid waste, and animal manure, and also discusses the different types of reactors. In this review, comprehensively discusses all thermochemical methods for bio-oil production, including pyrolysis, gasification, and liquefaction. Each method is examined in detail, highlighting their respective processes, advantages, and challenges. Additionally, various types of reactors used in these methods are analyzed, emphasizing their roles and efficiencies in optimizing bio-oil yield and quality. Therefore, this review article will help in understanding the potentiality of waste biomasses for the production of clean energy via thermochemical techniques.
+

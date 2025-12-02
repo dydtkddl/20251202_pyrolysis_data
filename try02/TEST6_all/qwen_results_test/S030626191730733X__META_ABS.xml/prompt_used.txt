@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Full characterization of compounds obtained from fractional distillation and upgrading of a HTL biocrude Biocrude from hydrothermal liquefaction of biomass provides a sustainable source from which to produce chemicals and fuels. However, just as for fossil crude, the chemical complexity of the biocrude impedes the characterization and hence identification of market potentials for both biocrude and individual fractions. Here, we reveal how fractional distillation of a biocrude can leverage biocrude characterization beyond state-of-the-art and uncover the full biocrude potential. By distillation combined with detailed individual analysis of the distillate fractions and distillation residue, more than 85% of the total biocrude composition is determined. It is demonstrated that a total mass fraction of 48.2% of the biocrude is volatile below 350°C, comprising mainly value-added marketable ketones, oxygenated aromatics and prospective liquid fuel candidates, which are easily fractionated according to boiling points. Novel, high resolution pyr-GCxGC-MS analysis of the residue indicates a high molecular weight aromatic structure, valuable for bio-materials production or for further processing into fuels. The distillate fractions are mildly hydrotreated to show the fuel and chemical precursor potential of the volatile components. This results in the formation of mainly hydrocarbons and added-value phenolics. This work takes a significant step by going beyond the biocrude as an intermediate bulk energy product and addressing actual applications and pathways to these.
+

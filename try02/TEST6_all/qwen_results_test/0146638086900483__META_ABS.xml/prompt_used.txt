@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Resins and asphaltenes in the generation and migration of petroleum Petroleum is a stable colloidal sol, with a continuous transition from the smallest hydrocarbon molecules to the bulkiest micelles. Asphaltenes are the micellar fraction precipitated by n-hepatane; in the remainder, resins—the non-hydrocarbon fraction—are separated by liquid chromatography. Resins control the sol stability. All these considerations apply equally well to organic extracts of rocks. Asphaltenes are macromolecular compounds, comprising polyaromatic nuclei linked by aliphatic chains or rings of various lengths and sometimes functional groups. They appear to differ by the size, with a statistically identical distribution of aromatic nuclei and linking units. On the contrary, resins are an heterogeneous group; if the heaviest are close to asphaltenes, the smallest are distinctly different molecules —such as aliphatic acids and quinolines for examples. The functional homogeneity of asphaltenes result when they migrate from source-rocks to reservoirs, in essentially a size differentiation. Thus, asphaltenes compositional fingerprints are valuable tools for correlation purposes. Asphaltenes from rock extracts and the corresponding kerogens contain the same constituent macromolecular units. A consequence of this compositional similarity is that asphaltenes and kerogen undergo parallel evolution during burial heating. To a lesser extent, this is true also of resins, although they do not appear to contain exactly the same constituents as kerogen and asphaltenes. Similarly, the amounts of asphaltenes and resins in rock extracts show orderly variations during geological evolution. For a given level of thermal evolution, differences in the origin of organic matter in various rocks are reflected in compositional variation of resins and asphaltenes contained in the rock extracts. Their composition is less variable than for the corresponding kerogens and they are, therefore, more sensitive to experimental error. On the contrary, a comparison of the amounts of resins and asphaltenes enables detailed distinctions between samples. All the preceding observations can be interpreted as showing resins and asphaltenes as intermediates in the reactions which lead from kerogen to hydrocarbons. However, they are not obligatory intermediates. Hydrocarbons can be produced directly from kerogen; the relative importance of resins and asphaltenes can be different in different situations. Resins and asphaltenes are valuable indicators of the origin of sedimentary organic matter in a rock and of its thermal evolution. Oil asphaltenes can be considered as reservoired kerogen moieties, and enable correlations with source-rock asphaltenes and parent kerogen. Asphaltene pyrolysis products are compositionally similar to the oil itself, when it has not suffered secondary alteration. Thus, pyrolysis of asphaltenes from degraded oils generates saturated hydrocarbon distributions similar to those of the original oil. Comparison of asphaltene pyrolysis products with the rock extract itself gives an indication of effects and degree of migration processes.
+

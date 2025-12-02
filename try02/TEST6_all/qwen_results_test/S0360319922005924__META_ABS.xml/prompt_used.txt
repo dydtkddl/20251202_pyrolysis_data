@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Understanding the chemical kinetics for plasma in liquid: Reaction mechanism of ethanol reforming in microwave discharge Toward understanding the chemical nature of fuel reforming in liquid phase discharge, a novel kinetic model with being governed by both mass and energy equations was developed for the first time. The model reliability was verified by experimental results for ethanol reforming with water by microwave discharge plasma in liquid (MDPL). The reaction kinetics of ethanol in MDPL were revealed quantitatively. It illustrated that the key reactive species in the MDPL were H, OH, HCO, C and CxHy radicals, which induced the productions of H2, CO and hydrocarbons (CH4 and C2H2). The rate determining steps for ethanol conversion were identified as dehydrogenizing ethanol to C2H5O firstly, and then splitting to CH2O and CH3 radicals. Those two species of CH2O and CH3 governed the formation of CO and hydrocarbons respectively. In addition, the kinetic control mechanism for ethanol reforming in MDPL determined that ethanol was converted by mixed routes of pyrolysis and steam reforming at low initial ethanol molar concentration in liquid ( C e t h L 50%. Water in the liquid supplied OH radical promoting the conversion of CxHy to CO, thereby it regulated the reaction pathway transition between pyrolysis and steam reforming. The energy transfer pathway for discharge power to chemical energy, very important but never discussed for plasma reforming in liquid, was also simulated. It revealed that a very competitive energy efficiency of ∼85% for ethanol reforming was achieved in the MDPL.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Aromatic hydrocarbons production and synergistic effect of plastics and biomass via one-pot catalytic co-hydropyrolysis on HZSM-5 The catalytic co-hydropyrolysis of pine sawdust (PW) and high density polyethylene (HDPE) to selectively produce aromatic hydrocarbons was studied by optimizing reaction parameters (feedstock composition, reaction temperature, residue time, initial hydrogen pressure and catalyst to reactant ratio). The composition of feedstocks, reaction temperature and the ratio of catalyst to reactant all had significant effects on the content of aromatic hydrocarbons, and the appropriate reaction parameters were selected to maximize the yield of aromatic hydrocarbons. The maximum aromatic hydrocarbons yield (18.3 %) and the highest selectively (67.8 %) were obtained when the ratio of plastic to reactant was 0.6, 400 °C, 1.5 MPa for 1 h and the catalyst to reactant ratio was 0.2. Compared with hydropyrolysis of biomass, the addition of plastics reduced the yield of solid residue and the oxygen content in bio-oil. Characteristic analysis of bio-oil showed that that monocyclic aromatic hydrocarbons accounted for the majority of aromatic hydrocarbons in blends, with benzene, toluene, xylene (BTX) having the highest selectivity (51.6–70.6 %), and oxygenates were almost absent in bio-oil. Meanwhile, the possible reaction pathways in the co-hydropyrolysis of biomass and plastic for aromatic hydrocarbons were discussed extensively.
+

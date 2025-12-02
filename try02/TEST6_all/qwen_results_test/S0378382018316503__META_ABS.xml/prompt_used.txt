@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal cracking of atmospheric residue versus vacuum residue Current practice subjects atmospheric residue (AR) to vacuum distillation, while feeding the vacuum residue (VR) for upgrading. This study explores the direct upgrading of AR and gauges the potential for eliminating the vacuum distillation unit, while recycling the upgraded oil to the atmospheric distillation column. Thermal cracking of Arabian AR and VR was carried out in an autoclave for 1 h at 400 °C. AR provided much higher liquid yield and quality with limited coke yield (<1 wt%). Higher temperature (420 °C) and longer residence time (2 h) were tested to further improve the quality of the liquid product. In addition, drill cuttings, previously demonstrated as an effective thermal cracking catalyst, were added to selected runs. Drill cuttings promoted the formation of short chain molecules, suppressed coke formation and significantly increased the quality of the product oil compared to control AR runs. Catalytic thermal cracking of AR at 420 °C for 2 h resulted in gas and coke yields of ~9 wt% and ~6 wt%, respectively, with the remainder being a premium quality liquid having °API gravity of 34. Upgrading of VR at the same conditions produced lower °API gravity liquid of 28 with 1.5 times more gas, 3 times more coke, and ~15 wt% less liquid yield. Simulated distillation showed that the product oil from both AR and VR upgrading contained ~20 wt% residue. Nevertheless, a mass balance of the whole refining/upgrading process revealed two times more liquified petroleum gas/light gas oil cut, with 50% less vacuum gas oil and 33% less coke yield for AR upgrading.
+

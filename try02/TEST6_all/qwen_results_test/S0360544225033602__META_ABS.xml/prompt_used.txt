@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Steam gasification of plastic and woody biomass for hydrogen-rich syngas production with CO2 reduction, emission and energy analysis This study investigates the steam gasification of high-density polyethylene (HDPE), wood waste, and their blend into H2-rich syngas using a simulation model under varying temperatures (650°C-950 °C) and steam/feed (S/F) ratios (0.5–2). Results show temperature enhances H2 and CO and reduction of CO2 and CH4. The S/F ratio exhibits varying effects: H2 decreases for plastic (69–63.6 mol%) but increases for wood (53.2–63.2 mol%), remaining stable for the 50:50 blend. Lower heating value and higher heating value of syngas at optimal conditions were 10.87/12.83 MJ/m3 for plastic, 9.26/10.35 MJ/m3 for wood, and 10.13/11.46 MJ/m3 for the blend. The study also investigate CO2 capture with CaO which enhances syngas composition. For plastic, H2 increases by 8 % (72.7 mol%) and CO2 decreases by 5 % (2.4 mol%); for wood, H2 rises by 17 % (78.4 mol%) and CO2 reductions of 9 % (10.9 %); and for blend, H2 increases to 75.8 % while CO2 drops to 6.5 %. CO2 emissions are highest for plastic (5.545 kg/h), lowest for wood (1.350 kg/h), and intermediate for blend (3.464 kg/h), highlighting the environmental benefits of co-gasification. The utility analysis shows energy-saving potentials: 37.6 % (plastic), 14.9 % (wood), and 31.8 % for the blend, with process heat integration identified as a key strategy for optimizing energy use.
+

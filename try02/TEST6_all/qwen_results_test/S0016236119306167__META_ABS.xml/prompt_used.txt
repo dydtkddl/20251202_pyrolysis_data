@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation of the pyrolysis characteristics of guaiacol lignin using combined Py-GC × GC/TOF-MS and in-situ FTIR To investigate the pyrolysis behavior of guaiacol lignin (G-lignin) at 400–750 °C and its major decomposition mechanisms, ginkgo MWL as a typical G-lignin was decomposed in a micro-pyrolyzer, coupling two-dimensional gas chromatography with time-of-flight mass spectrometric detection (Py-GC × GC/TOF-MS) and an in-situ infrared pyrolysis reactor (in-situ FTIR). The pyrolysis products showed that a large amounts of guaiacol phenols were produced at low temperature, which indicated that guaiacol phenols were an important intermediate product, and other lignin-derived aromatic chemicals formed from guaiacol phenols by de-methyl, de-methoxyl reactions, and broken off branch structures. Relatively high contents of 2-methoxyphenol and l-(2-hydroxy-5-methylphenyl) ethanone were obtained at 450 °C, up to 19.46% and 16.35%, respectively. However, when temperature increased, 2-methoxyphenol and l-(2-hydroxy-5-methylphenyl) ethanone should be transformed to catechol and p-cresol by the removal of the carbonyl group from the branch and methyl from the methoxyl group, respectively. The methyl breakage of 4-ethyl-2-methoxyphenol and de-methoxyl of mequinol caused the formation of creosol and phenol, respectively, when temperatures increased. Two-dimensional perturbation correlation infrared spectroscopy (2D-PCIS) was introduced to analyze the in-situ FTIR spectra, and it was found that the cleavage of alcoholic or phenolic C-O bond was the major reaction in G-lignin decomposition, and the methyl in methoxyl groups could be easily removed from methoxyl to form CH4. Based on 2D-PCIS, reaction pathways involving the change sequence of several functional groups from G-lignin were proposed. Three reaction paths were provided from a model lignin with β-O-4, α-O-4 and 5-5′ connection to 1-(2-hydroxy-5-methylphenyl) ethanone, 2-methoxyphenol, catechol, trans-isoeugenol, p-cresol, phenol and benzene.
+

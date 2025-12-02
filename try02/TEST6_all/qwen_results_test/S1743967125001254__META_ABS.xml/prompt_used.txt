@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on the reaction mechanism for hydrogen production from rice straw gasification in supercritical water based on ReaxFF Supercritical Water Gasification (SCWG) is an efficient technology for converting biomass waste into hydrogen-rich gas. In this study, we investigated the gasification process of rice straw under SCW conditions using ReaxFF reactive force field molecular dynamics (MD) simulations combined with experimental validation. The effects of temperature, reactant concentration, and reaction time on gasification efficiency were explored. The results show that under conditions of 4500 K, 3 wt%, and 500 ps, the gasification rate reaches its optimum, with the selectivity proportion of three gases comprising approximately 70 % of the total gas yield. Furthermore, we focused on the radical reactions of water in SCW and the decomposition pathways of cellulose and hemicellulose. Radicals (such as H, OH, and H3O+) generated from water under supercritical conditions drive hydrogen production through dynamic equilibrium reactions. In the reaction pathway, hemicellulose, cellulose, and lignin in rice straw are first hydrolyzed into small molecular monomers, which subsequently undergo dehydrogenation, deoxygenation, ring-opening, and free radical reactions to produce hydrogen and other gaseous products. This study not only provides in-depth insights into the reaction mechanisms of rice straw during SCWG but also offers theoretical guidance for optimizing SCWG systems and advancing their industrial applications.
+

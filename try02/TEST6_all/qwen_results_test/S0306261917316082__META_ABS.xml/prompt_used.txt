@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Energy conversion and gas emissions from production and combustion of poultry-litter-derived hydrochar and biochar Growing amounts of poultry litter call for improved treatment solutions. Its conversion to renewable energy can offer a solution while concomitantly reducing environmental impact and reliance on fossil fuels. We compared the production and combustion of biochar by slow pyrolysis to that of hydrochar by hydrothermal carbonization (HTC) in terms of char behavior, energetics, and gas emissions. Poultry litter is significantly different from other feedstocks when treated by slow pyrolysis and HTC, and requires a detailed study of its combustion behavior before it can be utilized in large-scale energy generation. Poultry litter was converted to biochar at 450 °C, and to hydrochar at 180, 200, 220 and 250 °C. Their chemical composition, combustion behavior and gaseous emissions were characterized by TGA–FTIR analysis. Hydrochar produced at 250 °C was more energy-dense than biochar, resulting in 24% higher net energy generation. Combustion behavior of hydrochar produced at 180, 200 and 220 °C was similar to that of the original litter, which is typical of biomass. On the other hand, hydrochar produced at 250 °C and biochar were more similar to coal. The main gaseous emissions during char production were CO2, CH4 and H2S. During the combustion step, NO and SO2 emissions were higher for hydrochar than biochar. Increasing HTC production temperature decreased emissions of CH4 and NH3 during hydrochar combustion. Biochar’s emissions were more significant during the production step than during combustion, whereas the opposite held true for hydrochar. Thus, HTC was seen to convert poultry litter more efficiently into a solid fuel that can potentially replace 10% of coal in the generation of electricity, thereby significantly reducing greenhouse gas emissions associated with electricity generation and agricultural waste.
+

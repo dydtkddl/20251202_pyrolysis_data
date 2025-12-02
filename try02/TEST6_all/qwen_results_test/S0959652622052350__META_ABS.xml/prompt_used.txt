@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental study on the gasification characteristics of polyethylene terephthalate (PET) microplastics in supercritical H2O/CO2 environment Plastic waste can be seen everywhere in our life, while the increasing emission of CO2 is causing concern. The use of supercritical fluids to treat plastic waste is highly efficient and provides a new idea for the green treatment of plastic waste. Green treatment of plastics can be achieved, and the possibility of CO2 consumption can be explored in supercritical fluids. Still, its mechanism has not been clearly explained yet, so it is essential to study its laws carefully. This paper carried out the gasification experiment of polyethylene terephthalate (PET) in supercritical H2O/CO2. The effects of temperature, residence time, initial CO2 volume and seawater on the gasification reaction are discussed. The results showed that: increasing the gasification temperature, extending the reaction residence time, and increasing the amount of carbon dioxide can improve the gasification efficiency, and the metal salts contained in seawater can promote the pyrolytic gasification of plastics. And the temperature change significantly influences the interface of PET plastics. The carbon conversion efficiency of PET plastics reached 40.5% with a certain amount of raw material and water for 20 min at 700 °C in supercritical carbon dioxide and water. At 500 °C, PET plastic has the best thermochemical reduction of CO2. This work provides new ideas for future green treatment of plastic waste and contributes to carbon reduction efforts.
+

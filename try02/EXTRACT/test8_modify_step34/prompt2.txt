@@ -1,0 +1,37 @@
+BEGIN PAPER_TEXT:
+{{PAPER_TEXT}}
+END PAPER_TEXT
+
+You are performing a STRICT VERIFICATION task.
+You MUST output ONLY valid JSON and nothing else.
+
+TASK:
+1. Verify the experiment_groups inside EXTRACTION_JSON.
+2. Compare them ONLY with PAPER_TEXT.
+3. Correct, merge, split, or delete experiment groups if needed.
+4. You MUST NOT summarize PAPER_TEXT.
+5. You MUST NOT interpret PAPER_TEXT.
+6. You MUST NOT output chain-of-thought.
+7. You MUST follow the output format exactly.
+
+OUTPUT FORMAT (MANDATORY):
+{
+  "verified_experiment_groups": [
+    {
+      "group_name": "",
+      "hypothesis": "",
+      "evidence_sentences": [""]
+    }
+  ],
+  "changes_made": ""
+}
+
+RULES (MANDATORY):
+- Output ONLY the JSON object.
+- No prose, no markdown, no commentary.
+- If no changes are required, set "changes_made": "none".
+
+BEGIN EXTRACTION_JSON:
+{{EXTRACTION_JSON}}
+
+

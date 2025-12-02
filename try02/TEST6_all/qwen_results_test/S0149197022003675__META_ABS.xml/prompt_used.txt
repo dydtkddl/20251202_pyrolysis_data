@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Prospects for additive manufacturing of nuclear fuel forms Additive manufacturing (AM) is viewed as a critical enabling technology for achieving superior performance and improved economics across many sectors. Although the past decade has seen increased application of AM methods to nuclear reactor cladding and structural materials, exploration of AM as applied to the uranium-bearing nuclear fuel forms has been limited. The two major families of nuclear fuel forms (monolithic, particle/dispersion) are utilized with their own set of core objectives in mind, and their differences require distinct fabrication infrastructures. These reference fabrication methods impose many limitations on nuclear fuels. Both currently operating reactors and future concepts have the potential for improved performance if these accepted limitations are relaxed or removed entirely. The primary limitations of reference fabrication processes for the common nuclear fuel forms are outlined in this paper. This groundwork is then used to identify avenues of fuel performance specific to each of these fuel architectures that could be exploited if the restrictions of conventional fuel fabrication are removed. Moreover, multiple targets for AM studies are laid out for each of the major nuclear fuel variants. Finally, key strategic components to guide research activities in AM of nuclear fuels are outlined, with an emphasis on use of modeling and simulation to motivate research aims and embrace of an accelerated testing methodology to screen and quality new fuel forms.
+

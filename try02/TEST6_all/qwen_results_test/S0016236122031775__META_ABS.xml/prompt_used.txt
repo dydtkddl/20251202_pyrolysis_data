@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental exploration and mechanism analysis of the deflagration pressure of methane/pulverized coal blenders inhibited by modified kaoline-containing compound inhibitors In this work, with the assistance of the intercalation modification approach, three kinds of intercalated compounds, dimethyl sulfoxide (DMSO), potassium acetate (KAc), and ammonium sulfamate (AS) were successively employed for modification on kaoline to prepare a modified kaolin inhibitor. Then, the TG/DTG test, SEM observation, XRD characterization, and FTIR analysis were respectively utilized to probe the thermal stability, surface structures, and functional groups of the modified kaoline inhibitor. Moreover, the compound inhibitors fabricated by modified kaoline powder blending with ammonium polyphosphate (APP) of different mass fractions were employed to inhibit the explosions of methane/pulverized coal blenders. In the explosion inhibition experiments, the concentrations of methane and coal dust were respectively selected for 9.5 % and 0.105 g/L, while the compound inhibitors with seven various mass fractions of 0.05, 0.075, 0.1, 0.125, 0.15, 0.175, and 0.20 g/L were severally chosen to explore its inhibiting effect on methane/pulverized coal blenders using the 20-L standard spherical explosion apparatus. Results show that both the modified kaoline inhibitor and its compound inhibitor demonstrate a prominent inhibiting effect on methane/pulverized coal blenders. Besides, the inhibiting effect presents the most outstanding as the mass fraction for APP of the compound inhibitor occupies 35 %. Under such a circumstance, the P max of the hybrid mixture decreases from 0.784 to 0.47 MPa and declines by 40.05 % after adding the compound inhibitor, the dP / dt max declines to 3.03 MPa·s−1 while the t P max delays to 1.122 s. Finally, we theoretically analyzed the suppression mechanism of the modified kaoline-containing compound inhibitors on the explosions of methane/pulverized coal blenders based upon the physicochemical properties of the raw samples and the solid particles collected from the post-explosion experiments from the macro and molecular-kinetics perspectives. This preliminary study would contribute to the development of high-efficiency inhibitors for preventing methane/pulverized coal-involved explosion disasters.
+

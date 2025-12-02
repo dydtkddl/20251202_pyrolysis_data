@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal and catalytic pyrolysis of a mixture of plastics from small waste electrical and electronic equipment (WEEE) Pyrolysis seems a promising route for recycling of heterogeneous, contaminated and additives containing plastics from waste electrical and electronic equipment (WEEE). This study deals with the thermal and catalytic pyrolysis of a synthetic mixture containing real waste plastics, representative of polymers contained in small WEEE. Two zeolite-based catalysts were used at 400°C: HUSY and HZSM-5 with a high silica content, while three different temperatures were adopted for the thermal cracking: 400, 600 and 800°C. The mass balance showed that the oil produced by pyrolysis is always the main product regardless the process conditions selected, with yields ranging from 83% to 93%. A higher yield was obtained when pyrolysis was carried out with HZSM-5 at 400°C and without catalysts, but at 600 and 800°C. Formation of a significant amount of solid residue (about 13%) is observed using HUSY. The oily liquid product of pyrolysis, analysed by GC–MS and GC-FID, as well as by elemental analysis and for energy content, appeared lighter, less viscous and with a higher concentration of monoaromatics under catalytic condition, if compared to the liquid product derived from thermal degradation at the same temperature. HZSM-5 led to the production of a high yield of styrene (17.5%), while HUSY favoured the formation of ethylbenzene (15%). Energy released by combustion of the oil was around 39MJ/kg, thus suggesting the possibility to exploit it as a fuel, if the recovery of chemical compounds could not be realised. Elemental and proximate analysis of char and GC-TCD analysis of the gas were also performed. Finally, it was estimated to what extent these two products, showing a relevant ability to release energy, could fulfil the energy demand requested in pyrolysis.
+

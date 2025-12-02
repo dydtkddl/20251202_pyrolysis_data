@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Plastics waste to olefins in a circular economy: Techno-economic and life cycle comparison of hydrothermal liquefaction and pyrolysis This study investigates pathways for the selective chemical upcycling of polyolefin waste, with a focus on two thermo-chemical conversion technologies: hydrothermal liquefaction (HTL-SC) and pyrolysis integrated with steam cracking (PYR-SC). A comparative techno-economic (TEA) and life cycle analysis (LCA) of both processes was conducted using Aspen Plus v12 and openLCA 2.0 software, respectively, to evaluate their potential for the production of light olefins (ethylene and propylene). The results indicate that for the HTL-SC plant produces 39.4 wt% ethylene and 19.9 wt% propylene at the optimal conditions of 450 °C, 230 bar and 30 min (HTL). For pyrolysis, the highest olefin yields were achieved at 600 °C. Under these optimized conditions, the HTL-SC process demonstrated an overall energy efficiency of 68.1 %, approximately 4.5 % higher than the PYR-SC process. The increased olefin yield also contributes to favorable production costs: 1.55 €/kg for ethylene and 3.07 €/kg for propylene. Notably, the PYR-SC plant achieved a return on investment (ROI) of 13.7 % and a payback period of 1.8 years, highlighting strong economic potential. From an environmental perspective, the LCA indicates that both the HTL-SC and PYR-SC routes produce lower CO2 emissions relative to conventional petrochemical plants equipped with carbon capture systems. The dominant environmental impact categories identified were human toxicity, followed by acidification and global warming potential. These findings highlight the potential of advanced polyolefin upcycling pathways to enable integrated olefin recovery and decarbonization within the chemical industry.
+

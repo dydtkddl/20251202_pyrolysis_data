@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Analysis of products derived from the fast pyrolysis of plastic waste Plastic Waste has become an increased problem in many industrialised countries. Concern over the volumes being created has lead to a number of governments introducing new legislation for its recovery as a resource. Traditional recovery methods have generally concentrated on recycling of materials or incineration for energy. The majority of polymers in waste are mainly hydrocarbon in nature and so can be used as a feedstock for the chemical industries or as a fuel. Pyrolysis is a tertiary recycling process and has an ability to provide three end products: a gas, an oil and a char which all have the potential to be further utilised. It is anticipated that if waste recovery targets currently being set are to be met then methods, such as pyrolysis, will have to be closely examined. The pyrolysis of a plastic mixture in a fluidised bed reactor was studied. The mixture was a simulated fraction of that found in municipal solid waste in Europe. The reactor was constructed of stainless steel and was 70 cm high × 10 cm diameter, with a 17 cm high × 20 cm diameter expander section. The sample was introduced batchwise into the bed. The influence of temperature on product yield and composition was studied. Pyrolysis was carried out at temperatures between 500 and 700°C. This gave widely differing product yields of between 9.79 and 88.76% gas and between 18.44 and 57.11% oil. The oils were analysed for their functional groups using Fourier transform infrared spectroscopy. The molecular weight distribution was also determined using size exclusion chromatography. It was found that as temperature was increased the amount of aromatic compounds in the oil increased. The molecular weight range was also affected. Potential applications for the oils was also investigated.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical recycling of brominated flame retarded plastics from e-waste for clean fuels production: A review Electronic waste plastics (e-waste plastics) have been one of the emerging and fastest-growing waste streams due to the increasing number of generation in waste electrical and electronic equipment (WEEE). Given that brominated flame retardant (BFR) materials in e-waste plastics have been the major impediment for recycling treatment, chemical recycling has been proposed as an environmentally friendly method of recycling e-waste plastics for clean fuels production or chemical feedstocks. This paper summarized the current techniques of BFR-plastics recycling with a view to solving energy crisis and the environmental degradation of BFR-plastics. Emphasis was paid on the recent chemical treatment of BFR-plastics, including pyrolysis, co-pyrolysis and catalytic cracking, which are yet to be completely feasible in conversion of BFR-plastics for clean fuels production. Hydrothermal treatment is regarded as a novel high-efficiency technology to recycle BFR-plastics, which can be a potential process for the in situ debromination of oil products. An advanced chemical recycling technique, pyrolysis-catalytic upgrading process, is highlighted. The recycling route of pyrolyzing BFR-plastics prior to catalytic upgrading was intended to obtain high quantity oils, and then the upgrading process of pyrolysis oils was conducted by means of catalytic hydrodebromination with the aim of obtaining bromine-free oils for commercial applications. In short, the integration of pyrolysis with catalytic upgrading process can provide significant economic and environmental options in conversion of e-waste plastics into useful and high-value materials. Further investigations are required to develop the pyrolysis-catalytic upgrading process to become sustainable and commercially viable for clean fuels production.
+

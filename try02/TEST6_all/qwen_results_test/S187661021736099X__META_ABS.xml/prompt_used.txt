@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetic study of decomposition of H2S and CH4 for H2 production using detailed mechanism Hydrogen energy has been the subject of increased interest for its high energy density and clean combustion characteristics. Hydrogen sulfide, or its mixture with methane, is considered to be hydrogen-rich fuel and H2 production can be expected from the thermal decomposition process. This paper presented a detailed kinetic mechanism for describing the chemical process during decomposition of H2S-CH4 mixture under dilution condition, with purpose of predicting the H2 production and conversion of H2S and CH4 accurately. Effects of temperature and initial H2S/CH4 ratio on H2 production were experimentally studied using tubular furnace reactor and kinetically analyzed by CHEMKIN software. Conversion rates of H2S and CH4 are promoted by increased temperature, leading to higher production of H2, CS2 but reduced S2 formation. Compared to H2S, CH4 maintains stable at temperature lower than 1000 °C. At temperature higher than 1050 °C, CH4 can react with H2S and S2 to form H2 and CS2 with observable rate. Adjusting the initial H2S-CH4 ratio to be 2 and possibly high temperature are positive factors for maximizing the H2 production efficiency from H2S-CH4 mixture.
+

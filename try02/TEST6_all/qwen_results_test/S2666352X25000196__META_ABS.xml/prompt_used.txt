@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal and catalytic pyrolysis of waste plastic heavy distillate into diesel-like product This study explored the catalytic upgrading of heavy distillate (HD) from plastic industries into diesel-like fuel using kaolin as a catalyst. A modified brick electric furnace was employed as a heating source for batch reactor and a central composite design response surface methodology utilized for experimentation during both thermal and catalytic pyrolysis. The results showed that kaolin significantly enhanced oil yields, achieving 73.28 wt % at 400 °C with 5 % catalyst loading and 150 min reaction time, and 70.13 wt % at 400 °C with 15 % catalyst loading and 150 min reaction time whereas, thermal pyrolysis yielded 63.63 wt % at 400 °C and 18.88 wt % at 350 °C. The catalytic process modified the functional groups, increasing paraffin and olefin yields, and shifting the carbon range towards diesel-like organics (C6-C23). The resulting diesel-like products exhibited improved properties, with distinct differences observed between those produced with and without kaolin catalyst. Without catalyst, the products had a density of 779 kg/m³, viscosity of 2.63 cSt, and calorific value of 46.62 MJ/kg and that obtained with kaolin catalyst had a density of 788 kg/m³, viscosity of 2.88 cSt, and calorific value of 47.23 MJ/kg, comparable to commercial diesel. Elemental analysis revealed increased carbon content from 77.21 wt % in HD to 83.24 wt % without catalyst and 84.83 wt % with catalyst, accompanied by decreased hydrogen, nitrogen, sulfur, and oxygen contents. The study demonstrates the potential of kaolin-catalyzed pyrolysis for converting heavy distillate into valuable diesel-like fuel. Further research on process optimization, desulfurization, and dehalogenation is recommended to improve the diesel fuel quality. Hence, this study contributes to the development of sustainable waste management and renewable energy solutions.
+

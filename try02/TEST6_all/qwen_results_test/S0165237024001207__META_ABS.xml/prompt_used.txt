@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+In-situ adsorptive pyrolysis of e-waste using coal and rice husk fly ash as alternative adsorbents for energy and precious metal recovery by solvent extraction This paper aims to use in-situ adsorptive pyrolysis combined with ultrasonication and solvent extraction for precious metal recovery from e-waste. The pyrolysis of discarded printed circuit board (PCB) and waste cable (WC) resulted in pyrolysis oil yields of 4.2–13.0 and 6.8–13.5%, respectively. Aliphatic and single-ring compounds were the major components of the pyrolysis oil. The pyrolysis char was ultrasonicated at 40 kHz for 20, 30, and 40 min at 35 °C to separate precious metals in pyrolysis char. The amounts of Au and Ag recovered by solvent extraction experiments with 2%vol HCl/2%vol HNO3, 2%vol HNO3 and 2%vol I2/2%vol H2O2 were 36.3–61.4 and 60.7–79.9%, respectively. The total energy recovery from the pyrolysis char, oil, and gas obtained from the pyrolysis of PCB was 9.0–9.2 MJ/kg. These results indicated that in-situ adsorptive pyrolysis with ultrasonication and solvent extraction could potentially facilitate e-waste conversion for energy and metal recovery processes at a lower cost.
+

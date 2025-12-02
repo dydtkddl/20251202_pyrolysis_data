@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characterization of pyrolysis oil produced from organic and plastic wastes using an auger reactor The objective of this study is to assess the suitability of pyrolysis oils produced from organic and plastic wastes for engine application. The assessment was performed by comparing the properties of the obtained pyrolysis oils with those of standard engine fuel. A fast pyrolysis process with an auger reactor was used to convert organic wastes such as beauty leaf fruit husk (BLFH), macadamia nutshell (MNS), and municipal green waste (MGW), and plastic waste such as waste high-density polythene (HDPE) into oil. Prior to pyrolysis experiments, all the wastes were characterized using a thermogravimetric and a CHNS analyser to perform proximate and ultimate analyses. The experiments were performed using varied temperatures ranging from 400 °C to 550 °C at intervals of 25 °C, a 3-minute residence time and 2-mm feedstock particle size. The maximum yield of pyrolysis oil was obtained at 475 °C for BLFH (42.75 %), at 500 °C for MNS (45.09 %) and MGW (44.72 %) and at 525 °C for HDPE (61.29 %). The chemical and physical properties of the pyrolysis oils were analysed using Fourier transform infrared spectroscopy (FTIR), Gas chromatography–mass spectrometry (GC–MS), elemental and physicochemical properties analysis. The characterisation results reveal that the pyrolysis oils obtained from BLFH, MNS and MGW are enriched with phenolic, aromatic, and oxygenated compounds and oil obtained from HDPE contains mostly hydrocarbons and aromatics. The BLFH, MNS and MGW derived oils have higher viscosity and density and lower calorific value compared to that of HDPE derived oil. Due to these features, the oils obtained from organic wastes are not suitable for engine application without further refinement. HDPE derived oil, on the other hand, meets most of the criteria to be an engine fuel. However, a firm conclusion cannot be drawn until this oil has been tested in an engine.
+

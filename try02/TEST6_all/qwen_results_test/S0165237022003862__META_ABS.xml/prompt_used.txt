@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of waste polyester enameled wires and polyvinyl chloride: Evolved products and pyrolysis mechanism analysis Waste enameled copper wire is an important secondary source of copper and often recovered by removing their organic paint layer through pyrolysis. This research focused on studying co-pyrolysis behaviors of poly(ethylene terephthalate) (PET) paint of waste enameled wires, mixed with a small amount of polyvinyl chloride (PVC) which is part of electric wires or cables. The results indicated that mixing PVC with a mass fraction of 10% into enameled PET wire paint (EPET) would significantly affect pyrolysis products, especially the chlorinated compounds, as well as increase energy consumption of the pyrolysis process. TG-FTIR and Py-GC/MS analyses showed that the chlorinated organics were mainly generated in the second stage of pyrolysis. Chloroesters such as terephthalic acid, di(2-chloroethyl) ester were dominant over other chloroorganic compounds, and their formations were attributed to the addition reaction of aromatic vinyl esters with HCl which formed from PVC pyrolysis. It is also worth mentioning that the chemically active acid chlorides including propanoyl chloride and benzoyl chloride were detected in the products, and they were proposed to be formed from the HCl acidolysis of esters that produced from pyrolytic EPET. Besides pyrolysis products, energy consumption of pyrolysis process also was closely correlated to the interactions between pyrolytic PVC and EPET. The average co-pyrolysis activation energy was calculated by Kissinger-Akahira-Sunose (KAS) method and was about 15 kJ/mol higher than that of EPET. These should be consequences of reactions between HCl and EPET. Since PVC is the minority component in the pyrolysis mixture that HCl eliminated from the few PVC was mostly consumed by EPET to form chloroorganic compounds, which negatively influences EPET degradation.
+

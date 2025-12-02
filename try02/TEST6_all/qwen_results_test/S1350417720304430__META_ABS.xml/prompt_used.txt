@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic, aqueous PAH degradation by ultrasonically-activated persulfate depends on bulk temperature and physicochemical parameters Coupling ultrasound with other remediation technologies has potential to result in synergistic degradation of contaminants. In this work, we evaluated synergisms from adding high-power ultrasound (20 kHz; 250 W) to activated persulfate over a range of bulk temperatures (20–60 °C). We studied the aqueous degradation kinetics of three polycyclic aromatic hydrocarbons (PAHs: naphthalene, phenanthrene, and fluoranthene) treated by ultrasound-alone, heat-activated persulfate, and combined ultrasonically-activated persulfate (US-PS). At 20 °C, observed US-PS rate constants strongly correlated with Wilke-Chang diffusion coefficients. This correlation indicates PAH molecules diffuse to the bubble-water interface prior to reaction with sulfate radicals (SO4 −) generated at the interface. At higher temperatures, observed US-PS rate constants appear to be a more complicated function of temperature and diffusion coefficients. Synergy indexes for PAHs with fast diffusion coefficients were greatest at 20 °C. Fluoranthene, the largest and most hydrophobic PAH, had a maximum synergy index at 30 °C; it benefited from additional thermal persulfate activation in bulk solution. Fluoranthene synergy indexes, however, decreased above 30 °C and became antagonistic at 60 °C. Electron paramagnetic resonance (EPR) spin trapping was used to quantify hydroxyl radical ( OH) produced from acoustic cavitation in the absence of persulfate. These data showed consistent OH production from 20 to 60 °C, indicating PAH antagonisms at 60 °C were not due to lower bubble collapse temperatures. Instead, the results suggest that PAH antagonisms are caused by increased radical–radical recombination as bulk temperature increases. In effort to develop an efficient, combined remediation technology, this work suggests bulk temperatures between 20 and 40 °C maximize US-PS synergisms.
+

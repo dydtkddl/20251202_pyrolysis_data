@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Feasibility Analysis of Pyrolysis Waste Engine Oil in CRDI Diesel Engine In this present investigation, microwave assisted pyrolysis (MAP) was carried out for converting waste engine oil into diesel-like fuel. The addition of susceptor enhanced the heating rate and decreased the power consumption of the pyrolysis. The specific energy consumption was four times lesser when the activated carbon mixed with waste engine oil by 40%. The maximum energy was recovered from the pyrolysis at 400°C with 1.1 kW power rating which is 15.75% higher than 2.2 kW power rating at the same temperature. The physicochemical properties of pyrolysis fuel were similar to diesel. The higher calorific value was noticed for pyrolysis oil by 2.4% compared to diesel fuel. The microwave pyrolysis oil (MPO) was tested in a single cylinder diesel engine using conventional injection and common rail direct injection (CRDI). The brake thermal efficiency of MPO was increased by 4.4% in CRDI compared to mechanical injection. The NO and smoke emission was decreased by 50% and 54% respectively in CRDI compared to mechanical injection. CRDI improves the atomization and increases the injection duration period leads to decrease of the heat release rate on the premixed stage of the combustion and also attained low peak pressure during the combustion. This study reveals that CRDI improves the combustion efficiency of pyrolysis fuel used in CI engine.
+

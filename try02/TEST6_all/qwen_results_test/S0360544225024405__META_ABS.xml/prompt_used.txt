@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Uncovering strategies for quantifying thermo-kinetics, reaction heat, and synergistic rates of heat transfer-degradation in the chemical upcycling of polyolefins Utilizing fluidized bed reactors for the upcycling of polyolefins (polyethylene (PE) and polypropylene (PP)) is a promising recycling approach, while the industrialization of this emerging process is still challenging in reactor design. Herein, thermo-kinetics, reaction heat, and heat transfer-degradation synergistic rates of polyolefin pyrolysis were systematically investigated via Py-GCMS and TGA-DSC. We found that the complete pyrolysis time (3.1–14.6 s) at 550 °C is comparable to the residence time of the waste plastic catalytic cracking process (∼5 s), PP is more easily thermally decomposed than PE under the same conditions. Moreover, we present a reliable method for calculating reaction heat based on thermodynamic principles and detailed hydrocarbon composition, revealing a negative linear relationship between cracking depth and reaction heat over different heat supply rates (temperature at 500–600 °C), with reaction heat ranging from 283.3 to 494.3 kJ kg−1 for PE and 592.2–729.1 kJ kg−1 for PP, respectively. Quantitative results from the coupled heat transfer-degradation model indicate elevated heat transfer limitations at higher temperatures (>550 °C, faster heat supply and reaction rate) or larger particle sizes (>250 μm, slower heat transfer rate and higher Biot number), highlighting optimal pyrolysis efficiency for PP particles of 250 μm. We anticipate this work could guide the design and optimization of reactors for upcycling polyolefin waste.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Performance evaluation of a novel two-stage waste wood gasifier: Influence of steam-to-biomass ratio and in-situ steam generation on tar formation The shift from high-quality woodchips to low-quality feedstocks increasingly shapes biomass gasification. Small- to medium-scale plants face challenges from heterogeneous feedstock and tar formation, with a research gap in producing energetically useable product gas without extensive cleaning. This study investigates gasification of different waste wood fractions in a two-stage process using a novel bubbling fluidised bed reactor without bed material. Two steam generation strategies were applied: steam-saturated air and direct water injection. Combining secondary air with steam-saturated primary air improved temperature control, reduced slagging, and ensured stable thermal stratification across feed rates. While raising the steam-to-biomass ratio did not significantly enhance efficiency, it strongly reduced tar: PAH16 and BTX decreased by up to 85% and 65%. Gas composition showed slight increases in H2 and CH4, a decrease in CO, and stable values for heating value, gas yield, and conversion efficiency. The product gas exhibited an LHV of 3.7-4.2MJNm−3, gas yields of 1.9-2.8Nm3kg−1, and cold gas efficiencies of 52.5-57.8%, comparable to values reported for high-quality woodchips. Total tar concentrations remained low (0.92-2.8gNm−3), demonstrating that autothermal operation with controlled secondary air and steam-saturated primary air provides both efficient energy recovery and effective tar reduction, even for low-quality feedstocks.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimization and modeling of reaction conditions for the selective recovery of waxes from HDPE pyrolysis in a conical spouted bed reactor As global plastic production continues to rise, recycling rates keep lagging, leaving vast amounts of plastic waste as an underutilized carbon resource. Developing efficient plastic conversion methods is essential for advancing a sustainable circular economy. While the conversion of polyolefins into fuels and gases has been extensively studied, the production of waxes has received limited attention, despite their potential as value-added products for various industrial applications. This study focuses on the thermal pyrolysis of high-density polyethylene in a conical spouted bed reactor (CSBR), a system known for its high selectivity toward wax production. More specifically, the effects of key process parameters including reaction temperature, nitrogen flow rate, and plastic feeding rate, on wax yield and productivity were systematically investigated. A design of experiments approach was employed to quantify their influence, enabling the development of predictive models. The results indicate that different molecular weight wax fractions can be selectively produced, with reaction temperature being the most influential parameter for wax yield, and plastic feed rate having the greatest impact on wax productivity. Optimized reaction conditions were identified, providing insights into the potential for controlled wax production via thermal pyrolysis. Validation experiments were conducted, yielding over 80 wt% wax and a wax productivity of approximately 148 g.h−1 for the total wax yield. These findings contribute to a deeper understanding of the capabilities of the CSBR in chemical recycling and highlight its role in producing high-value waxes from plastic waste.
+

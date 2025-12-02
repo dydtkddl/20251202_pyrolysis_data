@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Conversion of biodigestate into activated carbon for electrochemical application: Process performance and life cycle assessment Carbons derived from pyrolysis and activation of waste biomass are attracting much attention as components of energy technologies, such as batteries, supercapacitors and fuel cells. This experimental study focuses on the production of a high-surface-area biochar (LAC) obtained from the treatment of lignin-rich waste of a biodigester plant, by applying KHCO3 as an activating agent. The pyrolysis-activation conditions were set by following the process by thermogravimetric analysis and by checking the purity and porosity of the resulting carbon by several analytical techniques. The best pyrolysis condition provided a microporous carbon featuring up to 1840 m2 g−1, which was demonstrated at a 25 g biodigestate batch-scale. Moreover, the production process was critically analyzed by means of life cycle assessment to identify environmental hotspots and thus derive recommendations for process optimization. The impact of substance- and energy-recovery and the use of renewable energy sources on the sustainability of the product was demonstrated in several scenarios, complemented by benchmarking and an outlook regarding further optimization needs. In the best case scenario, the global warming potential of the proposed biochar could be reduced to 15.9 kg CO2-eq per kg of LAC. The activating agent KHCO3 was dominant in almost all environmental impact categories, hence, a theoretical recovery process for this substance was suggested and evaluated via life cycle assessment.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sequential hydrothermal dechlorination and liquefaction of PVC Poly(vinyl chloride) (PVC) is globally the third most produced plastic, but recycling PVC waste through mechanical means is difficult. Due to the high presence of chlorine in PVC, it is unsuitable for both pyrolysis and combustion. Consequently, there is a need to explore innovative methods for harnessing its energy potential. Hydrothermal liquefaction (HTL) is a topic of growing interest in the literature for chemical recycling of waste plastic or conversion into liquid energy carriers. In this work an innovative sequential hydrothermal processing strategy was tested for oil production from PVC. PVC at high loadings (20 wt.%) was first processed under subcritical conditions to produce a chlorine-free solid, which was then liquefied in supercritical conditions. Different temperatures were tested for the dechlorination stage, and at 300 °C 99% of chlorine was removed, while 94% of carbon remained in the solid residue. The mechanism behind the solid's formation was investigated by assessing activation energies, both with the addition of KOH as a neutralizing agent (120 kJ/mol) and without it (186 kJ/mol). Different temperatures were screened for an HTL supercritical stage (420–480 °C), but the maximum conversion of the dechlorinated solid was 47%, and the maximum mass yield of oil was 10%. Overall, the subcritical phase demonstrated its potential as a technology for producing chlorine-free solid material with a high energy density. The subsequent supercritical step partially valorized the dechlorinated solid by producing an aromatic-rich oil phase.
+

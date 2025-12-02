@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Non-isothermal and isothermal co-pyrolysis characteristics of coal gangue/coal slime and pine sawdust: Thermogravimetric analyzer and fixed bed pyrolysis reactor study The generation and accumulation of coal gangue (CG) and coal slime (CS) are a serious cause of environmental pollution. The co-pyrolysis of CG/CS and pine sawdust (PS) is an effective method to reduce pollution and waste generation. In this work, the co-pyrolysis characteristics of CG/CS and PS were analyzed by the thermogravimetric analyzer and fixed bed pyrolysis reactor. The kinetics analysis showed that the activation energies decreased with the PS mixing ratio increased for CG/PS blends and CS/PS blends in the second pyrolysis stage. The synergistic effect on yield is quantified by comparing the results of the co-pyrolysis of CG/CS and PS blends with weighted results from the pyrolysis of CG, CS and PS individually. The results revealed that when the mixing ratio of CG:PS was 1:1, the difference between the experimental and calculated yields (2.9 %) and the H2 yield (320 ml/g) were maximum. Among the CS/PS blends, these values are maximum when the mixing ratio of CS:PS is 3:1 (2.5 % and 450 ml/g). Furthermore, the alkali and alkaline earth metals K and Ca in the co-pyrolysis char catalyze the decomposition of the –OH functional group.
+

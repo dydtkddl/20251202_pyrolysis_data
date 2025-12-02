@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The interplay of larval age and particle size regulates micro-polystyrene biodegradation and development of Tenebrio molitor L. Microplastics, tiny plastic fragments from 1 μm to 5 mm, are widespread globally, even in remote environments. Due to their small sizes, they are easily ingested by organisms and contaminate the food chain. Recently, the biodegradation of some recalcitrant plastics by larva of Tenebrio molitor L. (mealworm) has been reported. However, the effects of microplastic feeding on them are limited. In our study, we selected rigid micro-polystyrene (MPS) as the model plastic to investigate the influences of particle size and larval age on plastic consumption and degradation, and the effects of microplastic feeding on the survival and development of mealworms at different larval ages. The smaller the microplastic fragment was, the more plastics the mealworms consumed, though there was a limit on particle size. Mealworms of three-month-old had the highest consumption rate. Both depolymerization and modification on the functional groups were only observed in frass excreted by three-month old mealworms. Additionally, mealworms cofed with wheat bran and MPS of this age had comparable mortality, larval growing curve and pupation distribution as the control group with wheat bran. Our results demonstrated that mealworms in this larval stage had the greatest resistance to high doses of microplastic feeding. We suggested that microplastic waste could be provided to three-month old mealworms as half replacement of bran diet to result in the greatest plastic consumption and degradation.
+

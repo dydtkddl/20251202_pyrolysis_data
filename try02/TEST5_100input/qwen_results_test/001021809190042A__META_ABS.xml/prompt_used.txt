@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Combustion properties of pure and fire-retarded cellulose Measurement are presented for the fuel-related properties of pure and fire-retarded cellulose used in diffusion flame calculations. The items measured are (1) heat of combustion of the volatile products of cellulose pyrolysis, (2) heat of gasification, (3) fuel and inert gas fractions in the pyrolysate and (4) stoichiometric ratio of the fuel volatiles. Cellulose samples were subjected to a radiant heat flux in a special apparatus designed for this purpose, and the pyrolysate was analyzed using a gas chromatograph. Heats of combustion of cellulose and of the char produced by pyrolysis were measured by a bomb calorimeter. Results are given for pure cellulose and for cellulose that has been fire retarded by up to 3 wt.% sodium hydroxide. For heat fluxes simulating those in diffusion flames, the char yield is found to increase from 9 wt.% percent for pure cellulose to 30 wt.% for retarded cellulose. The effect of retardant addition is to decrease the heat of combustion per unit mass of (total) volatiles, but to increase the heat of combustion per unit mass of combustible volatiles. The heat of gasification (defined as the energy input required to generate a unit mass of volatiles) is determined from measurements of mass loss, surface temperature, and surface emissivity. For pure cellulose, the mass loss rate and surface temperature increase for higher applied heat fluxes while the heat of gasification decreases. At a fixed heat flux, retardant addition increases both the mass loss rate and surface temperature, which results in a decrease in the heat of gasification. Analysis of the volatiles shows that retardant addition increases the fraction of inert gases (carbon dioxide and water) in the pyrolysate, which reduces the fuel fraction from 69 wt.% for pure cellulose to 35 wt.% for retarded cellulose. The corresponding change in stoichiometric oxygen fuel ratio is from 1.6 for pure cellulose to a maximum value of 2.3 for retarded cellulose.
+

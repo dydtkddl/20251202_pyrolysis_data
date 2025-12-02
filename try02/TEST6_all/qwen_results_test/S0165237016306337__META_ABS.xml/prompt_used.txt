@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Formation of PCDDs and PCDFs in the torrefaction of biomass with different chemical composition Torrefaction is a thermal pre-treatment technology used to refine biomass, mainly for energy production purposes. However, there is currently a lack of information on the potential formation of polychlorinated dibenzo-p-dioxins (PCDDs) and dibenzofurans (PCDFs) in the torrefaction process. In this study, torrefaction was conducted using five different types of feedstock: stemwood, bark, wood from a discarded telephone pole, cassava stems and particle board. The feedstock as well as the torrefied biomass (chars) and the volatiles (non-condensable and condensable) generated during torrefaction were analyzed for PCDDs and PCDFs. PCDD concentrations in the torrefaction products were about 2–5 fold of those in the feedstocks. Torrefaction of particle board resulted in extensive formation of PCDDs (7200ngkg−1) compared to the other four feedstocks (13–27ngkg−1). Examination of the homologue profiles suggested that the observed PCDDs in the torrefaction products partly originated from new formation and partly physical transformation from volatilization and re-condensation of PCDDs present in the feedstock. Dechlorination of highly chlorinated compounds (HpCDD and OCDD) in the feedstock to form less chlorinated PCDDs was also observed. Compared to PCDDs, the net formation of PCDFs in the torrefaction process was low, except for the telephone pole sample, for which a dramatic increase (44-fold) of PCDFs was observed. PCDDs and PCDFs were mainly retained in the chars, accounting for 76–96% and 39–74% of the total concentration, respectively. It was also found that the highly chlorinated congeners tended to be retained in the chars, whereas the less chlorinated ones were predominantly volatilized into the gas phase.
+

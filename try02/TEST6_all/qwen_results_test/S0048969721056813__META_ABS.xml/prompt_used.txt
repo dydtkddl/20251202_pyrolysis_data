@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Photocatalytic and biological technologies for elimination of microplastics in water: Current status Water pollution by microplastics (MPs) has emerged as a significant environmental and public health concern. Several conventional technologies in drinking water and wastewater treatment facilities are capable of capturing a substantial portion of microplastics from surface water; however, only limited methods are available for actual destruction of microplastics. Rate of success is highly variable, and actual mechanisms which result in MP destruction are only partly known. Photocatalysis and microbial degradation technologies show promise at laboratory scale for the transformation of microplastics to water-soluble hydrocarbons, carbon dioxide and, in limited cases, useful fuels. Both photocatalytic and microbial technologies offer the potential for long-term water security and ecological stability and deserve further attention by scientists. Additional research is necessary, however, in identifying more effective semiconductors for photocatalysis, and optimal effective microbial consortia and environmental conditions to optimize microplastic biodegradation. Many more polymer types beyond polyethylene must be studied for degradation, and laboratory-scale research must be expanded to field-scale. This paper provides a comprehensive overview of processes and mechanisms for removing MPs by photocatalysis and microbial technologies. It provides useful data for research dedicated to improved removal of MPs from surface waters.
+

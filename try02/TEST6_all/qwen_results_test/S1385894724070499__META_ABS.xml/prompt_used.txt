@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on pyrolysis process and mechanism of organic coating of waste polyesterimide enameled wire based on density functional theory The pyrolysis treatment of waste polyesterimide enameled wire offers significant advantages such as continuous processing, non-hazardous nature, and high resource recovery rate. However, research on its pyrolysis process and mechanism remains insufficiently explored. In this study, techniques including thermogravimetry (TG), Fourier transform infrared spectroscopy(FT-IR), pyrolysis–gas chromatography-mass spectrometry(Py-GC/MS) were employed to investigate pyrolysis temperature, weight loss rate, pyrolysis and kinetic parameters, composition and distribution of pyrolysis products, and changes in functional groups under different temperatures and heating rates. The pyrolysis of polyesterimide enameled wire can be divided into three stages: volatilization of specific components (314.8 °C,1.6 %), rapid decomposition of polyesterimide (435.2 °C, 44.7 %), and generation of small organic molecules with the fixation of pyrolytic carbon (750 °C, 9.0 %). The main components of the pyrolysis gas products include aromatic compounds, ethers, aromatics, ketones, and carbon dioxide. At 400 °C, a substantial amount of pyrolysis gas products and free radicals are produced, with an increase in aromatic hydrocarbons. The carbon distribution in the pyrolysis products mainly focuses on C6-C10 and C11-C15, and many organic compounds such as benzoic acid, phenol, and aniline are generated. Based on density functional theory, the bond dissociation energies in the polyesterimide were calculated. This clarified the possible thermal decomposition pathways of the polyesterimide and provided the energy barrier values, elucidating the generation mechanism of pyrolysis products during thermal decomposition. The copper atom in specific location reduces the negative ESP of O and increases the positive ESP of H in EPI, which makes H more likely to attach to O. The presence of Cu increases the ESP range and promote the pyrolysis process. This study provides a theoretical basis for the high-value recycling of waste polyesterimide enamelled wire.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Nuclear hydrogen projects to support clean energy transition: Updates on international initiatives and IAEA activities Hydrogen is expected to be a game changer in the fight against climate change, being able to support the clean energy transition through a variety of roles: decarbonizing different hard-to-abate industrial sectors (such as steel, cement production) and transport (in long haul vehicles, maritime transport, and aviation), direct use as a fuel, chemical feedstock or in the form of synthetic fuels, and providing the ability to integrate with hybrid energy systems and renewables, enhancing energy storage and tapping the full potential of renewable energy sources. As a consequence, a substantial expansion in hydrogen production, due to rise in the demand, is expected by 2050, with all the generation coming from zero-carbon processes (electrolysis/thermochemical cycles using clean electricity and heat) or from a low-carbon production process using steam methane reforming with carbon capture and storage. Nuclear energy can be capitalized on both electricity and heat to provide a clean and reliable source of hydrogen through various processes. There are currently various demonstration projects undergoing in several countries to showcase the use of nuclear energy to produce clean hydrogen, considering both the current reactor fleet and advanced reactors. This paper provides an overview of these projects, giving an insight on the potential use of nuclear energy for hydrogen production and the current status of existing projects. It also highlights the activities of the International Atomic Energy Agency on technical and economic assessment of hydrogen production using nuclear energy for near term deployment.
+

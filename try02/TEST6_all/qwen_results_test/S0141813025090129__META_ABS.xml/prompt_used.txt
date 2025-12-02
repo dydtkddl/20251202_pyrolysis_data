@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Roles of CO2 in carbon-negative syngas production from pyrolysis of cellulosic biomass (oat hull) The biological conversion of biomass into chemicals and biofuels is environmentally beneficial. Nevertheless, it is critical to minimize the inevitable carbon loss by microbial metabolisms such as respiration and cell reproduction. Pyrolysis has gained considerable attention because it enables to utilize all carbons in biomass as the form of syngas, biocrude, and biochar. In this study, oat hull (OH), one of the by-products generated during cereal processing, was selected as a model biomass. To impart the sustainability of pyrolysis process, carbon dioxide (CO2) was used as a partial oxidant. CO2 participated in homogeneous gas-phase reactions (HGRs) with volatile matters (VMs) derived from OH pyrolysis, resulting in the enhanced formation of carbon monoxide (CO). However, the HGRs induced by CO2 are evident only above 550 °C. To expedite the reaction kinetics of CO2, pyrolysis experiment was carried out in a reactor system equipped with external heating at 700 °C and loaded with Ni/Al2O3 catalysts (0.5, 2.0, and 5.0 wt% Ni). The use of Ni catalyst during OH pyrolysis enhanced the thermal cracking of the VMs into lighter molecular volatiles, accelerating the HGRs with CO2 under improved mass transfer. The production of CO-rich syngas increased proportionally to the Ni loading on the catalysts. Therefore, this study highlights mechanistic insights into the roles of CO2 in facilitating CO-rich syngas production, with enhancing carbon utilization efficiency during the OH pyrolysis.
+

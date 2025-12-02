@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal pyrolysis of waste versus virgin polyolefin feedstocks: The role of pressure, temperature and waste composition Due to the complexity and diversity of polyolefinic plastic waste streams and the inherent non-selective nature of the pyrolysis chemistry, the chemical decomposition of plastic waste is still not fully understood. Accurate data of feedstock and products that also consider impurities is, in this context, quite scarce. Therefore this work focuses on the thermochemical recycling via pyrolysis of different virgin and contaminated waste-derived polyolefin feedstocks (i.e., low-density polyethylene (LDPE), polypropylene (PP) as main components), along with an investigation of the decomposition mechanisms based on the detailed composition of the pyrolysis oils. Crucial in this work is the detailed chemical analysis of the resulting pyrolysis oils by comprehensive two-dimensional gas chromatography (GC × GC) and ICP-OES, among others. Different feedstocks were pyrolyzed at a temperature range of 430–490 °C and at pressures between 0.1 and 2 bar in a continuous pilot-scale pyrolysis unit. At the lowest pressure, the pyrolysis oil yield of the studied polyolefins reached up to 95 wt%. The pyrolysis oil consists of primarily α-olefins (37–42 %) and n-paraffins (32–35 %) for LDPE pyrolysis, while isoolefins (mostly C9 and C15) and diolefins accounted for 84–91 % of the PP-based pyrolysis oils. The post-consumer waste feedstocks led to significantly less pyrolysis oil yields and more char formation compared to their virgin equivalents. It was found that plastic aging, polyvinyl chloride (PVC) (3 wt%), and metal contamination were the main causes of char formation during the pyrolysis of polyolefin waste (4.9 wt%).
+

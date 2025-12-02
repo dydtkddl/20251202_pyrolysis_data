@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Upcycling polyamide containing post-consumer Tetra Pak carton packaging to valuable chemicals and recyclable polymer Billion tons of post-consumer Tetra Pak cartons are discarded annually as land and ocean wastes, creating significant environmental problems and resource losses. Recycling of the carton wastes is hindered by its multi-material compositions and low values of the recycled products. In this study, a novel upcycling of the cartons was investigated. A post-consumer carton consisting of paper, polyolefin, and polyamide was directly converted in 210–230 °C tetrahydrofuran containing 10–20 mM acid to produce up to 19.2% of levoglucosenone and 8.6% of furfural by selectively decomposing paper fraction. The remaining solids containing mostly intact polyethylene and polyamide but also a smaller fraction of paper-derived char were separated using a solvent-dissolution method. The xylene-soluble fraction was a recycled polymer similar to the original polyethylene, which was verified by its functional groups, the composition of the pyrolysis products, and the melt rheology results. The xylene-insoluble fraction was a mixture of polyamide and paper-derived char. Upon pyrolysis, caprolactam was produced as the only major vapor product. The remaining, thermally stable paper-derived char could be used as a high-quality solid fuel. Overall, the demonstrated recycling method could potentially maximize the values of the products recovered from carton wastes.
+

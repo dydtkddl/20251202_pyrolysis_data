@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Numerical and experimental analysis of pyrolysis process of RDF containing a high percentage of plastic waste The current COVID-19 pandemic situation and the associated restrictions have increased the amount of generated waste. It results from the necessity to wear personal protective equipment. Thus, the disposal of masks and gloves is a topical issue and requires immediate investigation. The main aims of this work are management and environmental studies of municipal solid wastes (MSW), which have been generated during the COVID-19 pandemic time. Effective waste management in relation to a circular economy is presented. A sample of refuse derived fuel (RDF) with a high content of plastics was used for the experimental and calculation studies. Pyrolysis was selected as the best thermal decomposition process for this kind of wastes. Proximate and ultimate analyses were performed for RDF and its products. Pyrolysis was carried out using a pilot-scale reactor with acontinuous flow of 250 kg/h at 900 °C. Thermogravimetric analysis was applied during the pyrolysis investigation and showed that the main decomposition of RDF took place in the temperature range of 250–500 °C. The pyrolysis gas contained combustible compounds like CO (19.8%), H2 (13.2%), CH4 (18.9%) and C2H4 (7.1%), giving a high calorific value – 24.4 MJ/m3. The experimental results were implemented for numerical calculations. Chemkin-Pro software was applied to predict the chemical composition of the pyrolysis gas. The performed computer simulations demonstrated very good agreement with the results obtained during the experiments. They also indicated that there is a strong relationship between the chemical composition of the pyrolysis gas, the process temperature and residence time in the reactor.
+

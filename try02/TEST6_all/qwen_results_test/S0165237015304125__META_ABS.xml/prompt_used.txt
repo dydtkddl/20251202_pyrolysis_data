@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of high-temperature pyrolysis on the structure and properties of coal and petroleum coke In this study, for the purpose of substituting part of petroleum coke with low ash anthracite to prepare carbon anode used in aluminum electrolysis, the effects of high-temperature pyrolysis on the structure and properties of coal char and petroleum coke were studied at the temperature range of 1000°C–1600°C. Results showed that the carbon crystallite structure of coal char and petroleum coke became more ordered with the increase of the temperature. However, the graphitization degree of coal char was lower than that of petroleum coke at the same pyrolysis temperature. The Brunauer-Emmett-Teller (BET) surface area of coal char decreased with the increase of temperature, whereas the BET surface area of petroleum coke decreased first and then increased. The increase of pyrolysis temperature generally inhibited the gasification reactivity of coal char, whereas the gasification reactivity of petroleum coke was inhibited first and then promoted. Moreover, the increase of pyrolysis temperature led to the rapid decrease of powder resistivity of coal char and petroleum coke. In particular, the powder resistivity of coal char was significantly higher than that of petroleum coke at the same pyrolysis temperature. Additionally, the real density of coal char and petroleum coke showed a different trend with the increase of temperature. Specifically, the real density of the former decreased, whereas that of the latter increased. The causes of the above observations were also discussed. Overall, this study provides further understanding about the differences between coal char and petroleum coke, which will facilitate the preparation of carbon anode from the mixture of coal char and petroleum coke.
+

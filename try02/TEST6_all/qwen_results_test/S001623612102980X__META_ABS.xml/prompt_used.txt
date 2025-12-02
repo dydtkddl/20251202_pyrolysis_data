@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Exploration on the steam gasification mechanism of waste PE plastics based on ReaxFF-MD and DFT methods Steam gasification of plastics is a promising way to deal with the increasing waste plastics as well as produce H2-rich syngas. In this paper, ReaxFF-MD simulation and DFT calculation methods were combined to study the reaction process of the PE steam gasification and the formation mechanisms of syngas especially hydrogen. According to the main reaction, the gasification process has two overlapping stages: PE thermal depolymerization followed by H2O reforming reaction. The depolymerization stage is mainly the terminally or intermediately breaking process of C–C bond, during which different R· radicals and ·R· double radicals fragments continuously dissociated into smaller hydrocarbons until C1-C4. The free H· radicals released through dehydrogenation and H-transfer reaction in depolymerized stage can highly reduce the energy barrier of subsequent H2O reforming reaction. The production of H2 mainly comes from the reforming reaction of H2O with free H· radicals and the accompanying ·OH radical actively participates in the formation process of CO. Besides, the effects of temperature and water content on product distributions are analyzed. Increasing temperature and water content can promote the steam reforming consumption of hydrocarbons and thus a rise in H2 and CO yields, but the improvement effects gradually decrease. The revelation of radical transformation and integration in this article can be a guide in later reaction adjustment as well as catalyst selection.
+

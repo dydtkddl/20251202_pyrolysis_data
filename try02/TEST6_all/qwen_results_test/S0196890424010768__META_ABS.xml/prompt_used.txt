@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Reduction and structural modification of MoOx/γ-Al2O3 catalysts through acetic acid treatment for green diesel production from corn distiller’s oil Enabling new environmentally-friendly resources for fuels and platform chemicals is crucial to fulfill our future energy demands while enhancing circularity. Corn distiller’s Oil (CDO) − as a coproduct of the ethanol industry, serves as a sustainable supply of carbon that may be converted into energy, fuels and specialty chemicals. A current challenge in using renewable oxygenated feedstocks is the high amount of coking and catalyst fouling that occurs. This study examined the hydrothermal deoxygenation of CDO into green diesel using molybdenum oxide (MoOx) catalysts in a continuous process without using any external hydrogen. The possibility of reduction and developing oxygen-deficient surfaces on molybdenum oxide (MoOx) catalysts through acetic acid treatment or adding ceria (CeO2) was investigated in order to enhance the acidity of catalysts as well as catalytic activity and stability required for the production of green diesel from CDO. Results showed that the acidity of these catalysts as measured by NH3 temperature programmed desorption (NH3-TPD) had a strong correlation between the degree of deoxygenation and catalyst stability. Acetic acid treatment of the 7.5 wt% MoO3/γ-Al2O3 catalyst reduced MoO3 to MoO3-x, increased the Mo5+ species from 8.7 % to 22 %, created Mo4+ species and increased the catalyst surface acidity in the range of low to moderate strength by approximately 17 %. The use of acetic acid-treated molybdenum oxide (Hac-7.5 wt% MoO3/γ-Al2O3) catalyst enabled nearly complete (99.9 %) deoxygenation of CDO and heavy hydrocarbons cracking to produce diesel-like fuels. A moderate increase in catalyst surface acidity by acetic acid treatment also increased the selectivity of diesel-like fuel through hydrocracking of long-chain hydrocarbons. This low-cost modification step of catalyst improvement is promising for industrial application. However, cracking of hydrocarbons generated amorphous coke (no graphitic coke was observed) on the catalyst surface, which required periodic removal by controlled calcination of the catalyst in presence of air for further use.
+

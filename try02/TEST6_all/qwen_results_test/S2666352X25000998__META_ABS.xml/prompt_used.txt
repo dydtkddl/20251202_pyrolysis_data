@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A hybrid AI-kinetic framework for predicting the pyrolysis of food packaging plastic waste: Integrating TGA, model-free kinetics, and artificial neural networks The increase in the accumulation of plastic waste, such as polypropylene (PP) used in food packaging, causes serious environmental problems because of its non-biodegradable nature. The pyrolysis process is presented as an efficient thermochemical technique to convert such waste and other wastes into valuable products such as bio-gas, bio-oil, and biochar. Studying the degradation and kinetics of PP is crucial for process optimization and design. In the present study, both different kinetic models and an artificial neural network (ANN) approach were used to study and predict the PP pyrolysis behavior. The kinetic parameters were calculated using different model-free methods with Thermogravimetric analysis (TGA) data at different heating rates of 15, 30, and 60 °C/min. The activation energy results showed a range between 192.5 and 238.5 kJ/mol, depending on the calculation method used. The Vyazovkin method recorded the most stable values, with an average of 205.5 ± 8.1 kJ/mol, reflecting its reliability in representing the thermal decomposition mechanism of polypropylene. In parallel, the ANN model was developed to predict thermal degradation and other parameters. The ANN model was trained using the Levenberg–Marquardt algorithm with three hidden layers (20–20–10 neurons). The developed ANN model exhibited high prediction accuracy with RMSE values lower than 2.7 % and R2 greater than 0.96 at all heating rates. The predicted derivative thermogravimetric (DTG) curves affirm the ability of the ANN model to reproduce kinetics and degradation peak trends. The model could also predict the pyrolysis product yields at different temperatures of 400, 500, and 600 °C, indicating that a temperature of 500 °C at moderate heating rates is the optimum conditions to achieve the highest bio-oil yield. The integration of experimental TGA data with kinetic analysis and ANN modeling represents the key novelty of this study, presenting a hybrid and robust predictive approach to estimate the thermal degradation behavior of PP plastic waste, guiding the design of an effective scalable pyrolysis reactor used for sustainable valorization of plastic wastes.
+

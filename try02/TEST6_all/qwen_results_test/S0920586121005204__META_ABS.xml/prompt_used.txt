@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+ZSM-5 zeolites performance assessment in catalytic pyrolysis of PVC-containing real WEEE plastic wastes Catalytic pyrolysis of plastic wastes is a promising way for their conversion into valuable products. By modulating the catalyst properties and operating conditions, it is possible to direct the product distribution to obtain oils that may be suitable both as fuels and as chemicals. However, the efficient and safe removal of the halogens, often contained in plastic wastes, remains as a great challenge. In this work, the catalytic behaviour of ZSM-5 zeolites in the pyrolysis of a real chlorinated plastic waste of the electric and electronic equipment sector (WEEE), consisting of PE with about 3.4% of PVC, was investigated. To that end, three zeolite samples with different acidity and accessibility were synthesized and assayed. A thermal pre-treatment was applied to the plastic waste at 350 ºC, which allowed a chlorine removal of 87% from the WEEE feedstock. The pyrolysis tests were carried out in a downdraft fixed-bed stainless steel reactor, with a catalyst/feedstock ratio of 0.2, at temperatures of 600 ºC and 450 ºC in the thermal and catalytic zones, respectively, of the reaction system. In comparison with thermal pyrolysis, that mainly produced waxes, the product distribution changed considerably by contacting the pyrolysis vapours with ZSM-5 zeolites, leading to a strong enhancement in the yield of oil and gases. The largest yield of oil (about 60 wt%), having a concentration of monoaromatics (mainly BTX) above 50 wt%, was attained over the desilicated ZSM-5 sample. Regarding chlorine distribution, about 90% was accumulated in the char fraction, probably captured by the inorganic components present in the raw WEEE waste. Coke was the second fraction in terms of Cl concentration, followed by wax and oil, whereas this halogen was almost not detected in the gases. The lowest concentration of Cl in the oil was attained with the desilicated zeolite, with a value below 90 ppm, which could facilitate the subsequent processing of this stream in refinery units.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chars from wood gasification for removing H2S from biogas Biomass gasification is a mature thermochemical process used to produce a gaseous fuel to run burners, engines, and gas turbines. One of the byproducts of biomass gasification is char, which is a residue with low value and sometimes this material is even considered waste. Therefore, options for using gasification chars are required. On the other hand, there is a necessity of making biogas production and use more attractive by employing cheap materials for the biogas cleaning process. One of the promising options for using gasification chars is for cleaning biogas produced via anaerobic digestion (AD). The objective of this work was to assess the use of residual gasification chars from fast growing wood species (Eucalyptus Grandis-EG and Pinus Patula-PP) to remove hydrogen sulfide (H2S) from biogas produced via AD. Gasification chars were produced employing a laboratory scale downdraft gasifier. EG char (EG-C30) was produced by gasification of EG using a 30 L min−1 airflow, whereas the PP chars (PP–C20 and PP-C40) were produced from PP using 20 and 40 L min−1 airflow. Results show that these three chars offer potential for biogas cleaning, although PP-derived chars produced at higher airflow rates are more effective. The H2S removal capacity of the chars is ascribed to their large apparent surface area (up to 517 m2 g−1) and the presence of minerals and metals (e.g., Ca, K, and Fe) in the chars’ ash.
+

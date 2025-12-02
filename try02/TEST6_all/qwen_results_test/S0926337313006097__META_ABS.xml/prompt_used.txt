@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Striking influence of chain structure of polyethylene on the formation of cup-stacked carbon nanotubes/carbon nanofibers under the combined catalysis of CuBr and NiO A one-pot approach was used to convert polyethylene (PE) with different chain structures into carbon nanomaterials (CNMs) under the combined catalysis of CuBr and NiO at 700°C, including linear low density polyethylene (LLDPE), low density polyethylene (LDPE) and high density polyethylene (HDPE). The effect of chain structure of PE on the yield, morphology, microstructure, phase structure and thermal stability of CNMs, including cup-stacked carbon nanotubes (CS-CNTs) and carbon nanofibers (CNFs), were investigated by scanning electron microscope, transmission electron microscope (TEM), high-resolution TEM, X-ray diffraction, Raman spectroscopy and thermal gravimetric analysis. In addition, the degradation products from different chain structures of PE under the catalysis of CuBr were analyzed by gas chromatography and gas chromatography–mass spectrometry. It was demonstrated that the branched structure played an important effect in the degradation products of PE. The dehydrogenation and aromatization of LLDPE were remarkably promoted by Br radicals from the decomposition of CuBr to form a large amount of light hydrocarbons and a relatively small amount of aromatics, favoring the formation of long and straight CS-CNTs. However, the degradation of LDPE was not obviously influenced by Br radicals due to its high extent of branched structure, while the random cleavage of HDPE was accelerated with the formation of a lot of olefins with long chains, resulting in the formation of short and winding CNFs. This work will contribute to the conversion of mixed waste polyolefin into high value-added CNMs.
+

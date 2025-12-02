@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic steam gasification of pine sawdust for hydrogen-rich syngas production in a decoupled triple bed reaction system In the present work, a novel decoupled biomass gasification system was proposed, aiming at improving the syngas quality, particularly increasing the H2 yield, as well as decreasing the tar and CO2 contents. Pine sawdust was used as the raw material, and a series of gasification experiments were primarily performed in a three-stage fixed bed reactor, to investigate the effects of pyrolysis, gasification and reforming temperatures, steam flow rate, peroxide coefficient, NiO load rate and CaO/biochar mass ratio on its gasification properties. Moreover, the total gas yield, tar content, low heating value of syngas, gasification efficiency and carbon conversion efficiency were examined. The results indicated that a high reaction temperature was able to facilitate the tar cracking and H2 production. With increasing steam flow rate and peroxide coefficient, the total gas yield and H2 content first rose and then reduced, while the tar content showed an opposite trend. The modification of NiO on Fe-based oxygen carriers (OCs) enhanced the tar destruction and total gas yield, particularly the H2 concentration. Furthermore, CaO/biochar played a dual role as the CO2 sorbent at a lower temperature but as the catalyst at a higher temperature. Specially, separately adopting NiO/Fe-based OCs and CaO/biochar as the solid-phase gasification agent and CO2 sorbent, a product syngas with the H2 and its total gas yield of 0.54 and 0.86 Nm3/kg, and the CO2 and tar content of 0.07 Nm3/kg and 123.43 g/Nm3 was obtained at the pyrolysis, gasification and reforming temperatures of 700, 700 and 800 °C, peroxide coefficient of 0.1, steam flow rate of 0.4 ml/min, NiO load rate of 15 %, and CaO/biochar mass ratio of 3. This study provides a basis data for the application of PS gasification.
+

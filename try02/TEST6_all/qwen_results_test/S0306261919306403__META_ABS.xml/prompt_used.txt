@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Municipal solid waste incineration in a packed bed: A comprehensive modeling study with experimental validation Grate-firing technology is one of the commonly used technologies for municipal solid waste incineration, which recovers energy and largely reduces the volume of the solid wastes for landfilling. In grate-fired incinerators, the solid wastes are packed in the fuel bed on the grate, where the major heterogeneous conversion takes place. A proper modeling of the fuel conversion process in the bed not only benefits an in-depth understanding of the in-bed incineration but also facilitates the freeboard simulation. In this paper, a comprehensive model is developed to simulate solid wastes incineration in a packed bed, which advances the state-of-the-art with corrected boundary conditions, homogeneous reactions, and calculation method for pyrolysis products. The model is first validated by a simplified analytical problem. Then, the model is validated in detail by a dedicated experimental study in literature, in which the pyrolysis and gas combustion front and the subsequent char oxidation front both propagate from the bed surface to the grate due to the abundant oxygen availability in the fuel bed. The model also outperforms a latest modeling study in literature for reproducing the same experimental study. Finally, a model-based parametric study is conducted to investigate the effects of solid waste particle sizes and solid waste incineration in high-altitude areas. This paper also clearly explains the methods to transfer the packed-bed model to travelling grates and to accommodate the different waste fractions in real municipal solid waste, in order to make the model applicable to travelling grate-firing of real municipal solid wastes.
+

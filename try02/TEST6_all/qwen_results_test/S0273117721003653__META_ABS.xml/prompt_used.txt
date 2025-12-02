@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Equipping an extraterrestrial laboratory: Overview of open research questions and recommended instrumentation for the Moon Humans are once again preparing to leave Earth and land on the surface of another planetary body. The two objects high on the list for permanent bases are the Moon and Mars. Both have been at the center of attention of many recent spaceflight activities, albeit these have so far been uncrewed. If humans indeed land on either one of them, science can potentially benefit tremendously. In the past, most spaceflight missions have been implemented by adding scientific instruments after most of the engineering work is already finished. This has often limited scientific studies to relatively scattered, insular topics. However, if prepared appropriately, a research laboratory on either the Moon or Mars can help address scientific questions thoroughly and at a fundamental level. In this paper we review the main scientific questions relating to the Moon that are still open and develop an overview of the instrumentation that would be necessary for a human astronaut inside a lunar laboratory to help answer these questions. Our primary focus is the Moon, however, we include an outlook to Mars, since we assume that the Moon not only provides a valuable testbed for many technologies to be used on Mars, but that both can be studied with the same habitat laboratory after some specific adaptations. The research areas we focus on are related to (a) non-living matter (geophysics, geology, materials science), (b) extraterrestrial life (from chemistry of organic carbon compounds to astrobiology), and (c) life inside the human habitat (bioregenerative life-support systems, microbiomes, human physiology). We identify synergies between disciplines, in order to provide a list of priorities to mission planners, and provide a guideline of where further development of equipment would be desirable.
+

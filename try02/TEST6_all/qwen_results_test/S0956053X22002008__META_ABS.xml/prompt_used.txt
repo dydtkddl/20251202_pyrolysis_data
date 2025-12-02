@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic interactions, kinetic and thermodynamic analysis of co-pyrolysis of municipal paper and polypropylene waste Co-pyrolyzing mixed wastes of the different physicochemical kinds is often a challenge. This study reports the co-pyrolysis of homogeneous polypropylene plastic and paper wastes, highlighting their characteristics, synergetic effects, and kinetic and thermodynamic parameters using robust thermal gravimetric analysis technique. Results show that 20% paper in the blend improved the bulky density, fuel ratio from 0.09 to 0.13, maximum degradation temperature from 369.55 to 447.88 °C and thermal stability from 381.60 to 393.82 °C. The average activation energies of the blend from Flynn-Wall-Ozawa, Friedman and Coats-Redfern were 148.73 ± 7.87, 133.98 ± 11.59 and 143.74 ± 13.83 kJ/mol, respectively, lower than at least one of the homogenous wastes. All the enthalpy and Gibbs free energy values were positive, thus, endothermic non-spontaneous pyrolysis. In addition, average enthalpies for the mixed sample were lower than homogeneous polypropylene (from 159.57 ± 11.86, 153.74 ± 16.07 and 181.27 ± 28.90 to 143.60 ± 24.42, 128.86 ± 34.61 and 138.61 ± 41.32 kJ/mol, respectively) in all models, respectively. The entropy values for all samples were negative. They decreased with increasing conversion rates for mixed waste samples, indicating ease to reach thermodynamic equilibrium during pyrolysis. There is an insignificant difference between the experimental and the calculated TGA/DTG curves, signifying meagre synergetic effects. In addition, the 3D surface response for the conversion rate against temperature and heating rate showed closeness in results between the homogeneous and mixed waste. The results of this study are vital in handling municipal solid waste without any need for isolation during the conversion process to valuable products.
+

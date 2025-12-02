@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Producing multiple chemicals through biological upcycling of waste poly(ethylene terephthalate) Poly(ethylene terephthalate) (PET) waste is of low degradability in nature, and its mismanagement threatens numerous ecosystems. To combat the accumulation of waste PET in the biosphere, PET bio-upcycling, which integrates chemical pretreatment to produce PET-derived monomers with their microbial conversion into value-added products, has shown promise. The recently discovered Rhodococcus jostii RPET strain can metabolically degrade terephthalic acid (TPA) and ethylene glycol (EG) as sole carbon sources, and it has been developed into a microbial chassis for PET upcycling. However, the scarcity of synthetic biology tools, specifically designed for this non-model microbe, limits the development of a microbial cell factory for expanding the repertoire of bioproducts from postconsumer PET. Herein, we describe the development of potent genetic tools for RPET, including two inducible and titratable expression systems for tunable gene expression, along with serine integrase-based recombinational tools (SIRT) for genome editing. Using these tools, we systematically engineered the RPET strain to ultimately establish microbial supply chains for producing multiple chemicals, including lycopene, lipids, and succinate, from postconsumer PET waste bottles, achieving the highest titer of lycopene ever reported thus far in RPET [i.e., 22.6 mg/l of lycopene, ~10 000-fold higher than that of the wild-type (WT) strain]. This work highlights the great potential of plastic upcycling as a generalizable means of sustainable production of diverse chemicals.
+

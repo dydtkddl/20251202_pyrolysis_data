@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Rape straw as a source of bio-oil via vacuum pyrolysis: Optimization of bio-oil yield using orthogonal design method and characterization of bio-oil Rape straw from China rural area was treated by vacuum pyrolysis for bio-oil preparation. The orthogonal design method was employed to minimize the number of experiments. The effects of the factors including pyrolysis temperature, reactor pressure, heating rate and holding time on bio-oil yield were analyzed. The optimal conditions were obtained by using SPSS Statistics 20.0 (IBM, USA) and Matlab 7.12.0 (MathWorks, USA). Furthermore, the physicochemical properties of the bio-oil obtained at optimal conditions were evaluated. The composition was examined using gas chromatograph/mass spectroscopy (GC/MS). The thermo-gravimetric analysis (TGA) of the bio-oil was investigated within N2 and O2, respectively. The results showed that the order of the effects of the factors on bio-oil yield was heating rate>pyrolysis temperature>reactor pressure>holding time. Heating rate and pyrolysis temperature had a significant interaction. Optimal conditions were obtained at pyrolysis temperature of 495.5°C, heating rate of 19.4°C/min, reactor pressure of 5.0kPa and holding time of 50min. Confirmation runs gave 43.15% and 43.44% of bio-oil yield compared to 43.62% of predicted value. The water content, carbon residue, density, pH value, dynamic viscosity and higher heat value of bio-oil were 34.20%, 4.03, 1.14g/cm3, 2.22, 4.28mm2/s and 18.72MJ/kg, respectively. Polymerization in the condensation process contributed to the higher average molecular weight distribution than pyrolysis vapors. Light aromatics (mainly including light phenols) were the dominant component for the bio-oil, which contributed to the relatively low polydispersity with a value of 1.25. The direct liquefaction bio-oil was unstable and corrosive due to the high reactivity of carbonyl extensively existing in acids, aldehydes and ketones. High oxygen content made the behavior of decomposition in O2 be similar to that in N2 before 450°C. Further study on upgrading of the bio-oil should be performed to make it become an alternative fuel.
+

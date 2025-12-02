@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Oxidation of butane-2,3-dione at high pressure: Implications for ketene chemistry Ketene (CH2CO) mechanism is a building block for developing combustion kinetic models of practical fuels. To revisit the combustion chemistry related to ketene, oxidation experiments of butane-2,3‑dione (diacetyl, CH3COCOCH3), considered as an effective precursor of CH2CO, are conducted in a jet-stirred reactor (JSR) at 10 bar and temperatures ranging from 650 to 1160 K. Identification and quantification of intermediates are achieved by Fourier transform infrared spectrometry, gas chromatography, and mass spectrometry. A kinetic model of diacetyl is constructed based on recent theoretical and modeling studies on diacetyl and ketene, which has been validated against the present data and experimental data of diacetyl and CH2CO in literature. Generally, the present model can adequately predict most of them, and better predict the methyl-related intermediates under wide pyrolysis and combustion conditions than previous models. Based on modeling analyses, the unimolecular decomposition reaction of diacetyl is the dominant reaction pathway for fuel consumption under different equivalence ratio conditions, especially at high temperatures. Under lean conditions, both the H-atom abstraction reactions by methyl (i.e. CH3COCOCH3 + CH3 = CH4 + CH2CO + CH3CO, R3) and by OH (i.e. CH3COCOCH3 + OH = H2O + CH2CO + CH3CO, R5) are important for diacetyl consumption, while under rich conditions R5 becomes negligible. As the most important intermediates in diacetyl oxidation, the main consumption pathways of CH2CO and CH3 are dependent on the equivalence ratio conditions. Under lean conditions, CH2CO mainly reacts with OH to produce CH2OH and CO (i.e. CH2CO + OH = CH2OH + CO, R10), while methyl reacts with HO2 to produce CH3O and OH (i.e. CH3 + HO2 = CH3O + OH, R20). In contrast, under rich conditions, the addition-elimination reaction between CH2CO and H becomes competitive with R10, while the CH3 self-combination producing C2H6 plays a more important role than the CH3 oxidation pathway R20. Sensitivity analysis of CH2CO shows that not only the reactions of CH2CO, but also those of CH3 are sensitive to CH2CO formation. This is because CH3 related reactions influence the distribution of radical pool, which determines the oxidation reactivity of the reaction system.
+

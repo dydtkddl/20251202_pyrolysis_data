@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Towards sustainable textile waste management: Exploring valuable chemicals production through steam cracking in a dual fluidized bed Global demand for textiles is rising due to population and economic growth, yet most end-of-life textiles are incinerated or landfilled, posing environmental risks. In Europe, less than 1 % of discarded textiles are recycled into materials of similar quality. Thermochemical recycling, such as steam cracking, offers a potential solution by breaking down polymer chains at high temperatures to produce valuable chemicals and reduce dependence on fossil fuels. This study explores the potential of producing valuable chemicals from steam cracking of textile waste in a semi-industrial dual fluidized bed (DFB) reactor powered by biomass. Experiments were conducted at temperatures ranging from 735° to 815 °C using polyester- and cotton-based materials rejected from textile sorting processes. Results showed effective conversion of heterogeneous feedstocks into syngas, light monomers (ethylene and propylene), and aromatic compounds like BTXS (benzene, toluene, xylenes, styrene) without need of extensive pre-sorting. Polyester-based textiles yielded an average carbon conversion of ∼11 % for syngas, ∼7% for light monomers, and ∼17 % for BTXS. From a carbon conversion analysis, the yields varied with temperature and feedstock composition: higher temperatures favored carbon oxides, while BTXS and light monomers remained stable. PET-rich batches produced more CO2 and aromatics, whereas cellulose-based feedstocks favored syngas production. Overall, steam cracking can achieve a carbon recovery rate of nearly 70 %, through valuable chemicals, syngas, and CO2 utilization, significantly outperforming the ∼3 % closed-loop recycling rate in current European schemes. These findings highlight the potential of steam cracking in DFB reactors as an alternative recycling method to enhance circularity in the textile industry.
+

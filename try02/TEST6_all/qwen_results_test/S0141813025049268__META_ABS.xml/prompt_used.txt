@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+From bread waste to bacterial cellulose nanostructures: Development of a novel rotating disk bioreactor A novel rotating disk bioreactor was designed and manufactured to produce bacterial cellulose (BC) using Komagataeibacter rhaeticus. Optimal conditions-45 % disk submersion, mechanically etched disks with rotation speed of 20 rpm, spacing of 35 mm and 0.5 vvm air supply- achieved a yield of 1020 mg BC/disk with commercial glucose. Bread waste enzymatic hydrolysates improved BC production by 133.3 %, highlighting the potential of waste valorization in sustainable biopolymer production. BC was further modified into nanostructures (BNCs) using H2SO4 (BNC1), H2SO4- HCl (BNC2), and cellulases (BNC3). FTIR spectra of BC and BNCs revealed typical cellulose vibration-bands while dynamic light scattering showed bimodal or trimodal size distributions (hydrodynamic radiuses of 60–2969 nm). TEM imaging of BNC1 and BNC2 demonstrated rodlike/needlelike nanostructure with widths of 33.1 ± 18.2 nm and 24.8 ± 14.2 nm respectively. BNC3 presented buddle of flat ribbons (width of 56.4 ± 26.3 nm). The maximum degradation temperature of BC (295 °C) decreased after its ex-situ modification (271–294 °C). The enhanced production and tailored structural modifications of BC highlight its potential for diverse applications in materials science. This transformative approach that integrates bread waste valorization and innovative bioreactor design paves the way for high-value advancements in biotechnology and environmental sustainability.
+

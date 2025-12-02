@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of Chlorella pyrenoidosa and polystyrene: kinetics and product distributions Co-pyrolysis of algae with polystyrene (PS) offers a promising and efficient approach to enhancing the quality of algae-derived bio-oil. This study investigated the thermal decomposition behavior, activation energy, and product distribution during the co-pyrolysis of Chlorella pyrenoidosa (CP) and PS. Thermal decomposition behavior was analyzed using non-isothermal thermogravimetric analysis (TGA) at heating rates of 10–40 °C/min. The activation energies were calculated using the OFW, KAS, and STK methods. Product distributions were examined using Py-GC/MS at 600 °C. TGA results revealed that the co-pyrolysis of CP and PS proceeded through four stages. Increasing CP proportions shifted pyrolysis temperatures toward higher values. The addition of PS significantly reduced the apparent activation energy, with the strongest positive synergistic effect at a CP5PS5 ratio. The average apparent activation energies for CP5PS5 were 180, 179, and 179 kJ/mol, as determined by the OFW, KAS, and STK methods, respectively. Py-GC/MS analysis revealed significant changes in the bio-oil composition with increasing PS content. The yields of MAHs and PAHs increased, while aliphatic hydrocarbons, oxygen-containing compounds, and nitrogen-containing compounds decreased. At a CP5PS5 ratio, MAHs increased to 67.09 %, PAHs increased to 30.22 %, oxygen-containing compounds dropped to 2.05 %, and nitrogen-containing compounds became undetectable. Co-pyrolysis of algae with PS provides a simple, effective, and scalable approach for upgrading bio-oil quality while simultaneously contributing to the management of plastic waste.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimizing dual fuel engine performance with hydrogen-enriched syngas from co-pyrolysis of biodegradable and non-biodegradable wastes This study explores the production of hydrogen-enriched syngas from waste groundnut shells and waste milk covers through a catalyst bed-based co-pyrolysis process. The objective was to develop an efficient method for producing high-quality syngas, enhancing its hydrogen content, and evaluating its performance as a fuel in a compression ignition (CI) engine. The experimental setup involved co-pyrolysis at temperatures between 550 °C and 600 °C using Ni/Al2O3 and La/Al2O3 as catalysts. Gas chromatography analysis revealed that Ni/Al2O3 catalyst produced syngas with a hydrogen concentration of 38.28 % and a total yield of 68 %, while La/Al2O3 resulted in 35.45 % hydrogen with a 65.2 % yield. The CI engine tests demonstrated improved brake thermal efficiency (BTE) in dual fuel mode, reaching 32.20 % with hydrogen-enriched syngas, compared to 30.98 % with syngas without hydrogen enrichment. Specific fuel consumption (SFC) was reduced to 0.28051 kg/kW-hr. Emission analysis showed significant reductions in hydrocarbons (HC) and carbon monoxide (CO) emissions, though nitrogen oxide (NOx) emissions increased. The study concludes that hydrogen-enriched syngas, produced from waste materials, is a viable alternative fuel, offering enhanced engine performance and lower environmental impact, despite the challenge of increased NOx emissions.
+

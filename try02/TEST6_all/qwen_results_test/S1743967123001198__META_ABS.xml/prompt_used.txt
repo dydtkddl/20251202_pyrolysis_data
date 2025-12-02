@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental study on n-hexane pyrolysis initiated by 1-nitropropane in a low-pressure flow reactor In order to investigate the species pool and primary channels of initiated pyrolysis of n-hexane, the low-pressure (30 Torr, 4.0 kPa) flow reactor pyrolysis of n-hexane initiated by 5% 1-nitropropane (1-NP) was studied experimentally in a wide range of temperature from 623 K to 1223 K. Combined with synchrotron vacuum ultraviolet (SVUV) photoionization mass spectra scanned at photon energies ranging from 9.0 to 14.7 eV and near-threshold photoionization efficiency (PIE) spectra, 29 pyrolysis species, covering C1–C6 hydrocarbons and several pyrolysis species containing O or N atoms, were identified. Based on the ion signal intensities of the visible peaks in the mass spectra, the mole fraction profiles of all the experimental species were evaluated. The experimental results suggested that the initial pyrolysis temperature of n-hexane was reduced by approximately 275–325 K. On the basis of the mole fraction profiles and the initial formation temperatures reported in this work and rate coefficients proposed in previous studies, the 1-NP-initiated pyrolysis mechanisms of n-hexane were discussed. It was suggested that n-hexane was dominantly consumed by the H-abstraction reactions by the attack of OH radical in this work. The 1-NP-initiated pyrolysis of n-hexane mainly proceeded via reactions to produce C3H6 + C3H7, or 1-C4H8 + C2H5, or 1-C5H10 + CH3.
+

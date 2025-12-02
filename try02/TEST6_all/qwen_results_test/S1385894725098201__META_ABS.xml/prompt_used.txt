@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Solid wastes microplastic and nanoplastic in water and wastewater: environmental impacts and recent advances in their electrocatalytic degradation focusing on anode materials on EAOPs Solid wastes microplastics (MPs) and nanoplastics (NPs) have emerged as pervasive environmental pollutants due to their chemical stability, small size, and widespread distribution in aquatic and terrestrial ecosystems. This comprehensive review critically examines the environmental impacts of MPs/NPs and evaluates recent advancements in their electrochemical degradation, with particular emphasis on anode materials employed in Electrochemical Advanced Oxidation Processes (EAOPs). EAOPs have shown remarkable potential for MP/NP degradation through the in-situ generation of powerful reactive oxygen species (ROS), including hydroxyl radicals ( HO • ) and sulfate radicals ( SO 4 • − ). The performance of these processes is highly dependent on the choice of anode material, with non-active anodes (e.g., boron-doped diamond (BDD), PbO2, SnO2, and Ti4O7) demonstrating superior efficiency due to their high overpotential for oxygen evolution and ability to produce weakly adsorbed HO • radicals. In contrast, active anodes (e.g., RuO2, IrO2 and Ta2O5) are more effective in chloride-rich media through the generation of active chlorine species. Recent innovations, such as modified anode materials, chlorine based- electrolytes, H2O2 and surfactant-assisted electrooxidation, hybrid systems combining electrooxidation (EO) with ultrasound (UEO) or photoanode (PEO), and flow-through microfiltration electrochemical reactors, have significantly enhanced degradation efficiency. However, challenges remain in terms of energy consumption, electrode stability, and the potential formation of toxic byproducts. This review underscores the need for further research to optimize reactor designs, develop cost-effective electrode materials, and integrate renewable energy sources to improve process sustainability. Additionally, it highlights the importance of policy interventions to regulate microplastic emissions and promote advanced treatment technologies. By addressing these challenges, EAOPs can emerge as a viable solution for mitigating the growing threat of MPs/NPs pollution in water systems.
+

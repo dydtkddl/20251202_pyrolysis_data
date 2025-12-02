@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comprehensive experimental investigation of plastic waste pyrolysis oil quality and its dependence on the plastic waste composition Pyrolysis of plastic packaging waste yields a liquid product that can be processed in steam crackers producing light olefins and hence closing the loop towards new virgin plastics. However, there is a lack of knowledge on how the plastic waste composition affects the pyrolysis oil quality regarding hydrocarbon composition and contaminant concentrations. The associated uncertainty is a key reason why thermochemical recycling of contaminated plastic waste is not yet industrially established. In this study, post-consumer plastic packaging waste fractions, namely mixed polyolefins (MPO), polyethylene (PE), and polypropylene (PP) were processed in a continuous pilot-scale pyrolysis unit and the pyrolysis oils subsequently characterized using advanced analytical techniques such as two-dimensional gas chromatography. Substantial amounts of branched olefins (~63 wt%) and diolefins (~20 wt%) were detected in the pyrolysis oil of PP-rich waste, while PE-rich waste produced high amounts of linear paraffins (~34 wt%) and olefins (~26 wt%). Furthermore, significant amounts of nitrogen, oxygen, chlorine, iron, sodium and silicon were detected in the pyrolysis oils exceeding feedstock specifications for industrial steam crackers by orders of magnitude. The results show that next to improved waste sorting and separation processes, pre- and post-treatment techniques are required to produce pyrolysis products suitable for chemical processing.
+

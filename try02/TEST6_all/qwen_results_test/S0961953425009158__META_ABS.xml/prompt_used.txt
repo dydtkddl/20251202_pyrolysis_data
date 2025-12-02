@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A thermodynamic model for co-gasification of Parthenium hysterophorus (weed biomass) and plastic wastes: Assessing syngas quality and energy potential Plastic waste accumulation and invasive weed overgrowth are two pressing issues in many developing nations. Co-gasification offers a flexible solution, converting diverse feedstocks into energy while mitigating waste. This study simulates the co-gasification of Parthenium hysterophorus with plastic wastes (polyethylene and polystyrene) to produce sustainable syngas. A validated MATLAB model examines the effects of plastic type on syngas composition, H 2/CO and CO/CO 2 ratios, syngas yield, and lower heating value, while also considering operating parameters such as steam to feedstock ratio, gasification temperature, pressure, and feedstock moisture content. It is found that adding polyethylene to the blend (PH-PE) enhances H 2 and CH 4 production (6.98 % and 47.40 %, respectively) more than polystyrene in the blend (PH-PS, 0.98 % and 33.03 %, respectively), while polystyrene favours higher CO formation (46.82 % vs 31.38 % for polyethylene). The H 2/CO ratio rises with increasing steam to feedstock ratio (PH–PE: 185.66 %, PH–PS: 203.10 %), pressure (PH–PE: 4.63 %, PH–PS: 2.12 %), and moisture content in biomass (PH–PE: 1.65 %, PH–PS: 1.73 %). Conversely, the CO/CO 2 ratio decreases with higher steam input, pressure, and moisture, but rises with increasing plastic content (PH–PE: 361.90 %, PH–PS: 408.74 %) and gasification temperature (PH–PE: 252.65 %, PH–PS: 240.66 %). The lower heating value of the syngas is positively influenced by plastic content in feedstock (PH–PE: 45.01 %, PH–PS: 34.83 %), temperature (PH–PE: 9.01 %, PH–PS: 10.31 %), and pressure (PH–PE: 0.43 % only). Changes in moisture content in the plastic have negligible effects on the performance parameters of both blends.
+

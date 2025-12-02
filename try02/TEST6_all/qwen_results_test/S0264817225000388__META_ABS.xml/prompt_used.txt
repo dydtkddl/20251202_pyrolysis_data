@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Laminae in multiple lithofacies and impact on pore structures in lacustrine shale: The cretaceous qingshankou formation, Songliao Basin Unconventional lacustrine shale oil reservoirs are characterized by strong heterogeneity of pore structures and intensive lithofacies variations in the vertical direction. This study systematically investigated the pore systems and factors influencing pore structures for the first member of the Cretaceous Qingshankou Formation (Qing 1 member) in southern Songliao Basin, employing geochemical, mineralogical, petrological, and petrophysical methods. Nine lithofacies types were identified based on total organic carbon (TOC) content-laminae structure-mineral composition. Organic-medium mixed lithofacies with silt-laminated structures were the most favorable in the Qing 1 shale, exhibiting dominant pore volume, exceptional connectivity, and significant movable oil content. Shale reservoirs were primarily controlled by interparticle pores and microfractures, with mesopores as the dominant reservoir space. Thick argillaceous laminae followed a "primary source and reservoir rock" model at the microscale, whereas "oil generation-migration-accumulation" in silt-laminated shale played a key role in pore system development. In the Qing 1 shale at the medium maturity stage, TOC content negatively impacted storage space due to asphalt blocking pores. Due to the in situ deposition of authigenic minerals and dissolved components, felsic minerals also negatively effected pore volume. Moreover, shales developed a significant number of pores associated with clay minerals to enhance reservoir space. Furthermore, an optimal balance of felsic minerals in the argillaceous laminae alleviated compaction. These findings enhance our understanding of pore formation mechanisms for lacustrine shale reservoir, which is crucial for accurately assessing shale oil resources.
+

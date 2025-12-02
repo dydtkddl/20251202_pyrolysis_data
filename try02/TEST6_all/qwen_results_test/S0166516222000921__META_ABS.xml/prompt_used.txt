@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluating aromatization of solid bitumen generated in the presence and absence of water: Implications for solid bitumen reflectance as a thermal proxy Geological models for petroleum generation suggest thermal conversion of oil-prone sedimentary organic matter in the presence of water promotes increased liquid saturate yield, whereas absence of water causes formation of an aromatic, cross-linked solid bitumen residue. To test the influence of hydrogen from water, organic-rich (22 wt% total organic carbon, TOC) mudrock samples from the Eocene lacustrine Green River Formation Mahogany zone oil shale were pyrolyzed under hydrous and anhydrous conditions in closed system batch reactors at temperatures between 300 and 370 °C for 72 h. Pre- and post-pyrolysis samples were characterized using petrographic approaches including optical microscopy, reflectance, Raman spectroscopy, and scanning electron and transmission electron microscopy to quantify differences in relative appearance, abundance, and composition of solid bitumen newly generated during the pyrolysis experiments. Petrographic analyses were supplemented by geochemical screening measurements (TOC content and programmed temperature pyrolysis). Results show post-hydrous pyrolysis residues contain lower TOC, are comprised of solid bitumen with greater aromaticity, and have textures indicative of lower viscosities, relative to anhydrous residues from the same temperature pyrolysis conditions. These observations suggest solid bitumen forming from thermal conversion of oil-prone sedimentary organic matter under anhydrous conditions may be less aromatic, although more cross-linked, than solid bitumen forming under hydrous conditions at the same time-temperature combination. To explain these results, we suggest that a radical disproportionation mechanism is favored in the presence of hydrogen donated from water, and that this disproportionation promotes aromatization in the solid residue with concomitant expulsion of saturated hydrocarbons.
+

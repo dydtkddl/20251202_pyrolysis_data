@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Valorisation of medical waste through the staged pyrolysis: effect of pyrolysis conditions on chlorine removal and product formation Medical waste, posing pathogen and toxin risks, endangers the environment and public health. Staged pyrolysis, segmenting pyrolysis with distinct conditions to release components stepwise, offers a viable solution for its safe disposal and the synergistic production of clean fuels and high-value chemicals. However, a limited understanding of how pyrolysis parameters influence chlorine removal and product formation hampers the practical implementation of medical waste thermochemical conversion. Based on response surface methodology, the impacts of key conditions during the low-temperature dechlorination stage (Stage I) on product yields and chlorine migration pathway were firstly analyzed. The optimal conditions for dechlorinated semi-char production were 309.5 °C, 8.5 °C/min, and 39.2 min, under which 83.2 % of chlorine underwent dechlorination and migrated to the gas phase in the form of HCl, enabling its removal via water washing. HCl released from infusion tubes catalyzed the dehydration of medical gauze, while the hydroxyl groups of medical gauze promoted the dehydrochlorination of PVC. In the dechlorinated semi-char re-pyrolysis stage (Stage II), for chlorine migration, high heating rates favored HCl (HCl reacted with NH3 to form NH4Cl, which dissolved in oil.), while low rates increased CH3Cl (Over 99 % of total chlorine-containing gas.). Inorganic chlorine (KCl/NaCl) in char remained stable, with organic chlorine accumulating with increasing heating rates. Elevated temperatures/heating rates doubled H2, CH4, and C3H6 yields via accelerated secondary reactions and promoted heavy aromatization of pyrolytic oil. These insights into chlorine removal and product evolution optimize staged pyrolysis, which promotes resource-emission synergy and eco-friendly treatment of medical waste.
+

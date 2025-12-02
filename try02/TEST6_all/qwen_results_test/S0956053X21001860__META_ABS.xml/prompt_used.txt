@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhanced biomethanization of waste polylactic acid plastic by mild hydrothermal pretreatment: Taguchi orthogonal optimization and kinetics modeling Polylactic acid (PLA) plastic is becoming a popular alternative to traditional petroleum-based plastics, but the biodegradability in engineered biological system is still a matter of concern. In this study, the biodegradability of PLA plastic at mesophilic and thermophilic AD were investigated, and a hydrothermal pretreatment was proposed to enhance the hydrolysis of PLA plastic and subsequent biomethanization. For raw PLA plastic, the biodegradation results indicated that PLA was hardly biodegraded at mesophilic conditions (only 50.5 ± 0.5 mL/g VS after 146 days). Although it was converted into biogas at thermophilic conditions after long incubation period (442.6 ± 1.1 mL/g VS), the long digestion time (T90 95.8 days) was destined to be infeasible for practical application. In contrast, hydrothermal pretreatment significantly enhanced the hydrolysis rates of PLA plastic in AD process from 0.001 day-1 for raw PLA plastic to 0.004–0.111 day−1. By balancing biogas production efficiency, energy and reagent cost, the conditions of 200 °C, 10 min and no alkali addition were recommended for hydrothermal pretreatment of waste PLA plastic in practice. At the optimized hydrothermal pretreatment conditions, 460.1 ± 25.0 mL/g VS was achieved in less than 30 days, which was comparable for AD of food waste (FW). Furthermore, LC-QEMS analysis proved that cleavages of ester bonds in PLA and its reaction with water molecule was the mechanism of triggering the hydrothermally decomposition of PLA. These results suggested the PLA-plastic waste co-mingled with OFMSW could be efficiently biomethanized into biogas by involving a mild hydrothermal pretreatment in practical application.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Data-driven models for the prediction of H2 generation through chemical reaction and performance evaluation of on-board hydrogen fuelled sintering tube furnace Hydrogen is emerging as a sustainable fuel for the future. In this present work, data-driven modelling tools viz. Radial Basis Function Neural Network (RBFNN) and Least Square Fit (LSF) method, are employed to determine the rate of production of H2 gas by the chemical reaction between aluminium and water in the presence of aq. NaOH. Reactions are carried out at NaOH concentrations of 1M–5M, water temperatures 303K–333K. Hydrogen gas obtained at 333K/4M is found to have a yield of ⁓88 % of the theoretical yield. The activation energy of the reaction is found to be 57.62 kJ mol−1. The fitted models are validated with experimental results for two unknown conditions. The correlation coefficient obtained for the RBFNN model is 0.999, which indicates the high reliability of the model. On-board production of H2 gas by the chemical reaction was used for heating a sintering tube furnace. The hot products of the combustion of hydrogen and air at various fuel-air ratios were used to heat the sintering tube furnace. The maximum thermal efficiency obtained for the furnace is 76.22 % at a fuel-air ratio of 1:60 corresponds to a fuel-air equivalent ratio (λ) of 0.57.
+

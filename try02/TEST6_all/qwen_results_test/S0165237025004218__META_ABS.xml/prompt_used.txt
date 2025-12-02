@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimization of process parameters and evaluation of fuel properties of agricultural waste-derived hydrochar catalyzed by citric acid based on response surface methodology Hydrothermal carbonization (HTC) enables the valorization of agricultural waste-derived through resource recovery and the synthesis of alternative solid fuels. In this study, response surface methodology (RSM) was employed to evaluate the effects of temperature (200–240 ℃), time (20–60 min), and citric acid proportion (CA, 4–12 %) across 13 control and 17 experimental groups. The results indicated that, for the control group without catalyst, the maximum higher heating value (H-CS-HHVMax) was 26.55 MJ/kg, and the maximum energy yield (H-CS-EYMax) reached 65.49 %. For the experimental group catalyzed by citric acid, the maximum higher heating value (H-CA-HHVMax) was 27.59 MJ/kg, and the maximum energy yield (H-CA-EYMax) increased significantly to 91.90 %. Subsequently, the selected optimal hydrochar samples were characterized through scanning electron microscopy, brunauer-emmett-teller, fourier transform infrared spectroscopy, and X-ray diffraction to systematically investigate the evolution of structural properties. The catalytic mechanism of citric acid effectively suppressed both byproduct formation and excessive hydrolysis. Furthermore, thermogravimetric analysis demonstrated that citric acid significantly elevated both the ignition temperature (Ti) and the burnout temperature (Tf), thereby delaying the combustion process. Finally, kinetics analysis using the FWO and Friedman methods revealed that the activation energies of H-CA-EYMax could be as low as 24.93 kJ/mol (FWO) and 36.76 kJ/mol (Friedman), while those of H-CA-HHVMax reached 44.02 kJ/mol (FWO) and 52.66 kJ/mol (Friedman). Therefore, the superior combustion stability of citric acid-catalyzed hydrochar allows for its direct application as a clean and efficient fuel.
+

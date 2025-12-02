@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic steam reforming of biomass-derived oxygenates: acetic acid and hydroxyacetaldehyde Biomass can be pyrolytically converted in high yields (∼ 70 wt.%) into vapors (or oils when condensed) composed mainly of oxygenated organic compounds. Using a fixed-bed microreactor interfaced with a molecular beam mass spectrometer (MBMS), we have been studying the catalytic steam reforming of model oxygen-containing compounds present in biomass pyrolysis vapors. This MBMS sampling system is unique in its rapid, real-time, and universal detection of gaseous and condensible products. In this paper, we present results for steam reforming of acetic acid (HAc) and hydroxyacetaldehyde (HAA), two major products derived from the pyrolysis of carbohydrates in biomass. We propose mechanisms to couple the thermal decomposition and steam reforming reactions of these compounds. Both HAc and HAA undergo rapid thermal decomposition; complete steam reforming of these two model compounds can be achieved with commercial Ni-based catalysts. HAc forms coke on the catalyst surface, which is subsequently gasified by steam. The proposed mechanism for this coke formation involves an adsorbed acetate species that decar☐ylates to form the coke precursor, (CH1–3)abs, and also ketene, a dehydration product of HAc, that decomposes to form (CH1,2)abs. The reforming of HAA by steam does not involve any detectable intermediate and proceeds smoothly to a complete breakdown to CO and H2 on the catalyst surface.
+

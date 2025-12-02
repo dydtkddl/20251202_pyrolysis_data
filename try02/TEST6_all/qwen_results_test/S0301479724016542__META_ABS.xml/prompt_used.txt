@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An in-depth study of the oxidative liquefaction process for polymeric waste reduction and chemical production from wind turbine blades and personal protective equipment used in the medical field An in-depth study of the oxidative liquefaction process has been provided to degrade the polymeric waste from personal protective equipment (PPEs) and wind turbine blades (WTBs). Thermogravimetric investigations demonstrate that WTBs have three prominent peaks throughout the degradation, whereas PPEs display solitary peak features. Experiments are carried out employing specific experimental design approaches, namely the Central Composite Face-Centered Plan (CCF) for WTBs and the Central Composition Design with Fractional Factorial Design for PPEs in a batch-type reactor at temperature ranges of 250–350 °C, pressures of 20–40 bar, residence times of 30–90 min, H2O2 concentrations of 15–45 %, and waste/liquid ratios of 5–25 % for WTBs. These values were 200–300 °C, 30 bar, 45 min, 30–60 % and 5–7 % for PPE. A detailed comparison has been provided in the context of total polymer degradation (TPD) for PPE and WTBs. Liquid products from both types of wastes after the oxidative liquefaction process are subjected to gas chromatography with flame ionization detection (GC-FID) to identify the existence of oxygenated chemical compounds (OCCs). For WTBs, TPD was 20–49 % and this value was 55–96 % for PPE while the OCC yield for WTBs (36.31 g/kg - 210.59 g/kg) and PPEs (39.93 g/kg - 212.66 g/kg) was also calculated. Detailed optimization of experimental plans was carried out by performing the analysis of variance (ANOVA) and optimization goals were maximum TPD and OCCs yields against the minimum energy consumption, though a considerable amount of complex polymer waste can be reduced and high concentrations of OCC can be achieved, which could be applied for commercial and environmental benefits.
+

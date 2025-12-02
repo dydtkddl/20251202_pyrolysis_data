@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Bubbling fluidized bed gasification of short rotation Eucalyptus: Effect of harvesting age and bark The improvement of syngas production and reduction of tar contaminants from biomass gasification was achieved by altering feedstock age and the presence/absence of bark in combination with adjusting the amount of bed material within the bubbling fluidized bed reactor. Eucalyptus benthamii is a promising biomass source for the gasification process, and can be grown as a short rotation bioenergy crop allowing for selective growth cycles. Three E. benthamii samples harvested at two years with bark (2EWB), two years without bark (2EWoB), and seven years without bark (7EWoB) were used for this work. Upon gasification, the highest CH4 gas concentration was obtained from 7EWoB sample, which led to the highest syngas heating value of 3.8 MJ m−3. Alternatively, the highest H2 gas yield was obtained from 2EWB sample. The presence of bark also significantly affected CO and CH4 gas yields. Major tar compounds in the syngas were benzene, naphthalene, toluene and indene. Almost twice the amount of naphthalene and indene was obtained with older samples (7EWoB) compared to young samples (2EWoB and 2EWB). It was established that the presence of bark (2EWB) led to higher char yields and lower gas yields, which ultimately led to a lower syngas heating value (3.08 MJ m−3). Utilizing different amounts of non-catalytic silicon sand as bed material during gasification of 2EWB allowed for improved syngas heating value by producing more CH4. Higher amounts of bed material also lead to a higher conversion of char and improved syngas yields; however, tar yields also increased.
+

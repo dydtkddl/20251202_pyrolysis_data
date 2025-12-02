@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A generalized model of flame to surface heat feedback for laminar wall flames In this work, experimental measurements of flame heat flux and sample mass loss rate are obtained as a diffusion flame spreads vertically upward (in the direction opposed to the vector of gravity) over the surface of seven commonly used polymeric materials, two of which are glass reinforced composites. Using these measurements, a previously developed empirical flame model specific to poly(methyl methacrylate) is generalized such that it can predict (flame to material surface) heat feedback from 3 to 20cm tall flames supported by a wide range of materials. Model generalization is accomplished through scaling on the basis of a material's gaseous pyrolyzate heat of combustion, which can be measured using mg-sized material samples in a microscale combustion calorimeter. For all seven materials tested in this work, which represent diverse chemical compositions and burning behaviors including polymer melt flow, sample burnout, and heavy soot and solid residue formation, model-predicted flame heat flux (to a water-cooled heat flux gauge) is shown to match experimental measurements taken across the full length of the flame with an average absolute error of 3.8kWm−2 (approximately 10–15% of peak measured flame heat flux). Coupled with a numerical pyrolysis solver, this generalized wall flame model provides the framework to quantitatively study material propensity to ignite and support early fire growth in a range of common scenarios with a level of accuracy and reduced computational cost unmatched by other currently available modeling tools.
+

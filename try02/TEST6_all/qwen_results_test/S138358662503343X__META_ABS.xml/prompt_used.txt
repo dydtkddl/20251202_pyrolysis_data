@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Ultrahigh-surface-area phenothiazine-derived nanocarbon for adsorptive removal of iodine and pharmaceutical pollutants This study investigated the adsorption capacity of PTZ-C nanocarbon, synthesised from phenothiazine oligomers via conventional oxidative polymerization followed by direct pyrolysis. PTZ-C was thoroughly characterized to assess its structural, morphological, and surface properties. PTZ-C exhibited an average particle size of 128.4 nm, a remarkably high specific surface area of 3041 m2/g, and uniform pore sizes of 1.89 nm, making it well-suited for adsorbing environmental contaminants, including pharmaceutical drugs and iodine. The adsorption performance was evaluated using acidic and alkaline pharmaceutical compounds, specifically diclofenac (DIC) and caffeine (CFN) in wastewater. Kinetic analysis revealed that the adsorption of DIC and CFN onto PTZ-C followed a pseudo-second-order model. Equilibrium data obeyed Langmuir isotherm, with maximum adsorption capacities of 588.2 mg/g for DIC and 333.3 mg/g for CFN. Competing ions in tap water slightly decreased the adsorption efficiency by less than 3 %, simulating the improper disposal of pharmaceuticals. The regeneration potential of PTZ-C was evaluated over five cycles, with removal efficiencies decreasing to 76.5 % for DIC and 97.2 % for CFN. Additionally, PTZ-C exhibited exceptional iodine adsorption capacities of 6.322 g/g in the vapour phase at 75 °C, 5.930 g/g at 25 °C, and 2.473 g/g in aqueous media. It retained iodine vapour for up to seven days with minimal loss. PTZ-C also demonstrated stable adsorption performance over five regeneration cycles in both vapour and aqueous phases. Overall, PTZ-C derived from a phenothiazine-based polymer proved to be a highly effective sorbent for removing various pollutants, demonstrating high adsorption capacity, stability, and reusability.
+

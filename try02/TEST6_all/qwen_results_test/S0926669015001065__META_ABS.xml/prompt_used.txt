@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermophysical properties and biodegradation behavior of green composites made from polyhydroxybutyrate and potato peel waste fermentation residue Polyhydroxybutyrate (PHB) is one of most biodegradable bioplastic, but its high cost and brittleness limits its applications. In this study, low-value waste byproduct from a fermentation process of potato peel waste, called the potato peel waste fermentation residue (PPW-FR) fibers, were recovered and compounded with PHB to form biocomposites of tunable properties. The mechanical and thermal properties of pure PHB and biocomposites were investigated by thermogravimetric analysis (TGA), tensile and flexural tests, and dynamic mechanical analysis (DMA). Fiber content was shown to have a significant effect on the surface hydrophobicity and water absorption of the biocomposites. All absolute and specific mechanical properties and water absorption (by normalizing the measured parameters against the measured density (ρ)) were investigated. The biodegradability of PHB and biocomposites were evaluated in soil over 8 months. The surface morphology, chemistry and melting/crystallization behavior were monitored and characterized by microscopy, FTIR spectroscopy and differential scanning calorimetry (DSC), respectively. The biocomposites showed poor mechanical properties but extremely higher biodegradation rate as compared with pure PHB, especially when the fiber content was >15%. The degradation rate increased with increasing fiber content and positively correlated to the water absorption showing more cracks and deeper pits. FTIR spectroscopic analysis showed that the plant polysaccharides and PHB within the biocomposite were degraded with exposure time. At 50% fiber content the biocomposites were completely degraded by 8 months. These PPW-FR based biocomposites offer new opportunities for fast degrading biomaterials in agricultural and horticultural applications.
+

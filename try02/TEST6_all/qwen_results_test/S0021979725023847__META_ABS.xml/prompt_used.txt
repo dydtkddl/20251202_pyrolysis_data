@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hierarchical integration of Fe single-atom sites and Fe2O3 nanoclusters on carbon nanofibers for electrocatalytic nitrate-to-ammonia conversion Electrocatalytic nitrate-to-ammonia reduction (e-NO3RR) provides a sustainable alternative to fossil-fuel-dependent Haber-Bosch processes. However, its practical application is hindered by limited ammonia yield and unsatisfactory faradaic efficiency (FE). In this work, hierarchical porous carbon nanofibers decorated with Fe2O3 nanoparticles and Fe–N–C sites (Fe2O3/Fe SAC/HCNF) are synthesized through electrospinning-assisted templated pyrolysis. Structural characterization reveals that spatial confinement effect of the polymer suppresses the agglomeration of Fe2O3 during the synthesis process and the core-shell structure enhances the stability Fe species under prolonged operational conditions, while the hierarchical porous hollow fibers serve as an integrated substrate, optimizing both the active sites and mass transfer pathways. The Fe SAC sites preferentially adsorb and activate NO3 −, while the ultrafine Fe2O3 site provide abundant active hydrogen for the subsequent reduction process. Accordingly, Fe2O3/Fe SAC/HCNF achieves an FE maximum of 87 % ± 4 % at −0.50 V, with a corresponding areal productivity of 1.5 ± 0.02 mmol h−1 cm−2 and excellent long-term stability. When incorporated into a Zn-NO3 − battery as the cathode, the Fe2O3/Fe SAC/HCNF system exhibits outstanding electrochemical performance with high power density of 4.67 mW cm−2 and FE of 85 % ± 2 %. This study establishes a systematic strategy for synergistically enhance the performance of NO3RR to ammonia.
+

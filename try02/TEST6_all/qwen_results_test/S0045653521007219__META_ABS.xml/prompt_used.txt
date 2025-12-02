@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Antimony, a pollutant of emerging concern: A review on industrial sources and remediation technologies Technologies for remediation of industrial effluents and natural sources contaminated with antimony - a pollutant of emerging concern - are just emerging. The complex speciation of antimony makes it challenging to devise effective remediation technologies. Antimony is used in several industrial applications and comes into the environment majorly through human induced activities such as antimony mining and other activities involving the use of various products containing antimony. Many researchers are working on the important task of developing methodologies to stop or limit the release of antimony into the environment through these activities. Antimony removal is an important requirement in nuclear industry as well due to the formation of its radioactive isotopes during power plant operations. Thus, better antimony remediation or removal techniques can have wider applications ranging from domestic water treatment and industrial effluent remediation to safe isolation of radioactive waste in the nuclear industry. Proper understanding of the problem is very important in designing the source appropriate remediation technique. Treatment methodologies needed for antimony effluents from antimony mining and smelting industries are different from antimony decontamination in nuclear reactors. The problem of antimony leaching from a polyethylene terephthalate bottle is very much different from the leaching of antimony from mining wastes. Each process necessitates custom-made treatment methodologies by taking into account various factors including the speciation and concentration. The current review is focused on this aspect. The review attempts to bring out a clear understanding on various industry specific sources of antimony pollution and the available antimony removal/remediation technologies.
+

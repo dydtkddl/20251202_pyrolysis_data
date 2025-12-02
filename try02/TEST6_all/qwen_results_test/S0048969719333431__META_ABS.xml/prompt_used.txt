@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Changes in soil organic matter composition after Scots pine afforestation in a native European beech forest revealed by analytical pyrolysis (Py-GC/MS) The introduction of coniferous species in former deciduous forests may exert changes in soil organic matter, particularly in its molecular composition. In this work, pyrolysis-gas chromatography–mass spectrometry was used to study changes in SOM quality related to the centennial afforestation of Scots pine in an area formerly covered by European beech forest in the NE-flank of the Moncayo Natural Park (NE-Spain). For each soil profile three organic layers (fresh litter, fragmented litter and humified litter) and mineral soil horizons (Ah, E, Bhs and C) were studied. A total of 128 compounds were identified in the pyrograms, and composition differences were detected among the organic and mineral soil layers as well as between soils under beech and pine, for the main compound classes: nitrogen compounds, aromatics, lignin methoxyphenols, polycyclic aromatic hydrocarbons, lipids and polysaccharide-derived moieties. Such chemical differences were found to be derived from the biomass composition of the predominant vegetation type that was incorporated into the soil and from its progression into the soil profile. The analysis of the distribution of alkanes indicated higher SOM stabilization in the native beech forest soil. The signal of beech biomarkers (long chain n-alkanes C31-C33) found in the pine E horizon indicates the permanence of SOM derived from the natural forest ca. 100 years after the afforestation.
+

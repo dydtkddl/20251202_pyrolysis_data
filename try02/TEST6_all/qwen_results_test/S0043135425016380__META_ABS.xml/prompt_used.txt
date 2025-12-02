@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Source-specific quantification of microplastic-derived dissolved organic matter in sludge liquor using δ13C-labeled sludge and isotopic fingerprinting under varying conditioning treatments Microplastics (MPs) have emerged as persistent pollutants in wastewater treatment plants (WWTPs), accumulating in sludge and releasing microplastic-derived dissolved organic matter (MP-DOM) during sludge processing. This study presents the first source-specific quantification of MP-DOM in sludge liquor using 13C-labeled sludge and a stable carbon isotope tracing approach. Aerobic digestion experiments with 13C-labeled activated sludge, with and without polyethylene (PE) MPs, were conducted, followed by sludge conditioning treatments (Fenton oxidation, hydrothermal, and KMnO4 oxidation). MP addition significantly increased dissolved organic carbon (DOC) release and shifted DOM quality toward more labile, protein-like fractions. Stable isotope analysis showed slower 13C depletion in the biomass and delayed 13C enrichment in the liquid phase of MP-amended systems compared to control, suggesting a possible retarding effect of MPs on microbial carbon turnover. Using a two-end-member isotope mixing model, MP-DOM was found to contribute 11.5 % of DOC in untreated sludge liquor, 19.4 % under Fenton oxidation, 13.5 % under KMnO4 oxidation, and 5.6 % under hydrothermal treatment. These results suggest that oxidative treatments, particularly Fenton, promote MP-DOM mobilization, while hydrothermal treatment primarily enhances biomass-derived DOM release. Conventional techniques using optical and molecular weight measurements captured overall DOM transformation but lacked source specificity. This study demonstrates the utility of isotope-based source apportionment for identifying hidden contributions of MPs to sludge liquor DOM and underscores the implications for treatment performance, carbon cycling, and sludge reuse strategies in WWTPs.
+

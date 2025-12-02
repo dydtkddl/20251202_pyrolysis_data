@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Regeneration of exhausted adsorbents after PFAS adsorption: A critical review The adsorption process efficiently removes per- and polyfluoroalkyl substances (PFAS) from water, but managing exhausted adsorbents presents notable environmental and economic challenges. Conventional disposal methods, such as incineration, may reintroduce PFAS into the environment. Therefore, advanced regeneration techniques are imperative to prevent leaching during disposal and enhance sustainability and cost-effectiveness. This review critically evaluates thermal and chemical regeneration approaches for PFAS-laden adsorbents, elucidating their operational mechanisms, the influence of water quality parameters, and their inherent advantages and limitations. Thermal regeneration achieves notable desorption efficiencies, reaching up to 99% for activated carbon. However, it requires significant energy input and risks compromising the adsorbent's structural integrity, resulting in considerable mass loss (10–20%). In contrast, chemical regeneration presents a diverse efficiency landscape across different regenerants, including water, acidic/basic, salt, solvent, and multi-component solutions. Multi-component solutions demonstrate superior efficiency (>90%) compared to solvent-based solutions (12.50%), which, in turn, outperform salt (2.34%), acidic/basic (1.17%), and water (0.40%) regenerants. This hierarchical effectiveness underscores the nuanced nature of chemical regeneration, significantly influenced by factors such as regenerant composition, the molecular structure of PFAS, and the presence of organic co-contaminants. Exploring the conditional efficacy of thermal and chemical regeneration methods underscores the imperative of strategic selection based on specific types of PFAS and material properties. By emphasizing the limitations and potential of particular regeneration schemes and advocating for future research directions, such as exploring persulfate activation treatments, this review aims to catalyze the development of more effective regeneration processes. The ultimate goal is to ensure water quality and public health protection through environmentally sound solutions for PFAS remediation efforts.
+

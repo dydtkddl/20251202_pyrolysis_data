@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Direct solar thermochemical CO2 splitting based on Ca- and Al- doped SmMnO3 perovskites: Ultrahigh CO yield within small temperature swing Solar thermochemical CO2 splitting is a promising route to reduce environment pollution and mitigate energy crisis. However, traditional redox materials are limited by low CO production, slow reaction kinetics, and poor cycling stability, which results in low solar-to-fuel efficiency. Here, Ca- and Al- doped SmMnO3 perovskites are proposed for high-performance solar thermochemical CO2 splitting. The average CO yield of Sm0.6Ca0.4Mn0.8Al0.2O3 reaches a record-high value of 595.56 μmol g−1 when swinging between 1350 °C and 1100 °C. The CO yield is about 4.22 times as high as that of undoped SmMnO3 (140.97 μmol g−1) under the same conditions, and remains stable over multiple cycling. The ultrahigh CO yield can be attributed to the transformation of reaction mechanism from solid-state surface reaction (F2) to bulk diffusion model (D2). Besides, Ca- and Al- doped SmMnO3 perovskites possess high solar absorptance over 86.5% (in stark contrast to 12.1% of CeO2), so that only solar concentration ratio of 898 (Sm0.6Ca0.4Mn0.8Al0.2O3) is required to drive thermochemical reactions while benchmark CeO2 needs 1936. This work provides novel approaches for high-performance solar thermochemical CO2 splitting with high CO yield, good cycle stability, small temperature swing, and low solar concentration required.
+

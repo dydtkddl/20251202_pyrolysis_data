@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimization of bio-oil and biochar production from defatted microalgae biomass via microwave-assisted catalytic cracking In this work, bio-oil and biochar were produced using microwave-assisted catalytic cracking (MACC) of defatted microalgae biomass (DMB) obtained from lipid extraction of Chlorella vulgaris. A maximum bio-oil yield of 58.34 % was achieved under optimized conditions, including 450 W of microwave power, a 10 % catalyst ratio, and a reaction time of 10 min. In comparison, the highest biochar yield of 65.11 % was recovered at 650 W, 10 % catalyst ratio, after 30 min. This shows that bio-oil yield is optimized under milder conditions, while biochar yield benefits from more intense and prolonged thermal treatment. Qualitative characterization revealed that the bio-oil exhibited low viscosity (9.74 mm2/s), indicating good flowability and resistance to oxidative degradation. Its notably high heating value of 41 MJ/kg is attributed to a high density (1.18 g/mL), suggesting a greater concentration of heavy hydrocarbons. Scanning Electron Microscopy (SEM) analysis showed that the biochar featured a porous structure with a high surface area. Additionally, Fourier-Transform Infrared Spectroscopy (FTIR) confirmed the presence of oxygenated functional groups in the biochar, at wavenumbers ranging between 1300 and 1800 cm−1. Moreover, this study also compared the product yields obtained from MACC with those from conventional pyrolysis. The results show that MACC produced significantly higher yields of bio-oil and biochar, exceeding those of pyrolysis by 24.45 % and 24.23 %, respectively, while also reducing reaction time and enhancing energy efficiency.
+

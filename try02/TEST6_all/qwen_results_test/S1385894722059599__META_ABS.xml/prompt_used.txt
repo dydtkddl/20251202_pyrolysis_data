@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Cleaner 2,3-butanediol production from unpretreated lignocellulosic biomass by a newly isolated Klebsiella pneumoniae PX14 Bioconversion lignocellulosic biomass (LCB) to 2,3-butanediol (2,3-BDO) is a sustainable and energy-intensive practice, but its economic feasibility has been hindered by costly pretreatment and the cumbersome fermentation process. Herein, a lignocellulolytic strain Klebsiella pneumoniae PX14 is isolated from insect gut, showing effective degradation on unpretreated LCB with rates of 51.48 % for cellulose, 62.13 % for hemicellulose, and 41.42 % for lignin, while with a low 2,3-BDO titer of 3.26 g/L. Consequently, the secretory proteins of PX14 cultured on the bamboo biomass-containing medium are extracted for the construction of an enzyme cocktail with commercial cellulase. The designed enzyme cocktail achieves efficient saccharification of the unpretreated LCB, resulting in 42.90 g/L reducing sugars released, which is significantly higher than that from the secretory protein or cellulase only. These high sugars titer is also effective conversion to 2,3-BDO of 19.11 g/L titer by PX14 after further optimization. For the first time, the enzyme cocktail is tried for application in simultaneous saccharification and fermentation (SSF) of 2,3-BDO from unpretreated LCB. This fed-batch SSF resulted in 47.46 g/L of 2,3-BDO with 0.36 g/L/h productivity under high solid loading of 20 % due to the high substrate concentration tolerance of PX14. Finally, whole-genome sequencing reveals the robustness of K. pneumoniae PX14 and its molecular mechanism for such a process. These results provide a robustness strain of K. pneumoniae PX14 and its novel application in SSF of 2,3-BDO from unpretreated LCB, showing a great breakthrough in this process.
+

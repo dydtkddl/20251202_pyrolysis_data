@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of waste lubricating oil/waste motor oil to generate high-grade fuel oil: A comprehensive review The petroleum industry has developed rapidly since its inception and evolved into an irreplaceable society component, especially in the urban areas. Besides being a limited resource, lubricating oil generates waste oil, posing a threat to both human health and the environment. The sustainable management of waste lubricating oil (WLO) could be done by applying the pyrolysis technique to avoid its antagonistic impact on the ecology. Finding a robust design for WLO pyrolysis with a reliable range of operating paraments is challenging. Hence, the main objective of the review is to study the different parameters and reactor configurations affecting the sustainability of the pyrolysis of WLO to high-value fuels. For this study, many research articles from top-rated journals in scientific indexes, including recent publications, are reviewed. This article represents an extensive review of WLO pyrolysis, including (i) the reactor configuration, (ii) co-pyrolysis studies with other wastes, (iii) advantages of catalytic pyrolysis and (iv) the factors affecting the yield and productivity of pyro oil. The valuable byproduct produced can compensate for the energy obligation and increase the overall process's productivity. The microwave pyrolysis oil was efficient in terms of the exergy analysis. However, the electric pyrolysis oil was more superior in terms of performance combustion and emission characteristics. It would be interesting to study the co-pyrolysis of the WLO process for a multi-component waste mixture rather than a binary blend. Yet more research is required to study the performance, combustion, and emission characteristics of pyro oil generated in both catalytic and non-catalytic pyrolysis processes to have a comparative analysis of the oil quality on the diesel engine.
+

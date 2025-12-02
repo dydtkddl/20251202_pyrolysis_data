@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Aromatics production from relay catalytic pyrolysis of cow manure using Ru/C and ZSM-5 dual catalysts synthesized from coal gasification fine slag Resource utilization of solid waste can aid in gradual substitution of fossil fuels while achieving waste recycling. In this study, residual carbon and ash slag from the coal gasification fine slag were separated by froth flotation, and then was used to prepare Ru/C and ZSM-5 dual catalysts with carbon-rich and ash-rich components as raw materials, respectively. The performance of two catalysts for catalytic upgrading of volatiles from pyrolysis of cow manure (CM) to produce light aromatic hydrocarbons was systematically investigated. The direct pyrolysis products of CM mainly included alcohols, ketones, ethers, and other oxygen-containing compounds. When ZSM-5 was used as the catalyst, the yield of monocyclic aromatic hydrocarbons (MAHs) increased significantly due to the better catalytic cracking and aromatization abilities of ZSM-5 catalyst. However, the yield of phenols in the pyrolysis products improved when Ru/C was used as the catalyst due to the cleavage effect of Ru/C on the C–O bond. When Ru/C and ZSM-5 were used as dual catalysts in relay catalytic pyrolysis of volatiles, the increase in MAHs yield in the pyrolysis product was higher than the total increase obtained under Ru/C and ZSM-5 single catalysis. The possible pathways for the generation of MAHs from CM under Ru/C and ZSM-5 relay catalytic pyrolysis were revealed by the pyrolysis experiment performed on model compounds.
+

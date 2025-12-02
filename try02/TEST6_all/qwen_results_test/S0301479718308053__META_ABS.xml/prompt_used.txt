@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Agave tequilana bagasse for methane production in batch and sequencing batch reactors: Acid catalyst effect, batch optimization and stability of the semi-continuous process Agave tequilana bagasse is the main solid waste of the tequila manufacturing and represents an environmental issue as well as a potential feedstock for biofuel production due to its lignocellulosic composition and abundance. In this contribution, this feedstock was subjected to pretreatments with HCl and H2SO4 for sugar recovery and methane was produced from the hydrolysates in batch and sequencing batch reactors (AnSBR). Sugar recovery was optimized by using central composite designs at different levels of temperature, acid concentration and hydrolysis time. Results showed that at optimal conditions, the HCl pretreatment induced higher sugar recoveries than the H2SO4 one, 0.39 vs. 0.26 g total sugars/g bagasse. Furthermore, the H2SO4 hydrolysate contained higher concentrations of potential inhibitory compounds (furans and acetic acid). Subsequent anaerobic batch assays demonstrated that the HCl hydrolysate is a more suitable substrate for methane production; a four-fold increase was found. A second optimization by using HCl as acid catalyst and methane production as the response variable demonstrated that softer hydrolysis conditions are required to optimize methane production as compared to sugar recovery (1.8% HCl, 119 °C and 103min vs. 1.9% HCl, 130 °C and 133min). This softer conditions were used to feed an AnSBR for 110 days and evaluate its stability at three different cycle times (5, 3 and 2 days). Results showed stable reactor performances at cycle times of 5 and 3 days, obtaining the highest methane yield and production at 3 days, 0.28 NL CH4/g-COD and 1.04 NL CH4/d respectively. Operation at shorter cycle times is not advised due to microbial imbalance.
+

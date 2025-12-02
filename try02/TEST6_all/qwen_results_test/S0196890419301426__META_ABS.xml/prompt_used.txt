@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Combined with fractional condensation to upgrade the liquid products derived from the co-pyrolysis of bio-oil distillation residue and bituminous coal In this study, the effects of induction conditions on the distribution characteristics of graded bio-oil derived from the co-pyrolysis of bio-oil distillation residue and bituminous coal were investigated in a fixed pyrolysis reactor with a three-stage condenser. Based on the central composite design and statistical analysis, it could be found that a quadratic model was recommended to depict the total bio-oil yield, whereas the linear model was the best-fitting model for the graded bio-oil yield of different condensation stages. As for total bio-oil yield, all the combined effects of induction conditions played a negative role, and all second-order effects were advantageous. Moreover, the high percentage of distillation residue contributed to the bio-oil yield at each condenser and had the greatest impact on the bio-oil yield of the first condenser. However, high temperatures and high gas flow rates reduced the bio-oil yield of the first condenser and favored the increase in bio-oil yield of subsequent condensers. In addition, the products derived from distillation residue were more abundant than bituminous coal. And the addition of bituminous coal did not significantly increase the type of compounds in bio-oil from the blends, but disturbed the distribution of bio-oil products. The condensers with different temperatures facilitated the separation and enrichment of different compounds.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review on pyrolysis of plastic wastes The global plastic production increased over years due to the vast applications of plastics in many sectors. The continuous demand of plastics caused the plastic wastes accumulation in the landfill consumed a lot of spaces that contributed to the environmental problem. The rising in plastics demand led to the depletion of petroleum as part of non-renewable fossil fuel since plastics were the petroleum-based material. Some alternatives that have been developed to manage plastic wastes were recycling and energy recovery method. However, there were some drawbacks of the recycling method as it required high labor cost for the separation process and caused water contamination that reduced the process sustainability. Due to these drawbacks, the researchers have diverted their attentions to the energy recovery method to compensate the high energy demand. Through extensive research and technology development, the plastic waste conversion to energy was developed. As petroleum was the main source of plastic manufacturing, the recovery of plastic to liquid oil through pyrolysis process had a great potential since the oil produced had high calorific value comparable with the commercial fuel. This paper reviewed the pyrolysis process for each type of plastics and the main process parameters that influenced the final end product such as oil, gaseous and char. The key parameters that were reviewed in this paper included temperatures, type of reactors, residence time, pressure, catalysts, type of fluidizing gas and its flow rate. In addition, several viewpoints to optimize the liquid oil production for each plastic were also discussed in this paper.
+

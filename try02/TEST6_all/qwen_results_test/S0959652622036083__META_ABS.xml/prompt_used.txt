@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Towards full recyclability of end-of-life tires: Challenges and opportunities End-of-life tires are discarded on a daily basis but even at present limited action has been taken towards boosting their recyclability as most of the tires are either incinerated or landfilled/stockpiled. The complexity of tires has also been drastically increased, with little attention to designing them specifically for recycling. The retreading process is currently under intense development, and end-of-life tires have the ability to be retread up to several times. Furthermore, powdering (pulverization and grinding) the tires and separating steel and textile from this stream is a promising route that has found expanding applications. The particle size and surface area of the produced powder, purity, rubber degradation, and the cost of equipment and production are the determining factors. Assessing all these factors shows that sc-CO2 pulverization is the most promising method overall in this respect. In terms of process-ability, devulcanization has received a lot of attention from the tire recycling industry, and numerous physical, chemical, and microbial processes and combinations are being developed to be industrialized in the near future. Nevertheless none of these processes is currently at a high enough technological readiness level to be operated at large scale. Literature data shows that extrusion in combination with an ultrasonic horn or sc-CO2 using diphenyl disulfide has the most potential. In the dissolution extraction process, in addition to breaking sulfur bonds, solvent extraction devulcanizes and separates rubber from other tire components at low temperatures. The purity of the extracted products e.g., rubber, carbon black (CB) and minerals in this way is much higher than that of other recycling methods. Since applications of mentioned recycled products (powder and devulcanized tire) are limited, tire pyrolysis has become extremely important. Process parameters and reactor design play a significant role in degradation mechanisms and pyrolysis products e.g., light olefins and dienes, naphthenes, mono-aromatics, tar, polar aromatics and coke. Catalytic pyrolysis with promoted zeolites leads to larger yields of valuable products at the expense of the formation of tar and so-called polar aromatics, i.e. N/S/O containing aromatics. In addition, upgrading processes, e.g., hydro-treating can reduce polar aromatics in the pyrolysis products by up to 90%. Furthermore, the demineralization of pyrolytic carbon black and activated carbon production are promising processes that result in increased tire recovery rates.
+

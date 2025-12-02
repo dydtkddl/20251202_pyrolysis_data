@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Renewable methane and liquid hydrocarbon production through catalytic hydrothermal decarboxylation of waste cooking oil Hydrothermal decarboxylation is an effective method for converting triglycerides, such as waste cooking oil (WCO), into renewable liquid hydrocarbons. However, one of the major challenges in producing liquid hydrocarbons from WCO is catalyst deactivation due to coke deposition, which prevents the catalyst from actively participating in the reaction. Additionally, CO2, a greenhouse gas, is evolved during the decarboxylation reaction(s). Converting CO2 into a reusable fuel, such as CH4, can help to reduce the environmental impact and can be used for power generation, appliances, industrial applications, and transportation. Ru metal is a well-known methanation catalyst that enhances methanation reactions of carbon oxides to minimize CO2 or CO production. In this study, we proposed a one-step process for producing both liquid hydrocarbons and CH4 during hydrothermal decarboxylation of WCO using Ru-Ni-θ Al2O3 catalysts in a batch reactor system. We hypothesized that the addition of Ru (0.2 wt% and 0.5 wt%) onto a 11wt%Ni/θ Al2O3 catalyst would significantly reduce coke deposition and convert CO2 and CO into renewable CH4. Experimental results showed that 11wt%Ni/θ Al2O3 catalyst was more acidic and displayed a higher degree of decarboxylation (97 %) compared to 0.2 wt%Ru/11wt%Ni/θ Al2O3 (94 %) and 0.5wt%Ru/11wt%Ni/θ Al2O3 (92 %) catalysts. Meanwhile, 0.2wt%Ru/11wt%Ni/θ Al2O3 and 0.5wt%Ru/11wt%Ni/θ Al2O3 catalysts yielded 87.64 and 96.31 mol% of CH4 compared to 11wt%Ni-θ Al2O3 catalyst (35.32 mol%). Ru reduced acidity and increased the resistance to carbon deposition on the catalyst’s surface by significantly enhancing the methanation reaction.
+

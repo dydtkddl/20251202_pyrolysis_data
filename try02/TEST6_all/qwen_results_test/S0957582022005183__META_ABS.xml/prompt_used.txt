@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic pyrolysis of municipal plastic waste over nano MIL-53 (Cu) derived @ zeolite Y for gasoline, jet fuel, and diesel range fuel production In this study, municipal polymer wastes that were no longer recyclable and were previously buried underground according to the usual municipal waste management program were converted to liquid fuel by catalytic pyrolysis technique. In the first step, zeolite Y catalyst was used to improve the quality of liquid fuel. In the second step, MIL-53 (Cu) was incorporated onto zeolite and pyrolyzed in nitrogen in the atmosphere. The analysis shows that clusters of carbon nanopores with a copper core, and its oxides were deposited on the zeolite. For both types of catalysts, the crystallization time of zeolite was investigated, and it was found that this leads to the synthesis of samples with different percentages of crystallinity. For each test, the liquid fuel produced was divided into four cuts: gasoline, jet fuel, diesel, and wax. The test results in a fixed bed reactor for every twelve samples of catalyst and their effect on the efficiency of different sections of liquid fuel show a significant improvement in the desired product. The properties and morphology of the catalysts were investigated. It was found that at 400 °C and a crystallization time of 18 h for support with 76.62% crystallinity, gasoline production efficiency will be 37.00%. At 500 °C and low crystallinity, the tendency of reaction to produce jet fuel with a maximum efficiency of 48.64%. Furthermore, the physical properties of each cut of liquid fuel and their comparison with the reported values indicating the appropriate qualities of the produced fuel were evaluated. In the optimal state, the octane number of the produced gasoline is 93.5 and its pour point is 41 °C. Also, a jet fuel with an octane number of 43.2 and a flashpoint of 69 °C has been obtained. In the case of diesel, the octane number and its viscosity have reached 46 and 2.407 cp, respectively. Examining the results obtained from GC MS, it was found that the zeolite catalyst modified by Diels Alder mechanism and branching will improve the quality of liquid fuel and on the other hand, will cause the cracking of the wax compounds and reduce their percentage in product analysis.
+

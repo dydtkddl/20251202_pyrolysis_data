@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unveiling the impact of bioplastic bags on high-solids anaerobic digestion and subsequent hydrothermal liquefaction of source separated organics The popularity of plastics stems from their versatility, but their extensive production and slow degradation contribute to environmental pollution. Bioplastics offer a promising alternative: these are made from renewable sources and are designed to break down naturally within a few years. With rapid urbanization and the increasing global population, there has been a substantial rise in both the generation of source-separated organics (SSO) and the utilization of bioplastics. However, bioplastics can be comingled with SSO in the waste management system, leading to concerns about their fate in high-solid anaerobic digestion (HSAD) digestate and their potential environmental consequences. This study investigated the co-digestion of bioplastics and SSO in an integrated process involving HSAD followed by hydrothermal liquefaction (HTL) under different operating conditions (280 °C, 330 °C, and 370 °C for 10 min). During the HSAD process, bioplastics broke down into smaller fragments, causing a significant drop in methane yield. After 45 days, the control reactor produced 182.39 ± 2 mL/g VS, while the bioplastic-loaded reactor yielded only 95.91 ± 1.7 mL/g VS. However, bioplastics were completely transformed by HTL, reducing the potential environmental risk of bioplastic pollution. The experimental observations demonstrated that as the temperature increased from 280 to 330 °C, the weight percentage of biocrude increased, reaching a maximum yield of 38 %. However, with a further temperature increase from 330 to 370°C, both the weight percentage of biocrude and hydrochar decreased, and there was a peak rise in the weight percentage of total gas. At 330 °C, the maximum higher heating value for bioplastics digestate and the highest crude production compared to the control were achieved. This study provides critical insights into the degradability and transformation of bioplastics and SSO in integrated HSAD and HTL processes. The findings advance our understanding of bioplastic behavior in waste management systems and demonstrate a sustainable pathway for mitigating bioplastic pollution while enhancing resource recovery. By integrating HSAD and HTL, this research offers a novel framework for bioplastic valorization and contributes to the development of circular economy strategies.
+

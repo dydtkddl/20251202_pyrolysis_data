@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrogen production and pollutants emission characteristics by co-gasified of paper-mill sludge and automobile shredder residues in a commercial scale fluidized bed gasifier This research investigated the hydrogen production and energy conversion from automobile shredder residues (ASRs) and paper mill sludge (PMS) co-gasified in a full-scale fluidized bed gasification plant. The results obtained from full-scale tests provided important information on the feasible assessment of ASRs-to-energy and the selection of alternative technologies for ASRs. Based on the analysis results of produced gas composition, H2, CO, and CH4 composition produced from paper-mill sludge gasified were 4.17%–6.01%, 3.08%–4.32%, 1.71%–2.4%, respectively. Another C2 gas composition ranged from 2.9% to 3.59%. The heating value of produced gas ranged between 1.64 MJ/Nm3 and 2.18 MJ/Nm3. In the case of 10% ASR addition, the heating value of produced gas was slightly increased to 1.84 MJ/Nm3-2.34 MJ/Nm3. The dioxin emission concentration of flue gas was approximately 0.064 ng I-TEQ/Nm3. It can comply with Taiwan regulation thresholds. The dioxin leaching concentrations of residues derived from gasification were also in compliance with regulation limits by the TCLP test. Meanwhile, in the case of 10% ASRs addition, the dioxin equivalence concentration of gasified residue was nearly 0.002 ng I-TEQ/Nm3. It was far below the current regulation standard limit. In summary, the results of this research have proved the performance of ASRs-to-energy by co-gasified with paper mill sludge using a full-scale gasification plant. The results obtained from this research also provided the information for selecting ASRs alternative technologies and operating full-scale gasifiers in the future.
+

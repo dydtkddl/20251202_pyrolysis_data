@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A critical review on life-cycle assessment and exergy analysis of Enomoto bio-gasoline production Considering algae as a diversified source of various chemicals, the purifying process, and treatment pathways, also deciding on algal strains sound vital rather than coming across. To attain low emission fuels from Enomoto, fast catalytic pyrolysis reactions could provide anti-knock properties of gasoline blends. The whole issue is under investigation by lifecycle assessment (LCA) and exergy analysis within this scope. There has been no “Mixed Review Study” for these analyses on effective SATBA 1 1 Renewable Energy and Energy Efficiency Organization of Iran. ’s goals and Enomoto biogasoline, hitherto. In this study, the consequence of carbon cycle stabilization has been pursued from the beginning of the supply chain, production (electrical energy with the highest contribution), and distribution of Enomoto biogasoline, and the share of total emissions reached 14.14 kgCO2/kg fuel. In this research work, LCA outcome was performed with energy balance to optimize the dead states of various exergy losses and compared it with the values of a base reference by the Greenhouse gases, Regulated Emissions, and Energy use in Transportation (GREET) method. For this purpose, for every 838 kJ/L of Enomoto oil, 128834.824 MJ/day of chemical exergy was produced in the system, and the share of physical exergy input at 94355.16 MJ/day, which indicates high efficiency of the process. There was an inextricable correlation between Neat Energy Ratio (NER) 2.27, 80.3% efficiency, and low carbon dioxide (CO2) emissions with Energy Consumption Ratio (ECR) approximately 0.001. Also, improving the process and reducing the loss of exergy, i.e. destructive exergy equivalent to 973,879 kJ/day can be significantly improved by removing the heat exchanger and replacing the reactor and condenser type. As a result, it has proved that this process is economically feasible for 1250 L per day of Enomoto biogasoline production with an annual depreciation of about $18,000 at the MFSP, which is about 24.7% less than the free-rate price of gasoline. This is important despite the increase in the global price of gasoline in the next decade at $1.18; even the NPV will reach $5.2 million annually and a return on investment within 5 years of launching this valuable pilot.
+

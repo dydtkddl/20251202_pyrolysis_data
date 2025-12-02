@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Towards quantitative microplastic analysis using pyrolysis-gas chromatography coupled with mass spectrometry Microplastic pollution from everyday plastic items has increased tremendously worldwide. Pyrolysis gas chromatography coupled to mass spectrometry (Py-GC/MS) has been widely investigated for the qualitative and quantitative analysis of microplastics in environmental samples. However, there are several pitfalls to consider when developing an appropriate protocol for their analysis. This study aimed at the development of an in-house database of primary (single) polymers, binary (two) polymers and tertiary (three) polymer mixtures. In this context the potential occurrence of gas phase reactions during pyrolysis of binary and tertiary polymers were investigated. Further, different diluters were tested for the accurate preparation of calibration standards for quantification purposes. Seven different polymers were included in this study, which were chosen due to their prevalence in daily plastic appliances. For each single polymer specific peaks could be identified and recommendation for quantifier analytes given. The analysis of binary polymer mixtures revealed gas phase reactions for PET with PVC, PVC with MDI-PU and PE with PVC. For these binary polymers, several different novel pyrolysis products, specific for the according binary polymer mixture, could be identified. These results confirmed that especially PVC exhibits strong interactions during co-pyrolysis with ester- and ether-based polymers. Similar results were obtained for tertiary polymers. For accurate preparation of calibration standards different diluters (silica, deactivated silica, calcium carbonate, THF and HFIP) were tested. It was observed that deactivated silica had only an influence on the pyrolysis of PET. Whereas, dilution with silica affected PA-6/66, PE, PET and MDI-PU. Only PVC was not influenced by dilution with silica. In conclusion, our results highlight the necessity of an international standard of reference material as well as a standardized analytical protocol for the analysis and quantification of polymers in environmental samples. It is crucial to use diluters suitable for the specific polymer, to exclude potential interactions of diluters with the polymer. The present work has to be seen as a foundation, but future work is needed to adequately address the quantification of polymers in environmental samples.
+

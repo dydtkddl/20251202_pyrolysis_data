@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of fuel-staged gasification on mechanism of steam gasification of coal gangue and corn straw Coal gangue (CG) and corn straw (CS) are regarded as the bulk of solid wastes in China due to their high annual yield, inefficient utilization, and low added value. In this work, the comparison experiments between fuel-staged gasification and conventional co-gasification for CG and CS were conducted in a new type of three-way reactor. The effects of volatiles and AAEMs in CS on fuel-staged gasification were analyzed by investigating CS ratio in the primary bed. And the influence of diffusion resistance was studied by adjusting CG ratio in the secondary bed. The results showed that the thermal interactions of CG and CS in primary bed were considered as the oxidation of C–C and CC structures of CG by C–O–C and C–OH bonds of CS to form CO. Meanwhile, the breaking of O–CO and lactone groups could generate a significant amount of CO2 to accelerate the Boudouard reaction of primary char. In addition, calcium minerals in CS could combine with CG minerals into anorthite, which would promote the transverse fracture and longitudinal stacking of primary residue char. Besides, steam reforming of volatiles/tar and ring-opening reactions of residue char were both controlled by the diffusion resistance derived from secondary CG. The conclusions would provide some theoretical bases and engineering foundations for the industrial applications of fuel-staged gasification, such as the design of fuel-staged gasifier and the selection of two-staged fuel.
+

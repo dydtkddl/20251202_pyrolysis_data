@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An experimental assessment on a diesel engine powered by blends of waste-plastic-derived pyrolysis oil with diesel The utilization of plastic solid wastes for sustainable energy production is a crucial aspect of the circular economy. This study focuses on pyrolysis as an effective method to convert this feedstock into renewable drop-in fuel. To achieve this, it is essential to have a comprehensive understanding of feedstock composition, pyrolysis process parameters, and the physicochemical characteristics of the resulting fuel, all correlated with engine combustion parameters. Considering this full value chain, this study provides the first unbiased and up-to-date benchmark of polypropylene and polystyrene pyrolysis oils (PPO and PSO) produced in an industrial-grade batch reactor. The pyrolysis process was optimized to achieve ultra-high liquid yield levels of 92% for PPO and 98% for PSO with minimum energy consumption. After post-processing, blending with diesel, and normative fuel analytics, combustion/emission tests involving 20 species preceded under fully controllable conditions using a state-of-the-art single-cylinder research engine. The fuel analysis results revealed significant disparities between the properties of PPO and PSO. PPO exhibited a diverse carbon structure, resulting in very low density and high volatility. On the other hand, PSO was predominantly composed of aromatics, leading to low viscosity and poor auto-ignition properties. Engine tests showed that PPO blends exhibited combustion characteristics similar to diesel, while PSO blends exhibited significant differences, particularly during the premixed combustion stage attributed to pilot injection. Following the combustion response, the addition of PPO had minimal impact on emissions, while PSO acted as an emission enhancer, resulting in over twofold increase in particulate matter at high loads. Consequently, PSO showed elevated carbon monoxide and hydrocarbon emissions due to the higher contribution of aromatics. Ultimately, this study challenges the prevailing perception of plastic-derived fuels as “dirty”. By implementing feedstock segregation to minimize polystyrene content, it is possible to achieve a fossil substitute level of 40% while meeting all emission and safety regulations for diesel engines with a minimum economic burden.
+

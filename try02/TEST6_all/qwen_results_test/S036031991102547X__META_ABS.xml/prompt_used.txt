@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Rapid release of 1.5 equivalents of hydrogen from CO2-treated ammonia borane This work addresses the accelerated dehydrogenation of ammonia borane (AB, NH3BH3) in two separate processes of CO2 pre-treatment of AB and dehydrogenation of the treated AB. Decoupling these two processes can still keep the dehydrogenation activity of CO2-treated AB and eliminate the purification step of H2 from gas phase. When AB is exposed to 1.38 MPa of carbon dioxide (CO2) at 70 °C, it shows the most favorable and controllable operating condition for the CO2 pre-treatment. The pre-treatment enhances not only the rate but also the amount of hydrogen release at the dehydrogenation step; 1.5 mol H2 per mol of AB rapidly desorbs at 85 °C in 1 h, corresponding to 10.1 wt.% of hydrogen with regard to pristine AB. Also, our observations show that the fast dehydrogenation resulted from the CO2 pre-treatment is preserved for more than four days of storage. The degree of dehydrogenation is further confirmed by ATR-FTIR spectroscopic and elemental analyses of the solid product. The spectra display the N–H stretching mode involving π-bonded nitrogen (sp2 N) at ca. 3434 cm−1,while the atom ratio of H:B is found to be 2.84:1. Based on the hydrogen release measurements, spectroscopic observations and elemental analyses, we deduce that the predominant solid product of dehydrogenation of CO2-treated AB at 85 °C is a polymer with an empirical formula of (NBH3) n . It corresponds to the solid product after 1.5 equivalent hydrogen release of AB.
+

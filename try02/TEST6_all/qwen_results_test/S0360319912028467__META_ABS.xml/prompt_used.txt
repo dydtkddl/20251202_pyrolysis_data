@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Metals flow analysis applied to the hydrogen production by catalytic gasification of plastics Gasification processes can play a key role in the clean energy production from fossil and non-conventional fuels because of its transformation in a synthetic gas (syngas) rich in hydrogen and carbon monoxide. Fluidized bed reactors, both bubbling and circulating, allow to use a catalytic or reacting solid material in partial or total substitution of the bed in order to promote the dehydrogenation of the fuel. Depending on the operating conditions of reactor and of fuel type, the catalyst has a strong influence on the hydrogen yield; otherwise, the effect of catalyst add to a fluidized bed can decrease during the experimental run due to its progressive deactivation. The experimental tests demonstrated that the utilization of olivine as bed material, recognized in the literature as a good catalyst for gasification process of biomass and plastics, improves the dehydrogenation of the recycled polyethylene used as fuel by producing a hydrogen-rich syngas and a coke layer on the bed particles. The tests also indicated that the olivine was not capable to catalyse the dehydrogenation process for long time because of loss of metals diffused and linked to the carbonaceous solid (coke). A Substance Flow Analysis has been applied to the experimental data in order to evaluate the Hydrogen Recovery Efficiency for the gasification tests and to follow the repartition of metals (Fe, Ni, Mg) in the input/output streams and in the bed. The limited duration of the steady state regime as observed during the tests with olivine indicated a progressive reduction of the catalytic action correlated to the loss of metals. In other words, the use of olivine allows to obtain very high hydrogen concentration in the producer gas but for a limited time and without the possibility to recover its catalytic capacity by thermal or mechanical regeneration due to the progressive loss of metals responsible of polymer dehydrogenation. This experimental result is strictly correlated to the utilization of polyethylene as fuel. This evidence has been confirmed by analysis on olivine and fines elutriated by the reactor and showed, in this work, by a material balance on metals.
+

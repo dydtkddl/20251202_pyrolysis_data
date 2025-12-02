@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Digestibility and fate of biodegradable plastic mulch films in thermophilic anaerobic digestion Recent developments in biodegradable mulches (BDMs) provide a sustainable and eco-friendly alternative to persistent polyethylene (PE) mulches, addressing plastic pollution and disposal challenges; however, BDM degradation requires an extended period for complete mineralization under natural in-situ conditions. This study investigates the potential of thermophilic anaerobic digestion (AD) as an alternative to the in-situ degradation of BDMs. Two commercially available BDMs were evaluated in batch AD, initial characterization, and post-AD analysis of digestate were carried out for remaining fragments and liquid. In the TGA, a major weight loss in both BDMs at 400 °C indicated a high polybutylene-adipate-co-terephthalate (PBAT) content (>70 %), along with biobased polymers. After 160 days of digestion, cumulative methane yields were 226 and 129 mL CH4/g VS for BDM Samples 1 and 2, respectively. These values correspond to 36 % and 25% of their respective theoretical methane potentials (628 and 508 mL CH4/g VS) due to the low biodegradability of PBAT. FTIR analysis of BDM fragments showed similar spectral features with some shifts and new peaks (OH group) due to hydrolysis. The biomethane potential (BMP) tests showed no accumulation of volatile fatty acids (VFA), but soluble chemical oxygen demand (sCOD) increased due to partial biodegradation. Further analysis detected different monomers of PBAT, such as 1,4-benzenedicarboxylic acid, in the liquid phase of the digestate. This suggests that while most of the particles disintegrated (>98 % size reduction), the thermophilic anaerobic microorganisms were not able to mineralize BDMs completely, thus requiring further treatment.
+

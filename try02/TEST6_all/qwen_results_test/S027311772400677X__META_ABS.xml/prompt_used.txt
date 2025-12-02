@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comparison of additive manufactured to injection molded Martian regolith based polymer matrix composites The completed study investigated the creation of Martian regolith simulant composite parts using injection molding and additive manufacturing. Traditional manufacturing techniques such as injection molding are not feasible on the Martian surface therefore in-situ processes must be developed using additive manufacturing processes to prepare habitats prior to having a human presence on the surface. The goal of this study was to investigate the impacts of additive manufacturing on the material property values between parts made using traditional injection molding and additive manufacturing. Martian regolith simulant composite pellets were created by combining a Martian regolith simulant at 40 wt% loading with polypropylene via twin screw extrusion. This material was then used to create test specimens using injection molding and additive manufacturing. Samples underwent tensile, flexural, Izod impact, and immersion density tests according to ASTM International and standardized test instructions. Additive manufactured parts saw a nearly 40% reduction in tensile and flexural strength with more than double the tensile modulus when compared to injection molded parts. The flexural modulus for additive manufacturing was around 36% that of the injection molded part with a minor decrease in density of around 13%. The collected test results suggested that while there were differences in the material property values between the manufacturing processes, a more interesting foaming behavior of the extrudite was observed during the additive manufacturing process resulting in an extremely rough and pitted surface. This rough surface finish was a stark comparison to the smooth injection molded parts. This observed foaming behavior in the polymeric composite material during thermal processing prompted the theory that thermal releases from the Martian regolith simulant was the most likely cause of the observed differences. Pellet surface moisture tests, Martian regolith simulant thermogravimetric analyses, and literature reviews of thermal decomposition of the Martian regolith simulant constituents revealed that most likely olivine releases oxygen and hydrated silica releases water during the thermal processing of the Martian regolith simulant composite. During a closed mold process such as injection molding, these volatile gases are forced out of the part by the pressures of the molding process, but in an open to atmosphere process such as additive manufacturing these gases foam to the surface during cooling leaving the part with an inferior surface finish.
+

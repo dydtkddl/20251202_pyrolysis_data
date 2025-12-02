@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Testing bioplastic containing functionalised biochar Although flame retardants are very effective in reducing the fire hazard of polymeric materials, their presence may be detrimental to mechanical strength. Hence, in order to have a holistic improvement of performance properties, a new approach has been developed wherein biochar is used to host a naturally-occurring flame retardant (lanosol). The issue of loss in mechanical strength of a polymer host is alleviated by the use of biochar. Three different doping procedures were investigated, namely, dry mixing, and chemical and thermal-based doping, to integrate lanosol into the biochar pores. The doped biochar was used to develop wheat gluten-based blends. The mechanical and flammability properties of the blends were assessed. It was found that thermal doping was the most effective in introducing significant amounts of lanosol particles inside the biochar pores. The bioplastic containing chemically, and thermally doped biochar had equal tensile strength (5.2 MPa), which was comparable to that of the unmodified material (5.4 MPa). The thermally doped biochar displayed the lowest cone calorimeter peak heat release rate (636 kW m−2) for combustion and the highest apparent activation energy (32.4 kJ mol−1) for decomposition. Thus, for flame retarding protein-based matrices, the use of additives thermally doped into biochar is recommended to both simultaneously improve fire-resistance and conserve mechanical strength.
+

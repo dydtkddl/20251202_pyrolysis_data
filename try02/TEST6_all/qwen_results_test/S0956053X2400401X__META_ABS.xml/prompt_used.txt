@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characteristics of pollutant generation from 3D-printed photocured waste combustion With the rapid advancement of photopolymerization-based 3D printing technology, the volume of PCW has experienced a sharp increase. The potential environmental ramifications of PCW disposal demand careful consideration, especially given its current practice of being incineration alongside MSW. In this study, the TG-MS/FTIR system was carried out to probe the thermogravimetric characteristics and volatile byproducts during combustion. Various product compositions resulting from different mixing ratios of PCW incineration with MSW were investigated. It was observed that fluorene (C13H10) and triphenylene (C18H12) produced by PCW combustion 0.52 mg/g and 0.43 mg/g respectively, which are twice as abundant as those generated from normal plastic. When PCW incineration along with MSW, compounds such as naphthalene (C10H8), cyclohexane (C6H12), and heptane (C7H16) were generated in concentrations of 1.25 mg/g, 1.05 mg/g, and 0.95 mg/g respectively, which are at least twice as much as with MSW incineration alone. The incineration of PCW with rubber and textiles resulted in the production of 2.34 mg/g to 3.76 mg/g more PAHs compared to PCW combustion alone. The incineration of PCW with paper resulted in the production of 3.12 mg/g to 5.15 mg/g more heptane, nonane, cyclohexane, pyrene, and anthracene than PCW combustion alone. Incineration of PCW with wood proved to be the cleanest method, with product contents primarily below 0.10 mg/g. When incinerated with food residues or normal plastic, most of the product content remained below 0.05 mg/g. Considering the environmental pollution resulting from PCW combustion, the disposal of PCW warrants careful consideration and management.
+

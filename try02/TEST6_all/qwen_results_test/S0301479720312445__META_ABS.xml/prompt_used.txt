@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+From end-of-life tires to storable energy carriers End-of-life tires are an increasingly important environmental burden. Since retreading is only partly possible, safe and economic methods of disposal need to be developed. Pyrolysis of ELTs, and subsequent upgrading/application of the produced energy carriers, is considered a valuable treatment method. In order to design the process, numerous operation units have to be taken into account. Char, vapour and gas are formed in the reactor. The char is purified from ZnO with a leaching process. The pyrolysis vapour is separated into a condensable fraction (oil) and a non-condensable fraction (gas) thanks to a cross-flow condenser with air as indirect cooling medium. The remaining gas is compressed to 6 bar: a part of it is continuously converted in electricity for process use, while another part is stored for power generation at peak demand time. A flowsheet of the process is established and environmental and assessment of investments and production are discussed. For the pyrolytic treatment of 3 ton/hr of ELTs, the required heat for the reactor is 271 kW at 380 °C, provided by electrical heating elements. A reactor volume is determined for a residence time of about 6 h. For the cross-flow condenser, indirectly air-cooled, a heat-transfer area of about 13.2 m2 is required. The compression of the gas the pressurized pyrolytic gas storage tank depends upon the excess pyrolytic gas produced during operation. The char cooler requires a heat-transfer area of 10.2 m2, when indirectly cooled by water. Operating parameters of the leaching and subsequent recovery of Zn2+ complete the design. The product added-value and the large-scale capacity make the process economically viable, although the ROI is between 2 and 3 years.
+

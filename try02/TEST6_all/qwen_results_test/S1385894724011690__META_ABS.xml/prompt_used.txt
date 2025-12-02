@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Methane pyrolysis in packed bed reactors: Kinetic modeling, numerical simulations, and experimental insights Pyrolysis of hydrocarbon feeds such as methane (CH4) and natural gas emerges as a pivotal carbon dioxide-free large-scale hydrogen (H2) production process combined with capturing the carbon as solid material. For fundamental understanding and upscaling, the complex kinetics and dynamics of this process in technically relevant reactors such as packed and moving beds still need to be explored, particularly concerning carbon formation and its impact on reactor performance. This study integrates kinetic modeling, numerical simulations, and experimental findings to comprehensively understand CH4 pyrolysis under industrially relevant conditions and its implications for efficient H2 production and carbon capture. The investigation covers temperatures from 1273 K to 1873 K, H2 addition with H2:CH4 ratios of 0 to 4, and hot zone residence time of 1 to 7 s. Two distinct pathways lead to carbon formation: soot formation and carbon deposition. Each pathway originates from different gas-phase precursors. An elementary-step-based gas-phase reaction mechanism is coupled with a soot formation model from polycyclic aromatic hydrocarbon and a newly developed deposition model from light hydrocarbons. Numerical simulations are performed in a packed bed reactor model, incorporating a method of moments for soot formation and a model for carbon deposition. The model is evaluated against experiments and predicts the effects of operating conditions on gas-phase product distribution and carbon formation. It also estimates the change in bed-voidage over operational time. The study reveals that at the temperature 1673 K, CH4 conversion exceeds 94 %, while both H2 and solid carbon yields surpass 96 %. The sophisticated modeling and simulation framework presented herein thus provides an enhanced understanding of the CH4 pyrolysis process and presents a valuable tool for optimizing this process.
+

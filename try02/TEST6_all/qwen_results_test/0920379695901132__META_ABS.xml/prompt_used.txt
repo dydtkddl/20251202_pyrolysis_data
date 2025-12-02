@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+ITER: the first experimental fusion reactor The International Thermonuclear Experimental Reactor (ITER) Project is a multi-phased project, presently proceeding under the auspices of the International Atomic Energy Agency according to the terms of a four-party agreement between the European Atomic Energy Community, the Government of Japan, the Government of the United States, and the Government of the Russian Federation. The project is based on the tokamak, a Russian invention which has been brought to a high level of development and progress in all major fusion programs throughout the world. The objective of ITER is to demonstrate the scientific and technological feasibility of fusion energy for commercial energy production and to test the technologies for a demonstration fusion power plant. During extended performance operaton ITER will be capable of producing more than 1000 MW (electric) of fusion power, an amount of power that is comparable with one of today's electricity generating plants. The objective of the Engineering Design Activities (EDA) phase is to produce the detailed, complete, and fully integrated engineering design of the tokamak and all technical data necessary for the construction of ITER. The ITER project will be a major step from present fusion experiments and will progress towards a fusion reactor. It will also require the development and implementation of major new components and technologies. The inside surfaces of the plasma containment chamber will be designed to withstand temperatures of up to nearly 500°C, although normal operating temperatures will be substantially lower. Materials will have to be carefully chosen to withstand these temperatures and a high neutron flux. In addition, other components of the device will be composed of state-of-the-art metal alloys, ceramics and composites, many of which are now in the early stages of development and testing. The main systems of ITER are the superconducting magnet coils and their support, the vacuum vessel and the shield/blanket, the heating, fueling systems, the cryostat, the power source and the buildings. During operation the ITER device will sustain a controlled fusion burn for periods of greater than 1000 s. Numerous components, experimental packages, and test modules will have to be remotely installed and removed from the ITER device in order to test materials properties, component characteristics and material lifetimes. This paper reviews the present status of the ITER design, its components and technologies.
+

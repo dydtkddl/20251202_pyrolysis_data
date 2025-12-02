@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Prospects of using chars derived from mixed post waste plastic pyrolysis in civil engineering applications Pyrolysis provides a sustainable solution for managing post-consumer mixed plastic waste (PC-MPW) streams by producing valuable mixtures of liquids and gases, which have potential for use as fuels. Compared with landfilling, gasification and incineration processes, pyrolysis has the smallest environmental footprint. Waxes produced as an intermediate product of controlled pyrolysis conditions have been used as viscosity-reducing additives in modified asphalts, which reduce energy requirements for heating and mixing on site. The chars produced from PC-MPW pyrolysis have been used to produce activated carbon (adsorbents), additives in epoxy resins and fuel briquettes. These chars have proven to increase the conductivity, thermal stability and non-flammability of epoxy resin composites. Furthermore, the chars also have potential as additives in concretes to reduce the carbon footprint associated with Portland cement production. Albeit PC-MPW-chars have not been used in civil engineering applications to date, chars derived from other organic sources (e.g. wood) have been successfully used in cement admixtures and demonstrated their atmospheric carbon sequestration and strength gaining capabilities. The material properties of the chars that are responsible for producing such promising performances include high porosity (which enables water absorption and retention capacities), high surface area and reactivity (particularly for chars produced at higher pyrolysis temperatures) for promoting the formation of cementitious gels. Furthermore, pulverised chars act as a “micro-filler” within cementitious materials, whereby they fill pore spaces and increase material strength and stiffness. This study highlights the promise of PC-MPW chars as a low carbon additive for use in cement-based construction materials.
+

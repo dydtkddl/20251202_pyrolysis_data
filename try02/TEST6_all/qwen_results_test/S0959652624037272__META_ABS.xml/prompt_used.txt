@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Delving into textile fast pyrolysis: A holistic study on the effects of feedstock and temperature variability Perpetual fast fashion wave, dismal global recycling rate, and poor circularity of textiles urged sustainable textile waste disposal solution in lieu of incineration and landfilling. Herein, textile fast pyrolysis was mooted as a promising solution by dint of its fast disposal rate, mild pollutant emission, and multiple value-added products formation. Following ill-defined thermochemical behaviour of individual textiles, in-depth experimental exploration on textile fast pyrolysis was supplemented by feedstock characterization, product distribution, and product characterization to unravel the effects of feedstock (natural/synthetic) and temperature (500–900oC) variability on pyrolysis products. Textile fast pyrolysis harnessed pyrogas with two variable products, viz. retrievable chars and oils [natural textiles: cotton (C), denim (D), & cashmere/plant fibre (CP)] or non-retrievable chars and waxes [synthetic textiles: polyester (P), P/acrylic (PA), & P/cotton (PC)]. Melting and high aromaticity of polyethylene terephthalate (PET) rendered the synthesis of non-retrievable chars and waxes, separately. Given monotonic char yields (7.31–24.19 wt%) reduction with temperature, the oil/wax (53.19–75.19/60.46–70.52 wt%) and gas (13.44–33.67 wt%) yields were negatively correlated to each other. Twill-woven network of D contributed to exclusively high BET surface area of D chars (132.64–217.10 m2/g). All natural textile chars (28.56–32.88 MJ) exhibited comparable higher heating value (HHV) to commercial coals/coke (14.77–34.39 MJ/kg) and biochars (7.26–33.37 MJ/kg). Compared to the commercial fuels, raw textile oils (incombustible-10.14 MJ/kg) and textile waxes (15.88–23.18 MJ/kg) were inferior fuels with low HHV. Nonetheless, cotton (C & D) oils, CP oils, and P-based textile waxes had respective enriched content of levoglucosan (6.85–34.38 area%), triacetoneamine (6.22–21.09 area%), and benzoic acid (16.37–46.55 area%). Considering noteworthy H2 formation data sets (700–900oC; C700 only), natural textile pyrogas (62.75–79.02%) had greater syngas (H2 & CO) composition than synthetic textile pyrogas (62.48–68.23%). At optimal temperature of 900oC, textile fast pyrolysis generated pyrogas with H2:CO ratios (1.30–3.49 ≈ 2) that nearly ideal for Fischer-Tropsch synthesis. Conversely, textile fast pyrolysis also emitted pollutant gases that differ between natural (NH3, N2O, NO, & SO2) and synthetic [NH3 (excluding P), N2O, & NO2] textiles.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic pyrolysis kinetic behaviour and TG-FTIR-GC–MS analysis of waste fishing nets over ZSM-5 zeolite catalyst for caprolactam recovery Caprolactam is the main compound of nylon 6 waste fishing nets (WFNs) and its recovery conserves natural resources, maximizes WFNs economic performance, and closes the circular economy loop of the fishing net industry. Within the framework and as a part of the Healthy Seas’ initiative to clean the oceans from waste fishing nets (WFNs), and to valorise it, this research aims to study the catalytic pyrolysis behaviour of the WFNs extracted from oceans in order to study their potential applications in the energy conversion field. The catalytic pyrolysis experiments of WFNs over ZSM-5 Zeolite catalyst (2.5, 5, 10, 20, 50 wt%) were conducted using thermogravimetry (TG) coupled with Fourier-transform infrared spectroscopy (TG-FTIR) and gas chromatography–mass spectrometry (GC-MS) at different heating rates (5–30 °C/min). Also, the kinetics of ZSM-5/WFNs catalytic pyrolysis was studied by model-free methods (KAS, FWO, and Friedman). In addition, the distributed activation energy model (DAEM) and the independent parallel reaction kinetic model (IPR) combined with the optimization algorithm were used to fit the TGA-DTG experimental data and to calculate the parameters that can achieve the minimum deviation. The TGA results showed that the main decomposition zone was located in the range 342–476 °C with a total weight loss 83-75 wt% (based on the amount of catalyst). Meanwhile, FTIR and GC-MS results manifested that alkyl C–H stretch functional group, carbonyl functional group (CO), and caprolactam (83.15%; at 20 wt% of ZSM-5) are the main groups and volatile compounds in the decomposed WFNs samples. The model-free kinetics analysis showed that all activation energies were estimated at 112 kJ/mol (WFNs) and 158, 230, 197, 201, and 220 kJ/mol for ZSM-5/WFNs samples (2.5, 5, 10, 20, 50 wt%). At the same time, DAEM and IPR models proved a high prediction to fit TG curves at all heating rates. Based on these results, catalytic pyrolysis using 20 wt% of ZSM-5 can be used as a promising technology for extracting caprolactam from WFNs with high yield (83%). The recovered caprolactam can be used in the production of nylon fibres, nylon thin films, carpets, textiles, resins, etc.
+

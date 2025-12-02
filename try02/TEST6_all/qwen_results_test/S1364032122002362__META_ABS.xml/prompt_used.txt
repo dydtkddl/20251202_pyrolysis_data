@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermochemical conversion processes of Dichrostachys cinerea as a biofuel: A review of the Cuban case The sustainable development of society and the pressure over the use of cleaner technologies have become essential for mankind to avoid climate change. Dichrostachys cinerea (marabou) is a widely grown invasive tree species across the forest in Cuba, considered as an unsolved problem with high potential to be used as a biofuel. This study aims to perform a critical review on the maturity status of thermochemical conversion processes (torrefaction, pyrolysis, gasification, and combustion) using marabou as high-quality biomass to produce a sustainable biofuel. According to the thermochemical properties of marabou, it could be considered as a promising novel feedstock to produce a high-quality biofuel. The current development of thermochemical conversion technologies with the main operating parameters is studied. Combustion is becoming the widespread technology at medium/large scale; however, biomass gasification is the most promising technology at small scale, mainly in off-grid rural communities. Despite torrefaction being in their early stage of research, preliminary studies suggest that is the most economically feasible alternative. To accelerate the commercialization, reduction of pollutant emissions, application of catalyst-based mechanisms and optimization in supply areas are hotspots. The emphasis of this review is to promote the sustainable use of an invasive tree in a developing country as a case study, which can be exploited as an energy resource, providing local and regional incomes, and new investment opportunities not only in small countries but also in isolated areas from large countries.
+

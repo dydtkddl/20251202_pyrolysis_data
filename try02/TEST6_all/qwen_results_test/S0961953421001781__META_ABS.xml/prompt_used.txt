@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Spent coffee grounds and tea leaf residues: Characterization, evaluation of thermal reactivity and recovery of high-value compounds Spent coffee grounds (SCGs) and tea leaf residues are investigated as a potential source of bioenergy and biochemicals and compared to several woody biomasses. The effect of initial processing (coffee roasting and tea oxidizing) on feedstock composition and thermal behavior is assessed experimentally and analytically. In addition to proximate and ultimate analyses, the materials are examined by combustion tests coupled with Fourier-transform infrared spectroscopy and thermogravimetric analysis coupled with mass spectrometry in oxidizing and inert atmospheres. The biggest differences in composition of the samples are found in the high elemental N and S contents of SCGs (2.9 wt% of N and 0.1 wt% of S on average) and especially tea leaf residues (4.5 wt% of N and 0.2 wt% of S on average). The elevated N and S values lead to NO and SO2 release during combustion. Overall, the obtained levels of reactivity and heating values (with a maximum higher heating value of 24 MJ kg−1 for the Arabica-Robusta coffee blend) confirm the significant energy potential of both the coffee and tea samples. Mass spectrometry analysis of the studied materials reveals higher heterogeneity of macromolecular composition of coffee and tea samples compared to woody biomasses. Pyridine, pyrazine, phenols and acetic acid are the most abundant among detected species and have demonstrated beneficial characteristics for a broad spectrum of human activities. The composition characteristics and reactivity test results presented in this work promote more effective valorization and usage of these currently little used biomass residues.
+

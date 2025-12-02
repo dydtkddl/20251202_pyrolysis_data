@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of analcime on hydrocarbon generation for type I kerogen in organic-rich shale by semi-open pyrolysis Analcime, a key mineral especially in organic matter-rich sediments, plays a critical role hydrocarbons generation from kerogen. However, its effect on hydrocarbon generation from type I kerogen remains unclear. In this study, semi-open thermal simulation experiments were conducted on lacustrine shale to investigate the relationship between analcime and hydrocarbon generation. Semi-open pyrolysis experiment was performed on type I kerogen in organic-rich shale containing of 15 %, 27 %, and 35 % analcime concentrations across a temperature range of 300 °C to 500 °C. The analcime collected from the study area is sedimentary and diagenetic, characterized as low-silica analcime formed by chemical reactions between clay minerals and sodium-rich alkaline water. Results demonstrate that increasing analcime contents significantly enhances hydrocarbon yields of oil and gas while reducing activation energy, indicating that analcime accelerates hydrocarbon generation from kerogen. However, the durations of hydrocarbon generation appear to decline with increasing analcime contents. Thus, analcime influences hydrocarbon generation by increasing the conversion rate and reducing the generation cycle primarily due to its catalytic effects. Specifically, analcime promotes organic matter decomposition through acidic catalysis and adsorption, establishing an efficient catalytic system.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation on chlorine migration during pyrolysis of medical waste Large quantities of physiological saline and polyvinyl chloride fragments constitute the primary sources of chlorine within medical waste. During the thermochemical treatment of medical waste, they induce severe corrosion and degradation of product quality. A combined TG-MS-FTIR analysis of 13 representative medical waste types, including plastics, rubber, and cellulose materials, along with their mixtures, revealed a signature five-stage co-pyrolysis process. Free radicals from fibrous dehydration aided plastic scission and lignin cleavage, while polymer melt inhibited secondary fiber reactions. NaCl catalyzed fibrous decarboxylation but hindered hydrocarbons. Fixed-bed tests showed chlorine migration intensely temperature-dependent, with under 500 °C critical for dechlorination. Crucially, 20.06 % of liquid-phase chlorine here existed as chlorinated esters, confirming co-pyrolysis alters speciation via ester exchange. Even at 700 °C, 25.95 % char chlorine remained organic; gas-phase enrichment rose to 44 % by 800℃. Introducing hematite catalyst proved highly effective. Its surface lattice oxygen mediated C-Cl cleavage, reducing chlorinated ester yield by 6.3 % at 500 °C and decreasing chlorine content in the liquid-phase product by 5 %. Hematite also enhanced tar secondary cracking, boosting gas yield and raising renewable gas calorific value by 19.34 %. XRD confirmed stable FeCl3 formation. By synergizing hematite catalysis with the optimized pyrolysis temperature profile, this study achieved targeted volatile chlorine enrichment and significant suppression of key chlorinated residues. This offers innovative theoretical and technological support for sustainable chlorine pollution mitigation during medical waste pyrolysis resource recovery.
+

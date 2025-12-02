@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Oxidative steam reforming of HDPE pyrolysis volatiles on Ni catalysts: Effect of the support (Al2O3, ZrO2, SiO2) and promoter (CeO2, La2O3) on the catalyst performance High density polyethylene (HDPE) pyrolysis and in-line oxidative steam reforming was carried out in a two-step reaction system consisting of a conical spouted bed reactor and a fluidized bed reactor. Continuous plastic pyrolysis was conducted at 550 °C and the volatiles formed were fed in-line to the oxidative steam reforming step (space-time 3.12 gcat min gHDPE −1; ER = 0.2 and steam/plastic = 3) operating at 700 °C. The influence Ni based reforming catalyst support (Al2O3, ZrO2, SiO2) and promoter (CeO2, La2O3) have on HDPE pyrolysis volatiles conversion and H2 production was assessed. The catalysts were prepared by the wet impregnation and they were characterized by means of N2 adsorption-desorption, X-ray fluorescence, temperature-programmed reduction and X-ray powder diffraction. A preliminary study on coke deposition and the deterioration of catalysts properties was carried out, by analyzing the tested catalysts through temperature programmed oxidation of coke, transmission electron microscopy, and N2 adsorption-desorption. Among the supports tested, ZrO2 showed the best performance, attaining conversion and H2 production values of 92.2% and 12.8 wt%, respectively. Concerning promoted catalysts, they led to similar conversion values (around 90%), but significant differences were observed in H2 production. Thus, higher H2 productions were obtained on the Ni/La2O3-Al2O3 catalyst (12.1 wt%) than on CeO2 promoted catalysts due to La2O3 capability for enhancing water adsorption on the catalyst surface.
+

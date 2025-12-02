@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Dissociation mechanisms of spent lithium-ion batteries cathode structure by typical reducing components (CO, CH4 and H2) in biomass pyrolysis gas Biomass, as a green reductant, has been widely used in recovering valuable metals from lithium batteries (LIBs). The gas-solid reaction between biomass pyrolysis gas and the cathode is the key to facilitating cathode dissociation, but the interaction mechanism has not been clarified. In this study, the reducibility of typical reducing components (CO, CH4 and H2) in pyrolysis gas and the nickel‑cobalt‑manganese cathode (NCM523) dissociation mechanism were investigated. The experimental results showed that cathode was dissociated by a reducing gas at 550 °C producing mainly Li2CO3, LiOH, NiO, CoO, and MnO. The leaching efficiency of valuable metals (Li, Ni, Co, Mn) exceeded 97.9 %. Hydrogen reduction of the cathode required the shortest time (30 min), which was consistent with its lowest reaction activation energy (134.58 kJ/mol), followed by CO and CH4. Density functional theory modeling demonstrated that the adsorption strengths of reducing gases on the cathode surface followed the order of H2 > CO > CH4. The highest charge transfer (0.037 |e|) was observed between H2 and lattice oxygen, which was in agreement with the experimental results. The economic and environmental analysis based on EverBatt model showed that pyrolysis gas reduction process was a green and economical way to recycle spent LIBs.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Bio-oil recovery from microwave-assisted pyrolysis of Semen Abutili seeds using HZSM-5 catalyst The growing demand for sustainable energy has intensified research into alternative biofuels, yet many agricultural byproducts remain underexploited for their energy potential. This study addresses the valorization of Semen Abutili seeds via microwave-assisted pyrolysis for bio-oil production, aiming to optimize process parameters and analyze bio-oil composition. Using HZSM-5 as a catalyst, the study systematically investigated the effects of pyrolysis temperature (350–590 °C), microwave power (410–810 W), and catalyst loading (1–3 g) on product yield and bio-oil composition. Results revealed a parabolic trend in bio-oil yield, maximum at 38.98 wt% under optimal conditions (530 °C and 610 W). Although HZSM-5 addition reduced overall bio-oil yield by 5.72 %–23.70 %, it significantly enhanced aromatic compound production (up to 24.60 area%). The bio-oil showed a wide calorific range (0.35–19.90 MJ/kg) but contained substantial water (28.82–90.86 wt%). GC–MS analysis revealed a complex composition dominated by acetic acid (1.28–25.55 area%), along with aliphatics (2.49–12.67 area%), aromatics (5.66–24.60 area%), acids (5.58–35.49 area%), amines (6.62–11.14 area%), and ketones (6.50–24.07 area%). Notably, C2 carbon-number compounds were highly abundant (16.63–32.29 area%). Thermal and recovery efficiencies ranged from 0.17 % to 18.94 % and 0.33 % to 31.74 %, respectively. These findings highlight Semen Abutili seeds as a promising bio-oil feedstock, with potential for further fuel-quality optimization.
+

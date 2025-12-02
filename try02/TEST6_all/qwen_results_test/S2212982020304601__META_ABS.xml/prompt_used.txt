@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Utilization of CO2 in thermochemical conversion of biomass for enhanced product properties: A review CO2 is the primary greenhouse gas emitted through human activities. CO2 emissions from burning fossil fuels increased by approximately 2.7 percent in 2018, after global emissions of 35.8 Gt in 2017. Thus, finding energy and cost-effective methods to use the CO2 generated from industries for productive purposes is crucial, abating CO2 emissions while producing economic benefits. This paper aims to comprehensively review the effects of CO2 on syngas, biochar and bio-oil from gasification and pyrolysis processes. It was found that the utilization of CO2 during gasification and pyrolysis provides both control over syngas H2/CO ratio and biochar with enhanced properties for high value applications. Furthermore, it was determined that co-gasification under CO2 atmosphere can enhance synergistic effects. Results also showed that the presence of CO2 can increase the hydrocarbon concentration of bio-oil due to the different reactions that can occur between biomass and CO2 compared to biomass and N2. The use of CO2 as a feedstock also reduces the net CO2 emissions and therefore provides environmental benefits. However, the utilization of CO2 during biomass gasification and pyrolysis currently has some limitations, including the endothermic nature of gasification reactions, resulting in large energy and compressed CO2 inputs, which can be expensive. It is recommended that comprehensive studies to address the current limitations of the utilization of CO2 in biomass gasification and pyrolysis processes be conducted. Promoting the use of CO2 is integral to global CO2 emission reduction, aiding in efforts to achieve CO2 emission regulations outlined by the Paris Agreement (PA).
+

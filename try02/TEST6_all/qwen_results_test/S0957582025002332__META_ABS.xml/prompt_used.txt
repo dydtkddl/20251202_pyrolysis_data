@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of polypropylene on characteristics of gas products from biomass gasification This study explored the influence of polypropylene (PP) on the composition and characteristics of gas products generated from biomass gasification. The co-gasification of PP and biomass is presented as an effective solution for recycling solid waste while optimizing gas production. Biomass gasification, a promising technology for sustainable energy production, often faces challenges in achieving gas quality. Adding plastic waste, such as PP, offers a potential route to optimize the process and gas products. In this work, a chemical reaction kinetic model was developed with ten reactor units in Aspen Plus to simulate the co-gasification process of PP and biomass, and the compositions of gas products were analyzed, such as hydrogen (H2), carbon monoxide (CO), methane (CH4), carbon dioxide (CO2), and so on. Several factors affecting their characteristics were discussed, including PP mass fraction (Xpp), the oxygen equivalence ratio (ER), and gasification temperature (T). The results showed that the inclusion of PP significantly enhanced the volume fractions of CH4 and bio-hydrane alkane, and improved lower heating value (LHV), carbon conversion rate and gasification efficiency. The H2 volume fraction increased with T, reaching a peak of 47.6 % at an ER of 0.25 and XPP of 0.41 under 1000°C. The CO volume fraction also increased with T, with peak values ranging from 52.3 % to 53.9 % at an ER between 0.1 and 0.2 under 1000°C and an XPP of 0.09. CH4 and bio-hydrane alkane reached maximum volume fractions of 56.9 % at an ER of 0.1 and an XPP of 0.8. The syngas volume fraction reached up to 98.7 % within an ER range of 0.2–0.25 and an XPP range of 0.23–0.41 at 1000°C. LHV for bio-gas reached a peak of 25.85 MJ/m³ at an ER of 0.25 and Xpp of 0.8 under 800°C. CO₂ emissions declined with increasing T and Xpp and decreasing ER. These results proved that integrating plastic waste into the gasification process may serve as a sustainable strategy for optimizing biomass conversion, enhancing gas quality and reducing CO2 emissions.
+

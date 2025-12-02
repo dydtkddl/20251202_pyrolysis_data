@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Integrated “adsorption-catalysis-adsorption” green strategy for efficient adsorption for the removal of methylene blue and catalytic preparation of hydrocarbon-rich, low N/O bio-oil This study proposes an “adsorption-catalysis-adsorption” strategy to improve the recycling capacity of bio-char, which has implications for improving bio-char utilization and reducing greenhouse gas emissions. A porous bio-char (EPAC) was prepared and used for effective methylene blue (MB) adsorption. The adsorbent after MB adsorption was used to fabricate a new carbon catalyst (EPMCC), which exhibited an excellent catalytic capacity for low N/O bio-oil. The nitrogen content of the bio-oil catalyzed by EPMCC decreased from 34.46 wt% to 17.04 wt%, and the hydrocarbon content increased from 15.52 wt% to 29.09 wt% compared to the pyrolysis of Enteromorpha clathrate alone. The used EPMCC was then regenerated to obtain a new EPMNC adsorbent with a high specific surface area (1097.99 m2·g−1). The maximum adsorption capacity of EPMNC was 554.38 mg·g−1, and the adsorption mechanisms involved electrostatic interactions, π-π interactions, and hydrogen bonding. This study promotes the cycling of carbon and nitrogen in organic wastewater systems containing nitrogen.
+

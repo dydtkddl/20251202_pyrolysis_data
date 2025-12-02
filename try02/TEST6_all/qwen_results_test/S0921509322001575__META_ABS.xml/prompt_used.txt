@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characterization of multi-material 316L-Hastelloy X fabricated via laser powder-bed fusion The aim of this work is to provide firsthand knowledge of 316 L stainless steel (316 L) and Hastelloy X (HX) multi-material processing via laser powder bed fusion (PBF). Specifically, microstructure of the interface is studied using scanning electron microscopy (SEM), energy-dispersive X-ray spectroscopy (EDS), and X-ray diffraction (XRD). Surface metrology is performed to characterize the resulting surface roughness at the interface followed by tensile and flexural testing of multi-material samples to characterize the mechanical properties of the interfaces. Results showed that use of proper process parameters for each individual material led to formation of a compositional gradient at the interface that stretched for 240 μm (10–12 layers) with no evidence of cracking or porosity. The interface exhibited higher surface roughness compared to 316 L or HX as measured by arithmetic mean height, Sa, and maximum valley depth, Sv, parameters. During tensile testing, samples failed in the 316 L region away from the interface, with comparable yield strength, ultimate strength, and ductility. Finally, it was concluded that the “naturally” formed interface created a compositional gradient which was defect free due to similar values of coefficient of thermal expansion, input energy density, and different Marangoni numbers of the materials.
+

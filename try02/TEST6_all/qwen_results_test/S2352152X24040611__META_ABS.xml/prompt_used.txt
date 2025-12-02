@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrothermal co-processing of plastic waste with lignocellulosic biomass and its application as a supercapacitor material Designing and optimizing a continuous process for hydrothermal conversion of biomass is critical in increasing the production capacity of valuable products. This study investigates the use of a continuous high-pressure single screw reactor for converting a mixed feedstock comprising sawdust and polypropylene wastes into a carbon-rich solid product that can be used in energy storage devices, especially as supercapacitor material. The process parameters for the continuous operation were optimized using the Box-Behnken design, the maximum yield obtained after the optimization was to be 50.15 % at 305.3 °C. Subsequently, the produced solid (biochar) was further activated using potassium hydroxide (KOH) and sulfuric acid (H2SO4) to improve the surface properties which would eventually improve the energy storage capability of the material. Electrochemical tests conducted on pristine biochar, KOH, and H2SO4 activated biochar showed that the specific capacitance values of 196.8 F/g for non-activated biochar, 403.67 F/g for KOH-activated biochar, and 325.96 F/g for H2SO4-activated biochar at a current density of 1 A/g. Energy density analysis indicated that the alkali and acid-activated biochar had energy densities of 45.53 Wh/kg and 36.0 Wh/kg, with corresponding power densities of 427.5 W/kg and 423.0 W/kg, respectively. These findings highlight the feasibility of utilizing hydrothermal co-processing along with a continuous process as a sustainable and efficient approach for waste management and the production of high-performance energy storage materials.
+

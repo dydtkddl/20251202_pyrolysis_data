@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mechanism insight into photocatalytic conversion of lignin for valuable chemicals and fuels production: A state-of-the-art review The depletion of traditional fossil fuel reserves and ever-increasing environmental problems have prompted the demand for the exploration of renewable resources. Lignin is an earth-abundant but underestimated and underutilized renewable energy source, which has the potential to replace fossil fuels for the production of value-added aromatic derivatives. Despite great efforts have been devoted, fully unlocking the potential of lignin is still far from reaching due to its complex structure and recalcitrant nature. Recently, photocatalysis provides a marvelous platform for pursuing versatile lignin transformation and has attracted growing interests from the academic community. The unique photogenerated reactive species as well as the mild reaction conditions enable the selective cleavage of targeted bond in lignin, while other functional groups remain intact. In this critical review, we attempt to provide an overview of the state-of-the-art advances in the principal photocatalytic processes applied for the conversion of lignin using various photocatalysts. This review focuses on the latest investigation of lignin conversion mechanisms with emphasis on selective C–O and C–C bond cleavage. Introduction to lignin structure, technical lignin and lignin model compounds is highlighted. In addition, general mechanisms of photocatalysis are also classified and discussed in detail. We conclude the perspective on photocatalytic transformation of lignin with an eye toward the future challenges in this field.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis mechanism and thermal degradation kinetics of poly(bisphenol A carbonate)-based polymers originating in waste electric and electronic equipment Poly(bisphenol A carbonate) or polycarbonate (PC) constitutes a significant fraction of the Waste Electrical and Electronic Equipment, mainly due to its high production and consumption rate and its variety of applications. Traditional methods for its treatment no longer appear to provide long-term solutions and for this reason, the investigation of thermochemical methods and more specifically pyrolysis as a potential recycling method took place in the current study. In the first part of this study, pyrolysis studies of polycarbonate have been performed in a Pyrolizer equipped with GC–MS, at five different reactor temperatures, in order to facilitate the understanding of the degradation mechanism. Higher pyrolysis temperatures were found to be more suitable for PC pyrolysis, since they increased the volatile fractions (liquid and gaseous). The gaseous fraction consisted mainly of CO2, CH4 and CO, whereas in the liquid fraction a large amount of different phenolic compounds, including the monomer bisphenol A was recorded. Based on the findings, it has been suggested that the main degradation pathway follows a chain scission mechanism and that the scission of the isopropylidene linkage is the first step. Phenols and phenolic compounds were formed through a series of scission and hydrolysis reactions. In the second part, pyrolysis kinetics of PC are investigated in detail using thermogravimetric experimental data, collected at several heating rates and several either model-free (isoconversional) or model-fitting models. From the isoconversional kinetic analysis the effective activation energy was fund to increase with the extent of conversion, ranging from 146 to 189 kJ/mol and from 154 to 215 kJ/mol, when using the integral method of Tang (similar to the KAS) or the differential method of Friedman, respectively. A simple first order kinetic model was found to simulate excellent the experimental data, though predicting different activation energies and pre-exponential factors at each heating rate employed. The random scission and the autocatalytic models were investigated in detail and the best fit to the experimental data at all different heating rates was found to be the autocatalytic model with n = 1.15 and m = 0.46 (values close to those considered for the random scission model with L = 2, i.e. n = 1.119 and m = 0.4) using an average activation energy, E = 195.9 kJ/mol and pre-exponential factor A = 6.06 1012 min−1. Having a detailed knowledge of the PC degradation kinetics and mechanism will help in better design of large scale process for the recycling of such material originating in WEEE and provide targeted value-added products.
+

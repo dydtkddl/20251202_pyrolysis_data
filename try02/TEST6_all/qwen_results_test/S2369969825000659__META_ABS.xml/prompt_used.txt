@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An end-to-end microbial platform for 100% bio-based long-chain polyester: From renewable substrate to eco-friendly polymer The development of sustainable, eco-friendly polyesters from renewable resources is crucial for reducing dependence on petroleum-based plastics. However, despite advances in microbial production of bioplastics, significant challenges remain in achieving high conversion efficiency and scalability for industrial applications. This study is the first to report the synthesis of a 100% bio-based polyester using both 1,12-dodecanedioic acid (1,12-diacid) and 1,12-dodecanediol (1,12-diol) via a two-step microbial bioconversion from a single plant oil-derived alkane. An engineered Candida tropicalis strain produced 150 g/L of 1,12-diacid with a productivity of 1.53 g/(L·h) in a 5 L fed-batch system using a two-phase biotransformation strategy. Escherichia coli engineered to express carboxylic acid reductase, which reduces carboxylic acids to aldehydes, and its activation enzyme phosphopantetheinyl transferase, converted 1,12-diacid into 68 g/L 1,12-diol with a productivity of 1.42 g/(L·h) in a 5 L fed-batch system, representing high titer and productivity for microbial production of long-chain α,ω-diols. Both monomer production processes were successfully scaled up to a 50 L pilot fermenter, validating their potential for industrial implementation. A highly efficient downstream purification process was developed, achieving > 98% purity and recovery rates for both monomers. The bio-derived monomers enabled the synthesis of polyesters with molecular weight and thermal characteristics similar to petroleum-based monomers of the same chemical structure. This integrated approach establishes a robust and scalable microbial platform that converts renewable lipid feedstocks into fully bio-based polyesters, thereby demonstrating an environmentally sustainable and industrially viable route to circular bioeconomy-based polyester production.
+

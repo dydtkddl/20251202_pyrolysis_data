@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Analysis and control of products obtained from pyrolysis of polypropylene using a reflux semi-batch reactor and GC-MS/FID and FT-ICR MS Pyrolysis of plastic waste allows to produce liquid fractions, but their molecular weight distributions are typically very large whereas it would be interesting to focus on light hydrocarbons. In this study, the pyrolysis of polypropylene (PP) was investigated using a semi-batch, vertical glass reactor heated at 480 °C equipped with a reflux condenser. The pyrolysis was performed with and without a reflux condenser. The temperature at the top of this reflux condenser was ranged from 125 °C to 200 °C depending on the heating power at the wall of this condenser. The permanent gas yield (C1 to C4) ranged between 20.9 wt% and 25.8 wt% when the reflux was used. The gas contained mainly hydrocarbons with a carbon range from C1 to C4 and H2 in a smaller extent. Their kinetic profiles followed a similar trend, i.e they exhibited a maximum with time. The GC-MS/FID detected mainly olefinic hydrocarbons (olefins) with less than 28 carbons. The major hydrocarbons obtained were light and heavy naphtha cuts when the reflux was used. The range of light naphtha (C5-C7) was between 13.1 and 16.7 wt% and the range of heavy naphtha (C8-C12) was between 69.1 and 87.2 wt% of the total mass fraction detected. The experiments demonstrated that the presence of the reflux has a significant impact on the liquid and gas yields. It allows to narrow the molecular weight distribution range of the liquid, which was confirmed by FT-ICR MS. As a consequence, the molecules of interest are maximised, especially those corresponding to the naphtha cuts.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalyst screening for conversion of Chlorella sp. to aromatic fuel additives: A sustainable strategy for CO2 capture Developing biofuels with characteristics similar to current fossil fuels and compatibility with existing petroleum infrastructure (drop-in biofuels) is gaining prominence, aligning with global efforts towards carbon-neutral economies and decarbonization of the transportation sector. The originality of the current study involves two directions: first, the use of Chlorella sp. microalgae, cultivated under simulated post-combustion gas, as a raw material for producing drop-in biofuel precursors; and second, an investigation of the catalytic activity of hierarchical zeolites in the deoxygenation and denitrogenation of volatile pyrolysis products, enhancing hydrocarbon content. To accomplish this, a micro-furnace-type temperature-programmable pyrolyzer coupled with chromatographic separation and mass spectrometry detection (Py-GC/MS) was utilized to assess the upgrading effectiveness of distinct zeolites (faujasite-type, MFI-type, and mordenite-type) on volatile pyrolysis products. All tested zeolites effectively reduced oxygenated and nitrogenated compounds in the volatile pyrolysis products, enhancing their suitability for producing renewable fuel. This supports sustainable development goals by promoting affordable, clean energy and climate action. HMor yielded the highest hydrocarbon content (98.5 %), followed by HZSM-5 (97.6 %) and HY (85.5 %). Catalytic upgrading significantly increased the concentration of aromatic hydrocarbons (at least 66.3 %), with MFI-type zeolites showing the highest selectivity for valuable BETX compounds (benzene, ethylbenzene, toluene, xylene). Hydrocarbons in the gasoline range, with up to 91.7 %, predominantly align with the needs of the transportation fuel market. The principal component analysis illustrates that using MFI-type zeolites promoted the lowest selectivity for PAHs, constituting precursors for coke formation, which is advantageous for ensuring a longer catalyst lifespan. Our results are promising and encourage the conversion of microalgal biomass into renewable fuel additives for formulating drop-in biofuels, as hydrocarbon-rich volatile pyrolysis products could be directly integrated into existing biorefineries. Thus, microalgal biomass cultivated using flue gas as the carbon source can be viewed as a versatile and promising resource for producing renewable fuel additives, contributing to developing a sustainable, low-carbon future.
+

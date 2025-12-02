@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Advances in biosolids pyrolysis: Roles of pre-treatments, catalysts, and co-feeding on products distribution and high-value chemical production Biosolids (stabilised sewage sludge) are solid residuals from the wastewater treatment process and are considered important bioresource. Therefore, the valorisation routes of biosolids, particularly those involving thermochemical treatment, demand further attention. Among these thermochemical conversion strategies, the pyrolysis technique converts biosolids into potentially valuable products (biochar, bio-oil, and pyrolysis gas). The traditional approach to biosolids pyrolysis involves the conversion of the numerous organic and inorganic constituents under the same conditions in a single reactor. This approach suffers from many technical and economical limitations around product selectivity, conversion kinetics, product yields, and product application potential. Prominent is the production of heavy metals (HMs) concentrated biochar and nitro-oxygenated and polyaromatic hydrocarbons contaminated bio-oil. The role of feedstock pre-treatments, catalysts and co-feeding in mitigating some of these challenges is getting immense research attention, for which a critical review is necessary. This work provides an overview of the development in biosolids pyrolysis, covering the various effects of pre-treatment, catalysts, and co-processing in influencing the thermal degradation behaviour, pyrolysis kinetics, product distribution, and product properties. A comprehensive review of the recent literature shows that chemical pre-treatment of biosolids can concurrently achieve demineralisation, HMs removal and hydrolysis, which add further value to the overall pyrolysis upcycling of the treated biosolids. Various catalysts additives such as metal oxides, metal salts, and zeolites can facilitate a range of desired reactions and inhibit pollutants release during biosolids pyrolysis. Co-feeding with a range of feedstocks introduces numerous synergetic benefits on product yield and qualities during the conversion process. Furthermore, these feed or process modifications to biosolids pyrolysis influence the distribution of value-added chemical components (such as hydrocarbons, ammonia, phenols, and levoglucosan) in the bio-oil, which were critically reviewed. The integrated approach to biosolids pyrolysis through sole or joint pre-treatment, catalysis and co-feeding could bring about a new route in biosolids valorisation. Finally, the work concludes with key challenges and provides perspectives for future research.
+

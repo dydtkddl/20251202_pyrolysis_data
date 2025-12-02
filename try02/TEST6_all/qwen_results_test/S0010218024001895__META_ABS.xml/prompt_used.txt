@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of pyrolysis temperature on carbon deposition from the perspective of volatile evolution during the ex-situ pyrolysis-catalysis of plastic To better understand the mechanism of carbon deposition, the ex-situ catalytic pyrolysis of polyethylene (PE) was explored over a FeNi/Al2O3 catalyst, and the evolution of volatiles as well as the yield and structure of carbon products at different temperatures were analyzed in depth by an in-situ atmospheric pressure photoionization high-resolution mass spectrometry (APPI HRMS) combined with a fixed-bed reactor. The results show that raising the pyrolysis temperature (from 500 to 800 °C) reduces carbon product yield and H2 production, and the proportion of carbon nanotubes (CNTs) in the carbon products decreases. The source of carbon products gradually shifts from liquid-phase carbon sources to gaseous-phase carbon sources. Below 700 °C, both the outer diameter and carbon interlayer spacing of CNTs decrease, while above 700 °C, they both increase along with increased distortion of carbon layers. It is also observed that the carbon layers are connected to the catalyst lattice stripes, and the interlayer spacing of carbon layers is greater than the catalyst lattice spacing. In situ mass spectrometry reveals a significant increase in the carbon number and double bond equivalent (DBE) values of volatiles with increasing pyrolysis temperature, but the rate of increase slows down after 700 °C. Volatiles from lower pyrolysis temperatures undergo severe polymerization, upon entering the catalytic zone at higher temperatures, minimizing temperature-induced distinctions. Nevertheless, it remains evident that volatiles from lower pyrolysis temperatures exhibit less pronounced polymerization when exposed to higher catalytic temperatures.
+

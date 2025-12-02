@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fine-tuning the fountain confined spouted bed reactor for HDPE steam cracking: Influence of bed particle size and steam flow rate Achieving high selectivity towards valuable products is crucial for the industrial development of any technology. This study investigates the use of a fountain confined conical spouted bed reactor (FCSBR) for upcycling HDPE into light olefins and BTX aromatics. In order to progress towards a highly efficient reactor for HPDE steam cracking, operation fine-tuning with this reactor has been addressed. This novel reactor technology enables a transition from conventional spouting regime to a fountain enhanced regime, as well as preventing the elutriation of fine particles. In order to progress in the understanding of the role played by process conditions in the HDPE steam cracking, a study has been conducted by analyzing the influence of bed particle size and steam flow rate on product distribution. Thus, two different particle sizes (0.35–0.50 mm and 0.63–0.80 mm) and a wide range of water flow rates (from 2.5 to 10 mL min−1) covering from conventional spouting to fountain enhanced regimes were explored. The detailed evaluation of the results revealed the combined effect of residence time, gas–solid contact and effective volume available in the fountain for steam cracking reactions. Increasing the bed particle size to 0.63–0.80 mm resulted in a higher C2-C4 olefin yield of 53.5 wt%, but decreased the BTX fraction to 9.0 wt%, suggesting that finer particles enhance overcracking and secondary aromatization reactions. Therefore, coarse particles yielded the highest C2-C4 olefin fraction, as well as the highest ethylene yield of 33.3 wt%. Regarding the effect of steam flow rate, ethylene production peaked at 31.5 wt% with a water flow rate of 7.5 mL min−1, and high yields of BTX, ranging from 14.2 to 16.8 wt%, were obtained. However, using 5 mL min−1 of water with fine particles allowed the recovery of as much as 66.7 wt% of high added value products, i.e, light olefins and BTX fraction.
+

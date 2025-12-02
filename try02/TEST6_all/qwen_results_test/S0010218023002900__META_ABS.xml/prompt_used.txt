@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on the influence of different side chain structures on the pyrolysis behavior of polyolefin plastic wastes As an important component of organic solid wastes, disposal of plastic wastes (PWs) has always been a thorny issue. Thermochemical conversion is an efficient method. In-depth research on the influence of structural differences on their pyrolysis behavior is beneficial to promote the development of thermal treatment and conversion technology of PWs. The differences in the chemical structure of different polyolefin plastics at the molecule level are mainly reflected in their side chains. Herein, a series of typical polyolefin plastics with similar backbone structure and different side chain structures, including high-density polyethylene (HDPE), polypropylene (PP), polystyrene (PS), polyvinyl chloride (PVC), polyvinyl alcohol (PVA) and ethylene-vinyl acetate copolymer (EVA), were selected for comprehensive pyrolysis characterization in this work. Advanced experimental analysis methods such as in-situ DRIFT and 2D-PCIS were adopted to investigate the evolution of two weak oxygen-containing side chains during pyrolysis of PVA and EVA, respectively. Besides, typical product distribution of six samples were systematically studied by combining SVUV-PIMS and GC/MS. Spectral analysis showed that OH side chain in macromolecular structure of PVA had the weakest thermal stability, and its oxidation reaction occurred earlier than dissociation and dehydration, while the acetoxy side chain in EVA polymers could not only be directly dissociated via deacetoxylation, but also be transformed into OH side chain via deacetylation that occurred simultaneously with deacetoxylation. Further combined with SVUV-PIMS and GC/MS, the distribution characteristics of pyrolysis products of polyolefin plastics and the rules of generation and release of typical products with temperature were obtained in detail. It was found that the release of typical oxygen-containing products was earlier or slightly earlier than the release of hydrocarbons in pyrolysis of PVA or EVA. However, the release of all hydrocarbons was almost simultaneous during the respective pyrolysis process of HDPE, PP and PS, suggesting that the evolution of oxygen-containing side chains with weak thermal stability occurred earlier under the drive of temperature. Based on the characterization results, the main evolution pathways of different side chains were proposed to explain the influence mechanism of different side chain structures on the pyrolysis behavior of polyolefin plastics. The cleavage of CC bonds mainly occurred in HDPE, PP and PS, while the evolution of side chains occurred first in PVC, PVA and EVA, and exerted different influence on the degradation of carbon skeleton.
+

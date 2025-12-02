@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recent advances in renewable hydrogen production by thermo-catalytic conversion of biomass-derived glycerol: Overview of prospects and challenges Glycerol is the main by-products obtained from the transesterification of vegetable oils and animal fats to produce biodiesel which is an important biofuel used for transportation. The increase in the global energy demand has pushed up the production of biodiesel with a corresponding increase in glycerol production over the years. The thermo-catalytic process is gaining wide popularity as sustainable technical routes of converting glycerol to renewable hydrogen. There exists a great potential of utilizing hydrogen as a critical part of a more sustainable and secure energy mix. Hence, this study focusses on the review of the recent advances and development in the thermo-catalytic conversion of glycerol to renewable hydrogen in the last one decade. The analysis of the reviewed articles showed that substantial efforts had been made in the application of thermo-catalytic process for the conversion of glycerol to renewable hydrogen. Glycerol reforming using steam, carbon dioxide (CO2) and oxygen (O2) have received significant research attention and have been found to have great potential as technological routes for hydrogen production. Whereas, the use of the photocatalytic glycerol reforming has the advantages of energy-saving by utilizing the vast available solar resources and suitable photocatalysts. However, each of the thermo-catalytic processes exhibits inherent challenges which have been a bottleneck to the development of the process to industrial scales. Nevertheless, the prospect of employing each of the thermo-catalytic processes for hydrogen production via glycerol conversion was identified with the possible suggestion of strategies of overcoming the challenges.
+

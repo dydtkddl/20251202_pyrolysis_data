@@ -1,0 +1,49 @@
+You are performing STRICT VARIABLE/CONSTANT extraction for ONE experiment group.
+
+You MUST extract information ONLY from PAPER_TEXT.
+You MUST NOT guess or infer anything.
+
+===========================================================
+PAPER TEXT:
+{{PAPER_TEXT}}
+===========================================================
+
+EXPERIMENT GROUP TO ANALYZE:
+{{GROUP_JSON}}
+===========================================================
+
+TASK:
+
+1. Identify the single experimental VARIABLE.
+   - Must be explicitly described in PAPER_TEXT.
+   - If the group JSON already suggests a variable, verify it.
+   - If no explicit variable exists, set: "variable": "not_explicitly_stated"
+
+2. Identify CONSTANTS:
+   - MUST be explicitly found in PAPER_TEXT.
+   - For EACH constant:
+       - Provide EXACT supporting sentences from PAPER_TEXT.
+
+3. ALL evidence sentences MUST be exact copies from PAPER_TEXT.
+
+OUTPUT FORMAT (JSON ONLY):
+
+{
+  "group_name": "",
+  "variable": "",
+  "constants": [
+    {
+      "name": "",
+      "evidence_sentences": [""]
+    }
+  ],
+  "evidence_sentences": [""]
+}
+
+RULES:
+- NO reasoning.
+- NO summaries.
+- NO invented experimental conditions.
+- STRICT extraction only.
+- JSON ONLY.
+

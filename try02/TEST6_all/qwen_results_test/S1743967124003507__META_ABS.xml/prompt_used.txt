@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Boosting light olefin production from pyrolysis of low-density polyethylene: A two-stage catalytic process The increasing production of waste plastics poses significant environmental and health risks. Low-density polyethylene (LDPE), a major component of plastic waste, is a high-quality feedstock for pyrolysis due to its high carbon and hydrogen content. Traditional pyrolysis methods, such as thermal cracking and one-step catalytic pyrolysis, have limitations in yield and selectivity of valuable products like light olefins. This study introduces a two-stage catalytic pyrolysis (TSCP) process aimed at enhancing the production of light olefins from LDPE. In the first stage, LDPE undergoes pyrolysis with MCM-41 catalyst, yielding a substantial number of liquid products and a minor portion of light olefins. The second stage utilizes Mg-ZSM-5 catalyst to further crack the high-temperature volatile matter into light olefins. The optimal conditions identified were 450 °C in the first stage and 500 °C in the second stage, achieving a maximum light olefin yield of 45.80 wt% and a low reaction temperature, decreasing the energy consumption. Additionally, the MCM-41 catalyst demonstrates excellent regeneration performance, with only a slight decrease in liquid yield after nine cycles. The Mg-ZSM-5 catalyst maintains high stability, with light olefin yield remaining at 83.60 % of the initial yield after 48 h of operation.
+

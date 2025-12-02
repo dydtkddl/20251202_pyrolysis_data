@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Bioprospecting lignin for biorefinery: Emerging innovations and strategies in microbial technology Developing biorefineries derived from plant biomass can help combat global warming by creating sustainable alternatives to depleting fossil-based products. Lignocellulosic biomass is a promising feedstock for biorefineries as it consists of cellulose, hemicellulose and lignin, which are efficiently converted into various valuable products such as biofuels, chemicals and other compounds through sustainable integrated biorefinery processes. While cellulose and hemicellulose contribute to glucose and various types of fermentable sugars for the production of valuable materials, lignin, with its aromatic structure and unique chemical properties, such as high carbon-oxygen ratio, is very valuable in biorefinery processes. However, the resilience of lignin and its toxic effect on enzymatic reactions pose a major challenge to the commercial viability of current biorefineries, which require advanced technologies to enable effective lignin degradation and to valorize and utilize the lignin. Although physical and chemical approaches have been explored, a sustainable approach is the enzymatic degradation of lignin by microbes. Bioprospecting of microorganisms using culture-dependent and culture-independent techniques to identify novel microbes, genes and enzymes mediating lignin depolymerization and their characterization is employed. Further improvements can be achieved with biotechnological methods such as protein and genetic engineering. Protein engineering uses directed evolution and rational design, while genetic engineering methods include heterologous/homologous gene expression and CRISPR/Cas9-based gene editing. Systems biology can better understand the complex interaction between microbes, their enzymes and lignin. These approaches contribute to advancing the valorization of lignin in biorefineries, and policy changes in favor of integrating this technology into society are critical to its success.
+

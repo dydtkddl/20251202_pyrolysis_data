@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimization and design of solar-thermal turquoise hydrogen production integrating solar dish-CH4 pyrolysis reactor: GA-CFD approach An innovative solution for clean H2 production is essential to meet the demand for transitioning to sustainable energy systems. Solar-assisted hydrogen production not only offers a reliable path to reducing H2 production costs but also enables a carbon–neutral for turquoise hydrogen production process. In this research, a novel hybrid solar-dish-assisted hydrogen production reactor system, including methane pyrolysis reactions, was designed for the first time using an integrated computational fluid dynamics (CFD) and genetic algorithm (GA) approach (GA-CFD). Governing equations, such as ray-tracing optics with specular reflection and solar flux concentration, alongside the reactive-convective-diffusive equations (momentum, heat, and mass transfer in porous media), were solved to model the solar dish and H2 production reactor, respectively. The design process integrates GA-CFD modeling of the solar dish and reactor, estimating both the hydrogen production rate and instrumental cost as functions of key parameters: focal length (m) and incident angle (°) for the solar dish, and catalyst porosity and loading (g/m3) for the reactor. CFD analysis of the solar dish reveals that, within the studied range of focal lengths (2–4 m), an intermediate focal length (3 m) offers an optimal balance between optical efficiency and thermal manageability for practical solar concentrator systems. Additionally, variations in the catalyst bed porosity from 0.2 to 0.6 result in a 100 % increase in H2 concentration at the reactor outlet. However, due to greater pyrolysis reaction progression at higher porosities, methane concentration decreases by 9.09 %. Furthermore, CFD results of the H2 production reactor show that wall temperature variations from 780 K to 850 K lead to an 8 % increase in methane conversion, a 629 % increase in hydrogen production rate, and a 9.5 % reduction in bed porosity due to accelerated reaction kinetics and improved heat transfer. Finally, the optimum design conditions for the hybrid solar-dish-assisted H2 production reactor, calculated using the multi-objective optimization algorithm of GA-CFD, are as follows: focal length = 2.63 m, incident angle = 50°, catalyst porosity = 0.5, and catalyst loading = 324.99 g/m3. The analysis reveals a clear trade-off, where a high H2 production rate is achieved at the expense of a low economic cost, and a confirmation test revealed that the optimum design could be reconstructed using GA-CFD with relative errors of 4.89 % and 3.92 % for the H2 production rate and cost targets, respectively.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fast pyrolysis of biomass: recent advances in molecular-level reaction mechanisms and detailed kinetic modeling Fast pyrolysis offers a promising pathway for converting biomass into liquid bio-oil, yet its high oxygen content, chemical instability, and complex composition hinder direct application as fuels or chemicals. Recent advances in experimental platforms and computational methods have reshaped research in this field. Multidimensional chromatography, high-resolution spectroscopies, synchrotron-based diagnostics, and quantum chemical modeling now enable accurate quantification of products, detection of reactive intermediates, and the development of predictive kinetic frameworks for individual yields. These innovations provide the scientific context for more systematic evaluations of biomass pyrolysis chemistry and facilitate the establishment of mechanistic links between molecular-level reactions and process performance. To ensure comprehensive coverage and transparency, this review applies the PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-Analyses) guidelines for literature selection and analysis. Through this systematic approach, key studies on model compounds—including cellulose, hemicellulose, and especially lignin derivatives—are critically assessed, highlighting bond scission routes, reaction intermediates, cross-component coupling, and the origins of major pyrolysis vapors. The resulting insights have informed the construction of detailed kinetic models, though challenges remain in addressing multiphase effects, expanding reaction families, and reducing uncertainties in large-scale simulations. By integrating state-of-the-art methodologies with systematic literature synthesis, this review identifies both progress and persisting gaps in molecular-level understanding of fast pyrolysis, providing guidance for advancing detailed kinetic modeling and accelerating the development of efficient, mechanism-based pyrolysis technologies.
+

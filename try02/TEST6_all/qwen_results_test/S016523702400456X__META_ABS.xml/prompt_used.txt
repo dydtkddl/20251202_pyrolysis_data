@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Production of hydrochar fuel by microwave-hydrothermal carbonisation of olive pomace slurry from olive oil industry for combustion application This work is the first investigation on microwave-assisted hydrothermal carbonisation (MHTC) of real olive pomace (OP) slurry from the olive oil industry to produce hydrochars with improved fuel properties for combustion applications (e.g., in boilers). Experiments were conducted based on the central composite design of response surface methodology with two main process variables: temperature (180–250 °C) and holding time (2–30 min). Severity factors (log R0) were calculated from the above variables and used to explain the process effect in a simpler way. Increasing the MHTC severity resulted in significant changes in the structure of OP (studied by FTIR and NMR analyses) as well as reductions in yield, bulk density, volatile matter, and ash content in the hydrochars. The high-severity hydrochar was positioned in the lignite zone (van Krevelen diagram). It also exhibited substantial reductions in the alkali index (86.53 %), slagging index (76.89 %), and fouling index (96.07 %) compared to the raw material. Overall, the best conditions for hydrochar production with improved combustion characteristics were found to be 250 °C for 30 min (HHV = 28.45 MJ/kg, energy densification ratio = 1.25, equilibrium moisture content = 31.1 mg/g, comprehensive combustibility index = 2.94 × 10−7%2 min−2 ºC−3). These properties indicate that high-severity hydrochars could be utilised as biofuels for energy applications.
+

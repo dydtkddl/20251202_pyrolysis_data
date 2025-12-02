@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrothermal liquefaction: Exploring biomass/plastic synergies and pathways for enhanced biofuel production The worsening environmental conditions, diminishing fossil fuel reserves, and increasing waste accumulation have redirected the attention of researchers and scientists towards the exploration of sustainable and non-exhaustive energy sources, as well as waste mitigation techniques. Among the various thermochemical technologies producing biofuels, hydrothermal liquefaction stands out as an effective technique for the simultaneous waste valorization and the production of sustainable biofuels. Under optimal conditions, hydrothermal liquefaction converts 70–80 % of feedstock energy into bio-oil, representing approximately 30–50 % of the feedstock's original mass. The review meticulously discusses and summarizes the process and reaction mechanism along with the influence of various factors on the hydrothermal liquefaction process, including the types of feedstocks (lignocellulosic biomass and plastic waste), operating conditions (temperature, residence time, pressure, substrate-to-water ratio, particle size, and heating rate), and catalyst types. According to the data documented in existing literature, the preferred temperature and residence time for attaining maximum bio-oil yields are reported to be within the range of 260–340 °C and 10–30 min for biomass, and 300–425 °C and 15–30 min for plastics. This review highlights the critical challenges in developing and scaling up the HTL process, proposing potential solutions to enhance feedstock conversion into value-added products. Additionally, it emphasizes the significance of understanding the chemical composition and synergistic interactions between lignocellulosic biomass and plastic waste to optimize product yields and enhance the overall process efficiency. Moreover, it discusses the different products of the hydrothermal liquefaction process—bio-oil, biochar, aqueous phase, and gaseous fraction—and their potential applications, while proposing techniques to upgrade the quality of biocrude.
+

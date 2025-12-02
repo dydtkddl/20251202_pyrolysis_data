@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mechanistic insights into the pyrolysis of pine resin sludge based on experiments and ReaxFF-MD simulation: High-value bio-oil production, nitrogen conversion, kinetics and environmental risk assessment Forestry and agro-industrial waste conversion into high-value chemicals and fuels is considered one of the hottest ongoing research and industrial topics toward sustainable development. As one of the forestry and agro-industrial waste, pine resin sludge (PRS) with amino acids, pine resin residues and their derivatives such as abietic acid and 4-Epidehydroabietal, have ecological toxicity and require environmentally friendly treatment. Herein, a thermal process of PRS that generates high-value biofuels while reducing environmental pollution was reported. The results of the experiment and simulation reveal that the N of bio-oil is the major evolution direction of N, and the nitrogenous gas product is mainly NH3, a useful synthesis gas. ReaxFF-MD simulations elucidated the migration and conversion mechanism of nitrogen in amino acids. The main products of amino acid pyrolysis are 3-oxo-2-Propenenitrile, 2,4-Cyclopentadien-1-ylidenemethanone and 4R)-4-amino-5,5-dihydroxypentanoic acid. PRS's thermal weightlessness was divided into three phases, and the average activation under non-isothermal conditions was calculated at 78.17, 85.68, 206.42 kJ/mol (thermal decomposition) and final 117.78, 149.31, 195.54 kJ/mol (thermal oxidation). Thermal decomposition and oxidation process followed Avrami-Erofeev model (n=2), three-dimensional diffusion model (n=3) and mampel power (n=1). PY-GC/MS analysis shows that pyrolysis at different temperatures recovered mainly 4-Epidehydroabietal (37.15–89.67 %) for potential use as the biosynthesis of dehydrofolate. The bio-oil from PRS pyrolysis shows an excellent yield (31.43 %) and a high calorific value (37.21 MJ/kg), which is comparable to biodiesel. This work focused on offering an appealing and instructive guide for the logical treatment of sludge from pine resin production.
+

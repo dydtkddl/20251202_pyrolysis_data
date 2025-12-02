@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Harnessing biochar for green construction: A review of its applications in cement and concrete The growing demand for concrete, driven by population and infrastructure growth, contributes significantly to environmental degradation, as each ton of cement produced releases about one ton of carbon dioxide. Sustainable solutions are crucial, and biochar, derived from carbon-rich biomass through pyrolysis, offers a promising approach. Its carbon sequestration potential helps reduce emissions while improving concrete's mechanical properties and durability. This review explores the use of Agro and Non-Agro biochar in cement-concrete composites, focusing on their effects on physical, mechanical, and durability properties, as well as CO2 emissions. It also highlights optimal biochar percentages for sustainable concrete practices. The addition of biochar to mortar and concrete significantly influences hydration and rheological properties, enhancing strength development and resistance to plastic shrinkage cracking. Biochar improves mechanical strengths at lower dosages, increasing the overall density and cohesion of the mixture, which leads to enhanced compressive and flexural strength. However, excessive biochar amounts may negatively impact the mechanical properties of concrete. It is evident from the previous studies that the optimal biochar dosage as a binder replacement ranges from 2 % to 5 % for both Agro and Non-Agro biochar, while for fine aggregates, the recommended replacement is 10 %–15 %. Additionally, incorporating 2–3 % biochar in conventional cement or cement with supplementary cementitious materials reduce the CO2 emissions by 15–30 % compared to samples without biochar. This paper also highlights, that the minimum biochar content for conventional mixes is 0.5 %–1 % by weight of the binder, true for both Agro-based and Nano Agro-based biochar. The maximum biochar content is identified as 10 % by weight of the binder. Thus, addition of biochar in cement products led to a sustainable solution with enhanced performance at optimum dosages.
+

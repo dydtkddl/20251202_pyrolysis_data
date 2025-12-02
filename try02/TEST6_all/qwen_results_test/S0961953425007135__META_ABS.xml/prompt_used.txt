@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Assessments of sustainable chemicals and bioenergy potentials of selected lignocellulosic biomass feedstocks in Poland via physicochemical characterisation and pyrolysis The varied physicochemical properties of biomass feedstocks influence their behaviour during thermochemical conversion to produce carbon-based fuels and chemicals. In this study, five common Poland-based lignocellulosic biomass feedstocks - oxytree trimmings, pinewood sawdust, vegetal sorghum, coffee waste, and mixed forestry residues were selected for detailed characterisation and intermediate pyrolysis to assess their sustainable chemicals and bioenergy potentials. Proximate analysis showed volatile matter contents ranging from 67.9 wt% (forestry residues) to 79.4 wt% (pinewood), with fixed carbon showing the opposite trend. Intermediate pyrolysis was conducted between 400 and 600 °C in a fixed-bed reactor using fast heating rates (200–300 °C/s) and a vapour residence time of ∼2.2 min. Gas yields increased with temperature, while liquid and biochar yields decreased. Pinewood gave the highest gas yield across all temperatures, reaching 26.9 wt% at 600 °C, while forestry residues yielded the most solid products (40.6 wt% at 400 °C). Thermogravimetric analyses of the feedstocks and their biochars showed progressive devolatilisation and increasing fixed carbon, reaching 80.8 wt% for pinewood biochar at 600 °C. Liquid yields followed the trend: coffee waste > pinewood > oxytree > forestry residues > sorghum. Woody biomass gave biochars with high fixed carbon and thermal stability, suitable for carbon sequestration, soil enhancement, or use as solid fuels. Coffee waste produced nitrogen-rich biochar with potential for fertiliser use, and fatty acid-rich oils suitable for biofuel upgrading. Phenol- and sugar-rich liquids from woody feedstocks have potential uses in resins, biochemicals, and fermentation. These results support tailored pyrolysis strategies to enable the strategic valorisation of Poland's biomass resources.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review on co-pyrolysis of biomass: An optional technique to obtain a high-grade pyrolysis oil The oil produced by the pyrolysis of biomass has potential for use as a substitute for fossil fuels. However, the oil needs to be upgraded since it contains high levels of oxygen, which causes low caloric value, corrosion problems, and instability. Generally, upgrading the pyrolysis oil involves the addition of a catalyst, solvent and large amount hydrogen, which can cost more than the oil itself. In this regard, the co-pyrolysis technique offers simplicity and effectiveness in order to produce a high-grade pyrolysis oil. Co-pyrolysis is a process which involves two or more materials as feedstock. Many studies have shown that the use of co-pyrolysis is able to improve the characteristics of pyrolysis oil, e.g. increase the oil yield, reduce the water content, and increase the caloric value of oil. Besides, the use of this technique also contributed to reduce the production cost and solve some issues on waste management. This article tried to review the co-pyrolysis process through several points of view, including the process mechanism, feedstock, the exploration on co-pyrolysis studies, co-pyrolysis phenomena, characteristics of byproducts, and economic assessment. Additionally, several outlooks based on studies in the literature are also presented in this paper.
+

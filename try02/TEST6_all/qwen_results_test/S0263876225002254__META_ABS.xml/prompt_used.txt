@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The study of structure-property relationships of heteropolyacids regulated by cesium sources in selective oxidation with methacrolein The selective oxidation of methacrolein (MAL) to methacrylic acid (MAA) is a crucial step in the C4 process for producing methyl methacrylate (MMA). While Cs-modified polyoxometalates (POMs) are known to enhance the catalytic activity in this reaction, wherein the influence of different cesium sources on their performance remains unexplored. This work systematically investigates the effect of varying cesium sources on the performance of (NH4 +)XCu0.2CsH2.8-XPMo11VO40 (BPAV) series catalysts. Characterization results show that the introduction of CsOH facilitates the formation of spherical microstructures in the catalyst, significantly increasing its specific surface area (13.74 m2/g) and medium acid amounts (1.46 mmol/g). XPS analysis further confirms that CsOH enhances the interaction between cesium ions and polyoxometalate anions, promoting the electron transfer from Cs ions to POM anions and the formation of abundant V4+ species (V4+/V5+ = 2.23) for enhanced redox capability. The BPAV catalyst with CsOH/POM molar ratio of 1 achieves the optimal performance, exhibiting 85.5 % MAL conversion and 90.5 % MAA selectivity. Furthermore, the BPAV catalyst with CsOH source also demonstrated excellent catalytic performance in the selective oxidation of propionaldehyde and isobutyraldehyde, with product selectivity surpassing 90 % in both reactions. These findings offer new insights and perspectives for the design of high-efficiency aldehyde oxidation catalysts.
+

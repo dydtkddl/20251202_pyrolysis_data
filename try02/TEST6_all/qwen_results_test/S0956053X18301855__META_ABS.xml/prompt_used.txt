@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Physico-chemical properties of excavated plastic from landfill mining and current recycling routes In Europe over 5.25 billion tonnes of waste has been landfilled between 1995 and 2015. Among this large amount of waste, plastic represents typically 5–25 wt% which is significant and has the potential to be recycled and reintroduced into the circular economy. To date there is still however little information available of the opportunities and challenges in recovering plastics from landfill sites. In this review, the impacts of landfill chemistry on the degradation and/or contamination of excavated plastic waste are analysed. The feasibility of using excavated plastic waste as feedstock for upcycling to valuable chemicals or liquid fuels through thermochemical conversion is also critically discussed. The limited degradation that is experienced by many plastics in landfills (>20 years) which guarantee that large amount is still available is largely due to thermooxidative degradation and the anaerobic conditions. However, excavated plastic waste cannot be conventionally recycled due to high level of ash, impurities and heavy metals. Recent studies demonstrated that pyrolysis offers a cost effective alternative option to conventional recycling. The produced pyrolysis oil is expected to have similar characteristics to petroleum diesel oil. The production of valuable product from excavated plastic waste will also increase the feasibility of enhanced landfill mining projects. However, further studies are needed to investigate the uncertainties about the contamination level and degradation of excavated plastic waste and address their viability for being processed through pyrolysis.
+

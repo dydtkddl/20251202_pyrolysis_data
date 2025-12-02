@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Circular use of plastics-transformation of existing petrochemical clusters into thermochemical recycling plants with 100% plastics recovery Plastics represent a serious waste-handling problem, with only 10% of the plastic waste (PW) generated world-wide being recycled. The remainder follows a linear economy model, involving disposal or incineration. Thermochemical recycling provides an opportunity to close the material cycle, and this work shows how this can be achieved using the existing petrochemical infrastructure. The transformation of a generic petrochemical cluster based on virgin fossil feedstocks into a cluster that is based on PW has the following proposed sequence: (1) the feedstock is partially replaced (45% on carbon basis) by PW; (2) the feedstock is totally replaced by PW; (3) the process undergoes electrification; and (4) oxy-combustion and carbon capture and storage are introduced to achieve 100% carbon recovery in the form of monomers or permanent storage. An alternative transformation pathway that includes the introduction of biomass is also considered. The energy and carbon balances of the proposed implementation steps are resolved, and cost estimates of the savings related to the feedstock and required investments are presented. The main conclusion drawn is that switching the feedstock from virgin fossil fuels to PW (Implementation steps 1 and 2) confers economic advantages. However, the subsequent transformation steps (Implementation steps 3 and 4) can only be justified if a value is assigned to the environmental benefits, e.g., CO2 savings, increased share of biogenic carbon in plastic products, increasing recycling quotas, and/or the potential of the process to compensate for the intermittency of renewable power. It is also discussed how utilisation of the diverse compositions of PW streams by additional processes can meet the other demands of a chemical cluster.
+

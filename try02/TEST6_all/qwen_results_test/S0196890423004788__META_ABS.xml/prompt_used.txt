@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal conversion of organic furniture waste to hydrogen fuel via catalytic air gasification over monolithic spinel-type oxide-supported nickel catalysts Furniture waste sawdust, as a byproduct of the furniture industry, is discharged in huge amounts annually. However, traditional strategies applied for their treatment have resulted in crucial environmental issues. As an eco-friendly alternative option to treat Furniture waste sawdust, this study developed a catalytic gasification technology using spinel-type oxide (AB2O4)-supported Ni catalysts under an air atmosphere to generate H2-rich gas. To this end, different metals are substituted as A cation in the spinel structure, followed by wash-coating on the monolithic reactor and impregnation with Ni to prepare Ni/MAl2O4 (M = Ca, Co, Ba, Zn, Zr, Mg, or Cu) catalysts. The employment of catalysts greatly enhanced the gas yield and H2 and CO selectivities, while significantly reducing the CO2, CH4, and C2-C4 generation, attributable to stimulated dry- and steam-methane reforming reactions. In particular, the highest gas yield (81.67 wt%) and H2 selectivity (32.19 vol%), lowest CO2, and almost zero CH4 and C2-C4 contents are obtained over Ni/CoAl2O4 catalyst, owing to the high oxygen transfer potential, appropriate basicity, and high Ni dispersion. Furthermore, a considerably enhanced gas yield and slightly increased H2 selectivity are observed when the gasification temperature is increased from 700 to 800 °C, reaching the maximum at 87.31 wt% and 32.87 vol%, respectively. Moreover, different catalyst-to-feedstock ratios from 1/5 to 1/20 gently influenced the gas yield and composition. Overall, the emerging potential of monolithic spinel-type oxide-supported Ni catalysts for hydrocarbon cracking, along with the use of waste materials as feedstock, can open new prospects for the economical and eco-friendly generation of H2 via gasification technology.”
+

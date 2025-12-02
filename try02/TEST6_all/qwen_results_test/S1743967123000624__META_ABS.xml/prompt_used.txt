@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis-gasification of biomass and Municipal Plastic Waste using transition metal modified catalyst to investigate the effect of contaminants Pyrolysis and gasification are one of the possible solutions for the recycling of polymer waste. This work focussing to the combined pyrolysis-gasification of different wastes to investigate the effect of raw materials, temperature, and contaminants. To enhance the pyrolysis reactions different transition metal-containing catalysts were used: Ni/ZSM-5, Ce/Ni/ZSM-5, La/Ni/ZSM-5, Ce/La/ZSM-5. Different sourced biomasses, municipal plastic wastes and municipal solid waste had been used as raw materials with different amount of contaminants. Regarding biomass, the effect of nitrogen and sulphur were investigated to the product yields and composition, while that nitrogen and chlorine in case municipal plastic waste. The pyrolysis-gasification experiments had been performed in a two zones batch reactor in horizontal layout, where 500 °C were used in the pyrolysis step, while the gasification reactions were investigated at 500 and 800 °C in the presence of steam. The composition of gases were measured by GC-FID and GC-TCD, while that of the hydrocarbon oils by GC-FID and HPLC. It was found, that the raw material significantly affected the product yields; e.g. in addition hydrocarbon products, aqueous products found only in case of biomass and municipal solid waste, while municipal plastic waste pyrolysis-gasification resulted hydrocarbon gases, hydrocarbon oil and solid char. Significant amount of carbon monoxide and carbon dioxide can be obtained in case, when raw materials contained cellulose, hemicellulose or lignin in their main structure, however, the concentration of carbon monoxide can be increase at 800 °C in case of municipal plastic waste. The highest syngas yield can be found in case of plastic waste. The ratio of hydrogen/carbon monoxide, that of carbon bon monoxide and carbon dioxide and the structure of aromatic hydrocarbons can be also significantly affected by the raw materials and the contaminants.
+

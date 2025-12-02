@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and density functional theory calculation study on the NO2 adsorption and reduction by KOH activated biochar Biochar prepared from waste biomass as an adsorption and reduction material can effectively decrease decrease nitrogen dioxide (NO2) emissions. This work aims to select suitable materials to prepare biochar and improve its ability to adsorb and reduce NO2. In this study, the process of adsorption and reduction of NO2 by biochar and the effect of KOH activation on these reactions are studied by using fixed-bed reactor and density functional theory calculation. Experimental results indicate a positive correlation between the adsorption and reduction capabilities of biochar for NO2 and its specific surface area and surface oxygen groups. The biochar sample prepared by pyrolysis at 800 ℃ with the addition of 3 wt% KOH solution exhibits the highest adsorption capacity, likely due to the catalytic role of potassium (K) in the adsorption-reduction reaction. It is worth noting that the theoretical calculation results confirm this point. The K atom primarily facilitates the breaking of the N-O bond in NO2 and the desorption of the NO molecule on biochar through van der Waals forces, thereby lowering the reaction energy barrier. Thermodynamic and kinetic analyses further confirm these findings. This study has a new understanding of the mechanism of NO2 adsorption and reduction of by KOH activated biochar, which provides experimental basis and theoretical guidance for the application of this technology.
+

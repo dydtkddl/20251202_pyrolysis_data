@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on the polystyrene plastic degradation in supercritical water/CO2 mixed environment and carbon fixation of polystyrene plastic in CO2 environment Through the degradation of organic waste, the carbon can be extracted and converted into syngas with calorific value, and the CO2 generated can also be used after fixed. In this work, the gasification of polystyrene (PS) in supercritical water with CO2 was studied in the temperature range of 400 °C−700 °C and time range of 0–30 min. In addition, PS containing only carbon and hydrogen can react with CO2 to generate CO in CO2 atmosphere. Therefore, the degradation of PS plastics in CO2 atmosphere was also studied. The results showed that PS plastic was hardly gasified at 400 °C, and as the temperature rose, the liquid composition changed. In supercritical water, under certain feedstock conditions, reacting for 20 min, the carbon conversion efficiency of PS plastic reached 47.6% at 700 °C. Under all CO2 atmosphere conditions in this experiment, the highest proportion of CO2 consumed by PS degradation was 12.5%. Moreover, the higher the temperature, the smaller the average diameter of carbon microspheres in the solid product. The morphology of carbon microsphere was also related to the reaction time, and the main change came from the gasification of carbon microspheres and the precipitation and adhesion of carbon element in liquid product.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluating performance of pyrolysis and gasification processes of agriculture residues-derived hydrochar: Effect of hydrothermal carbonization In this study, corn straw and rice husk were hydrothermally carbonized at 180 °C and 240 °C. The effect of hydrothermal carbonization on the biomass/hydrochar characteristics, fate of heavy metals such as As, Cr, Pb, Ti, Cd, Zn, Fe, Cu, and Ni, global reactivity of the pyrolysis and gasification of biomass and hydrochar were investigated in a thermogravimetric analyzer, followed by kinetic modeling and reactivity prediction. Results showed that hydrothermal carbonization temperature 180 °C is more suitable for producing solid fuel in terms of low heavy metals content. Higher hydrothermal carbonization temperature (240 °C) decreased O/C content and improved various characteristics of the hydrochar such as coalification degree, carbon content, higher heating value and the specific surface area. While hydrothermal carbonization conducted at lower temperature of 180 °C, was advantageous for obtaining higher energy yield efficiency and hydrochar yield. The gasification reactivity of hydrochar was more sensitive to the heating rate than the pyrolysis process. The activation energy (Ea) of the pyrolysis process varied significantly with conversion, whereas the gasification activation energy changes were insignificant. Based on the reactivity prediction, the hydrothermal carbonization effect on corn straw and rice husk was almost similar. The hydrochar generated under severe hydrothermal carbonization temperature (240 °C) showed higher thermal stability during pyrolysis in comparison with gasification. Compared with the gasification of rice husk hydrochar, hydrochar gasification of corn straw had lower Ea, hence requires less energy to produce syngas. The results of this research imply that biomass hydrochar is a suitable alternative option to produce pulverized solid fuel.
+

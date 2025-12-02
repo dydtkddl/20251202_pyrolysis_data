@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Aquathermolysis of polyolefin plastic wastes over a MOF-derived TiO2 anatase catalyst: Enhancing C–N bond cleavage and coke suppression Plastics are ubiquitous in modern society owing to their cost-effectiveness, low weight, and durability. However, the disposal and recycling of plastic waste remain significant challenges. Aquathermolysis has emerged as a promising strategy for converting contaminant-rich polyolefin plastic waste into value-added liquid fuels. This study investigates the plastic-waste aquathermolysis potential of a TiO2 catalyst derived from the sacrificial precursor Ti-containing MIL-125 via a MOF-mediated synthesis pathway combined with calcination. The TiO2 catalyst retained its mesoporous properties and predominantly anatase phase on calcination at 450 ℃. The aquathermolysis catalysis and stability of the newly synthesized catalyst for plastic-waste conversion were evaluated and compared with those of other catalytic systems. Additionally, the role of water in the N removal efficiency and coke suppression properties of the catalyst were analyzed. Water significantly improved the removal of N and S impurities, with a N reduction of 80–95% at the optimal water content (20–40 wt%). The robustness of the as-synthesized catalyst was confirmed by deconvoluted X-ray photoelectron spectroscopy patterns, which indicated the persistence of the TiO2 phase, even after prolonged catalysis in aqueous environments, and transmission electron microscopy results, which showed that the anatase phase remained well-dispersed under aquathermolysis conditions with a significant reduction in the C/Ti ratio and a corresponding increment in the N/C ratio. The results of this study could guide future research on the development of catalysts, similar to the MIL-125-derived TiO2 catalyst investigated here, with high potential for efficient plastic-waste conversion and impurity removal in aqueous environments.
+

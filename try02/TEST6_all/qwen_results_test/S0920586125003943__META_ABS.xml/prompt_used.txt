@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Coupling property-optimized Ru/Beta catalysts with advanced open batch distillation reactors for waste polyethylene hydrocracking Plastic waste, particularly from polyolefins such as polyethylene (PE), poses an escalating environmental burden due to its chemical inertness and volume. Pyrolysis is commercialized process that offers a practical solution for recycling plastic waste, but it is limited by high temperature requirements, substantial energy consumption, and high proportion of olefinic products. Hydrocracking with bifunctional catalysts under optimized conditions presents a promising alternative. Here, we developed a property-optimized Ru/Beta catalyst system combined with a pressurized open batch distillation reactor for the selective hydrocracking of waste PE into C5–C30 hydrocarbons. Zeolite Beta supports with varied Si/Al ratios and crystal sizes were synthesized to control Brønsted acid site distribution and external surface area. The controlled properties influenced Ru nanoparticle dispersion, hydrogen activation, and overall catalytic activity. Nano-sized zeolite Beta supports exhibited the highest Ru dispersion and facilitated efficient hydrocracking. The open batch reactor configuration enabled real-time vapor-phase separation of volatile products, minimizing secondary cracking. Under optimized conditions (280 °C, 40 H2 bar), Ru/nanosized Beta with (Si/Al=10) achieved over an 80 % PE conversion and a 50 % selectivity toward C5–C30 liquid hydrocarbons. Product analysis using GC-FID, GPC, and ¹H NMR confirmed the formation of branched alkanes with a narrow molecular weight distribution in the C5–C15 range. This work underscores the critical role of metal–acid site balance, nanoscale catalyst engineering, and dynamic reactor operation in achieving selective and efficient polyolefin hydrocracking.
+

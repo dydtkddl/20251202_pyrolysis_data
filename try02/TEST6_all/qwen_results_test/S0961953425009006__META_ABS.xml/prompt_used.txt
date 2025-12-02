@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recent advances in sustainable bio-oil production from marine biomass: A review of thermolysis of seaweeds with waste plastics The need to diversify sources of energy, especially oils, beyond the conventional fossil fuel sources by exploring renewable energy resources is becoming significant. Mainly, terrestrial-based biomass serves as a renewable energy source with ensuing limitations imposed by a highly skewed demand for end-products that the biomass feedstock struggles to match, with attendant consequences. Handling methods and technologies for deriving energy and chemicals from the resources have provoked concerns about public health, the environment, and the economy. Therefore, there is a need to explore eco-friendlier alternative feedstock, processing, and product enhancement methods premised on sustainability in using algal biomass and the tons of waste plastics annually generated for co-pyrolysis to enhance quality and quantity and promote sustainability. This review paper aims to provide an overview of macroalgae and plastics as feedstock, their thermal conversion processes to energy, and previous studies on the co-pyrolysis of macroalgae and PWs. It also explored the techniques and parameters of co-pyrolysis that rub off on bio-oil production, with a highlight on kinetics, synergetic and inhibitory effects of the co-pyrolysis of the feedstock, as well as the characteristics of the bio-oils produced from their co-pyrolysis. The study showed that the synergistic effect in the co-pyrolysis of seaweed and plastics occurs between temperatures of 400–600 °C, resulting in improved yield of derived oil whose higher heating value varies according to the plastic used, but can be higher than the 40.0 MJ/kg of petroleum oil. The review also highlighted the challenges and prospects of co-pyrolysis of macroalgae and plastic feedstock for bio-oil production.
+

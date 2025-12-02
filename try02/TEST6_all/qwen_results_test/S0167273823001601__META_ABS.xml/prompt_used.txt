@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characteristic and challenges of scandia stabilized zirconia as solid oxide fuel cell material – In depth review Scandia-stabilized zirconia (ScSZ) has 1.5–3 times superior conductivity owing to its crystal structure as compared to yttria stabilized zirconia (YSZ). However, also due to this, ScSZ experienced phase structure transition which affects its stability when used as an SOFC electrolyte material and as anode. The typically ceria-doped 10 mol%ScSZ (10Sc1CeSZ) experienced Ce4+ − Ce3+ transition in reduced environment led to lower fracture strength and instability. Alternative promising co-dopants to stabilized ScSZ phase, such as Nd, Sm and Gd are identified as a way forward in using ScSZ in reduced SOFC environment. The high affinity of the ScSZ oxide to Ni causes the dissolution of Ni in ScSZ grains and vice versa, thereby affecting the conductivity and material connectivity at the anode. The tolerance of Ni-ScSZ to hydrocarbon fuel and sulfur is significantly higher than that of Ni-YSZ and exhibited different behavior on carbon growth; graphitic carbon growth on Ni-ScSZ, and amorphous carbon on Ni-YSZ. The differences reflect the superior methane cracking catalytic ability of Ni-ScSZ and the effect of the crystal structure on the type of carbon formed. Doping is a suitable solution to enhance the reforming activity of the cell as well and resolve the Ni-ScSZ anode degradation issue.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydro-deoxygenation of pyrolytic oil derived from pyrolysis of lignocellulosic biomass: A review The rapid depletion of fossil fuels and environmental concerns have led researchers to explore alternative sources of energy. Pyrolytic oil derived from biomass is considered to be a potential alternative to fossil fuels, but it lacks certain physicochemical properties that make it unsuitable to be used as fuel. For instance, the high oxygen content in the pyrolytic oil exhibits chemical instability, the tendency to polymerize, and low energy density compared to traditional fuels. The hydrodeoxygenation (HDO) method is a viable technique to enhance the desirable characteristics of pyrolytic oil for commercial applications. This method has the disadvantage of catalyst deactivation owed due to coking, and its extent depends on the nature of oxy-compounds, catalyst type, and experimental conditions. However, by varying the experimental parameters such as catalyst acidity, temperature, pressure, solvent, and reaction time, the HDO product characteristics may be tailored to meet the specific requirements and applications. In this work, we have presented a comprehensive review of multiple alternatives to produce pyrolytic oil with essential fuel characteristics. The techno-economic analysis (TEA) and kinetic analysis of the pyrolytic oil were also elaborated. Overall, the review paper highlights the influence of process variables, kinetics investigation, reactor types and techno-economic analysis of HDO.
+

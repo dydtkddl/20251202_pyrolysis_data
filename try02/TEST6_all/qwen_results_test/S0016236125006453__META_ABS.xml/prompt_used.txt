@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Determination of olefins in pyrolysis oils from waste plastics and tires – Comparability of titration and chromatographic methods Reliable, accurate, and cost-effective determination of olefins, which create the major hydrocarbon group in plastic pyrolysis oils (PPOs), is of significant importance. This step is essential for further valorizing PPOs as petrochemical feedstocks and reaching plastics circularity. Our study comprehensively investigated and compared three standardized methods widely used in refinery laboratories (FIA – ASTM D1319, Bromine number – ASTM D1159, and Iodine value (IV) – EN 14111). The results were benchmarked to those obtained using the recently developed GC × GC-FID method, which relies on the selective adsorption of olefins over Ag-SiO2. The methods for determining olefins were extensively validated using model compounds typical for PPOs and model samples with known olefin concentration. This knowledge has enhanced our understanding of the limitations of the methods studied for analyzing real samples. In the second step, the PPOs derived from mixed waste polyolefins and tires, along with their hydrotreated products and distilled fractions, were analyzed. Three alternatives to the IV method were tested, and the one utilizing a mercury (II) acetate catalyst proved to be the most accurate among all tested methods, providing the results in the shortest time (10 min). By combining this IV method with a straightforward preparation step to eliminate interferences, reliable information about olefin content in polyolefin-rich pyrolysis oils can be obtained.
+

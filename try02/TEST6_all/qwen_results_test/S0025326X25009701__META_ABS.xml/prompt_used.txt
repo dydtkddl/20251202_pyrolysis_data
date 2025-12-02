@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comparing persistent (polycyclic aromatic hydrocarbons and polychlorinated biphenyls) and emerging nano(micro)plastics (NMPs) pollutant body-burdens in oysters and fish from Matagorda Bay (Texas, USA) This study reports the concentrations of 12 nano (micro)plastics (NMPs, ≥700 nm particle size, <5 mm), 14 polycyclic aromatic hydrocarbons (PAHs), and 28 polychlorinated biphenyls (11 dioxin-like PCBs) in the gill/mantle tissue of eastern oysters (Crassostria virginica) and muscle and liver tissues of gafftopsail catfish (Bagre marinus), red drum (Sciaenops ocellatus), and spotted sea trout (Cynoscion nebulosus) from Matagorda Bay (Texas, USA). Pyrolysis gas chromatography and tandem mass spectrometry (Py-GCMS/MS) was used to quantify the NMPs, and GCMS was used for PAHs and PCBs quantification. Analysis of the total contaminant concentrations across all the biota showed NMPs to exhibit the highest body-burdens (∼2000×–60,000×) relative to PAHs and PCBs. Amongst the biota, oysters exhibited the highest contaminant body-burdens in comparison to fish. For PAHs and PCBs, the gill/mantle of oysters exhibited ∼2–11× higher body-burdens than the muscle tissue of fish and NMPs in oysters were 5–25× higher (body-burdens) than in fish muscle. Diagnostic ratio analysis revealed a mixture of both petrogenic and pyrogenic sources of PAHs. Toxic equivalent (TEQ) based risk assessment for dioxin-like PCBs indicated the likelihood for adverse health effects in gafftopsail catfish only. A cancer risk assessment for human exposure to PAHs from seafood consumption showed no concern. Finally, the calculation of human average daily NMPs consumption indicated the ingestion of 0.01–0.2 g plastics/kg of body weight/year. A key finding of our work is that the body-burdens of NMPs were several orders of magnitude higher than those for PAHs and PCBs.
+

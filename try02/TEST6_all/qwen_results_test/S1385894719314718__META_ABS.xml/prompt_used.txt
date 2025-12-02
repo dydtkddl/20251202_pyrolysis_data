@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A catalytic reactive distillation approach to high density polyethylene pyrolysis – Part 1 – Light olefin production An integrated reactor/separation semi-batch catalytic pyrolysis reactor system, based on a distillation approach, was developed to produce gaseous hydrocarbons, to be used as feedstock or fuel in the perspective of a Circular Economy approach. This work intends to be a proof of concept and to test the operating conditions and performance of the reactor to control the molecular weight of the products. For that purpose, thermal and catalytic pyrolysis experiments were run using high density polyethylene (HDPE) under several experimental conditions. Different temperatures were used (400, 450 and 500 °C) for both thermal and catalytic pyrolysis, with 1% (w/w) of HZSM-5. The influence of the temperature of the coolant at the outlet of the reactor was also investigated for the catalytic degradation of the HDPE at 450 °C, providing a way to control the average molecular weight of the recovered products, which increased with increasing coolant temperature. The focus of the study was to develop an integrated reactor/separation system where only the lighter compounds produced could leave the reactor and thus direct the production to chemical feedstock to be reused in petrochemistry, including in the production of new plastics. The analysis of the volatile products indicated that, for both thermal and catalytic pyrolysis, the products obtained were within the range of C2 to C8. Higher amounts of C3 to C5 were formed, with a particular emphasis on olefins, with very high yields in the case of catalytic pyrolysis. The activity of the catalysts after use was also checked through the ARDT index (Ability to Reduce the Decomposition Temperature), with values for this index above 50% which indicate a good possibility for reuse of the catalyst.
+

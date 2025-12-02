@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal pyrolysis conversion of methane to hydrogen (H2): A review on process parameters, reaction kinetics and techno-economic analysis Hydrogen (H2) is a promising renewable energy which finds wide applications as the world gears toward low-carbon economy. However, current H2 production via steam methane reforming of natural gas or gasification of coal are laden with high CO2 footprints. Recently, methane (CH4) pyrolysis has emerged as a potential technology to generate low-carbon H2 and solid carbon. In this review, the current state-of-art and recent progress of H2 production from CH4 pyrolysis are reviewed in detail. Aspects such as fundamental mechanism and chemistry involved, effect of process parameters on the conversion efficiency and reaction kinetics for various reaction media and catalysts are elucidated and critically discussed. Temperature, among other factors, plays the most critical influence on the methane pyrolysis reaction. Molten metal/salt could lower the operating temperature of methane pyrolysis to 1000 °C. Based on the reaction kinetics, metal-based catalysts were more efficient in lowering the activation energy of the reaction to 29.5–88 kJ/mol from that of uncatalyzed reaction (147–420.7 kJ/mol). Besides, the current techno-economic performance of the process reveals that the levelized cost of H2 is directly influenced by the sales price of carbon (by-product) generated, which could offset the overall cost. Lastly, the main challenges of reactor design for efficient product separation and retrieval, as well as catalyst deactivation/poisoning need to be debottlenecked.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Beyond biodegradation: Chemical upcycling of poly(lactic acid) plastic waste to methyl lactate catalyzed by quaternary ammonium fluoride Biodegradable plastics, such as poly(lactic acid) (PLA), are considered the alternative for alleviating the environmental issues caused by the accumulation of petroleum-based plastic wastes. However, PLA is relatively expensive, and its natural degradation is slow. Therefore, upcycling instead of disposing of PLA should be more favorable for sustainability. Herein, we studied the selective methanolysis of PLA to produce methyl lactate (ML) catalyzed by a new molecular catalyst, tetramethylammonium fluoride (TMAF), with superior thermal and chemical stability and excellent catalytic performance. The complete methanolytic depolymerization of the commercial PLA pellets, 4043D, 6060D, 6202D, and 2500HP, was achieved within a short reaction time (<60 mins) under mild conditions (90 °C–110 °C), yielding nearly 100% ML. The reusability of TMAF in the depolymerization of PLA pellets was subsequently investigated. The characterizations by gel permeation chromatography (GPC) and Nuclear Magnetic Resonance (NMR) spectrometry were used to investigate the mechanism of the PLA depolymerization in the methanol solvent. F- was found to be the active center of the TMAF catalyst. A possible random scission depolymerization pathway of the TMAF catalyzed methanolysis of PLA was proposed.
+

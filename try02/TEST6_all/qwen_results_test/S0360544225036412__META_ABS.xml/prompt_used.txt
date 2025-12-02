@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Exploring reaction mechanism and kinetics of acetone pyrolysis and combustion in O2/H2O/CO2 environments via ReaxFF MD simulations Acetone is a promising bio-derived fuel, but its high-temperature pyrolysis and combustion mechanisms are not yet fully understood. Atomic-level insights are essential for achieving clean combustion and guiding advanced fuel design. In this study, reactive molecular dynamics (ReaxFF MD) simulations were employed to investigate the detailed reaction behavior of acetone, with the force field accuracy validated through density functional theory (DFT) calculations. The pyrolysis process was found to proceed through three stages: initial molecular decomposition, gas transfer, and soot formation. Soot inception and growth involve ring formation, hydrogen abstraction acetylene addition (HACA) reactions, and molecular coagulation. During combustion, oxidation proceeds primarily through methyl radical pathways, ultimately yielding CO and CO2. Increasing oxygen content enhances the production of H2O and CO2 while suppressing H2 and key soot precursors. For intermediate species, higher oxygen levels lead to increased formation of oxygenated compounds and reduced hydrocarbon fragments. The apparent activation energy for combustion aligns well with experimental ignition delay data. The presence of H2O or CO2 impurities significantly alters reaction frequencies and modifies dominant reaction channels. Soot inhibition occurs via distinct mechanisms: H2O participates in reactions with carbon-containing radicals to produce CO or CO2, while CO2 reacts with carbon-containing radicals to form two CO molecules. H2O exhibits a stronger soot inhibition effect and also enhances combustion, whereas CO2 slightly suppresses it. These findings offer mechanistic insights into acetone reactivity and support the development of cleaner biofuel technologies.
+

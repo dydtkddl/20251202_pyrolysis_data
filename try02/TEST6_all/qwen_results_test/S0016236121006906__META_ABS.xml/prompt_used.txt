@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Performance and emission analysis of co-pyrolytic oil obtained from sugarcane bagasse and polystyrene in a CI engine The present study aims on analyzing the characterizations and optimizing the performance and emission parameters of the co-pyrolytic oil in different blends using a diesel engine. The study was conducted for diesel and three different blends of co-pyrolytic oil (COPO) with diesel in proportions of 5% (COPO5), 10% (COPO10), and 15% (COPO15) respectively. The co-pyrolytic oil was furnished using sugarcane bagasse and polystyrene in the ratio of 1:3 in a semi-batch reactor. From the characterization for fuel properties, it was observed that all the properties of three different blends found to be decreasing compared to diesel, except calorific value which was slightly increasing with an increase in blending ratio of co-pyrolytic oil. The FTIR analysis revealed the presence of aromatic compounds, phenols, alkanes and alkenes with major part of aromatic compounds. The GC–MS analysis of the co-pyrolytic oil resulted in highest proportion of aromatic compounds followed by aliphatic hydrocarbons, some alkanes, alkenes and polycyclic aromatic hydrocarbons. The performance studies revealed the optimum values for bake power as 3.62 kW, brake thermal efficiency as 31.24%, brake specific fuel consumption as 0.2 kg/kWh and torque of 21.56 Nm for 5% blend (COPO5) under full load condition. The emission parameters for COPO5 also observed to be reduced with CO as 0.018% and CO2 as 3.4% compared to diesel value as 0.05% and 3.8% respectively.
+

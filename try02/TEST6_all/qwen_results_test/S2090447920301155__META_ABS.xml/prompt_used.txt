@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal degradation kinetics of real-life reclaimed plastic solid waste (PSW) from an active landfill site: The mining of an unsanitary arid landfill Landfilling is viewed nowadays as a serious threat associated with various burdens and stressors on the urban environment. To date, there is little information available on actual value of landfilled waste namely plastic solid waste (PSW) resulting from mining operations. In this work, PSW reclaimed from an active unsanitary landfill site (MAB) has been studied with the aim of determining its thermal profile and degradation behaviour for future utilisation in thermo-chemical conversion (TCC) processes. The materials were characterised by thermogravimetric analysis (TGA) and differential scanning calorimetry (DSC) in accordance with internationally approved test methods in a simulated pyrolytic environment. In addition, chemical analysis using Fourier Transform Infrared Spectroscopy (FTIR) was applied to study the nature of the materials reclaimed. The degradation kinetics of the reclaimed PSW were studied with the aim of determining the apparent activation energy (Ea) of the pyrolytic reactions. The Ea values determined ranged from 199 to 266 kJ mol−1 which is in-line with pyrolytic reactions applicable for future use in fuel recovery units. TGA showed a clear shift in thermograms indicating a clear change in the degradation mechanism. The physico-chemical studies conducted on the materials also favours TCC treatment over other conventional end of life options such as physical (mechanical) recycling or incineration. The degradation mechanism was also determined from the Criado method showing that Avarami-Erofeve was the model that best represents PSW degradation. Overall, this work points towards future intervention schemes for reclaimed municipal solid waste (MSW) and in particular PSW favouring TCC technologies.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Bench-scale solid-state fermentation of digested sewage sludge to produce Bacillus thuringiensis: influence of digestate characteristics The solid fraction of wastewater digested sludge is a material rich in nutrients and organic matter that is typically applied to the soil, composted or disposed of. To further exploit its potential, it can be used as a secondary raw material for the production of marketable products, such as biopesticides, through solid-state fermentation (SSF). In this study, a thorough characterisation in terms of pyrolysis gas chromatography-mass spectrometry analysis, physicochemical methods and biodegradability analysis was carried out on four different digested sewage sludges to understand their inherent properties. The effect of these properties on the growth and sporulation of Bacillus thuringiensis during a laboratory-scale SSF process was then evaluated. Sporulation yields ranged from a maximum of 11.3 to a minimum of 0.4 (expressed as spores per initial viable cell), highlighting the influence of digestate variability on the fermentation performance. Finally, the SSF process was scaled up to bench-scale using the two solid digestates with the highest Bacillus thuringiensis viable cell and spore production to assess the robustness and reproducibility of the process. By scaling up, both sporulation yield and viable cell yield increased compared to the laboratory-scale trials with a maximum spore production of 2.3 × 108 spores g−1 DM. The results confirmed the feasibility of growing Bacillus thuringiensis by SSF in three of the four solid digestates studied, highlighting the importance of advanced techniques to obtain reliable characterisation of the digestate as a substrate for SSF and the production of valuable bioproducts. These results help to determine the most effective valorisation pathway for the solid digestate within the circular economy paradigm.
+

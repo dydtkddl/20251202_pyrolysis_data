@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The MTO and DTO processes as greener alternatives to produce olefins: A review of kinetic models and reactor design Considering the relevant role towards decarbonization of the MTO (methanol-to-olefins) and DTO (dimethyl ether-to-olefins) processes, this review summarizes their main advances, with special attention to kinetics models and reactor design. The DTO process is an alternative to the MTO, whose importance lies in the good perspectives of DME (dimethyl ether) one-stage synthesis from CO2 and syngas derived from biomass (thermodynamically favored compared to that of methanol synthesis). Furthermore, DME is generally more reactive than methanol, and the DTO process produces less water and is less exothermic than MTO. Due to the big similarities between mechanisms and kinetic models for both processes, the development of the DTO process will be based on the vast actual knowledge on the MTO process after five decades of studies: from the initial pioneer tests of Mobil with a HZSM-5 catalyst to the recent technological improvement in the industrial units with HSAPO-34 catalysts. HZSM-5 zeolite has shown the most promising catalytic performance for the DTO process, with high activity, selectivity and stability. Most of the proposed lump-based kinetic models for the DTO process have used the knowledge on the methanol-to-hydrocarbon chemistry and some examples have described important features of the process, as the consideration of deactivation kinetics and the quantification of the water effect on the extent of the reaction steps and deactivation. The reactor design and operation configuration of MTO and DTO processes are still determined by the catalyst deactivation and continuous regeneration is required. The main advances on the design of the dual reactor-regenerator system considering the distribution of activity or content of coke are also summarized herein.
+

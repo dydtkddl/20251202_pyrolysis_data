@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Isothermal co-pyrolysis of hazelnut shell and ultra-high molecular weight polyethylene: The effect of temperature and composition on the amount of pyrolysis products Solid wastes compromise biomass and plastics in terms of energy recuperation. Pyrolysis is the promising process in thermochemical conversions. In this study, isothermal co-pyrolysis of hazelnut shell and ultra-high molecular weight polyethylene (UHMWPE) mixtures was executed in hand made pyrolysis reactor. The effect of temperature and composition on liquid, solid and gas yields was clarified with descriptive charts. It can be definitely stated that there are interactions between components which are called synergistic effects. Temperature change and ratio of UHMWPE do not alter solid product yield significantly. Co-existence of hazelnut shell and UHMWPE renders gas products in expense of liquid at all temperature and composition conditions. Liquid products were collected separately as heavy and light liquid. Liquid fuel is preferred to gas and solid ones due to commercial reasons. Combustible heavy liquid increases synergistically with increasing UHMWPE ratio. Here, synergistically means it is higher than mathematical calculation. It was found that just at 515°C and 0.5:1.5 (hazelnut shell/UHMWPE) composition total liquid product is above the calculated values. Additionally, 1.0:1.0 composition again at the same temperature produces highest heavy liquid yield.
+

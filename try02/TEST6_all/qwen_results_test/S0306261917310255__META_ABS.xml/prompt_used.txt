@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Industrial energy use and carbon emissions reduction in the chemicals sector: A UK perspective The opportunities and challenges to reducing industrial energy demand and carbon dioxide (CO2) emissions in the Chemicals sector are evaluated with a focus on the situation in the United Kingdom (UK), although the lessons learned are applicable across much of the industrialised world. This sector can be characterised as being heterogeneous; embracing a diverse range of products (including advanced materials, cleaning fluids, composites, dyes, paints, pharmaceuticals, plastics, and surfactants). It sits on the boundary between energy-intensive (EI) and non-energy-intensive (NEI) industrial sectors. The improvement potential of various technological interventions has been identified in terms of their energy use and greenhouse gas (GHG) emissions. Currently-available best practice technologies (BPTs) will lead to further, short-term energy and CO2 emissions savings in chemicals processing, but the prospects for the commercial exploitation of innovative technologies by mid-21st century are far more speculative. A set of industrial decarbonisation ‘technology roadmaps’ out to the mid-21st Century are also reported, based on various alternative scenarios. These yield low-carbon transition pathways that represent future projections which match short-term and long-term (2050) targets with specific technological solutions to help meet the key energy saving and decarbonisation goals. The roadmaps’ contents were built up on the basis of the improvement potentials associated with various processes employed in the chemicals industry. They help identify the steps needed to be undertaken by developers, policy makers and other stakeholders in order to ensure the decarbonisation of the UK chemicals industry. The attainment of significant falls in carbon emissions over this period will depends critically on the adoption of a small number of key technologies [e.g., carbon capture and storage (CCS), energy efficiency techniques, and bioenergy], alongside a decarbonisation of the electricity supply.
+

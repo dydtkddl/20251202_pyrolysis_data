@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Computational fluid dynamics (CFD) modelling as a power multiplier tool for the design improvement of gaseous and liquid fuels: current status, challenges and perspectives Climate change and global warming are urgent concerns, prompting the scientific community to focus on achieving net-zero greenhouse gas (GHG) emissions primarily through renewable energy sources. Carbon capture and utilisation (CCU) technology offers a practical solution by converting carbon dioxide (CO2) into usable chemicals and fuels, while hydrogen (H2) presents a highly efficient, zero-emission fuel alternative, despite challenges in its production and storage. The processes for generating these fuels differ, necessitating specific system conditions for each. Computational tools, especially computational fluid dynamics (CFD), have become vital for optimizing these processes. Central to CFD models are kinetic equations that describe the conversion of feedstock and the generation of products. This review discusses the reaction pathways for gaseous and liquid fuel production, along with the proposed kinetic rate equations from existing literature. Additionally, it emphasises the significance of accounting for various factors in CFD models, including catalyst deactivation and competitive reactions, to maintain selectivity for desired products. Accurate physical representations are also crucial for modelling fluid flow, mixing, and heat transport, improving reactor design, optimisation, and scaling processes effectively compared to traditional experiments. The presentation of governing equations varies based on reactor types and flow systems. Ultimately, CFD not only validates experimental results but also aids in discovering optimal reactor designs and parameters for enhanced efficiency and product yields. Its ongoing advancement in predictive modelling and optimization marks it as an essential tool in contemporary research and industrial sectors focused on sustainable fuel production.
+

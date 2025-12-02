@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Organocatalytic glycolysis of polyethylene terephthalate and product separation by membrane filtration In recent years, researchers have developed metal-free ionic organocatalysts for PET depolymerisation that have exhibited good catalytic activity, thermal stability and low environmental toxicity. This work aims to study the scalability, reaction kinetics and product separation of the chemical recycling reaction as a step towards developing a scalable process. An ionic organocatalyst comprising 1,8-diazabicyclo(5.4.0)undec-7-ene (DBU) and para-toluene sulfonic acid (pTSA) was selected as a potential glycolysis catalyst. The process was successfully scaled by a factor of 40, with complete conversion of PET achieved in 72 min (10 g PET, 25 mol% catalyst, 180 °C, 20 equiv. ethylene glycol) in a batch reactor. The glycolysis kinetics were found to obey a modified shrinking core model, in which PET ester bonds are cleaved at the surface of the PET particles and the activation energy was experimentally calculated to be 61–66 kJ mol−1. The kinetic model was adapted to account for product inhibition, where hydrolysis of bis-hydroxyethyl terephthalate (BHET) by extraneous water led to the formation of carboxylate moieties which were found to deactivate the catalyst and inhibit the glycolysis reaction. Furthermore, DBU:pTSA can be separated from ethylene glycol by nanofiltration using a commercial TS40 membrane at elevated temperatures between 80 and 120 °C. A rejection of 93 % can be achieved at 2.24 MPa independent of temperature, while the highest flux of 17.7 kg m−2 s−1 was obtained at 120 °C. The presence of BHET only slightly reduced the catalyst rejection, but the flux dropped to 7.4 kg m−2 s−1. As BHET only resulted in a rejection of 41 %, nanofiltration offers the possibility of separating both catalyst and BHET at elevated temperatures.
+

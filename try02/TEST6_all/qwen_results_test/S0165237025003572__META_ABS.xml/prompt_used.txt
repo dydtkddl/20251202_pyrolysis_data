@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comprehensive analysis of colored p-PVC using multifunctional Py-GC/MS: Insights into additives This study investigates colored plasticized polyvinyl chloride (p-PVC), a common yet unstable material in modern museum collections due to its complex composition and vulnerability to degradation. While transparent p-PVC has been well-studied, colored p-PVC, with its intricate formulation and various additives, remains underexplored. To address this, colored vinyl sheets from Kiki Kogelnik's Hangings (1968–1986) were analyzed using a multifunctional Pyrolysis-Gas Chromatography / Mass Spectrometry (Py-GC/MS) approach. For the first time, a combination of Single-Shot (SS) Py-GC/MS, Double-Shot (DS) Py-GC/MS, Evolved Gas Analysis (EGA)-MS, and Heart-Cut EGA-GC/MS (with and without cryotrap) was applied, showcasing their respective strengths and limitations in identifying additives such as plasticizers, lubricants, and colorants. Additionally, Multi-Functional Splitless (MFS) sampler was employed, enabling the use of the SS Py-GC/MS with F-Splitless injection for high-sensitivity analysis of trace samples (∼1 µg, compared to ∼100 µg required in conventional Py-GC/MS methods). This study uncovered the complex composition of the vinyl sheets, identifying plasticizers (e.g. DEHP, DBP), lubricants (e.g. polydimethylsiloxane oil), flame retardants (e.g. TPhP), antioxidants (e.g. octocrylene), and pigments (e.g. β-naphthol), while confirming their high quality. Our findings show that DS Py-GC/MS is optimal for 100–200 µg samples, while Heart-Cut EGA-GC/MS excels with larger samples (>300 µg), particularly for colorants and lubricants. SS Py-GC/MS with F-Splitless injection is highly effective for small samples (<10 µg), though extended acquisition times may be needed for high-molecular-weight phthalates. These results provide valuable guidance for selecting the optimal Py-GC/MS method for p-PVC analysis in heritage science to obtain maximum information with minimal sample amount.
+

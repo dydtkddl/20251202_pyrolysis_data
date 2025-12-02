@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Supercritical water gasification of plastic waste for hydrogen production: A review Plastic products are widely used in numerous domains due to their excellent physical properties and low cost. Their annual output has increased by over 200 times since 1950. Unfortunately, plastic products is challenging to recycle effectively, causing an extremely serious plastic pollution crisis in the global ecosystem. Converting plastic waste into clean hydrogen-rich fuel gas by supercritical water gasification is a greatly promising technology to eliminate plastic waste pollution and accelerate the development of circular economy of plastic materials. Compared with traditional plastic waste treatment technologies, supercritical water gasification remarkably reduces the emission of harmful substances and significantly enhances energy conversion efficiency. In this paper, the reaction mechanism and major influencing factors in the process of supercritical water gasification are reviewed. The effects of reaction conditions, such as temperature, feedstock concentration, reaction time, pressure and catalysts, on the reaction process are discussed. The characteristics and application scenarios of common reaction devices are introduced in detail. Additionally, the challenges and opportunities encountered by the supercritical water gasification of plastic waste are investigated. The goal is to propose a viable approach for clean and efficient treatment of plastic waste and realize the recycling of energy with the production of high value-added products.
+

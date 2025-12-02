@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comparative study of ageing, heat treatment and accelerated carbonation for stabilization of municipal solid waste incineration bottom ash in view of reducing regulated heavy metal/metalloid leaching This study compared the performance of four different approaches for stabilization of regulated heavy metal and metalloid leaching from municipal solid waste incineration bottom ash (MSWI-BA): (i) short term (three months) heap ageing, (ii) heat treatment, (iii) accelerated moist carbonation, and (iv) accelerated pressurized slurry carbonation. Two distinct types of MSWI-BA were tested in this study: one originating from a moving-grate furnace incineration operation treating exclusively household refuse (sample B), and another originating from a fluid-bed furnace incineration operation that treats a mixture of household and light industrial wastes (sample F). The most abundant elements in the ashes were Si (20–27 wt.%) and Ca (16–19 wt.%), followed by significant quantities of Fe, Al, Na, S, K, Mg, Ti, and Cl. The main crystalline substances present in the fresh ashes were Quartz, Calcite, Apatite, Anhydrite and Gehlenite, while the amorphous fraction ranged from 56 to 73 wt.%. The leaching values of all samples were compared to the Flemish (NEN 7343) and the Walloon (DIN 38414) regulations from Belgium. Batch leaching of the fresh ashes at natural pH showed that seven elements exceeded at least one regulatory limit (Ba, Cr, Cu, Mo, Pb, Se and Zn), and that both ashes had excess basicity (pH > 12). Accelerated carbonation achieved significant reduction in ash basicity (9.3–9.9); lower than ageing (10.5–12.2) and heat treatment (11.1–12.1). For sample B, there was little distinction between the leaching results of ageing and accelerated carbonation with respect to regulatory limits; however carbonation achieved comparatively lower leaching levels. Heat treatment was especially detrimental to the leaching of Cr. For sample F, ageing was ineffective and heat treatment had marginally better results, while accelerated carbonation delivered the most effective performance, with slurry carbonation meeting all DIN limits. Slurry carbonation was deemed the most effective treatment process, achieving consistently significant leaching stabilization, while also effectively washing out Cl ions, a requirement for the utilization of the ashes in construction applications. The benefits of carbonation were linked to the formation of significant quantities of Ca-carbonates, including appreciable quantities of the Aragonite polymorph formed in the slurry carbonated samples.
+

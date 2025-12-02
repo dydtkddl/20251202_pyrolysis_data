@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of heavy bio-oil and disposable masks pyrolysate with Ce/Fe-based oxygen carrier catalyst Hydrodeoxygenation (HDO) of heavy components of bio-oils is an effective way to improve the quality of bio-oil into fuel oil. Up to now, in-situ hydrogenation technology is a popular upgrading approach because of its economy, simplicity and efficiency, and the developing suitable hydrogenation catalyst and hydrogen donor is one of the key issues. In light of that, the effects of different reaction temperatures and times in the high pressure reactor on the in-situ hydrogenation of heavy bio-oil were investigated and the upgrading experiments of heavy bio-oil were carried out with the addition of the reduced Ce/Fe-based oxygen carrier (OC) and mask pyrolysate. The results showed that the reduced Ce/Fe-based OC played a dual function of carrying oxygen and catalysis, and the disposable mask pyrolysate was an excellent hydrogen donor to transport active hydrogen. Compared with the untreated bio-oil oxygenated compounds, the physicochemical properties and yield of the liquid products obtained by HDO of heavy bio-oil were higher. Under the action of active hydrogen, the oxygenated compounds could be converted into hydrocarbons (6.34 % to 41.24 %-68.54 %) by HDO. The effective hydrogen-to-carbon ratio ((H/C) eff) of the liquid products (1.08 to 1.74–1.94) and the higher heating value (HHV) (27.75 MJ/kg to 31.64–37.05 MJ/kg) were increased. Particularly, the liquid products collected at 300℃ and 30 min had better performance (HHV 37.05 MJ/Kg and liquid yield 68.45 %). In addition, the liquid products had excellent fluidity. Therefore, the liquid products basically had the characteristics of fuel oil. This work might provide a reference for recycling disposable masks.
+

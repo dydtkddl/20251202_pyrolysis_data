@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetic regulation of Brønsted and Lewis acidity in FAU-type zeolites for olefin-selective plastic waste cracking The selective catalytic cracking of polyethylene (PE) into light olefins offers a sustainable route for plastic upcycling. Here, we demonstrate that controlling the strength and distribution of Brønsted (BAS) and Lewis (LAS) acid sites in FAU-type zeolites via kinetic regulation can dramatically influence activity and selectivity in PE cracking. Increasing crystallization time and temperature promoted the dislodging of framework Al, weakening BAS while enriching LAS, as confirmed by 27Al/29Si MAS NMR, XRD, NH3-TPD, and pyridine-FTIR analysis. The optimized HY-48h catalyst achieved ∼39 % yield of light olefins (C2 =-C4 =) and only ∼4.5 % coke, effectively doubling olefin output and reducing coke to one-fourth compared to conventional HY zeolite. Acidic properties-product distribution analysis revealed that weak BAS and increased LAS content promotes monomolecular β-scission over bimolecular cracking pathways, thereby enhancing light olefins production. Notably, the catalytic activity of the zeolites in PE degradation was closely linked to the strength of BAS. Furthermore, HY-48h maintained its performance in the cracking of HDPE and real post-consumer plastic waste, presenting strong catalytic resilience even in the presence of inorganic impurities. These findings highlight the critical role of acid site engineering in decoupling olefin formation from coke generation, offering a practical route to design zeolites for efficient, selective plastic waste valorization.
+

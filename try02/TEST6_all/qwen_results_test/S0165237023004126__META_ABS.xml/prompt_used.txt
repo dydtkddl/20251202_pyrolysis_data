@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Reactive molecular dynamics simulations of plastics pyrolysis with additives: Comparison of ReaxFF branches and experimental results In this work, the efficiency of the combustion and aqueous branches of the reactive potential ReaxFF are compared through pyrolysis investigations from reactive molecular simulations of three polymers: polyethylene (PE), polystyrene (PS) and polypropylene (PP) with additive compounds. Thermogravimetric analyses were implemented, computing the weight loss percentage along with analyzes of the pyrolysis products. Three force fields were considered: the CHON-2019 and the CHOSFClN potentials coming from the combustion branch and the CHONCl-2022_weak potential coming from the aqueous branch. The results show that both CHON-2019 and CHONCl-2022_weak force fields give similar results in adequacy with the experimental results and are better than the CHOSFClN force field from the combustion branch. They can correctly predict the kinetic order of polymer degradation and identify the species formed and their quantities. As a result, the latest versions of the ReaxFF potential, belonging to the aqueous branch, are well suited to study the pyrolysis processes and may give equal or better results than force fields from the combustion branch. Furthermore, force fields from the aqueous branch seem to be more reliable for the investigation of the effect of the additives’ role on plastic pyrolysis. Finally, an important aspect presented in this article is the use of statistical simulations for the different investigations. An uncertainty estimation of 30 K was computed from ten thermogravimetric analyses simulated with ReaxFF on the PP pyrolysis.
+

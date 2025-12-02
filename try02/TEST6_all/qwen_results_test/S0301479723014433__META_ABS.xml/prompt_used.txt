@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental investigation of acrylonitrile butadiene styrene plastics plasma gasification E-waste comprising plastics causes serious ecological problems due to low degradability, but it is capable of producing a high amount of energy by thermochemical conversion. Therefore, the current study focuses on generating clean syngas through plasma gasification of acrylonitrile butadiene styrene (ABS) based computer keyboard plastic waste (CKPW) using CO2 as a gasifying agent. The effect of feed rate, gas flow rate and plasma power on the syngas composition was studied. In addition, a comprehensive investigation of energy, exergy, economic and environmental analyses along with characterization of the obtained products was conducted to evaluate the performance of the system. Based on the experimental results, the optimum process parameters for producing syngas possessing a higher calorific value (15.80 MJ/m3) with a higher percentage of H2 (30.16 vol%) and CO (46.09 vol%) were estimated. The optimum feed flow rates of solid fuel and CO2 gas and torch power were estimated as 40 g/10 min, 0.5 lpm and 1.12 kW, respectively. At these conditions, the system could achieve a maximum energy and exergy efficiency of 46.06% and 44.34%, respectively, while the levelized cost of syngas (LCOSover) was estimated as 25.45 INR/kWh, including the social cost. Likewise, the lower values of the estimated global warming potential (370.19 gCO2eq/h) illustrate the better sustainability of the process. The obtained oil with the estimated LHV of 39.13 MJ/kg could be an alternative fuel for diesel and the residue containing a higher proportion of TiO2 has medical applications upon further enrichment. The reaction mechanism of ABS conversion to syngas under plasma gasification conditions is proposed.
+

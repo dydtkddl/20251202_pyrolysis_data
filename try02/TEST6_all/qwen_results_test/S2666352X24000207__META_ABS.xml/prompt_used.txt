@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comparative pyrolysis study of tetraethoxysilane and tetraethoxymethane: Insight into congener substitution effects on pyrolysis chemistry of siloxane flame synthesis precursors The pyrolysis of siloxane precursors, such as tetraethoxysilane (TEOS), is commonly employed in the flame synthesis and chemical vapor deposition of silica nanoparticles. In this work, the flow reactor pyrolysis of TEOS is studied using gas chromatography (GC) and synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS), and the congener substitution effects from the central C atom to the central Si atom are investigated through comparison with its hydrocarbon counterpart tetraethoxymethane (TEOM). Pyrolysis models of TEOS and TEOM are constructed and validated against the measured results. Modeling analysis, including rate of production analysis and sensitivity analysis, provides insights into chemistry in fuel consumption and product formation. In contrast, the observations of silicon-containing products in SVUV-PIMS experiments provide evidence for crucial decomposition pathways of TEOS. It is observed that TEOS exhibits significantly higher stability than TEOM under pyrolysis conditions. The most abundant products in the pyrolysis of TEOS and TEOM are ethylene and ethanol, and TEOS produces more hydrocarbon products than TEOM. The lower pyrolysis reactivity of TEOS is attributed to the slower unimolecular decomposition reaction which dominates the decomposition of TEOS than TEOM. This can be explained by the hindrance of the extremely strong Si-O bond resulting from the significantly different electronegativity between Si and O. The higher initial decomposition temperature of TEOS enhances the contribution of other decomposition channels, such as C-C bond dissociation and H-abstraction reactions, in TEOS consumption. This leads to the abundant formation of hydrocarbon productions such as methane, ethane, and acetaldehyde. As the main pyrolysis product, the ethanol produced by TEOM pyrolysis is four times that of TEOS due to the congener substitution effects. The ethanol formation pathway in TEOS pyrolysis is different from that in TEOM pyrolysis, which is mainly formed via a newly proposed multi-step mechanism, resulting in a lower yield in TEOS pyrolysis.
+

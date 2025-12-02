@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Compostable and recycled plastics do not improve environmental chemical safety compared to conventional single-use polyethylene Due to recent regulations encouraging the reduction of single-use plastic waste, compostable plastics are replacing polyethylene (PE) for applications in the form of thin films. Seven commercial brands of compostable bags and three brands of PE bags (conventional, oxodegradable and recycled), as well as their corresponding resins, were assessed in terms of major components of the polymeric matrix, qualitative and quantitative composition in additives of bags and their leachates, and ecotoxicological effects on test species representative of the main marine taxa, namely microalgae, copepods, sea-urchin embryos, bivalves and fish. Polybutylene-adipate-terephthalate (PBAT), an oil-based polymer, was the main component of all compostable bags analysed, and most of them also included in their composition polylactic-acid (PLA) and starch. Compostable bags showed a higher number of chemical additives than conventional PE bags, and generally higher concentrations of phthalate plasticizers and organophosphate flame retardants. This includes chemicals registered in the EU as exhibiting acute and chronic aquatic toxicity levels 1 and 2. Following standard procedures for plastic leachates, no effects of any product were found on microalgae and fish larva, but bioplastics consistently showed a higher short term aquatic toxicity to marine invertebrates compared to PE items. None of the toxicity levels found though support concerning effects at environmentally relevant plastic densities. Remarkably higher levels of some metals were found in recycled PE compared to first-use conventional PE bags. In conclusion, based on these findings, compostable bags cannot be considered chemically or ecotoxicologically safer products than PE bags.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Impact of the fouling mechanism on enzymatic depolymerization of xylan in different configurations of membrane reactors In order to maximize enzymatic xylan depolymerization while simultaneously purifying the resulting monosaccharide (xylose), different ultrafiltration (UF) membrane reactor configurations were evaluated. Initial results showed that the two hydrolytic enzymes required for complete depolymerization of xylan, endo-1,4-β-xylanase and β-xylosidase, promoted different types of fouling, which had a direct impact on the extent of xylan hydrolysis achieved during reaction. Endo-1,4-β-xylanase generated DP 1–6 xylo-oligomers. These products contributed to partial pore blocking of the 1kDa polysulfone membrane and caused irreversible flux loss (∼20%). The presence of β-xylosidase could not prevent deposition of xylan and xylooligomers on the UF membrane surface. Mulder’s modelling of the filtration parameters affirmed that this xylan and xylooligosaccharide deposition formed a cake layer on the membrane which hindered enzymatic attack in addition to fouling. Reaction with both enzymes followed by UF was found to be the optimal configuration, providing at least 40% higher xylan hydrolysis than the cascade configuration (involving sequential reaction with each of the enzymes separately) and the simultaneous reaction-filtration with both enzymes, respectively. This study thus confirmed that the reactor configuration has a crucial impact on the performance of both the reaction and the separation process of xylose during enzymatic xylan degradation, and that the type of fouling mechanism varies in response to the type of enzyme treatment.
+

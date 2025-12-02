@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+CO2-mediated thermal treatment of disposable plastic food containers In accordance with global economic prosperity, the frequencies of food delivery and takeout orders have been increasing. The pandemic life, specifically arising from COVID-19, rapidly expanded the food delivery service. Thus, the massive generation of disposable plastic food containers has become significant environmental problems. Establishing a sustainable disposal platform for plastic packaging waste (PPW) of food delivery containers has intrigued particular interest. To comprise this grand challenge, a reliable thermal disposable platform has been suggested in this study. From the pyrolysis process, a heterogeneous plastic mixture of PPW was converted into syngas and value-added hydrocarbons (HCs). PPW collected from five different restaurants consisted of polypropylene (36.9 wt%), polyethylene (10.5 wt%), polyethylene terephthalate (18.1 wt%), polystyrene (13.5 wt%), polyvinyl chloride (4.2 wt%), and other composites (16.8 wt%). Due to these compositional complexities, pyrolysis of PPW led to formations of a variety of benzene derivatives and aliphatic HCs. Adapting multi-stage pyrolysis, the different chemicals were converted into industrial chemicals (benzene, toluene, styrene, etc.). To selectively convert HCs into syngas (H2 and CO), catalytic pyrolysis was adapted using supported Ni catalyst (5 wt% Ni/SiO2). Over Ni catalyst, H2 was produced as a main product due to CH bond scission of HCs. When CO2 was used as a co-reactant, HCs were further transformed to H2 and CO through the chemical reactions of CO2 with gas phase HCs. CO2-assisted catalytic pyrolysis also retarded catalyst deactivation inhibiting coke deposition on Ni catalyst.
+

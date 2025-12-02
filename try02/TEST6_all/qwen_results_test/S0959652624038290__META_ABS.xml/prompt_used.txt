@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation on nitrogen migration and transformation during hydrothermal conversion of glucose and xylose in N-rich solution recycled from hydrothermal treatment of fiberboard Nitrogen migration and transformation have been extensively studied during the thermochemical conversion of biomass, particularly N-rich biomass, due to concerns about nitrogen oxides pollution or the preparation of N-doped carbon materials. Nitrogen in fiberboard was extracted into an aqueous solution through low-temperature hydrothermal treatment to prepare the recycled aqueous solution. Subsequently, hydrothermal conversions of glucose and xylose were conducted in the recycled solution. The migration and transformation of nitrogen between hydrochars and aqueous phase were investigated. The results showed that the nitrogen retention rates of glucose hydrochars were higher than those of xylose hydrochars at low temperatures. As the temperature increased, the nitrogen retention rates of glucose and xylose hydrochars tended to converge, reaching their highest value at 220 °C. In hydrochars, nitrogen had a high content and was widely distributed on the surface of the carbon microspheres. The nitrogen content did not change significantly with increasing temperatures, but the nitrogen functional groups tended to become more thermostable. In addition, the char yields of glucose and xylose in fiberboard recycled solution were significantly higher than that in the ultrapure water at low temperatures, which indicates that the introduction of nitrogen promotes the formation of hydrochars. These findings favored the study on the nitrogen migration and transformation during hydrothermal conversions of lignocellulose in a N-rich environment.
+

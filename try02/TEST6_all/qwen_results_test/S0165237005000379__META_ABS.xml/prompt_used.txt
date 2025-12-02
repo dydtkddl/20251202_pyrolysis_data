@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal and catalytic decomposition behavior of PVC mixed plastic waste with petroleum residue The pyrolysis and hydropyrolysis of PVC mixed plastic waste alone and with petroleum residue was carried out at 150 and 350°C under N2 gas and at 430°C under 6.5MPa H2 gas pressure. The behavior of plastic waste during thermal and catalytic decomposition has also been studied in single- and two-stage reaction processes. In the individual pyrolysis process, both the petroleum residue and polystyrene (PS) undergo more than 90% conversion to liquid and gaseous products, whereas low-density polyethylene (LDPE) and high-density polyethylene (HDPE) yielded lower conversions products, and polypropylene (PP) and polyvinyl chloride (PVC) afforded somewhere a moderate to high conversion products. In a single-stage pyrolysis reaction, PVC was processed with petroleum residue at 150 and 430°C, under N2 gas for 1h at each temperature in a glass reactor. The model PVC and waste PVC showed slight variations in the products distribution obtained from the glass reactor. In two-stage process, model PVC, vacuum gas oil (VGO) and a number of different catalysts were used in a stainless steel autoclave micro tubular reactor at 350°C under the stream of N2 gas for 1h and at 430°C under 950psi (6.5MPa) H2 pressure for the duration of 2h. Significantly, different products distributions were obtained. Among the catalysts used, fluid catalytic cracking (FCC) and hydrocracking catalysts (HC-1) were most effective in producing liquid fuel (hexane soluble) materials. The study shows that the catalytic coprocessing of PVC with VGO is a feasible process by which PVC and VGO materials can be converted into transportation fuels.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Feedback control strategy of Fischer–Tropsch process in a micro-GtL plant Gas-to-liquid technology monetizes flared natural gas to produce green fuel while reducing carbon emissions. In the first step, oxygen reforms methane to CO and H2 followed by Fischer–Tropsch synthesis (FTS), which is highly exothermic and requires a tight temperature control to avoid thermal runaway. Bench-scale units are insufficient to generate basic data to design dynamic control systems for pilot-plants, particularly for intensified processes, because of uncertainties related to heat losses and the spatial and temporal reaction rates. Here, we propose a simulation-based feedback controller design strategy to initially estimate the parameters of a proportional Integral (PI) controller. We applied a power law model to design the controller in Aspen V12 and tested its robustness with a fractional lumped model as an alternative. An Excel ‘solver module’ estimated heat exchange parameters considering the fluidized bed hydrodynamics at steady state. Then, through dynamic simulation, we identified the parameters of a ‘first-order plus dead time’ model via a step response of the reactor temperature to design the PI temperature controller. The controller parameters were characterized by the internal model control (IMC) approach, which is robust to upstream disturbances, kinetic model mismatch, and heat exchange uncertainties.
+

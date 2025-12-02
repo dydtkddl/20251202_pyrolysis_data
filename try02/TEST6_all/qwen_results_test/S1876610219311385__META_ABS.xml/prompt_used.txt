@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Tar from pilot scale co-pyrolysis of biological dairy sludge and spruce wood chips A pilot scale investigation of co-pyrolysis of biological dairy sludge and spruce wood chips and pyrolysis of spruce wood chips solely was carried out. Pyrolysis was tested as a waste treatment method aiming to reduce the volume of dairy sludge while producing a pyrolysis gas suitable for an internal combustion engine. Pyrolysis tests were carried out in a continuously fed, pilot scale rotating retort type of facility in the temperature range between 700 and 770 °C. Feedstock feeding rates were between 40.9 – 68.6 kgd.a.f. h-1. Tar yields and composition was measured by means of the solid phase adsorption method in order to assess gas quality with regard to the specified tar limits given for downstream applications. The yields of total gas chromatography detectable tar produced from the dairy sludge and spruce wood chips blend was in the range between 7.25 - 10.98 gtotal tar Nm-3 dry raw gas, while spruce wood chips solely produced yields between 11.18 - 13.31 gtotal tar Nm-3 dry raw gas. Composition wise, the main difference was a number of nitrogen-containing tar compounds reflecting the high nitrogen content in dairy sludge feedstock with 2-butenenitrile, pyridine and 1H-pyrrole being the most abundant nitrogen-containing tar compounds. Raw pyrolysis gas from the two feedstocks tested did not meet the requirements regarding tar limits given in the manufacturer’s specification for their internal combustion engine. The raw pyrolysis gas contained excessive amounts of 3 and 4+ aromatic ring tars. Therefore tar removal is required prior to combustion in the engine. The proposed tar removal strategy includes a thermal tar reformer using air as a reforming agent followed by adsorption using wood chips, or in-process generated bio-char, or torrefied biomass as a viable adsorbent.
+

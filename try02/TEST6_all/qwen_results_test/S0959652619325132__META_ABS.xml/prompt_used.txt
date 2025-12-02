@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The combustion of polyolefins in inert and catalytic fluidised beds The thermal degradation of polyethylene and polypropylene were performed in three types of fluidised bed consisting of sand, inert hollow microspheres (cenospheres) with a density of <1 g/cm3, or the same cenospheres covered with Fe2O3. For the first time, the cenospheres were proposed as material of fluidised bed that allowed the immersion of polymeric material. With regard to combustion, this is organised inside a fluidised bed reactor consisting of sand as the bed material; the combustion of polyolefins occurs in the freeboard with considerable soot formation. Based on acoustic and video analyses, it was proven that the combustion of polyolefins in the cenospheric fluidised bed reactor occurs inside the fluidised bed. It takes the form of explosions in the bubbles or takes place in the emulsion phase. In the cenospheric fluidised bed, a 97–99% yield of polyolefin conversion can be achieved at 800 °C. Catalytic combustion in the fluidised bed reactor was also proposed, for this, catalytic bed material was prepared by chemical Fe2O3 deposition on the cenospheres. As precursor Fe(CO)5 was used. As a consequence of changing the non-catalytic fluidised bed into a catalytic bed, conversion to CO2 increased from 57-59% to 80–85% at temperatures as low as 500 °C. Furthermore, at 800oC–900 °C, the CO2 yield increased from 97-99% to 98–99%, these small differences caused the CO concentration in the catalytic process to be 2–4 times lower than in the case of the process conducted in the inert fluidised bed. The use of a catalytic bed led to the complete elimination of explosions, thus it is safer and also leads to lower NOX emissions. Based on experimental data, NOx concentration did not exceed 6 mg in a cubic metre of dry exhaust gases containing 11%vol.O2 at all tested temperatures (500–900 °C).
+

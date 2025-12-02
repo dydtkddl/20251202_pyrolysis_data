@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A study of co-pyrolysis of sewage sludge and rice husk for syngas production based on a cyclic catalytic integrated process system To address the challenges of low yield and low heating value of syngas, high yield of tar via pyrolysis, and to promote the resource utilization of syngas, this study prepared high-quality syngas through the secondary cracking of tar in cyclic catalytic pyrolysis steam based on a novel cyclic catalytic integrated pyrolysis system. In this study, the cyclic catalytic integrated pyrolysis system process parameters were synergistically optimized based on the pyrolysis syngas yield and lower heating value as indicators. The results showed that the optimal mixing ratio of sewage sludge and rice husk was 25:75 w/w. The optimal cycle speed and catalyst dosage was 1050r/min and 2.5g respectively. Compared to the normal pyrolysis system based on sewage sludge pyrolysis, the liquid phase product yield reduced 6 wt%, and the gas product yield increased 27 wt%. Regarding energy recovery, the syngas lower heating value increased 41.55%. The sewage sludge and rice husk have a synergistic effect and the long residence time promotes secondary cracking of the tar via pyrolysis, thus improving the yield and quality of the syngas. This study provides a new idea for the co-pyrolysis of different biomass to produce high quality syngas, and is very important for the preparation of renewable energy from biomass for application in power generation systems.
+

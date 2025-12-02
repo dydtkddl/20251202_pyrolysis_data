@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Does size matter? Quantification of plastics associated with size fractionated biosolids This study investigated the occurrence and contribution of plastic particles associated with size fractionated biosolids to the total concentration in biosolids (treated sewage sludge) samples collected from 20 wastewater treatment plants (WWTP) across Australia. This was achieved through sequential size fractionation of biosolids samples to quantify the mass concentration of 7 common plastics across a range of biosolids size fractions, including below 25 μm which has not been assessed in many previous studies. Quantitative analysis was performed by pressurized liquid extraction followed by pyrolysis coupled to gas chromatography - mass spectrometry. Of the total quantified plastics (Σ7plastics), the greatest proportion (27%) of the total mass were identified in the nominal <25 μm sized biosolids fraction. Polyethylene dominated the polymer mass in every size fraction, even though profiles varied between WWTPs. When comparing the sum of all sites for each sized biosolids fraction, the plurality of the polyethylene, polyvinyl-chloride, polystyrene, polypropylene, polycarbonate, and polyethylene-terephthalate concentrations were associated with the smallest size fraction (<25 μm). We confirm for the first time the presence of plastic particles in biosolids below a size fraction that is not captured by many methods. This is important, because of the potential greater significance of plastics in the low sizes to environmental and human health.
+

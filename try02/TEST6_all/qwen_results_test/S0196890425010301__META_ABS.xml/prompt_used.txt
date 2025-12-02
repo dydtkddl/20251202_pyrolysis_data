@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Carrier gas-mediated synergistic mechanisms and liquid phase product distribution regulation in Co-Pyrolysis of waste tires and waste plastics Compared to nitrogen (N2) as an inert medium, the weak oxidation characteristics of carbon dioxide (CO2) can induce the pre-depolymerization of macromolecular chains in waste tires (WTs) and waste plastics (WPs), simultaneously reducing pyrolysis energy consumption and increasing pyrolysis oil yield. In this paper, a comparative experimental system utilizing N2 and CO2 as carrier gases was constructed. A primary investigation was conducted on the co-pyrolysis process of WTs and WPs resulting from differences in carrier gases, and the targeted conversion of light products was systematically investigated. Thermogravimetric analysis and kinetic analyses revealed that the CO2 medium reduces the thermodynamic energy barrier, driving a decrease in the initial pyrolysis temperature and activation energy. Notably, WPs (6.6 ℃, 36.3 kJ/mol) exhibited the most pronounced sensitivity to the carrier gas effect. The activation energy of the co-pyrolysis system showed a positive synergistic effect, decreasing by 3.9 kJ/mol in CO2 and 17.1 kJ/mol in N2 medium, respectively. The shifts of theoretical TG-DTG curves further confirmed that the N2-mediated synergistic strength was higher, but CO2 exhibited superior performance in reducing the kinetic energy barrier. Product characterization results indicated that the CO2 medium increased the C5-C12 fraction in the pyrolysis oil by 18.7 wt%, with the selectivity of aromatics and olefins increasing by 14.4 wt% and 13.5 wt%, respectively. Additionally, hydrogen abstraction reactions initiated by WTs promoted the WPs molecular chains to decompose at lower temperatures. These findings clarify the carrier gas-mediated chemical regulation mechanisms for solid waste pyrolysis, advancing theoretical frameworks for polymer upcycling.
+

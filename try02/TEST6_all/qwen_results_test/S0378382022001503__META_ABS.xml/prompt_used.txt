@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review on the valorization of CO2. Focusing on the thermodynamics and catalyst design studies of the direct synthesis of dimethyl ether The direct synthesis of dimethyl ether (DME) on bifunctional catalysts is highly attractive for valorizing CO2 and syngas derived from biomass gasification and is a key process to reduce greenhouse gas emissions. DME economy (conventionally based on its use as fuel) arouses growing interest, in parallel with the development of different routes for its conversion into hydrocarbons (fuels and chemicals) and H2 production. This review, after analyzing different routes and catalytic processes for the valorization of CO2, focuses on studies regarding the thermodynamics of the direct synthesis of DME and the advances in the development of new catalysts. Compared to the synthesis of methanol and the synthesis of DME in two stages, carrying out the reactions of methanol synthesis and its dehydration to DME in the same reactor favors the formation of DME from CO2 and from CO2 co-fed with syngas. Starting from the experience for syngas feedstocks, numerous catalysts have been studied. The first catalysts were physical mixtures or composites prepared by extrusion of methanol synthesis catalysts (CuO-ZnO with different carriers and promoters) and dehydration catalysts (mainly γ-Al2O3 and HZSM-5 zeolite). The performance of the catalysts has been progressively improved with different modifications of the composition and properties of the components to upturn the activity (lower for the hydrogenation of CO2 than for CO) and selectivity, and to minimize the deactivation by coke and by sintering of the metallic function. The core-shell configuration of the bifunctional catalyst allows physically separating the environments of the reactions of methanol synthesis and its conversion into DME. The confinement facilitates the extent of both reactions and improves the stability of the catalyst, since the synergies of the deactivation mechanisms are eliminated.
+

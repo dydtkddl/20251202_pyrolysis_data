@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evolution of phosphorus during co-pyrolysis of wheat straw and mulch film components Large amounts of crop straw and plastic wastes are simultaneously generated in the farmland covered with mulch film during agricultural production. To investigate the feasibility of synergistic treatment of crop straw and plastic wastes, co-pyrolysis of wheat straw and various mulch film components (i.e., non-degradable polyethylene, PE and bio-degradable polylactic acid, PLA) was conducted at different temperatures (300–700 °C) and blending ratios (5–20 wt%), the evolution of biochar and speciation of phosphorus (P) driven by the blending of mulch film was investigated. In comparison with PE, the presence of PLA showed a more profound facilitation effect on the thermal degradation of wheat straw according to the thermogravimetry results. Compared with single wheat straw pyrolysis, the composite biochar derived from co-pyrolysis had a lower yield, a higher pH value and a lower ash content, which was further affected by the type and addition dose of plastic. The addition of PE and PLA promoted the transformation of organic P to inorganic P and low pyrolysis temperature and low-dose of plastic are beneficial to the retention of P in the composite biochar. Notably, co-pyrolysis of plastic films and wheat straw could improve the availability of P in the composite biochar, especially for the high-dose biodegradable PLA addition at low pyrolysis temperature. Therefore, co-pyrolysis of wheat straw and mulch films could be a promising technique to achieve the harmless treatment of these agricultural wastes and efficient reclamation of P.
+

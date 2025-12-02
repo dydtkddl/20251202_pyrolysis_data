@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+1,3,5-trimethylcyclohexane pyrolysis at high pressure and temperature: Insights from theory, experiment and simulation The pyrolysis of 1,3,5-trimethylcyclohexane (T135CH), which is a proposed surrogate for RP-3, has been investigated at a temperature range of 1017 - 1542 K and a pressure range of 13.4 – 23.5 bar. Mole fraction profiles of 30 pyrolysis products were obtained using GC-FID. Methane was found to be the most abundant product at high temperatures, followed by acetylene, while benzene was the most abundant aromatic product. A detailed kinetic model comprising 302 species and 967 reactions was developed, which showed reasonable agreement with the experimental data. This was aided by detailed ab initio calculations of elementary reactions at the CBS-QB3, CASSCF/MRCI levels of theory and conventional transition state theory (TST/VTST) calculations of rate parameters. The rate of production (ROP) analysis revealed that both unimolecular decomposition of T135CH (via CH3 elimination) and H-abstraction reactions of T135CH are responsible for its consumption. Sensitivity analysis demonstrated that the CH3 elimination channel is the most sensitive reaction for T135CH consumption. Additionally, sensitivity analysis of aromatic product formation revealed that allene (aC3H4) and dimethylcyclohexanyl radical (S1X35DCH) play a critical role in the formation of aromatic products. The overall rate constant for T135CH decomposition was found to be: k / s − 1 = 10 6.32 ± 0.23 e x p ( − 25.1 ± 1.3 / k c a l . m o l − 1 ) R T These findings will advance our comprehension of the unimolecular decomposition of T135CH, as well as the reaction pathways involved in the formation of its aromatic products. Ultimately, this knowledge will help us better understand the combustion process of transportation fuels.
+

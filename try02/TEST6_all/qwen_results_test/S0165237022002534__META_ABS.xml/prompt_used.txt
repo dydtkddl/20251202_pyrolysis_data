@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Modeling of polystyrene degradation using kinetic Monte Carlo Polystyrene chemical recycling via pyrolysis constitutes an appropriate route for disposal of post-consumption material as high styrene amounts can be obtained and used for the production of recycled styrene-based materials, avoiding the use of virgin fossil feedstocks. However, although significant amounts of experimental polystyrene pyrolysis data have been published for different operation conditions and reactors, modeling studies about the degradation mechanism are relatively scarce, which corroborates the existence of few investigations related to the scaling-up and optimization of these processes. In a scenario of urgency to solve post-consumer waste, global warming and depletion of natural resources, filling up this gap is mandatory. Therefore, in order to understand and describe the kinetic degradation dynamics of polystyrene through pyrolytic processes, a literature review was performed and a detailed mechanistic model was developed and implemented with help of a fast kinetic Monte Carlo approach. Three reaction temperatures were then used to validate the proposed model (500, 600, and 700 ∘C), based on experimental data obtained through micropyrolysis experiments. The quality of the obtained fits and, importantly, the fast computational time proved the methodology to be an easy and smart alternative for the implementation of kinetic polystyrene pyrolysis models.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Poly(anhydride-ester) gemcitabine: Synthesis and particle engineering of a high payload hydrolysable polymeric drug for cancer therapy Gemcitabine (GMT) is a nucleoside analog used in the treatment of a variety of solid tumors. GMT was chemically modified with a hydrolysable linker, and subsequently incorporated into a poly(anhydride-ester) backbone via melt-polymerization, with the active antimetabolite GMT, thus, becoming the repeat unit that makes up this new material, a biodegradable polymer. Characterization of the structure of polymeric GMT (polyGMT) revealed the incorporation of an average 26 molecules of GMT per polymer chain, which corresponds to a drug loading of 58%w/w. The glass transition temperature of the formed polyGMT was determined to be 123 °C. PolyGMT was engineered into nanoparticles (NPs) using a dialysis-based method, with a resulting geometric diameter of 206 ± 38 nm. The particles are easily dispersible and stable in aqueous-based media, with a hydrodynamic diameter of 229 ± 28 nm. The prepared hydrolysable polyGMT NPs demonstrate ultra-long release profile due to the hydrophobic nature of the linker, and as per characteristic erosion behavior of polymers with anhydride-ester bonds. Accelerated in vitro release studies demonstrate the recovery of free GMT upon hydrolysis, with biological activity as assessed by cytotoxicity assays performed in adenocarcinoma human alveolar basal epithelial (A549) and highly metastatic murine osteosarcoma (K7M2) cells lines. The characteristics of polyGMT, including its thermal properties and built in hydrolysable structure, are thus conducive for use in the preparation of drug delivery systems. Engineered structures prepared with polyGMT can maintain their morphology at ambient and physiologically relevant conditions, and free GMT is recovered as the anhydride and ester bonds are hydrolyzed. This work is innovative as for the first time we demonstrate the ability to polymerize GMT in a hydrolysable polymer structure, and engineer NPs of this polymeric chemotherapy. The synthetic strategy allows for tuning of the polymer hydrophobicity and thus potentialize its behavior, including degradation profile, by varying the linker chemistry. Such controlled release hydrolysable polymers with very high drug loading and controlled erosion profiles are relevant as they may offer new opportunities in drug delivery applications for the treatment of malignant neoplasms.
+

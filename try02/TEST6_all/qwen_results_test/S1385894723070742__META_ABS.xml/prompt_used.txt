@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and kinetic modeling study of C5 cyclic hydrocarbons pyrolysis at elevated pressures: Effect of unsaturation on the reactivity and PAH formation To further explore the decomposition behaviors of C5 cyclic hydrocarbons, important components in the transportation fuels and pivotal intermediates in high-density liquid fuels, the pyrolysis of cyclopentane, cyclopentene and cyclopentadiene with different unsaturation degrees were investigated. The experiments of cyclopentane and cyclopentene were performed at 1.0, 30.0 atm and 773–1173 K in a flow tube reactor. The mole fraction profiles of pyrolysis species, involving C1-C5 small hydrocarbons and monocyclic, bicyclic as well as polycyclic aromatic hydrocarbons (MAHs, BAHs and PAHs), were provided. A universal kinetic model for three C5 cyclic fuels pyrolysis chemistry was proposed and reasonably predicted the speciation profiles newly reported in this work and literature, where rate coefficients of the crucial reactions were compared and upgraded. The differences among three fuels specific pathways were evaluated and the effects of unsaturation on the pyrolysis characteristics of intrinsic reactivity and aromatics formation were revealed. Cyclopentene has the highest pyrolysis reactivity, followed by cyclopentane and cyclopentadiene. Simultaneously formed fuel radicals and key intermediates in three C5 cyclic fuels influence the formation channels of small products, MAHs and BAHs. The saturated cyclopentane is easily occur the ring-opening reaction to generate more C2 and C3 species, whereas the increase in unsaturation promotes MAHs and BAHs formation in cyclopentene and cyclopentadiene pyrolysis, especially the toluene, styrene, indene and naphthalene. The rate of production analysis shows the formations of these MAHs and BAHs are strongly dependent on the concentration levels of cyclopentadienyl resonance stabilized radical (RSR). Differently, the dominated growth pathways of three- and four-ring PAHs are barely influenced by the specific fuel chemistry and indenyl plays a crucial role via the typical RSR chain reactions at high pressures.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Valorization of lignocellulosic biomass forest residues in quebec via the integrated hydropyrolysis and hydroconversion (IH2) technology: A review Lignocellulosic biomass residues from Quebec's forests, such as branches and logging residues, can be thermochemically converted into hydrocarbons-rich renewable fuels, offering a sustainable alternative to fossil oil in transportation. Integrated Hydropyrolysis and Hydroconversion (IH2) has emerged as a promising biorefinery technology for transforming diverse biomass feedstocks into bio-oil with properties akin to petroleum, achieving approximately 45 % carbon conversion and 27 wt% bio-oil yield. Optimal conditions for catalytic fast hydropyrolysis (CFHP) include temperatures of 400–450 °C, hydrogen pressures of 20–30 bar, and biomass heating rates of 100–500 °C/min. For the catalytic hydroconversion (CHC) stage, lower temperatures of 250–400 °C with similar hydrogen pressures are beneficial. To enhance bio-oil quality and yield, feed particle sizes below 1 mm are recommended for enhanced heat transfer. While clean hydrogen for IH2 could be produced from electrolysis and biomass, an alternative co-CFHP process using hydrogen-rich bio-based solvents, UEO, and waste plastics can mitigate the need for external hydrogen, high pressures, and complex setups. This can be operated with or without an optional hydrotreatment stage based on required product specifications. The results highlight some potential catalyst alternatives to TMS like TMO, TMP, TMN, and TMC that could improve deoxygenation efficiency and reduce associated challenges. Carbonaceous supports like biochars can replace conventional Al2O3 and achieve better performance w.r.t coking, surface functionalities, metal dispersibility, and sensitivity to deoxygenation by-products. Additionally, fluidized bed reactors are suggested for their scalability and effectiveness in facilitating consistent reactions. Overall, this study underscores the viability of IH2 and identifies critical areas for further research to achieve demonstration-scale feasibility.
+

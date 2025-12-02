@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Bio-oils from arid land plants: Flash pyrolysis of Euphorbia characias bagasse The devolatilization of the bagasse obtained by solvent extraction of dried Euphorbia characias, a bushy plant growing in arid land of the Mediterranean area, was investigated under rapid heating conditions at atmospheric pressure using a bench-scale fluidized bed pyrolyser. Particle heating rates exceeded 104°C s−1. Bagasse was fed continuously at the rate of 6 g h−1 directly into a sand bed fluidized by nitrogen operating in the temperature range of 400°–750°C. The yields of oils, gases and chars are reported. A maximum oil yield of 44% (wt/wt) (moisture free bagasse) was obtained at 500°C. Yields of gases, CO, CO2, C1–C4 hydrocarbons increased with the rise in temperature, reaching a maximum at 750°C. Elemental analyses showed that the composition of oils and chars was dependent on pyrolysis temperature. The nitrogen content is fairly high; an upgrading process could be necessary for its remotion before the use of the bio-oil as combustible. The other characteristics of oils fall in the range of oils derived from other biomass feedstocks. Chars have a high HHV (15.36 MJ kg−1 at 500°C), representing a valuable fuel.
+

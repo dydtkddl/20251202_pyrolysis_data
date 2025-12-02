@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on pine sawdust pyrolysis behavior by fast pyrolysis under inert and reductive atmospheres Fast pyrolysis of pine sawdust (PS) was investigated in a drop tube quartz reactor to understand the effects of temperature and atmosphere (Ar and H2) on the product yields, gas composition, bio-oil characteristics (organic composition and molecular mass distributions (MMDs)), and the carbon and oxygen conversion. The pyrolysis behavior and typical products from PS pyrolysis were also conducted using a thermogravimetry-mass spectroscopy (TG-MS) and pyrolysis-gas-chromatography/mass spectrometry (Py-GC/MS). The results show that the highest oil yields can be obtained at 500°C of 55.09 and 54.41wt.% under Ar and H2 atmosphere, respectively. In comparison to an inert atmosphere, H2 created lower oil yields but higher gas yields, especially for CO and CH4 yields, and narrower MMDs, smaller Mn and Mw, and fewer char especially at high temperatures. The high temperatures and H2 atmosphere contribute to the oxygen and carbon transferring from material to volatile, especially to the gaseous products. H2 can promote the secondary cracking of macromolecules and weaken the re-polymerization of anhydrosugar and lignin oligomers.
+

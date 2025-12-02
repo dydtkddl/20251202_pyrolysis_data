@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Aerobic granular sludge: Formation mechanism, accelerating granulation strategies, and emerging applications Industry, pharmaceuticals and catering all generate large amounts of complex wastewater that urgently requires effective treatment. Aerobic Granular Sludge (AGS) has emerged as a transformative technology in sustainable wastewater treatment, characterized by its compact structure, high biomass retention and multiple pollutants removal capability. The unique spatial layered structure allows AGS to simultaneously remove COD, nitrogen, phosphorus and other pollutants from wastewater in a single reactor. This paper analyzed 3289 retrieved articles and found that research hotspots in the past 15 years cover both macroscale applications and molecular mechanisms related to AGS. There is no unified view on the formation mechanism of AGS. The connections and differences between the mechanisms of various strategies to accelerate AGS granulation are still unclear. Based on relevant studies in the past 25 years, this paper proposes a 6-step granulation mechanism of AGS, including 6 processes from nucleus formation to AGS fragmentation. It comprehensively summarizes the influencing factors in the granulation process, the mechanisms of 4 strategies to accelerate granulation, their connections and the latest knowledge. It emphasizes the crucial role of AGS in integrating the treatment of emerging pollutants in wastewater and resource recovery. This work is of great significance for developing efficient and sustainable wastewater treatment systems.
+

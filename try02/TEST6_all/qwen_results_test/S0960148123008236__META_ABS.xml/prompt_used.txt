@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermochemical pretreatments to improve the fuel properties of rice husk: A review The alarming rate at which the deposit of non-renewable or fossil energy resources are depleting around the world has been nudging us in the direction of green energy for quite a long time. Considering the current and upcoming global energy crisis, we have no choice but to pay our serious attention to renewable resources to meet the energy demand of an ever-growing global population and industry. Rice husk has about 20% mass percentage of rice, with low energy and bulk density. Due to these properties, it is not viable to directly combust rice husk as a fuel. Different thermochemical pretreatment technologies can be effectively implemented to improve the fuel characteristics. However, there have been no comprehensive review article on different pretreatments of rice husk. This paper reviews most common rice husk pretreatments technologies namely, gasification, torrefaction, pyrolysis, and hydrothermal carbonization including multiple sub-categories of each technology. All of these processes are successful in improving the fuel characteristics of rice husk such as higher heating value or calorific value, moisture content, fixed carbon, etc. Each of them serves the purpose of converting a low energy-density biomass into an energy-rich material like coal differently. Location, resources, available technology, etc. should also be considered while deciding which pretreatment would be optimum for a given particular case. A comparison has been presented on how much energy can be extracted from rice husk by implementing different technologies given they can be upscaled to an industrial scale. For 527,534 kg of rice husk produced from a sample location in Bangladesh per annum, wet torrefaction before pyrolysis of rice husk yields 85 MW of power which is the highest among the 4 pretreatments discussed in this paper.
+

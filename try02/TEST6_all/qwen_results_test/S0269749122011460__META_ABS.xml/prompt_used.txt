@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of methanol, sodium citrate, and chlorella powder on enhanced anaerobic treatment of coal pyrolysis wastewater To better promote environment friendly development of the coal chemical industry, this study investigated effects of methanol, sodium citrate, and chlorella powder (a type of microalgae) as co-metabolic substances on enhanced anaerobic treatment of coal pyrolysis wastewater with anaerobic sludge. The anaerobic sludge was loaded into four 2 L anaerobic reactors for co-metabolism enhanced anaerobic experiments. Anaerobic reactor 1 (R1) as control group did not add a co-metabolic substance; anaerobic reactor 2 (R2) added methanol; anaerobic reactor 3 (R3) added sodium citrate; and anaerobic reactor 4 (R4) added chlorella powder. In the blank control group, the removal ratios of total phenol (TPh), quinoline, and indole were only 12.07%, 42.15%, and 50.47%, respectively, indicating that 50 mg/L quinoline, 50 mg/L indole, and 600 mg/L TPh produced strong toxicity inhibition function on the anaerobic microorganism in reactor. When the concentration of methanol, sodium citrate, and chlorella was 400 μg/L, the reactors with co-metabolic substances had better treatment effect on TPh. Among them, the strengthening effects of sodium citrate (TPh removal ratio: 44.87%) and chlorella (47.85%) were better than that of methanol (38.72%) and the control group (10.62%). Additionally, the reactors with co-metabolic substances had higher degradation ratios on quinoline, indole, and chemical oxygen demand (COD). The data of extracellular polymeric substances showed that with the co-metabolic substances, anaerobic microorganisms produced more humic acids by degrading phenols and nitrogen-containing heterocyclic compounds (NHCs). Compared with the control group, the reactors added with sodium citrate and chlorella had larger average particle size of sludge. Thus, sodium citrate and chlorella could improve sludge sedimentation performance by increasing the sludge particle size. The bacterial community structures of reactors were explored and the results showed that Aminicenantes genera incertae sedis, Levinea, Geobacter, Smithella, Brachymonas, and Longilinea were the main functional bacteria in reactor added with chlorella.
+

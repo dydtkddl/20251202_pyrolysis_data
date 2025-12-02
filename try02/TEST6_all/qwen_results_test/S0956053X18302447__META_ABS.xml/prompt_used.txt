@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Plastic flexible films waste management – A state of art review Plastic flexible films are increasingly used in many applications due to their lightness and versatility. In 2014, the amount of plastic films represented 34% of total plastic packaging produced in UK. The flexible film waste generation rises according to the increase in number of applications. Currently, in developed countries, about 50% of plastics in domestic waste are films. Moreover, about 615,000 tonnes of agricultural flexible waste are generated in the EU every year. A review of plastic films recycling has been conducted in order to detect the shortcomings and establish guidelines for future research. This paper reviews plastic films waste management technologies from two different sources: post-industrial and post-consumer. Clean and homogeneous post-industrial waste is recycled through closed-loop or open-loop mechanical processes. The main differences between these methods are the quality and the application of the recycled materials. Further research should be focused on closing the loops to obtain the highest environmental benefits of recycling. This could be accomplished through minimizing the material degradation during mechanical processes. Regarding post-consumer waste, flexible films from agricultural and packaging sectors have been assessed. The agricultural films and commercial and industrial flexible packaging are recycled through open-loop mechanical recycling due to existing selective waste collection routes. Nevertheless, the contamination from the use phase adversely affects the quality of recycled plastics. Therefore, upgrading of current washing lines is required. On the other hand, household flexible packaging shows the lowest recycling rates mainly because of inefficient sorting technologies. Delamination and compatibilization methods should be further developed to ensure the recycling of multilayer films. Finally, Life Cycle Assessment (LCA) studies on waste management have been reviewed. A lack of thorough LCA on plastic films waste management systems was identified.
+

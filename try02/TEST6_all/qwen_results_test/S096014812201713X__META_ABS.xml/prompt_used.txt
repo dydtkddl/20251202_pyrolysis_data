@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Coarse-grained CFD-DEM simulation of coal and biomass co-gasification process in a fluidized bed reactor: Effects of particle size distribution and operating pressure The co-gasification of coal and biomass through fluidized bed gasifier is a promising technology for the improvement of the utilization efficiency of fossil fuels and the development of renewable energy. In this work, a coarse-grained computational fluid dynamics-discrete element method (CFD-DEM) simulation is performed to investigate the co-gasification process in a bubbling fluidized bed gasifier. The effects of particle size distribution and operating pressure on the hydrodynamics, heat transfer, and co-gasification performance are analyzed. The results show that the increase of sand particle size distribution (PSD) width slightly affects the particle concentration distribution, particle residence time distribution, and co-gasification performance. The heat transfer rate of convection is an order of magnitude higher than those of conduction and radiation. At higher PSD width, the formation of the vertical solid temperature gradient at the bed bottom is attributed to the deteriorated solid mixing. As the operating pressure increases, the bed temperature decreases apparently. In addition, the variation of the convective heat transfer rate dominates the heat transfer efficiency as the operating pressure changes. The application of elevated operating pressure benefits to the thermal-chemical conversion of blend fuel since the char conversion reaction is accelerated.
+

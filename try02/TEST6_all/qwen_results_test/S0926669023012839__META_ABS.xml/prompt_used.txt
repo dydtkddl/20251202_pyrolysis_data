@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Interactions between cellulose and lignin during pyrolysis: Evolutions of condensed-phase functional groups and gas-phase volatile fraction Understanding cellulose-lignin interactions during biomass pyrolysis is important to improve the overall product distribution and quality. In the current study, the condensed-phase cellulose-lignin interactions during biomass pyrolysis from 100° to 600°C were systematically investigated with in-situ diffuse reflectance infrared Fourier transform spectroscopy and modified perturbation correlation moving-window two-dimensional correlation spectroscopy. It was found that compared to the individual component pyrolysis, the decomposition peak, evident by thermogravimetric analysis, of cellulose-lignin co-pyrolysis became wider and shifted to higher temperature range. The cellulose-lignin interactions further promoted the formations of char, and H2O, CH3/CH2, CO, aromatic-containing compounds. With simultaneous IR identification of gaseous products and condensed-phase remaining, the detailed interaction mechanism was elucidated as: 1) hydrogen donation from cellulose hydroxyl to lignin Cα could promote the lignin rearrangement at low temperature range through quinone methide structure; 2) the reactive species from homolytic cracking of lignin could abstract hydrogen from CH/CH2 groups of cellulose to generate phenolic compounds; 3) dehydration reactions of cellulose was therefore enhanced to promote char formation.
+

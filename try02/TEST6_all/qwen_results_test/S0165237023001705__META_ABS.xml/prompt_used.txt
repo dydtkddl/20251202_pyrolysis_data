@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mechanism of sulfur migration and conversion in pyrolysis/combustion staged conversion process of high sulfur coal To investigate the effects of circulating ash heat carriers and dolomite catalysts on sulfur migration in the coal pyrolysis/circulating fluidized bed combustion staged conversion process, five experiments of coal pyrolysis, ash/coal co-pyrolysis, coal pyrolysis catalyzed by dolomite, ash/coal co-pyrolysis catalyzed by dolomite and combustion of pyrolysis solid products were designed and carried out. By examining the effects of pyrolysis temperature, heating rate, coal-ash ratio and dolomite species on sulfur migration, the final distribution of sulfur-containing pollutants throughout the staged conversion process was systematically analyzed. The results showed that the separate mixing of ash heat carrier at final pyrolysis temperature of 600 °C increased the residual sulfur in solid phase from 79.29 % of raw coal pyrolysis to 90.00 %. When dolomite catalyst was added individually, the sulfur released into gas phase and tar was reduced from 18.28 % and 2.43 % of the raw coal to 13.14 % and 1.94 %, respectively. And Fe additive significantly improved sulfur resistance of the dolomite catalyst. The regeneration process has little effect on the sulfur fixation capacity of natural dolomite. When ash heat carrier and dolomite catalyst were simultaneously added to the system, the sulfur fixed in ash increased from 79.29 % of the raw coal to 91.27 %, and the sulfur fixed in natural dolomite and modified dolomite accounted for 4.32 % and 4.46 % of the total sulfur, respectively. In the combustion experiments of pyrolysis solid phase products, 43.57 %, 65.57 % and 61.44 % of sulfur was retained in the solid phase residue after combustion with circulating ash, circulating ash/natural dolomite and circulating ash/modified dolomite were added, respectively. Compared with direct combustion of coal, the staged conversion process resulted in a 55 % reduction of sulfur in the boiler flue gas. This study provides a theoretical basis for the purification of sulfur-containing pollutants in the staged conversion process.
+

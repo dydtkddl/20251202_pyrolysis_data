@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and modeling study of the pyrolysis and combustion of 2-methyl-tetrahydrofuran Saturated cyclic ethers are being proposed as next-generation bio-derived fuels. However, their pyrolysis and combustion chemistry has not been well established. In this work, the pyrolysis and combustion chemistry of 2-methyl-tetrahydrofuran (MTHF) was investigated through experiments and detailed kinetic modeling. Pyrolysis experiments were performed in a dedicated plug flow reactor at 170kPa, temperatures between 900 and 1100K and a N2 (diluent) to MTHF molar ratio of 10. The combustion chemistry of MTHF was investigated by measuring mole fraction profiles of stable species in premixed flat flames at 6.7kPa and equivalence ratios 0.7, 1.0 and 1.3 and by determining laminar burning velocities of MTHF/air flat flames with unburned gas temperatures of 298, 358 and 398K and equivalence ratios between 0.6 and 1.6. Furthermore, a kinetic model for pyrolysis and combustion of MTHF was developed, which contains a detailed description of the reactions of MTHF and its derived radicals with the aid of new high-level theoretical calculations. Model calculated mole fraction profiles and laminar burning velocities are in relatively good agreement with the obtained experimental data. At the applied pyrolysis conditions, unimolecular decomposition of MTHF by scission of the methyl group and concerted ring opening to 4-penten-1-ol dominates over scission of the ring bonds; the latter reactions were significant in tetrahydrofuran pyrolysis. MTHF is mainly consumed by hydrogen abstraction reactions. Subsequent decomposition of the resulting radicals by β-scission results in the observed product spectrum including small alkenes, formaldehyde, acetaldehyde and ketene. In the studied flames, unimolecular ring opening of MTHF is insignificant and consumption of MTHF through radical chemistry dominates. Recombination of 2-oxo-ethyl and 2-oxo-propyl, primary radicals in MTHF decomposition, with hydrogen atoms and carbon-centered radicals results in a wide range of oxygenated molecules.
+

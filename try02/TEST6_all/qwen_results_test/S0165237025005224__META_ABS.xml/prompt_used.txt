@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comparative study of thermal and catalytic pyrolysis of polystyrene at moderate temperatures. Effects of vacuum and the molecular weight of polystyrene on the selectivities of styrene and other aromatic products This work evaluates the effect of the molecular weight of the polystyrene (PS) feedstock on the styrene selectivity of a thermal PS pyrolysis process at moderate temperatures (≤450 °C) developed at our lab. Also, acid and basic thermal catalytic pyrolysis were compared with the mentioned thermal process. These experiments were carried out under positive pressure using commercial PS as feedstock; but a thermal pyrolysis process under vacuum conditions was also tested, exhibiting increases in monomer yield from 19 % to 48 % (area-based). The polystyrene molar mass strongly influenced the monomer yield in thermal pyrolysis experiments. Catalytic experiments were carried out using commercial zeolites like ZSM-5 (Zeolite Socony Mobil – 5) and zeolites-HY (hydrogen form of zeolite type Y) as acid catalysts. For basic catalytic experiments, calcium oxide (CaO) was used in pure (in-situ) and supported in fumed silica (CaO/SiO2) (ex-situ) forms. The styrene yields (area-based) for the zeolite-catalyzed pyrolysis were in the range of 12–13.4 %, while for the CaO in-situ was 25 % and for the CaO/SiO2, 18 %. The selectivity of styrene and other aromatic byproducts as isomers of monoaromatics, dimers and trimers among the different pyrolysis processes is also compared. All the obtained pyrolysis products in the liquid fraction were analyzed by Gas Chromatography-Mass Spectrometry (GC-MS), and the main compounds were identified. The pyrolysis type (catalytic/thermal) had a profound effect on the product selectivity. The vacuum process led to a significant increase in monomer yield at a moderate temperature (400 °C), that allows for a pyrolysis process with relatively low energy consumption.
+

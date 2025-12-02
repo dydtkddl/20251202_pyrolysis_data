@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microplastics in fresh and processed seafood – A survey of products sold in Germany Plastic contamination in aquatic environments has raised concerns about human exposure through seafood consumption. Recent studies have suggested that microplastic (MP) enters food via processing and packaging, but research on their presence in commercial seafood products is limited. This study aimed to contribute to human dietary MP exposure data by investigating the occurrence of MP in fresh and processed seafood products from the German retail market. A total of 130 products were analyzed, including fresh, frozen, smoked, canned, and marinated seafood. Plastic particles ≥5 μm were quantified using fluorescence imaging, with counts ranging from 0 to 183 MP/g wet weight (median 0.9 MP/g). 97 % of all detected MP in seafood products were smaller than 150 μm. Only 16 % of the examined products contained plastics in amounts exceeding the detection limit of pyrolysis-gas chromatography-mass spectrometry and could therefore be identified and quantified. The identified MP consisted of polystyrene, polyethylene terephthalate, or polypropylene. The annual dietary MP intake via seafood consumption in Germany was estimated to be approximately 16,500 particles per capita. Canned fish showed the highest particle counts of all products (median 2.4 MP/g). No statistically significant differences in MP abundance were observed between species or origin. The study indicated that increased MP occurrence in seafood was associated with food contact materials. These findings highlight the need for further research on the occurrence and content of plastic particles in seafood throughout the entire seafood processing chain to thoroughly assess the dietary human micro- and nanoplastic exposure.
+

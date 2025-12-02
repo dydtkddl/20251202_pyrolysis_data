@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Challenges and opportunities in home-composting of biodegradable plastics: A comprehensive review Biodegradable plastics offer a promising alternative to conventional plastics, but their environmental benefits depend heavily on appropriate end-of-life strategies. Home composting stands out as a decentralized and accessible option with low infrastructure needs and strong potential to involve citizens in sustainable waste management. However, its effectiveness remains uncertain due to fluctuating conditions—such as temperature and humidity—arising from the small scale of composting systems, variability in household practices, and geographic or seasonal influences. These constraints pose significant challenges for the reliable home compostability of bioplastics. This comprehensive review examines the characteristics of decentralized composting systems and their influence on the biodegradation of biodegradable plastics. A total of 48 experimental studies were analysed: 27 conducted under controlled laboratory conditions and 21 under real-life or uncontrolled environments. These studies assessed biodegradability using respirometric techniques, weight loss measurements, or both. Three major factors were identified as key drivers of biodegradation rates: (i) the composition of the plastic, including polymer type, chemical structure, and the presence of fillers or additives; (ii) composting system parameters, such as aeration, volume, and temperature stability; and (iii) the properties of the composting medium, including microbial community composition and nutrient availability. In addition, the review discusses the risk of microplastic persistence, and the methodological heterogeneity observed across studies, which complicates the assessment and comparison of results. Practical recommendations to enhance home composting performance are provided throughout the paper, supporting the development of robust, context-sensitive home-compostability assessment frameworks.
+

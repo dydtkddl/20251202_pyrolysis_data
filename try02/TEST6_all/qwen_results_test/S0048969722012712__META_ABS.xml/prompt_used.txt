@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+30 years trends of microplastic pollution: Mass-quantitative analysis of archived mussel samples from the North and Baltic Seas Microplastics (MP) are ubiquitous throughout the environment as a result of an ongoing, increasing, but also lavish use, of plastics over time and its inherent persistence. In contrast, there are almost no data that allow drawing conclusions about the evolution of plastic pollution in the environment over the past decades. This study investigates the MP load in blue mussels from the North and Baltic Sea archived by the German Environmental Specimen Bank in a time series covering almost 30 years. Samples were enzymatically and chemically oxidative digested for MP extraction and subsequent analyzed mass-quantitatively for nine common polymer clusters by pyrolysis gas chromatography-mass spectrometry. Seven polymer clusters were detected in mussel tissue. Summed MP levels were at ppm levels (<20 μg/g mussel, dry weight). North Sea samples reflected a gradual increase from the 1980s/90s to the 2000s whereas those from Baltic Sea showed consistently higher, rather constant MP levels similar to the North Sea site later than 2000. Polymer composition of both sites stood out by cluster (C) of C-PVC and C-PET at both sites. Mussels from Baltic Sea site had larger C-PE and C-PP proportions. Opposed polymer- and site-specific trends indicated both regional and trans-regional MP sources for different polymer clusters. The MP composition of mussels showed strong similarities with adjacent sediment and water samples. The study introduces a relevant dataset addressing the temporal development of MP pollution. It emphasizes a high indicative potential of environmental MP composition/loads received by mussels but raises the necessity on adequate control materials accompany such kind of studies.
+

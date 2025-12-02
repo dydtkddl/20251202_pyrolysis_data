@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sustainable aviation fuels from biomass and biowaste via bio- and chemo-catalytic conversion: Catalysis, process challenges, and opportunities Sustainable aviation fuel (SAF) production from biomass and biowaste streams is an attractive option for decarbonizing the aviation sector, one of the most-difficult-to-electrify transportation sectors. Despite ongoing commercialization efforts using ASTM-certified pathways (e.g., lipid conversion, Fischer–Tropsch synthesis), production capacities are still inadequate due to limited feedstock supply and high production costs. New conversion technologies that utilize lignocellulosic feedstocks are needed to meet these challenges and satisfy the rapidly growing market. Combining bio- and chemo-catalytic approaches can leverage advantages from both methods, i.e., high product selectivity via biological conversion, and the capability to build C-C chains more efficiently via chemical catalysis. Herein, conversion routes, catalysis, and processes for such pathways are discussed, while key challenges and meaningful R&D opportunities are identified to guide future research activities in the space. Bio- and chemo-catalytic conversion primarily utilize the carbohydrate fraction of lignocellulose, leaving lignin as a waste product. This makes lignin conversion to SAF critical in order to utilize whole biomass, thereby lowering overall production costs while maximizing carbon efficiencies. Thus, lignin valorization strategies are also reviewed herein with vital research areas identified, such as facile lignin depolymerization approaches, highly integrated conversion systems, novel process configurations, and catalysts for the selective cleavage of aryl C–O bonds. The potential efficiency improvements available via integrated conversion steps, such as combined biological and chemo-catalytic routes, along with the use of different parallel pathways, are identified as key to producing all components of a cost-effective, 100% SAF.
+

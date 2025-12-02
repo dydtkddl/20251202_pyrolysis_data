@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fate of heavy metals and polycyclic aromatic hydrocarbons (PAH) in sewage sludge carbonisates and ashes – A risk assessment to a thermochemical phosphorus-recycling process In the near future, phosphorus (P) recycling will gain importance in terms of decreasing primary resources. Sewage sludge (SSL) is an adequate secondary P-resource for P-fertilizer production but it is also a sink for heavy metals and organic pollutants. The present study is an investigation on thermochemical P-recycling of SSL. Various temperatures and amendments were tested regarding their performance to remove heavy metals and polycyclic aromatic hydrocarbons (PAH) and simultaneous increase of the plant-availability of P. The investigations were carried out on two types of SSL originating from wastewater treatment plants with chemical P-precipitation and enhanced biological P-removal, respectively. The results show that thermochemical treatment with chlorine donors is suitable to remove the majority of heavy metals and that a combination of a gaseous chlorine donor (HCl) and sodium additives leads to both high heavy metal removal and high plant availability of P. Furthermore, plant experiments show that almost all investigated thermochemical treatments can significantly reduce the bioavailability and plant uptake of heavy metals. Furthermore, PAHs are secondarily formed during low-temperature treatments (400–500 °C), but can be significantly reduced by using sodium carbonate as an additive.
+

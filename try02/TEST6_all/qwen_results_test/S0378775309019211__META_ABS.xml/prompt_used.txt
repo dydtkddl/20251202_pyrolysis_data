@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic hydrolysis of ammonia borane: Intrinsic parameter estimation and validation Ammonia borane (AB) hydrolysis is a potential process for on-board hydrogen generation. This paper presents isothermal hydrogen release rate measurements of dilute AB (1wt%) hydrolysis in the presence of carbon supported ruthenium catalyst (Ru/C). The ranges of investigated catalyst particle sizes and temperature were 20–181μm and 26–56°C, respectively. The obtained rate data included both kinetic and diffusion-controlled regimes, where the latter was evaluated using the catalyst effectiveness approach. A Langmuir–Hinshelwood kinetic model was adopted to interpret the data, with intrinsic kinetic and diffusion parameters determined by a nonlinear fitting algorithm. The AB hydrolysis was found to have an activation energy 60.4kJmol−1, pre-exponential factor 1.36×1010 mol(kg-cat)−1 s−1, adsorption energy −32.5kJmol−1, and effective mass diffusion coefficient 2×10−10 m2 s−1. These parameters, obtained under dilute AB conditions, were validated by comparing measurements with simulations of AB consumption rates during the hydrolysis of concentrated AB solutions (5–20wt%), and also with the axial temperature distribution in a 0.5kW continuous-flow packed-bed reactor.
+

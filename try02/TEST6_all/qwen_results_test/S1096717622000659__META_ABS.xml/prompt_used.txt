@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biobased PET from lignin using an engineered cis, cis-muconate-producing Pseudomonas putida strain with superior robustness, energy and redox properties Polyethylene terephthalate (PET), the most common synthetic polyester today, is largely produced from fossil resources, contributing to global warming. Consequently, sustainable sources must be developed to meet the increasing demand for this useful polymer. Here, we demonstrate a cascaded value chain that provides green PET from lignin, the world's most underutilized renewable, via fermentative production of cis, cis-muconate (MA) from lignin-based aromatics as a central step. Catechol, industrially the most relevant but apparently also a highly toxic lignin-related aromatic, strongly inhibited MA-producing Pseudomonas putida MA-1. Assessed by 13C metabolic flux analysis, the microbe substantially redirected its carbon core fluxes, resulting in enhanced NADPH supply for stress defense but causing additional ATP costs. The reconstruction of MA production in a genome-reduced P. putida chassis yielded novel producers with superior pathway fluxes and enhanced robustness to catechol and a wide range of other aromatics. Using the advanced producer P. putida MA-10 catechol, MA could be produced in a fed-batch process from catechol (plus glucose as additional growth substrate) up to an attractive titer of 74 g L−1 and a space-time-yield of 1.4 g L−1 h−1. In terms of co-consumed sugar, the further streamlined strain MA-11 achieved the highest yield of 1.4 mol MA (mol glucose)−1, providing a striking economic advantage. Following fermentative production, bio-based MA was purified and used to chemically synthetize the PET monomer terephthalic acid and the comonomer diethylene glycol terephthalic acid through five steps, which finally enabled the first green PET from lignin.
+

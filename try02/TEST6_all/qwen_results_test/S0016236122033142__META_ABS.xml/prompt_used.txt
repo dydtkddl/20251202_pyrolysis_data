@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fast pyrolysis of macadamia nutshell in an auger reactor: Process optimization using response surface methodology (RSM) and oil characterization The aim of this study is to optimize a fast pyrolysis process to produce maximum yield of pyrolysis oil using macadamia nutshell (MNS) as feedstock. The fast pyrolysis process was carried out in an auger reactor. The process was optimized by response surface methodology (RSM) coupled with Box-Behnken design (BBD) considering temperature, residence time and feedstock particle size as independent variables and bio-oil yield as response. The maximum bio-oil yield (43.37 wt%) was obtained at a temperature of 471.21 °C, residence time of 141.82 sec, and feedstock particle size of 3.78 mm. Analysis of variance (ANOVA) confirms that the fast pyrolysis of MNS for maximum bio-oil yield highly depends on temperature followed by feedstock particle size and residence time, respectively. Analysis of the bio-oil obtained at optimum condition shows the presence of 11 functional groups, with the phenol, aromatics and alcohol groups dominating the others. The physicochemical properties analysis reveals that the obtained bio-oil has higher viscosity (11.51 Cst) and water content (20.4 %) which makes it unsuitable for engine application. However, the produced bio-oil can be used as fuel in other applications such as in boilers and as additives to produce valuable chemicals.
+

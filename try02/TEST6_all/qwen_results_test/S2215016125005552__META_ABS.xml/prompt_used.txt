@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A practical method for mass quantification of microplastics in soil media using pyrolysis gas chromatography-mass spectrometry Microplastic (MP) contamination in soil media presents growing analytical challenges. We introduce a validated method for MP mass quantification using pyrolysis–gas chromatography/mass spectrometry (Py-GC/MS), targeting polyethylene (PE), polypropylene (PP), and polystyrene (PS) in synthetic and environmental soils. The method achieved low limits of detection (0.02–0.44 µg), strong linearity (R² > 0.995), and high recovery rates—86.1% (sandy), 90.7% (loamy), and 99.6% (sandy-loam). Cryomilling improved sample homogeneity and quantification accuracy (+3.2%). Fourier transform infrared spectroscopy (FTIR) was used to confirm polymer identity with >85% match. The protocol was successfully applied to environmental samples from urban and agricultural soils in Auckland, New Zealand, demonstrating its robustness and field applicability. This practical workflow offers a reproducible, high-sensitivity approach suitable for routine microplastics monitoring across diverse soil matrices. Py-GC/MS method achieved over 90% accuracy for microplastic quantification. Extraction protocols demonstrated recovery efficiencies of up to 99.6% FTIR complemented Py-GC/MS, confirming polymer identification with >85% accuracy.
+

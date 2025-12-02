@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Photocatalytic oxidation of organic dyes and pollutants in wastewater using different modified titanium dioxides: A comparative review This article compares the effectiveness of pure and modified TiO2 for photocatalytic degradation of different organic matters and clarifies the advantages of the modified TiO2 with photoactivity under visible light. Photocatalytic degradation technique with titanium dioxide is generally applied for treating wastewater containing refractory organic contaminants with the purpose of reuse due to its ability to achieve complete mineralization of the compounds under mild conditions such as ambient temperature and pressure. Performance of different types of photocatalytic reactors, effects of important parameters on the reactors performance, effect of various methods used to enhance the photocatalytic activity of TiO2 including doping, sensitization of TiO2 and surface modification are discussed in details. So far, a few review papers have been published and extensive information have been reported on the structure and electronic properties of TiO2, difference between TiO2 with other common semiconductors used for photocatalytic applications, various methods used to enhance the photocatalytic characteristics of TiO2 including dye sensitization, doping, coupling, the effects of various operating parameters on the photocatalytic degradation of phenols and dyes and types of reactors, comparison between effective modes of TiO2 application as immobilized on surface or as suspension, and photocatalytic hybrid membrane system are presented. However, in the published review papers, performance of the different modified photocatalysts is rarely compared quantitatively. Therefore, in order to provide an inclusive and effective comparison among the studies, specific removal rate (SRR) (mgcompoundremoved/gcat.h) was calculated as a response.
+

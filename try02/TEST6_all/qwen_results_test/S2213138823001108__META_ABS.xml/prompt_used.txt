@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of petroleum coke and wood pellet blend: Kinetic and Thermodynamic Evaluation using Thermogravimetric Analysis The increasing demand for sustainable energy attracted researchers to explore the co-pyrolysis of several wastes. The present study evaluated the kinetic and thermodynamic parameters for the co-pyrolysis of wood pellets and petroleum coke (1:1 by mass) blends using thermogravimetric analysis. The TGA data were analyzed through iso-conversional Ozawa-Flynn-Wall (OFW), Kissinger-Akahira-Sunose (KAS) models, along with the Coats-Redfern method. The results reflect that the order of reaction increases with an increased heating rate. An average value of activation energy calculated was 119.6 kJ mol−1 (OFW) and 126.2 kJ mol−1 (KAS). The values calculated for ΔH, ΔG and ΔS were in line with the past relevant studies on blends. The value ΔG was observed to fall around 182 kJ mol−1. The Coats-Redfern reaction mechanism indicates that D5 (based on diffusion) and F3 (based on chemical reaction) are best apt to the thermal process of degradation. DTA data specifies that degradation involves exothermic and endothermic reactions for the temperature range under study. The study not only provide the basic characteristics of one of the most dominant waste from refinery, but provides a platform for its futuristic potential usage with reliable kinetic and thermodynamic parameters for scale up, optimization, utilization and limitation for efficient system design.
+

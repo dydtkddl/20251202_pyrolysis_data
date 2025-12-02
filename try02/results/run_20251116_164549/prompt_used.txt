@@ -1,0 +1,49 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis**  
+   - Thermal or catalytic decomposition  
+   - Pyrolysis reactor / heating system / temperature range (e.g., 400–800 °C)  
+   - Keywords: pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization, waste-to-fuel, plastic-to-oil, etc.
+
+2. **Lab-scale experimental work (MANDATORY)**  
+   The study must involve **physical experiments** at laboratory scale, such as:  
+   - Bench-scale pyrolysis reactor  
+   - Lab-scale fixed-bed reactor / batch reactor / fluidized bed / microwave reactor  
+   - Catalyst tests with actual reactors  
+   - Real measured outputs (liquid/oil/wax yields, gas composition, char yield, etc.)  
+   - Hands-on characterization (GC-MS, FTIR, TGA, DSC, XRD, SEM, BET, etc.)
+
+   → If the study is purely computational, simulation-based, theoretical, review, modeling-only, LCA-only, ML-only, or process optimization without experiments → **Return NO**
+
+3. **The study should contain or enable actual experimental data extraction**  
+   - Yield values  
+   - Catalyst performance comparisons  
+   - Product distributions  
+   - Temperature–yield relationships  
+   - Measured chemical composition  
+   - Engine test results from produced fuel  
+   - Any quantitative experimental dataset
+
+   → If the abstract does not clearly indicate measurable experimental data, return **NO**.
+
+Your Output:
+Return STRICT JSON with fields:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one sentence explaining why>"
+}
+
+Rules:
+- If ANY of the three criteria is missing or ambiguous → return "NO".
+- The reason must be only one sentence.
+- NO extra text outside JSON.
+- Reason must reflect the key decisive factor (e.g., “no real experiments”, “not about pyrolysis”, “modeling only”).
+
+
+<<<
+Lignocellulosic biomass can be convert to a condensable liquid named bio-oil, a solid product named as char and a mixture of gaseous products comprising CO2, CO, H2, CH4, etc. In recent years, much effort has been made on the investigation of conversion of biomass through pyrolysis. However, commercialisation of the biomass pyrolysis technology is still challenging due to various issues such as the deleterious properties of bio-oil including the low heating value and the high instability at elevated temperatures. To overcome such issues, many processes, reactors and catalysts have been developed for pyrolysis and catalytic pyrolysis of biomass. A state to the art of pyrolysis or catalytic pyrolysis of biomass need to be summarised to have an overall evaluation of the technologies, in order to provide a useful reference for the further development of pyrolysis technology. This study reviews the various pyrolysis process, especially focus on the effects of essential parameters, the process design, the reactors and the catalysts on the pyrolysis process. In addition, progress in commercialisation of pyrolysis technology was also reviewed and the remaining issues in the process of commercialisation were discussed.
+>>>

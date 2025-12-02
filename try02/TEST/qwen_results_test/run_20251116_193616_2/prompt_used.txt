@@ -1,0 +1,47 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis**  
+   - Thermal or catalytic decomposition  
+   - Pyrolysis reactor / heating system / temperature range (e.g., 400–800 °C)  
+   - Keywords: pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization, waste-to-fuel, plastic-to-oil, etc.
+
+2. **Lab-scale experimental work (MANDATORY)**  
+   The study must involve **physical experiments** at laboratory scale, such as:  
+   - Bench-scale pyrolysis reactor  
+   - Lab-scale fixed-bed reactor / batch reactor / fluidized bed / microwave reactor  
+   - Catalyst tests with actual reactors  
+   - Real measured outputs (liquid/oil/wax yields, gas composition, char yield, etc.)  
+   - Hands-on characterization (GC-MS, FTIR, TGA, DSC, XRD, SEM, BET, etc.)
+
+   → If the study is purely computational, simulation-based, theoretical, review, modeling-only, LCA-only, ML-only, or process optimization without experiments → **Return NO**
+
+3. **The study should contain or enable actual experimental data extraction**  
+   - Yield values  
+   - Catalyst performance comparisons  
+   - Product distributions  
+   - Temperature–yield relationships  
+   - Measured chemical composition  
+   - Engine test results from produced fuel  
+   - Any quantitative experimental dataset
+
+   → If the abstract does not clearly indicate measurable experimental data, return **NO**.
+
+Your Output:
+Return STRICT JSON with fields:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one sentence explaining why>"
+}
+
+Rules:
+- If ANY of the three criteria is missing or ambiguous → return "NO".
+- The reason must be only one sentence.
+- NO extra text outside JSON.
+- Reason must reflect the key decisive factor (e.g., “no real experiments”, “not about pyrolysis”, “modeling only”).
+
+
+Carbons obtained by thermal and catalytic cracking of coal tars Reflected-light microscopy has been used to examine the solids formed during cracking of tar vapours at temperatures between 500 and 1000°C on high-temperature coke as contact material. The tars investigated were of the vertical-retort and the fluidized-bed types. Four types of carbons were distinguished on the basis of microscopic form and optical properties. Of these, two were varieties of pyrolytic carbon, another was (at least in part) similar to isotropic carbon, and the fourth a type of pitch coke. Estimates were made of the relative proportions of these types in the solid products from about sixty test runs. The effects of the following process variables on the properties of the carbon products were assessed: temperature of cracking, contact time, tar composition, the use of catalysts on the contact material, and addition of steam and oxygen to tar vapours prior to cracking.

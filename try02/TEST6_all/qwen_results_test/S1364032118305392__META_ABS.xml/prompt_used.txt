@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review on the microwave heating as a sustainable technique for environmental remediation/detoxification applications This review highlights that microwave (MW) heating can be largely considered advantageous for environmental applications. MW has been largely proposed for the processing of sludge or radioactive and toxic wastes including hospital waste, tyres and industrial scores. Researchers demonstrated that MW heating is an eco-friendly technology for waste detoxification because of higher sustainability and effectiveness as complete detoxification process if compared with established techniques such as incineration or conventional pyrolysis. Experimental data demonstrated that MW heating could be also considered as a preferable choice compared with conventional chemical-physical or heating techniques in treating contaminated soils when soils present natural or enhanced high dielectric features. Analogously, for sediment decontamination processes, only conventional thermal treatments can be similarly effective as MW heating, but requiring high temperatures and costs. Undoubtedly, MW-absorber and irradiated matrix heavily affect the MW effectiveness and energy requirements. In general, the main advantages of MW are very rapid process, selective and environmentally sustainable. This depends on the principle of dielectric heating that allows the activation of effective removal mechanisms, namely selective heating and contaminant stripping by water distillation. However, despite the demonstrated possibility of combining eco-friendly with very high removals, the growth of industrial MW applications is still limited due to the lack of several information, which, at the moment represents difficult challenges. In fact, literature mainly relies on lab-scale experiments, and extending the obtained achievements to full-scale still faces to many problems. This still makes MW rarely applied to real practises. Material characterisation, scaling-up, pilot, modelling, design and demonstration studies are strongly desired to bridge the gap between existing literature and full-scale applications, and moving to industrial/production scale. Then, despite a change of approach being observed especially in the last three years, interdisciplinary future research is strictly required in order to exploit the full potential of MW-techniques.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Two-stage pyrolysis of polystyrene: Pyrolysis oil as a source of fuels or benzene, toluene, ethylbenzene, and xylenes The recycling rate of plastic waste needs to be improved worldwide. In that context, pyrolysis, through which petrochemical feedstock and alternative fuel can be obtained, has received significant attention. In this study, pyrolysis of polystyrene was conducted in a continuous two-stage process that has an auger reactor and a fluidized bed reactor connected in series. The main objective was to produce oils rich in benzene, toluene, ethylbenzene, and xylenes instead of typical polystyrene pyrolysis oils, which contain high amounts of styrene monomers with low thermal-oxidative stability. The effects of different reaction temperatures (in both reactors) and the type of fluidizing medium on the product distribution and composition were investigated. The maximum yield of benzene, toluene, ethylbenzene, and xylenes (26.3 wt%) was obtained at a temperature of 780 °C in the fluidized bed reactor. The oil and styrene yields at 780 °C were 86 and 26 wt%, respectively. To evaluate the fuel properties of the pyrolysis oil, its calorific value, API gravity, viscosity, density, ash content, pour point, flash point, and pH were examined. The results indicate that the pyrolysis oil can be both a good source of benzene, toluene, ethylbenzene, and xylenes and can potentially be used as a substitute source to gasoline or diesel fuels when it is mixed with oils with a low aromatic content.
+

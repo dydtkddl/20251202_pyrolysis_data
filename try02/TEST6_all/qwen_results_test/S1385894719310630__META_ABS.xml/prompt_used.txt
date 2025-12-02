@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic co-pyrolysis of cellulose and linear low-density polyethylene over MgO-impregnated catalysts with different acid-base properties Various MgO impregnated catalysts were used for the catalytic co-pyrolysis (CCP) of cellulose and linear low-density polyethylene (LLDPE) at 600 °C in ambient pressure. Micro reactor-gas chromatography, a semi-batch reactor, was used as a reactor and gas chromatogram/mass spectrometry/flame ionization detector were used for product detection. Three kinds of MgO impregnated catalysts, MgO/Carbon (MgO/C), MgO/Al2O3, and MgO/ZrO2, were prepared by the impregnation of MgO to different supporting materials, C, Al2O3, and ZrO2, respectively. Activities of the three MgO-impregnated catalysts were compared with 1:5 of feedstock to catalyst ratio. MgO/C produced the highest quality oil, which consisted of a large amount of aromatic hydrocarbons during the catalytic pyrolysis (CP) of cellulose. When the MgO catalysts were applied to CCP, the selectivity to aromatic hydrocarbons over MgO/C were 13.42%, which were also much higher than those over the other catalysts, including bulk MgO, demonstrating the effectiveness of the MgO/C catalyst on aromatics formation. Importantly, the experimental BTEXs (benzene, toluene, ethylbenzene, xylenes) yields of CCP over MgO/C were also much higher than the theoretical yields, highlighting the effectiveness of hydrogen-rich LLDPE on the CP of cellulose over MgO/C. Further investigation of the cellulose/LLDPE mixing ratio showed that the amount of BTEXs during the CCP of cellulose and LLDPE could be maximized by adjusting the cellulose to LLDPE mixing ratio to 25:75.
+

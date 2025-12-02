@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic decomposition of ammonia gas with metal cations present naturally in low rank coals A novel hot gas cleanup method to decompose a low concentration of NH3 to N2 with metal cations present inherently in low rank coals has been studied with a quartz reactor under the conditions of 750–850°C, 0.1MPa and high space velocity of 45,000h−1. Each coal is pyrolyzed at 900°C to prepare the char, which is subjected to the decomposition of 2000ppm NH3 after pretreatment with H2. All of five chars examined promote NH3 decomposition in inert gas, but the promotion effect depends strongly on the kind of char and can correlate more closely with the Fe content than with the Ca content. This result may indicate that the Fe plays a crucial role in the reaction. A commercial activated carbon with a very low Fe content of <0.05wt% exhibits lower conversion of NH3 to N2 than five chars. The TEM pictures reveal the formation of nanoscale particles of Fe and Ca components on a brown coal char that provides the largest catalytic performance. The char maintains the high conversion level of 80% during 25h reaction at 750°C and achieves the complete decomposition of NH3 at 850°C. The co-feeding of a mixture of H2, CO, and CO2 does not change significantly the catalytic activity of the char at a steady state, whereas the coexistence of 2000ppm H2S lowers it in the whole range of time on stream. It is proposed by combining the XRD and TPD observations with our previous results that the catalytic decomposition of NH3 in inert gas with the chars derived from low rank coals proceeds through two cycle mechanisms involving iron metal, iron nitrides, CaO and CaCN2.
+

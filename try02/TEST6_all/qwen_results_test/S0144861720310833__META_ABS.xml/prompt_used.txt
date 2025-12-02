@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fire behavior of innovative alginate foams A new biosourced composite foam (AF, associating foamed alginate matrix and orange peel filler) is successfully tested for fire-retardant properties. This material having similar thermal insulating properties and density than fire-retardant polyurethane foam (FR-PUF, a commercial product) shows promising enhanced properties for flame retardancy, as assessed by different methods such as thermogravimetric analysis (TGA), pyrolysis combustion flow calorimetry (PCFC) and a newly designed apparatus called RAPACES for investigating large-scale samples. All these methods confirm the promising properties of this alternative material in terms of fire protection (pHRR, THR, EHC, time-to-ignition, flame duration or production of residue), especially for heat flux not exceeding 50 kW m−2. At higher heat flux (i.e., 75 kW m−2), flame retardant properties tend to decrease but maintain at a higher level than FR-PUF. The investigation of the effect of AF thickness shows that the critical thickness (CT) is close to 1.5–1.7 cm: heat diffusion and material combustion are limited to the CT layer that protects the underlying layers from combustion. A multiplicity of factors can explain this behavior, such as: (a) negligible heat conduction, (b) low heat of combustion, (c) charring formation, and (d) water release. Water being released from underlying layers, dilutes the gases emitted during the combustion of superficial layers and promotes the flame extinction.
+

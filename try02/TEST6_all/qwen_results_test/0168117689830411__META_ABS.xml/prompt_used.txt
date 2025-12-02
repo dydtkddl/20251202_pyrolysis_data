@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Flow tube kinetics of benzocyclobutenedione thermolysis by an automated instrument with integrated GC-ion trap MS analysis An instrument has been designed for the automatic recording of flow tube kinetics. It consists of a precision oven for the preparation of a well defined initial concentration of reactant in an inert carrier gas stream. The flow tube reactor can be operated between 200 and 1100°C and residence times are between 0.4 and 2 s. Stable reaction products are sampled by adsorption to GC-Tenax. The reaction products are then analyzed by flash desorption into a gas chromatograph with an ion trap detector (GC-ITD). The instrument can be programmed to automatically record complete kinetic curves by stepwise heating of the pyrolysis tube. At least 30 decomposition analyses obtained at ten representative reactor settings have been measured for a single decomposition curve. Thermolytic reactions of interest in synthetic organic chemistry can be optimized by this method. A demonstration is given by the thermochemistry of benzocyclobutenedione (BCBD). This diketone can be obtained in thermolytic reactions from various derivatives of phthalic acid. BCBD in turn is thermolabile. It decomposes through loss of carbon monoxide in a first order reaction. A fit to the Arrhenius equation gives a value of 237.6 kJ mol−1 for the enthalpy of activation (E a) and 15.54 for the logarithm of the frequency factor (log A). In addition to biphenylene, various trace products including naphthalene, biphenyl, phenol, ethylbenzene, phthalic anhydride, dibenzofuran, fluorenone, phenanthrene, fluoranthene and pyrene have been identified. The formation of diphenylene, the dimer of benzyne, is strongly dependent on the partial pressure of the reacting diketone. The formation of trace compounds, however, does not depend on the reactant pressure.
+

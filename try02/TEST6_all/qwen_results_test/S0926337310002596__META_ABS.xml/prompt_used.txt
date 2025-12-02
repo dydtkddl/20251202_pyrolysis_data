@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+High-surface area graphites as supports for hydrodechlorination catalysts: Tuning support surface chemistry for an optimal performance The performance of parent and modified high-surface area graphites (HSAGs) as supports for Pd-based hydrodechlorination catalysts is studied in this work. Catalytic hydrodechlorination of tetrachloroethylene (TTCE) has been selected as model reaction, because of its environmental relevance. Different Pd/HSAG catalysts were prepared using both parent, oxidized (using a nitric acid treatment) and pyrolysed HSAG (in order to remove the surface functional groups of the parent HSAGs). Two different preparation procedures were also tested, using either aqueous or organic solutions of the precursor (palladium chloride). Hydrodechlorination experiments have been carried out in a fixed bed reactor at 523K, 0.5MPa, and a space time of 24gsmmol−1. Fresh and used catalysts were characterized by TEM (metal dispersion), TPD (evolution of surface groups), TPO (amount of carbonaceous deposits), nitrogen physisorption (morphology), and XPS (chemical composition and speciation). Obtained results show that HSAG-supported catalysts present very good performance both in terms of conversion (TOFs up to four times higher than the encountered for other conventional supports, such as activated carbon or alumina), selectivity (only small amounts of trichloroethylene being observed, in the same order of magnitude, below 10% selectivity in all the cases, that other Pd catalysts), and resistance to deactivation (more than 30h on stream). The surface chemistry of the HSAG (concentration and type of the surface functional groups) determines both the activity of the catalyst and the main deactivation cause. Thus, catalysts prepared over the parent HSAGs show a relatively fast deactivation by fouling, ascribed to the strongest acid sites; whereas the selective removal of the surface functional groups, or the transformation of these groups during the oxidative treatment, lead to catalysts less prone to fouling. In these cases, chlorine poisoning is the main deactivation cause. The preparation procedure of the catalysts also affects their performance, being the catalysts prepared using aqueous precursors less prone to chlorine poisoning.
+

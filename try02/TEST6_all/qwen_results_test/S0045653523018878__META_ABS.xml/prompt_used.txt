@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biochar-based geopolymer nanocomposite for COD and phenol removal from agro-industrial biorefinery wastewater: Kinetic modelling, microbial community, and optimization by response surface methodology Agro-industrial biorefinery effluent (AIBW) is considered a highly polluting source responsible for environmental contamination. It contains high loads of chemical oxygen demand (COD), and phenol, with several other organic and inorganic constituents. Thus, an economic treatment approach is required for the sustainable discharge of the effluent. The long-term process performance, contaminant removal and microbial response of AIBW to rice straw-based biochar (RSB) and biochar-based geopolymer nanocomposite (BGC) as biosorbents in an activated sludge process were investigated. The adsorbents operated in an extended aeration system with a varied hydraulic retention time of between 0.5 and 1.5 d and an AIBW concentration of 40–100% for COD and phenol removal under standard conditions. Response surface methodology was utilised to optimize the process variables of the bioreactor system. Process results indicated a significant reduction of COD (79.51%, 98.01%) and phenol (61.94%, 74.44%) for BEAS and GEAS bioreactors respectively, at 1 d HRT and AIBW of 70%. Kinetic model analysis indicated that the Stover-Kincannon model best describes the system functionality, while the Grau model was better in predicting substrate removal rate and both with a precision of between R2 (0.9008–0.9988). Microbial communities examined indicated the abundance of genera, following the biosorbent addition, while RSB and BGC had no negative effect on the bioreactor's performance and bacterial community structure of biomass. Proteobacteria and Bacteroidetes were abundant in BEAS. While the GEAS achieved higher COD and phenol removal due to high Nitrosomonas, Nitrospira, Comamonas, Methanomethylovorans and Acinetobacter abundance in the activated sludge. Thus, this study demonstrated that the combination of biosorption and activated sludge processes could be promising, highly efficient, and most economical for AIBW treatment, without jeopardising the elimination of pollutants or the development of microbial communities.
+

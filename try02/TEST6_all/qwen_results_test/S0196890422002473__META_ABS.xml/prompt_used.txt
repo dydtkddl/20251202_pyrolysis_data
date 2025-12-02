@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Transport fuel from waste plastics pyrolysis – A review on technologies, challenges and opportunities Despite extensive research in recent years and great potential to help with energy and waste management issues, thermochemical conversion technologies of mixed waste plastics (MWP) into transport engine fuel have not yet been developed in industrial and commercial settings. This study reviewed, discussed, and summarised research findings of over 280 up to date publications, emphasising pyrolysis technologies and their product yields, qualities, challenges and opportunities. The study investigated the suitability of pyrolysis oil for automobile engine application and summarised the experimental findings of diesel engine performance and emission characteristics. Furthermore, techno-economic assessment and key challenges for commercial fuel production from plastic pyrolysis are discussed. The review found that the pyrolysis of MWP produces oil yields of up to 90% by weight, and excellent fuel properties in the pyrolysis temperature range of 500 °C−550 °C. Polystyrene individually yields the highest oil yield of 97%, followed by low-density polyethylene, high-density polyethylene and polypropylene. However, polyethylene terephthalate and polyvinyl chloride plastics are not suitable for pyrolysis because they produce harmful chlorine gas and HCl that corrode the metallic parts of the pyrolysis reactor and condenser. Engine testing with MWP oil showed delayed combustion, high heat release rate and high cylinder pressure with similar power output and brake thermal efficiency. In contrast, NOx, UHC, CO and CO2 emissions were much higher. The study found that the pyrolysis plants must process at least 50 kT/year to earn an ROI of 25%. Additional research is required to resolve the remaining issues and challenges for industrial and commercial applications.
+

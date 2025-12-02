@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Multi-step kinetic mechanism coupled with CFD modeling of slow pyrolysis of biomass at different heating rates This study employed numerical modeling to investigate the reactivity and kinetics involved in the slow pyrolysis of lignocellulosic biomass. The model integrates a biomass multi-step kinetics scheme with heat, momentum, and mass transfer, and it was based on the transport of species and flow in a porous medium approach. To develop the multi-step kinetics model, two samples of biomass, avocado stone (AS) with a high hemicellulose content and α-cellulose (CEL), were subjected to TGA experiments in an inert atmosphere. Furthermore, several experimental data in the literature on the evolution of slow pyrolysis products and data obtained by TGA experiments were considered to refine and validate the proposed kinetic mechanism. The temperature range, from 25 to 700 °C, was explored using different heating rates (10, 20, and 40 °C/min). Experimental results showed that CO and CO2 are the predominant gases during primary devolatilization, whereas H2 and CH4 result from secondary reactions at temperatures above 400 °C. The proposed mechanism involves computational fluid dynamic (CFD) simulations of laboratory-scale biomass pyrolysis, comparing temperature and species concentrations with experimental data. The predicted results for individual non-condensable gas mass yields showed an average relative error of below 6.90 % and 11.59 % for CEL and AS, respectively. In the case of biochar, the error was 6.41 % and 9.74 % for AS and CEL, respectively. The developed kinetic model can be applied to simulate the slow pyrolytic degradation of biomass based on its chemical composition.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic functional activity of a landfill microbial consortium in a microplastic-enriched environment Plastic pollution of the soil is a global issue of increasing concern, with far-reaching impact on the environment and human health. To fully understand the medium- and long-term impact of plastic dispersal in the environment, it is necessary to define its interaction with the residing microbial communities and the biochemical routes of its degradation and metabolization. However, despite recent attention on this problem, research has largely focussed on microbial functional potential, failing to clearly identify collective adaptation strategies of these communities. Our study combines genome-centric metagenomics and metatranscriptomics to characterise soil microbial communities adapting to high polyethylene and polyethylene terephthalate concentration. The microbiota were sampled from a landfill subject to decades-old plastic contamination and enriched through prolonged cultivation using these microplastics as the only carbon source. This approach aimed to select the microorganisms that best adapt to these specific substrates. As a result, we obtained simplified communities where multiple plastic metabolization pathways are widespread across abundant and rare microbial taxa. Major differences were found in terms of expression, which on average was higher in planktonic microbes than those firmly adhered to plastic, indicating complementary metabolic roles in potential microplastic assimilation. Moreover, metatranscriptomic patterns indicate a high transcriptional level of numerous genes in emerging taxa characterised by a marked accumulation of genomic variants, supporting the hypothesis that plastic metabolization requires an extensive rewiring in energy metabolism and thus provides a strong selective pressure. Altogether, our results provide an improved characterisation of the impact of microplastics derived from common plastics types on terrestrial microbial communities and suggest biotic responses investing contaminated sites as well as potential biotechnological targets for cooperative plastic upcycling.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biodegradability of conventional and bio-based plastics and natural fiber composites during composting, anaerobic digestion and long-term soil incubation Plastics are a major constituent of municipal solid waste that pose a growing disposal and environmental pollution problem due to their recalcitrant nature. To reduce their environmental impacts and allow them to be transformed during organic waste recycling processes, various materials have recently been introduced to improve the biodegradability of plastics. These include conventional plastics amended with additives that are meant to enhance their biodegradability, bio-based plastics and natural fiber composites. In this study, the rate and extent of mineralization of a wide range of commercially available plastic alternative materials were determined during composting, anaerobic digestion and soil incubation. The biodegradability was assessed by measuring the amount of carbon mineralized from these materials during incubation under conditions that simulate these three environments and by examination of the materials by scanning electron micrography (SEM). The results showed that during a 660 day soil incubation, substantial mineralization was observed for polyhydroxyalkanoate plastics, starch-based plastics and for materials made from compost. However, only a polyhydroxyalkanoate-based plastic biodegraded at a rate similar to the positive control (cellulose). No significant degradation was observed for polyethylene or polypropylene plastics or the same plastics amended with commercial additives meant to confer biodegradability. During anaerobic digestion for 50 days, 20–25% of the bio-based materials but less than 2% of the additive containing plastics were converted to biogas (CH4 + CO2). After 115 days of composting, 0.6% of an additive amended polypropylene, 50% of a plastarch material and 12% of a soy wax permeated paper pulp was converted to carbon dioxide. SEM analysis showed substantial disintegration of polyhydroxyalkanoate-based plastic, some surface changes for other bio-based plastics and coconut coir materials but no evidence of degradation of polypropylene or polypropylene containing additives. Although certain bio-based plastics and natural fibers biodegraded to an appreciable extent in the three environments, only a polyhydroxyalkanoate-based resin biodegraded to significant extents during the time scale of composting and anaerobic digestion processes used for solid waste management.
+

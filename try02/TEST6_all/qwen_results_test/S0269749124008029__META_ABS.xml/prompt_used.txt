@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comparative microplastic analysis in urban waters using μ-FTIR and Py-GC-MS: A case study in Amsterdam The contamination of freshwater with microplastics (MPs) has been established globally. While the analysis of MPs has predominantly involved spectroscopic methods for revealing particle numbers, the potential of employing spectroscopy for mass estimation has been underutilized. Consequently, there is a need to enhance our understanding of the mass loads of MPs and ensure the complementarity and comparability of various techniques for accurate quantification. This study presents the first comparative results on urban water samples using micro Fourier-transform infrared (μ-FTIR) imaging and pyrolysis-gas chromatography-mass spectrometry (Py-GC-MS) to identify and quantify MPs in both particle numbers and mass concentration. Two sampling campaigns in summer and winter were conducted at 11 locations within the Amsterdam canal network. An advanced in-situ volume-reducing sampling pump was employed to collect MPs from the surface water within the size fraction of 10–300 μm. The analysis revealed MP concentrations within the range of 16–107 MP/m3, estimated to be 2.0–789 μg/m3 by μ-FTIR imaging and 8.5–754 μg/m3 by Py-GC-MS. The results of the two analysis techniques showed good comparability in terms of the general trends of MP abundances, with variations in polymer compositions due to the inherent inter-methodological differences. Elevated MP concentrations were observed in the city center compared to the suburban areas. In addition, seasonal differences in MP abundances were noted at the locations with high human activity.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Steam–oxygen gasification of forest residues and bark followed by hot gas filtration and catalytic reforming of tars: Results of an extended time test Steam–oxygen gasification in a Circulating Fluidized-bed (CFB) reactor was developed for producing transportation fuels from different wood residues. This article presents the results of a two week test campaign, in which crushed forest residues and industrial bark mixture were used as the feedstocks. The aim of the work was to carry out extended time testing of the developed gasification and hot gas cleaning process and to determine the fate of different gas contaminants and trace components of wood. In the test runs, wood fuels were gasified in the CFB reactor at a 0.2–0.25MPa pressure using a mixture of steam and oxygen as the gasification agent. A mixture of sand and dolomite was used as the bed material in order to maintain stable fluidization and to catalyse in-situ tar decomposition before hot filtration. Raw gas was filtered at ca. 550°C and the filtered gas was then led into a two-stage catalytic tar reformer. The gasifier performance and the concentrations of different gas contaminants were determined at four different operating variable set points during a total of 215h of operation. The results for carbon conversion efficiency, raw gas composition and the fate of fuel nitrogen, chlorine and trace metals are presented in this paper. The concentrations of gas contaminants were determined after the ceramic filter unit and after the catalytic reformer. The conversion efficiencies for hydrocarbon gases, tars and ammonia in the reformer are also presented. The test run was carried out as a continuous operation without any interruptions or operational problems.
+

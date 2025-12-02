@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Conversion of toxic pyrogenic products into syngas through catalytic pyrolysis of insulation material waste under the presence of CO2 Plastic-based insulation materials have been widely employed owing to their exceptional durability, cost-effectiveness, low weight, and low thermal conductivity. Nevertheless, the disposal of the insulation material waste (IMW) within construction waste and its recycling and recovery are challenging. Meanwhile, landfilling or incineration methods can release toxic chemicals into the environment. Consequently, the accumulation of IMW in construction waste has become a pressing environmental concern. To address this issue, this paper proposes a pyrolysis platform as a disposal management method for IMW that employs CO2 as a reactive medium. IMW composed of polystyrene in the form of extruded polystyrene underwent pyrolysis to yield pyrogenic products containing toxic chemicals. These toxic chemicals were subsequently transformed into syngas via homogeneous reactions with CO2 under certain thermal conditions and Ni/Al2O3 catalyst. This resulted in a significant reduction in the total peak areas of toxic substances in the pyrogenic oil compared with that obtained using N2 as a medium. Furthermore, the efficacy of CO2 was demonstrated to increase with an increase in the atmospheric concentration. This study implied that catalytic pyrolysis under CO2 conditions is a potential platform for converting toxic chemicals from IMW into syngas through homogeneous reactions with CO2.
+

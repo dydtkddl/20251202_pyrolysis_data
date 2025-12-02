@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synthesis of metal and nitrogen co-doped activated carbon catalysts for the co-production of monocyclic aromatics and hydrogen-rich gas from the pyrolysis of biomass and plastic In this study, various metals, including Fe, Co, Ni, and Zn, were co-doped with non-metallic nitrogen into activated carbon (AC) catalysts through a co-impregnation and carbonization process to enhance catalytic performance. These co-doped AC catalysts were employed for catalytic co-pyrolysis of corn stover (CS) and high density polyethylene (HDPE) to produce aromatics and hydrogen using a fixed bed reactor. The synergistic effect between metals and nitrogen significantly enhanced the specific surface area and microporosity of the AC catalysts, while the presence of multivalent metal ions and N-containing functional groups provided abundant active sites. The 10Fe/N-AC catalyst exhibited the highest content of monocyclic aromatic hydrocarbons (MAHs), reaching 60.3 %. Furthermore, the introduction of nitrogen altered the electron transfer properties of Fe, facilitating the reaction between alkyl radicals and the benzene ring, thereby improving the selectivity toward alkylbenzenes. The increased microporous structure of the 10Fe/N-AC catalyst also effectively suppressed the polymerization reactions of MAHs, resulting in the lowest content of polycyclic aromatic hydrocarbons at 19.5 %. Additionally, the 10Ni/N-AC catalyst demonstrated impressive catalytic performance for hydrogen release, achieving a content of 56.2 %. This study presents a promising strategy for enhancing the catalytic performance of AC catalyst in the effective utilization of organic solid wastes.
+

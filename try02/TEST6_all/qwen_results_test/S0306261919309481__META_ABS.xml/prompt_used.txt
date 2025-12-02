@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic co-pyrolysis of yellow poplar wood and polyethylene terephthalate over two stage calcium oxide-ZSM-5 This study examined the catalytic co-pyrolysis of yellow poplar wood and polyethylene terephthalate over basic calcium oxide and acid zeolites, such as HY (SiO2/Al2O3: 30), Hβ (25), HZSM-5 (23), to maximize the yields of aromatics using thermogravimetric analysis and tandem μ-reactor-gas chromatography/mass spectrometry. The maximum decomposition temperature of polyethylene terephthalate on the catalytic thermogravimetric analysis over HZSM-5 (452 °C) was reduced by co-feeding with yellow poplar wood to 444 °C because of its catalytic property and the effective interaction between the catalytic co-pyrolysis intermediates of yellow poplar wood and polyethylene terephthalate. Non-catalytic co-pyrolysis produced smaller amounts of large molecular polyethylene terephthalate pyrolyzates because of the more effective secondary cracking and deoxygenation. Calcium oxide was effective in the deacidification and acid zeolites were efficient in aromatics production during the catalytic co-pyrolysis of yellow poplar wood and polyethylene terephthalate. Among the acid zeolites, HZSM-5 showed the highest efficiency on benzene, toluene, ethylbenzene, and xylenes (BTEXs) production, followed by Hβ and HY because of its strong acidity and proper pore size. The experimental MS intensities of BTEXs obtained from the catalytic co-pyrolysis of yellow poplar wood and polyethylene terephthalate over HZSM-5 (1083 × 106) were larger than their theoretical value (998 × 106). Compared to the single stage catalytic co-pyrolysis of yellow poplar wood and polyethylene terephthalate over ex-situ HZSM-5, the two-stage catalytic co-pyrolysis over in-situ calcium oxide and ex-situ HZSM-5 produced the much larger amounts of BTEXs during seven times sequential experiments.
+

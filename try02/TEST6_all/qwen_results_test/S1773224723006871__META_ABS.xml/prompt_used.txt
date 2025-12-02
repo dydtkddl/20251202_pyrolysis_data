@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Macromolecules and nanomaterials loaded with mitomycin C as promising new treatment option Cancer drug nanoformulation: A literature review Cancer as a disease that endangers millions of lives annually has a dynamic nature, and one of the most critical challenges to finding an effective method to treat cancer is the emergence of a resistance mechanism. It is worth mentioning that it is suitable to change the strategy in cancer treatment from finding new ways to enhancing existing effective and innovative treatments. One of the most common methods of cancer treatment is chemotherapy, but untargeted chemotherapy attacks both tumor cells and non-cancerous ones. The use of nanotechnology could be a solution since it can improve therapies and enable them to target more precisely, increase localized drug efficacy, increase dual-drug loading, and decrease systemic toxicity to counteract resistance mechanisms. A common cancer in the urogenital region is bladder cancer which has a high rate of occurrence and relapse. The effect of Mitomycin C on bladder cancer therapy has been investigated extensively in recent years. MMC is a highly potent antibiotic isolated from Streptomyces caespitosus and can cause cell death. Although MMC can prevent and bypass multidrug resistance (MDR) development, the therapeutic effect may be restricted because it may cause prolonged damage to some tissues. Extensive research has been done on potential ways to enhance the administration of MMC. Despite the most effective methods of giving MMC, many bladder cancer still occur. The application of MMC and other agents targeting various pathways in a combination therapy method could be a way to overcome treatment resistance because this method is unlikely to have cross-resistance. Moreover, to improve the targeting ability of MMC, reducing its distribution in normal tissues and causing MMC to accumulate more at tumor sites, biological macromolecules, and polymers could be incorporated with various efficient materials such as methylcellulose and Chitosan, etc. MMC is water-soluble, so it is modified into lipid complexes or prodrugs and then loaded or encapsulated with liposomes and nanoparticles.
+

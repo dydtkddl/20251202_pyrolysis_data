@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical recovery of waste electrical and electronic equipment by microwave-assisted pyrolysis: A review Over the past few decades, electrical and electronic equipment has become more accessible to people of different social status. Currently, however, only a small fraction of the resulting waste is treated properly, even though it has the potential to become a major source of raw materials. Waste electrical and electronic equipment (WEEE), or e-waste, is mainly composed of plastics and metals that can be recovered with a lower environmental impact and more efficiently in comparison with conventional processes, even when similar technologies are used. Pyrolysis is a thermochemical processing technique that is able to exploit the polymers in WEEE as well as concentrate the metals into a solid residue. Furthermore, this process can be adapted or combined with other technologies to minimize the content of organic halides that stem from the hazardous brominated flame-retardants (BFRs), which are common additives used in these products. Microwave-assisted pyrolysis (MAP) uses a heating mechanism that differs significantly but has advantages over conventional pyrolysis, such as a rapid volumetric heating or a higher energy efficiency. Despite the increasing interest in the application of MAP over the last years, research to date in this field remains scarce. As such, this article reviews current studies into the treatment of WEEE by MAP, thereby shedding light on the different variables that have an impact on its effectiveness and efficiency, to provide a comprehensive understanding of this technology. In addition, this review offers an overview of the characteristics of pyrolysis products and possible routes for their subsequent refining.
+

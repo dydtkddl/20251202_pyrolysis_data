@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Insights into the removal of microplastics and microfibres by Advanced Oxidation Processes Water treatment plants' effluents are hotspots of microplastics (MPs) and microfibres (MFs) released into the aquatic environment because they were not designed to capture these particles. Special attention should be given to MFs, since they mainly come from laundry and are related to one of the main MP shapes detected in water and wastewater treatment plants. In this sense, Advanced Oxidation Processes (AOPs) could be a feasible solution for tackling MP and MF pollution, however, it is still premature to extract conclusions due to the limited number of studies on the degradation of these particles (specifically MFs) using AOPs. This review addresses the impacts of AOPs on MPs/MFs, focusing on their degradation efficiency, toxicity, and sustainability of the processes, among other aspects. The review points out that polyamide MFs can achieve mass loss >90% by photocatalytic system using TiO2. Also, the low oxidation of MPs (100 °C, reaction time ≥ 5 h, and initial pH ≤ 3, achieving MP weight loss up to 96 %. Despite these results, better operating conditions are still required for AOPs since the ones reported so far are not feasible for full-scale application. Additionally, ozonation in treatment plants has increased the fragmentation of MPs (including MFs), leading to a new generation of MPs. More attention is needed on toxicity effects of intermediates and methods of analysis employed for the analysis of MPs/MFs in wastewater effluent should be standardized so that studies can be compared effectively. Future research should focus on the sustainability of the AOP for MP removal in water treatment (power consumption, chemicals consumed and operational costs) for a better understanding of full-scale applicability of AOP adapted to MP treatment.
+

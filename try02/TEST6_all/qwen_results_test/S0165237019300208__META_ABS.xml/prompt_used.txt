@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Efficiency and proportions of waste tyre pyrolysis products depending on the reactor type—A review This article discusses the current use of different pyrolytic reactors, their constructions and operating principles regarding the yields of main products of waste tyre pyrolytic recycling. Whether one makes a larger or smaller profit, or even a loss due to a surcharge being levied on waste tyre recycling, depends on the sale of the pyrolysis products (gas, char, oil), the proportions and market prices of which differ. The cheapest is gas, which can be used as a source of technological heat of energetically self-sufficient pyrolysis or after purification, can be burned in a boiler and converted into heat or electricity. Raw char is not expensive either. It requires upgrading and then, as carbon black, can be re-used for the production of tyres or in the form of improved carbon can be used as an absorber or catalyst. The most expensive is oil, containing mainly aromatic compounds, on the condition that it will not be burned as diesel or liquid fuel. Hence, the oil yields obtained in various types of pyrolysers are given. This review of pyrolysis reactors is organised according to the criterion of charge movement in the reactor and the means of bringing this about. Depending on the method and speed of movement of the load in reactors, they are classified as fixed-bed and movable-bed reactors. The latter group is subdivided, depending on the method of inducing this movement, into pneumatic (bubbling, spouted, circulating or transport fluidised beds), mechanical (rotary kiln, rake, auger, ablative, stirred) reactors and reactors in which the charge moves under gravity. This review focuses on the construction and operating principles of the reactors and the yields of the products of pyrolytic thermal decomposition of scrap tyres. The summary and comparison of main product yields (oil/gas/coal) obtained in different reactors and by different authors, presented in graphical and tabular form, constitute a summary and supplement to this work.
+

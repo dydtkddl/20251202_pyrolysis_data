@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic effect between metal and acid sites in Pd-based catalysts for hydrogenolysis of lignin-derived compounds Catalytic hydrogenolysis process efficiently leverages lignin and its derivatives for renewable fine chemical and fuel production; however, attaining high selectivity and activity for a sole product persists as a formidable hurdle. In the present study, high-efficacy catalysts incorporating a Pd-WO x active center were engineered for the hydrogenolysis of lignin and its derivative compounds. This was achieved by embedding different Pd ensembles onto the surface of WO x species. The optimum catalyst 0.5Pd-WO x demonstrated remarkable performance with regard to both activity (815.3 molDPE molPd −1 h−1) and selectivity (>99 % for either monomer or cyclohexane) under mild reaction conditions (130 °C, 2 MPa of H2). Additionally, this catalyst also exhibited a notable capacity for the conversion of other lignin-derived compounds as well as real lignin. Comprehensive studies, utilizing AC-HAADF-STEM, NH3-TPD, Py-IR, H2-TPD, in situ FT-IR and DFT calculation, reveal that Brønsted acid sites (W5+−O–H), which play a pivotal role in breaking C–O bonds, are formed in situ via hydrogen spillover from Pd to WO x . Furthermore, the superior performance of the 0.5Pd-WO x active center is attributed to the moderate interaction between the metal Pd and WO x species. This research offers an efficacious strategy for designing metal–acid catalysts applicable to the hydrogenolysis of C–O bonds in lignin and has potential implications for advancement in the catalytic conversion of biomass resources.
+

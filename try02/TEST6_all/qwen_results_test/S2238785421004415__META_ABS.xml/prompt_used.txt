@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Electrospun chitosan coated polylactic acid nanofiber: A novel immobilization matrix for α – Amylase and its application in hydrolysis of cassava fibrous waste This present study addresses the uncherished resource potential of Cassava fibrous waste (CFW) from the cassava processing industry towards production of fermentable sugars using enzymatic hydrolysis process. However, the viscous nature of the gelatinized CFW poses serious processability issues, which was overcome by a novel attempt of using tailor-made electrospun nanofibers and its application in immobilization of α – amylase. Characterization studies (FESEM, FTIR, Thermogravimetric analysis), rheological and proximate analysis of CFW revealed its suitability as the potential feedstock. Chitosan coated nanofiber (CCN) matrix was prepared by varying the chitosan concentration from 0 to 2% (w/v) and the 2% CCN matrix exhibited an optimal performance with enhanced tensile strength (1.262 MPa), reduced elongation (41.2%) and contact angle (128°). CCN matrix was examined for the immobilization of α - amylase enzyme and the relative activities of the immobilized and free enzyme were compared. Packed bed operation at optimized conditions (solution pH of 5.0 and a solution temperature of 50 °C) deploying CCN matrix with initial substrate concentration of 10 g/l yielded a maximum conversion ratio of 0.85 and 0.99 (high residence time of 40 min and low dilution rate of 0.04 min−1) for without and with recycling mode, respectively.
+

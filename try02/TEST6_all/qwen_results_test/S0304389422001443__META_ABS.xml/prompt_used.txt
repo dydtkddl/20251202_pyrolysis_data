@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Assessing implications of nanoplastics exposure to plants with advanced nanometrology techniques Despite the increasing attention given to the impacts of nanoplastics in terrestrial environments, there is limited data about the effects on plants, and the quantitative information on uptake. In the present study, wheat plants grown in hydroponics were exposed to Pd-doped nanoplastics. This allowed us to quantify nanoplastics uptake and translocation to the shoots. Visualization of nanoplastics in roots was performed with synchrotron micro X-ray fluorescence (µXRF). Nanoplastics accumulated on the root epidermis, especially at the root tip and in root maturation zones. A close relationship between plant roots, rhizodeposits and nanoplastics behaviour was shown. Reinforcement of the cell wall in roots was evidenced using Fourier transform infrared spectroscopy (FTIR) and synchrotron-computed microtomography (µCT). Synchrotron-computed nanotomography (nanoCT) evidenced the presence of globular structures but they could not be identified as nanoplastics since they were observed both in the control and treated roots. By utilizing the inorganic tracer in the doped-nanoplastics, this study paves the road for elucidating interactions in more complex systems by using an integrative approach combining classical phytotoxicity markers with advanced nanometrology techniques.
+

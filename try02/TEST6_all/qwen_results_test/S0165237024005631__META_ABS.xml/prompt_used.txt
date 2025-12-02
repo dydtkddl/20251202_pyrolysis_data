@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis valorization of waste epoxy thermosets Epoxy resins and their composites have been widely applied in diverse industrial products. Epoxy resins possess excellent chemical resistance, mechanical and thermal properties, and dimensional stability, which makes them formidable to be recycled, degraded, reprocessed, and dissolved. It is a significant challenge in the end-of-life management of epoxy resin-derived materials. This paper introduced the original structures and thermochemical properties of typical epoxy thermosets and their composites. Moreover, the common-used methods for recovery and recycling of epoxy-based wastes were discussed comparatively. Among these methods, pyrolysis is considered as a promising method with high technological readiness level (TRL) and high recovery efficiency that can efficiently treat different types of thermosets and commercial composites in large scales. Through pyrolysis, organic components are thermally degraded for producing value-added products with less pollution generation than incineration. Significantly, the recovered materials such as carbon fiber can keep considerable strength. However, it is lack of important review works in pyrolysis valorization of waste epoxy thermosets. This paper concludes the pyrolysis of waste epoxy thermosets in terms of influencing factors and relevant reaction mechanisms. Furthermore, the pyrolysis recycling of typical epoxy composites used in industrial products such as printed circuit boards (PCBs) and wind turbine blades (WTBs) is highlighted to guide researchers for developing more efficient, sustainable, and low-cost processes. During the pyrolysis of epoxy-composites, the epoxy resin is converted into gas, liquid, and solid products. Since pyrolysis of epoxy resin normally occurring at 300–500 °C can result in the production of complex components, it is urgent to take more efforts in developing advanced catalysis materials and processes for directional pyrolysis upcycling of epoxy resin and its composites such as carbon fiber reinforced polymer (CFRP). Ultimately, some recommendations for pyrolysis upcycling of waste epoxy thermosets and their composites are pointed out.
+

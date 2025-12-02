@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhancing mass transfer efficiency via “Burger” co-pyrolysis of plastics and three biomass components Enhancing the target product yields from co-pyrolysis of plastic and biomass relies on the synergetic interaction of their intermediate products. Therefore, a key factor in strengthening this synergy is increasing the yield of both feedstocks’ intermediate products. The study innovatively utilizes the “Burger” layered filling strategy to alter the mass transfer process and affect the yield of key intermediate products. In the traditional homogenous blending mode, the plastic will first melt and encapsulate biomass during the heating process to block the mass transfer process, thus limiting their interaction. However, the “Burger” layered method mitigates mass transfer constraints and has a positive impact on increasing the relative content of key intermediates and aromatic hydrocarbons. For instance, compared to the homogeneous blending pyrolysis of low-density polyethylene and lignin, the layered pyrolysis increased the relative content of phenolic compounds, which are key intermediates during lignin pyrolysis, from 9.02 % to 13.49 %. In the co-pyrolysis of polypropylene and hemicellulose, the layered pyrolysis increased the relative content of aromatic hydrocarbons from 8.59 % to 11.03 %. This investigation offers valuable insights into optimizing mass transfer in the co-pyrolysis process, aiming to advancing the overall efficiency of co-pyrolysis.
+

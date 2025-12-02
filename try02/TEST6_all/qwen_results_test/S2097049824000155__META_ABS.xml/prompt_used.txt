@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Use of bio-based products towards more sustainable road paving binders: A state-of-the-art review Many industrial sectors exploit fossil sources to develop useful and necessary materials for our needs, such as bituminous paving materials. Bitumen, a key component of asphalt mixtures, is derived from oil refining and its properties are influenced by the crude oil source and refining process, resulting in a significant carbon footprint. With growing awareness of resource depletion and environmental concerns, pavement researchers are exploring sustainable alternatives to reduce dependence on fossil sources. This includes a rising trend in using renewable materials like biomasses to produce bio-based binders as substitutes for bitumen, aiming for a more sustainable approach. Biomasses, including vegetal and animal wastes, and waste cooking oils, as substitutes for crude oil in the production of bio-binders. Through thermochemical conversion (TCC), such as pyrolysis, biomasses can be converted into bio-char and bio-oils, which can replace fossil-based components in binders. Researchers have utilized these bio-products to reduce the dependency on fossil fuels in binders. However, there are no set minimum requirements for bio-components in bio-based binders. As the percentage of replaced bitumen increases, various types of binders are produced, including modified bitumen, extended bitumen, and alternative binders, where the fossil replacement is gradual. Overall rheological tests on bio-binders, reveal that those containing bio-char exhibit increased viscosity, stiffness, rutting resistance, and sometimes antioxidant properties. Conversely, bio-binders with bio-oils as bitumen substitutes show poorer performance at high temperatures but improved behavior at low temperatures. These results suggest that bio-binders could provide versatile solutions for various climatic and loading conditions in road construction. However, the development of pavement mixtures based on bio-binders has not been studied in depth and requires further attention to unlock its full potential. As sustainability considerations, including life cycle assessments (LCA) and life cycle cost analyses (LCC), are crucial aspects for future studies. It is essential not only to collect data on the performance characteristics of bio-binders but also to understand their environmental impact and recyclability. In-depth evaluations using methods such as LCA and LCC will provide valuable insights into the overall sustainability and long-term viability of these products.
+

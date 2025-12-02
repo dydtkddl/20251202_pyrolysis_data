@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Revealing global reaction mechanisms of polypropylene pyrolysis by reactive molecular dynamic simulation and reaction class prediction Polypropylene (PP) pyrolysis offers a promising solution for transforming waste plastics into high-value chemicals. This work presents a combination approach of large-scale reactive molecular dynamic simulation (ReaxFF MD) and automatic reaction class prediction with machine learning method for investigating PP pyrolysis reaction mechanism. The reasonableness of the global reaction understanding on PP pyrolysis is supported by both the consistent representative pyrolyzate detections between experiments and simulation, as well as the same yield ranking of C3H6>C2H4>CH4>C2H6 at the initial decomposition dominant stage between experiments and simulations. The comprehension of the dynamic product profiles and their relevant reaction classes in polypropylene pyrolysis was revealed, which indicates that the major species distribution in PP pyrolysis detectable experimentally become explainable by the major reaction classes with the aid of automatic reaction classification approach of SRG-Reax, The dominant homolysis and β-scission reaction classes accounting for 30 %∼50 % in the initial PP pyrolysis corresponds to the rapid increasing yields of C2H4 and C3H6. The increasing reaction classes of ring opening & recombination and chain cyclization as well as of intra-molecular H-shift, H detachment and inter-molecular H-abstraction should be responsible for the increasing ring formation of 5-membered, 6-membered, 7-membered rings, particularly for formation of aryl rings and naphthalene with temperature. The formation pathways of benzene, naphthalene and anthracene were unraveled. The mechanism understanding of PP pyrolysis demonstrate the potential of the combined simulation strategy of large-scale simulation and reaction class prediction in deepening understanding polymer degradation mechanism.
+

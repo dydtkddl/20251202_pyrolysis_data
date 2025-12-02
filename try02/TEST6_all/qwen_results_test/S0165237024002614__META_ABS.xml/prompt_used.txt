@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unveiling sustainable synergy and ageing stability of bio-oils from cotton gin trash and plastic waste co-liquefaction for an integrated waste-to-energy solution Co-liquefaction is an emerging technology aimed at enhancing bio-oil yield and quality, compensating for decrease in feedstock, increasing productivity, and adding revenue to bio-refineries. This study delves into the influence of plastic waste (PW) types during co-liquefaction with cotton gin trash (CGT) on the yield and quality of the produced crude oil. Various plastics, including PLA (polylactic acid), PVA (polyvinyl alcohol), PET (polyethylene terephthalate), LDPE (low-density polyethylene), HDPE (high-density polyethylene), PP (polypropylene), and PS (polystyrene), were investigated in a mixing ratio of 2:1 (CGT/plastic waste) at 320 °C and 2 hours in supercritical ethanol (ScEtOH), without catalyst, to produce energy-dense bio-oil under optimised conditions. The study presents the suitability of different types of plastic waste for co-feeding with CGT, along with their synergistic and antagonistic effects on product fraction yield (oil, solid, and gas), and oil energy yield. High bio-oil yields of 54.5 wt%, 53.7 wt%, and 43.1 wt% were achieved during co-liquefaction of CGT with PLA, PET and PVA, respectively. Bio-oil with the highest Higher Heating Values (HHV) was achieved through the co-liquefaction of CGT with PVA (30.6 MJ/kg) and PS (31.5 MJ/kg). The solid fractions obtained from co-liquefying CGT with PLA and PVA contained 46.9 wt% and 55.1 wt% carbon, respectively, making them potential sustainable sources for soil amendment. Furthermore, the bio-oils were characterised using gas chromatography-mass spectroscopy (GC-MS), two-dimensional nuclear magnetic spectroscopy-heteronuclear single quantum coherence (2D‐NMR-HSQC), elemental analysis, fourier transform infrared spectroscopy (FTIR), and thermogravimetric analysis (TGA) to assess their quality and stability. Solid residues were characterised to understand the extent of plastic degradation and their suitable applications. The results indicate that the co-liquefaction of lignocellulosic biomass with plastics represents a viable and promising approach for improving bio-oil quality and extending its shelf life.
+

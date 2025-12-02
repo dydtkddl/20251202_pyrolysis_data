@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+From waste to opportunity: The potential of microbial biodegradation in plastic pollution mitigation Plastic pollution has reached alarming levels globally, necessitating innovative and sustainable solutions beyond conventional mechanical and chemical recycling. This review comprehensively examines the potential of microbial populations in degrading synthetic polymers, focusing on screening strategies, enzymatic mechanisms, and environmental adaptability. We highlight key microbial candidates, including Ideonella sakaiensis (PETase), Pseudomonas spp., and algal-fungal consortia, and evaluate advanced techniques such as metagenomics, CRISPR engineering, and nano-biohybrid catalysts for enhancing degradation efficiency. The article critically analyzes physicochemical factors (temperature, pH, biofilms) influencing microbial activity and explores scalable applications like bioaugmentation in landfills and membrane bioreactors for wastewater treatment. Despite promising advancements, challenges persist, including slow degradation rates, microplastic byproducts, and regulatory hurdles for genetically modified organisms (GMOs). We emphasize the need for interdisciplinary collaboration, integrating microbiology, engineering, and policy, to develop hybrid waste management systems that combine microbial solutions with circular economy principles. This study identifies key microorganisms, such as Ideonella sakaiensis, Pseudomonas spp., and various fungi, and elucidate their metabolic pathways and enzymes involved in plastic degradation. The review also analyzes environmental conditions that optimize microbial degradation, including the use of bioreactors and nano-biohybrid systems. Moreover, the study also critically assesses the limitations and risks of microbial degradation, emphasizing the need for interdisciplinary approaches and global cooperation to develop large-scale solutions aligned with circular economy principles. Additionally, the review highlights recent innovations, such as combining microbial degradation with physicochemical methods to enhance efficiency. Our review aims to provide a comprehensive resource for researchers, policymakers, and educators, underscoring the critical role of microorganisms in addressing plastic pollution. By synthesizing current research and future directions, this review underscores microbial biodegradation as a transformative tool in the global effort to mitigate plastic pollution, provided technological innovation is matched by supportive infrastructure and governance frameworks.
+

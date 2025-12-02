@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Continuous-distribution kinetics for degradation of polybutylene terephthalate (PBT) in supercritical methanol The depolymerization of polybutylene terephthalate (PBT) in supercritical methanol was investigated by using a batch autoclave reactor. Continuous kinetics analysis was applied to experimental data. It was observed that PBT could dissolve into supercritical methanol quickly and decompose completely in a homogeneous phase. PBT with average molecular weight of about 29 700 was converted to oligomer with that of 4200 within 10 min and with that of 2700 in 15 min at 513 K and converted into monomer completely within 22 min. The main reaction products decomposed of PBT were dimethylterephthalate (DMT) and 1, 4-butanediol (BG) by methanolysis. The yields of monomer components of the decomposition products, including byproducts were measured. The yields of DMT and BG could reach 94.5% and 70.1%, respectively, at 563 K for 75 min. Based on the qualitative and quantitative analyses of the products, a depolymerization-reaction scheme was proposed to explain the reaction mechanism, i.e. the degradation of PBT in supercritical methanol mainly includes random scission and chain-end scission reactions and side reactions for monomer components. With the process of degradation, some oligomers could be decomposed into small molecular products by side reactions. Continuous-distribution kinetics theory was developed to analyze the decomposition behavior. The energy of activation for the random scissions of PBT in the supercritical methanol was 86.53 kJ/mol.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic semi-continuous operation modes for hydrogen generation from carbon derivatives of ammonia boranes In the present study, the semi-continuous regime is evaluated for generating hydrogen (H2) from carbon derivatives of ammonia borane (AB) via hydrolysis in presence of cobalt-doped activated carbon catalyst (Co-AC). Methylamine borane (MeAB) and ethane 1,2 diamine borane (EDAB) is used as an H2 storage medium. At first, catalytic activity tests are performed between 20 °C and 80 °C. 0.2 M MeAB, EDAB, and also AB are hydrolyzed with - Co-AC catalyst, and the results are compared in two temperature regions. EDAB shows the lowest hydrogen generation rate at 64.38 mLH2/min.gCo-AC of all carbon derivatives of AB due to its higher thermal stability. The power-law model is used to describe the kinetic rate and activation energy (Ea) for all the reactants in the catalytic hydrolysis reaction and the reaction kinetics studied in two temperature regions as the low-temperature region (20–50 °C) and the high-temperature region (60–80 °C). The zero-order kinetic model describes each temperature region for each reactant. The Ea values of AB, MeAB, and EDAB are calculated as in the range of 48–65 kJ mol-1 for the low-temperature region and in the range of 33–51 kJ mol-1 for the high temperature region. The semi-continuous regimes were performed at 60 °C with the same amount of AB, MeAB, EDAB, and Co-AC catalyst used for catalytic activity tests. The hydrogen generation rates for the semi-continuous regime are calculated to be 2.46 L/h, 0.86 L/h, and 0.17 L/h for AB, MeAB, and EDAB, respectively. The used catalysts and the exhaust solutions are also characterized. After the semicontinuous regime, the characterization results show that Co-AC is stable and Co species does not leach into the exhaust solution. Also, boron is accumulated on the catalyst observed due to by-product formation during the hydrolyses.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Technoeconomic assessment of hydrogen production from natural gas pyrolysis in molten bubble column reactors Natural gas pyrolysis to produce carbon and hydrogen, known as “turquoise hydrogen, using molten metals and salts is a promising route to clean hydrogen production. Methane pyrolysis produces significantly less or near-zero CO2. Additionally, the solid carbon can be separated and sold as a valuable co-product, making industrial-scale production of hydrogen via pyrolysis economically attractive. To better understand the potential of turquoise hydrogen, this study presents a comparative techno-economic assessment of molten media pyrolysis processes in bubble column reactors using Ni0.27Bi0.73, Ga, and KCl–MnCl2 (33:67). The study evaluates techno-economic assessment with a clear understanding of kinetics of natural gas pyrolysis and reactor process modeling. According to the modeling results, Ga had the lowest reactor cost and total bare erected cost. Nevertheless, the pyrolysis process that used inexpensive KCl–MnCl2 molten salt was more economically advantageous. Due to uncertainties in the density separation of solid carbon in the molten salt at temperatures above 1000 °C, Ni0.27Bi0.73 was selected as the promising molten medium for the long term. Sensitivity analyses were carried out to assess the impact of the costs of natural gas, hydrogen, and electricity on the industrial concept. In regions where gas is produced, such as Saudi Arabia, mature molten pyrolysis plants that use grid electricity at a rate of $48/MWh and solar photovoltaic systems with storage at a rate of $24/MWh can be economically feasible at natural gas prices of $132/ton and $198/ton, respectively, even if carbon is not sold. The cost of producing turquoise H2 is comparable to the global average for grey H2 and selling carbon can generate additional revenue or improve the profitability of the plant. The net energy demand of the molten pyrolysis plant is found to be approximately 21% of the energy requirement for current methods of green hydrogen production through PEM (proton exchange membrane) electrolysis.
+

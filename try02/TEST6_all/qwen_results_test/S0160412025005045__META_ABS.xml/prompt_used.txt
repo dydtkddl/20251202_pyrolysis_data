@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Airborne microplastics and plastic additives in a school environment: identification, quantification, and associated inhalation risks Indoor and outdoor air pollution is related to adverse human health effects, especially in children due to their ongoing physical development. This study assesses airborne microplastics (MP) concentrations and associated inhalation risks in a school in Estarreja, Portugal, near a large industrial complex producing polyvinylchloride (PVC). PM10 samples were collected over two campaigns (winter and spring) in four classrooms (ages 3–11 years) and adjacent outdoor areas. Airborne MP were determined by pyrolysis–gas chromatography coupled to Orbitrap-mass spectrometry (Pyr-GC-Orbitrap-MS) targeting ten common polymers. Six polymers, including polymethyl methacrylate, nylon-6,6, polypropylene, nitrile butadiene rubber, polyvinyl chloride and polystyrene were identified. Indoor MP average concentrations (21.8 ± 16.3 ng/m3, n = 35) were significantly higher than outdoor levels (13.4 ± 13.6 ng/m3, n = 36). Seasonal differences were observed, with higher MP concentrations in spring compared to winter. Based on the concentrations detected indoors, the daily inhalation dose was evaluated and revealed a median daily exposure to MP in children of 1.57 ± 0.93 ng kg bw-1 d-1. Additionally, a non-targeted chemometric method using Regions of Interest-Multivariate Curve Resolution-Alternating least squares (ROIMCR) identified co-occurring pollutants such as phthalates, pesticides, and nicotine. This is the first study to apply Pyr-GC-Orbitrap-MS combined with ROIMCR for simultaneous targeted and untargeted analysis of airborne MP in a school setting. The findings reveal continuous exposure of children to a complex mixture of MP and hazardous additives, emphasizing the need to include these compounds in indoor air quality assessments and to protect sensitive populations in educational environments.
+

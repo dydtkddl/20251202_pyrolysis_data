@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Removal of impurities from waste tire pyrolysis char using the molten salt thermal treatment Thermo-chemical recycling of waste tire to generate pyrolytic char as alternative carbon black is a promising route for waste disposal and environmental sustainability. However, impurities in waste tire (like Zn, Si, Ca and S) are probably enriched in the pyrolytic char, and removal of those impurities is of great importance for char recycling. To avoid generating large amount of waste acids and polluted gases in the traditional impurities removing process, molten salt (Na2CO3-NaOH) thermal treatment was creatively proposed in the current work. The influence of operational temperatures (in the range of 350 to 450 °C) was investigated in relation to the efficiency of impurity removal. Results show that the removal efficiency of impurity components was firstly increased but then weakened by increasing treating temperature from 350 to 450 °C, while the highest removal rate was obtained at 400 °C. Generally, the current system could effectively remove more than 80% of ash and 70% of sulfur at 400 °C, with the recovery rate of char between 71% and 83%. Specifically, calcium carbonate/sulfate was removed from the char due to its good solubility in the molten salts. In addition, molten salts showed good activity to convert char contained inorganic sulfides and ·SH radicals into salts-soluble Na2S. Similarly, silicon and zinc were tended to be transformed into soluble silicate and zincate, which had higher solubility in the used molten salt. In addition, the agglomerated char particles were separated into smaller and more uniform size during molten salt thermal treatment.
+

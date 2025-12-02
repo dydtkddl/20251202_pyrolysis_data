@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Simultaneous investigation into the yields of 22 pyrolysis gases from coal and biomass in a small-scale fluidized bed reactor Flash pyrolysis gas yields from bituminous coal and torrefied biomass have been investigated in the temperature range between 873 and 1273K for 22 different gas species simultaneously. Recording a larger number of species gives a more detailed insight into pyrolysis of solid fuels than it is provided by other studies in literature, where typically smaller numbers of species are tracked. As processes utilizing biomass are designed for lower process temperatures, literature data for biomass pyrolysis are scarce in the temperature range between 1023 and 1273K. This work, aiming at investigating potential fuels for pulverized solid fuel combustion, approximates pyrolysis conditions in the ignition zone of actual power plant boilers, where possible. Thus, based on results of a literature review, an experiment was designed using a small-scale fluidized bed reactor (FBR) to simultaneously analyze the pyrolysis gas yields for 22 species and to close the temperature gap found for biomass. Small batches of pulverized torrefied biomass from poplar wood and pulverized Colombian bituminous coal (Mina Norte) were rapidly pyrolyzed in the reactor. The two fuels were chosen as exemplary conventional and alternative energy sources for pulverized fuel fired power plants. Experiments have been carried out under atmospheric pressure in pure nitrogen atmosphere. Product gas analysis was carried out by Fourier transform infrared spectroscopy (FTIR) including two different sampling techniques. As a novelty, offline measurements have been used exclusively to improve the gas species selection procedure and reliability of detection. In case of offline measurements, the gas flow to the FTIR gas cell is stopped and the gas is enclosed in the cell allowing longer scan times of the captured gas mixture and thereby enlarging the signal-to-noise ratio (SNR). In succession, regular measurements with continuous flow (online) were performed for the simultaneous quantitative analysis of total pyrolysis yields for 22 selected gas species. Obtained pyrolysis yields show good agreement with available literature data. The larger number of investigated species provides an extended data set also covering minor pyrolysis species, for which quantitative data are scarce. Additionally, trends in the gas yields for biomass agree well with those found by other authors outside the mentioned temperature gap between 1023 and 1273K.
+

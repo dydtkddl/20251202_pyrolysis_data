@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis and combustion of a solid refinery waste This study addresses pyrolysis and combustion of a heavy hydrocarbon residue of the refinery industry. The material has good calorific value (HHV = 34050 kJ/kg), is solid at room temperature and has a high content of metals, in particular Mo, and impurities. The effect of these metals on pyrolysis and combustion has been investigated. The activity included first of all the physical and chemical characterization of the raw sample before and of samples of char and ash by means of several techniques: ICP, SEM EDAX. Moreover pyrolysis and combustion have been investigated by TGA and in small scale reactors of the fixed and fluidized bed type. Mo, very abundant in the raw sample, is relatively stable upon pyrolysis at 500–600 °C, but is only marginally retained in the ash after combustion, because of the large volatility of this metal in the oxidized state. The metal content has interesting effects on the pyrolysis and char combustion behavior: when the sample is heated up under mildly oxidizing atmospheres (i.e oxygen concentration of < 1%), the metals promote the uptake of oxygen in parallel with char formation and affect the degree of graphitization of the carbon structure The composition of the pyrolysis gas is strongly affected by the presence of even low concentration of oxygen. Despite the fact that a catalytic action of the metals could be expected, reaction times in a fluidized bed reactor are relatively large compared to other conventional and non conventional solid fuels.
+

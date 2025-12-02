@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of temperature on the pyrolysis of plastic waste using zeolite ZSM-5 using a refinery distillation bubble cap plate column The use of plastic is increasing every year, causing an accumulation of plastic waste that is detrimental to the environment. The purpose of this work is to determine the effect of temperature on the conversion of plastic waste into alternative energy through a pyrolysis-catalytic cracking process, using ZSM-5 as a catalyst, and pyrolysis product refinement using a distillation bubble cap plate column. In this study, the raw materials were polypropylene obtained from plastic waste and the catalyst zeolite ZSM-5 (500 ​g ​PP/50 ​g ZSM-5). A fixed bed reactor (D/H ​= ​1/4) was used under vacuum conditions (−3 ​mm ​H2O) to minimize the oxygen content in the reactor. The plastic waste degraded into vapor in the pyrolysis reactor and traveled through a distillation bubble cap plate column consisting of 4 trays that used reactor heat between 500 and 560 ​°C. It was found that the optimum liquid oil (68.43 ​wt%) was obtained at 560 ​°C, and based on API gravity, this oil consisted of gasoline on tray 1 (500–560 ​°C), tray 2 (500–600 ​°C), and tray 3 (580–620 ​°C). Kerosene was obtained on tray 2 (520–650 ​°C), tray 3 (620–650 ​°C), and tray 4 ​at 650 ​°C. The pyrolysis-catalytic cracking process using ZSM-5 at temperatures above 560 ​°C yielded a higher amount of gas, while the thermal process at temperatures above 580 ​°C yielded a high amount of wax polymer. The analysis results of the oil-fuel characteristics of density, calorific value, octane number, and function group, showed similar properties to those of fossil fuels.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-hydrothermal carbonization of different feedstocks to hydrochar as potential energy for the future world: A review Co-hydrothermal carbonization (co-HTC) has emerged recently as a promising thermochemical technique that can transfer organic solid residue (e.g., biomass, sewage sludge, plastic, livestock manure) into value-added products (i.e., hydrochar). This advanced mechanism conceals the weakness of hydrochars derived from the hydrothermal carbonization (HTC) of a single feedstock. The co-HTC of various feedstock blends used for hydrochar is reviewed in this article. Biomass/sludge, biomass/plastic, biomass/coal, biomass/manure were the most common feedstock blends. Many studies have found that co-HTC, compared to single feedstock, enhances the yield, ultimate and proximate properties, higher heating value (HHV), thermal behaviors, and overall quality of hydrochars. The synergistic effects of feedstock types, blending ratio, temperature, and residence time are also discussed. The feedstock mixing ratio emerges as the most important variable, followed by feedstock types, temperature, and reaction time. Thermogravimetric (TG) and derivative thermogravimetric (DTG) analyses have made it possible to better understand the thermal decomposition characteristics of hydrochars. In most papers on this subject, the range of combustion temperature and comprehensive combustion index (CCI) has increased. Overall, the physicochemical and thermal behaviors of hydrochar derived from co-HTC make it energy-efficient and environmentally sound by reducing the waste load and avoiding pollution issues. Additionally, several important suggestions have been recommended for future advances being made in co-HTC of feedstocks and its comprehensive application.
+

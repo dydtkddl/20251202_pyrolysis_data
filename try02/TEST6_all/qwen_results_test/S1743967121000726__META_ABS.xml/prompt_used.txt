@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of aquatic fern and macroalgae biomass into bio-oil: Comparison and optimization of operational parameters using response surface methodology Effect of temperature (300–500 °C), carrier gas flow rate (0.2–0.8 L min−1), and the heating rate (10–20 °C min−1) on the final bio-oil production from the Salvinia auriculata (SA) and Ulva lactuca (UL) was optimized using response surface methodology (RSM), established by a central composite design (CCD). The maximum bio-oil yield from UL was 34.8%, reached at 500 °C, 0.2 L min−1 nitrogen flow rate, and 10 °C min−1 heating rate. However, in the case of SA feedstock, the highest bio-oil yield was 32.3% at 400 °C, 0.5 L min−1 nitrogen flow rate, and 20 °C min−1 heating rate. Both bio-oil samples contained saturated and unsaturated hydrocarbons; but the average hydrocarbon chain length in UL bio-oil (C4–C16) was relatively shorter than bio-oil from SA (C6– C24). The bio-oil from A. filiculoides exhibited higher HHV values than that of UL derived bio-oil due to its relative large carbon and hydrogen concentration and small oxygen content. Although both the bio-oils showed different heating values, the UL biooil had more appropriate properties, i.e. lower viscosity and density.
+

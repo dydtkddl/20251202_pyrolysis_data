@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Micro-wave induced pyrolysis of low density polyethylene (LDPE) and biodegradation of resulting wax in soil and by defined microbial consortia is closing the loop towards LDPE upcycling Plastic has become essential in daily life, replacing traditional materials like glass and wood due to its flexibility, durability, strength, and cost-effectiveness. However, the global plastic production surged to nearly 400 million tons in 2020, causing significant environmental accumulation. Polyethylene (PE), a ubiquitous polymer, poses recycling challenges due to its stability and widespread use in layered products, contributing to long-term pollution. This study focuses on PE degradation challenges, advocating for integrated chemical and biological treatments. Chemical methods like pyrolysis show promise but aren't fully eco-friendly. Microwave-induced pyrolysis emerges as a viable alternative, offering faster, targeted heating with lower energy consumption. Using microwave-absorbent materials such as silicon carbide, this method efficiently breaks down even challenging low-density PE (LDPE), yielding wax products of 68–91 % yield, with reduced molecular weight suitable for further biological degradation. Biodegradation experiments demonstrated over 95 % degradation by defined microbial consortia and considerable degradation in soil without bioaugmentation. The Rhodococcus consortium showed exceptional potential, degrading 90 % of LDPE-wax as a carbon source within 28 days, particularly strain CHBE-144 achieving 98 % degradation in just 14 days. Genomic analysis revealed enzymes crucial for alkane and plastic breakdown, with strains capable of producing biosurfactants, suggesting up-cycling potential for PE-derived materials into value-added products. Integrating microwave-induced pyrolysis with microbial biodegradation offers a promising pathway for managing PE waste sustainably, potentially reducing environmental impact while creating valuable resources from plastic waste. Further research is warranted to optimize these processes and scale them for practical application in waste management and resource recovery efforts globally.
+

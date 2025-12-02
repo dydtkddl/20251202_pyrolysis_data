@@ -1,0 +1,54 @@
+You are performing STRICT VERIFICATION of the extracted variables and constants.
+
+You MUST check whether every variable and constant in the JSON below is supported by PAPER_TEXT.
+
+===========================================================
+PAPER TEXT:
+{{PAPER_TEXT}}
+===========================================================
+
+Your TASK:
+
+For every experiment group:
+
+1. If a constant has NO evidence sentence explicitly found in PAPER_TEXT:
+   → REMOVE that constant.
+
+2. If the variable is NOT explicitly described in PAPER_TEXT:
+   → set "variable": "not_explicitly_stated"
+
+3. Ensure all evidence sentences match exact sentences from PAPER_TEXT.
+   - If any sentence is not found, REMOVE it.
+
+4. If the entire group becomes empty (no variable AND no constants AND no evidence):
+   → REMOVE the whole group.
+
+5. Output ONLY valid JSON in the structure:
+
+{
+  "verified_groups": [
+    {
+      "group_name": "",
+      "variable": "",
+      "constants": [
+        {
+          "name": "",
+          "evidence_sentences": [""]
+        }
+      ],
+      "evidence_sentences": [""]
+    }
+  ],
+  "changes_made": ""
+}
+
+RULES:
+- DO NOT rewrite or paraphrase.
+- DO NOT guess any scientific facts.
+- DO NOT add information not present in PAPER_TEXT.
+- DO NOT include reasoning.
+- JSON ONLY.
+
+BEGIN EXTRACTION_JSON:
+{{EXTRACTION_JSON}}
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of core materials on the evolution of products during the pyrolysis of end-of-life wind turbine blades A wind turbine blade consists of pure glass fiber-reinforced polymer composites (GFRPs) and the sandwich part with core materials. Pyrolysis is a prospective technology to recycle end-of-life blades, but the pyrolysis performance of blades with core materials is still unclear. In this study, three retired blade parts were pyrolyzed, i.e., pure GFRPs, GFRPs filled with polyethylene terephthalate (PET) foam, and GFRPs filled with balsa wood. The results showed that CH4, CO, and CO2 were the majority of the pyrolysis gas when the pure GFRPs part was pyrolyzed at 400ºC, with five typical phenolic products in the pyrolysis oil, containing bisphenol A, phenol, 4-isopropenyl phenol, 4-isopropyl phenol, and o-cresol. As the temperature increased to 550ºC, the content of CH4 reached 48.0 vol% while that of CO2 reduced, raising the calorific value of the pyrolysis gas to 27.2 MJ/Nm3. Meanwhile, the content of bisphenol A in the pyrolysis oil rapidly increased, owing to the enhanced breakage of oligomers. As PET foam was filled, CO2 was dominant in the pyrolysis gas, and the content of benzoic acid became comparable with those of phenols in the pyrolysis oil. Whilst several hydrocarbon substances were detected when balsa wood was filled, making the oil product more complex. In terms of solid products, char residues over the black fibers were formed mainly due to the decomposition of epoxy resin rather than core materials, and the oxidation duration should be extended when recovering the blade parts with sandwich structures. Moreover, elevating the pyrolysis temperature reduced the pyrolytic residues but degraded the recovered fibers’ tensile strengths. The conclusions suggested that the blade parts with sandwich structures should be pyrolyzed separately, considering the core materials and their components.
+

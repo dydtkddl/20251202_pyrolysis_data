@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of litter chemistry and stoichiometry on glucan depolymerization during decomposition of beech (Fagus sylvatica L.) litter Glucans like cellulose and starch are a major source of carbon for decomposer food webs, especially during early- and intermediate-stages of decomposition. Litter quality has previously been suggested to notably influence decomposition processes as it determines the decomposability of organic material and the nutrient availability to the decomposer community. To study the impact of chemical and elemental composition of resources on glucan decomposition, a laboratory experiment was carried out using beech (Fagus sylvatica, L.) litter from four different locations in Austria, differing in composition (concentration of starch, cellulose and acid unhydrolyzable residue or AUR fraction) and elemental stoichiometry (C:N:P ratio). Leaf litter was incubated in mesocosms for six months in the laboratory under controlled conditions. To investigate the process of glucan decomposition and its controls, we developed an isotope pool dilution (IPD) assay using 13C-glucose to label the pool of free glucose in the litter, and subsequently measured the dilution of label over time. This enabled us to calculate gross rates of glucose production through glucan depolymerization, and glucose consumption by the microbial community. In addition, potential activities of extracellular cellulases and ligninases (peroxidases and phenoloxidases) were measured to identify effects of resource chemistry and stoichiometry on microbial enzyme production. Gross rates of glucan depolymerization and glucose consumption were highly correlated, indicating that both processes are co-regulated and intrinsically linked by the microbial demand for C and energy and thereby to resource allocation to enzymes that depolymerize glucans. At early stages of decomposition, glucan depolymerization rates were correlated with starch content, indicating that starch was the primary source for glucose. With progressing litter decomposition, the correlation with starch diminished and glucan depolymerization rates were highly correlated to cellulase activities, suggesting that cellulose was the primary substrate for glucan depolymerization at this stage of decomposition. Litter stoichiometry did not affect glucan depolymerization or glucose consumption rates early in decomposition. At later stages, however, we found significant negative relationships between glucan depolymerization and litter C:N and AUR:N ratio and a positive relationship between glucan depolymerization and litter N concentration. Litter C:N and C:P ratios were negatively related to cellulase, peroxidase and phenoloxidase activities three and six months after incubation, further corroborating the importance of resource stoichiometry for glucan depolymerization after the initial pulse of starch degradation.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fe-, Ti-, Zr- and Al-pillared clays for efficient catalytic pyrolysis of mixed plastics Catalytic pyrolysis of mixed plastics including high density polyethylene (HDPE), polystyrene (PS), polypropylene (PP), and PET (polyethylene terephthalate) has been performed in presence of a series of modified pillared clays (PILC) and Al-PILC. The catalysts were well characterized by BET, FTIR of pyridine adsorption, XRD, SEM, TEM/EDX. The effect of different catalysts on the composition and amount of pyrolysis products including gas, liquid, and char residue was evaluated. With the introduction of Fe-PILC, the yields of oil product were enhanced, suggesting that secondary over-cracking of primary pyrolytic intermediate species was reduced in the presence of the catalyst. A high oil yield of 79.3wt.% with excellent selectivity for diesel fraction (80.5%) and high yield of H2 gas (47.7vol%) were obtained in the case of Fe-PILC. The superior catalytic performance of Fe-PILC is probably attributed to its moderate total acidity, relatively high BET surface area, and uniformly dispersed iron oxide particles on montmorillonite support. Accordingly, with the clay catalyst, an efficient and environmentally friendly process can be developed to produce valuable products (e.g. diesel, hydrogen) through pyrolysis of plastic waste.
+

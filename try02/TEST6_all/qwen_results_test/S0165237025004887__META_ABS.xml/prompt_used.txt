@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhancing biomass properties for biofuels: A comparative analysis of pyrolysis and hydrothermal carbonization technologies This study analyzes and compares the effects of pyrolysis and hydrothermal carbonization (HTC) on biomass sourced from southern Spain, focusing on their potential for biofuel production. Five biomass types including orange, olive and pine-tree prunings, and almond and pistachio shells were selected due to their widespread availability and renewable energy potential. Pyrolysis experiments were conducted in a fixed-bed reactor at 450, 500, and 550 ºC for 30 and 60 min, while HTC was performed in an autoclave reactor at 180, 220, and 260 ºC for 60, 120 and 240 min. The resulting biochar and hydrochar were characterized through elemental analysis, ash content, higher heating value (HHV), energy yield (EY), and global energy efficiency (GEE). The results indicate that, when temperature increases, both processes reduce solid yield while promoting gas formation and pyrolysis generally enhances the carbon content and HHV of the biomass, particularly in pine and pistachio, which reached maximum HHV values of 27.32 MJ/kg and 25.39 MJ/kg, respectively. However, pyrolysis also leads to increased ash content. Conversely, HTC significantly reduces ash content offering a cleaner solid product and retains a higher EY, with pine hydrochar achieving an EY of 89.26 % at 180°C for 240 min. The global energy efficiency (GEE) analysis further supports HTC as a more energy-efficient process, with values reaching 91.80 % for pine hydrochar. Additionally, structural and combustion analyses of the best samples (obtained from pine biomass) revealed that while pyrolysis produces a more thermally stable and porous carbon matrix, HTC-treated samples retain more functional groups, exhibit a two-stage combustion profile, and display significantly higher initial combustion rates, underscoring their potential for rapid energy release in biofuel applications. These findings highlight the trade-offs between both methods.
+

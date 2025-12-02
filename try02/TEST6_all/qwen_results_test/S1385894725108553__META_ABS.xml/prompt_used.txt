@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mechanistic insights into support-induced catalyst activity and deactivation pathways of Co-Ni-Mo catalyst during biomass pyrolysis-chemical vapor deposition process The effect of alumina and magnesia supports on the co-production of multi-walled carbon nanotubes (MWCNTs) and H2 via pyrolysis–chemical vapor deposition (CVD) process from a renewable biomass feedstock (wood chips) was investigated using trimetallic 20Co–20Ni–10Mo catalysts. Catalysts supported on 50 wt% Al2O3, 25 wt% Al2O3–25 wt% MgO, and 50 wt% MgO exhibited distinct MWCNTs growth kinetics, deactivation behaviors, and product yields. The Al2O3-supported catalyst showed the highest initial growth rate (r0 = 23.9 × 104 mol·min−1·g−1) and longest activity duration (t0 = 220 min), followed by Al2O3–MgO and MgO. Corresponding MWCNTs yields in a bench-scale setup were 6.98, 5.46, and 3.65 g/g-cat, respectively. The data suggests Al2O3 is more effective in MWCNTs synthesis from biomass-derived pyrolysis gas compared to MgO and Al2O3-MgO. The roles of metal-support interactions, acid-base properties, and reducibility on the catalyst activity are discussed. MWCNTs growth profiles fit well to a dual-site kinetic model (R2 > 0.90), while catalyst deactivation followed a two-phase model, capturing both rapid and gradual loss of activity. Importantly, this study establishes quantitative links between spent catalyst properties, such as crystallite size and metal particle size and kinetic parameters, thereby elucidating support-dependent deactivation mechanisms. The findings provide mechanistic insights into support-induced catalyst activity and deactivation pathways, offering a basis for the rational design of stable and high-performing catalysts for biomass-to-MWCNTs and hydrogen conversion.
+

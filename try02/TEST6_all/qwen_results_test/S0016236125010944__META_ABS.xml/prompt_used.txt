@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Transformation of waste cooking oil into biodiesel in a microwave reactor using nickel-loaded graphitic biochar catalyst This study focuses on the catalytic efficiency of synthesized metal-loaded graphitic biochar catalyst for one-step production of biodiesel from waste cooking oil (WCO). Biomass waste was a precursor for synthesizing nickel-loaded graphitic biochar (Ni-Ca-GBC). The artificial neural networks (ANN) modeling and response surface methodology (RSM) were applied to assess the reaction parameters and biodiesel conversion. The Box-Behnken Design (BBD) method was utilized to optimize reaction parameters for thetransesterification reaction. The maximum fatty acid methyl esters (FAMEs) conversion was ca. 94.6 % at a catalyst loading of 6 wt.%, a reaction temperature of 80 °C, a methanol-oil molar ratio of 12:1, and a reaction time of 35 min. The maximum product yield was roughly 89.3 % using the same reaction parameters. Using optimized parameters of RSM, the maximum conversion (approximately 97.3 %) was achieved. Furthermore, Ni-Ca-GBC was compared with Ni-BC, Ni-Al-Fe-BC, and pristine biochar and showed maximum biodiesel conversion. The catalyst reusability was studied six times, and it wasobserved that the biodiesel conversion started to reduce after three times catalyst reuse. A comparative analysis of microwave (ca. 94.3 % conversion at 80 °C) and conventional heating (ca. 80.3 % at 80 °C) found that microwave heating was more efficient. ANN predictions appeared to be slightly more aligned with experimental results than RSM. Moreover, all the physicochemical properties of the biodiesel produced in this study were compatible with European norms (EN–14214) and American Society for Testing and Materials (ASTM D–6751) standards. This paper demonstrated the perspective of catalysts obtained from biomass to generate green fuels, which can helppromote sustainable energy production.
+

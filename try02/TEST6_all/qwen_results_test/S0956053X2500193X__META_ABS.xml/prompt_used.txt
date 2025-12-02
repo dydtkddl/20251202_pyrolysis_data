@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comparative pyrolysis study of different waste wind turbine blade parts: Kinetics, product distribution and evolution, and economics The resource treatment and recycling of waste wind turbine blades (WWTBs) have become an important challenge globally. Considering mechanical strength during operation, the designed construction of WTBs consists of B1 (balsa-filled part), B2 (polyethylene terephthalate (PET) foam-filled part) and B3 (pure glass fiber-reinforced polymer (GFRP) part), whereas direct mixed treatment can generate low-quality and heterogeneous products. Current studies focused on B3 or the whole blades, but few studied the pyrolysis behavior and energy value of different parts. In this study, the comparative study of the kinetic, product distribution and evolution, and economics of different parts was conducted. Thermogravimetric and kinetic revealed the phase transitions and energy requirements during conversion. Py-GC/MS and fixed-bed experiments confirmed that B1 and B2 generated more oils and gases with more coke in the solids at 600 °C, which was related to carbonization of their core components. High O/C ratios of balsa and PET caused more oxygen-containing groups and products to be produced in the B1 and B2 reaction pathways. The high economics indicated that pyrolysis was suitable for B2 and B3, and the detailed exploration of B1 part should be continued. Our work provides application guidance for resource recovery and utilization of different WWTB parts.
+

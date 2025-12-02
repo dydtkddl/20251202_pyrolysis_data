@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Explainable machine learning for predicting thermogravimetric analysis of oxidatively torrefied spent coffee grounds combustion Understanding the combustion behavior of oxidatively torrefied spent coffee grounds (SCG) is crucial for advancing sustainable fuel technologies. This study introduces a novel, explainable machine learning (ML) framework as a cost-effective alternative to traditional thermogravimetric analysis (TGA) that is designed to accelerate the evaluation of oxidatively torrefied SCG combustion properties. Four ML models: artificial neural network (ANN), k-nearest neighbor (k-NN), random forest (RF), and decision tree (DT), were compared to predict TGA data using proximate analysis and combustion temperature (CT). Among the evaluated models, k-NN exhibited the highest performance, achieving near-perfect R2 values that exceeded 0.9904 and RMSE values below 0.9552 on the validation set for both TG (mass loss) and DTG (derivative mass loss). It also accurately predicted key combustion properties, including ignition, peak, and burnout temperature when tested on unknown data. LIME (Local Interpretable Model-agnostic Explanations) analysis revealed that CT was the most influential predictor for TG and DTG, enhancing model interpretability. The results highlight the effectiveness of the k-NN-LIME approach in analyzing the combustion of oxidatively torrefied SCG, offering a robust and explainable model with significant implications for bioenergy research and sustainable fuel development.
+

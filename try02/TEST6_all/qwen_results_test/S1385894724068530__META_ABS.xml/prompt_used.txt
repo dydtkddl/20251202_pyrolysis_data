@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave-assisted pyrolysis of biomass to high-value products: Factors assessment, mechanism analysis, and critical issues proposal As the fourth largest energy source, biomass offers the advantages of renewable, abundant resources, and carbon–neutrality. Microwave catalytic pyrolysis is a biomass thermochemical conversion technology with improved energy efficiency and rapid heating. Compared to conventional pyrolysis, microwave pyrolysis reduces the secondary reaction time of volatiles and increases the yield of gas phase products. This paper reviews the key influencing factors and kinetic studies of the pyrolysis process in order to introduce the basic theory of microwave pyrolysis. High volatile fraction increases the bio-oil yield; selection of appropriate temperature, residence time and hydrogen-rich materials can improve the conversion efficiency. The catalytic mechanism of the catalysts in the pyrolysis process is discussed. The metals and zeolites contributing to the decomposition of the acids to produce stable by-products. Focusing on the mechanism of generation of high-value liquid fuels (hydrocarbon-rich, phenol-rich) in order to optimize the production process. Current problems and solutions in the microwave pyrolysis are proposed based on the key influencing factors in the pyrolysis process, for example, coking deactivation and microwave non-responsiveness of catalysts, and the construction of catalysts with catalytic and wave-absorbing functions is a research hotspot.
+

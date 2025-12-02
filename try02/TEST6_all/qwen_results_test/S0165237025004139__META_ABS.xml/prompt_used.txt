@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Advanced pyrolysis methods for mixed plastic waste management: Enhanced char and gas yields This review provides an extensive and detailed perspective on plastic waste pyrolysis, specifically shifting the conventional emphasis from oil recovery to the valorization and quality enhancement of char and gas products. Recognizing the growing importance of these pyrolysis products as alternative fuels, adsorbents, and carbonaceous materials, this study systematically evaluates recent advancements in pyrolysis technologies. It integrates fragmented findings from numerous sources into a coherent and comprehensive framework aimed at optimizing pyrolysis processes to achieve high-quality outputs. The review thoroughly investigates critical operational parameters, including feedstock heterogeneity, pyrolysis temperature, heating rate, residence time, and reactor configuration, elucidating their substantial impacts on the yield, composition, and functional performance of char and gas products. Each parameter's role is examined in detail, providing insights into how variations can steer pyrolysis outcomes toward desired end products. A significant part of this review is dedicated to catalytic systems such as zeolites, metal oxides, and biochar-based materials. The review clarifies their distinctive catalytic roles, focusing on their capabilities to direct reaction pathways, enhance the quality and selectivity of pyrolysis products, improve overall energy efficiency, and minimize unwanted by-products, including tar formation and corrosive emissions. The review also explores the interplay between catalyst properties, such as acidity, pore structure, and surface chemistry, and their effectiveness in enhancing pyrolysis outcomes. Furthermore, the paper offers an in-depth critical assessment of state-of-the-art pyrolysis techniques, including microwave-assisted pyrolysis, plasma pyrolysis, and in-line catalytic reforming. These innovative approaches are evaluated for their potential to significantly improve thermal efficiency, optimize product selectivity, and substantially mitigate environmental impacts, emphasizing their advantages over traditional pyrolysis methods. A distinctive feature of this review is the dedicated discussion of gas-phase corrosion in pyrolysis processes, highlighting the environmental and operational implications often neglected in prior research. The mechanisms, impacts, and strategies for mitigating corrosion are discussed to provide a comprehensive understanding of this operational challenge. Unlike previous reviews that broadly address all pyrolysis products, this paper prioritizes char and gas valorization, presenting a detailed analysis of their recovery processes and potential applications. Through careful identification of essential design principles, performance metrics, and critical process parameters, this review serves as a strategic and forward-looking roadmap for researchers and industry professionals. It aims to guide future developments and innovations in high-performance pyrolysis systems, ultimately supporting the global transition toward more sustainable, scalable, and economically viable plastic waste valorization pathways aligned with the principles of the circular economy.
+

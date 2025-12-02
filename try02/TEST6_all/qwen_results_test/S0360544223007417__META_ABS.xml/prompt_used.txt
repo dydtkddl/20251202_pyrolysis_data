@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave heating of biomass waste residues for sustainable bioenergy and biomass materials preparation: A parametric simulation study Sustainable bioenergy and biomass materials preparation from biomass waste residues using microwave heating has attracted widespread attention. However, the microwave heating process still has limitations of uneven temperature distribution and low energy conversion efficiency. This study constructed a coupled electromagnetic and heat transfer model for the microwave heating of waste tobacco stem (TS) biomass using COMSOL Multiphysics® software. The microwave heating behavior of TS biomass was predicted using the finite element method for different parameters, and this model has been experimentally verified to be dependable with a maximum relative error of less than 10%. Simulation results show that hot spots caused by interface polarization and standing waves generate inhomogeneous temperature distributions. The microwave cavity design with two waveguides and controlled frequency changes can improve microwave energy absorption and heating uniformity. A suitable microwave power can improve efficiency and reduce energy consumption during heating. Meanwhile, the TS biomass with 30% moisture content and in the cavity's low region (0–10 cm) can make maximum use of microwave energy, and the average and maximum energy efficiency achieve 59.15% and 87.79%, respectively. The results provide technical support and new perspectives for preparing sustainable bioenergy and biomass materials from waste TS biomass via microwave irradiation.
+

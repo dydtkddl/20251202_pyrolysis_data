@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Rivet-like high-phosphorus-nitrogen-metal nanoparticles immobilized on the surface of MXene nanosheets for improved flame protection of epoxy coatings MXene, as an emerging two-dimensional nanomaterial, is expected to be an inorganic nano-flame retardant. Here, polydopamine (PDA) organic layers were first loaded onto MXene to enhance the flame retardancy and surface reactivity. Then, rivet-like nanoparticles formed by hexamethylene diamine tetramethylenephosphonic acid (HDTMP) containing high phosphorus‑nitrogen flame-retardant groups and metal ions (Cu2+ and Fe2+) were immobilized on the surface of MXene/PDA through coordination, obtaining the composite flame retardant MP@Fe-CuHP. The new composite flame retardant MP@Fe-CuHP effectively combined the barrier property of MXene, the excellent catalytic carbonization ability of metal ions, and the flame retardant function of N and P elements in the gas phase. The enhancement of fire resistance of waterborne epoxy coatings by MP@Fe-CuHP composite flame retardants was systematically explored. The results showed that the EP sample filled with MP@Fe-CuHP had the lowest backside temperature (168.6 °C) when directly facing the flame impingement compared to the other samples tested. Additionally, the MP@Fe-CuHP/EP samples reached the maximum expansion height and residual carbon amount of 23.3 mm and 30.3 %, respectively, which supports its high thermal insulation performance. Besides, the MP@Fe-CuHP/EP samples achieved the lowest peak heat release rate (PHRR, 443.12 kW/m2), total heat release rate (THR, 17.93 MJ/m2), peak smoke production rate (PSPR, 0.114 m2/s), total smoke production (TSP, 3.776 m2), peak CO production rate (PCOPR, 0.041 %), and peak CO2 production rate (PCO2PR, 0.332 %), confirming their excellent fire safety and flame retardant performance during the combustion. Therefore, the successful development of this nano-flame retardant can help to further expand the application of MXene in waterborne epoxy intumescent flame retardant coatings.
+

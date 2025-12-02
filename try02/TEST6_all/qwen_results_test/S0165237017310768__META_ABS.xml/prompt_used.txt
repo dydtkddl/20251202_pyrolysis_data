@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Valorizing municipal solid waste: Waste to energy and activated carbons for water treatment via pyrolysis Globally, as societies urbanize and demand for energy increases, the need to manage mounting quantities of municipal solid waste (MSW), produce renewable energy, and insure clean water supplies becomes more pressing each year. These issues could be addressed by integrating pyrolysis of MSW to recover liquid and gaseous biofuels and a solid biochar, with CO2 activation of the latter to produce activated biochars for water treatment. This potential conversion pathway is experimentally demonstrated by pyrolyzing a model MSW stream at 408 °C, the peak mass loss rate pyrolysis temperature and compared to pyrolysis at 900 °C. As pyrolysis temperature increases, we see conversion of plastic intermediaries into paraffins and polycyclic aromatic compounds, though the desirable gas components (methane, hydrogen, carbon monoxide) of the pyrolysis gas increase substantially. The CO2 activated biochars (activated at 600 °C and 900 °C) show surface areas over 300 m2/g, with the lower pyrolysis temperature and higher activation temperature yielding the highest areas. Adsorption experiments were performed with methylene blue to determine the ability of the activated MSW-biochar to remove organic pollutants from water. Adsorption is well described by the Langmuir isotherm, with equilibrium adsorption capacities upwards of 250 mgdye/g for all activated biochars.
+

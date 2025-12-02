@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Insights into phosphate removal and recovery from wastewater using biosolids biochar: Pyrolysis optimisation, mechanistic and column studies Biosolids, or sewage sludge (SS), is a byproduct from wastewater treatment plants (WWTPs) and drinking water production. SS can contain contaminants, which often generates secondary pollution post-disposal; therefore, pyrolysis is a promising approach for industrial-scale SS management (when compared to incineration, landfill, and direct agricultural use). Here, we determined optimal SS pyrolysis conditions using a Response Surface Methodology approach taking into consideration SS type, pyrolysis temperature and time. An optimised SS biochar (SSB-O) was then characterised using SEM-EDX, TGA/DSC, BET, FTIR, XRD and XPS. The biochar was then applied to phosphate adsorption from wastewater. Adsorption/desorption for phosphate (PO4 3−-P) was evaluated through a series of batch and dynamic experiments using artificial and real WWTP effluent. Results showed that high PO4 3−-P removal was achieved with a q max,exp of 12.7 mg/g in equilibrium studies, and the SSB-O was able to bring residual effluent PO4 3−-P below 0.5 mg Ptotal/L or 90 % of Ptotal have been removed (new EU Urban Wastewater Treatment Directive 2024/3019). In column experiments, breakthrough time (for effluent P concentration < 0.1 mg/L) was 11,520 min (192 h) for an EBCT of 30 min, which corresponded to 668 Bed Volumes. Instrumental characterisation indicated that adsorption mechanisms were dominated by inner-sphere complexation onto metal ligands (mostly with aluminium). The work showed that SSB-O produced from a WWTP where an aluminium rich drinking water sludge was recirculated through the plant resulted in the best biochar, which could then serve as a water treatment material and as a medium to recover PO4 3−-P from WWTP effluents.
+

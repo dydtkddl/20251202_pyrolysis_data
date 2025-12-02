@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Energy recovery from pyrolysis of plastic waste: Study on non-recycled plastics (NRP) data as the real measure of plastic waste Oil produced from pyrolysis of plastics have been known for its higher calorific value than wood-based oil, in which comparable to conventional diesel. Even though many studies have been conducted on pyrolysis of plastics, the findings of those studies are not applied and reported yet according to the real portion of plastic waste. The real amount of plastic waste available is mainly derived from non-recycled plastics (NRP). NRP is defined as the plastic waste that remain in the recycling centers, which unable to be processed due to the certain restrictions. The amounts of NRP vary for each country based on daily applications. In this study, data of NRP in Malaysia, US, UK, as well as global were used to investigate the potential production of liquid fuel based on their different composition of plastic waste. Pyrolysis was conducted in a fixed bed reactor at 500°C with nitrogen flow of 200ml/min for 30min reaction time. The addition of polystyrene (PS) into the NRP composition was also studied to evaluate the improvement of the liquid quality. Several important findings were discussed in this paper including some technical problems, features of the liquid product, characteristics of the by-products and potential energy recovery from NRP. The liquid product was analyzed by various methods such as FTIR, GCMS, elemental analysis and water content.
+

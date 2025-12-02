@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Preparation of monocyclic aromatic hydrocarbons from chlorine-containing mixed waste plastics via tandem catalysis coupled with hydrothermal pretreatment Pyrolytic conversion of chlorine-containing mixed plastic (CMP) wastes into monocyclic aromatic hydrocarbons (MAHs) suffered the chlorinated pollutants and low product yield, making it difficult for continuous industrial operation. Herein, a novel method of tandem catalytic pyrolysis of CMP coupled with hydrothermal pretreatment (HY) for the clean production of high-yield MAHs was investigated. The pyrolytic kinetics of the feedstocks obtained after HY was analyzed, and the synergistic mechanism of HY and tandem catalysis over carbon-based catalyst (Fe/Ni/Mo@N/C) and zeolite (HZSM-5) was established. The results showed that the homogenization effect of HY on CMP was the key to improving its catalytic activity. High pretreatment temperature effectively weakened the branch-chain bond of the polyolefin molecules and dramatically reduced the pyrolytic activation energy of CMP. Additionally, the β-scission and alkylation reactions in the catalytic process were significantly promoted by HY, and subsequently improved the yields of toluene and xylene in HY-tandem catalysis, the selectivity of MAHs and benzene, toluene, ethylbenzene, and xylene (BTEX) reached 84.09% and 71.29%, respectively. The increased yield of BTEX favoured by the synergistic effect of pretreatment and catalysis was promoted to 351.97 mg/g in HY-tandem catalysis, whose yield was 9.52 times that of thermal pyrolysis. After the catalytic reaction of 360 min and transforming 18 times of the mixed plastic wastes, the coke amount of the microporous catalyst was still lower than 4 wt%. This work provides a potentially transformative solution to the challenge of upcycling unsorted plastic waste.
+

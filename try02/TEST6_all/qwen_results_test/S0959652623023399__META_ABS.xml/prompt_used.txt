@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biomass-derived activated carbon nanocomposites for cleaner production: A review on aspects of photocatalytic pollutant degradation Nowadays, water contamination resulting from the disposal of industrial and urban waste poses a significant threat to marine life and human. Hence, providing an effective treatment approach to reduce the total cost and duration of the wastewater treatment process is crucial. Although the adsorption and photocatalysis methods show superb potential for removing hazardous pollutants from water, their combination through a suitable synthesis route is one of the most effective ways to overcome their limitations. Activated carbon (AC) significantly accelerates the rate of pollutant degradation for AC-based photocatalysts compared to bare photocatalysts because of its ability to increase the number of attachment sites, strengthen the interaction between pollutants and photocatalysts, and facilitate rapid electron transfer to prevent electron or hole recombination. This study aims to investigate four main objectives: 1) evaluating key parameters to enhance the surface characterization of AC-derived from lignocellulosic sources using physical and chemical techniques; 2) Surveying various approaches for synthesizing AC-based photocatalysts; 3) explaining the mechanism of photocatalytic degradation of pollutants and the operating parameters in the wastewater treatment process; and 4) providing an overview of the opportunities, challenges, suggestions, and potential future outlooks. Future studies should focus on understanding the structural properties of AC to design effective photocatalytic systems for degrading hazardous contaminants. Generally, AC-based nanocomposites reduce both process costs and duration and promote environmental sustainability by effectively eliminating pollutants.
+

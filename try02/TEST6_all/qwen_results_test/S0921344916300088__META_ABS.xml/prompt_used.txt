@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pulp and paper mill sludge management practices: What are the challenges to assess the impacts on greenhouse gas emissions? Pulp and paper mill sludge (PPMS) is an organic residual generated from the wastewater treatments. PPMS management involves economic, environmental and social costs that will likely increase in the future as landfilling tends to be reduced or banned in certain jurisdictions. The reduction or the banning of landfilling may be considered as a climate change mitigation measure since organic waste disposal is normally associated with greenhouse gas (GHG) emissions. This critical review aims to (1) describe the variety of the current and emerging PPMS management practices that are alternatives to landfilling and (2) underline the crucial need for GHG emission assessments. The management practices of the three main PPMS types (primary, secondary and de-inking) comprised in this review are land application (agriculture, silviculture, land reclamation and composting), energy recovery (combustion, anaerobic digestion, pyrolysis, bioethanol, hydrogen production and direct liquefaction) and integration in materials (biocomposite, cement, asphalt and adsorbent–absorbent). Future research should focus to increase the comprehension of known GHG determinants from the PPMS management practices and reveal unknown factors. Life cycle analyses, based on direct GHG emission measurements, are needed to determine GHG emissions from current and emerging practices and plan a responsible future reduction or banning of landfilling. Such analyses will contribute to assist decision makers in implementing the best PPMS management practices with the least impact on climate change.
+

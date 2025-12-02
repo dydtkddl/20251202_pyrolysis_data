@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhancement of biohydrogen production and low coke formation by applying Ni/ZrxCe1-xO2 catalyst in steam gasification of spent coffee ground in monolithic reactor To produce H2-rich gas, steam gasification of spent coffee grounds is performed in this study by applying ZrxCe1-xO2 supports (x = 0.2, 0.6) in a monolithic reactor. Compared with conventional Ni/γ-Al2O3, Ni/ZrxCe1-xO2 catalysts offer higher gas yields and H2 generation. In particular, Ni/Zr0.6Ce0.4O2 exhibits the highest gas yield (86.32 wt%), H2 selectivity (56 vol%), and low coke formation owing to its favorable Ni dispersion, high oxygen mobility, and completely homogeneous nanometer-sized morphology. A significant increase in gas yield was observed in the monolith reactor (M@Ni/Zr0.6Ce0.4O2) compared to the fixed bed reactor (F@Ni/Zr0.6Ce0.4O2), from 74.85 wt% to 86.32 wt%. H2 selectivity (56.87 vol%) is also increased, which can be associated with the unique properties of the monolithic reactor. This phenomenon is attributed to the increase in residence time and the amount of mass and heat transfer between the catalyst and vapor, which favorably direct the selectivity toward H2. The use of metal-oxide composite supports, especially Ni/Zr0.6Ce0.4O2 catalyst, effectively alleviated coke formation (0.7 wt%), whereas the amount of coke produced by Ni/γ-Al2O3 (2.4 wt%) was more than three times higher. Overall, exploiting the remarkable benefits of ZrxCe1-xO2 (x = 0.2, 0.6) composite oxides as supports for Ni catalyst and monolithic reactors would have an emerging outlook for H2 generation via gasification technology.
+

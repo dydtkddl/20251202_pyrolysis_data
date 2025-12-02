@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Physicochemical assessment of waxy products directly recovered from plastic waste pyrolysis: Review and synthesis of characterization techniques This work aims to assess the identity of waxy products from plastic waste pyrolysis through a systematic review of papers calling wax a product directly yielded from pyrolysis. Also, a comprehensive synthesis of the most practiced characterization techniques for wax materials is carried out. This review was guided by formulating and answering essential research questions such as how does wax not have the minimum required properties to form an identity? By compiling thirty-seven (37) articles by bibliometric analysis constrained by the condition of at least one characterization technique used to characterize wax, a t-test was used to compare the physicochemical properties of pyrolysis and commercial waxes statistically. The means were statistically different ( p -value < 0.05) for n-paraffins, M ¯ w , PD, Δ H m , and density, and not statistically different for M ¯ n , DTG maximum, and elemental analysis, H/C and O/C ratio. These differences suggest that the o term wax must be used only for materials recovered from polyolefin pyrolysis matching the required characteristics of commercial waxes; otherwise, the most suitable term is the waxy matter or waxy product. The assessment outcomes revealed that there is no protocol for selecting a specific combo of characterization techniques as the minimum necessary to establish the quality of waxes recovered from pyrolysis. The synthesis of the properties of polyolefin waxy from waste revealed a wax containing high n-paraffins and olefins, summing 85%. The broad average distribution of weights is inferred by polydispersity greater than 1.5. The melting temperature and density are 79.86 ∘ C ± 13.9 and 0.8528 g / c m 3 ± 0.04938, respectively, and the kinematic viscosity values 2.2 to 1000 cst in the temperature range of 25 to 100 ∘ C. Although relatively low, the presence of oxygenated compounds indicates a valuable characteristic for driving the use of waste polyolefin waxy for powder coating application. From the characterization’s gaps pointed out throughout the review and by knowing the typical commercial characteristics required, we suggest that the basic properties to be determined as a minimum requirement to confer commercial values for the wax from polyolefins were the number of double bonds, melting temperature, crystallinity, density, viscosity, and hardness.
+

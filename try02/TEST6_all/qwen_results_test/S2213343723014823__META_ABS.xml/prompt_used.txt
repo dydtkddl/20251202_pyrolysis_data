@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluation of the adsorptive and catalytic properties of sludge-based carbon materials for the efficient removal of antibiotics listed in the European Decision 2020/1161/EU In this work, sludge from an oily refinery and urban wastewater treatment plant have been used for the synthesis of activated carbons using ZnCl2 and KOH as activating agents. The materials were used as adsorbents and catalysts for the removal of three antibiotics, e.g., sulfamethoxazole (SMX), trimethoprim (TMP) and ciprofloxacin (CPX). The activated carbons have been fully characterized. Thus, the BET surface area of the materials ranged from 183 to 784 m2/g. Qe values of 127.3 mg/g for SMX onto U-ZnCl2; 168.5, and 179.6 mg/g for TMP and CPX, respectively, onto R-KOH were obtained. The best fitting of kinetic data was found by using pseudo-second order (PSO) model, while Freundlich and Liu models successfully fitted the equilibrium adsorption isotherms. SMX, TMP and CPX adsorption mechanisms were governed by pore filling, π-π interactions and H-bonds. R-KOH material was used for wastewater treatment, finding that the adsorption capacity decreased due to a competitive effect. Regarding the Fenton process, the U-ZnCl2 carbon achieved the total SMX degradation after 60 min. In contrast, TMP and CPX showed the highest depletion in only 20 min. The higher performances of the U-ZnCl2 material may be due to a higher C/O ratio and high N and Zn contents. In the experiments with a real aqueous matrix, similar conversions were achieved, although the kinetic constants resulted in slightly lower values. So, it could be stated that adsorption and Fenton oxidation performance were influenced by the different properties of the carbon materials.
+

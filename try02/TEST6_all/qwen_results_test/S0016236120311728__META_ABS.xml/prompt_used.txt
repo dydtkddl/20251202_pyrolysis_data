@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A lab scale waste to energy conversion study for pyrolysis of plastic with and without catalyst: Engine emissions testing study Plastics in many forms have been regarded as one of the most polluting material in the modern world. Therefore, a study has been conducted to check the effectiveness of catalyst-fly ash and zeolite on the production of biofuel from plastics as an attempt to contribute in the reduction of plastic waste pollution to the environment. A lab scale plastic pyrolysis plant has been constructed and feed particle size of 3 ± 1.5 cm2 were used as raw materials. The samples were tested in the pyrolysis plant at about 500 ± 30 °C with and without the presence of catalyst. The catalyst loading ratio of 1:10 catalyst to feed is applied. The result shows that plastic pyrolysis (bottle) without any catalysts have the highest liquid fraction yield with an average yield of 24% while those with catalyst has lower yield (16–22%). Carry bags with zeolite catalyst yield liquid fraction of 22% at a conversion rate of 47%. The inclusion of catalyst has lowered the yield but has produce oil yield of superior quality compared with the samples without catalyst. Engine characteristics study showed that blend fuel D80PO20 (80:20 diesel: plastic pyrolytic oil) have shown similar cylinder pressure during combustion with diesel. Higher brake thermal efficiency and lower brake specific energy consumption were also observed from the engine testing using the blend fuel. The blend fuel has lower hydrocarbon emissions while oxides of nitrogen reduces by 19% and 26% compared to pure diesel and PPO respectively.
+

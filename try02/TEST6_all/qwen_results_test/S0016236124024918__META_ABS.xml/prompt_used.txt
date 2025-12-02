@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biochars from waste as an additive material in anaerobic co-digestion: Characterization and application in batch and semi-continuous systems The conversion of organic waste into energy through anaerobic digestion (AD) is a profitable and environmentally friendly strategy. Enhancing the process is crucial for optimizing and maximizing biogas and methane production. To achieve this, various strategies can be employed, such as anaerobic co-digestion (co-AD) and the use of biochar. Biochar aids in process stability, provides buffering capacity, mitigates inhibitory toxins, immobilizes microorganisms, facilitates microbial colonization, and accelerates electron transfer between microorganisms. This study aimed to produce biochar from different wastes and pyrolysis temperatures and to investigate its use as an additive material in the co-AD of fruit and vegetable waste (FVW) and laying chicken manure (LCM) in batch and semi-continuous systems. Thermogravimetric analysis (TGA) and differential scanning calorimetry were performed to determine the pyrolysis temperature for biochar production, defining temperatures of 450 and 550 °C. A biochemical methane potential (BMP) test was conducted in 120 mL reactors (working volume) with the addition of 10 g/L of biochar from FVW, LCM, and wood pruning waste (WPW). WPW450 biochar showed the highest fixed carbon content, rough surface, and deep porous structure, factors that contributed to a 28 % increase in methane production compared to the control. Semi-continuous tests were conducted in 50 L reactors (working volume) using a reduced dosage (1 g/L) of WPW450 biochar, providing process stability and better biogas quality, resulting in a 31 % increase in methane production. The reduction in biochar dosage did not negatively impact the semi-continuous system, which showed a 74 % higher methane yield compared to the batch system. The results of this study highlight the importance of biochar addition to increase methane production in the co-AD of FVW and LCM at different scales, as well as the study of different biomasses and temperatures for biochar production.
+

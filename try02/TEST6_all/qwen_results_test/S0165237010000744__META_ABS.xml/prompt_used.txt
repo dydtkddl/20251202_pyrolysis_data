@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Flash pyrolysis of heavy metal contaminated hardwoods from phytoremediation: Characterisation of biomass, pyrolysis oil and char/ash fraction Flash pyrolysis of heavy metal contaminated hardwoods originating from phytoremediation is studied. Different kinds of hardwoods, i.e. Salix fragilis (crack willow), Salix jorunn (“Jorunn” willow) and Populus grimminge (Grimminge poplar) are compared in a preliminary phase. Salix fragilis scores the best on both remediation capabilities and pyrolysis characteristics. Therefore, this cultivar is chosen for in-depth research. S. fragilis stems, leaves and stems mixed with leaves are pyrolysed. The effect of the pyrolysis temperature (623, 723 and 823K) and the use of a hot-gas filter on the yield and properties of pyrolysis oil and char/ash residue are studied. Pyrolysis of stems at 723K yields the most pyrolysis oil; while highest char production is obtained when pyrolysing leaves at 623K. Pyrolysis of mixed stems and leaves at 723K yields more gas than the pyrolysis of stems or leaves at 723K. The use of a hot-gas filter does not influence the composition of the pyrolysis oil significantly. In all the experiments performed, the pyrolysis oil main constituents are phenolics. Pyrolysis of stems at 623 and 723K yields a pyrolysis oil which does not contain considerable amounts of heavy metals.
+

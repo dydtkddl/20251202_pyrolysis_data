@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis liquids and gases as alternative fuels in internal combustion engines – A review Liquids and gases produced through biomass pyrolysis have potential as renewable fuels to replace fossil fuels in conventional internal combustion engines. This review compares the properties of pyrolysis fuels, produced from a variety of feedstocks and using different pyrolysis techniques, against those of fossil fuels. High acidity, the presence of solid particles, high water content, high viscosity, storage and thermal instability, and low energy content are typical characteristics of pyrolysis liquids. A survey of combustion, performance and exhaust emission results from the use of pyrolysis liquids (both crude and up-graded) in compression ignition engines is presented. With only a few exceptions, most authors have reported difficulties associated with the adverse properties of pyrolysis liquids, including: corrosion and clogging of the injectors, long ignition delay and short combustion duration, difficulty in engine start-up, unstable operation, coking of the piston and cylinders and subsequent engine seizure. Pyrolysis gas can be used more readily, either in spark ignition or compression ignition engines; however, NO x reduction techniques are desirable. Various approaches to improve the properties of pyrolysis liquids are discussed and a comparison of the properties of up-graded vs. crude pyrolysis liquid is included. Further developments in up-gradation techniques, such as hydrocracking and bio-refinery approaches, could lead to the production of green diesel and green gasoline. Modifications required to engines for use with pyrolysis liquids, for example in the fuel supply and injection systems, are discussed. Storage stability and economic issues are also reviewed. Our study presents recent progress and important R&D areas for successful future use of pyrolysis fuels in internal combustion engines.
+

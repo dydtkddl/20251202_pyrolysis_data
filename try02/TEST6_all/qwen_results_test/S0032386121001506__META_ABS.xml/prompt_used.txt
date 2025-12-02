@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Tuning thermo-mechanical properties of poly(lactic acid) films through blending with bioderived poly(alkylene furanoate)s with different alkyl chain length for sustainable packaging To favor a transition toward a more sustainable society, it is fundamental to find renewable and effective alternatives to current packaging materials. Here, fully renewable polymer films are produced by blending poly (lactic acid) (PLA) and poly (alkylene furanoate)s (PAFs). The work aims at discussing their microstructural and thermomechanical properties as a function of PAF concentration (5–30 wt%) and type (4–10 carbon atoms in the alkyl chain length of the repeating unit). For neat PAFs, an increase in the alkyl chain length promotes a decrease in T g and T m , but also an increasing tendency to crystallize, due to an enhanced molecular mobility. The T g of PLA does not vary upon PAF addition, which accounts for blend immiscibility, in good agreement with SEM and FTIR. Tensile tests highlight that the addition of 5 wt% of any of the considered PAFs leads to a strong enhancement of the strain at break, which increases of approx. 10 times in the blend containing 5 wt% of poly (decylene furanoate) (PDeF-5). This remarkable increase in ductility is investigated more in detail with the essential work of fracture (EWF) approach, which evidences that the specific essential work of fracture increases from 16.2 kJ/m2 of neat PLA up to 32.9 kJ/m2 of PDeF-5 (+103%). This occurs especially thanks to the remarkable increase in essential work of fracture propagation (+222%). This work highlights the beneficial effect of finely dispersed PDeF domains on the fracture resistance of PLA, which is a fundamental aspect for many industrial applications.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Defossilization and decarbonization of hydrogen production using plastic waste: Temperature and feedstock effects during thermolysis stage The replacement of natural gas with plastic-derived pyrolysis gas can defossilize H2 production, while subsequent capture, utilization and storage of carbon in a solid form can decarbonize the process. The objective of this study was to investigate H2 production from three types of plastics using a process comprising pyrolysis (600 °C) and thermolysis stages (1200–1500 °C). Depending on the plastic feedstock and thermolysis temperature, the laboratory-scale setup generated 1000–1350 mL/min product gas with H2 purity of 74.3–94.2 vol%. The recovery of 5–9 wt% molecular H2 per mass of plastics was achieved. Other products included solid residue (0.1–12 wt%) and oil (8–52 wt%) from the pyrolysis reactor, solid carbon (36–53 wt%) and gas impurities (2–16 wt%) from the thermolysis reactor. The purity of H2 gas was detrimentally influenced by polyethylene terephthalate in the feedstock due to the dilution of gas by CO. The decomposition of methane containing in the pyrolysis gas was the limiting reaction step during H2 production and improved at higher thermolysis temperature. Three solid carbon structures were formed during the thermolysis stage regardless of the plastic type: carbon black aggregates, carbon black aggregates coated with a layer of pyrolytic carbon and a carbon film on the inner reactor wall. Among the three types of carbon, the highest valorization potential was identified for carbon black aggregates. Plastic feedstock composition had little if any effect on carbon black properties, while high thermolysis temperature (1500 °C) reduced the particle sizes and increased the surface area of aggregates.
+

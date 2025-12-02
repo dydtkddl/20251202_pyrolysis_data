@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hospital plastic waste valorization through microwave-assisted Pyrolysis: Experimental and modeling studies via machine learning The COVID-19 pandemic generated a global upsurge in hospital plastic waste (HPW) as a consequence of the widespread utilization of personal protective equipment (PPE) composed of diverse polymer materials. The constant demand for PPE worldwide led to the accumulation of substantial volumes of high-polymer-based plastic waste. To tackle this challenge, researchers delved into the conversion of HPW into valuable chemicals through a process known as microwave-assisted pyrolysis (MAP). This method entails the transformation of HPW into high-quality char and liquid oil, which can serve as a source of fuel. In this study, our primary focus was to understand how the ratio of HPW (hospital plastic waste) to susceptor weight influenced the yields and characteristics of the resulting products in the context of the MAP process. To facilitate the experimental setup, a Central Composite Design (CCD) was employed. The impact of varying HPW weights and susceptor quantities on the production of value-added products was investigated. The analysis of condensed organic vapor decomposition revealed an increase in liquid yields (73.6 wt %, 76.6 wt %, 80.7 wt %) as the graphite content increased at a constant 30 g HPW. Conversely, gas yield decreased with higher susceptor and HPW quantity. Keeping the graphite constant at 4g, the gas yield declined (32.5 wt %, 30.7 wt %, and 24.7 wt %) as HPW increased. Additionally, gas yield exhibited a drop (32.5 wt % to 18.1 wt %) with an increase in both graphite and HPW. Furthermore, the residual yield decreased (from 1.7 wt % to 1.2 wt %) with a 30 g increase in HPW. In-depth analysis incorporated machine learning techniques to understand the behavior of response variables about susceptor and HPW quantities. The optimization of the MAP process for HPW encompassed various supplementary operational parameters, including susceptor thermal energy, average heating rate, microwave energy, specific microwave power, and product yields. Moreover, the residue generated from the MAP of HPW underwent characterization through X-ray diffraction (XRD), FTIR, and BET analysis.
+

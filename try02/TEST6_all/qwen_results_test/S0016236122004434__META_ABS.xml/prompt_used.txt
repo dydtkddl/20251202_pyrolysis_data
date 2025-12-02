@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of waste-based pyrolysis as heating source: Meta-analyze of char yield and machine learning analysis Among three energy products of oil, char, and gas from pyrolysis, char has the advantages of easy operation and low cost. It is expected that pyrolysis of waste materials using a desired heating source and optimal operation parameters can achieve max pyrolysis char yield with good higher heating value (HHV). Here we evaluate the effects of four heating sources being direct thermal, microwave radiation, solar, and infrared heating, and the operation parameters involved, i.e., heating rate, final temperature, dwelling time, and feedstock type and size, on pyrolysis char yield and HHV. We collected 61 pyrolysis cases with 683 individual observations from the international scientific literature and used the big data in machine learning (ML) analyses. The target variables were char yield and HHV, while the input variables were heating source, feedstock type, feedstock size, temperature, heat rate, and dwelling time. Five ML technologies, including Linear & polynomial regressions, k-Nearest Neighbor (kNN), Artificial neural networks (ANN), and Gradient boosting were performed. The decision tree results indicated that the relative significances of input variables to the target variable of char HHV decreased in the following order: feedstock type > heating source > particle size > heat rate > dwelling time > temperature. While the relative significances of the input variables to the target variable of Ln (char yield) decreased as: temperature > heat rate > dwelling time > particle size > heating source > feedstock type. The Ln (char yield) and char HHV (MJ/kg) can be accurately predicted based on known input variables using the developed Polynomial regressions. After comparing the five ML prediction models, we conclude that the Gradient boosting model is the best to estimated Ln (char yield) and HHV with high accuracy, which can be used to predict Ln (char yield) and HHV based on the type of pyrolysis feedstock and operation parameters.
+

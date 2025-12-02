@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review on the upgradation techniques of pyrolysis oil This paper provides insights on the properties of bio-oil obtained from various feedstock and several available mechanisms for bio-oil upgrading. A comprehensive detail on the catalytic cracking, hydrodeoxygenation, esterification, supercritical extraction and steam reforming processes are reviewed. Each upgrading technique has both advantages and disadvantages. The hydrodeoxygenation which has the major breakthrough in the bio-oil upgrading, even though there is no specific inference on the process chemistry in addition to various unfavorable conditions, this process holds good in reducing the oxygen contents of raw bio-oil. Various types of catalysts, their limitations along with the advantages, the use of novel catalysts and catalyst deactivation due to char formation at specified conditions among different upgrading techniques are presented. From this review, it was found that there is no specific catalyst for the specific compound upgrading. There is no specific reaction pathways defined for the processing of bio-oil. All the reviews and researches so far are constrained to the individual compounds of bio oil rather than as a whole. Some key points which are to be addressed for established process of bio-oil upgrading may include finding multifunctional catalysts which can improve the bio-oil properties suitable to blend with existing transportation fossil fuels or to directly use as transportation fuels, studies at pilot plant level, establishment of design concepts as in existing petroleum refineries, and numerical approaches to find various possible reaction pathways leading to upgraded bio-oil.
+

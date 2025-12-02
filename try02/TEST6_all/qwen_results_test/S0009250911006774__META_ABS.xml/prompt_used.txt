@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Three-dimensional numerical modelling of interactions between a gas–liquid jet and a fluidized bed This paper presents the development of a novel mathematical model that describes spray injection and spreading into a fluidized bed of solid particles. The model also includes the gas–liquid flow through the nozzle followed by the gas-assisted atomization. An Eulerian approach that is independent of the nature of the continuous phase is adopted for all phases, which are gas (or bubbles), liquid (or droplets), and solid particles that may be covered with a liquid layer. Variation in sizes of bubbles and droplets is represented by the particle number density approach that takes into account both break-up and coalescence. The atomization is considered as a catastrophic phase inversion triggered by a critical local volume fraction. New relationships were obtained for liquid spreading due to wet particle collisions and for heat conduction between a solid particle and a surrounding liquid layer. The model is applied to simulate liquid injection into the fluidized bed for conditions that were previously experimentally studied and published. The comparison reveals a reasonable agreement in prediction of the cumulative liquid distribution for two experimental cases. In addition, we evaluated a jet penetration distance with the model to compare it with the one measured in another set of experiments. This comparison also yields a good qualitative agreement. Finally, we evaluated the influence of the fluidization velocity on liquid distribution in the bed.
+

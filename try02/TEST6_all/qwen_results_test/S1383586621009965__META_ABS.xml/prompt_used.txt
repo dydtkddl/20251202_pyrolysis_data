@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+N, P co-doped core/shell porous carbon as a highly efficient peroxymonosulfate activator for phenol degradation A nitrogen and phosphorus co-doped metal-free porous carbon (NPC) with core/shell structure was successfully synthesized by pyrolysis of ZIF-8@phytic acid (PA) and demonstrated outstanding catalytic performance on PMS activation for the degradation of phenol (98.0% within 30 min at pH = 7.0). Results suggested that optimized N-P co-doping strategy played a synergistic effect in promoting the catalytic activity of NPC. In addition, NPC displayed excellent acid-base tolerance (pH = 3.0–10.0) and insensitive to anions (Cl−, HCO3 – and H2PO4 −) and humic acid when employed as PMS activator for phenol degradation. Based on quenching tests, electron paramagnetic resonance (EPR) measurements and electrochemical analysis, singlet oxygen (1O2) is the key active specie and the surface-bound sulfate radical (SO4 −) plays an auxiliary role in the removal of phenol in NPC/PMS system while surface electron transfer is also a non-radical pathway. Large BET specific surface areas (SSA), total pore volumes (TPV) and hierarchical porous structure are beneficial to expose more active sites (essentially graphite N and CO) for generating 1O2 and surface-bound SO4 − to enhance catalytic performance of NPC. This work opens up a new way for the synthesis of highly efficient N-P co-doped metal-free PMS activators and provides novel insights into the mechanism of PMS activation by NPC.
+

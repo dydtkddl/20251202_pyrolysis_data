@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Modeling a low pressure steam-oxygen fluidized bed coal gasifying reactor A comprehensive model accounting for the jetting region and homogeneous dilute phase reactions is developed for the adiabatic and continuous gasification of coal particles in a fluidized bed. The division of flows in the bed is determined by means of a modified two-phase theory which considers inlet gas jets, bubbles, free of particles, which develop at the top of the jets and grow in size as they rise, and an emulsion phase consisting of particles and the surrounding interstitial gas. The model describes the gasification of coal particles by pyrolytic devolatilization and three heterogeneous chemical reactions: oxidation by oxygen and steam, and reduction of carbon dioxide. Carbon monoxide and hydrogen produced by the heterogeneous reactions can be oxidized to carbon dioxide and steam by incoming oxygen within the dilute phase jets and bubbles. Furthermore, the water-gas shift reaction can occur in the dilute phase and interstitial gas. Simulations both with and without homogeneous reactions occurring in the jets and bubbles indicate that dilute phase homogeneous reactions have considerable influence on carbon conversion, bed temperature, and product gas composition. It has also been found that the jetting-emulsion mass and beat interchange has a substantial effect on overall bed performance and the temperature of the bed close to the inlet gas distributor. Results indicate that water-gas shift equilibrium is established rapidly and significant quantities of hydrogen and carbon monoxide and a nonuniform steam concentration are present within the combustion zone.
+

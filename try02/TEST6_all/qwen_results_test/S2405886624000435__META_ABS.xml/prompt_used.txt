@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comprehensive review on bioink based microfluidic devices Microfluidics represents a methodology facilitating the manipulation of minute fluid volumes via microchannels, with wide-ranging applications across biomedical and pharmaceutical research, environmental monitoring, and clinical diagnostics. This discourse delves into the materials utilized in microfluidic devices, their fabrication techniques, and their diverse applications, with a specific focus on variants constructed from glass, paper, metal, and polymers. Additionally, it explores bioprinting methodologies aimed at generating three-dimensional (3D) tissue structures employing bioink for microfluidic system. Bioprinting nurtures the development of functional tissue models essential for tissue engineering, drug screening initiatives, and the evolution of organ-on-a-chip technologies. The discussion extends to an examination of the merits and demerits of various bioinks, such as gelatine methacrylate, collagen, alginate, Pluronic F-127, and decellularized extracellular matrix, with a succinct overview provided in a tabular format highlighting commercially available bioinks. Furthermore, concrete examples illustrating microfluidic devices and bio-printed tissues tailored for different organs, including the lung, liver, heart, and intestine, are presented. Finally, the discourse concludes with an analysis of the prospects and potential applications of microfluidics in advancing biomedical research and its practical implementations.
+

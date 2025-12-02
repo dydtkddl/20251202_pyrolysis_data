@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Miscanthus x giganteus biochar: Effective adsorption of pharmaceuticals from model solution and hospital wastewater This study investigated the adsorption of pharmaceuticals, including atenolol (AT), 17-α-ethinylestradiol (EE2), and sulfamethoxazole (SMX), in model solutions and in the effluent from a hospital wastewater treatment plant. The pharmaceuticals were adsorbed on biochar prepared from Miscanthus x giganteus biomass obtained from the phytoremediation of contaminated or marginal soil. The feedstock was pyrolyzed at 360 °C (M-3) and 500 °C (M-5). The representation of functional groups, specific surface area, porosity, and pore volume were lower for M-5. Pore diameters were comparable, but their depth decreased for M-5. The specific surface area and porosity surface area of M-5 were 30 times higher after 4 h of shaking compared to properties without shaking. The biochar leachate pH was 9.8 ± 1.0 (M-3), and 11.1 ± 1.1 (M-5). No desorption of potentially risk organic compounds was detected. M-3 was generally a better adsorption material. The removal of EE2, AT and SMX was greater than 90%, 70% and 30 % respectively after 4 h in model waters. There was no evidence of a linear relationship between the sorption efficiency of pharmaceuticals and the biochar dose. Sorption experiments with real wastewater from a hospital wastewater treatment plant demonstrated high removal rates of monitored pharmaceuticals, including e.g. SMX (80%), trimethoprim (91%), venlafaxine (100%), clarithromycin (96%), tramadol (93%), diclofenac (86%). It was proven that the efficiency of the adsorption process is influenced not only by the dose or physico-chemical properties of the biochar, but also by the initial concentration of the pharmaceutical and its properties. The presence of other components of real wastewater, which can cause competitive sorption and overlapping of active centers on the surface of the biochar, also decreased the efficiency. The results demonstrate that both biochars are suitable for tertiary or quaternary water treatment for pharmaceutical removal. Due to the lower energetic, and therefore economic, costs of pyrolysis, a lower pyrolysis temperature can be preferred.
+

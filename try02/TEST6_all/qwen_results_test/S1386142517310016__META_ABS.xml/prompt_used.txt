@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Analytical characterization of the palette and painting techniques of Jorge Afonso, the great 16th century Master of Lisbon painting workshop In this work, a study on a set of paintings from the most significant altarpiece assigned to Master Jorge Afonso (c. 1470–1540) painting workshop is presented. This altarpiece is composed by fourteen paintings made to the church of Convento de Jesus, in Setúbal, Portugal, and was made circa 1517–19/1530, according to art-history. This set of paintings is compared to one of the other most important Portuguese altarpieces from the 16th century: the panels of the Round Church of the Convento de Cristo, in Tomar, made circa 1510–1515. The aim of this study is to characterize the wooden support, pigments, ground layers materials and technique used in Jorge Afonso workshop by means of complementary analyses. A dendrochronological approach was made in order to corroborate (or not) the historical date initially assigned. Infrared photography (IRP) and reflectography (IRR) allowed the study of the underdrawing technique and macro photography (MP) was used to recognize overlapping layers technique. Cross-sections from the paintings were examined by optical microscopy (OM), and analyzed by μ-X-ray diffraction (μ-XRD), Energy Dispersive X-ray Fluorescence spectroscopy (EDXRF), Scanning Electron Microscopy with Energy Dispersive X-ray Spectroscopy (SEM-EDS), micro-Raman spectroscopy (μ-Raman), micro-Fourier Transform Infrared spectroscopy (μ-FTIR), Pyrolysis Gas Chromatography Mass Spectrometry (py-GC/MS). The characterization of the palette and ground layers and the study of the overlapping of paint layers brought a new insight of the adopted painting techniques by the most important group of painters working in Portugal in the 16th century - the Lisbon workshop, leaded by Master Jorge Afonso.
+

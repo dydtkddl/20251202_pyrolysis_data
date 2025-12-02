@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic cracking of polyethylene over zeolite mordenite with enhanced textural properties Catalytic cracking of low density polyethylene (LDPE) has been investigated using different samples of mordenite zeolite as catalyst. In order to obtain materials with different textural properties, a new synthesis method based on the functionalization of the zeolite seeds with an organosilane was employed. Mordenite samples with BET and external surface areas in the range 385–485 and 9–57m2/g, respectively, were prepared. LDPE catalytic cracking reactions were performed at 420°C for 2h in a batch reactor provided with a screw stirrer under a continuous nitrogen flow. Thermal cracking of LDPE leads to plastic conversion lower than 30%, while values of 40% are reached when traditional mordenite is used as catalyst. In contrast, when mordenite samples with enhanced textural properties were employed, a plastic conversion of 60% is attained, both gas (C1–C5) and gasoline (C6–C12) fractions being obtained as main products. On the contrary, gasoline fraction is not observed and a heavier hydrocarbon fraction in the range C13–C35 is detected when thermal cracking or even catalytic cracking over traditional mordenite samples are carried out. The formation of lighter hydrocarbon products (C6–C12) over mordenite samples with enhanced textural properties is assigned to the higher activity and accessibility of their acid sites, which promotes both end-chain and random scission cracking reactions of the polymer molecules.
+

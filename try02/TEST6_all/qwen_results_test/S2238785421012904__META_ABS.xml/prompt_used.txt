@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal degradation and pyrolysis kinetic behaviour of glass fibre-reinforced thermoplastic resin by TG-FTIR, Py-GC/MS, linear and nonlinear isoconversional models Recently, global demand for glass fibre-reinforced thermoplastic (GFRP) composites and their applications in the production of wind turbine blades has increased due to their bigger strength, impact resistance, toughness, etc. compared to thermosetting resin. In this work, the thermal degradation and pyrolysis kinetic behaviour of GFRP were studied using TG-FTIR, Py-GC/MS, linear and nonlinear isoconversional models to investigate potential applications in the use of pyrolysis technology in end-of-life GFRP treatment. The experiments were carried out on milled glass fibre/poly(methyl methacrylate)-PMMA composites prepared using the vacuum-assisted resin transfer method and the grinding process. The morphological, ultimate, and proximate properties of the feedstock were observed. The thermal and chemical degeneration of the milled GFRP was studied using TG-FTIR, while the composition of the obtained volatile products was identified using Py-GC/MS. With regard to pyrolysis kinetic behaviour of GFRP, the activation energy (Ea) of whole pyrolysis treatment was determined using Kissinger model, while linear and nonlinear isoconversional models were employed to calculate Ea for each conversion phase. Finally, the kinetic methods of distributed activation energy and the independent parallel reactions were employed to fit TG-DTG experimental data. The results revealed that the GFRP is rich in volatile content (49%), while TG-FTIR analysis showed that C–H, CO, N–O, C–O–C were the main functional groups in the formulated volatile products. Meanwhile, GC/MS measurements showed that methacrylic acid (at 5 °C/min) and 2-Butenoic acid, methyl ester, (Z) (at 10–30 °C/min) were the major compounds in the obtained volatile products with abundance of 92% and 88%, respectively. Meanwhile, the kinetic study showed that Ea was estimated at 200 KJ/mol (Kissinger), 143–184 KJ/mol (linear models), and 153–157 KJ/mol (nonlinear model) with R2 in the range of 92–96.
+

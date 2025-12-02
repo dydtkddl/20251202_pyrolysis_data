@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characterization of the liquid intermediates from gasification of lignite in supercritical water: Insights into the gasification process for hydrogen production The liquid intermediates formed during supercritical water gasification of lignite have a significant influence on the process. To deeply understand the process, the effects of various process parameters on the components and their distribution in liquid intermediates were examined by GC–MS and FT–IR. GC–MS analysis indicated that the liquid intermediates can be principally grouped as alkenes, alkanes, aromatic hydrocarbons, phenols and oxygen containing compounds. Without adding Ru catalyst, the relative area % of aromatic hydrocarbons, phenols and oxygen containing compounds showed little changes, while that of alkanes increased and alkenes decreased with increasing time and temperature. In contrast, all the percentage area of intermediates, except aromatic hydrocarbons, decreased sharply with Ru catalyst. The unconverted aromatic hydrocarbons mainly consist of p-xylene (15.28%), o-xylene (12.87%), mesitylene (5.99%), naphthalene (8.96%), methylnaphthalene (3.88%), indicating these aromatic hydrocarbons can be regarded as the ‘last hurdle’ to get over for complete gasification of lignite in SCW. FT–IR experimental results correlated well with that obtained by GC–MS. According to the obtained results and previous studies, a simplified schematic diagram illustrating the possible reaction pathways for gasification of lignite in SCW with Ru catalyst was proposed to further understand the SCWG of lignite.
+

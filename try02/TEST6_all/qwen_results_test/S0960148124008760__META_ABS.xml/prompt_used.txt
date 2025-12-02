@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Benefits from co-pyrolysis of biomass and refuse derived fuel for biofuels production: Experimental investigations The application of renewable fuels and waste for energy production is crucial environmentally and economically. Co-pyrolysis of biomass and refuse derived fuel (RDF) offers a promising pathway for valuable products that combine various benefits including enhanced energy recovery, waste valorisation, improved product quality, and environmental sustainability. Consideration of specific feedstocks and optimization of process parameters are necessary to maximise the efficiency and effectiveness of the co-pyrolysis process. This work presents investigations of the co-pyrolysis process of lignocellulosic biomass wastes (rye straw and agriculture grass) and RDF. These biomasses ensure efficient decomposition. The RDF, high in carbon (78.5 %) and hydrogen (11.8 %), was predominantly plastic based. Based on Py-GC-MS studies at 600 °C, it was observed that the addition of RDF to biomass caused a significant decrease in the share of organic oxygen compounds among the released decomposition products. Laboratory tests were performed in a fixed-bed reactor for raw biomass and RDF and 1:1 and 3:1 biomass to RDF mass ratio. The results demonstrated that the yield of char production decreased with the addition of RDF, which promoted the bio-oil yield. Despite, RDF pyrolysis meets problems, it was proved that co-pyrolysis of biomass and RDF is a good solution for their utilization.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Identification and quantification of microplastics in a wide range of aqueous matrices using pyrolysis-gas chromatography-mass spectrometry: method’s performance, greenness evaluation, and analysis of real samples This study describes the analysis of microplastics in aqueous matrices of varying complexity using pyrolysis coupled with gas chromatography-mass spectrometry (Py-GC–MS). Depending on the filtration rate of the analysed matrix, sample treatment prior to Py-GC–MS consisted of filtration on 0.7 µm glass fibre membranes (low-complexity matrices), or microwave-assisted digestion of samples with hydrogen peroxide, followed by filtration as above-mentioned (high-complexity matrices). Low-complexity matrices included demineralised water (DMW), mineral water in polyethylene terephthalate (PET) bottles (BMW), drinking water from a public aqueduct (DW), and DW further treated with activated carbon and distributed in public fountains (FOW). High-complexity matrices included effluent wastewater from primary sedimentation (WW-PS), biological oxidation (WW-BO), clariflocculation (WW-CL), and quaternary treatment (WW-QT). Sample digestion significantly accelerated the filtration process of high-complexity matrices. In most cases, absolute value of matrix effect was <40 %, except for PET in WW-PS (-54 %) and WW-CL (-56 %), and polystyrene in WW-PS (75 %). Apparent recovery, studied in DMW, DW, and WW-BO matrices, was 90±24, 87±25, and 67±19, respectively. The methods were evaluated for their greenness, achieving scores higher than or comparable to those of previously published Py-GC–MS procedures. Poly(methyl methacrylate) and PET were never detected, while different levels of contamination were found for polystyrene, polyethylene, polypropylene, polycarbonate, polyamide, and polyvinyl chloride, depending on the sample type. The lowest contaminations were determined in BMW and DMW. FOW was more contaminated than DW (five microplastics detected at 2.7–138 µg/L vs. two microplastics detected at <0.62–23 µg/L) and concentrations in WWs were in the order WW-QT<WW-CL<WW-PS<<WW-BO.
+

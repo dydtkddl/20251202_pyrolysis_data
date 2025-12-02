@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Transformation of polyester fibre microplastics by sulfate based advanced oxidation processes Advanced oxidation processes (AOPs) are a potential solution to microplastics (MPs) polluted wastewater but incomplete degradation can result in the formation of smaller fragments with altered surface chemistry. In this work, the impact of sulfate based oxidation on polyester MPs was investigated. Light, heat and ultrasound activation of persulfate resulted in varied degrees of mass loss and surface degradation, as probed by scanning electron microscopy (SEM), atomic force microscopy (AFM) and Fourier transform infrared spectroscopy (FTIR). Ultrasonic activation of persulfate resulted in significantly increased fragmentation and formation of smaller microplastic fibrils. Optimised UVC/peroxydisulfate (UVC/PDS) treatment (31.8 mW cm−2, 500 mg L−1) resulted in an 18.5% mass loss over 9 h with clear surface pitting and cracking. Extended treatment under these conditions for 24 h did not result in significantly increased mass loss but did cause an increased degree of surface degradation and increased roughness, indicating that incomplete mineralisation is likely in wastewater systems accompanied by MP transformation. The influence of a real laundry wastewater matrix was also studied and a decreased rate of mass loss was observed due to competing radical reactions with the organic content of the wastewater. Results advance understanding and therefore contribute to mitigating water pollution by MPs, since their physical and chemical transformation in real water treatment systems substantially affects the interaction with organic contaminants and changes the potential environmental risk of MPs.
+

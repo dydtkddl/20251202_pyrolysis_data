@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+From Pulper rejects to paper mill resources through double-stage thermal pyrolysis This study investigates the transformation of pulper reject (PR), a challenging industrial waste from paper recycling, into energy resources via dual-stage pyrolysis. As paper recycling rates rise, the sustainable management of PR becomes increasingly critical. Despite its strong commitment to circular economy principles, the paper industry generates significant waste. Integrating PR valorization into the energy demands of paper mills enhances resource efficiency while reducing environmental impact. Characterization of PR from an Italian paper mill confirmed its potential for thermal and chemical valorization despite its heterogeneity. Pyrolysis tests achieved high conversion rates, yielding energy-rich gas and oil with low heating values of 33 MJ/kg and 32 MJ/kg, respectively. The system demonstrated resilience to feedstock variability, ensuring consistent performance. Process simulation scaled these findings to an industrial level, showing that 1800 kg/h of wet PR could generate over 1300 kg/h of superheated medium-pressure steam and approximately 2 MWe of electrical power. Environmental assessments indicated a 76 % reduction in CO2 emissions compared to fossil fuels, qualifying the gaseous fuel as a renewable Recycled Carbon Fuel under REDIII regulations established by the European Union. This study highlights the technical and environmental feasibility of PR valorization, supporting decarbonization in the paper industry. Further research should refine kinetic models and waste characterization to enhance process scalability and optimize industrial applications.
+

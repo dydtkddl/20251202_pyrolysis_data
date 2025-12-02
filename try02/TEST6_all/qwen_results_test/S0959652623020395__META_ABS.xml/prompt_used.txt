@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Purification and characterisation of post-consumer plastic pyrolysis oil fractionated by vacuum distillation Valorisation of post-consumer plastic pyrolysis oil in steam crackers and their application as precursors to chemicals is currently hindered by the complexity of these oils in terms of their boiling range, the risk of fouling by unsaturated compounds, and the presence of contaminations (heteroatoms, metals, and halogens). To gain insights into which of these challenges is actually a potential showstopper, we have studied the vacuum distillation of pyrolysis oil derived from two sorted post-consumer waste plastics, i.e. polypropylene (PP) rigids and mixed polyolefins (MPO) rigids, in a batch fractionating column. The crude pyrolysis oil samples were distilled in three fractions i.e., the light fraction (final boiling point 360 °C). Subsequently, comprehensive characterisation, such as physicochemical properties, the level of contaminations, and chemical composition, was performed. The suitability of the light and middle fractions for steam cracking and precursors to chemical feedstock was assessed. It was found that the density and viscosity values of light and middle fractions from the two pyrolysis oil samples were comparable to fossil naphtha and diesel, whereas total acid number (TAN) values were notably higher compared to petroleum-based oil fractions (>0.5 mgKOH/g). Analyses via GC-MS and ATR-FTIR revealed predominant concentrations of olefins. ICP-OES analysis showed that distillation removes more than 97.5% of metals in all fractions. The chlorine content (>3 ppm), nitrogen (≥0.1%), and oxygen (≥0.1%) exceed thresholds. Hence, this study shows that vacuum distillation effectively improved most, but not all, of the properties of the distilled fractions and can thus be an essential downstream process step for the application of post-consumer plastic pyrolysis oils as feedstock in steam crackers and precursors to chemicals.
+

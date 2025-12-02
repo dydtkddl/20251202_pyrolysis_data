@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Specialized fractionation combined with deep analytics of waste plastic cracking oils for petrochemical operations Waste plastic cracking oils (WPCO) are currently being considered as potential green feedstock for petrochemical/refinery industries in order to promote chemical recycling. However, the WPCO is a very complex material that does not meet the limits of petrochemical processes. In order to assess the possibility of using WPCO as raw material, a comprehensive analytical characterization and distillation of two wide-boiling WPCO samples from the industry was performed. Fractions boiling in typical ranges were prepared: naphtha (30–180 °C), heavy naphtha (30–250 °C), middle distillate (180–350 °C), and atmospheric residue (> 350 °C). Moreover, other distillation cuts were prepared by distilling every 10 wt% as a separate fraction. We performed a study on the distribution of parameters in narrow fractions. The content of aromatics increased with the boiling temperature in the cases of WPCO-1, but decreased for WPCO-2. WPCO-2 had lower alkanes and final boiling point (FBP) compared to WPCO-1. None of the distillation cuts are suitable for “stand-alone” processing on the steam-cracker without additional treatment. However, some of the obtained fractions could be co-processed with a standard feedstock. This study brings an understanding of WPCO material and the possibilities and limitations of its use as petrochemical input.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Geochemical and geological characterization of marine–continental transitional shales from Longtan Formation in Yangtze area, South China Although previous research has provided useful insights into unconventional shale gas resources in recent years, the geochemical and geological characteristics of marine–continental transitional shale have not been studied systematically. During the Late Permian, Longtan Formation shales were widely deposited in the Yangtze area of South China. These shales clearly indicate the need to deepen our understanding of marine–continental transitional shales. This study describes the various characteristics of black shales from the Longtan Formation in this area on the basis of a field investigation and relevant laboratory analyses. Longtan shale reservoirs, with a thickness and burial depth range of 20–650 and 800–2400 m, respectively, are usually interbedded with coal and compact sandstone reservoirs due to their special sedimentary environment. Geochemical analysis of the samples of Longtan shales from seven wells in the Yangtze area indicates the presence of high organic matters (OMs), with a total organic carbon content in the range of 0.85%–35.7% (average of 7.33%) but low hydrocarbon genetic potential (S2) with a value below 3 mg HC/g rock. The analysis of carbon isotopes and organic macerals demonstrates that the investigated samples mainly contain type III kerogen. Data from gas chromatography and gas chromatography-mass spectrometry analyses illustrate a weakly oxidizing to a weakly reducing environment, with most organic materials originating from algal-bacterial organisms and terrestrial plants. The terrestrial plants contribute significantly to the OM. The Longtan shales are thermally over-matured, and they have entered the dry-gas generation window according to Ro, production index data, and biomarker maturity ratios. X-ray diffraction analyses show that the content of brittle minerals of the Longtan shales is generally lower than that of marine shales in North America. The Longtan shales show a high clay content averaging 60.32 wt% and low calcite mineral content averaging 3.73 wt%. Field emission scanning electron microscopy shows that various types of nanometer-to micrometer-scale pores, including interparticle and intraparticle pores, OM pores, and microfractures, are well developed in the shales. Generally, high OM abundance, thermal evolution degree, clay mineral content, and pore space (porosity of 0.56%–10.6%) positively influence shale gas content (1.0%–3.8%). However, high clay content and variable reservoir thickness hinder the successful production of shale gas.
+

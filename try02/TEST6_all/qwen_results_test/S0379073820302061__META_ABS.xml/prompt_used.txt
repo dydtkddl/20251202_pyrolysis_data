@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical attribution of the homemade explosive ETN - Part II: Isotope ratio mass spectrometry analysis of ETN and its precursors In this follow-up study the collaboration between two research groups from the USA and the Netherlands was continued to expand the framework of chemical attribution for the homemade explosive erythritol tetranitrate (ETN). Isotope ratio mass spectrometry (IRMS) analysis was performed to predict possible links between ETN samples and its precursors. Carbon, nitrogen, hydrogen and oxygen isotope ratios were determined for a wide variety of precursor sources and for ETN samples that were prepared with selected precursors. The stability of isotope ratios of ETN has been demonstrated for melt-cast samples and two-year old samples, which enables sample comparison of ETN in forensic casework independent of age and appearance. Erythritol and nitric acid (or nitrate salt) are the exclusive donor of carbon and nitrogen atoms in ETN, respectively, and robust linear relationships between precursor and the end-product were observed for these isotopes. This allowed for defining isotopic enrichment ranges for carbon and nitrogen that support the hypothesis that a given erythritol or nitrate precursor was used to synthesize a specific ETN batch. The hydrogen and oxygen atoms in ETN do not originate from one exclusive donor material, making linkage prediction more difficult. However, the large negative enrichments observed for both isotopes do provide powerful information to exclude suspected precursor materials as donor of ETN. Additionally, combing the isotopic data of all elements results in a higher discrimination power for ETN samples and its precursor materials. Combining the findings of our previously reported LC–MS analysis of ETN with this IRMS study is expected to increase the robustness of the forensic comparison even further. The partially nitrated impurities can provide insight on the synthesis conditions while the isotope data contain information on the raw materials used for the production of ETN.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review of porous catalysts for low-temperature selective catalytic reduction of NO x with NH3: Insights into the role of mass transfer within nanopores The increasingly stringent exhaust emission standards of stationary and mobile sources have sparked significant interest in developing catalysts for NOx selective catalytic reduction with NH3 (NH3-SCR) at low temperatures (<300°C). Therein, the porous catalyst with a unique ability in reactant adsorption and enrichment is an elegant solution for low-temperature NH3-SCR. Due to the cross-scale reaction pathway involving both nanopores and active sites in porous catalysts, mass transfer acts as a prerequisite process and plays a pivotal role in low-temperature activity. However, a systematic understanding of mass transfer behavior in low-temperature NH3-SCR remains to be established. Here, we review porous low-temperature catalysts from a new perspective that highlights the role of mass transfer. This review starts with an introduction to the basic characteristics of porous catalysts and the heterogeneous catalysis process in porous catalysts to emphasize the importance of mass transfer behaviors. Afterward, various effects of mass transfer including the active site accessibility, the reaction micro-environment, and the working life on the overall reaction, as well as corresponding strengthening methods are reviewed. Finally, issues and perspectives on the future development direction of porous catalysts for NH3-SCR are proposed. We hope that this review can provide helpful guidance for designing high-performance porous catalysts for low-temperature NH3-SCR.
+

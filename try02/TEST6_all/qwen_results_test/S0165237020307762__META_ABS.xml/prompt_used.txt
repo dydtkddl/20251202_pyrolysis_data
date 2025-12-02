@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluation of thermoanalytical methods equipped with evolved gas analysis for the detection of microplastic in environmental samples Microplastic particles are currently detected in almost all environmental compartments. The results of detection vary widely, as a multitude of very different methods are used with very different requirements for analytical validity. In this work four thermoanalytical methods are compared and their advantages and limitations are discussed. One of them is thermal extraction-desorption gas chromatography mass spectrometry (TED-GC/MS), an analysis method for microplastic detection that has become established in recent years. In addition, thermogravimetric analysis coupled with Fourier-transform infrared spectroscopy (TGA-FTIR) and mass spectrometry (TGA-MS) were applied, two methods that are less common in this field but are still used in other research areas. Finally, microscale combustion calorimeter (MCC) was applied, a method not yet used for microplastic detection. The presented results are taken from a recently published interlaboratory comparison test by Becker et al. (2020). Here a reference material consisting of suspended matter and specified added polymer masses was examined, and only the results of the recoveries were presented. In the present paper, however, the results for the individual polymers are discussed in detail and individual perspectives for all instruments are shown. It was found that TED-GC/MS is the most suitable method for samples with unknown matrix and unknown, variable kinds and contents of microplastic. TGA-FTIR is a robust method for samples with known matrix and with defined kinds of microplastic. TGA-MS may offer a solution for the detection of PVC particles in the future. MCC can be used as a very fast and simple screening method for the identification of a potential microplastic load of standard polymers in unknown samples.
+

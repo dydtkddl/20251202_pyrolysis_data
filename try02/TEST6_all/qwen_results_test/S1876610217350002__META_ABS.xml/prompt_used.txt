@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Application of Gaussian Smoothing Technique in Evaluation of Biomass Pyrolysis Kinetics in Macro-TGA Pyrolysis of eucalyptus wood and refuse derived fuel was carried out in a continuously weighing fixed bed reactor performing as a macro thermogravimetric analyzer (macro-TGA). All samples were heated from ambient temperature to 800 ºC at different heating rates; 5, 10, and 15 ºC/min. Because of buoyancy effect and measurement uncertainties, noises were generally detected in mass change or thermogravimetric (TG) data obtained from the macro-TGA. The noises led to high degree of fluctuation in the derivative TG (DTG) data. These fluctuating data could not be used directly to analyze kinetic parameters. Smoothing was required in eliminating the noise to obtain reliable DTG data used for subsequent kinetic analysis. In this paper, Gaussian smoothing technique was applied to characterize the smoothing quality, based on mathematics and kinetics points of view. In mathematical analysis, values of smoothing parameters σ within 4-15 showed that raw-data can be improved to be sufficiently smooth to achieve DTG curves without high fluctuation by fourth-order central difference method. Smoothed TG curves did not significantly differ from the original signals. However, kinetic analysis results indicated that only Gaussian smoothing with 7 ≤ σ ≤ 10 can provide meaningful kinetic parameters (Ea ~ 140-150 kJ/mol), which can be used to describe pyrolysis behavior in macro-TGA satisfactorily (R2 ≥ 0.99).
+

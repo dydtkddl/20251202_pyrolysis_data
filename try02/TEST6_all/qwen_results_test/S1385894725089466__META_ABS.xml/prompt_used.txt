@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Methane pyrolysis for H2 production in molten salts: Simulation of the reaction, transport phenomena and the industrial scale process Here, we report the development and application of a hierarchical computer simulation of the molten salt methane pyrolysis process for low CO2-emission H2 production. First, a hierarchical model was developed in Aspen Plus that uses a reactor network to consider gas-phase reaction and liquid film reaction near the gas-liquid interface of the bubbles. Equations were used to correlate reactor geometry and transfer phenomena, and rate expressions were developed to model gas-phase kinetics inside the bubbles, mass transfer into the surrounding film, as well as liquid film reaction. The model was validated using our previous data for molten salt (NaBr+KBr) pyrolysis experiments at varying conditions, such as temperature (850–1000 °C), methane partial pressure, reactor height, and bubble sizes. The flowsheet was then modified to model an industrial-scale reactor for an annual output of 18.6 kt a−1 H2 (equivalent to 83.5 MW HHV). This was done by modelling fluid mechanics and transfer phenomena, such as bubble sizes, bubble break-up and coalescence. Furthermore, additional unit vessels, such as a gas separation, heat exchangers, and salt recovery were added, and a heat integration optimization was performed. We are discussing the hydrogen costs for a wider natural gas feedstock and CAPEX range, which is $2.26–$3.85 kg−1 H2 when not considering revenues from carbon selling. When selling the by-product for $200 t −1, this range lowered to $1.57–3.17 kg−1 H2. This work uniquely integrates film-level transport modelling, reactor hydrodynamics, and full process flow sheeting within a single simulation framework validated by experimental data and extended to techno-economic assessment and could serve as a protocol on how to transfer lab data to model industrial-scale processes.
+

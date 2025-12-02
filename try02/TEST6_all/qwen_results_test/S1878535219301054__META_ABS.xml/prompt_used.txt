@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic performance of NiFe2O4 and Ni0.3Zn0.7Fe2O4 magnetic nanoparticles during biodiesel production In this study, catalytic performance of nanoferrites NiFe2O4 and Ni0.3Zn0.7Fe2O4 is reported. Nickel–ferrite and mixed nickel–zinc ferrite were successfully synthesized by combustion reaction using a conical reactor with production of 10 g per batch. Crystallinity and purity or quantitative analysis of the catalyst were checked by using X-ray diffraction and energy dispersive X-ray analysis. Surface chemistry was examined via Fourier transform infrared (FTIR) analysis; N2 physisorption at 77 K was conducted to obtain textural properties of the catalyst; a thermogravimetric analysis, a scanning electron microscope and a transmission electron microscopy were used to check the thermal stability and morphology of the catalyst, respectively. The catalysts were used to convert soybean oil into biodiesel in a batch mode and the reaction mixture was analyzed using a pre-calibrated gas chromatograph (GC). The presence of a single-phase spinel structure in the synthesized nanoparticles was confirmed by the XRD results. The Ni0.3Zn0.7Fe2O4 had a lower surface area value of 71.5 m2g−1 and higher saturation magnetization value of 31.50 emu/g than sample NiFe2O4 which had 87.6 m2g−1 and 17.85 emu/g, respectively. Biodiesel yield of 94% was obtained with Ni0.3Zn0.7Fe2O4 and 49% was obtained with NiFe2O4. Better performance of Ni0.3Zn0.7Fe2O4 when compared to that of NiFe2O4 could be attributed to higher acidity of the former. Findings from this study suggest that the development of nickel-zinc ferrite nanoparticles as magnetic heterogeneous catalysts could provide an environmentally friendly platform for biodiesel production.
+

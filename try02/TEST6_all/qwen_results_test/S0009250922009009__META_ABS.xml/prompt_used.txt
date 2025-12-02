@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Conceptual modeling of a reactor bed of a nickel-copper bi-metallic catalyst for dry reforming of methane Dry-Reforming-of-Methane (DRM) presents an attractive process for the conversion of CO2 and CH4 to syngas. Catalyst deactivation by carbon formation is a major challenge hindering DRM scale-up. A novel bimetallic Ni/Cu catalyst developed previously in our lab demonstrated significant carbon resistance and superior stability compared to conventional Ni catalysts. This paper presents the kinetics of the bimetallic catalyst. A unique approach utilizing carbon formation rates obtained from Density-Function-Theory (DFT) results is presented to scale monometallic Ni catalyst kinetics. The developed kinetics model incorporated within a 1-D pseudohomogeneous reactor-bed model was validated with thermodynamics and experimental results. The experimental results were obtained at 923-K temperature, flowrates (30 mL/min-250 mL/min), catalyst-loading (<10 mg), and bed-dilution (<500 mg). Additionally, the catalysts were characterized to identify crystal phase, surface area, pore-volume, and composition using XRD, BET-BJH, and ICP analysis, respectively. The developed kinetics model and the associated characterization dataset could be used for future scalability/reproducibility assessments.
+

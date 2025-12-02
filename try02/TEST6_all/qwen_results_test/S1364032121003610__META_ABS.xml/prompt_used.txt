@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Energy recovery from municipal solid waste using pyrolysis technology: A review on current status and developments The utilisation of renewable sources of energy has become an integral part of sustainable development. Municipal solid waste (MSW) has great potential to be used as a renewable source of energy if it can be combined with modern technologies such as pyrolysis. Pyrolysis technology is regarded as a revolutionary and easy energy production process for converting MSW into biofuel. Thus, the aim of this review is to present the state-of-the-art data on energy recovery from MSW. The review also includes information on its environmental impacts, challenges associated with the use of pyrolysis and a set of potential guidelines to overcome the challenges. The rotary pyrolysis technique is found to be the most used process for pyrolysis of MSW, as it provides ample heat transfer with comparatively low energy consumption. Temperature is the dominant parameter which is widely studied in MSW pyrolysis. Intermediate temperatures during pyrolysis normally provide maximum yields of bio-oil. Furthermore, the interactions of various parameters can affect the pyrolysis process. Pyrolysis facilities should be equipped with emission control systems to make the MSW pyrolysis operation environmentally friendly. Overall, pyrolysis of MSW yields around 43% bio-oil, 27% biochar and 25% syngas. It can be concluded that pyrolysis has the potential to be used as an effective and eco-friendly technology to generate biofuel and other value-added products from MSW.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Secondary cracking suppression over zeolite-based catalysts: A review Secondary cracking reactions are critical challenge in the hydrocracking processes as they increase light distillates yield at the expense of middle distillates which is detrimental to process sustainability. This work provides a comprehensive overview of strategies employed to date to suppress secondary cracking reactions over zeolite-based catalysts for concomitant improvement of middle distillates yield and process sustainability. It also examines primary causes of secondary cracking reactions, explores and reports feasible route to synthesis of more hydrocracking catalysts that can completely suppress secondary cracking reactions at high conversions in three major hydrocracking processes: Fischer-Tropsch wax hydrocracking, plastic waste hydrocracking, and heavy petroleum fractions hydrocracking. By addressing this pivotal topic, the study aims to facilitate future research efforts towards improving the sustainability and efficiency of major hydrocracking processes. Key approaches discussed include the use of mesopore-containing zeolites, unconventional synthesis methods, zeolite composites, and novel zeolitic materials. The review also highlights reaction engineering in mitigating secondary cracking. Overall, this work offers detailed insights that can guide the development of more and advanced hydrocracking catalysts capable of maximizing middle distillates yield through effective suppression of secondary cracking reactions.
+

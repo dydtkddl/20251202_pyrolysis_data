@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Novel catalyst development from waste tire pyrolysis carbon black for efficient hydrogen-rich syngas generation via polypropylene catalytic pyrolysis Waste plastics pose significant environmental challenges due to their persistent nature and resistance to degradation. Pyrolysis, as a promising chemical treatment technology, has garnered considerable attention for its dual potential in mitigating pollution and recovering high-value energy and chemical products. In this study, a novel Ni/purified carbon black catalyst was synthesized by impregnating active nickel metal onto a purified carbon black support. This catalyst was employed to facilitate the catalytic pyrolysis of polypropylene (PP) in the presence of water vapor, aiming to produce hydrogen-rich syngas while simultaneously achieving the valorization of purified carbon black. The physicochemical properties of the catalysts were comprehensively characterized using X-ray diffraction (XRD), scanning electron microscopy (SEM), Brunauer-Emmett-Teller (BET) surface area analysis, elemental analysis, and transmission electron microscopy (TEM) both before and after the reaction. Furthermore, the effects of varying nickel loading ratios on the gas yield and composition during the catalytic reforming of polypropylene were systematically investigated. The results demonstrate that nickel predominantly exists in its elemental form when supported on purified carbon black. Increasing the nickel loading ratio led to a corresponding enhancement in the specific surface area of the catalyst, which in turn significantly improved the production of hydrogen-rich syngas. Under optimal conditions with a nickel loading ratio of 15 % and a catalyst dosage of 1.2 g, the hydrogen yield reached 54.85 mmol/gPP, with a hydrogen concentration of 48.05 %. Additionally, the combined proportion of hydrogen and carbon monoxide (CO) in the syngas accounted for 60.23 %, highlighting the catalyst's high efficiency in syngas production.
+

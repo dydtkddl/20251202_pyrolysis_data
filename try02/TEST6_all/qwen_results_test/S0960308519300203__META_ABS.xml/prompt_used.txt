@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Conceptualization of a spent coffee grounds biorefinery: A review of existing valorisation approaches The valorisation of food waste is an increasingly practical and sustainable solution to the problem of a growing demand for chemicals, fuels and materials and the rising tonnage of municipal waste sent to landfill. Spent coffee grounds (SCG) are the end product of the coffee processing industry, generated after beverage preparation, and have been exploited as a valuable source of polysaccharides, lipids, protein, minerals and bioactive secondary metabolites including diterpenes, sterols, chlorogenic acids, flavonoids and caffeine. Within the biorefinery paradigm, where renewable resources are converted into a range of high, medium and low value products, in an analogous manner to fossil fuels in a petrochemical refinery, SCG have been established as an amenable lignocellulosic feedstock through numerous research efforts. In this critical review, we give an extensive overview for the first time of the primary and secondary product suites that can be generated from SCG, along with their potential applications. The handful of preliminary technoeconomic and lifecycle assessment of using SCG for bioenergy is discussed, highlighting the economic limitations of a single capability, phase one biorefinery operating under the current scale and logistics of SCG collection. A concluding perspective towards future SCG-based biorefineries is presented, where isolation and production of higher value bioactive products is expected to be integral to the economic feasibility of the process.
+

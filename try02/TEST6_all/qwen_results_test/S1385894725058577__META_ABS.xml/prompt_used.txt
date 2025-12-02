@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetic and mechanistic studies of Pt/C-catalysed hydrothermal conversion of butyric acid for on-purpose production of renewable propane Catalytic hydrothermal decarboxylation of butyric acid represents a promising pathway to produce renewable propane as a major product. The decarboxylation reaction of butyric acid, which can be sourced from biomass at industrial scale, has demonstrated the potential to yield significant amounts of propane, making the process attractive for commercialisation. However, the development of industrial-scale process for the butyric acid-propane route requires the availability of accurate data on reaction kinetics, thermodynamics and equilibria. This present study examines the kinetics of butyric acid hydrothermal decarboxylation to produce propane using a 5 wt% Pt/C catalyst. Reactions were conducted between temperatures of 513 K and 533 K using a non-stirred batch reactor. To confirm that the results reflected true reaction kinetics, potential limitations due to both external and internal mass transport were thoroughly evaluated. A second-order rate expression with respect to butyric acid, with an activation energy value of 118 kJ mol − 1 was obtained via power-law fitting of the experimental data. Additionally, a Langmuir-Hinshelwood mechanism-based kinetic model yielded a value of 113 kJ mol − 1 for activation energy, closely aligning with the power-law data. Furthermore, a low adsorption enthalpy value of −35.14 kJ mol − 1 obtained from this work, indicating weak interaction between butyric acid and the surface of the catalyst. The kinetic data and models developed offer valuable insights for process optimisation, reactor design and scale-up, contributing to the advancement of sustainable biopropane production.
+

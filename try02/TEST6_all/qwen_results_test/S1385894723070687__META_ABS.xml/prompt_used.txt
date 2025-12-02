@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Simultaneous ammonia recovery and treatment of sludge digestate using the vacuum stripping and absorption process: Scale-up design and pilot study The paradigm of wastewater treatment is shifting from costly pollutant removal in mainstream to resource recovery from sidestream. This paradigm shift, nevertheless, is retarded by the lack of scalable, cost-effective ammonia recovery technologies. The vacuum stripping and absorption (VaSA) process has unrivaled features to recover ammonia and treat digestate simultaneously. The present study introduced a multi-pool boiling mode of vacuum stripping for scale-up design and conducted pilot tests at a water resource recovery facility using a 250-L/batch 3-pool system. It stripped 80.7 % of ammonia in sludge digestate and 91.5 % in pressate in 5-h batch operation. Ammonia mass transfer coefficient reached 0.319–0.485 1/h in digestate and 0.386–0.608 1/h in pressate. The operating challenge was to properly maintain vacuum and configure the demister where vapor–liquid equilibrium changed as it was scaled up. In contrast to the optimum vacuum pressure of 25–27 kPa and feed boiling temperature of 65 °C in the single-pool boiling stripper, the vacuum pressure in the 3-pool boiling stripper was increased to 46.3–46.9 kPa by the higher demister temperature (74 °C). The recovered crystals contained 98.4–103.7 % of (NH4)2SO4. Vacuum-assisted alkali/thermal treatment of digestate under the VaSA conditions increased the dissolved fraction of volatile solids from 7.5 % to 32.8–34.1 % and decreased fecal coliform to mostly undetected. Solids solubilization also resulted in generation of volatile organic compounds, primarily allyl chloride, methylene chloride, 2,5-octadecadiynoic acid methyl ester, and (E)-1,2-dichloroethylene. The low concentrations and small vapor pressures of these compounds were unfavorable for co-stripping. The co-stripped compounds were largely retained in condensate and absent in vacuum exhaust. This study validated the scalability of multi-pool boiling design of VaSA for efficient ammonia recovery and elucidated the effects on digestate treatment.
+

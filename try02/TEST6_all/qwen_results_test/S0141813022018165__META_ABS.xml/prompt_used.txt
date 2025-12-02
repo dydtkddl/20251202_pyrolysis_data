@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+High-heat and UV-barrier poly(lactic acid) by microwave-assisted functionalization of waste natural fibers The application of poly(lactic acid) (PLA) in the packaging area is frequently dwarfed by the inadequate gas/water barrier properties, low heat resistance and high UV transmittance. Herein, an environmentally friendly and high-efficiency microwave-assisted functionalization (MAF) approach was proposed to aqueous grafting waste bamboo fibers with the bridging agent. It permitted significant promotion of interfacial interactions between the MAF bamboo fibers (MAFBs) and neighboring PLA chains, contributing to uniform dispersion and intimate interphase. Featuring the morphological features, the MAFB-reinforced (5, 10 and 20 wt%) PLA biocomposites achieved an unexpected combination of high mechanical properties, exceptional resistance to heat deflection and UV irradiation, and excellent water barrier performance. Upon addition of only 5 wt% MAFBs, the tensile strength and toughness of PLA composite films were increased to 46.5 MPa and 0.6 MJ/m3, increasing over 52 % and nearly 107 % compared to those of the counterpart loaded pristine bamboo fibers (PBFs), respectively. This was favorably accompanied by the remarkably reduced water vapor permeability, falling down to the lowest value of 3.5 × 10−11 g∙m/Pa∙s∙m2 for PLA/MAFB (80/20) with a decrease of nearly 79 % compared to the counterpart. It is of interest to note the MAFB-enabled nearly 100 % UV-blocking ratio for PLA loaded 10 and 20 wt% fibers, as well as excellent resistance to heat deflection even at high temperatures like 120 °C. This effort paves the way to multifunctional natural fibers with high affinity to PLA for elegant implementation of high-heat and UV-resistant packaging materials in an ecofriendly manner.
+

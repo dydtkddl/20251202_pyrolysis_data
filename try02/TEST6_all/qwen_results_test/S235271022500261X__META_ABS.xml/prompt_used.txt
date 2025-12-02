@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recycled filtered contaminants from liquid-fed pyrolysis as novel building composite material Liquid-fed pyrolysis allows the conversion of contaminated postconsumer plastic waste into valuable resources, removing contaminants through wax dissolution and filtration. One of the main challenges is currently represented by the management of its main byproduct, the contaminant-rich retentate from the filtration process. New circular economy strategies are needed to use this waste plastic-based composite as secondary raw materials. Despite the increasing trend in using plastic and plastic-waste composites for the building sector, there are currently limited applications of industrial recycling waste as engineering construction materials, e.g., from pyrolysis. This study evaluates the suitability of contaminant-rich retentate from liquid-fed pyrolysis of postconsumer multilayer packaging waste as novel composite materials for the building sector, taking advantage of its intrinsic composite nature. Thermogravimetric analysis was conducted to assess the composition of the retentate from filtration, a mixture of wax, polyethylene, polyethylene terephthalate, and aluminum. The compressive mechanical properties and densities were then evaluated on samples obtained through hot compression molding, using two batches to assess possible anisotropic behavior from the manufacturing process or the aluminum part orientation. The results indicate the suitability of the waste composite material for the building sector, reaching compression strengths (10–12 MPa) superior to construction bricks and brickworks (7 MPa), as well as 57 % lower density, 0.77 g/cm3. The ductile fracture behavior indicates its potential use for applications requiring failure prediction and safety constraints. This high strength-to-weight ratio composite represents a valuable alternative to virgin materials, showing potential for structural and aesthetic applications, including lightweight bricks, interior textured panels, decorative facades, and customized pavement tiles and slabs. Hot compression molding of pyrolysis waste composite paves the way for the real use of plastic-based composites from mixed and contaminated industrial waste in the building sector, contrasting resource depletion.
+

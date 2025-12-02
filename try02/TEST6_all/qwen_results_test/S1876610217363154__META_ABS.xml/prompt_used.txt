@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A polygeneration process for heat, power and DME production by integrating gasification with CHP plant: Modelling and simulation study Biofuels are a good substitute for the transport sector petroleum fuels to minimize carbon footprint and greenhouse gases emissions. Di-Methyl Ether (DME) is one such alternative with properties similar to liquefied petroleum gas but with lower SOx, NOx, and particulate emissions. In this work, a polygeneration process, integrating an existing combined heat and power (CHP) plant with biomass gasification to synthesize DME, is proposed and modelled. Process integration is based on a hypothesis that the CHP plant provides the necessary heat to run the co-located gasification plant for DME synthesis and the waste heat from the gasification process is recovered and transferred to the CHP plant. The feed for gasification is taken as refuse derived fuel (RDF) instead of conventional wood derived biomass. The process integration leads to higher overall combined efficiency (up to 71%) which is greater than stand-alone efficiencies (up to 63%) but lower than stand-alone CHP plant efficiency (73.2%). The further technical evaluation shows that the efficiency of the polygeneration process is depends heavily on the gasifier capacity integrated with the existing CHP plant and also on the conversion route selected for DME synthesis i.e. recycling of unconverted syngas to the DME reactor or transferring it to the boiler of the CHP plant. The simulation results also indicate that once-through conversion yields less DME than recycling, but at the same time, once-through conversion affects the district heat and electric power production of the CHP plant lesser than by using the recycling route.
+

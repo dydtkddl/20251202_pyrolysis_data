@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+AuPt-loaded Fe-N-C flower-like nanocascade reactor with self-supplied reaction substrates and multiple enzyme activities for the study of hypoxic tumors When nano-enzymes are used in tumor therapy research, they usually exhibit only a single enzyme activity, which limits their therapeutic effect in hypoxic tumors. This paper designs a hyaluronic acid (HA)-modified Au-Pt-Fe trimetallic flower-like nanomaterial for tumor cascade catalysis integrated with low-temperature photothermal therapy. GOx activity exhibited by AuPt nanoparticles converts glucose in tumor cells into gluconic acid and H2O2. This process not only deprives tumor cells of their energy source but also produces H2O2. Iron single-atom nanomaterials can exhibit excellent CAT and POD activities, catalyzing H2O2 reactions in tumor cells. Among them, a portion of H2O2 is converted to O2 by the activity of nanozyme CAT, which is used to alleviate tumor tissue hypoxia and serve as a substrate for the GOx-like activity reaction of AuPt NPs. The H2O2 is continuously produced by the glucose catalytic reaction, and a portion of it can further decompose into toxic OH through POD activity, contributing to tumor cell destruction. The glucose-H2O2-O2 cycle reaction is realized, that is, the self-supply of H2O2 and O2 in the catalytic process within tumor cells. The introduction of AuPt nanoparticles enhances the photothermal conversion ability of the material. By using near-infrared light irradiation, mild-temperature photothermal therapy (m-PTT) can be achieved, which further improves the treatment effect while protecting surrounding tissues. This work expands the application of multi-metal nanomaterials in cascade catalysis combined with low-temperature photothermal therapy, providing a novel strategy for integrated tumor treatment.
+

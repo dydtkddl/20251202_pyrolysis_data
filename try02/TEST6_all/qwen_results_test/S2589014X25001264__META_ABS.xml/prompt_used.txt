@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrothermal carbonization for extracting lignin from agricultural biomass rice husks and cotton gin trash Rice husks (RH) and cotton gin trash (CGT), two abundant agricultural residues, were subjected to hydrothermal carbonization (HTC) to enhance lignin recovery. HTC was conducted at 220 °C, 250 °C, and 280 °C for reaction times ranging from 10 min to 6 h. The resulting hydrochars were characterized using higher heating value (HHV) measurements, Fourier-transform infrared (FTIR) spectroscopy, fiber analysis, X-ray diffraction (XRD), scanning electron microscopy (SEM), thermogravimetric analysis (TGA), and energy dispersive spectroscopy (EDS). The results showed that increasing HTC temperature reduced lignin yield while improving its properties. The HHV of untreated RH and CGT were 14.13 MJ/kg and 14.59 MJ/kg, respectively, increasing by 43 % (RH at 280 °C) and 28 % (CGT at 250 °C) after HTC. Fiber analysis showed increasing acid insoluble lignin (AIL) concentration with temperature, whereas acid soluble lignin (ASL) decreased. Sugar content declined significantly (RH: 2948 ppm to 140 ppm; CGT: 930 ppm to 244 ppm), while the lignin-to-cellulose ratio increased (RH: 0.48 to 19.00; CGT: 0.39 to 0.75). Additionally, HTC led to a reduction in RH crystallinity index (0.460 to 0.445), increased thermal decomposition temperatures (RH: 364.63 °C to 437.14 °C; CGT: 340.70 °C to 451.94 °C), and elevated carbon content (RH: 25.85 % to 48.14 %; CGT: 50.98 % to 67.57 %). These results demonstrate that hydrochar produced at elevated HTC temperatures exhibits enhanced thermal stability, carbon enrichment, and improved lignin recovery, making it a promising material for energy and bioproduct applications.
+

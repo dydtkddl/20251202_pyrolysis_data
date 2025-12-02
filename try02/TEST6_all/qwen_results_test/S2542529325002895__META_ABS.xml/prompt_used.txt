@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Additive manufacturing of metal lattice structures: A comprehensive review of technologies, mechanical properties, applications, and future trends Despite increasing research on Additive Manufacturing (AM) of metallic lattice structures, existing reviews predominantly focus on general overviews, lacking in-depth analysis of technology selection criteria, micro-mechanical mechanisms of multi-topology structures, and inherent trade-offs. This paper aims to fill this gap by systematically reviewing the process capability boundaries of three major technologies—Selective Laser Melting (SLM), Electron Beam Melting (EBM), and Laser Engineered Net Shaping (LENS)—for manufacturing lattice structures. It also provides the first quantitative technology selection comparison tailored to performance requirements. Furthermore, this paper goes beyond conventional descriptions of lattice types, emphasizing an in-depth analysis of the paradigm shift in design from traditional trusses and plates to advanced topologies like triple-periodic minimal surfaces (TPMS). It reveals their respective micro-mechanical behaviors, performance advantages, and failure mechanisms. Finally, this paper profoundly elucidates the intrinsic "process-microstructure-performance" relationship unique to additive manufacturing. It critically summarizes performance trade-offs such as "strength-ductility-toughness" arising from rapid solidification and thermal cycling, along with the dominant role of defects in anisotropic fatigue performance. Through case studies in aerospace and biomedical applications, this paper anticipates future trends including multi-material printing, intelligent control, and micro/nano lattices. It aims to provide a systematic theoretical framework and practical guidelines for the precise design and reliable manufacturing of high-performance lattice structures.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Methane decomposition to produce CO x -free hydrogen and nano-carbon over metal catalysts: A review Catalytic decomposition of methane (CDM) is a promising technology for producing CO x -free hydrogen and nano-carbon, meanwhile it is a prospective substitute to steam reforming of methane for producing hydrogen. The produced hydrogen is refined and can be applied to the field of electronic, metallurgical, synthesis of fine organic chemicals and aerospace industries. However, the CDM for CO x -free hydrogen production is still in its infancy. The urgent for industrial scale of CDM is more important than ever in the current situation of huge CO x emission. This review studies CDM development on Ni-based, noble metal, carbon and Fe-based catalysts, especially over cheap Fe-based catalyst to indicate that CDM would be a promising feasible method for large hydrogen production at a moderate cheap price. Besides, the recent advances in the reaction mechanism and kinetic study over metal catalysts are outlined to indicate that the catalyst deactivation rate would become more quickly with increasing temperature than the CDM rate does. This review also evaluates the roles played by various parameters on CDM catalysts performance, such as metal loading effect, influences of supports, hydrogen reduction, methane reduction and methane/hydrogen carburization. Catalysts deactivation by carbon deposition is the prime challenge found in CDM process, as an interesting approach, a molten-metal reactor to continually remove the floated surface solid carbons is put forwarded in accordance to overcome the deactivation drawback. Moreover, particular CDM reactors using substituted heating sources such as plasma and solar are detailed illustrated in this review in addition to the common electrical heating reactors of fixed bed, fluidized bed reactors. The development of high efficiency catalysts and the optimization of reactors are necessary premises for the industrial-scale production of CDM.
+

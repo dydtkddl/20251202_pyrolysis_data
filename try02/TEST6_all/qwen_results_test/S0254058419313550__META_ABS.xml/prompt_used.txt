@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal properties of spark plasma -sintered polylactide/graphene composites Polylactic acid (PLA)/graphene GNP nanocomposites with 0, 3, 5, 7% wt.% GNP concentrations have been prepared using the novel Spark Plasma Sintering (SPS) technique. This was performed under a fixed operating temperature of 160 °C, pressure of 25 MPa, heating rate of 20 °C/min and holding time of 10 min. The appearance of peak around 26.5° for PLA/GNP nanocomposites in the X-ray diffraction (XRD) analysis is typical of the presence of GNP. The thermogravimetric-fourier transform infrared radiation (TG-FTIR) analysis and differential scanning calorimetry (DSC) were carried out to investigate the thermal behaviour of the sintered nanocomposite. The surface morphology of the nanocomposite was performed using the scanning electron microscopy (SEM). The result shows that the thermal degradation temperature of PLA has been enhanced by an approximate double-fold increase via the novel SPS technique. The crystallinity and melt temperature of the sintered nanocomposites only improves slightly as compared to sintered pure PLA. The thermal stability, residual content, and stiffness of the nanocomposites also increases with increasing GNP filler content in the PLA matrix. Furthermore, the dynamic mechanical analysis (DMA) confirmed a better enhancement in thermal stability of the nanocomposites through increase in glass transition temperature than the DSC report. This is own to the better sensitivity of DMA to local segmentation motion compared to DSC. However, the SPS processing technique can be said to have contributed greatly to the enhancement in thermal stability than the inclusion of GNP as-sintered pure PLA exhibited similar patterns and close thermal properties to the sintered PLA/GNP nanocomposites samples. Furthermore, this process route enables the development of highly densified, lightweight polymer nanocomposite material within a short processing time.
+

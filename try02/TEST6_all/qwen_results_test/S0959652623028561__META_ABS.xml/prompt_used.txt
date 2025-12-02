@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis mechanisms of the main model compounds of enteromorpha prolifera to produce syngas The large-scale flooding of Enteromorpha prolifera (EP) forms “green tide”, which causes severe environmental problems. However, EP, an algal biomass, can be converted into syngas via pyrolysis. In this study, the pyrolysis mechanisms of the main compositional models of EP used to produce syngas are investigated using a combination of molecular dynamics simulations and fixed-bed experiments. Rhamnose (Rha), glucuronic acid (GlcA), aspartic acid (Asp), glutamic acid (Glu), and alanine (Ala) are used as the model compounds. The results indicate that H2 is primarily produced by Glu (reached 24.68 vol%), followed by Asp and Ala, and CO is produced by Ala (reached 44.94 vol%), Glu, and Asp. The molecular dynamics simulation results indicate that the energy barriers for the pyrolysis of Glu and Ala to produce H2 and CO, respectively, are the lowest. Three amino acids undergo dehydration, deamination, and decarboxylation. Moreover, the synergistic effect of the three amino acids in co-pyrolysis is reflected in the production of hydrogen groups from Asp; and the hydrogen group then attacks Glu to seize the hydrogen group on it to produce hydrogen. In addition, the H2 content in the syngas produced by the separate pyrolysis of Rha (17.75 vol%) and GlcA (17.35 vol%) are similar and lower than those of the Rha and GlcA mixtures (19.12 vol%). The CO content in the pyrolysis gas of GlcA is higher than that of Rha. The simulation results prove that the amino acids undergo dicarboxylic and deamination reactions to produce amino acids and CO2. Meanwhile, polysaccharide sulfate breaks glycosidic bonds, producing free radicals such as hydrogen and hydroxyl groups at 700 K. When the temperature rises to 1900 K, the products of the previous stage further break the bond, producing small-molecule gases. However, the addition of polysaccharide model compounds promotes the production of CO2 and CO groups and inhibits the formation of CO. Co-pyrolysis cannot increase H2, and the synergistic effect is not significant. Moreover, Ni and SAPO-34 exhibited good catalytic activities, which could increase syngas production. A raw materials to catalyst ratio of 5:1 is a good choice because it improves the H2 and CO contents and makes economical use of Ni. With the increase of Ni catalyst cycles, H2 content also shows a decreasing trend, from 22.86 vol% to 16.27 vol% (third cycle). With the number of SAPO-34 cycles, the increase of CO content, from 28.66 vol% to 32.67 vol% is explained by the increase in the specific surface area of the catalyst caused by repeated use, which increases the selectivity of C2 and enhances the ability of decarbonylation. This study focuses on the syngas reaction paths and pyrolysis reactions of different EP model compounds. The pyrolysis mechanism of EP to produce syngas is determined using a combination of experiments and simulations, providing a method for the energy utilization of EP.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Durian shell biochar catalyst with excellent aromatic selectivity and deoxygenation performance: application in catalytic co-pyrolysis of pretreated Chlorella and waste vegetable oil In order to achieve catalytic co-pyrolysis of pretreated microalgae with waste vegetable oils for quality enhancement, durian shells, a typical fruit waste, were used to prepare biochar-based catalysts, and CaO, which is believed to possess high deoxygenation activity, was loaded onto the durian shell biochar (DSBC). The prepared catalyst xCaO-DSBC was found to possess a specific surface area of more than 1200 m2/g with a typical micro-mesoporous composite structure. When the catalyst was applied to catalytic pyrolysis of pretreated microalgae, the relative content of aromatics in the bio-oil was enhanced from less than 20 %–62.86 %. When the catalyst was used in the catalytic co-pyrolysis of microalgae and waste vegetable oil, 85.55 % of aromatics were achieved with a total relative content of 40.75 % of BTEXs, n-propylbenzene and naphthalene, while the relative content of oxygenated components was only 2.01 %. After the catalyst has been used four times, the total relative content of aromatics and hydrocarbons in the liquid product is still more than 73 %, while the relative content of oxygenated components is less than 5 %. Overall, the prepared durian shell biochar-based catalysts possessed excellent deoxygenation performance and aromatic selectivity.
+

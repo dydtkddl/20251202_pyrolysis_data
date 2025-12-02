@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Soil erosion is a major drive for nano & micro-plastics to enter riverine systems from cultivated land Nano and micro-plastics (NMPs, particles diameter <5 mm), as emerging contaminants, have become a major concern in the aquatic environment because of their adverse consequences to aquatic life and potentially human health. Implementing mitigation strategies requires quantifying NMPs mass emissions and understanding their sources and transport pathways from land to riverine systems. Herein, to access NMPs mass input from agricultural soil to riverine system via water-driven soil erosion, we have collected soil samples from 120 cultivated land in nine drainage basins across China in 2021 and quantified the residues of six common types of plastic, including polyvinyl chloride (PVC), polymethyl methacrylate (PMMA), polypropylene (PP), polyethylene (PE), polycarbonate (PC), and polystyrene (PS). NMPs (Σ6plastics) were detected in all samples at concentrations between 3.6 and 816.6 μg/g dry weight (median, 63.3 μg/g) by thermal desorption/pyrolysis-gas chromatography-mass spectrometry. Then, based on the Revised Universal Soil Loss Equation model, we estimated that about 22,700 tonnes of NMPs may enter the Chinese riverine system in 2020 due to agricultural water-driven soil erosion, which occurs primarily from May to September. Our result suggested that over 90% of the riverine NMPs related to agricultural soil erosion in China are attributed to 36.5% of the country's total cultivated land, mainly distributed in the Yangtze River Basin, Southwest Basin, and Pearl River Basin. The migration of NMPs due to water-driven soil erosion cannot be ignored, and erosion management strategies may contribute to alleviating plastic pollution issues in aquatic systems.
+

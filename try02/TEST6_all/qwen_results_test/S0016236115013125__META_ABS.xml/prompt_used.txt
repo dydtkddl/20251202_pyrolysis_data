@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+High-yield and high-calorific bio-oil production from concentrated sulfuric acid hydrolysis lignin in supercritical ethanol The aim of this work is to explore process parameters (pressure, time, formic acid content) for producing high-yield and high-calorific bio-oil from concentrated sulfuric acid hydrolysis lignin (CSAHL) with formic acid as an in-situ hydrogen source in supercritical ethanol (scEtOH). Even at short reaction time of 30min, high conversion of 92% and high bio-oil yield of 85wt% were observed at 350°C and formic-acid-to-lignin mass ratio of 1.5 using a stirred reactor. The effective deoxy-liquefaction nature associated with scEtOH with aid of formic acid resulted in significant reduction in oxygen content of 44% and high higher heating value of 31.2MJkg−1 of produced bio-oil. The overall process is energetically efficient with 112% energy recovery (ER) and 78% energy efficiency (EE). The results are compared with Kraft lignin (KL) under identical reaction conditions. The inherent recalcitrant nature of CSAHL resulted in lower conversion and lower bio-oil yield when compared to the liquefaction of Kraft lignin (KL, 99% conversion, 90wt% bio-oil yield). Bio-oil with better flow properties, low molecular weight, and a high amount of monomeric phenol was produced after 60min of reaction. The compounds in the bio-oil were mainly phenols, esters, furans, alcohols, and traces of aliphatic hydrocarbons.
+

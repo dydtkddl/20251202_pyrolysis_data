@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Design of polyurethane composites obtained from industrial plastic wastes, pyrite and red mud The purpose of this study consisted in the synthesis and characterization of composite materials based on polyurethane (PUR) rigid foam reinforced with two industrial wastes such as pyrite and red mud for the retention of mercury ions, Hg2+, ions from contaminated water and applications as paving stones in construction area. The diol used to create the urethane bond resulted from the depolymerization of poly(ethylene terephthalate) (PET) wastes in the presence of diethylene glycol (DEG). The resulted diol was characterized by gel permeation chromatography (GPC), registering a molecular weight, Mn = 420 g/mol. The hydroxyl index of the diol, IOH = 256.731 mgKOH/g was determined based on ASTM D4274-99. In this study, 6 types of PUR foams were obtained by reacting the diol with the polycondensation agent, 4,4′-methylene diphenyl diisocyanate (MDI) in the presence of different concentrations of filling agents. All specimens were characterized by Fourier-transform infrared spectroscopy (FT-IR), scanning electron microscopy (SEM), energy dispersive spectroscopy (EDX), EDX mapping, thermogravimetric analysis (TGA), differential scanning calorimetry (DSC) and compression tests. The formation of urethane group was confirmed by FT-IR for all specimens. The porous structure of the PUR foams was evidenced by SEM, while (EDX) and EDX mapping were used to analyze the elemental composition of the composite materials and the uniform distribution of the filling agents within the cellular structure. TGA proved that both types of PUR foams increased their thermal resistance compared with blank samples. However, the specimens loaded with red mud exhibited increased thermal resistance as the concentration of red mud was increased compared with pyrite-based samples. The final residual mass registered for red mud was 24%, compared with pyrite-based samples that registered 21%. Unexpectedly, the DSC analysis indicated that Tg values decreased up to 47 °C as the pyrite concentration was increased compared with blank sample (57 °C), while the Tg values for red mud-based samples increased as the concentration of the red mud was increased up to 60 °C. Similar results were confirmed by the compression tests, this behavior being attributed to pyrite aggregate formation in PUR matrix and confirmed also by the density values for which a correlation between the filling agent concentration and density was not possible. In the case of red mud-based PUR foams the mechanical resistance decreased as the concentration of the filling agent was increased as expected.
+

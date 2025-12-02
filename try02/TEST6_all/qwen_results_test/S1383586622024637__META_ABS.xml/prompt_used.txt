@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Molecular mechanisms of microplastics degradation: A review Microplastics are a type of synthetic polymer with a particle size of<5 mm that are found in various environments. Considering the ever-increasing production of plastic and microplastics particles, their intrinsic toxicity, and feasible transportation via natural agents (e.g., wind, water streams, etc.); microplastics are known as one of the most concerning environmental and global issues in the last decades. The possible side effects of microplastics, including hazards to humans and aquatic organisms, make their degradation one of the most pressing current environmental challenges. Chemical technologies, photocatalytic degradation, biodegradation, and the use of hybrid systems have all been extensively investigated among all proposed methods for microplastic elimination in recent years. However, the molecular mechanisms of various degradation or removal strategies have not been thoroughly studied. In this review, we attempted to provide a clear representation of molecular mechanisms as well as recent advances in the commonly used microplastic degradation and/or removal methods. To the best of our knowledge, no review articles have been devoted to the such distinct categorization of the chemical technologies for microplastic elimination as two separate mechanisms including chemical removal and chemical degradation. In photocatalytic degradation, photocatalytic degradation mechanisms of microplastics in the presence of dopants and plasmonic nanoparticles are studied. In biodegradation methods, biodegradation mechanisms of microplastics, which are performed via various kingdoms such as Animalia, bacterium, and fungi are reviewed. As the final method for microplastics elimination method, hybrid membranes including a system of membrane and coagulation, photocatalytic membranes, and a system of membrane bioreactor, are discussed. Finally, the Technology Readiness Level (TRL) and commercialization status of each method as well as the remaining scientific gaps for future research are reviewed. Our results demonstrated that since many factors such as degradation/removal time, microplastic type and size, and degradation/removal condition are effective in the performance of the elimination approach, thus more research is required to explicitly determine the best and high-performance method for microplastics elimination. Our review may provide a rational overview of the molecular mechanisms of various microplastics elimination methods to develop more reliable methods with high removal/degradation efficiency.
+

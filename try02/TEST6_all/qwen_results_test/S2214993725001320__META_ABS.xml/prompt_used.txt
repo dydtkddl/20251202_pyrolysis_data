@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recycling and revalorization of PLA and PHA-based food packaging waste: A review Poly(lactic acid) (PLA) and poly(hydroxyalkanoates) (PHAs) are the most significant biodegradable polymers in terms of their increasing global industrial production capacities with the aim of replacing petroleum-derived food packaging materials. The latter are well known for their environmentally polluting nature. This paper aims to review the diverse technologies related to the recycling and revalorization of single-use food packaging materials based on PLA and PHAs (e.g. chemical depolymerization, solvolysis, mechanical recycling (mechanochemistry), enzymatic hydrolysis, fermentation, gasification and hybrid approaches), as well as to address an important issue for plastic materials manufacturers as is the reprocessing of residual materials obtained during the manufacturing of food packaging. The latter is aimed at reducing waste and increasing the economic sustainability of the materials and the business. Mechanical recycling (mechanochemistry) is recommendable with the aim of reducing waste and increasing the sustainability of residual materials obtained during the manufacturing of industrialized biodegradable food packaging based on PLA and PHA. In contrast, chemical (chemical depolymerization and solvolysis), enzymatic and fermentation recycling is recommendable to treat discarded single-use food packaging materials made from PLA or PHA, thus yielding chemical precursors (monomers) and fuels, which can then be used as feedstocks to produce their corresponding recycled/renewed polymers or copolymers, thereby diminishing the need for new chemicals. Finally, the gasification process is currently representing an interesting perspective for connecting hybrid recycling approaches between the use of chemistry and bioprocesses, and not merely obtaining synthesis gas as a precursor of monomers, copolymers and/or recycled/renewed biodegradable polymers.
+

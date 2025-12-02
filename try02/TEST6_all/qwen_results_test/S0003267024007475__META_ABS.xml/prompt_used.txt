@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Alfalfa biomass as a green source for the synthesis of N,S-CDs via microwave treatment. Application as a nano sensor for nifuroxazide in formulations and gastric juice Background Researchers have investigated different techniques for synthesis of carbon dots. These techniques include Arc discharge, laser ablation, oxidation, water/solvothermal, and chemical vapor deposition. However, these techniques suffer from some limitations like the utilization of gaseous charged particles, high current, high temperature, potent oxidizing agents, non-environmentally friendly carbon sources, and the generation of uneven particle size. Therefore, there was a significant demand for the adoption of a new technology that combines the environmentally friendly aspects of both bio-based carbon sourcing and synthesis technique. Results Medicago sativa L (alfalfa)-derived N, S-CDs have been successfully synthesized via microwave irradiation. The N,S-CDs exhibit strong fluorescence (λ ex/em of 320/420 nm) with fluorescence quantum yield of 2.2 % and high-water solubility. The produced N,S-CDs were characterized using TEM, EDX, Zeta potential analysis, IR, UV–Visible, and fluorescence spectroscopy. The average diameter of the produced N, S-CDs was 4.01 ± 1.2 nm, and the Zeta potential was −24.5 ± 6.63 mv. The stability of the produced nano sensors was also confirmed over wide pH range, long time, and in presence of different ions. The synthesized N, S-CDs were employed to quantify the antibacterial drug, nifuroxazide (NFZ), by fluorescence quenching via inner filter effect mechanism. The method was linear with NFZ concentration ranging from 1.0 to 30.0 μM. LOD and LOQ were 0.16 and 0.49 μM, respectively. The method was applied to quantify NFZ in simulated gastric juice (SGJ) with % recovery 99.59 ± 1.4 in addition to pharmaceutical dosage forms with % recovery 98.75 ± 0.61 for Antinal Capsules® and 100.63 ± 1.54 for Antinal suspension®. The Method validation was performed in compliance with the criteria outlined by ICH. Significance and novelty The suggested approach primarily centers on the first-time use of alfalfa, an ecologically sustainable source of dopped-CDs, and a cost-effective synthesis technique via microwave irradiation, which is characterized by low energy consumption, minimized reaction time, and the ability to control the size of the produced CDs. This is in line with the growing global recognition of the implementation of green analytical chemistry principles.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Global perspective on microplastics in landfill leachate; Occurrence, abundance, characteristics, and environmental impact Plastic wastes deposited in landfills eventually break down and degrade into microplastics by physical, chemical, and biological forces. Though microplastics in leachate pose significant threats to the environment, the leachate generated from landfills has not received much attention as a possible source of environmental microplastics. A descriptive and systematic investigationof the global distribution of microplastics in landfill leachate does not exist to date. Therefore, this attempt is to provide a concise scientometric review of the studies on the presence of microplastics in landfill leachate. The present review revealed that the global trend in research on microplastics in leachate has increased exponentially after 2018 and China is the leading country. Different geographical regions have reported different microplastic abundances with the highest of 291.0 ± 91.0 items/L from a landfill in Shanghai. The use of novel sampling techniques to detect small microplastics (20–100 µm) has led to the high abundance of microplastics in landfill leachate in Shanghai. Due to its widespread usage, polyethylene is the most typically encountered polymer type in landfill leachate around the world. However, it is quite challengingto compare the results among studies due to the use of different size categories and extraction techniques. The removal of microplastics by the current leachate treatment facilities is still mostly unexplored, thus it is crucial to develop novel technologies to treat the microplastics in landfill leachate. Further investigations on the transport of microplastics in landfill leachate are urgently required to have a better understanding of potential human exposure and health implications.
+

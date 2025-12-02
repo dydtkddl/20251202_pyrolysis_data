@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Plasma modified electrosynthesized cerium oxide catalyst for plasma and photocatalytic degradation of RB 19 dye CeO2 catalyst was prepared by galvanostatic electrodeposition and modified by non-thermal atmospheric pressure pulsating corona plasma. Plasma modified and non-modified materials were characterized by XRD, SEM/EDX, BET, TG and XPS, and used as the catalysts for plasma catalytic and photo catalytic degradation of RB 19. Plasma increased the Ce3+ ions content in electrosynthesized CeO2 lattice and the material’s specific surface area. It did not affect its crystal structure and morphology. Band gap of plasma modified and non-modified CeO2 was 2.96 and 3.07 eV, respectively. Both plasma modified and non–modified materials showed good catalytic ability in both plasma- and photo-catalytic degradation process. Plasma modified material showed higher efficacy in both processes, which was contributed to higher specific surface area and higher content of defects in lattice (Ce3+ ions and oxygen vacancies), which acted as the catalytic active sites. Plasma dye degradation proceeded via decomposition of plasma – generated H2O2 into •OH radicals, which degraded the dye. The catalysts enhanced plasma degradation by enhancing decomposition of H2O2 on their active sites. Photocatalytic degradation only proceeded in the presence of the catalysts, via their UV excitation, which caused the generation of •OH on the catalysts’ active sites. Both plasma- and photocatalytic degradation followed the pseudo – first order kinetics. Both processes were the fastest in the neutral pH range. TOC removal with plasma modified catalyst was 89.8% and 87.4%, and its activity after 5 cycles of use was 95.5% and 96.0% of its first run for plasma- and photo-catalytic process, respectively.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrometallurgical recycling of spent lithium-ion batteries from conventional roasting to synergistic pyrolysis with organic wastes The synergistic pyrolysis has been increasingly used for recycling spent lithium-ion batteries (LIBs) and organic wastes (hydrogen and carbon sources), which are in-situ transformed into various reducing agents such as H2, CO, and char via carbothermal and/or gas thermal reduction. Compared with the conventional roasting methods, this “killing two birds with one stone” strategy can not only reduce the cost and energy consumption, but also realize the valorization of organic wastes. This paper concluded the research progress in synergistic pyrolysis recycling of spent LIBs and organic wastes. On the one hand, valued metals such as Li, Co, Ni, and Mn can be recovered through the pyrolysis of the cathode materials with inherent organic materials (e.g., separator, electrolyte) or graphite anode. During the pyrolysis process, the organic materials are decomposed into char and gases (e.g., CO, H2, and CH4) as reducing agents, while the cathode material is decomposed and then converted into Li2CO3 and low-valent transition metals or their oxides via in-situ thermal reduction. The formed Li2CO3 can be easily recovered by the water leaching process, while the formed transition metals or their oxides (e.g., Co, CoO, Ni, MnO, etc.) can be recovered by the reductant-free acid leaching or magnetic separation process. On the other hand, organic wastes (e.g., biomass, plastics, etc.) as abundant hydrogen and carbon sources can be converted into gas (e.g., H2, CO, etc.) and char via pyrolysis. The cathode materials are decomposed and subsequently reduced by the pyrolysis gas and char. In addition, the pyrolysis oil and gas can be upgraded by catalytic reforming with the active metals derived from cathode material. Finally, great challenges are proposed to promote this promising technology in the industrial applications.
+

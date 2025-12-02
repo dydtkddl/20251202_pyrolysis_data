@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+On the cutting-edge of non-recyclable plastic waste valorization: From pyrolysis char to nitrogen-enriched activated carbon for landfill biogas upgrading The rejected fraction of post-consumer plastics collected by mechanical sorting is a source of chemical recycling by processes such as pyrolysis, promoting the circular economy. The char residue produced in this process has been valorized, reinforcing the introduction in the consumption chain, as an adsorbent aimed at the upgrading of a biogas stream. The char was activated with KOH (496 m2 g−1) and the surface of the material was enriched with nitrogen groups (6% wt. by XPS) to raise the CO2 uptake. KOH and urea were used following different strategies, demonstrating that sequential activation and modification is the most efficient approach. Although the surface area was decreased after N insertion, i.e. from 497 to 389 m2 g−1, the CO2 uptake was raised. Specifically, comparing the CO2 uptake per micropore surface was considerably improved after urea functionalization (0.351 vs 0.235 mg m−2). The selectivity was not considerably modified, but the isosteric adsorption heat of the urea-modified sample was higher than the bare one. The behavior in the dynamic tests was studied in fixed-bed column, assessing the effect of temperature, and inlet CO2/CH4 concentration, individually and in mixtures. There was no appreciated loss of performance in the adsorption-desorption cycles. The urea-modification in a two-pot synthesis process proved a better performance in dynamic tests if compared to the non-modified activated char. This work sheds insights into the feasibility of the recycling of plastic residues giving to new added-value materials such as functionalized carbonaceous adsorbents, promoting a circular economy basis.
+

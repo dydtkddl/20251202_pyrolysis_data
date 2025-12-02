@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The evolutionary route of coal matrix during integrated cascade pyrolysis of a typical low-rank coal In this study, a typical inertinite- and AAEMs (alkali and alkaline earth metal species)-rich Chinese sub-bituminous coal was systematically investigated in terms of maceral component, mineral occurrence and molecular structure. Based on the experimental data, macromolecular-dependent evolutionary behavior during integrated cascade coal pyrolysis was unraveled, and further a mechanism on staged-pyrolysis was proposed. Compelling evidence shows that after heavy medium separation, the features of coal fractions with different densities were significantly varied in maceral compositions, AAEMs distributions and more importantly, in macromolecular structure. The various functional groups abundant in respective maceral-enriched (vitrinite, liptinite, and inertinite) coal fractions behaved distinctively during pyrolysis due to the different activation energies for the scission of these functional groups, thus resulting in temperature-dependent reactions. Specifically, at lower temperature (400–500°C), carboxylic groups mainly inherent in vitrinite could be substantially decomposed into CO2. Subsequently, at ca. 500°C, aliphatic chains in vitrinite were cracked to C2-C4; while ether structures were broken and contributed to the generation of a small amount of CO. Meanwhile, the small aromatic molecules freely existed in liptinite could also be released in form of light aromatics. At higher temperature (ca. 700°C), the volatiles including CO2 would react with char and generate a larger proportion of CO; and particularly, this secondary reaction could be catalytically accelerated by AAEMs at higher temperature. Consequently, the pyrolysis route and gaseous products in different stages were varying in specific manner according to the reaction mechanism; and it was available to direct the production of methane-rich syngas, and provide a useful basis for optimization of cascade coal pyrolysis processes.
+

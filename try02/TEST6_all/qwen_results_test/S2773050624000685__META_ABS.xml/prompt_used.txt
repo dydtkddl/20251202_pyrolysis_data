@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Nano-CaO as a heterogeneous catalyst for biodiesel synthesis by transesterification of Jatropha oil Background This research employs response surface methodology, specifically Central Composite Design (CCD), to optimize the process parameters for the effective production of biodiesel. Jatropha oil was utilized as the raw material to minimize expenses. A nanocatalyst was utilized as a solid catalyst, developed from CaCO3 via waste snail shells, offering advantages such as recyclability and improved catalytic activity during a transesterification process. The developed nanocatalyst was analyzed using various techniques, including dynamic light scattering (DLS), scanning electron microscopy (SEM), Brunauer–Emmett–Teller (BET) analysis, and Fourier-transform infrared (FTIR). The BET analysis revealed a surface area of 5.1m2/g and the Barrett-Joyner-Halenda (BJH) analysis provided insights into the pore volume and diameter of the synthesized nano-CaO, showing values of 0.002556 cc/g and 1.1 nm, respectively, indicating the presence of both microspores and active sites on the external surface of the nano-CaO catalyst. Biodiesel conversion was controlled by adjusting factors like the methanol to oil ratio, catalyst weight, reaction time, reaction temperature, and agitation speed. A quadratic model was established to explore the correlation between the independent variables and the biodiesel conversion rate. The results showed a maximum biodiesel conversion rate of 96.73% under the optimal conditions: methanol to oil ratio (6:1), catalyst weight (1.4 wt%), reaction time (60 min), reaction temperature (55 °C), and agitation speed (250 rpm). These parameters were determined through 32 experimental trials. The RSM technique yielded impressive results with a determined coefficient of determination (R2) of 0.9834, adjusted R2 of 0.8503, predicted R2 of 0.8309, and a coefficient of variance (CV) 0.75%. Based on the analysis of variance (ANOVA) findings, the model exhibits a high level of significance (p<0.0001), which is less than 0.05 and F- Value 29.71.The study aims to enhance the yield and efficiency of the transesterification process, thereby increasing the overall production of fatty acid methyl ester from Jatropha oil. This innovative approach efficiently generates biodiesel from renewable resources, in a manner that is both environmentally friendly and maximizes the effectiveness of the process parameters. The evaluation conform that the quality of the biodiesel met the standards set by ASTM D 6751 and EN 14214.
+

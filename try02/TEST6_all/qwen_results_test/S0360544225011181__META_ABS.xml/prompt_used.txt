@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Assessment of product composition and energy output of sewage sludge gasification by simulation model Processing sewage sludge presents a significant challenge, necessitating concerted efforts to transform this waste into valuable resources such as syngas and biochar, which can be utilized across energy, chemical, agricultural, and other sectors. This paper examines the continuous gasification of sewage sludge in an inert environment. A systematic analysis of various process parameters was conducted to evaluate their impact on overall system performance, with particular emphasis on optimizing syngas yield, enhancing hydrogen content in the syngas, and maximizing energy output. The analyses were performed using a rigorously developed simulation model implemented within the UniSim Design environment based on specific assumptions and conditions. This model enabled a comprehensive investigation of the interrelationships among process variables and their influence on key performance metrics. Based on the insights gained, targeted recommendations were formulated to improve the efficiency and output of the gasification process. Optimal parameters identified for the reference sewage samples include a pyrolysis temperature range of 700–800 °C, a gas shift reactor temperature of 900–1000 °C, a feed water content of 8 % (by mass), and a slag recycle ratio of 0.8 (by mass) resulting to maximum yield of syngas of 46 % (by mass). The simulation model was validated with various sludge samples from the literature, illustrating the diversity of optimal parameters. These recommendations are aimed at enhancing syngas yield, increasing the hydrogen fraction in the syngas, and achieving higher overall energy output, thus contributing to the optimization of the process. The findings of this study provide insights into the factors that affect process performance and lay the groundwork for further advancements in the production and utilization of syngas derived from sewage sludge as a feedstock.
+

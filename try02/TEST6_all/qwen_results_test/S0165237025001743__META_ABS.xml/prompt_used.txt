@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unveiling the potential of thermo catalytic fast pyrolysis for the production of higher quantities of bio-oil: Lignin-derived oxygenates Optimally loaded SrO (10 %) by weight on H-ZSM-5 for catalytic fixed bed downstream fast pyrolysis of lignin is further investigated. The effect of reaction temperature ranging from 450°C to 750°C on lignin was examined and optimized at 550°C with a nitrogen gas flow of 0.5 liters per minute. Purified lignin to catalyst ratio as 25:5 (wt/wt) afforded a maximum 34.2 wt% bio-oil yield. It is compared with the bio-oil obtained without a catalyst based on percentage yield, product distribution, and quality. The metal oxide showed significant changes in the acidic properties of H-ZSM-5. All original characteristics, respectively, pore volume 0.0836 cm3g−1, surface area 253.039 m2g−1, and pore radius 1.62501 nm of H-ZSM-5 showed a decrease on further increase in metal beyond 10 %. The reaction temperature of pyrolysis over 550°C reduces the yield of bio-oil. ESI-MS of bio-oil obtained using a catalyst indicates an overall shift towards the low molecular weight compounds, decreased PDI, and relatively lesser oligomers studied up to 320 m/z ratio. Base sites of SrO promote the transformation of carboxylic acids into ketones, supporting the loss of oxygen. The role of the acidic site of H-ZSM-5 and base sites of SrO contribute to converting oxygenated compounds to phenols, including esters, acids, alcohols, and phenols hydrocarbons. Typically, hydroxy-acids, hydroxy-esters, etc, showed marked resistance to chemical transformation. In comparison, analysis of pyrolysis gas under optimized conditions shows a 2 % higher hydrogen content by volume. Although under slightly altered conditions, catalyst reuse is demonstrated with a fair response.
+

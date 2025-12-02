@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Exploring machine learning applications in chemical production through valorization of biomass, plastics, and petroleum resources: A comprehensive review Machine learning (ML) is a subtype of artificial intelligence that uses a computer's ability to learn from a given set of accessible data. ML is becoming prominent in almost every business, including the domain of chemical engineering, where there have been numerous researches and investigations. This article provides a detailed overview of the use of ML in the production and characterization study of biomass, polymers, and petroleum products. Categories of ML, including classification, regression, and clustering, are also investigated to get a deeper understanding of ML. From this review, it can be concluded that ML has aided in numerous domains, such as the prediction of biomass energy, the stability of crude oil based on NMR spectroscopy, the calculation of gasoline's octane number, the estimation of fuel oil's kinematic viscosity, the classification of waste plastics, and the estimation of drilling efficiency in petroleum reservoirs, among others. Apart from this, ML has also been playing a significant role in the microwave-assisted pyrolysis of biomass, polymers, and petroleum resources. ML substantially influences chemical engineering and is especially useful for enhancing system efficiency and monitoring processes that are difficult to understand manually. Although several obstacles are associated with ML, such as black box behavior, the need for a large amount of data, and the difficulty of understanding the predictions, deploying the model in the future is uncomplicated once the learning program has been trained.
+

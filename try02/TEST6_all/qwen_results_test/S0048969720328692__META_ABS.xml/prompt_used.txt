@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Road de-icing salt: Assessment of a potential new source and pathway of microplastics particles from roads Roads are estimated to be the largest source of microplastic particles in the environment, through release of particles from tires, road markings and polymer-modified bitumen. These are all released through the wear and tear of tires and the road surface. During the winter in cold climates, the road surface may freeze and cause icing on the roads. To improve traffic safety during winter, road salt is used for de-icing. Knowledge of microplastic (MP) contamination in road salt has, until now, been lacking. This is contrary to the increasing number of studies of microplastics in food-grade salt. The objective of this study was to investigate if road salt could be an additional source of microplastics to the environment. Fourier-Transform Infrared spectroscopy (FT-IR) and Pyrolysis gas chromatography mass spectrometry (GC–MS) were employed to identify and quantify the polymer content in four types of road salts, three sea salts and one rock salt. The particle number of MP in sea salts (range 4–240 MP/kg, mean ± s.d. = 35 ± 60 MP/kg) and rock salt (range 4–192 MP/kg, 424 ± 61 MP/kg, respectively) were similar, whereas, MP mass concentrations were higher in sea salts (range 0.1–7650 μg/kg, 442 ± 1466 μg/kg) than in rock salts (1–1100 μg/kg, 322 ± 481 μg/kg). Black rubber-like particles constituted 96% of the total concentration of microplastics and 86% of all particles in terms of number of particles/kg. Black rubber-like particles appeared to be attributable to wear of conveyer belts used in the salt production. Road salt contribution to MP on state and county roads in Norway was estimated to 0.15 t/year (0.003% of total road MP release), 0.07 t/year in Sweden (0.008%) and 0.03 t/year in Denmark (0.0004–0.0008%) Thus, microplastics in road salt are a negligible source of microplastics from roads compared to other sources.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on CO2 gasification mechanism of bituminous coal coke by in-situ measurement and DFT calculation CO2 gasification with coal/coke is an important technology that can convert and store CO2 into chemical products in a massive and feasible way. Understanding the mechanism of the CO2-coke gasification is the basis for the industrialization and designation of CO2 gasifier, which provide fundamental technology for Carbon Capture, Utilization and Storage (CCUS). In this work, the CO2 gasification process was studied by Thermogravimetric-Fourier Transform Infrared Spectrometer Mass Spectrometer (TG-FTIR), Thermogravimetric-Mass Spectrometer (TG-MS) and in-situ Raman. The atomic level mechanism of CO2 reaction with coke was analyzed by Density Functional Theory (DFT) calculation. The result shows that the COO-group in the coke is the CO precursor from the CO2-coke gasification. In the process of pre-adsorption of CO2 on the surface of coal coke, the CO-O- group is formed, and the degree of the electron conjugation of the aromatic ring pi is decreased, and the strength of intermolecular mayer bond is decreased, destroying the aromaticity of the coal coke molecular surface, exposing more active sites, accelerating the gasification reaction of coal coke, and promoting CO desorption. And the entire gasification process is the endothermic reaction with 1.60 eV.
+

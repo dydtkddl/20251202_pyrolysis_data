@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Developing a parametric system model to describe the product distribution of steam pyrolysis in a Dual Fluidized bed Steam pyrolysis is a thermochemical process that converts carbon-based materials into valuable gases. In general, the products of the reaction are syngas ( H 2 , C O , C O 2 ), low-molecular-weight hydrocarbon gases (methane, ethylene, and propylene), pyrolytic gasoline and oils, monoaromatic and polyaromatic species (tar), and carbonaceous residues (char) with ashes. However, the intricacy of the reactions comprising the process, the diversity of the product species, and the constraints linked to the sampling and measurement equipment, create a highly complex system. In this work, a method for data representation is presented based on a special Parametric System Model (PSM) that portrays product species measurements in a way that provides relevant information and valuable insights into the process. The method incorporates generic knowledge of the chemical nature of the reactions to create a constrained system in which the data can be expressed in parametric terms with meaningful statistical functions. The evaluated data were obtained from a high-temperature steam pyrolysis process performed in the 2–4-MW Dual Fluidized Bed reactor at Chalmers University using polyethylene as feedstock. The quantities of the hydrocarbon species detected in the gas product were taken for the PSM as a probabilistic system that can be described with a set of distribution functions. The carbon, hydrogen and oxygen balances were taken into account to build a constrained set of equations to find the parameters of the functions. The resulting model was proven to be useful as a prediction tool to quantify unmeasured carbon group species and to estimate process variables, such as the oxygen transport of the bed material. Also, it was demonstrated the potential of the model as a method to identify and estimate inconsistencies in the measurements, which improve the quality of the characterization data. The modeĺs outcomes find application in providing critical information for the control and evaluation of pyrolysis process and downstream operation of biorefineries.
+

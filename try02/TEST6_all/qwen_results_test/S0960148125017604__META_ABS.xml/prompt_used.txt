@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation of Fe2O3@SiO2 catalysts synthesized via various methods for the catalytic gasification of pinewood Adding appropriate catalysts during biomass gasification can effectively increase gas production and reduce tar yield, thereby improving the biomass gasification process. Different catalyst preparation methods affect the surface structure and gasification performance of the catalysts. In this study, Fe2O3@SiO2 catalysts were prepared using the physical coating method (R-Fe2O3@SiO2) and the hydrolysis method of tetraethyl orthosilicate (TEOS) (T-Fe2O3@SiO2).The catalysts were characterized using XRD, BET, and FTIR. The T-Fe2O3@SiO2catalyst exhibited a more diverse pore size distribution between 1 and 20 nm, as well as surface hydroxyl groups. The morphology was observed using TEM, and both catalysts exhibited a core-shell structure. Characterization using H2-TPR and NH3-TPD revealed that T-Fe2O3@SiO2 displayed stronger adsorption peaks, indicating a higher number of sites.High-temperature steam catalytic gasification experiments were conducted in a self-assembled fixed-bed gasification furnace, analyzing the gas-phase and liquid-phase products of pinewood under different preparation methods. When using T-Fe2O3@SiO2 for the gasification experiment, the volumetric fraction of H2 was 38.45 %, and the yield was 20.58 mmol/g, which represents a 16.13 % increase in H2 gas yield compared to the gasification experiment using R-Fe2O3@SiO2. Compared to the pure pinewood gasification experiment, the H2 gas yield increased by 54.23 %. When T-Fe2O3@SiO2 was used as the catalyst and reused for five cycles, the H2 yield decreased by only 9.1 %, effectively suppressing catalyst deactivation.
+

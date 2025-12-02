@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic gasification of pinewood biomass in a fluidized bed reactor with dolomite, limestone, and activated carbon: An experimental study The biomass residues from non-edible crop portions or agro-industrial are good fuel for hydrogen-rich syngas production since they reduce waste and promote sustainability. Dolomite was utilized as a natural catalyst for biomass gasification in a fluidized bed gasifier with air as a gasifying agent to increase syngas quality. The study examines the impact of temperature (700–850 °C), equivalency ratio (0.2–0.35), and catalyst-to-biomass blending proportion (10–50 %) on syngas composition. This study examined gasification's lower heating value, dry gas output, carbon conversion efficiency, cold gas efficiency, and tar yield. A temperature above 800 °C, an equivalence ratio of 0.30, and a dolomite concentration of 40 % are the best operating conditions to achieve the best clean gas (minimum tar yield = 1.87 g/Nm3). The maximum concentration of H2 (11.23 %) was achieved at 850 °C, an equivalence ratio of 0.20, and a dolomite concentration of 50 % with the biomass. The present study confirms the potential of natural catalysts to reduce tar and enhance H2 contents by absorbing CO2. As compared to costly synthetic catalysts natural-based catalysts are cost-effective and the flexible ex-situ gas cleaning beds have the potential to be easily scalable for industrial-scale production.
+

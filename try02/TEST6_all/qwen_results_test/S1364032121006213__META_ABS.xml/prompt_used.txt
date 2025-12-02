@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave vacuum co-pyrolysis of waste plastic and seaweeds for enhanced crude bio-oil recovery: Experimental and feasibility study towards industrialization Waste-to-energy is a promising approach to tackle the energy shortage and reduce the environmental pollution. The present study aimed to evaluate the technical and economic feasibility of microwave vacuum co-pyrolysis of seaweeds and low-density polyethylene (LDPE). Although the three studied seaweeds namely; Ulva intestinalis, Sargassum polycystum, and Hypnea valentiae showed similar thermal weight loss profile, U. intestinalis showed the highest biomass and bio-oil yields which resulted in superior bio-oil areal productivity of 30.1 g m−2. Therefore, it was selected for co-pyrolysis with LDPE at different blend ratios. Compared to individual pyrolysis of U. intestinalis, the increase inLDPE ratio enhanced the crude bio-oil production with simultaneous reduction in bio-char yield. The experimental bio-oil yields from co-pyrolysis showed higher values than the corresponding theoretical values, confirming a synergistic effect between the two feedstocks. The bio-oil produced from co-pyrolysis at 75% LDPE blend ratio showed better characteristics compared to the individual pyrolysis. Van Krevelen plot suggested that LDPE produces hydrogen radicals during co-pyrolysis reactions, which increased the H/C ratio and reduced the O/C ratio. GC/MS analysis confirmed that the increase in LDPE stimulates hydrocarbons proportion up to 51.2% at 75% blend ratio with significant reduction in N-containing compounds, carboxylic acids, furans, aldehydes/ketones, saccharides, and phenols. The economic feasibility analysis at a feedstock feeding rate of 11.4 ton h−1 using Aspen Plus showed estimated net profit of 23.17 million US$ for a 20-years life time plant. The present study provides a potential approach for sustainable energy recovery from waste plastic/seaweeds blend using microwave vacuum co-pyrolysis.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Heating rate and ZSM-5 catalyst effects on date palm (Phœnix dactylifera L.) stones pyrolysis: Thermogravimetric analysis, production and characterization of syngases and bio-oils In the present investigation, Date palm stones (DPS) were pyrolyzed under Nitrogen atmosphere in a laboratory scale fixed-bed reactor. Pyrolysis experiments were carried out at different heating rates (5 and 10 °C/min), both in absence and presence of ZSM-5 catalyst (20 wt%). The effects of heating rate and ZSM-5 catalyst on DPS thermal behavior, pyrolysis products yields, syngases and bio-oils proprieties were investigated. TGA results showed that adding ZSM-5 revealed no significant impact on DPS thermal behavior. However, increasing the heating rate was followed by an increase in degradation peaks temperatures and maximum mass-loss rates (in absolute terms). These same effects were found when proceeding in presence of ZSM-5. Micro-GC results showed that the heating rate rise led to a thermal shift of pyrolytic gases (CO2, CO, C2H6, CH4 and H2) release towards higher temperatures. However, the ZSM-5 addition had accelerated their release and enhanced their quality by essentially reducing CO2 contents by about 13%, for both heating rates. The produced syngases from DPS pyrolysis have proven good biofuels proprieties thanks to their important proportions of CH4 (17.19–21.74%) and H2 (12.54–18.51%). DPS pyrolysis at a heating rate of 5 °C/min and in presence of ZSM-5 (20 wt%) can be defined as the optimum operational conditions that lead to maximum production of bio-oil (43.48%) with better quality. Under these conditions, DPS bio-oil presented the highest Carbon (73.58%) and Hydrogen (10.63%) contents and the lowest Oxygen (14.89%) and Nitrogen (0.9%) contents. Moreover, it had the highest HHV of 34.37 MJ/kg and the lowest viscosity of 8.54 mPa s, comparing to other bio-oils produced at 10 °C/min with and without ZSM-5 and to the bio-oil produced at 5 °C/min without ZSM-5. GC-MS analysis revealed that Dodecanoic acid and Oleic acid were the predominant components in DPS bio-oil with the respective percentages of 17.83 and 16.49%. This experimental investigation proved the potential use of date palm stones as renewable feedstocks for bio-oil production by pyrolysis. Furthermore, the low pyrolysis gradient (5 °C/min) and the use of ZSM-5 catalyst have shown interesting results in enhancing the bio-oil quantity and quality.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Bio-oil stability through stepwise pyrolysis of groundnut shells: Role of chemical composition, alkali and alkaline earth metals, and storage conditions Bio-oil obtained from crop residues is unstable because of multiple reactive oxygenated compounds and alkali and alkaline earth metals (AAEMs), which hinder its use as a chemical feedstock. In the current study, stepwise pyrolysis of groundnut shells was performed in three-step (160/200–320/340−600 °C), two-step (320/340−600 °C), and continuous (600 °C) heating regimes to obtain a more stable bio-oil. The stability of bio-oils was compared in terms of changes to their pH, water content, AAEM concentration, and chemical composition over a fixed period. During three-step pyrolysis, 94.85–97.38 % of chemicals (anhydrosugars, organic acids, aldehydes, and ketones) were concentrated in step 2. In contrast, for two-step pyrolysis, 93.14–94.78 % were concentrated in step 1. The AAEMs transferred from groundnut shells to bio-oil were 7.04–9.63 % for three-step, 6.68–11.26 % for two-step, and 11.87 % for continuous pyrolysis. An accelerated aging test (80 °C for 24 h) showed that two-step pyrolysis at 340 °C and 600 °C, produced the most stable bio-oil despite a higher concentration of AAEMs. Further improvement in this bio-oil’s stability was explored by altering storage temperature and adding solvents to the bio-oil. The decrease in concentrations of anhydrosugars and phenolics was <1% after four weeks of storage at 4 °C with the addition of methanol. The obtained results contribute to implementing stepwise pyrolysis units for crop residue management.
+

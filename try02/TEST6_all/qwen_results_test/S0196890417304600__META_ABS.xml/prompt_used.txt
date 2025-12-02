@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on the co-pyrolysis of rice straw and high density polyethylene blends using TG-FTIR-MS The effects of interactions between RS and HDPE on the evolution of volatile species and their distributions during co-pyrolysis of rice straw (RS) and high density polyethylene (HDPE) was investigated by thermogravimetric analyzer coupled with fourier transform infrared spectroscopy and mass spectrometry technology (TG-FTIR-MS). It can be found that the pyrolysis process of RS and HDPE blends was characterized by two stages. The first stage primarily consisted of the decomposition of RS. The second stage was dominant by the degradation of HDPE. The interactions between RS and HDPE were obvious in the temperature range of 435–520°C. The existence of HDPE delayed the decomposition of RS in the first step, while in the second step, the existence of RS delayed the degradation of HDPE. The primary gaseous products for the blends arose from the overlap of the decomposition products from the individual RS and HDPE. However, no new substance can be observed in the blends compared to the decomposition of individual RS and HDPE. The primary gaseous products were H2, H2O, CO2, CO, aldehydes (C2H4O), alcohols (C2H5OH), carboxyls (CH3COOH) and hydrocarbons (CH4, C2H2, C2H4, C2H6, C3H6, C3H8). The addition of HDPE in the blends could decrease the amount of the oxygen-containing compounds, and improve the yield of H2 and hydrocarbons. The effects of the interaction between RS and HDPE on the evolving of volatile species were affected by the percentage of RS in the blends.
+

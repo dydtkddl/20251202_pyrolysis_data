@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Plant-wide modeling and techno-economic analysis of a direct non-oxidative methane dehydroaromatization process via conventional and microwave-assisted catalysis Direct non-oxidative methane dehydroaromatization (DHA) process via conventional and microwave (MW)-assisted thermo-catalytic catalysis is studied. Rate models for methane DHA reactions, including the effect of catalyst deactivation, are developed by using the in-house experimental data. Model results for gas concentration profile and catalyst deactivation are in good agreement with the experimental data. This rate model is then used for the development of dynamic multi-scale, multi-physics commercial-scale reactor models. Total number of fixed bed reactors desired for a cyclic steady state process is estimated. Plant-wide models are then developed for conventional and MW-assisted processes for producing products of desired specifications. Techno-economic analysis of the methane DHA process is undertaken. Economics of these methane DHA processes are compared with the typical multi-step natural gas to aromatics production process via methanol synthesis. Sensitivity of internal rate of return (IRR) and net present value (NPV) to various economic and process parameters such as plant scale, desired rate of return, reactor cost, feedstock and utility cost, catalyst variable cost, and MW reactor cost is studied. Electric equivalent efficiency of the conventional methane DHA process is found to be 69.2 % and 67.3 % at 750 °C and 800 °C, respectively, while the MW-assisted methane DHA process has the electric equivalent efficiency of 48.9 % at 800 °C. IRRs of the conventional methane DHA process at 750 °C and 800 °C, and MW-assisted process are 15.2 %, 17.5 %, and 18.8 %, respectively for a methane feed flowrate of 19,782 kg/h, while the IRR of the multi-step natural gas to aromatics production process is estimated to be 0 % for the same plant scale. Impact of change in the methane price, electricity price, and catalyst cost is found to be considerable on the process economics, while the cost of the MW reactor is found to have negligible impact.
+

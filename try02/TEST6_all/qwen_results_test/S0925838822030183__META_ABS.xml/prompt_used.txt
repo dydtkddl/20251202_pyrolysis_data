@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A study on the mechanical and electrical properties of high-strength CuCrZr alloy fabricated using laser powder bed fusion Copper-chromium-zirconium (CuCrZr) is tailored using additive manufacturing, particularly laser powder bed fusion (LPBF). Due to high thermal conductivities and high reflectivity of infrared laser irradiation, it is still challenging to fabricate copper alloys using the LPBF technique. To address the issue, a short wavelength laser (515 nm) was employed in the LPBF process. In this work, the CuCrZr alloys were built with optimized building parameters such as powder of 485 W, scanning speed of 400 mm/s, and hatching distance of 0.09 mm. The relative density of the samples was found to be 98.07 %. The as-built samples exhibit good mechanical properties with ultimate tensile strength (UTS) of 447 ± 13 MPa, yield strength (YS) of 400 ± 11 MPa, total failure elongation (EL) of 10 ± 3 %, and Vickers hardness of 130 ± 15 HV). However, the electrical property is poor with 30 ± 1 %IACS. The high tensile stress and low electrical conductivity may attribute to the dislocation cells. Moreover, the dissolved Cr atoms result in poor conductivity. By direct aging treatment at 500 °C for 1 h, excellent mechanical properties (UTS = 566 ± 18 MPa, YS = 487 ± 13 MPa, EL = 15 ± 1 %, Vickers hardness = 161 ± 15 HV) were achieved while maintaining a good conductivity (64 ± 3 % IACS). The main contribution to the increase in YS is attributed to (I) the nanoscale Cr precipitated homogeneously in the copper matrix during the direct aging treatment and (II) the remaining high dislocation density near the dislocation cells. The enhancement of the electrical conductivity is attributed to the decomposition of the supersaturated solid solution.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An experimental, theoretical and kinetic-modeling study of hydrogen sulfide pyrolysis and oxidation Hydrogen sulfide chemistry has recently undergone a renewed interest due to the current energy transition, requiring a proper treatment of such impurities in the sources like shale gas or biogas. Moreover, the lower-temperature, diluted conditions considered nowadays for reducing pollutant emissions require a wider-range development and validation of the pyrolysis and oxidation mechanisms. In this work, this was addressed through an experimental campaign carried out in three reactor facilities, namely a jet-stirred reactor and two flow reactors. A wide range of operating conditions could thus be covered, in terms of equivalence ratios under lean conditions ( 0.018 ≤ Φ ≤ 0.5 ), temperatures ( 400 K ≤ T ≤ 2000 K ) and residence times ( 0.1 s ≤ τ ≤ 2 s ). The mole fractions of reactants (H2S, O2), products (SO2, H2O) and intermediates (H2) were measured. In parallel, a kinetic mechanism of H2S pyrolysis and oxidation was developed by including the latest available kinetic rates on sulfur pyrolysis and oxidation chemistry, which were added to a core H2/O2 module, previously validated. Such a mechanism included a re-evaluation of selected key reaction steps, identified via sensitivity analysis. Results showed a general agreement of the experimental measurements with predictions: in the case of pyrolysis, the thermal decomposition reaction (H2S + M = H2 + S + M) was identified as the sole controlling step: a critical choice of the kinetic rate had to be made, due to the significant disagreement among the literature rates. Concerning oxidation, the H-abstraction from H2S by O2 was found to be the major bottleneck at the lowest temperatures, with HO2 becoming a key abstractor, too, under very lean conditions. At higher temperatures, a key role was played instead by the H-abstraction of H2S with S (H2S + S = SH + SH), acting in the reverse direction and providing S radicals, boosting the oxidation process.
+

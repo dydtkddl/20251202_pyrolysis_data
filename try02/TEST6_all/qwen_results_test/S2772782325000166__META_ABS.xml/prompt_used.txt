@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sustainable valorization of textile industry cotton waste through pyrolysis for biochar production This study presents a novel and sustainable approach to the valorization of textile spinning industry waste cotton (WC) through direct pyrolysis, converting it into high-quality biochar with enhanced energy potential and structural stability. This research systematically examines the impact of pyrolysis temperature (300–500°C) on biochar yield, composition, and physicochemical properties to optimize conditions for maximum carbon retention and energy efficiency. The results indicate that biochar yield decreased from Biochar yield decreased from 50.5 % at 300°C to 26.7 % at 500°C, while fixed carbon content increased from 59.33 % to 68.65 %. Elemental analysis revealed a rise in carbon content (53.13 % to 73.62 %) and reductions in oxygen (46.7 % to 13.27 %) and hydrogen (6.06 % to 2.79 %), enhancing thermal stability. X-ray Diffraction (XRD) analysis demonstrated a transition from amorphous cellulose to condensed graphitic carbon at higher temperatures. Thermogravimetric Analysis (TGA) confirmed superior thermal resistance, with biochar retaining 14.7 % of its mass at 800°C. Differential Scanning Calorimetry (DSC) revealed key thermal transitions, with the endothermic peak shifting from 65.5°C in raw WC to 79.6°C at 500°C, indicating increased thermal stability. The calorific value peaked at 27.31 MJ/kg at 400°C, making it a promising solid biofuel. Additionally, Brunauer-Emmett-Teller (BET) analysis showed a substantial increase in porosity, with the highest specific surface area of 225.24 m2/g at 500°C, improving biochar's potential for adsorption, catalysis, and energy storage. These findings contribute to optimizing pyrolysis conditions for waste cotton valorization, supporting circular economy principles, reducing environmental pollution, and enhancing renewable energy applications. By integrating pyrolysis into textile waste management, this study offers a scalable and eco-friendly strategy for sustainable energy recovery and environmental remediation.
+

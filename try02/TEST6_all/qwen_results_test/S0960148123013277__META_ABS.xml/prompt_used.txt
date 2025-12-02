@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The deoxygenation mechanism of biomass thermal conversion with molten salts: Experimental and theoretical analysis Utilizing molten salt for biomass pyrolysis has emerged as a pivotal technology for enhancing product value and has become a crucial alternative to traditional pyrolysis methods. However, there remains a dearth of research on the deoxygenation mechanism of biomass during molten salt thermal treatment. This study focuses on investigating the deoxygenation characteristics of biomass during molten salts thermal treatment through a comprehensive analysis involving experimental and density functional theory (DFT) study. Our experimental results revealed that, compared to traditional pyrolysis, molten salt (NaNO3–NaNO2) significantly increased oxygenated gas products, favoring deoxygenation during biomass conversion. Formic acid was employed as a simplified oxygen-containing model compound to investigate the decomposition characteristics with and without the presence of molten salts using DFT calculations. DFT studies of formic acid decomposition revealed lower activation energies on NaNO3 (234.39 kJ/mol) and NaNO2 (84.11 kJ/mol) surfaces compared to homogeneous reactions (234.63 kJ/mol). This indicates that NaNO2 has a more pronounced promotional effect, facilitating formic acid decomposition. Furthermore, kinetic calculations show that both homogeneous and heterogeneous reaction rate constants for formic acid decomposition increase with temperature. The reaction rate constants on the surface of NaNO3 are similar to homogeneous reactions, while it is much higher two on NaNO2 surfaces. These findings highlight the critical role of NaNO2 in formic acid decomposition within the NaNO3–NaNO2 molten salt system. The experimental and computational results elucidate the deoxygenation mechanism of biomass thermal conversion using molten salts and establish a theoretical foundation for the high-value utilization of pyrolysis products.
+

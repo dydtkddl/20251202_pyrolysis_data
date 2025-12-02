@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sorption-enhanced chemical looping steam reforming coupled with water splitting for syngas and H2 coproduction using waste plastic as fuel Chemical looping is a promising technology for hydrogen production. Achieving both high purity and yield is an ongoing challenge, due to low fuel conversion and carbon deposition. In this study, a sorption-enhanced chemical looping reforming coupled with water splitting (SE-CLSR-WS) process was proposed to co-produce syngas and H2 by using waste plastic as the fuel. The Ni-doped Ca2Fe2O5 brownmillerites were designed and employed as oxygen carriers (OCs) and CO2 sorbent. The introduction of Ni leaded to lattice distortion of brownmillerite, thereby enhancing the redox activity of lattice oxygen. In fuel reactor (FR), CaO in-situ captured CO2 and shifted reaction equilibrium towards PET pyrolysis gas reforming, enhancing both syngas yield and PET conversion rates. Adhere to the surface of OCs, CaO improved cyclic performance by inhibiting agglomeration of active metals. Calcination reactor (CR) was set between FR and steam rector (SR) to in-situ desorb CO2 and remove carbon deposition, enhancing hydrogen purity in SR. When Ca2Ni0.75Fe1.25O5-0.25CaO was applied to SE-CLSR-WS process, it exhibited synergistically strengthened performance in reaction activity, sorption capacity and cyclic stability, with a syngas purity of 82.71 % and H2 yield of 8.01 mmol/g OC with 93.26 % purity.
+

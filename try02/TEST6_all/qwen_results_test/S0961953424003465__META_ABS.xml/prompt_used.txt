@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Research progress of oxygen carriers for the chemical looping process of different feedstocks Chemical looping technology (CLT) is an innovative technology that involves clean and efficient conversion of hydrocarbons into power, fuel, and chemicals through oxygen carriers (OCs) by circulating between a fuel reactor (FR) and an air reactor (AR). Several processes such as chemical looping combustion (CLC), chemical looping gasification (CLG), and chemical looping reforming (CLR) have been proposed and investigated based on the various OCs. OCs act as a medium that transfers heat and oxygen, are related to their efficiency, economy, and stability of the cyclic reaction in the whole chemical looping process (CLP). In recent years, significant progress has been made in OC materials for various CLP. Particularly, multi-metal coupled high-entropy oxide oxygen carriers (HEO-OCs) and the method of using machine learning for high-throughput screening of OCs provide new perspectives for the development and application of OCs. However, there is currently a lack of review paper on the selection of suitable OCs for different CLP and different feedstock types. In this paper, the types, preparation methods and evaluation indexes of OCs are summarized, and the development methods and application cases of OCs based on the characteristics of feedstocks are mainly reviewed. It is expected to provide a better understanding for the development and utilization of OCs in the CLP. These advantages will contribute to the development of OC materials for more effective CLT.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal and catalytic pyrolysis of waste polypropylene plastic using spent FCC catalyst Waste polypropylene plastic (WPP) is an enormous volume of plastics in the landfill in Nigeria. It causes serious environmental problems, such as reduced landfill space and pollution. We made WPP plastic undergo pyrolysis using a batch reactor subjected to temperatures variation of 300 °C, 350 °C, 375 °C, 400 °C, and the spent fluid catalytic cracking (FCC) catalyst used were 5, 7.5, and 10 wt% catalyst. We heated the reactor at a rate of 15 °C/min. until it reaches the pyrolysis temperature of 400 °C at atmospheric pressure. We investigated the influence of the FCC catalyst, reaction temperatures, and catalyst to plastic ratio. We characterized the pyrolysis liquid oil using density, pour point, API gravity, flash point, viscosity, calorific value, carbon residue, ATSM distillation, and GC–MS. The thermal pyrolysis produced maximum liquid oil (83.3 wt%) with gases (13.2 wt%), and char (3.0 wt%), while the catalytic pyrolysis using 0.1 catalyst to plastic ratio decreased the liquid oil yield (77.6 wt%), and char (2.7 wt%), with an increase in gases (19.7 wt%). The GC–MS results of the catalytic pyrolysis of liquid oil showed that the liquid fractions comprised a wide range of hydrocarbon, mainly distributed within C4 to > C17. The paraffin, olefins, naphthalene, and aromatics yield were 30.83%, 44.6%. 19.44%, and 5.13%, respectively. The liquid oil’s fuel properties were like that of gasoline and diesel.
+

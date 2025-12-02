@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Tar characteristics generated from a 10 kWth chemical-looping biomass gasifier using steel converter slag as an oxygen carrier Tar management is one of the key components to achieve high energy efficiency and low operational costs connected to thermal gasification of biomass. Tars contain a significant amount of energy, and unconverted tars result in energy efficiency losses. Also, heavy tars can condense downstream processes, resulting in increased maintenance. Dual fluidized beds for indirect gasification operated with active bed material can be a way to better convert and control the tar generated in the process. Using an active material to transport oxygen in an indirect dual reactor gasification setup is referred to as chemical-looping gasification (CLG). A higher oxidative environment in the gas phase, in addition to possible catalytic sites, could mean lower yields in comparison to normal indirect gasification. This paper investigates the effect of using Steel converter slag (LD slag), a byproduct of steel manufacturing, as an oxygen-carrying bed material on tar species generated in a 10 kWth dual fluidized bed biomass gasifier. The results are compared to the benchmark oxygen carrier ilmenite and conventional silica sand. Three different solid biofuels were used in the reactor system: steam exploded pellets, pine forest residue and straw. Tar was absorbed from the raw syngas using a Solid Phase Adsorption (SPA) column and was analyzed using GC-FID. Bench-scale experiments were also performed to investigate benzene conversion of LD slag and ilmenite at different oxidation levels. The findings of this study suggest that oxygen carriers can be used to decrease the tars generated in a dual fluidized bed system during gasification. Phases in LD slag possess catalytic properties, resulting in a decreased ratio of heavy tar components compared to both ilmenite and sand. Temperature and fuel load showed a significant effect on the tar generation compared to the circulation and steam ratio in this reactor system. Increased temperature generated lower tar yields and lower ratios of heavy tar components for LD slag in contrast to sand.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergism, pyrolysis performance, product distribution and characteristics in the co-pyrolysis of date palm waste and polyethylene foam: Harnessing the potential of plastics and biomass valorization The current methods of disposing of plastic waste, such as dumping or burning, create significant ecological problems and cause irreparable damage to valuable resources. This is especially true for plastics with complex structures, like polyethylene foams (PEF). This study focuses on how the plastic composition affects the interactions, kinetics, thermodynamics, yield of pyrolysis products, and their characterization during the co-pyrolysis of date palm waste (DPW) and PEF. Co-pyrolysis experiments were conducted at three different heating rates (10, 20, and 30 °C/min) and with varying biomass ratios to plastic. The kinetic parameters were evaluated using different isoconversional techniques such as Kissinger Akahira Sunose (KAS), Vyazovkin (VZK), Ozawa Flynn Wall (OFW), and Friedman (FM). The average value of activation energy based on the Vyazovkin model is 96.31, 216.33, 232.85, 382.69, and 206.47 kJ/mol for DPW, PEF, 75PEF25DPW, 25PEF75DPW, and 50PEF50DPW, respectively. The thermodynamic results showed that the average difference between activation energy and enthalpy is 4.89, 6.02, 5.81, 5.36, and 5.61 kJ/mol for the DPW, PEF, 75PEF25DPW, 25PEF75DPW, and 50PEF50DPW, respectively. It is lowest for the DPW and highest for the PEF, whereas it is significantly lower for the mixes, indicating that the mixes consume less energy. Criado’s master plot suggested that the co-pyrolysis of DPW and PEF followed D1 (one-dimensional) and D3 (three-dimensional) reaction mechanisms. Further, co-pyrolysis results from the fixed bed reactor confirmed maximum bio-oil yield (38.85 wt%) was achieved at 50PEF50DPW ratio. The results of this study suggest that combining waste date palms with PEF could be a promising option for improving the co-pyrolysis process.
+

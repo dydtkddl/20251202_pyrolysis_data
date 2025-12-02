@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Review on the catalytic effects of alkali and alkaline earth metals (AAEMs) including sodium, potassium, calcium and magnesium on the pyrolysis of lignocellulosic biomass and on the co-pyrolysis of coal with biomass Alongside the development of pyrolysis processes aimed at converting solid biomass into upgraded biofuels and biochemicals, interest has been growing in the analysis of the catalytic effects induced by inherent or externally added alkali and alkaline earth metals (AAEMs). These AAEMs greatly affect the thermal conversion of biomass, although their effects are only partly understood. Furthermore, while coal currently plays a major role in global energy demand, its massive use in a carbon-constrained world has prompted the need to identify alternative and carbon-neutral energy sources. In this context, the co-pyrolysis of biomass with coal has been shown to be a promising way to support the transition from fossil to renewable energy carriers. Because AAEMs can significantly impact such a co-processing approach, there is therefore the need for a firm understanding of their catalytic role. Consequently, and to examine and summarize the main research advances that have been made in this field, the present review first covers a description of the main properties of lignocellulosic biomass and coal, along with their decomposition processes. It then focuses on AAEM catalysts and on their impact on pyrolysis reaction pathways and kinetics. In terms of highlights, the review illustrates that the presence of inherent or impregnated AAEMs shifts the decomposition of biomass to lower temperatures while increasing the char and gas yields at the expense of bio-oil. Moreover, these effects depend significantly on the nature of the catalyst considered and on the way it is mixed with biomass. As examples, potassium tends to favor the production of low molecular weight compounds and gaseous species, magnesium promotes dehydration reactions, whereas calcium and magnesium oxides allow to upgrade volatiles by deoxygenation and deacidification. A discussion of pyrolysis reaction mechanisms is also proposed by reviewing the different pathways involved in the decomposition of the main components of biomass and coal, noting that the emphasis is particularly on the changes induced by AAEM catalysts. The synergistic effects between coal and biomass which are likely to enhance the co-pyrolysis process are then discussed. Eventually, a comprehensive reaction pathway is proposed to better explain the important role played by AAEM catalysts during primary and secondary pyrolysis reactions.
+

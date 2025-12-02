@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recent advances in biodegradation of emerging contaminants - microplastics (MPs): Feasibility, mechanism, and future prospects Plastics have become an essential part of life. When it enters the environment, it migrates and breaks down to form smaller size fragments, which are called microplastics (MPs). Compared with plastics, MPs are detrimental to the environment and pose a severe threat to human health. Bioremediation is being recognized as the most environmentally friendly and cost-effective degradation technology for MPs, but knowledge about the biodegradation of MPs is limited. This review explores the various sources of MPs and their migration behavior in terrestrial and aquatic environments. Among the existing MPs removal technologies, biodegradation is considered to be the best removal strategy to alleviate MPs pollution. The biodegradation potential of MPs by bacteria, fungi and algae is discussed. Biodegradation mechanisms such as colonization, fragmentation, assimilation, and mineralization are presented. The effects of MPs characteristics, microbial activity, environmental factors and chemical reagents on biodegradation are analyzed. The susceptibility of microorganisms to MPs toxicity might lead to decreased degradation efficiency, which is also elaborated. The prospects and challenges of biodegradation technologies are discussed. Eliminating prospective bottlenecks is necessary to achieve large-scale bioremediation of MPs-polluted environment. This review provides a comprehensive summary of the biodegradability of MPs, which is crucial for the prudent management of plastic waste.
+

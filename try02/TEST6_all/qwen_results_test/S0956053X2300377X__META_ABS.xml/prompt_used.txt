@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of dyeing sludge and pine sawdust in a fluidized bed: Characterization and analysis of pyrolytic products and investigation of synergetic effects Co-pyrolysis of dyeing sludge (DS) and pine sawdust (PS) was carried out in a fluidized bed pyrolyser. The results revealed that addition of PS increased the yields of condensate and gas, and dramatically improved pore structure of co-pyrolysis char, enhancing immobilization of the metals, nutrient and pollution elements. Catalysts (Na-ZSM-5 and HZSM-5) significantly reduced tar and coke, strengthened the integrity of pore structure. Yield of nitrogen-containing compounds declined sharply from 88.66% to 8.14% when 25% of PS was added. Addition of 50% PS promoted ring opening to generate chain compounds and abundant oxygenates (such as ketones, aldehydes and carboxylic acids) in pyrolysis oil (PO) at 650 °C. Correspondingly, yield of gaseous products was inhibited except CO2 and H2 when PS content was dominant. The catalysts greatly increased yield of gaseous products by enhancing primary and secondary cracking depending on different feedstocks and catalysts (e.g., DS over Na-ZSM-5 and PS over HZSM-5). The maximum energy efficiency (69.75%) was obtained at 650 °C when 75% PS was added.
+

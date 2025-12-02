@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+New high strength ODS Eurofer steel processed by mechanical alloying A new improved oxide dispersion strengthened (ODS) Eurofer steel was produced by a novel two step mechanical alloying route. Starting from atomized Eurofer powder, two batches of fine and coarse particles with average sizes of ~60 μm and ~120 μm were milled separately after the addition of Ti and nanosized Y2O3. The final blend of the two powder batches was synthetized by hot isostatic pressing (HIP) to obtain a fully dense material with a microstructure characterized by two distinct zones: zones with high density particles (HDPZ) and zones with low density particles (LDPZ). The mechanical properties of the processed material in the as−HIP state and after tempering have been improved significantly compared to various ODS Eurofer and ODS Fe–Cr steels treated by different thermomechanical processing routes (TMP). The stress−strain curve at 600 °C manifested softening while a steady state constant stress was observed at higher temperatures. The stress exponent was two times lower compared to the base Eurofer material; i.e. ~12 vs ~24. Dynamic grain refinement was observed together with ferrite to martensite transformation resulting in an increase in ferrite−martensite interfaces and formation of low angle grain boundaries (LAGBs). Electron back scatter diffraction (EBSD) technique was used to characterize the microstructure and analyze the deformation mechanism.
+

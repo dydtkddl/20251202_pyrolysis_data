@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A Comprehensive Review on the production of Polyoxymethylene dimethyl ethers as alternative synthetic fuel: From conventional indirect methodologies to sustainable direct routes Global warming and climate change have led to the development of technologies for reducing and recycling CO2 emissions and the establishment of environmentally friendly fuel systems. Polyoxymethylene dimethyl ethers (PODEn), a highly promising renewable oxygenated synthetic fuel, can efficiently improve engine combustion performance and significantly reduce exhaust emissions as diesel blending components or substitutes. In previous, the synthesis of PODEn mainly used indirect methods, also known as two-step synthesis, which include the synthesis of methylal and formaldehyde from methanol, followed by acetalization reaction of methylal/methanol with formaldehyde catalyzed by acid catalysts to yield the PODEn. Recently, some emerging methods involve the use of bifunctional catalysts and tandem catalytic technology can achieve one-step production of PODEn. The technological development of CO2 hydrogenation/reduction to methanol and directly coupling to synthesis PODEn has made the production of PODEn cleaner and more sustainable. In this review, firstly, indirect reaction route and diversified direct pathways are summarized and compared in terms of reactant sources, process flow, and energy evaluation. Furthermore, centered around catalytic reactions, a specific discussion is made on the latest progress in the chemical reactions, catalytic activity, structure-activity relationships, and reaction mechanisms of different routes for synthesizing PODEn. The systematic analysis of the research progress, existing challenges, and future trends of PODEn will provide possible directions for future research, especially in catalyst design, and provide new perspectives and insights for the industrial production of PODEn.
+

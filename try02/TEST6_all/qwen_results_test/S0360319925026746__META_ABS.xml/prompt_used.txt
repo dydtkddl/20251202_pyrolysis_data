@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pet coke gasification via novel gasifier design: Experimental and machine learning based modeling approaches Petroleum coke or pet coke is a by-product of petroleum refinery and obtained as a residue from coking process. As a fuel with high carbon content and heating value and low ash content pet coke has a potential to be considered as an alternative and significant energy source. Carbon based fuels such as pet coke, are chemically converted to syngas consisting mainly of a mixture of hydrogen and carbon monoxide by gasification process. Syngas is a versatile raw material used in the production of various chemicals such as ammonia, methanol and many hydrocarbons including synthetic fuels obtained by the Fischer-Tropsch reaction. In this paper, unlike the systems mentioned in literature, a pilot-scale bifunctional gasification system was designed and constructed for gasification of pet coke. The gasification system integrates an entrained flow bed and a cyclone bed. The effects of reaction temperature were investigated in the range of 1123–1323 K. The effects of pet coke feed rate and particle size were also determined. All experimental data were then analyzed using various machine learning algorithms, including Random Forest, M5P, Random Tree, Artificial Neural Network, and Support Vector Machines. The performance of these algorithms was comparatively evaluated. Among the tested models, the Artificial Neural Network demonstrated the highest predictive accuracy, with a correlation coefficient of R = 0.9965 and low prediction errors for H2 yield, including MAE of 1.2715, MAPE of 6.1, RMSE of 2.0701, RAE of 5.20 %, and RRSE of 7.72 %. These findings indicate that machine learning algorithms can serve as effective tools for the operational optimization of pet coke gasification systems.
+

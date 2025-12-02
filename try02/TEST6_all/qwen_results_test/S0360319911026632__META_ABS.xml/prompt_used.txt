@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Determination of the thermal transport properties of ammonia borane and its thermolysis product (polyiminoborane) using the transient plane source technique Reliable thermal property data are necessary to improve the fidelity of chemical hydride thermal decomposition models. The thermal diffusivity and conductivity of ammonia borane (NH3BH3) and its partial thermolysis product (polyiminoborane) were measured at various packing densities using a transient plane source technique under ambient conditions. The particle size of the ammonia borane powder was between 200 and 600μm, while the particle size of the polyiminoborane powder was between 10 and 30μm. The thermal diffusivity and conductivity of the ammonia borane increased from 0.17 to 0.24mm2/s and 0.19 to 0.44W/mK (±10%), respectively, when its packing density was increased from 0.37 to 0.58g/cm3. The increase in thermal conductivity is due to the increase in contact area between particles and the increase in the thermal diffusivity is related to an increase in density and volumetric heat capacity caused by compaction. The thermal conductivity of the polyiminoborane powder was approximately three times lower, likely due to its higher porosity. The thermal diffusivity and conductivity of this product changed from 0.21 to 0.12mm2/s and 0.068 to 0.23W/mK (±10%), respectively, when its packing density was increased from 0.13 to 0.96g/cm3.
+

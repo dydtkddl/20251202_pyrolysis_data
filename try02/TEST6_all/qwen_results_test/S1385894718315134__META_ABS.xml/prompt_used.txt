@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Production of nanostructured carbon materials using Fe–Mo/MgO catalysts via mild catalytic pyrolysis of polyethylene waste A series of MgO supported bimetallic Fe–Mo catalysts with various Fe:Mo weight ratios (such as 50:0, 45:5, 40:10, 30:20, 20:30 and 10:40, respectively) have been prepared and evaluated for production of carbon nanomaterials (CNMs) via catalytic pyrolysis of low-density polyethylene (LDPE) plastic waste. Highly acidic HZSM-5 zeolite was used as a degradation catalyst during the pyrolysis process. To investigate the structure and physicochemical properties of the fresh catalysts, several characterization tools such as XRD, TPD, BET, TPR, and FTIR were employed. While to clarify the nature and morphology of as-produced CNMs, the spent catalysts were characterized by XRD, TEM, Raman spectroscopy and TPO. The XRD and TPR results confirmed that the non-interacted metal oxides species were dominant in the structure of the catalysts with higher Fe2O3 or MoO3 contents, whereas several mixed oxide species were extensively present in the catalysts with moderate Fe2O3 and MoO3 contents. The obtained results revealed that the Fe/Mo ratio was found to play a crucial role on the catalytic growth activity as well as the type and morphology of as-deposited CNMs. All results showed that the type and morphology structure of carbon deposited can be adjusted by changing the Fe/Mo ratio in the MgO support. The activities of catalysts were significantly improved with the successive addition of Mo contents up to 30 wt% due to the presence of a large number of diverse active sites as a result of interaction between all catalyst components. The catalysts with higher Fe or Mo contents promote the formation of both CNTs and CNFs, while the catalysts with intermediate loadings of Fe and Mo produce mainly CNTs, CNFs accompanied with GNSs as hybrid materials.
+

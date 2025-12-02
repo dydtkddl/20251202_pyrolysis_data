@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Air gasification of polyethylene terephthalate using a two-stage gasifier with active carbon for the production of H2 and CO Polyethylene terephthalate was gasified using a two-stage gasifier composed of a fluidized bed gasifier and tar-cracking reactor and air as the gasifying agent. The main challenge was to overcome problems such as equipment clogging caused by the condensable compounds (tars) generated during polyethylene terephthalate gasification. Active carbon was applied to the two-stage gasifier to reduce tar. As a result of gasification, we did not experience any problems caused by tar, thereby obtaining a clean producer gas. Active carbon played a crucial role in increasing H2 production and reducing the tar content. The tar-cracking reactor temperature and equivalence ratio turned out to have a significant influence on the gas quality. The gas produced from the gasification of polyethylene terephthalate had high contents of H2 and CO. At the tar-cracking reactor temperature of 844 °C and an equivalence ratio of 0.27, a producer gas containing 22 vol% H2, 25 vol% CO, and 7 mg/Nm3 of tar was obtained. Considering the high amount of O in polyethylene terephthalate compared with that in polyolefin, CO production from the two-stage air gasification of polyethylene terephthalate appeared to be very attractive when the process was implemented on a commercial scale.
+

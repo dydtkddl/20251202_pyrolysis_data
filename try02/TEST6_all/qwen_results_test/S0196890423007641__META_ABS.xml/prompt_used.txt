@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave-assisted biodiesel production using ZIF-8 MOF-derived nanocatalyst: A process optimization, kinetics, thermodynamics and life cycle cost analysis In this study a novel, high surface area, and recyclable nano-size solid basic catalyst is developed for the first time from ZIF-8 MOF-derived CaO/ZnO for the high-yielding transesterification of soybean oil (SO) to biodiesel with methanol under microwave irradiation. The chemical composition, texture and morphology of the catalyst were comprehensively characterized by FT-IR, SEM-EDS, XRD, TGA, XPS and BET. In addition, 1H NMR analyses were performed to confirm the conversion of soybean oil to biodiesel, whereas, GC–MS spectrum provide information about the chemical composition of the produced biodiesel. Kinetic studies are performed for the optimized catalyst and it follows the pseudo-first-order reaction. Thermodynamic analyses show that the transesterification of soybean oil to biodiesel reaction is endothermic and not spontaneous. By using Response surface methodology (RSM), the optimization of parameters that affect the biodiesel yield is studied. The transformation of 1:20 soybean oil with methanol using CaO/ZnO catalyst (7 wt%) gives 97.4 % biodiesel yield for the transesterification at 90 °C for 50 min. The catalyst shows good reusability after 5 successive cycles demonstrating its industrial-scale applications. According to Life cycle cost analysis (LCCA) the estimated price of 1 kg of biodiesel produced in this work is merely $1.11 showing high commercial applicability.
+

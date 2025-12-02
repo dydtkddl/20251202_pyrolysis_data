@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Controlled doping of carbon catalyst supports by atomic replacement via gasification-assisted heteroatom doping Due to a set of unique properties, carbon materials are applied as supports for metal-based catalysts in a wide variety of established and emerging (electro-)catalytical transformations. By introducing heteroatoms such as N, S and P into carbon supports, metal-support interactions can be tuned, enabling an optimization of catalyst performance in terms of activity, selectivity and stability. However, the exact impact of carbon heteroatom doping on catalyst performance remains often poorly understood, as the effects are inseparable from the clustered influence of other support properties such as texture and nanostructure. In this context, we present gasification-assisted heteroatom doping (GAHD) as a novel, broadly applicable post synthesis approach to exchange carbon surface atoms against heteroatoms while retaining the properties of the parental carbon. Employing GAHD, N, S and P doping of carbons with widely varying properties could be achieved, allowing, for example, incorporation of up to 13.1 wt-% S into an activated carbon at a change of specific surface area of only 4.4%. As a proof-of-concept, comparable N, S and P doped carbon nanofiber supports were used to prepare Pt-based electrocatalysts for the oxygen reduction reaction and probe the influence of the heteroatom dopants on their stability by accelerated stress tests in different potential regimes. In this context, P and S doped supports were found to exhibit a high degree of interaction with Pt, providing increased degradation resistance compared to N and non-doped support.
+

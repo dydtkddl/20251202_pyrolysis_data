@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Cleaner production of aviation oil from microwave-assisted pyrolysis of plastic wastes Large amounts of plastic wastes are generated due to the wide applications. Microwave-assisted pyrolysis for the production of aviation oil is a cleaner method to achieve the recycle of plastic waste. The study focuses on microwave-assisted pyrolysis of five kinds of plastic wastes (polypropylene, polystyrene, high-density polyethylene, low-density polyethylene, and polycarbonate) for cleaner aviation oil production. In this study, the heating performance, product yield, product component, and pyrolysis mechanism of five kinds of plastic wastes through performing microwave-assisted pyrolysis were systematically explored and visually compared, so as to highlight the advantages and disadvantages about the conversion of different kinds of plastic wastes into aviation oil. It was concluded that polystyrene showed the lowest average heating rates of 60 °C/min and highest aviation oil yield of 98.78 wt% among the five plastic wastes, and the highest aviation oil yield was occurred at the microwave power of 650 W, microwave absorbent load of 60 g, and pyrolysis temperature of 460 °C. Polypropylene, high-density polyethylene, and low-density polyethylene preferred to aliphatic hydrocarbons (99.33 area%, 98.45 area%, and 100 area%, respectively) mainly through random chain scission, recombination, and addition. Polystyrene preferred to aromatic hydrocarbons (73.39 area%) through β-scission, random chain scission, and intermolecular hydrogen transfer, whereas polycarbonate preferred to phenols (87.73 area%) mainly through decarboxylation and dihydroxylation. The majority of C8-16 hydrocarbons in aviation oil from polypropylene, polystyrene, high-density polyethylene, and low-density polyethylene were 91.02 area%, 64.79 area%, 77.52 area%, and 59.73 area%, respectively. Microwave-assisted pyrolysis of plastic waste can not only effectively solve the environmental problem, but also contribute to value-added products, showing a very good cleaner production method.
+

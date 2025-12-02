@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Liquid fuels, hydrogen and chemicals from lignin: A critical review Our severe dependence on fossil resources for the production of fuels and chemicals is responsible for two major global challenges: declining the fuel supply and increasing the anthropogenic greenhouse gas emissions. Conversion of biomass to fuels and chemicals can be a part of the low-carbon solution to both issues. Among various biomass species, inedible biomass such as lignocellulosics is the preferred choice for such applications due to their minimal impact on the food security. While technologies for the conversion of carbohydrates to value-added materials such as pulp, sugar monomers, and ethanol are well-established, lignin upgrading and valorization processes are significantly less-developed, and technical lignins are almost entirely burnt to generate heat and steam. The economic viability of biorefineries – which will receive significant amounts of lignin in future – can potentially improve significantly when advanced technologies are available that aid the conversion of lignin to value-added compounds. In this paper we assess how thermochemical processes can be used to isolate lignin from the lignocellulosic biomass, and subsequently convert it to liquid fuels, hydrogen, and aromatic monomers. To this end, different depolymerization, gasification and upgrading technologies for lignin conversion will be considered. Finally, the foreseeable applications of lignin-based products, the future directions for development, and the potential supportive interventions from policy makers are critically assessed.
+

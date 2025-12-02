@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation on the co-pyrolysis of bamboo sawdust and low-density polyethylene via online photoionization mass spectrometry and machine learning methods The high oxygen content of biomass is the limitation for its widespread utilization, and the co-pyrolysis of biomass feedstock with plastics has gotten much attention by researchers in recent years. Herein, bamboo sawdust (BS) and low-density polyethylene (LDPE) are selected to investigate the synergistic effects during co-pyrolysis via photoionization mass spectrometry (PI-MS). Based on the statistical analysis, for enhancing the synergetic effects of co-pyrolysis, the suitable LDPE/BS ratio should be at least 1:1. During the co-pyrolysis, LDPE promotes the conversion of BS-derivatives to low molecular weight oxygenated compounds (e.g., furfurals and simple phenolic compounds), while the decomposition of LDPE could also be enhanced by BS pyrolysis products. The synergetic effect of LDPE and lignin is more notable than that of LDPE and cellulose or hemicellulose. Meanwhile, for overcoming the drawback of PI-MS analysis in obtaining quantitative information, the RF (Random Forest) and LSTM (Long Short-Term Memory) algorithms are successfully used to predict the TG curves of BS/LDPE mixtures via the temperature-evolved profiles of representative products. This work could provide a reliable tool for monitoring co-pyrolysis process at different LDPE/BS ratios and combine with machine learning, which is helpful to reduce the cost of industrial application by shortening the experimental cycle.
+

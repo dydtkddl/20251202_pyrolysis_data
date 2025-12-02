@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fed-batch strategies for biodetoxification in production of optically pure lactic acid from softwood hydrolysate using Pediococcus acidilactici Optically pure lactic acid (LA) is important for the development of specialized applications for poly-lactic acid (PLA). To pursue sustainable production, feedstocks such as lignocellulosic biomass need to be investigated. The present study focused on the production of L-LA from softwood hydrolysate with Pediococcus acidilactici TY112. One of the challenges when using this substrate is the presence of inhibitors, such as furfural and 5-hydroxymethylfurfural (HMF), formed during pretreatment. To investigate adaptation, fed-batch experiments on softwood hydrolysate and model media were conducted. Although LA production was still affected by the presence of other inhibitors in the hydrolysate, P. acidilactici TY112 was capable of converting HMF and furfural and partly detoxify both hydrolysate and synthetic media. The strain adapted to the inhibitors present, if fed at a low rate (30 mL·h−1 for model medium with inhibitors and 15 mL·h−1 for softwood hydrolysate, both with 30 g·L−1 glucose and 45 g·L−1 mannose). Regarding carbon source consumption, a feeding rate of 30 mL·h−1 limited the uptake of glucose, leading to improved mannose uptake, with LA yields higher than 0.86 g·g−1. This study shows the potential of P. acidilactici TY112 for the production of L-LA from softwood hydrolysate which is regarded as inhibitory.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic co-pyrolysis of oil palm empty fruit bunches (EFB) and surgical face mask (SFM) wastes: Thermo-kinetic study, ANN model fitting, and synergistic effect Background Catalytic co-pyrolysis process is an emerging thermochemical pathway to convert multiple wastes, such as biomass and municipal solid wastes into value added fuels. The ecology would suffer from mishandling of these materials, leading to landfills and microplastic contamination. However, the co-pyrolysis of the surgical face mask (SFM) wastes with biomass remains a niche research area. Methods The co-pyrolysis performance, kinetics and thermodynamics of oil palm empty fruit bunches (EFB) and SFM mixture were evaluated via thermogravimetric analysis (TGA) approach at heating rates from 10 to 100 °C.min−1 with weight ratio of 1:1, 4:1 and 1:4. Additionally, the development of the artificial neural network (ANN) model to represent the thermal degradation behaviour of the overall catalytic co-pyrolysis process for EFB and SFM mixtures. Significant findings The highest average pyrolysis performance index, Ir value of 8.11 was found in the reaction at 50 °C.min−1. The weight change, ΔWTGA showed the thermal degradation behaviour of EFB and SFM co-pyrolysis exhibited predominantly inhibitory characteristics, as the experimental values were higher than the theoretical values. Moreover, the HZSM-5 catalyst showed great affinity towards the sample matrix, achieving high reduction of activation energy and difference in enthalpy of 13.54 % and 14.94 %, respectively.
+

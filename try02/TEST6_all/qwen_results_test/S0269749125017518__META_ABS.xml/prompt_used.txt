@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Assessing the degradation of polyester fibres from different textiles: A simulation based on laundry release Polyester (PES) is one of the main synthetic polymers used by the textile industry. The fate of PES microfibres in the environment depends on various parameters including photodegradation and fibres characteristics. In this study, the release and subsequent degradation of PES fibres before and after domestic washing were investigated, using accelerated hydrolytic degradation simulations. Fibres from differently manufactured PES textiles (undyed and dyed fabrics, whole garments) were obtained by cutting the textiles or by washing them in a household washing machine and collecting the fibres released. Degradation simulations of the fibres were performed using an alkaline solution. Hence, this is the first study that employed microfibres directly released during laundry in degradation experiments, to provide a realistic approach. Fibres were analysed in order to compare the effect of the degradation on the differently manufactured textiles, while analyses of the degradation solutions were, also, performed for polyester degradation product quantification and leachates identification. Degradation of PES fibres was evident, with changes in colour, mass loss and PES degradation products increasing throughout the process. Higher fibre loss, double quantity of terephthalic acid (PES product) and higher reduction of vinyl benzoate (PES marker) indicated more substantial degradation of the fibres from garments than those from the fabrics. Non-target analysis of the degradation solutions performed by HPLC-HRMS/MS also indicated that a greater release of leachates including dyes and additives (e.g. 4-nitrophenol, disperse orange 3, phenyldiethanolamine, and acetoacetanilide) occurred during the simulated degradation of the garment fibres, compared to the fabric ones.
+

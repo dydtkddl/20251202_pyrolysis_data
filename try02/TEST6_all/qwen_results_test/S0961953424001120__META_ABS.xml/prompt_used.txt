@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Potential of products from high-temperature pyrolysis of biomass and refuse-derived fuel pellets The management of energy contained in waste is an important research topic. Among many high-energy wastes, pellets are produced from refuse-derived fuels (RDF) and lignocellulosic biomass. This study investigated high-temperature pyrolysis (800 °C) of biomass and RDF pellets. Experiments were conducted in two reactors: i) on a microscale (thermogravimetric analysis) and ii) on a laboratory scale (fixed-bed reactor) to investigate the yields of the products (char, liquid fraction, and gas) and to characterise products toward their further application. The RDF char contained less carbon than the material before pyrolysis. The carbon content of the biomass char was 90%, almost twice that of the raw material. The biomass and RDF chars were chemically and physically activated to increase their specific surface areas. The chemically activated biomass char had a sorption capacity of 156.2 mg/CO2 at 25 °C and 0.1 MPa. The kinetics of CO2 sorption were also examined, and the maximum uptake was observed after 2–3 min. The higher heating value of the liquid phase, including the organic condensed phase, was 28.6 and 25.8 MJ/kg for pyrolysis of biomass and RDF pellets, respectively. The pyrolysis gas composition was analysed separately for the heating and isothermal processes. Due to the high CO, CH4, and H2 contents, the gas from the heating stage was characterised by a much higher heating value.
+

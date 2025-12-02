@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic performance and debromination of Fe–Ni bimetallic MCM-41 catalyst for the two-stage pyrolysis of waste computer casing plastic A computer casing plastic waste containing brominated flame retardants (BFRs) was pyrolyzed in a two-stage vertical quartz tube reactor using iron and nickel metals modified MCM-41 catalysts. Various catalysts with different ratios of Fe and Ni were prepared and utilized to study their catalytic performance. At the presence of 20%Ni/MCM-41 catalyst, the pyrolytic yield of oil and gas reached maximum values of 49.9 wt% and 13.8 wt% respectively. The co-existence of Fe and Ni showed synergistic effect on oil composition by promoting the formation of valuable single ring hydrocarbons. With regard to the 15%Fe–5%Ni/MCM-41, 10%Fe–10%Ni/MCM-41 and 5%Fe–15%Ni/MCM-41 catalysts, the production of single ring hydrocarbons were 64.58%, 65.93% and 64.74% respectively. The bimetallic catalysts also exhibited remarkable effect on eliminating bromine from pyrolytic oil. At the presence of Fe–Ni/MCM-41, the bromine in pyrolytic oil was reduced to below 4 wt% compared with 10 wt% without catalyst. Higher amounts of Fe in the catalyst is beneficial for the debromination efficiency. The debromination process by the Fe–Ni/MCM-41 may be realized by these different mechanisms: catalytic cracking of organobromines, reaction of loaded metal oxides with HBr/SbBr3, and deposition of organobromines on the surface of catalyst.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal stability of freshwater fern Azolla biomarkers as assessed by hydrous pyrolysis The freshwater fern Azolla produces a unique series of ω20-hydroxy and ω9,ω10-dihydroxy lipids. These compounds were also detected in Eocene sediments (∼48.5 Ma) characterized by the occurrence of fossil remains of Azolla and are thought to be prime markers for the past occurrence of Azolla implying that they could serve as palaeo-environmental indicators of freshwater conditions. However, the suitability of these Azolla biomarkers for application to more mature sediments is unknown. In this study, Azolla caroliniana specimens were heated using hydrous pyrolysis at temperatures ranging from 220 to 365 °C for 72 h to examine the stability and degradation of the Azolla biomarkers during simulated diagenesis. Initially all ω20-hydroxy and ω9,ω10-dihydroxy lipids are converted to their ketone analogues. At 260 °C n-alkanes are formed. ω20-Hydroxy and ω9,ω10-dihydroxy lipids are degraded between 260 and 280 °C. At 300 °C, only ω20-keto-1-ols, ω20-keto fatty acids and ω20-ketones, along with their ω9 and ω10 analogues, remain to preserve their ω20, ω9 and ω10 functionalities, while at 320 °C and higher only the ω20-, ω9, and ω10-ketones were observed. At higher temperatures the proportions of n-alkanes became dominating. The high thermal stability of the ω20, ω9/ω10 functionality shows that it has a relatively high preservation potential. Hence, it may potentially be a robust source indicator of the depositional environment of Azolla-derived organic carbon reflecting freshwater or brackish surface waters.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Leveraging carbon dioxide to control the H2/CO ratio in catalytic pyrolysis of fishing net waste The global presence of plastic debris has become an indisputable environmental issue. While it is useful to recycle used plastic materials, contaminated plastics require a series of pretreatments prior to the process. Here, we offer a viable thermochemical conversion (pyrolysis) platform to directly valorize fishing net waste (FNW). Prior to the pyrolysis of FNW that was collected at a Korean seaport, its chemical composition (polyethylene) was examined using thermogravimetric analysis, ultimate analysis, and Fourier-transform infrared spectroscopy measurements. Pyrolysis of FNW was conducted to produce value-added syngas and C1-2 hydrocarbons (HCs) in both CO2 and N2 environments with a variety of pyrolysis setups. The pyrolysis temperature significantly contributed to the thermal cracking of long-chain liquid HCs into H2 and C1-2 HCs under the N2 and CO2 conditions. In the presence of cobalt-based catalysts, an additional improvement of the reaction kinetics for producing H2 and C1-2 HCs was shown in the N2 environment. However, the synergistic effectiveness of Co-based catalysts and CO2 resulted in CO formation, because CO2 provided additional C and O sources over the Co-based catalysts. Thus, it allowed control of the H2/CO ratio in the CO2 and N2 atmospheres. The compositional matrix of the liquid HCs after pyrolysis also confirmed that CO2 controlled their aromaticity. Thus, the CO2-cofeeding pyrolysis of FNW can be considered a viable platform for the direct treatment of plastic wastes by harvesting energy as a form of syngas.
+

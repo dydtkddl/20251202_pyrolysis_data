@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microbial lipid biosynthesis from lignocellulosic biomass pyrolysis products Lipids are a biorefinery platform to prepare fuel, food and health products. They are traditionally obtained from plants, but those of microbial origin allow for a better use of land and C resources, among other benefits. Several (thermo)chemical and biochemical strategies are used for the conversion of C contained in lignocellulosic biomass into lipids. In particular, pyrolysis can process virtually any biomass and is easy to scale up. Products offer cost-effective, renewable C in the form of readily fermentable molecules and other upgradable intermediates. Although the production of microbial lipids has been studied for 30 years, their incorporation into biorefineries was only described a few years ago. As pyrolysis becomes a profitable technology to depolymerize lignocellulosic biomass into assimilable C, the number of investigations on it raises significantly. This article describes the challenges and opportunities resulting from the combination of lignocellulosic biomass pyrolysis and lipid biosynthesis with oleaginous microorganisms. First, this work presents the basics of the individual processes, and then it shows state-of-the-art processes for the preparation of microbial lipids from biomass pyrolysis products. Advanced knowledge on separation techniques, structure analysis, and fermentability is detailed for each biomass pyrolysis fraction. Finally, the microbial fatty acid platform comprising biofuel, human food and animal feed products, and others, is presented. Literature shows that the microbial lipid production from anhydrosugars, like levoglucosan, and short-chain organic acids, like acetic acid, is straightforward. Indeed, processes achieving nearly theoretical yields form the latter have been described. Some authors have shown that lipid biosynthesis from different lignin sources is biochemically feasible. However, it still imposes major challenges regarding strain performance. No report on the fermentation of pyrolytic lignin is yet available. Research on the microbial uptake of pyrolytic humins remains vacant. Microorganisms that make use of methane show promising results at the proof-of-concept level. Overall, despite some issues need to be tackled, it is now possible to conceive new versatile biorefinery models by combining lignocellulosic biomass pyrolysis products and robust oleaginous microbial cell factories.
+

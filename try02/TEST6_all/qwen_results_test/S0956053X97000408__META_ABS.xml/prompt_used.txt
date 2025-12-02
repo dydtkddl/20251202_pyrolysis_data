@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Low-temperature pyrolysis of CCA-treated wood waste: Chemical determination and statistical analysis of metal input and output; mass balances Low-temperature pyrolysis is proposed as an alternative method to dispose of CCA-treated wood waste. In the frame of a study aiming at optimising the pyrolysis of CCA-treated wood, an experimental facility has been built to examine the influence of important process parameters (pyrolysis temperature, residence time, heating rate, particle size, …) on the release of metals and on the resultant mass reduction. In order to perform a mass balance calculation for the total system, a method for metal analysis was developed. Two leaching procedures and one dissolution procedure were tested and compared with each other, resulting in an optimal procedure to bring the metals into solution: “the BSI method” to determine the total amount of Cr, Cu and As in the dried wood and “the Reflux method” to determine the total amount of Cr, Cu and As in the pyrolysis residue. These results illustrate that Cr is more strongly bound in the pyrolysis residue compared to the CCA-treated wood. The analytical technique used was ICP-MS and the analytical problems like interferences and matrix effects were solved by using the appropriate isotope, an internal standard and mathematical corrections. The resulting optimal technique for CCA-treated wood (“the BSI method”) was applied to wood samples with different particle sizes. A statistical analysis of the Cr, Cu and As content in the CCA-treated wood shows the heterogeneous character of CCA-treated wood samples. Heterogeneity becomes less important when using samples with a small range of particle sizes. The smaller wood particles have significantly higher metal concentrations than the larger particles. Realistic mass balances for the metals were obtained and showed that most of the Cr, Cu and As remained in the pyrolysis residue.
+

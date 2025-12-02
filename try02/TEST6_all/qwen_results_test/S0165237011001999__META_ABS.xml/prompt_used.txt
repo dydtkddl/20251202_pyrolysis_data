@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetic study of low-temperature conversion of plastic mixtures to value added products Batch-mode pyrolysis of 200.0g samples of polymers was studied at low temperature. The cracking reaction was carried out in a stainless-steel autoclave with reaction temperatures of 360, 380, 400 and 420°C, initial pressure of 6.325kPa (absolute pressure) and reaction times of 0–240min. Based on the experimental results, a four-lump kinetic model has been developed to describe the production distribution of the light fractions, middle distillates and heavy fraction. This model reasonably fitted the results in each reaction of operation conditions. It was also found that the pyrolysis kinetics of separated plastic, mixed plastic and mixed plastic containing additives can be described by the same kinetic model. The plastic additives have not had a great influence on the product distribution and kinetics of the mixed plastic pyrolysis. Finally, the optimum conditions of low-temperature conversion of plastic mixtures to value-added products were established. The formation of heavy fractions from HDPE was as high as 70wt% at 380°C at a reaction time of 250min. During the thermal degradation of plastic mixtures, the heavy fractions yielded up 50wt% for 30min reaction time at 400°C. The total activation energies for the conversion of HDPE and the plastic mixtures were estimated to be 217.66kJmol−1 and 178.49kJmol−1, respectively.
+

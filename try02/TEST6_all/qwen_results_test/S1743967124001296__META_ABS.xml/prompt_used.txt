@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermo-catalytic co-pyrolysis of waste biomass and non-recyclable polyethylene using ZSM-5 into renewable fuels and value-added chemicals The present study deals with thermo-catalytic co-pyrolysis of peanut shells (PS) and non-recyclable polyethylene (NRPE) using ZSM-5 at varying ratios (5, 10 and 15 wt%). A tubular fixed bed reactor is used to pyrolyse at 500 °C, 50 °C min−1 heating rate and 100 mL min−1 inert gas flow rates. The feedstock was characterized via proximate analysis, elemental analysis, higher heating value (HHV), biochemical analysis, thermogravimetric analyser (TGA), Fourier transforms infrared spectroscopy (FTIR) viscosity, density, Gas chromatography-mass spectrometry (GC-MS), BET surface area, water holding capacity (WHC). Co-pyrolysis results confirmed maximum liquid yield (34.50 %) at 10 wt% of NRPE; however, adding 10 wt% ZSM-5 again boosted the liquid oil yield by 7.87 wt%. Pyrolytic oil characterization results confirmed that adding NRPE and ZSM-5 at 10 wt% decreased viscosity, acidity, and density. However, carbon content, heating value and ash content increased. FTIR examinations of PS confirmed hydrocarbons, acids, water, and oxygenated compounds. GC-MS results were confirmed by adding NRPE and ZSM-5 at 10 wt%; hydrocarbon and furfural increased by 5.31 and 5.46 %, whereas 6.01 % acids and oxygenated compounds decreased, respectively. The results of the char characterisation further supported the findings that adding NRPE (10 wt%) to PS enhanced carbon content and HHV by 11.86 % and 4.35 MJ kg−1 and decreased ash content, oxygen content, and bulk density by 0.75 %, 10.21%, and 71.98 kg m−3, respectively.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Resource recovery from discarded COVID-19 PPE kit through catalytic fast pyrolysis During the COVID-19 pandemic, the world saw an exponential surge in the production of Personal Protective Equipment (PPE) kits, which eventually got discarded in the biomedical waste stream. In this study, thirteen different polymer samples from the PPE kit were collected and characterized using Fourier transform infrared spectrometer, thermogravimetric analysis, and analytical pyrolysis-gas chromatograph/mass spectrometry. The characterization data showed that about 94 % by mass of components were made of only three polymers, viz. polypropylene (PP, 75.6 wt %), polyethylene terephthalate (PET, 12.5 wt %), and polycarbonate (PC, 6 wt %). The analytical pyrolysis of the PPE coverall suit (PP) yielded mainly alkenes containing 2,4-dimethyl-1-heptene as the major compound with 17 wt % yield at 600 °C. The pyrolysates from face shield (PET) were rich in benzoic acid (5.8 wt %) and acetophenone (4.8 wt %), while those from safety goggles (PC) were rich in phenol (17.6 wt %) and p-cresol (12.4 wt %) at 600 °C. HZSM-5 and HY zeolites were used for the catalytic upgradation of pyrolysates especially from PP, PET and PC. The temperature and feed-to-catalyst ratio were optimized by performing catalytic fast pyrolysis experiments at 500 °C, 600 °C and 700 °C with different feed-to-catalyst ratios 1:2, 1:4, and 1:6 (w/w). The yield of aromatic hydrocarbons, viz., BTEX (benzene, toluene, ethylbenzene, xylenes) and naphthalene, was maximum (∼25.7 wt %) from PP coverall when HY catalyst was used at 600 °C and 1:6 (w/w) loading. In the case of PET face shield, the total yield of BTEX, naphthalene and biphenyl was maximum (27.9 wt %) at 600 °C and 1:4 (w/w) of HZSM-5, while in the case of PC goggles, it was maximum (18.6 wt %) at 700 °C and 1:4 (w/w) of HY. This study shows that the entire PPE kit can be valorized via catalytic fast pyrolysis to generate petrochemical products and platform molecules like monoaromatic hydrocarbons at high selectivities.
+

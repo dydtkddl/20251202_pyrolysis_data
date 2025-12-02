@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Ammonium phosphate as promised hydrogen storage material Most of the reported hydrogen storage materials are either expensive or based on synthetically complicated compounds. Ammonium phosphates are cheap and available product; it is being used as fertilizer. These compounds could be utilized as hydrogen storage materials. Stoichiometrically, mono-, di- and tri-ammonium phosphate can lead to evolve 3.875, 7.867 and 11.903 hydrogen equivalent, respectively. Using Pt/C (20 wt %) leads to produce 17.28, 11.35 and 10.15% from the equivalent hydrogen in the mono-, di- and tri-ammonium phosphate, respectively. Analyzing the obtained gases by GC confirms evolution of pure hydrogen. Moreover, ion chromatography detects and ions in the liquid which indicates hydrolysis of the ammonium phosphate. Ni/C and Co/C NPs can be exploited as catalysts; Ni/C containing 20 wt% metal reveals comparable results to Pt/C. Overall, this study opens promising avenue to develop new catalysts to enhance the hydrolysis of ammonium phosphate to produce hydrogen. Comparing to the reported hydrogen storage materials, ammonium phosphates possess comparable hydrogen content 97.28, 118.3 and 115.72 kg/m3 for mono-, di- and tri-ammonium phosphate, respectively which is very close to the MgH2 (115.5 kg/m3) and not so far from ammonia borane (148.2 kg/m3). However, in contrast to these compounds, hydrogen can be released from the introduced storage materials by hydrolysis only using the proper catalyst. Furthermore, the hydrolysis process results in producing different acids; nitrous, nitric and phosphoric acid which should be considered in the reactor construction precautions.
+

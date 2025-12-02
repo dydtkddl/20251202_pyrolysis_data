@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Selective production of valuable hydrocarbons from waste motorbike engine oils via catalytic fast pyrolysis using zeolites Aged automobile engine oils contain highly oxidized and hazardous organic compounds, and their disposal adversely affects the environment, underground, and surface waters. Therefore, it is imperative to develop innovative strategies to solve the problem of disposal of waste engine oils. One way is to recover value added chemicals and intermediates from it. This study focuses on recovery of useful hydrocarbons from highly oxidized, waste motorbike engine oils via catalytic fast pyrolysis using zeolites belonging to ZSM-5, Zeolite-β and Zeolite-Y (ZY) families. Pyrolysis experiments were conducted in a micropyrolyzer connected to a gas chromatograph–mass spectrometer. Initially, non-catalytic fast pyrolysis was performed at temperatures from 300 to 800°C, and it was found that high temperatures led to the formation of C3-10 alkenes, while low temperatures resulted in high yields of heavy fractions like C31-60 alkanes and oxidized aromatics. In order to selectively improve the production of C6-15 alkanes that are valuable as fuel molecules, catalytic fast pyrolysis was performed at 400°C using 1:1wt./wt. of oil:zeolites. Hydrogen form of ZY resulted in c.a. 65% of C6-15 linear, branched, and cyclic alkanes, while other catalysts promoted the formation of alkenes. The yields of C6-15 linear and cyclic alkanes increased with micropore area, pore volume, and surface acidity of the zeolites. An increase in catalyst quantity significantly increased the yield of C6-10 alkanes, while reducing the C11-15 alkane yield and promoting the formation of C3-5 alkanes. High temperatures led to a significant drop in the production of linear and branched alkanes, but promoted the formation of alkenes and cyclic hydrocarbons. This work has demonstrated that catalytic fast pyrolysis using zeolites is a potential technique to selectively recover value added hydrocarbons from highly oxidized engine oils.
+

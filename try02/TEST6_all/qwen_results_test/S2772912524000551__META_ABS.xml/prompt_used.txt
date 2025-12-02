@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on polymer-containing oily sludge as a potential fuel by combustion thermochemistry The environmental and resource issues posed by oil sludge have sparked a renewed interest in cleaner and more efficient oil production. The investigation on the combustion process of polymer-containing oily sludge (POS) is expected to open up new markets for POS as an alternative fuel. TGA was used to examine the combustion behaviour, kinetics, and thermodynamics of POS, and X-ray fluorescence (XRF) was used to measure the chemical composition of POS ash to predict ash fouling and slagging. Based on the TG-DTG curves, the mass loss of POS in combustion studies was split into four major areas. The combined calculation method of model-free methods, Flynn-Wall-Ozawa (FWO) and Kissinger-Akahira-Sunose (KAS), was applied to determine the activation energies from stage 1 to stage 4, which were 47.89 kJ/mol, 66.09 kJ/mol, 190.55 kJ/mol, and 98.37 kJ/mol, respectively. A four-stage kinetic model (D4→D2→D3→R2) was established to describe the combustion process of POS. Compared to other conventional sludges, POS has a relatively low activation energy and is more susceptible to thermochemical transformations. The difference between the enthalpy change (Δ H ) and activation energy ( E ) indicated that the reactions benefit the formation of the activated complex. Meanwhile, the change in entropy (Δ S ) implied the thermodynamic disequilibrium in the 3rd stage of POS and completion of the thermal conversion at the end of the reaction. The change in Gibbs free energy (ΔG) increased in a stepwise manner and its lower average value reflected the greater reaction favourability of combustion for POS. The composition of POS ash was mainly metal oxides, with the slagging index, fouling index, and slagging viscosity index of 1.0, 9.1, and 32.0, respectively. POS ash has high fouling and slagging, with special attention in the combustion application.
+

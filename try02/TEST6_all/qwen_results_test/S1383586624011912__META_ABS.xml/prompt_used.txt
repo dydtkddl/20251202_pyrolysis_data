@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Waste control by waste: Extraction of valuable metals from mixed metallurgical dust by boiling furnace roasting Electric arc furnace dust (EAFD) is a hazardous waste by-product generated during the process of electric furnace steelmaking, which is rich in valuable metal elements. In order to solve the problem of environmental pollution and resource utilization of EAFD, we propose a new process for medium-temperature suspension roasting EAFD and coke dry quenching dust to extract valuable metals. The thermodynamic properties and migration behavior of valuable elements involved in the reaction were analyzed using thermodynamic simulation software FactSage8.1 and thermogravimetric mass spectrometry. The mechanism and kinetic equation of the dezincification process were investigated using the Kissinger method and Coats-Redfern model. The impact of various parameters on the process efficacy and ash fusion characteristics of the material were investigated through boiling furnace experiments. The results demonstrate that elevating the reaction temperature and decreasing the zinc partial pressure is more favorable for reducing and separating zinc. The corresponding kinetic equations for the decomposition of ZnFe2O4 and reduction of ZnO are denoted as dα/dT = 1.69 × 1012exp (−3.37 × 104/T) and dα/dT = 6.76 × 106 exp (−2.08 × 104/T) × (1 − α) [−ln(1 − α)]3/4, respectively. The optimum reaction temperature was 1050 °C, the C/O ratio was 0.8, the reaction time was 40 min, and the ventilation rate was 3500 mL/min. Under these conditions, the material had no liquid phase agglomeration, and the removal rates of zinc and lead were 93.38 % and 98.14 %, respectively. The crude zinc dust with a zinc grade of 87.57 % and the alloy slag with an iron grade of 52.38 % was obtained. The new process utilizes the excellent heat transfer characteristics and fluidization conditions of the boiling furnace to efficiently realize the high-grade recovery of valuable metals in the EAFD, which provides new insights for the clean treatment of zinc-containing waste.
+

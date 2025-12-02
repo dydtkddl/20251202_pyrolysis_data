@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Reverse engineering of plastic waste into useful fuel products This paper’s twofold aims are: to assess the potential of converting plastic waste into useful fuels in both continuous and batch pyrolysis reactors using an appropriate technology and to investigate the effect of silica-alumina catalyst on the yield and quality of pyrolytic liquid oil. The plastic waste used (HDPE, PP and PS) were obtained from Kiteezi landfill site, Kampala (Uganda). In a further step, the properties of the liquid fuel obtained from pyrolysis were also compared with commercial transportation fuel to ascertain its suitability on diesel engines.The fuel qualities were analysed using ASTM standard test methods At a degradation temperature of 450 °C, thermal pyrolysis in a batch reactor resulted in the highest yield of liquid fractions. The liquid yield of HDPE, PP and PS was found to be 80%, 82.6% and 80% by mass, respectively. In contrast, silica-alumina catalyst to feedstock ratio of 1:10 was the most effective in terms of gaseous fraction production. The gaseous fractions were: 60 wt% for the mixture, followed by HDPE (59.63 wt%), PS (59.07 wt%) and PP (49.33 wt%). A catalyst/polymer ratio of 1:10 greatly reduced the degradation temperature. The degradation temperature for HDPE, PP and PS was reduced by about 33%, 23% and 17%, respectively. The liquid oils from HDPE and PP had densities of 0.796 g/cm3 and 0.786 g/cm3; kinematic viscosities of 2.373 mm2/s and 2.115 mm2/s, dynamic viscosities of 1.889 mPas and 1.856 mPas; boiling point ranges of 119–364 °C and 148–355 °C; and cetane indices of 46 and 63, respectively. The characteristics of HDPE and PP pyrolytic sample oils are similar to conventional transportation fuel.
+

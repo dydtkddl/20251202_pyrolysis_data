@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Techno-economic and environmental assessment of polylactic acid production integrated with the sugarcane value chain In the global pursuit of sustainable production and cleaner consumption strategies, bio-based plastics have been increasingly developed, produced, and used in the field of renewable materials. This study performs techno-economic and environmental assessments of polylactic acid (PLA) produced via lactic acid from sugarcane juice fermentation in integration with a typical Brazilian ethanol distillery. PLA presents net negative GHG emissions: −0.25 kg CO2 eq./kg PLA from cradle to factory gate. It shows lower environmental scores than traditional fossil-based plastics in global warming and fossil resource scarcity categories. However, it reveals the highest impacts in terrestrial acidification and land occupation due to sugarcane cultivation. PLA from this study also presents a smaller global warming potential in comparison to other PLA cited in the literature since the energy demand from all industrial stages is supplied by sugarcane bagasse and straw combustion. Production cost is estimated at US$ 1.41/kg PLA in a venture that reaches an Internal Rate of Return of 29.4 %. PLA's minimum selling price of US$ 1.58/kg is lower than the stipulated US$ 2.66/kg market price. The attractive environmental results coupled with this competitive economic performance show that the proposed route can contribute to sustainable production within the plastics sector.
+

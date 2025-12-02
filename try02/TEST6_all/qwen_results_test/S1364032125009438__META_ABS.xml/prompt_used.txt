@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Review: Scenario-specific applications of direct air capture technology and system optimization approaches As an indispensable negative emission solution within carbon neutrality strategies, the transition of direct air capture (DAC) technology from laboratory research to engineering deployment faces dual challenges of technical adaptability and system integration efficiency. This paper systematically analyzes the performance characteristics of mainstream technical pathways—including absorption, adsorption, and membrane separation methods—revealing high energy consumption and cost bottlenecks in DAC systems. It further identifies inadequate material cycling stability and poor energy supply compatibility as barriers to large-scale implementation. Building on this analysis, the study pioneers a multi-scenario application framework for industrial zones, urban areas, and remote regions, elucidating technology deployment across geographically distinct contexts. For system performance optimization, it establishes a cross-scale enhancement pathway spanning molecular-level interface modification, equipment-layer energy efficiency upgrades, and multi-energy supply systems. This is achieved through adsorbent modification (e.g., hydrophobic treatment of physical adsorbents, amine group dispersion reinforcement, and intelligent screening of porous materials), cascading waste heat utilization strategies, and multi-energy system integration. The work provides a theoretically rigorous and practically viable decision-support framework to advance DAC technology from unit innovation to system integration, offering critical guidance for accelerating the engineering implementation of negative emission technologies.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microplastic particles in the aquatic environment: A systematic review Microplastics (MPs) pollution has become one of the most severe environmental concerns today. MPs persist in the environment and cause adverse effects in organisms. This review aims to present a state-of-the-art overview of MPs in the aquatic environment. Personal care products, synthetic clothing, air-blasting facilities and drilling fluids from gas-oil industries, raw plastic powders from plastic manufacturing industries, waste plastic products and wastewater treatment plants act as the major sources of MPs. For MPs analysis, pyrolysis-gas chromatography–mass spectrometry (Py-GC–MS), Py-MS methods, Raman spectroscopy, and FT-IR spectroscopy are regarded as the most promising methods for MPs identification and quantification. Due to the large surface area to volume ratio, crystallinity, hydrophobicity and functional groups, MPs can interact with various contaminants such as heavy metals, antibiotics and persistent organic contaminants. Among different physical and biological treatment technologies, the MPs removal performance decreases as membrane bioreactor (> 99%) > activated sludge process (~98%) > rapid sand filtration (~97.1%) > dissolved air floatation (~95%) > electrocoagulation (> 90%) > constructed wetlands (88%). Chemical treatment methods such as coagulation, magnetic separations, Fenton, photo-Fenton and photocatalytic degradation also show moderate to high efficiency of MP removal. Hybrid treatment technologies show the highest removal efficacies of MPs. Finally, future research directions for MPs are elaborated.
+

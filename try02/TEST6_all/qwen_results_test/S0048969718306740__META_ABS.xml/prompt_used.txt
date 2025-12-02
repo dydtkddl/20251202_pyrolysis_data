@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Micropollutants removal by full-scale UV-C/sulfate radical based Advanced Oxidation Processes The high chemical stability and the low biodegradability of a vast number of micropollutants (MPs) impede their correct treatment in urban wastewater treatment plants. In most cases, the chemical oxidation is the only way to abate them. Advanced Oxidation Processes (AOPs) have been experimentally proved as efficient in the removal of different micropollutants at lab-scale. However, there is not enough information about their application at full-scale. This manuscript reports the application of three different AOPs based on the addition of homogeneous oxidants [hydrogen peroxide, peroxymonosulfate (PMS) and persulfate anions (PS)], in the UV-C tertiary treatment of Estiviel wastewater treatment plant (Toledo, Spain) previously designed and installed in the facility for disinfection. AOPs based on the photolytic decomposition of oxidants have been demonstrated as more efficient than UV-C radiation alone on the removal of 25 different MPs using low dosages (0.05–0.5 mM) and very low UV-C contact time (4–18 s). Photolysis of PMS and H2O2 reached similar average MPs removal in all the range of oxidant dosages, obtaining the highest efficiency with 0.5 mM and 18 s of contact time (48 and 55% respectively). Nevertheless, PMS/UV-C reached slightly higher removal than H2O2/UV-C at low dosages. So, these treatments are selective to degrade the target compounds, obtaining different removal efficiencies for each compound regarding the oxidizing agent, dosages and UV-C contact time. In all the cases, H2O2/UV-C is more efficient than PMS/UV-C, comparing the ratio cost:efficiency (€/m3·order). Even H2O2/UV-C treatments are more efficient than UV-C alone. Thus, the addition of 0.5 mM of H2O2 compensates the increased of UV-C contact time and therefore the increase of electrical consumption, that it should be need to increase the removal of MPs by UV-C treatments alone.
+

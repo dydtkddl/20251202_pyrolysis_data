@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of Quercus cerris kernels for the production of bio-oil and activated biochar for methylene blue adsorption from aqueous phase This study investigates the optimized thermal slow pyrolysis process of Quercus cerris kernels (QCK) as a novel and non-edible feedstock to yield pyrolytic oil (PO) and biochar (BC). The optimized slow pyrolysis of the QCK produced the maximum output of the PO at 475 °C for 60 min using a particle size of 0.297 mm and a heating rate of 30 °C/min. Under these conditions, yields of the PO, bio-oil (BO), BC, and gases were 56.75 %, 29.41 %, 25.0 %, and 18.25 %, respectively. 1H NMR and GC-MS spectroscopy were employed to analyze the BO. The results revealed that the BO primarily comprised oxygen-containing compounds (85.23 %) and hydrocarbons (12.61 %). Esters constituted the highest proportion (34.33 %), followed by acids (22.20 %), alcohols (14.40 %), and furans (2.25 %). The K2CO3 activation was implemented to convert the BC into activated biochar (ABC). The optimal ABC was produced by implementing a 1.5:1 K2CO3: BC activating ratio and activation for 1.5 h at 750 °C. This ABC had an elevated BET surface area of 1666.50 m2/g and a microporous structure, with a mean pore diameter of 1.90 nm. This ABC eliminated methylene blue dye (MB) from an aqueous solution with an efficiency of 99.42 %. The adsorption of MB was best represented by the Langmuir isotherm and pseudo-2nd-order kinetics model. The adsorption capacity of MB amounted to 531.52 mg/g. Thus, the QCK could serve as a promising precursor for producing high-quality BO and a high surface area adsorbent to eliminate dyes from wastewater.
+

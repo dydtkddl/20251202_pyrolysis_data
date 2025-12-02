@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Utilization of PET (waste) via hydrothermal co–gasification with sorghum for hydrogen rich gas production In this study, the applicability of hydrothermal biomass co–gasification for utilizing polyethylene terephthalate (PET) based waste was investigated. For this purpose, hydrogen rich gas production was realised by hydrothermal co–gasification of sorghum biomass with virgin and waste PET mixtures at 500 °C, and the gasification performances were compared. The feedstock/water ratio (%, w/v) was significantly effective on the gasification process in terms of gas yields, gas, and liquid product distributions. Synergistic effects were observed in hydrogen formation in co–gasification of PET and sorghum. The amount of hydrogen obtained from the co–gasification of PET and sorghum was 4.0 mol H2/kg feed higher than the sum of total amount of hydrogen obtained from the individual gasification of PET and sorghum. GC/MS analysis showed that liquid contents were also affected from experimental conditions. The use of catalysts increased the gasification and carbon conversion yields regardless of the type. Although KOH was the most effective single catalyst on hydrogen yield, the catalyst combinations were more effective with promoted activities in terms of hydrogen yields and CO2 capture. Hydrogen yield, which was 12.9 mol H2/kg feed without catalyst, increased to 31.0 (±0.9) mol H2/kg in the presence of K2CO3/CaO catalyst combination for virgin PET/sorghum mixtures and 28.1 (±0.3) mol for PET waste plastics/sorghum mixtures. For the PET waste plastics/sorghum mixtures with the binary catalyst combinations (K2CO3/CaO and KOH/CaO), the CO2 mole fractions of the product gas mixtures were below 1% and the hydrogen contents of the obtained gas mixtures were above 90%. The results of the study show that pet–based plastic wastes can be effectively utilized to produce hydrogen rich gas, by co–gasification with biomass.
+

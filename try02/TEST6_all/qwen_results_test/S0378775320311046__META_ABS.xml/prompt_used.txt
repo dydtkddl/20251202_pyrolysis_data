@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+From plastic-waste to H2: Electrolysis of a Poly(methyl methacrylate) model molecule on polymer electrolyte membrane reactors Hydrogen production by the electrolysis of plastic-waste was recently suggested as an alternative approach to water electrolysis, owing to its favoured thermodynamics. However, the fundamental aspects of such electro-catalytic process were not studied in detail. Here we propose a new approach to understand the electrolysis of polymers, by the use of model molecules. Our target is to develop a technology for the electrolysis of poly(methyl methacrylate), PMMA, plastic waste. We used methyl pivalate (MP) as a model molecule, since it contains similar functional groups than PMMA. We performed electrolysis experiments in a Polymer Electrolyte Membrane reactor with Nafion® protonic membranes and Pt/C electrodes at low temperatures (<90 °C). The results obtained demonstrated that the electro-oxidation of MP allows to produce H2 in a range of electrical potentials where water electrolysis is not thermodynamically possible (<1.2 V). The kinetics of this process were studied and a preliminary global mechanism was proposed to explain the electro-oxidative cleavage of this model molecule. We have clearly demonstrated that the electrolysis of a plastic-like model monomer leads to the production of hydrogen. These results could be further extrapolated in view of the practical implementation of this technology for the valorisation of PMMA waste.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Origin of carbon in aromatic and olefin products derived from HZSM-5 catalyzed co-pyrolysis of cellulose and plastics via isotopic labeling Catalytic pyrolysis over HZSM-5 is an effective method for the conversion of biomass to aromatic hydrocarbons, albeit with low yield and short catalyst lifetimes. Addition of co-reactants rich in carbon and hydrogen can enhance yield and possibly increase catalyst lifetimes by reducing coke formation. Particularly, the catalytic co-pyrolysis of plastic and biomass has been shown to enhance conversion to aromatic hydrocarbons, and also offers a method for productive disposal of waste agricultural plastics. In an effort to determine the origin of the carbon (plastic or biomass) in the products from this catalytic co-pyrolysis, mixtures of uniformly labeled 13C cellulose and non-labeled plastic including polyethylene terephthalate, polypropylene, high density polyethylene, low density polyethylene and polystyrene were subjected to catalytic fast pyrolysis (CFP) at 650°C in the presence of HZSM-5. A micro pyrolyzer coupled with GC/MS (py-GC/MS) advised product distributions and mass spectral data was used to determine the distribution of biogenic carbon and plastic derived carbon in the products. The results demonstrate that aromatic hydrocarbon products formed from the CFP of mixtures of cellulose and plastic are composed mostly of molecules containing carbon of mixed origin. Data on the distribution of 13C x 12C y from the products followed in this study show that polyolefin mixtures with cellulose favor the formation of alkyl benzenes that incorporate carbon from both sources. Utilization of aromatic polymers (polystyrene or polyethylene terephthalate) is more selective for formation of naphthalenes with carbon derived from both products. The distribution of various13C x 12C y products is used to suggest active mechanisms that result in the formation of the observed products.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pt/MgO catalysts intrinsically promoted by fast moving bed pyrolysis for hydrogenation properties Elucidating the correlation between the geometric/electronic structure of the catalyst and its catalytic performance is of paramount importance. However, achieving precise manipulation over the geometric/electronic structure of the catalyst remains a formidable challenge. Here, we develop a fast moving pyrolysis bed (FMPB) strategy to finely regulate the geometry structure (Pt metal particle size and Pt-O coordination number (CN)) and electronic structure of the Pt/MgO catalyst. It is found that the hydrogen dissociation energy barrier is negatively related to the Pt atom electron density. The Pt1/MgO-600-N2 (600 and N2 represented the temperature and atmosphere under fast pyrolysis, respectively) with highest electron density exhibits the highest para-chloronitrobenzene (p-CNB) hydrogenation activity (66978 h−1), which is ∼220 times that of Pt nanoparticles (NPs, Pt NPs/MgO), ∼58 times that of Pt1/MgO-400-air, and ∼3 times that of Pt nanoclusters (NCs, Pt NCs/MgO). DFT calculations disclose that Pt1/MgO-600-N2 with highest Pt-5d center, which is more conducive to hydrogen dissociation. The transition of the H2 cleavage mode from homolytic (Pt NPs/MgO) to heterolytic (Pt1/MgO-600-N2) makes it more favorable for the hydrogenation of the polar nitro functional group, ensuring that substantial enhancement in its activity while preserving high selectivity in hydrogenation.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Grate-firing of biomass for heat and power production As a renewable and environmentally friendly energy source, biomass (i.e., any organic non-fossil fuel) and its utilization are gaining an increasingly important role worldwide. Grate-firing is one of the main competing technologies in biomass combustion for heat and power production, because it can fire a wide range of fuels of varying moisture content, and requires less fuel preparation and handling. The basic objective of this paper is to review the state-of-the-art knowledge on grate-fired boilers burning biomass: the key elements in the firing system and the development, the important combustion mechanism, the recent breakthrough in the technology, the most pressing issues, the current research and development activities, and the critical future problems to be resolved. The grate assembly (the most characteristic element in grate-fired boilers), the key combustion mechanism in the fuel bed on the grate, and the advanced secondary air supply (a real breakthrough in this technology) are highlighted for grate-firing systems. Amongst all the issues or problems associated with grate-fired boilers burning biomass, primary pollutant formation and control, deposition formation and corrosion, modelling and computational fluid dynamics (CFD) simulations are discussed in detail. The literature survey and discussions are primarily pertaining to grate-fired boilers burning biomass, though these issues are more or less general. Other technologies (e.g., fluidized bed combustion or suspension combustion) are also mentioned or discussed, to some extent, mainly for comparison and to better illustrate the special characteristics of grate-firing of biomass. Based on these, some critical problems, which may not be sufficiently resolved by the existing efforts and have to be addressed by future research and development, are outlined.
+

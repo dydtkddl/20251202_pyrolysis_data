@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Multiscale computational study to predict the irradiation-induced change in engineering properties of fusion reactor materials In this study, we address the impact of irradiation conditions in a tokamak on the engineering properties of materials, leading to potential degradation of in-vessel components over their lifecycle. Our approach involves a predictive model for irradiation-induced damage, employing a multiscale computational framework. This framework integrates various simulation techniques, including Monte Carlo-based neutronics (OpenMC), dislocation dynamics (DD) using MoDELib, and finite element analysis (FEA) with Code_Aster. This integration offers a versatile solver capable of analysing tokamak components exposed to different irradiation doses and temperature conditions. To showcase the utility of this multiscale computational framework, we present a case study focused on tungsten monoblock designs. We assess the failure probabilities of these designs at different stages of their lifecycle. Neutron heating and damage energy values are obtained from OpenMC neutronics simulations. The neutron heating values serve as volumetric heat sources for the FEA thermal simulation. We calculate the displacement per atom (dpa) across the monoblock at various full power days (day 0, day 100, and day 1000) using the damage energy values. The irradiation-induced defect densities, dependent on temperature and dpa, are inputs to DD microstructural simulations performed on the representative volume element (RVE) using MoDELib. This allows us to obtain the yield stress of the material. Subsequently, the thermal fields from the FEA thermal simulation, along with the dpa and temperature-dependent yield stress from the DD simulation, are implemented for FEA mechanical simulations. To evaluate the failure probability of the monoblock designs at different stages of their lifecycle, we conduct an SDC-IC assessment, incorporating a plastic flow localization rule within the current framework. This comprehensive approach provides insights into the thermo-mechanical behaviour of in-vessel components subjected to neutron irradiation, offering a predictive capability for assessing their performance over time.
+

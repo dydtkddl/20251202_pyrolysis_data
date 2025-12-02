@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Solar photocatalytic degradation of humic acids as a model of organic compounds of landfill leachate in pilot-plant experiments: influence of inorganic salts Humic acids (HA) are known to be present at a high concentration in leachates from “mature” and “old” landfills. In this work, the photocatalytic degradation of Aldrich-Sigma HA as a model of refractory organic of stabilised leachate was studied. The experiments were carried out in HA aqueous suspension of TiO2 (P-25) in CPC reactor at pilot-plant scale in the Plataforma Solar de Almeria (Spain) under solar irradiation and natural pH. The adequate quantity of catalyst for this process was found to be 0.7gl−1. The effect of inorganic ions, commonly present in real leachate such as HCO3 −, SO4 2−, Cl− on photocatalytic degradation of HA was also studied. The ions examined, even in higher concentration for Cl− (4.5g/l) and SO4 2− (7.75g/l) were found to not affect the photocatalytic process and the similar efficiency of HA removal was ensured. However, the presence of hydrogen carbonate into solution matrix inhibited strongly the photocatalytic reaction. The catalytic oxidation of HA, in particular in the mixture of anions, did not agree with Langumir–Hinshelwood kinetics and the evaluation of results was expressed only as an effect of HA removal versus accumulated energy (Q UV, kJl−1) by photoreactor. Moreover, the effect inorganic matrix on initial adsorption of HA has been discussed on the basis of the results obtained in laboratory batch test. Additionally, the biodegradability evolution during photodegradation of HA was evaluated in terms of biological oxygen demand (BOD5) as well as by oxygen uptake rate.
+

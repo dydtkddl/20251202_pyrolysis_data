@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comprehensive review on criticalness and innovative insights to advance the development of sludge co-fermentation towards short chain volatile fatty acids The conversion of organic waste into volatile fatty acids (VFAs) offers a highly promising and sustainable alternative to petrochemical-derived products, strongly supporting circular economy principles. Recognized as versatile platform chemicals, VFAs were recently listed among the top 20 innovative bio-based products with significant commercial deployment potential in Europe over the next 5–10 years, owing to their advanced development, high degree of innovation, and substantial market prospects. However, literature studies remain mostly at laboratory or semi-pilot project scales, requiring significant advances to enable their large-scale application. This review provides a comprehensive analysis of the critical factors and innovative strategies driving the advancement of sludge co-fermentation for enhanced short VFAs (C2-C5) production. As a sustainable approach to waste management and resource recovery, anaerobic co-fermentation of various organic waste (food and agro-industrial waste, manure, grass, etc) with sewage sludge offers significant potential for valorizing waste into valuable biochemicals, through synergetic effects of a diverse microbial community and improved buffering capacity. This study critically examines the feedstock characteristics, key operational parameters and microbial community dynamics that dictate process efficiency, products spectrum and conversion rate. Uniquely, this study establishes a robust dataset of short-chain VFAs yields, derived from the analyzed literature or authors calculations, and subjects it to statistical analysis and in-depth discussion to elucidate the key factors responsible for yield variation in batch and semicontinuous operation mode. Furthermore, it highlights cutting-edge insights, including novel pretreatment methods and additives types, aimed at overcoming existing limitations and optimizing VFAs selectivity and productivity.
+

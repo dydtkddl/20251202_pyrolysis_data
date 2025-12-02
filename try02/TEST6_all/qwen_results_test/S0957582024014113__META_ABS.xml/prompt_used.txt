@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Olive pomace waste conversion to bio-fuel by application of integrated configuration of pyrolysis/hydrodeoxygenation process Bio-oil obtained from non-catalytic pyrolysis of biomass, consists of a large number of oxygenated compounds. Hence, it is essential for the bio-oil to go through upgrading processes such as hydrodeoxygenation (HDO) to reform these compounds to aliphatic and aromatic hydrocarbons. This study works towards this purpose by initially deriving raw bio-oil from olive pomace waste biomass in a non-catalytic pyrolysis process at temperature of 400–700 ºC. Then for reducing the oxygen content of derived bio-oil, HDO of the raw bio-oil over NiMo/Al2O3 catalyst was performed in a batch reactor, in varying operational parameters: temperature of 200–250 °C, reaction time of 1–3 h, hydrogen pressure of 2–6 bar and catalyst: bio-oil ratio of 1:20, 1:10, 1:5. The results revealed that the catalytic HDO is an appropriate procedure, as fatty acids as the main oxygenated components in bio-oil were reduced from 81.8 % to 56.7 %, aldehydes and ketones were entirely removed, and there was a noticeable rise in aliphatic hydrocarbons from 2.8 % to 33.9 % at temperature of 250 ºC, hydrogen pressure of 6 bar and reaction duration of 3 h. In addition, by raising the catalyst to bio-oil ratio to 1:5, the content of fatty acids reached 47.6 %. Furthermore, a comparison was made between the O/C and H/C ratios of the obtained biofuels and the raw bio-oil, which results exhibited that this method worked successfully in substituting oxygen atoms of the raw bio-oil with hydrogen atoms.
+

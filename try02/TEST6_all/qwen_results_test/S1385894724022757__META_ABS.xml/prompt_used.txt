@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Combined silicon refining for boron removal and Si-Kerf recycling using K2O-CaO-SiO2 slags It is crucial for the photovoltaic (PV) industry to establish a circular materials flow for more sustainable solar silicon production. In the present work, a series of K2O-SiO2 and K2O-CaO-SiO2 slags were examined for the combination of silicon purification and Si-kerf waste recycling. The study revealed that the predominant mass transfer mechanism and the variation in slag composition during refining are due to the silicothermic reduction of K2O. The boron removal degree reached levels above 80% in most of tests, with boron gasification as potassium metaborate confirmed as an important mechanism for boron removal, especially in slags with high K2O content. In the case of ternary slags, the results indicated that an increase in CaO enhances boron partitioning in slag phase and a high K2O content also led to boron accumulation in the slag phase due to rapid reaction kinetics in the early stage of refining. The distinct behaviours of calcium and postassium ions in the slag phase were revealed by molecular dynamics simulations. It was found that potassium ions preferentially modify bridging oxygen, while calcium ions contribute more to depolymerizing the tectosilicate network and generating more non-bridging oxygens, which may further aid in the boron stabilization in slag phase. The oxidation layer of Si-kerf was removed successfully and enabled the coalescence of the silicon nanoparticles into the Si melt. Additionally, the presence of SiC clusters in the slag phase was also observed, indicating effective removal of SiC and the feasibility of Si-kerf waste recycling.
+

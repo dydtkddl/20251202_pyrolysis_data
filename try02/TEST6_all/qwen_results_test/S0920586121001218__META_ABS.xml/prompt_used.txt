@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal-catalytic destruction of polyolephin polymers in presence of LnVO3 and LnVO4 This paper describes non-catalytic and catalytic pyrolysis of plastic waste materials. Four types of waste plastics were used in study: high density polyethylene (PE), low density polypropylene (PP), polyethylene terephthalate (PET). Plastic waste was decomposed into three fractions under pyrolysis conditions: gas, liquid and solid residual. The use of vanadates MeVO4 and vanadites MeVO3 of REM (Me=La, Gd, Lu) as catalysts let to change the yield of the gas fraction and change the composition of the gaseous pyrolysis products. Catalytic decomposition increased the amount of the gaseous products by 15–20 %, reduced the condensate, and changed their composition with regard to the non-catalytic process at the same pyrolysis temperature. The total number of reaction products was determined in each fraction. The quantitative analysis of the composition of the gas fraction was performed by gas-liquid chromatography. The study of non-catalytic pyrolysis of plastics and thermogravimetric analysis let to determine the most favorable temperature conditions for the implementation of the catalytic pyrolysis. The catalytic pyrolysis of plastics was carried out in order to obtain the maximum yield of valuable gaseous products. The synthesized vanadites and vanadates of REM were used as catalysts. When using catalysts based on lanthanum and gadolinium compounds, a regular change in the amount of gaseous substances was observed without significant changes in their composition. The use of lutetium vanadate and lutetium vanadite demonstrated a phenomenal result that is associated with the cardinal change of structure of degradation products of PET. The syngas was obtained instead of acetaldehyde. This result is related to the structure of the used catalyst.
+

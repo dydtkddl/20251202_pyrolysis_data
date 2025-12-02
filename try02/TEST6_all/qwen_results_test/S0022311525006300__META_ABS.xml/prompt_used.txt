@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of neutron irradiation on high-temperature corrosion of titanium beryllide Be12Ti in a steam-argon environment In this paper, we investigate the high-temperature corrosion of industrial titanium beryllide Be 12 Ti following reactor irradiation at a power of 6 MW. The irradiation was conducted at an approximate temperature of 325 K and an integral neutron flux density of 1.1 × 1014 n/cm2/s. The irradiation duration lasted for 168 and 252 effective days, resulting in integral neutron fluences of 1.6 × 1021 n/cm2 for a batch of samples of the first level (F-I) and 2.3 × 1021 n/cm2 for a batch of samples of the second level (F-II). Microstructural analysis of the samples revealed that neutron irradiation induces changes in grain texture, alters the porosity of the structure, and results in the accumulation of radiation defects. These radiation-induced changes in the properties of Be 12 Ti directly influence the corrosion processes. Post-radiation corrosion experiments were performed in a steam-argon environment at varying heating rates, and the released reaction products were analyzed using mass spectrometry. The primary focus was on a comparative analysis of the material activation parameters, as well as the effect of surface microstructure evolution on reactivity. The primary indicator of H 2 O interaction with the surface was the release of atomic hydrogen, which enabled us to quantify the interaction rate parameters. In F-I samples, the intensity of hydrogen release is lower, and the release peaks are shifted to higher temperatures, attributed to an enhanced grain texture and a greater accumulation of defects. In contrast, F-II samples exhibit more active hydrogen release at lower temperatures, which is due to rapid grain transformation and a predominance of open porosity. Thus, F-II samples are characterized by higher activation energy (Ea=66 kJ/mol) and pre- exponential factor (K0=1.9 s−1), while F-I samples show lower values (Ea=50 kJ/mol, K0=0.47 s−1).
+

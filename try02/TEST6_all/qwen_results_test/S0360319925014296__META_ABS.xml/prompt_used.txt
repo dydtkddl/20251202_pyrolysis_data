@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comprehensive thermoeconomic analysis of a novel solar based multigeneration system by incorporating of S–CO2 Brayton, HRSG and Cu–Cl cycles This study explores combining solar tower technology with thermal energy storage (TES) in a setup that includes a supercritical carbon dioxide (S–CO2) Brayton cycle, a copper-chlorine hydrogen production (Cu–Cl) cycle, and a heat recovery steam generator (HRSG) to produce superheated steam. These subsystems are integrated to significantly boost overall energy efficiency, ensure continuous operation, and minimize exergy loss. The TES subsystem plays a critical role in buffering solar radiation availability, ensuring stable operation during fluctuations in solar energy input, such as cloudy weather. The novelty of this study lies in the integration of these subsystems, which enhances system performance and ensures reliable operation under fluctuating environmental conditions. Energy, exergy, and thermoeconomic analyses evaluate the requirements and effectiveness of each subsystem, using Engineering Equation Solver (EES) software to model and validate the system's thermodynamic performance. The outcomes indicate that in the baseline design, the exergy destruction of the solar tower, the S–CO2 Brayton cycle, and the Cu–Cl cycle are 9930 kW, 7111 kW, and 9735 kW, respectively. The rates of produced power, heat, and hydrogen are 4226 kW, 2697 kW, and 0.04971 kg/s, respectively. Furthermore, the energy and exergy efficiencies of the power plant are 17.48 % and 18.72 %, respectively. The costs of power, heat, and hydrogen production are 0.2917 $/s, 0.1061 $/s, and 0.02632 $/s, respectively, and the total production cost is 0.00003568 $/kj.s. These findings underscore the relevance of this system for future advancements in sustainable multigeneration technologies, particularly for innovative energy and hydrogen production.
+

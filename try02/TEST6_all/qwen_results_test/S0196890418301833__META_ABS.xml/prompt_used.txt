@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluation of thermal pretreatment and digestion temperature rise in a biogas fueled combined cooling, heat, and power system using exergo-economic analysis In a municipal wastewater treatment plant, the anaerobic digesters are able to support the whole or a portion of the required fuel to offset the energy demand. Also, by implementing some techniques on municipal sewage sludge, leading to biomethane productivity enhancement, it is possible to generate surplus power. In this work, using batch biomethane potential assays, thermal pretreatment at 70 °C & 90 °C for the durations of 0.5 h, 1 h, 2 h, 3 h, and 4 h, and digestion temperature rise from the mesophilic to the thermophilic conditions have been studied to boost the biomethane productivity of the sewage sludge. Also a combined cooling, heat, and power generating plant was suggested to evaluate the techniques thermo-economically. It was shown that, compared to the non-treated mesophilic digestion of the sewage sludge, thermal pretreatment at 70 °C and 90 °C for 0.5 h, and thermophilic digestion were able to raise the biomethane productivity by 13.63%, 59.82%, and 160.8%, respectively. In this regard, the thermodynamic and the thermo- economic model of the plant was developed. The energy analysis of the system revealed that not only the studied methods, but also the mesophilic digestion of the non-treated sewage sludge result in a positive energy recovery balance in the plant. The exergo-economic analysis indicated that the major origin of cost in the system is the anaerobic digester. Implementing thermal pretreatment at 90 °C for 30 min and digestion temperature rise led to decrease in the required volume of the digester, and subsequently, in the total system cost rate. Additionally, all the applied techniques provided more fuel compared to the non-treated mesophilic case, and consequently they could reduce the levelized cost of energy in the plant. Among the studied techniques, the most effective one was digestion temperature rise which decreased the total cost rate and the levelized cost of energy by 30.31% and 41.29%, respectively.
+

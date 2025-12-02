@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A novel green methanol – heat cogeneration system based on municipal solid waste plasma gasification and coke oven gas: Energy, exergy, economic, and environmental assessment Burning municipal solid waste for disposal contributes significantly to atmospheric pollution. Utilizing municipal solid waste for green methanol production can alleviate environmental burdens. This study proposes a novel approach based on municipal solid waste plasma gasification, integrating coke oven gas catalytic reforming for green methanol synthesis. A comparative analysis is conducted against a conventional scheme involving water gas shift for syngas production. Simulation models of both approaches are constructed, revealing that the newly proposed system achieves higher methanol synthesis yield and energy utilization efficiency at 90.57 % and 61.28 %, respectively, with an exergy efficiency of 63.74 %. The project incurs an investment cost of 11,448.70 k$, with a dynamic payback period of 4.18 years after a 1-year construction cycle. The net present value over a 25-year operational span is 21,899.16 k$. Additionally, the proposed system emits less than 0.06 tons of carbon dioxide per ton of green methanol, significantly lower than the 0.72 tons emitted by the water gas shift-adjusted syngas synthesis scheme. It makes the proposed approach a potential negative carbon emitter compared to municipal solid waste incineration. Therefore, the system demonstrates favorable thermodynamic performance, coupling with substantial economic and environmental benefits.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microalgal proteins for a circular bioeconomy: Nutritional, material, and chemical valorization Microalgae have attracted increasing attention as a renewable biomass source due to their rapid growth, high protein content, and potential for carbon capture and wastewater treatment. However, current research and industrial utilization primarily focus on lipids and carbohydrates for biofuel and bioproduct generation, while protein-rich residues are often discarded as waste. The valorization of microalgal proteins remains in its infancy, with limited studies addressing their full potential. The valorization of microalgal proteins remains in its infancy, with limited studies addressing their full potential. Recent studies have demonstrated that microalgal proteins can be effectively extracted using mechanical (e.g., ultrasonication, high-pressure homogenization) and non-mechanical (e.g., enzymatic hydrolysis, freeze–thaw) methods, achieving extraction efficiencies of up to 66.8%. These proteins have been applied in the development of nutraceuticals, animal feed, and biofertilizers. Furthermore, thermochemical processes such as hydrothermal liquefaction and pyrolysis, along with catalytic pathways (e.g., Ga/HZSM-5 catalysis, metal-free activation), enable the conversion of proteins into nitrogen-containing chemicals—such as fatty amides, nitriles, and N-heterocycles—with applications in agrochemicals, pharmaceuticals, and polymers. N-doped carbon materials derived from microalgae exhibit specific capacitances up to 468F/g and enhanced performance in energy, catalysis and environmental technologies. Despite these advances, challenges persist in separation efficiency, product selectivity, and heavy metal contamination in natural algae. Future directions include utilizing water bloom microalgae, developing integrated systems for reaction and separation, and promoting circular bioeconomy strategies. Harnessing the full potential of microalgal proteins offers a pathway toward zero-waste biorefineries while making contributions to sustainable materials development and environmental protection.
+

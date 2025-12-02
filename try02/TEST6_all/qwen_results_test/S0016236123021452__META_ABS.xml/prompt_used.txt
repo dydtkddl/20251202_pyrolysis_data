@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluation and optimization of hydrothermal carbonization condition for hydrochar and methane yield from anaerobic digestion of organic fraction of municipal solid waste (OFMSW) Effectively converting and utilizing the organic fraction of municipal solid waste is a critical strategy to combat environmental pollution and optimize resource utilization. Responsible handling of waste by-products in an environmentally sustainable manner is essential. The utilization of hydrothermal carbonization and anaerobic digestion are rising as progressive, environmentally sustainable technologies for handling the organic component of municipal solid waste, with the added benefit of energy recuperation. Given distinct experimental objectives, comprehensively investigating the optimal conditions for both hydrothermal carbonization and anaerobic digestion experiments with hydrochar feed poses significant challenges. As a result, this study centers its attention on the hydrochars generated through the hydrothermal carbonization process and their impact on the anaerobic digestion of the organic fraction of municipal solid waste. In the first, the relationship between proximate analysis, ultimate analysis, fuel properties, fiber composition, and methane yield of hydrochars at different conditions (150 ≤ temperature ≤ 230 °C, 20 ≤ retention time ≤ 60 min, and 0.15 ≤ biomass loading ≤ 0.35 g/ml) was evaluated. The content of carbon and hydrogen was increased while the content of oxygen decreased. The hydrothermal carbonization process resulted in an increase in the carbon and hydrogen content, accompanied by a decrease in oxygen content. Moreover, alterations in temperature and retention time during the hydrothermal pretreatment led to variations in the contents of cellulose, hemicellulose, and lignin in the hydrochars. Upon subjecting the hydrochars to anaerobic digestion, the methane yield exhibited a wide range, varying from −51.3 to 61.69% in comparison to the control sample. These outcomes emphasize the significant influence of hydrothermal carbonization conditions on the subsequent anaerobic digestion process, yielding a diverse spectrum of methane production levels. Subsequently, the Response Surface Method, a statistical methodology, was employed to investigate the influence of three parameters. Through this approach, optimal conditions were determined to achieve the maximum hydrochar yield (HC150-20-0.35) at 68.6%, the maximum methane yield (HC168.52-39.47-0.19) at 251.38 ml/g VS, and the simultaneous maximization of hydrochar yield and methane yield (HC159.9-28.75-0.23) at 63.1% and 237.68 ml/g VS, respectively. Finally, the structural and morphological properties of the optimized hydrochars were subjected to thorough analysis.
+

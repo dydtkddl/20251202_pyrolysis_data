@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimizing macroalgal biochar-based catalysts for monophenols recovery during wood dust catalytic pyrolysis: A comparative study using response surface methodology and artificial neural network This study aimed to explore the optimization of macroalgal biochar-based catalysts (MBBCs) for enhanced monophenolic production in biomass pyrolysis. By utilizing response surface methodology (RSM) and artificial neural network (ANN), key variables in the activation process during preparation of MBBCs were identified including activation temperature, activator ratio, and CO2 residence time. The results showed that the ANN model, with an R2 of 0.9816, accurately predicted optimal catalyst activation conditions, closely matching the experimentally determined optimal conditions (ENPC800-1:2–30). The bio-oil yield decreased under ENPC800-1:2–30 catalyst, but the monophenolic content increased significantly, reaching a relative content of 60 %, with a total concentration of phenol, cresols, and ethylphenol amounting to 35.54 mg/gbio-oil. The present study revealed significant changes in non-condensable gas composition, including increased hydrogen and carbon monoxide which aid in enhancing their energy applications. Thus, the optimized MBBCs greatly help in improving the bio-oil and non-condensable gas quality and thereby providing vital insights over sustainable chemical production through biomass pyrolysis.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mesophilic fermentation explorations for anaerobic carboxylates production from commercial bioplastic products: PHA-based cups & PLA-based lids Biodegradable plastic polymers such as polyhydroxyalkanoates (PHA) and polylactic acid (PLA) are increasingly applied in commercial products, but their end-of-life (EoL) processing remains inefficient in terms of carbon and energy recovery. This study investigated mesophilic (35℃) open-culture fermentation to convert PHA and PLA raw materials and commercial bioplastic products into carboxylates. A gas-lift anaerobic filter bioreactor was inoculated with a mixed culture sourced from rumen liquid and lab-scale open-culture fermenters, and operated over 200 days under controlled pH (5.9) and hydraulic retention times (2–18 days). Hydrolysates obtained from hydrothermally pretreated (150℃, 15 h) PHA (10 g/L) and PLA (1.4 g/L) pellets were continuously fermented, yielding up to 6.6 g/L acetate and 4.8 g/L n-butyrate. Subsequent co-fermentation with shredded commercial bioplastics (PHA-based cups and PLA-based lids) further increased acetate and n-butyrate to 7.2 g/L and 5.5 g/L, respectively. Approximately 35 % of the PHA-based cups were converted into carboxylates, while PLA-based lids showed negligible degradation despite an operation time of 157 days. Full-length 16S sRNA sequencing revealed that Clostridium tyrobutyricum was likely a dominant species during hydrolysate fermentation of PHA and PLA pellets, while a broader microbial consortium contributed to solid bioplastic product conversion. These findings indicate that mesophilic open-culture fermentation offers a viable route for the conversion of real PHA-based products into carboxylates, whereas PLA-based products may remain more recalcitrant under the same conditions.
+

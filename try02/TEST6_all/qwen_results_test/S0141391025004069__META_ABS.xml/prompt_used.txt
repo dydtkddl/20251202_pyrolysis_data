@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The pyrolysis of polyvinyl chloride: Kinetic study and product evolution This study investigates the thermal decomposition kinetics and mechanisms of Polyvinyl chloride (PVC). Kinetic parameters were determined using model-free methods, including Flynn-Wall-Ozawa (FWO) and Kissinger-Akahira-Sunose (KAS), as well as the model-fitting Coats-Redfern (CR) method. PVC was dehydrochlorinated in a fixed-bed reactor at 300–450 °C, followed by pyrolysis at 550 °C using pyrolysis gas chromatography-mass spectrometry (PY-GC/MS). In fixed-bed experiments, gaseous products and chlorine-containing species were characterized using a gas chromatograph equipped with thermal conductivity and flame ionization detectors (GC-TCD/FID), and oxygen bomb combustion-ion chromatography (OBC-IC). The structural evolution of char was examined through elemental analysis, Fourier transform infrared spectroscopy (FTIR), and Thermogravimetric analysis (TGA). The raw PVC was also pyrolyzed with Py-GC/MS at 300–550 °C to elucidate the reaction mechanism. Results revealed a two-stage thermal decomposition pathway for PVC, with the activation energy for the first stage (131.477 kJ·mol−1) was notably lower than that of the second stage (199.409 kJ·mol−1), indicating that defect structures initiate dehydrochlorination. At lower temperatures during fast pyrolysis, raw PVC undergoes dehydrochlorination, releasing HCl and forming short-chain conjugated polyenes. As temperature increases, the dehydrochlorination rate accelerates, forming longer conjugated polyene chains that rapidly cyclize and aromatize into bicyclic and tricyclic aromatic hydrocarbons. In contrast, the two-stage process, comprising low-temperature dehydrochlorination in a fixed-bed reactor followed by pyrolysis via PY-GC/MS, facilitates the development of a more extensively crosslinked structure during the initial stage. Upon subsequent thermal treatment, the crosslinked network undergoes further cracking and structural rearrangement, forming aliphatic hydrocarbons and more polycyclic aromatic compounds, particularly tetracyclic aromatic hydrocarbons.
+

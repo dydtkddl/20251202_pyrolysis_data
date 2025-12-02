@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The effects of pyrolysis temperature and ion-exchanged metals on the composition of brown coal tars produced in a fluidized-bed reactor In order to investigate the effects of temperature and ion-exchanged metals on brown coal tar composition, we have pyrolyzed raw, acid-washed, sodium-exchanged, and calcium-exchanged Yallourn brown coal in a fluidized-bed reactor at temperatures of 600–1000°C. Tar yiels adhere to the order: acid-washed > raw > Na-form > Ca-form-reflecting the cations' ability to bring about a more rigid and compact coal structure, which hinders the escape of large tar molecules evolved during coal develatilization. Analysis of the tars by high-pressure liquid chromatography with ultraviolet-visible diode-array detection reveals that the tars are composed mainly of aliphatic species at the lowest pyrolysis temperatures. An increase in pyrolysis temperature brings about a decrease in the aliphatic components and an increase in the aromatic portion of the tar. At low temperatures, the aromatic portion of the tar is composed of a large number of mostly substituted aromatic species. The distribution of products narrows, however, as pyrolysis temperature is raised and dealkylation and decarbonylation reactions take place. Concurrently, the contribution from ring-nitrogen-containing aromatics falls, in accordance with their lower relative thermal stability. At the highest pyrolysis temperatures, tar composition is dominated by unsubstituted polycyclic aromatic hydrocarbons. Compared to temperature, sodium and calcium exhibit only modest effects on tar composition—the primary one being the suppression of the yield of aromatics containing ring nitrogen. At the lower pyrolysis temperatures, the tars from the Ca-form coal are richer in aliphatic content than the tars from the other coals, suggesting that the aliphatic products of devolatilization are less susceptible than the aromatic products to the cation-induced hindrance of tar molecule escape during coal pyrolysis. The effects of the metals become less pronounced at higher pyrolysis temperatures, however, where thermal factors govern the product distribution.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Modelling of oxygen-steam gasification of waste feedstock in industrial fluidized bed reactors The application of a kinetic model to simulate waste gasification in medium and large-sized reactors presents the challenge of having to choose from the different sub-models proposed in the literature, which are often derived for conventional feedstocks, and where some discrepancies still exist. In this work, a one-dimensional non-isothermal model of a bubbling fluidized bed reactor has been developed and validated with data from a pilot-scale gasifier operated on biomass and waste plastic feedstocks. The model accounts for waste feed segregation, devolatilization, char and gas-phase reactions, heat losses through the reactor, and simulates steady-state operation at different operating conditions. A modified two-phase representation of the bubbling bed incorporates bubbles formation and bubbling-induced mixing, mass and heat transfer, and enables the prediction of individual species and temperature profiles within the bed and in the above regions. The model has been successfully applied to the gasification of a plastic-rich waste feedstock in a real pilot-scale reactor operated at different concentrations of steam and oxygen, demonstrating a great accuracy (error < 2.5 %, i.e. lower than average experimental variation). The model was used to predict the effects of various operating parameters on key plant performance indexes, such as the impact of oxygen concentration in the fluidising gas and steam-to-carbon ratios, when using different plastic waste feedstock. The clear advantages of a full steam-oxygen regime, together with challenges associated with residual tar content, are highlighted. The reported results offer interesting insights on the potential adoption of the model for industrial reactors design and process optimization.
+

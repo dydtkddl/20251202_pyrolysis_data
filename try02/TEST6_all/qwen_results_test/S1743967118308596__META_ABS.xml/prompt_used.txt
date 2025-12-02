@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of chlorine contaminated municipal plastic waste: In-situ upgrading of pyrolysis oils by Ni/ZSM-5, Ni/SAPO-11, red mud and Ca(OH)2 containing catalysts This work is focussing to the thermo-catalytic batch pyrolysis of contaminated real municipal plastic waste using different catalyst mixtures in their different ratios: Ni/ZSM-5, red mud, Ca(OH)2 and Ni/SAPO-11, red mud, Ca(OH)2. The effect of the catalysts to the pyrolysis oil properties and the in-situ upgrading (especially the storage, transportation and corrosion stability) of pyrolysis oil was investigated. High concentration of Ni/ZSM-5 and Ni/SAPO-11 zeolites in catalyst mixtures can increase the yield of gases and pyrolysis oil, the concentration of aromatics or the hydrogen content in gases; however the presence of red mud in higher content can further increase the hydrogen concentration. ZSM-5 based catalysts showed higher efficiency in aromatization reactions. An accelerated aging test at 80 °C till 1 week was performed to investigate the storage and transportation stability of pyrolysis oils. Only slight increase was found in the density and viscosity, on the other hand there was a bit greater increase using SAPO-11 based catalysts than ZSM-5. The change in the olefin content was followed via bromine number and FTIR spectra of pyrolysis oil, which resulted ∼3% and ∼4% decreasing using Ni/ZSM-5 and Ni/SAPO-11 containing catalyst mixtures. Regarding acidic components, they significantly increased by aging time, while the high red mud and/or Ca(OH)2 in catalyst mixtures had notable benefit, because they can drastically decrease the concentration of chlorinated compounds, which led to less weight loss during corrosion test using copper plate till 60 days at 20 °C.
+

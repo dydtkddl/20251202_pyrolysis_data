@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comprehensive review of microwave application on the oil shale: Prospects for shale oil production This study reviews the mechanism of microwave irradiation and the affecting parameters, including heating rate, particle size, catalysts, and supercritical fluids on the microwave induced pyrolysis of oil shales. The factors influencing shale oil upgrading using microwave and conventional heating were analyzed. Although shale ash induces secondary cracking in conventional heating, followed by cracking of heavy compounds and increased light oil and pyrolysis gas, the corresponding mechanism in microwave heating has not yet been studied. The shale ash composition and particle size play a vital role in conventional heating efficiency. Increasing oil shale particles size in conventional heating after reaching the maximum converted shale oil reduces produced oil due to increased heat transfer and volatile diffusion in oil shale grains and induction of secondary cracking, which leads to the intensification of shale oil upgrading. Catalysts with high microwave absorption capacity, such as iron powder, remove higher percentages of sulfur, nitrogen, and oxygen from shale oil in microwave pyrolysis as compared to conventional heating. The presence of zeolite in microwave pyrolysis causes better and more effective shale oil upgrading by reducing C10-C16, >C16, naphtha fraction, and increasing kerosene fraction compared to conventional pyrolysis. The presence of water increases polycyclic aromatics, increases the concentration of alkene fraction and decreases asphaltene and coke formed by solvation or caging of shale oil molecules. The presence of nitrogen and hydrogen in conventional pyrolysis reduces desulfurization and upgraded shale oil yield, respectively. A sharp increase in the heating rate in conventional and microwave pyrolysis reduces shale oil yield. In conventional heating, increasing heating rate decreases the hydrogen (H)/ carbon (C) ratio, and the nitrogen and sulfur fractions increase due to the nature of chemical bonding with hydrocarbons and its entangled with metal oxides. In microwave pyrolysis at high heating rates, the H/C ratio increases and the amounts of nitrogen and sulfur in shale oil decrease sharply. The high microwave radiation power facilitates the removal of nitrogen and sulfur that is much higher than conventional pyrolysis. The conversion of pyrite to pyrrhotite in oil shales that have a high microwave absorption capacity increases microwave pyrolysis efficiency. The calcite and feldspar also improve this process because they participate in the pyrolysis process, and their amounts are reduced in the spent shale. Thus, the oil produced from oil shales under the microwave pyrolysis process has lighter and higher quality compounds. However, the broad applications of this technology in the use of oil shales are still unclear and more studies should be done to clarify the advantages and disadvantages of using microwave heating in oil shales. Further study and research are required to develop microwave technology in oil shale, and based on its potentials, it can be introduced as a new and efficient method in oil shale production.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Reaction kinetics and accelerant effects of sulfides in early mature hydrocarbon generation using hydrous pyrolysis Hydrocarbon generation in organic-rich sediments is influenced by the molecular organic composition and relative abundance of associated minerals. Certain mineral-derived elements act as catalysts and reaction intermediaries, facilitating early-stage hydrocarbon formation in potential source rocks. This study investigated the role of sulfur contributed from pyrite as an accelerant in thermal reaction, focusing on its effects on early maturation and consequent hydrocarbon generation from gilsonite (low-sulfur solid petroleum). Hydrous pyrolysis (HP) experiments were conducted on mixtures of gilsonite and pyrite in varying ratios (1:0.1, 1:0.5, 1:1, 1:2, and 1:10 w/w gilsonite:pyrite) at 320, 350, and 370 °C for 72 h. Untreated and thermally altered residues were analyzed using solid bitumen reflectance (BRo, %), total organic carbon (TOC) content, programmed temperature pyrolysis, scanning electron microscopy with energy-dispersive spectroscopy (SEM-EDS), and X-ray diffraction (XRD) to evaluate the potential accelerant role of pyritic sulfur in hydrocarbon formation. The results show HP residues at 320 and 350 °C with greater pyrite concentrations had higher BRo, while reflectance values were similar in the 370 °C residues, regardless of pyrite concentration, suggesting enhanced reaction at lower thermal conditions. Increasing pyrite content systematically decreased hydrogen index (HI) values while increasing the transformation ratio (TR) and production index (PI), indicating enhanced conversion of organic matter to hydrocarbons with increasing pyrite concentrations. Gas yields increased with pyrite addition, particularly at 350 °C, confirming secondary cracking effects. However, gas production stabilized or declined at higher pyrite loadings (1:10), suggesting alternative reaction pathways such as coke formation. Our data indicate the presence of pyrite lowers the activation energy for thermal cracking, shifting peak experimental hydrocarbon generation temperatures downward by 20–30 °C, with the most pronounced accelerant effects observed at moderate pyrite concentrations (1:0.5 and 1:1). The thermodynamic framework reveals that pyrite stability is influenced by experimental conditions, with pyrrhotite formation favored in the presence of gilsonite due to reduced oxygen fugacity. Pyrite transformation to pyrrhotite, as observed through XRD, SEM-EDS, and predicted by thermodynamic data, further supports the accelerant role of S, as pyrrhotite exhibits a higher hydrogen transfer potential, promoting early oil generation. These findings highlight the importance of pyrite in modulating hydrocarbon generation pathways in organic-rich systems.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of partial components removal on pyrolysis behavior of lignocellulosic biowaste in molten salts Using molten NaNO3–KNO3–NaNO2 for biowaste pyrolysis provides a promising way to synergize the utilization of biowaste and fluctuating solar energy. However, the diversity of lignocellulosic biowaste and violent decomposition complicated the interactions between natural constituents. In this study, the pyrolysis behavior of woody and agricultural herbaceous lignocellulosic biowaste in molten salts was comprehensively investigated at 300 °C. Through the selective removal of partial hemicellulose or lignin, the specific role of the original structure on the products formation characteristics was further estimated. The results showed that more volatiles were released from the hemicellulose-enriched agricultural herbaceous biowaste than cellulose-enriched woody biowaste. The yields of water and organic liquids from hemicellulose or lignin removal were higher than that of raw biowaste. Specifically, hemicellulose dominated the generation of nitrogenous substances in the liquid products. As for the gas product, its yield from the hemicellulose removal sample was higher than raw biowaste but it decreased after removing lignin. Lignin was the primary contributor to the combustible CO, H2, and CH4, while the production of CO2 was more affected by hemicellulose. The lignin would compete with hemicellulose and be superior to the latter in the reaction with molten salt.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Lignin self-assembly phenomena and valorization strategies for pulping, biorefining, and materials development: Part 2. Factors affecting the specificity of lignin self-assembly for industrial applications This review considers a profoundly underutilized resource, technical lignin, and its potential for large scale upgrading for higher-valued industrial usage by means of self-assembly processes. Molecular interactions that can be used to guide lignin self-assembly are systematically explored, categorizing them into physicochemical interaction-driven assembly and external stimuli or template-driven assembly. Published findings are examined to reveal molecular mechanisms governing lignin aggregation into lignin nanoparticles (LNPs), films, and interfacial behavior in Pickering emulsions that have potential to be used industrially. Recent advancements in experimental techniques are explored to provide deeper insights into lignin's self-assembly processes. Hydrophobic effects, π-π stacking, hydrogen bonding, electrostatic layering, polyelectrolyte complex formation, chain entanglement, and covalent cross-linking are critically assessed as potential means to control the self-assembly of lignin and systems involving lignin. Additionally, external factors, such as chemical dehydration, solvent-mediated interactions, and external fields are examined related to their role in templating lignin assembly. Based on a comprehensive review of the literature, hydrophobic interactions are predominant in lignin aggregation, with hydrophobicity degrees varying significantly across lignin samples. Interfacial rheology studies demonstrate that lignosulfonate exhibits maximum storage moduli at oil-water interfaces, significantly enhancing emulsion stability. Additionally, modified lignins via esterification contribute larger lifetimes of water-in-oil emulsions stability under varying salinity and oil types. The integration of molecular modeling with experimental characterization techniques can further optimize lignin-based materials for multiple applications, such as drug delivery, catalysis, advanced pesticide delivery systems, bioplastics, 3D printing, and emulsification, among many others. Although there are existing technical and economic assessments (TEA) and life cycle assessments (LCA) involving lignin self-assembly that point to promising prospects, there is a need for more comprehensive TEA and LCA work to clear the way for the needed industrial innovations in this field.
+

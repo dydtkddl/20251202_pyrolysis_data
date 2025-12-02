@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Process development and techno-economic analysis for mechanochemical recycling of poly(ethylene terephthalate) Chemical recycling of consumer plastics has garnered great attention recently towards achieving circular economy goals. Particularly in the case of PET waste, mechanochemical depolymerization in ball mill reactors has been identified as a very promising technology due to the high conversion rates achieved under mild conditions. While the absence of solvents in the reaction mixture reduces significant separation costs, mechanochemical depolymerization still presents challenges with respect to the efficient separation and purification of monomers. Thus, meticulous experiments, process modeling, and simulations are essential for demonstrating the separation and purification of monomers. In this study, we present the lab-scale separation process flow for the recovery of terephthalic acid (TPA) and ethylene glycol (EG) from mechanochemically depolymerized polyethylene terephthalate (PET). We additionally examine the use recycling of ideal PET powder and commercial samples (e.g., PET fibers, bottles, and food containers) as feedstocks. The process parameters are optimized to achieve 97 %+ of monomer recovery with 99 %+ purity. The complete recovery of EG, and recycling of process water enables a ‘zero-liquid discharge’ process design. Subsequently, we conduct a techno-economic analysis (TEA) to evaluate the economic potential of the proposed sequence, which resulted in a positive net present value (NPV) for the different scenarios and a minimum selling price (MSP) of $0.99/kg. Finally, we compare the economic potential of mechanochemical recycling of PET to fossil-based production and other recycling methodologies based on economic metrics.
+

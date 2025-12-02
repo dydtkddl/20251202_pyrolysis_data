@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pristine and modified biochar applications as multifunctional component towards sustainable future: Recent advances and new insights Employing biomass for environmental conservation is regarded as a successful and environmentally friendly technique since they are cost-effective, renewable, and abundant. Biochar (BC), a thermochemically converted biomass, has a considerably lower production cost than the other conventional activated carbons. This material's distinctive properties, including a high carbon content, good electrical conductivity (EC), high stability, and a large surface area, can be utilized in various research fields. BC is feasible as a renewable source for potential applications that may achieve a comprehensive economic niche. Despite being an inexpensive and environmentally sustainable product, research has indicated that pristine BC possesses restricted properties that prevent it from fulfilling the intended remediation objectives. Consequently, modifications must be made to BC to strengthen its physicochemical properties and, thereby, its efficacy in decontaminating the environment. Modified BC, an enhanced iteration of BC, has garnered considerable interest within academia. Many modification techniques have been suggested to augment BC's functionality, including its adsorption and immobilization reliability. Modified BC is overviewed in its production, functionality, applications, and regeneration. This work provides a holistic review of the recent advances in synthesizing modified BC through physical, chemical, or biological methods to achieve enhanced performance in a specific application, which has generated considerable research interest. Surface chemistry modifications require the initiation of surface functional groups, which can be accomplished through various techniques. Therefore, the fundamental objective of these modification techniques is to improve the efficacy of BC contaminant removal, typically through adjustments in its physical or chemical characteristics, including surface area or functionality. In addition, this article summarized and discussed the applications and related mechanisms of modified BC in environmental decontamination, focusing on applying it as an ideal adsorbent, soil amendment, catalyst, electrochemical device, and anaerobic digestion (AD) promoter. Current research trends, future directions, and academic demands were available in this study.
+

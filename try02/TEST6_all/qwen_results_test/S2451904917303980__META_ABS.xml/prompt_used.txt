@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of domestic based feedstock at temperatures up to 300 °C This article reports the state of the art of the characteristics of products derived from the pyrolysis of municipal solid waste. The by-products which arise at more elevated temperatures are discussed so that the outcomes of low temperature pyrolysis may be put into context. Our throwaway society is a globally growing issue, the continued discarding of valuable resources into landfill sites is highly undesirable due to many of these materials being non-biodegradable and some may produce toxic gases which are harmful to the environment if discarded in an uncontrolled way. Domestic and industrial sorting and transport of discarded resources result in an increase in carbon footprint as well as a high cost. Therefore, an alternative resource management method is required in order to achieve a more sustainable and less harmful method of managing these valuable resources in the future. Below 300 °C, the products of pyrolysis are generally expected largely to contain biochar, bio-oil and syngas. However, the phase distribution and chemical composition of the products is highly dependent on the feedstock used as well as the operating parameters of the process. Plant based feedstock produces more biochar while plastic based feedstock produces more bio-oil. The composition of products can be analysed using gas chromatography/mass spectrometry. Current applications of pyrolysis are focused on high temperatures due to the increased yields of gases and bio-oils, which are more valuable. Biochar, however, is becoming increasingly popular due to its various applications such as a filter material for water purification. Low temperature pyrolysis is an area where further research is required in order to produce economically viable processes.
+

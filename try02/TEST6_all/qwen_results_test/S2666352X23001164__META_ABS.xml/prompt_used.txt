@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fate of ilmenite as oxygen carrier during 1 MWth chemical looping gasification of biogenic residues Chemical looping gasification (CLG) is a novel gasification technology, allowing for the efficient conversion of different solid feedstocks (e.g. biogenic residues) into a high-calorific syngas. As in any chemical looping technology, the oxygen carrier (OC), transporting heat and oxygen from the air to the fuel reactor, is crucial in attaining high process efficiencies. To investigate the fate of the OC during CLG in an industrial environment, ilmenite samples, collected during >400 hours of chemical operation in 1 MWth scale using three different biomass feedstocks, were analyzed using different lab techniques. In doing so, changes in OC particle morphology and composition induced by CLG operation were determined. Moreover, the most important physical and chemical characteristics of the utilized OC were measured. The ensuing dataset allowed for an in-depth evaluation of the CLG technology in semi-industrial scale in terms of OC lifetime and durability. It was found that in the absence of agglomeration, the cycled OC exhibits an oxygen transport capacity of 2.6 wt.-%, a particle density of 3400 kg/m3 and particle diameters between 60 and 250 µm in steady-state conditions. Moreover, it was found that OC loss via particle attrition determines the lifetime of the OC inside the 1 MWth CLG system. On the other hand, feedstock-related agglomeration, observed during CLG operation with wheat straw, was shown to impede OC circulation between AR and FR and thus prevent efficient CLG operation. In summary, the present study thus not only highlights that generally long-term CLG operation in industry-like conditions is feasible, but also provides important insights into measures to improve OC lifetime and durability inside an industrial chemical looping system, such as an optimization of cyclone efficiency or tailored pre-treatment of the utilized feedstock.
+

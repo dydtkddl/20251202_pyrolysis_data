@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sustainable biomass-derived activated biochar/polyaniline/alginate composite beads for enhanced methylene blue adsorption: Experimental and theoretical investigations This study investigates biomass-derived adsorbents in powder and bead forms for the efficient removal of methylene blue MB from wastewater. Activated biochar powders (ABC and ABCZ) were synthesized using H3PO4 and ZnCl2 as activators for the chemical treatment of Crataegus azarolus CAS seed waste, while polyaniline (PA) and sodium alginate (SG) were integrated to form two bead-shaped composites. Compared to ZnCl2, H3PO4 activation produced similar acidic site concentrations but resulted in improved mesoporosity and larger pore diameters. Untreated lignin-like ABC and PA-functionalized ABC were successfully encapsulated into uniform composite beads (ABC-SG and ABC-PA-SG) with negatively charged surfaces at neutral pH of solution as confirmed by FTIR, TGA, and pHpzc analyses. Adsorption efficiency depended on material composition, form, and texture. Encapsulation significantly enhanced MB adsorption capacity, with ABC-PA-SG beads achieving 821 mg/g, compared to 261 mg/g for ABC powder. While greater surface area improved MB adsorption in powders, PA incorporation in composite beads contributed to higher adsorption performance. Kinetic modeling showed that MB adsorption on ABC powder was governed by chemisorption and pores filling, while composite beads followed a physical interaction-driven process. Thermodynamic analysis confirmed that adsorption was spontaneous and endothermic. Statistical modeling and DFT calculations provided deeper insights into the adsorption mechanisms. π-π interactions dominated MB adsorption, with a horizontal molecular arrangement. ABC powders exhibited multilayer pore filling on a heterogeneous surface, whereas adsorption on ABC-PA-SG beads followed a double-energy double-layer mechanism. This study provides integrated insights into biomass-derived composite beads adsorbents, highlighting their potential for sustainable wastewater treatment applications.
+

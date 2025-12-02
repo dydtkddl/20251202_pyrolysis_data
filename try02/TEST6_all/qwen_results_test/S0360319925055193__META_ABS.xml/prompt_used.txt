@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Solar-driven green hydrogen production: Comparative pathways, technical challenges, and future perspectives Solar-energy-based green hydrogen production is a sustainable and environmentally clean alternative to fossil fuels. Therefore, this paper presents a current state and future development assessment of different solar-based green hydrogen production approaches, including the technological developments, difficulties, and viability of emerging technologies from a financial perspective. Several methods of producing hydrogen employing the sun's energy as the primary energy source are presented. The study categorizes and assesses the main water electrolysis technologies that are integrated with solar systems, including solid oxide electrolysers (SOE), alkaline water electrolyzers (AWE), proton exchange membranes (PEM), and anion exchange membrane electrolysis (AEM). Although PEM electrolysis is more efficient, it depends on expensive catalysts, which prevents scaling when compared to AEM, which can be of lower cost but lacks durability. The research also examines the significance of various solar technologies in the production of green hydrogen, such as photovoltaic thermal PV/T systems, solar parabolic trough collectors (PTC), and solar parabolic dish collectors (PDC). Importantly, the review highlighted hybrid-type systems such as PV/T combined with thermal storage or concentrated solar solutions with SOE that exhibit the highest solar-to-hydrogen efficiency (24–30 %) and make the system operative throughout the year. In addition, the levelized cost of hydrogen (LCOH) was examined under different electricity costs and SOEC efficiencies. In the findings, it is found that the LCOH decreases as the electricity cost is decreased by 0.12 USD/kWh to 0.06 USD/kWh, and the 10 per cent increase in the efficiency of the electrolyzer results in the reduction of costs by 8–10 %. This work is novel in its approach in offering an integrated perspective that compares solar-based electrolysis and hybrid options systematically and ties together technical, economic, and sustainability dimensions. The review identifies the main research gaps, compares emerging technologies, and describes the ways of scaling up cost-effective solar-powered hydrogen production. Through this comprehensive discussion, the research can be of great help to researchers, industry stakeholders, and policymakers in their quest to expedite the process of adapting to a sustainable hydrogen economy.
+

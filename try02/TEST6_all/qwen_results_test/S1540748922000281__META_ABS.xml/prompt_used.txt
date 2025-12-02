@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Concentrated solar-thermal methane pyrolysis in a porous substrate: Yield analysis via infrared laser absorption In situ compositional analysis via laser absorption spectroscopy is used to characterize the output of a concentrated solar-thermal methane pyrolysis process over a range of test conditions. The novel thermo-chemical process involves directed radiation of a simulated solar source, focused onto a porous carbon felt substrate through which methane flows and decomposes to produce primarily hydrogen gas and graphitic carbon, along with residual hydrocarbons. A mid-infrared laser diagnostic setup has been developed to measure the residual concentrations of light hydrocarbons in the pyrolysis product gas downstream of the reaction zone, with real-time on-line monitoring capability. The infrared absorption sensor utilizes two interband cascade lasers (ICLs) to probe the fundamental C-H stretch vibrational bands, targeting (1) the R(15) manifold of the ν 3 band of CH 4 as well as one R(14) transition of the ν 9 band of C 2 H 4 near 3.16 μ m and (2) the R Q 3 line cluster of C 2 H 6 near 3.34 μ m, respectively. A compositional analysis based on carbon and hydrogen balances is developed to characterize the hydrogen and carbon yields of the pyrolysis process using laser absorption measurements and deposited carbon weight. A range of test conditions are examined with variations of flow rate and solar flux, demonstrating real-time monitoring of product gas composition and sensitivity to operating conditions in variable and transient conditions.
+

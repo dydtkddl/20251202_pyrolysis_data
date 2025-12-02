@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characteristics of two-stage air gasification of polystyrene with active carbon as a tar removal agent Air gasification of polystyrene was conducted using a two-stage gasifier consisting of a fluidized bed and a tar-cracking reactor filled with active carbon. The aim was to obtain a hydrogen-rich producer gas with a low level of tar. In addition to the possibility of tar removal, the effects of the reaction temperature and equivalence ratio on the producer gas quality were investigated. In this study, it was found that the gasification of polystyrene had different characteristics to the gasification of other plastic, resulting in a high production of char. Active carbon played a crucial role, significantly decreasing the tar content in gas to 11 mg/Nm3. Furthermore, gasification with active carbon produced a gas having a high content of hydrogen (26 vol%). The change in fluidized bed gasifier temperature within the range of 700–900 °C exerted no significant effects on the gas quality. In contrast, a high tar-cracking reactor temperature clearly increased hydrogen and carbon monoxide contents. With an increasing equivalence ratio, oxidation of char was promoted, resulting in a significant increase in gas production and carbon oxides. The current study showed a good possibility for the recycling of polystyrene via gasification, producing a clean and hydrogen-rich gas.
+

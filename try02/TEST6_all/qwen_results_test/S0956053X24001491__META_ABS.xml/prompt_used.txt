@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic interaction between scrap tyre and plastics for the production of sulphur-free, light oil from fast co-pyrolysis Fast co-pyrolysis offers a sustainable solution for upcycling polymer waste, including scrap tyre and plastics. Previous studies primarily focused on slow heating rates, neglecting synergistic mechanisms and sulphur transformation in co-pyrolysis with tyre. This research explored fast co-pyrolysis of scrap tyre with polypropylene (PP), low-density polyethylene (LDPE), and polystyrene (PS) to understand synergistic effects and sulphur transformation mechanisms. A pronounced synergy was observed between scrap tyre and plastics, with the nature of the synergy being plastic-type dependent. Remarkably, blending 75 wt% PS or LDPE with tyre effectively eliminated sulphur-bearing compounds in the liquid product. This reduction in sulphur content can substantially mitigate the release of hazardous materials into the environment, emphasizing the environmental significance of co-pyrolysis. The synergy between PP or LDPE and tyre amplified the production of lighter hydrocarbons, while PS's interaction led to the creation of monocyclic aromatics. These findings offer insights into the intricate chemistry of scrap tyre and plastic interactions and highlight the potential of co-pyrolysis in waste management. By converting potential pollutants into valuable products, this method can significantly reduce the release of hazardous materials into the environment.
+

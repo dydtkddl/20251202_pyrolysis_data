@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Tire-based microplastics: Composition, detection, and impacts of advanced oxidation processes in drinking water treatment Microplastic pollution, particularly that from tire, presents critical environmental and public health concerns. They contribute 60 % of the total microplastic pollution. Tire-based microplastics, which contain synthetic polymers and toxic chemical additives, are significant contributors to microplastic pollution in aquatic systems. They release various hazardous substances, including heavy metals, polycyclic aromatic hydrocarbons, and other persistent pollutants, which adversely affect ecosystems and pose risks to drinking water quality. Advanced oxidation processes (AOP) such as ultraviolet based treatment, ozonation and sulfate radical based processes show potential for mitigating these microplastics by fragmenting them and degrading the leached chemicals. Radicals generated during AOP (such as sulfate radicals (SO₄•−), peroxide radicals (HO₂•) and hydroxyl radicals (•OH), have also been successful in removing the transformation products associated with tire microplastics. This combined action of AOP has potential in mitigating the primary tire microplastics and the leached chemicals from it. AOP studies reported from the other microplastic researches (PP, PE, PVC etc.) shows promising results in mitigating them from drinking water sources. TMP appears to behave similarly to other microplastic polymers in terms of fragmentation. However, research is still lacking in quantifying this process due to the presence of complex chemicals additives in it. Additionally, studies focusing on their removal in DWTPs, particularly those that consider both TMP and their associated chemical leachates, remain limited. This review discusses the chemical composition, detection techniques, fragmentation of tire-related microplastics by AOP, and leaching of chemicals from them. This review also suggests modification of treatment techniques, challenges for implementing them to real world treatment and scopes in optimization of treatment conditions to mitigate tire wear particles and the associated chemicals.
+

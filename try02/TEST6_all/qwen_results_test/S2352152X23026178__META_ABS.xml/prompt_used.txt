@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Bio-based phase change materials for thermal energy storage and release: A review Latent heat energy storage is among the highly effective and dependable methods for lowering one's energy usage. This method involves employing phase change materials (PCM) for storing and releasing heat energy. In contrast to sensible heat storage, latent heat thermal energy storage offers a greater energy storage capacity at a lower temperature range between storage and retrieval. As a result, the use of PCMs has become a subject that has garnered great attention among architects and engineers throughout the course of the last forty decades. However, the price of paraffin wax, which is a by-product of fossil fuels, fluctuates rather often because of its geopolitical implications. In light of this fact and with an eye toward achieving sustainable development, bio-based phase change materials (BPCMs) are a practical replacement for PCM in the case of thermal energy storage (TES). BPCM is an alternative to commercial paraffin-based PCMs that is both renewable and kind to the environment. Due to the fact that BPCM is completely hydrogenated, there is a much-reduced risk of oxidation even after an extensive number of melting and solidification cycles as compared to paraffin wax. The production of BPCM may achieve a high production employing animal fat combinations and oils, both of which are readily accessible, have a cheap cost and are biocompatible. Despite the fact that bio-based materials exhibit robust hygrothermal behavior and PCMs have significant thermal inertia, these two types of materials have traditionally been researched independently in the vast majority of research. This paper reviews and discusses the choice of BPCMs, bio-based matrices, phase change mechanisms, their combinations, and their preparation and applications in detail. As a result, various suggestions are made for improving these materials so they may be utilized in a variety of applications for TES.
+

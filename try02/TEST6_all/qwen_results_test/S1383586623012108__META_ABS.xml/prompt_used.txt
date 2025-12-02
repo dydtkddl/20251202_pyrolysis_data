@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A biochar-based catalyst prepared by potassium ferrate oxidation coupled high-temperature pyrolysis and its application for the activation of peroxymonosulfate towards the degradation of norfloxacin: Performance and mechanism insight Developing an efficient catalyst for persulfate activation is critical to the high-efficiency degradation of organic pollutants in an aqueous solution using a persulfate-based advanced oxidation method. A biochar-based catalyst, 800Fe2BC2, was prepared using a novel technology of potassium ferrate oxidation coupled with high-temperature pyrolysis based on the biomass raw material of waste branches pruned from apple trees in an orchard. Batch tests were conducted to degrade norfloxacin using 800Fe2BC2 to activate peroxymonosulfate (PMS). Norfloxacin was almost completely degraded within 10 min. The reactive oxygen species (ROS), for instance, •OH, SO4 •−, O2 •−and 1O2, were generated in the 800Fe2BC2/PMS system. The iron oxides, defective structures, and CO groups in 800Fe2BC2 served as catalytic sites for generating free radicals. However, the recombination of superoxide radicals, the interaction of CO groups on the catalyst surface with PMS, and the self-decomposition of PMS contributed to generating 1O2. The quenching test showed that the degree of the contribution of •OH, SO4 •−, O2 •−and 1O2 to NOR degradation was approximately 1O2 > O2 •− > SO4 •− > •OH, respectively. We proposed three potential NOR degradation pathways: piperazine ring opening (P), quinolone ring oxidation (Q), and benzene ring defluorination (F). Then part of these intermediates was completely mineralized into inorganics like CO2, H2O, NO3 − and F−. The acute and chronic toxicity of the degradation products were estimated, and the evolution of toxicity in the present catalytic system could not be ignored and should be overcome by deeper mineralization. The prepared 800Fe2BC2 demonstrated a good application prospect with good stability, recyclability, low metal leaching, and versatility to various refractory pollutants. Therefore, this study offered a new way of producing biochar-based catalysts for activating PMS using biomass wastes.
+

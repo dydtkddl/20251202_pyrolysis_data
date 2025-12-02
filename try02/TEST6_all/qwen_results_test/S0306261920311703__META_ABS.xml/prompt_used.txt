@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Oil from plastic via hydrothermal liquefaction: Production and characterization We determined the effect of batch holding time (0.5 h, 1 h) and temperature (350–450 °C) on the yield, composition, and quality of oil formed from the hydrothermal treatment of polypropylene (PP), polystyrene (PS), polycarbonate (PC), and polyethylene terephthalate (PET). The highest oil yields for each material ranged from just 16 wt% for PET to 86 wt% for polystyrene. The depolymerization of plastics to produce oil occurs fastest in the supercritical water regime (T > 400 °C). The higher heating value (HHV) of the oil from PP and PS (44–45 MJ/kg) is comparable to that of gasoline (HHV ~ 43.4 MJ/kg). The oil from PC and PET had lower heating values but further treatment to remove oxygen atoms would increase the energy density. Increasing the hydrothermal reaction severity (longer times, higher supercritical temperatures) reduces oil yields but increases heating values. Increasing temperature causes more aromatization in the oil from PP and PS and promotes dehydration reactions during hydrothermal treatment of PET and PC. The oil from PC contained bisphenol-A as a major product. Obtaining such monomers from hydrothermal treatment would provide a revenue stream in addition to oil and thereby improve the process economics.
+

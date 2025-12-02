@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Utilization of co-substrates in municipal sewage sludge co-pyrolysis: Yields and characterization of biochar, bio-oil, and syngas, with economic feasibility analysis Co-pyrolysis has emerged as a pivotal method for processing municipal sewage sludge (MSS), offering the dual benefit of reducing waste volume and generating valuable clean energy products. As the production of MSS continues to rise globally, and the demand for sustainable waste management solutions intensifies, co-pyrolysis represents a promising avenue for the recovery of resources and energy generation. This review presents a comprehensive investigation of the co-pyrolysis of municipal sewage sludge (MSS) with various co-substrates, with a particular focus on the yield and characterization of biochar, bio-oil, and syngas. This study examines the impact of diverse co-substrates, including lignocellulosic biomass (e.g., wood chips, agricultural residues) and non-biomass materials (e.g., plastics, excavated waste), on the quality and quantity of pyrolysis products. The role of co-substrate properties, such as proximate and elemental composition, in optimizing energy recovery and improving product quality is a key focus of this study. Furthermore, this review presents an economic analysis of the co-pyrolysis process, demonstrating the substantial influence of co-substrate selection on the profitability of the operation. The integration of specific co-substrates not only enhances product yields but also improves the economic feasibility of the process, as evidenced by a favourable net present value (NPV). By optimizing feedstock combinations and pyrolysis conditions, the process becomes more marketable and economically viable, offering a competitive alternative to traditional waste disposal methods.
+

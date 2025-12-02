@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review on catalytic pyrolysis of plastic wastes to high-value products With the continuous increase of plastic wastes and the decrease of fossil energy, pyrolysis has emerged as a promising technology for the valorization of plastic wastes to produce fuels and chemicals. Properties of common plastics, mainly polyethylene terephthalate (PET), polyethylene (PE), polyvinyl chloride (PVC), polypropylene (PP), polystyrene (PS) and their mixtures are discussed with a focus on the pyrolysis mechanism and product distribution. The application of the most common catalysts (microporous/mesoporous zeolites, base catalysts, and clays) shows overwhelming advantages over thermal cracking, and an in-depth understanding of catalysts in several catalytic processes (ex-situ catalysts, tandem catalysts, bi-functional catalysts, multi-modal pore catalysts, and regenerated catalysts) is critical for efficient fuel production. Despite high-quality liquid fuels obtained, further upgrading (filtration, hydrogenation, distillation, liquid–liquid extraction or blending with conventional fuels) is required before their commercial application. Non-condensable gas is another co-product that can be upgraded for heat generation or as the precursor of high-value products (ethylene, propylene, carbon nanotubes (CNTs), etc.). Finally, a more integrated techno-economic assessment process is conducted based on feedstock logistics, utilization of liquid fuels, full use of co-products, capital and operating costs. This review aims to inspire both fundamental and applied research efforts for the production of high-value products from the catalytic pyrolysis of plastic wastes and their full utilization to create the necessary technological and economic push for a circular economy.
+

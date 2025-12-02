@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Methane decomposition for hydrogen production over biomass fly ash-based CeO2 nanowires promoted cobalt catalyst In this work, the biomass fly ash (BFA) was investigated as a potential catalyst for the thermo-catalytic decomposition of methane and attractive approach for hydrogen (H2) production. The BFA based CeO2 nanowires promoted cobalt catalyst was synthesized for catalytic methane (CH4) decomposition and was tested in a fixed bed reactor. The physicochemical properties of the catalyst were investigated using various techniques such as X-ray powder diffraction, scanning electron microscopy, energy-dispersive X-ray spectroscopy, thermal gravimetric analysis, and Fourier transformed infrared. The pure crystalline micro-flake BFA was modified using synthesized CeO2 nanowires and the resulted micro flakes cross-linked with nanowires shown thermal stability up to 900 °C. The high stability of the catalyst makes it suitable for the thermal catalytic decomposition of methane. The activity of the catalyst was tested at 850 °C to analyze the H2 production and CH4 conversion. The obtained results revealed that support and promoter exhibit a strong impact on the CH4 conversion and H2 yield in catalyst screening tests. A maximum conversion of 71% for CH4 with 44.9% H2 yield was recorded for 34 h on stream activity while using 5% Co/CeO2-BFA as the catalyst. While BFA and Co-BFA as catalyst showed 36% and 47% conversion of CH4, respectively which indicates that the addition of promoter shows an increase in values of both conversion of CH4 and H2 yield. Compared to traditional catalyst support, the use of waste-sourced catalyst support for CH4 decomposition provides a greener and more economical route for H2 production.
+

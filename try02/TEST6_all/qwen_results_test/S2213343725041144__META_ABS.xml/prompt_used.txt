@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic pyrolysis of waste tires over Bi-metallic USY for the production of hydrogen and light gases Catalytic pyrolysis of waste tires over Ultra-Stable Y (USY) zeolite support was studied to evaluate how inexpensive transition-metal promoters steer gas/liquid selectivity and product quality. Building on prior monometallic USY-supported systems, this study presents the first systematic assessment of transition-metal promoters (Ce, Fe, Zn, Cu) on Ni/USY for waste-tire pyrolysis, undertaken to compare product distributions and target higher H2 production. The results of this study offer a feasible route to co-produce hydrogen-rich gas and high-value light aromatics (benzene, toluene, xylenes…) from waste tires, by using inexpensive transition metal-promoted zeolite catalysts. 5Ni/USY tripled the hydrogen content of the product gas to 59.37 % and cut the C11+ fraction of the liquid phase by 70 % relative to the parent USY. Among the bimetallic catalysts, 5Ni-1Ce/USY raised H2 content of the gas output to 61.93 % and further enriched the oil product in single-ring aromatics (p-xylene, ethylbenzene). H2-TPR revealed a 30°C upward shift in the main Ni-reduction peak indicating stronger Ni-support interaction in the Ce-promoted catalyst and XPS results suggest finer dispersion and lower outer-surface Ni exposure. TGA and XRD analyses of spent catalysts showed that 5Ni/USY and 5Ni-1Ce/USY produced mainly graphitic carbon, whereas Fe- and Cu-based catalysts accumulated amorphous carbon. Therefore, the controlled Ce promotion of Ni/USY offers a low-cost route to maximize H2 and light aromatics while mitigating coking during waste tire pyrolysis.
+

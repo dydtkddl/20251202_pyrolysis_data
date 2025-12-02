@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Waste tyre pyrolysis – A review This review deals with the state-of-the-art of waste tyre pyrolysis for the first time in literature. Pyrolysis has been addressed as an attractive thermochemical process to tackle the waste tyre disposal problem while allowing energy recovery. Pyrolysis enables the separation of carbon black from tyres and the volatile matter released (condensable and non-condensable compounds) has the potential of renewable energy recovery given the significant proportion of natural rubber present in the tyre. Given this waste-to-energy pathway, a comprehensive review has been carried out in order to show the effects of the main process conditions (heating rate, temperature, pressure, carrier gas flow rate and type, volatiles residence time and pyrolysis time) on the physicochemical properties and distributions of the resulting products (gas, liquid and solid fractions). It has also been reviewed the influence of the size and composition of the feedstock. All reported results have been framed regarding the type of reactor as well as the experimental conditions used to avoid contradictions among the large number of publications on the subject. It is shown that the occurrence of secondary reactions is very sensitive to the interaction of the aforementioned variables. Also, the main properties of the pyrolytic products are pointed out. The liquid and gaseous fractions obtained are a valuable fuel source; while the solid fraction (char) has the recovery potential of low- grade carbon black or as carbon adsorbent after applying an activation step. Special attention has been given to the liquid fraction, highlighting its properties as alternative fuel in compression ignition engines.
+

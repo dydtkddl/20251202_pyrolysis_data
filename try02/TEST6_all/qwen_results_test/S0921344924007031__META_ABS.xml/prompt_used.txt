@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The removal of epoxy resins from NdFeB magnets for recycling–A review The growing importance of recycling rare earth permanent magnets is addressed in this paper, with a specific focus on the decarbonisation of transport. This has resulted from the growing demand for neodymium iron boron (NdFeB) magnets in the components of electric vehicle motors. While there is ever-improving technology focussed on the recycling of these magnetic materials, this paper highlights the challenges of recycling coated rare earth magnets. More specifically, due to the poor corrosion resistance of NdFeB, epoxy resins are applied to commercial grade magnets. These coatings are extremely stable and therefore act as a barrier to straightforward recycling. When it comes to epoxy resin degradation, various methods exist at different technology readiness levels. These methods include pyrolysis (thermal degradation), super-heated steam thermolysis (degradation with heat and steam), solvolysis (degradation with heat and solvents), micro-wave assisted heating, and electrochemical methods. Pyrolysis takes place at temperatures ranging from 350 °C to 750 °C, while thermolysis and solvolysis operate at 250 °C to 500 °C. In contrast, microwave heating with an amine-based catalyst enables a lower temperature of around 130 °C to be used since the introduction of amines facilitates the cleavage of C–N bonds more easily. Following an exploration of NdFeB magnets and their recycling methods, the chemistry and properties of epoxy resins are presented before each of the five degradation methods is outlined with examples. These methods are assessed with sustainability and closed-loop processing in mind, where closed-loop refers to the recycling of materials into the same application from which they were recovered. Pyrolysis has shown the greatest technology readiness level (TRL) of 8–9 and is used commercially, but the degradation products are lost and hence it cannot be a closed loop process. In contrast, solvolysis and electrochemical methods have much lower TRLs of 1–3 but show more promise in terms of product recovery for re-use. Despite this, it is important to consider both the operating conditions and the environmental impact of these processes, since solvent use can have detrimental effects. Solvents used in epoxy degradation include isopropanol, acetone, ethanol and water. While each of these methods has been researched to a range of extents for the degradation of epoxy resin in the recycling of carbon fibre reinforced polymers (CFRPs), there is limited research to suggests that these methods may be transferrable to magnet recycling. Therefore, various factors have been evaluated to assess the potential of each method for epoxy resin coating removal from end-of-life sintered NdFeB magnets.
+

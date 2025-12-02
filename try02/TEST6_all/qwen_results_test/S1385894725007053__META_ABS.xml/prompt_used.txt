@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhanced dechlorination for multi-source solid wastes using gas-pressurized torrefaction and its removal mechanism The emission of chlorinated pollutants from the thermal disposal of multi-source solid waste (MSW) incineration has posed significant hazards, garnering widespread concern. The study proposed a novel pre-dechlorination technology for MSW through gas-pressurized (GP) torrefaction without external pressurization. Typical chlorinated wastes, such as polyvinyl chloride (PVC), neoprene rubber (NR) and corn straw (CS), were selected. The study focused on two aspects: the pre-dechlorination effect of GP-torrefaction at 225–325 °C for each solid waste; the release of chloride during subsequent incineration utilization of semi-chars. Results showed that the GP-torrefaction had superior dechlorination efficiency than atmospheric (AP) torrefaction. For organic-Cl sources (PVC, NR), the dechlorination efficiency of GP-torrefaction for PVC reached up to 73.9–87.7 wt% at 225–275 °C, which was 23.79–60.17 wt% higher than AP-torrefaction. The efficiency for NR was 10.27–23.15 wt% higher than AP-torrefaction at 300–325 °C. Significantly, the autocatalytic reactions of HCl played an important role in dechlorination of PVC. And the CC–Cl structure in NR were substantially converted into allyl chlorides (C–C–Cl), which were easier to dechlorination. For inorganic-Cl source (CS), GP-torrefaction enhanced the decomposition of cellulose and lignin. The abundant oxygen-containing functional groups derived from the decomposition can react with Inorg-Cl to facilitate the release of HCl/CH3Cl at 225–275 °C. Moreover, a portion of char-Cl (8.2–86.1 wt%) was derived from the secondary adsorption of HCl on three materials. It could be easily further removed by water-washing. In the incineration utilization, the chlorides content in the flue gas was only 1.29–2.69 % for three materials, and the HCl content being negligible for NR and CS. Overall, GP-torrefaction is a novel and effective method to reduce chlorinated pollution, providing new insights for the low consumption and efficient utilization of MSW.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on enameled wire pyrolysis of CO2 for high-quality recovery of copper and suppression of product toxicity Waste motor windings in end-of-life electric spindles are recognized as a valuable resource for high-purity copper recovery, but conventional pyrolysis methods suffer from the toxicity of pyrolysis products and embrittlement of recycled copper. In this study, a CO2-assisted pyrolysis method was proposed for efficient copper recovery and toxic compound suppression. High-purity copper (99.99 wt%) was recovered from waste motor windings by combined CO2 pyrolysis and mechanical sieving, achieving a copper recovery efficiency of 99.51 %. The product distribution was restructured under CO2 atmosphere, a 13.80 % reduction in benzene derivatives and a 12.03 % decrease in polycyclic aromatic hydrocarbons in the pyrolysis oil were observed. The favorable results were mainly attributed to the gas-phase reactions between CO2 and volatile compounds, which suppressed polyaromatic condensation pathways and promoted oxidative cracking of volatile organics. In addition, the homogeneous reaction between CO2 and pyrolysis products reduced the accumulation of hydrogen in copper, and the elongation of copper wire obtained at a CO2 gas flow rate of 100 mL/min was enhanced by 134 % compared to that under N2. This study suggested that CO2 could be a sustainable alternative to N2 in pyrolysis for the effective recovery of higher quality copper from enamelled wires.
+

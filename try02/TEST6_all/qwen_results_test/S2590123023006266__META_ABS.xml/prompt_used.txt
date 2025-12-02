@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Performance, emission and combustion characteristics of liquid fuel produced through catalytic co-pyrolysis of waste LDPE and Pongamia pinnata seeds: An experimental investigation in CI engine As there is an urgent need to address the global problem of increasing plastic waste and decreasing petroleum-based fuels, it is possible to convert waste plastic and unused biomass seeds into fuels that can be utilized in transportation sector. The current study deals with blending pure diesel (D100) with the liquid fuel (PB2) obtained from the co-pyrolysis of Pongamia pinnata seeds and waste low-density polyethylene (LDPE) with Calcium oxide (CaO) as the catalyst. Three blends of D100, namely, PB2@10 (with 10 % blend), PB2@20 (with 20 % blend) and PB2@30 (with 30 % blend) were tested for performance, emission and combustion in an unmodified CI engine for an analytical comparative analysis using standard methods. The results showed that the BSFC was almost same (0.3 kg/kWh) at higher loads for all three blends, while the BTE was found to be equal or increased compared to D100 in the range of 27–30 % at higher loads for higher blends. NOx formation was found to decrease by 19.4 % and 13 % at the highest load for PB2@30 andPB2@30. The smoke formation also decreased for all blends (maximum 22.5 %) while the maximum difference of lambda was determined to have decreased in comparison to D100, close to 1 at higher loads. The maximum cylinder pressure and temperature were also found to have increased during combustion by approximately 1 % for PB2@10 while that of PB2@20 and PB2@30 remained quite close to D100. The obtained renewable liquid fuel could certainly be utilized in blends with pure diesel for use in vehicles.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Selective production of C9 monomeric phenols via hydrogenolysis of lignin using Pd-(W/Zr/Mo oxides)-supported on biochar catalyst Valorizing lignin to phenolic monomers and fine chemicals is an essential component of a sustainable biorefinery that uses lignocellulosic feedstocks. In this study, Pd-metal oxides (ZrO2, WOx, MoO3) supported on activated biochar (ABC) catalysts were developed for hydrogenolysis of lignin. The metals (2% Pd, 5% Zr, 5% W, 5% Mo) were supported on activated biochar using the wetness impregnation method, and the catalysts were extensively characterized. The effect of addition of secondary metals on active surface properties such as acidity, Pd metal particle size and dispersion were also evaluated. The selectivity to C9 monomeric phenols followed the trend: 2Pd-5Mo/ABC (57.3%) > 2Pd-5Zr/ABC (49.2%) > 2Pd-5W/ABC (45%) > 2Pd/ABC (42.9%). The maximum C9 phenolic monomer yield achieved in this study was ~ 22 wt%. The fractional conversion of lignin was 67–69% with Pd-metal oxide catalysts. The presence of Mo in the catalyst inhibited the hydrogenation of aliphatic Cα = Cβ in lignin and led to the formation of t-isoeugenol, while the presence of W and Zr resulted in selective formation of the hydrogenated product, propyl guaiacol. Using model compounds, it is proved that the formation of propyl guaiacol is via hydrogenation of t-isoeugenol, and not through dehydroxylation of propanol guaiacol. The dehydroxylation activity of the catalysts is attributed to the higher Lewis acidity and electropositive nature of the metals. A notable carbon atom economy of 47–50% towards total phenolic monomers was achieved with 2Pd/ABC, 2Pd-5Mo/ABC and 2Pd-5Zr/ABC catalysts.
+

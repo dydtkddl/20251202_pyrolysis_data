@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Advances in carbon nanotubes synthesis: From conventional methods to non-conventional plasma-assisted methods Carbon nanotubes (CNTs) have gained global attention due to their remarkable mechanical strength, electrical conductivity, and thermal stability, making them ideal for a wide range of advanced applications. This review presents a comprehensive exploration of CNTs synthesis methods, highlighting the progression from conventional techniques such as arc discharge (AD), laser ablation (LA), chemical vapor deposition (CVD), carbonization, and combustion to non-conventional and plasma-assisted methods. While conventional methods have been effective in producing high-quality CNTs, they often exhibit critical limitations including poor chirality control, limited scalability, and the need for post-synthesis purification. Recent innovations involve the use of plasma-based systems, such as capacitively coupled plasma (CCP), inductively coupled plasma (ICP), microwave plasma (MP), plasma-enhanced CVD (PECVD), dielectric barrier discharge (DBD), and atmospheric pressure plasma jet (APPJ) have enabled more precise control over growth parameters, improved CNTs alignment, and reduced defect formation at lower processing temperatures. The integration of external magnetic or electromagnetic fields into plasma systems further enhances CNTs alignment, crystallinity, and structural uniformity by stabilizing plasma behavior and optimizing ion trajectories. The synthesis parameters, including electrode configuration and precursor gases such as methane, nitrogen, oxygen, and argon (CH₄, N₂, O₂, Ar) are critically reviewed. Furthermore, this study discusses the importance of characterization techniques such as Raman spectroscopy, Transmission Electron Microscopy (TEM), Scanning Electron Microscopy (SEM), X-ray Diffraction (XRD), and Optical Emission Spectroscopy (OES) in evaluating CNTs quality. The relationship between synthesis parameters and resulting CNTs properties is also highlighted, offering valuable insights toward specific applications. Finally, the main challenges and future directions are addressed, particularly in the context of scale-up, real time process control, and environmentally sustainable CNTs manufacturing.
+

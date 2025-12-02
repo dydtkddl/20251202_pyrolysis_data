@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Oxygen bond cleavage and its migration mechanisms during pyrolysis of naomaohu sub-bituminous coal Investigating the oxygen bond cleavage and its migration mechanisms during the pyrolysis process of sub-bituminous coals is essential for their classification utilization. The present study employed a fixed-bed pyrolysis technique (temperature range: 350–600 °C) to explore the cleavage of oxygen-containing bonds and subsequent behavior of oxygen migration and transformation during the pyrolysis process of Naomaohu sub-bituminous coal (NSBC). X-ray photoelectron spectroscopy and Fourier transform infrared spectroscopy results reveal that the organic oxygen in NSBC predominantly exists as the form of C–O bonds, accounting for 22.81 wt% of the total composition, mainly encompassing hydroxyl, carbonyl, ester, and ether groups. The organic oxygen in the light tar is mainly in the form of phenols, reaching 1.71 wt%, of which methyl substituted phenols is predominant at a final pyrolysis temperature of 600 °C. This can be attributed to the presence of more aryl ether bonds and hydroxyl groups in NSBC, which are prone to cleavage at higher temperatures, resulting in the formation of phenoxyl radicals. Additionally, the higher temperature facilitates the weakening of hydrogen bonds between phenolic hydroxyl groups, thereby enhancing the yield of phenolic compounds. The ester compounds present a decreasing trend with increasing temperature, primarily associated with the cleavage temperature of ester linkers being 350 °C, suggesting that an increase in temperature favors the cleavage of ester bonds. In addition, the cleavage of C–O bonds begins to accelerate significantly during the pyrolysis temperature range of 450–500 °C, subsequently accounting for the pronounced proliferation of phenols within this specific thermal interval. The oxygen content in semi-coke decreased with the increase of temperature, from 85.27 wt% at 350 °C to 37.17 wt% at 600 °C, while the oxygen content in the pyrolysis gas increases from 11.63 wt% at 350 °C to 47.53 wt% at 600 °C, indicating that a significant migration of organic oxygen to the pyrolysis gas during the pyrolysis of NSBC. This study can deepen the understanding of the transformation mechanism of oxygen-containing structure in NSBC pyrolysis process, and provide a theoretical basis for high-grade utilization of low-rank coals.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Engineering a compostable isolation gown to reduce hospital-derived synthetic waste accumulation in landfill The ever-increasing accumulation of synthetic waste in landfill is a growing pollution and public health concern. In 2018, hospitals in the United States landfilled 1.5 million tons of personal protective equipment (PPE). Single-use, disposable PPE gowns constitute the greatest percentage of landfilled PPE by weight and are overwhelmingly made from non-degradable synthetic materials. The most common and disposed of type of PPE gown are isolation gowns, which are used by healthcare workers attending patients under isolation precautions. One study has shown that under isolation procedures, healthcare systems will on average dispose of 33 gowns per patient per day as municipal waste, contributing a substantial amount of solid waste to landfills. Therefore, to alleviate the strain on landfills, a need exists for isolation gowns that do not contribute to the accumulation of synthetic waste. The approach taken in the present work to address this need was through the creation of a degradable textile from which to make isolation gowns. The prototype textile is a paper-based substrate with an ASTM D6400 certified compostable functional coating to grant the barrier properties necessary to prevent liquid penetration. The compostable, lightweight, coated paper product was tested in accordance with the ASTM F3352 Standard Specification for Isolation Gowns Intended for Use in Healthcare Facilities. The prototype exceeded the AATCC 42 and 127, and ASTM D5034, D5733, and D1683 standardized test requirements to be classified as a high-protection Level 3 isolation gown. As such, the prototype textile has been identified as a suitable material from which to create compostable isolation gowns.
+

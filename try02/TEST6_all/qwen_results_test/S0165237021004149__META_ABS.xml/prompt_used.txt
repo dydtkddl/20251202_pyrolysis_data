@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characterization of historical leather bookbindings by various thermal methods (TG/MS, Py-GC/MS, and micro-DSC) and FTIR-ATR spectroscopy The goal of this study was to obtain information about the thermal stability, composition and molecular structure of four historical leather bookbindings dated between the 17th and 19th century and to identify correlations between their thermal, structural and chemical properties and deterioration mechanisms by using thermal analysis and decomposition methods (TG/MS, micro-DSC, Py-GC/MS), and infrared spectroscopy (FTIR-ATR). The TG/MS study revealed that the maximum thermal decomposition rate of the historical samples depended on the deterioration degree of leather. Micro-DSC was applied to determine the collagen population profile, i.e., “leather-like”, “parchment-like”, or “gelatin-like” behavior, which characterizes the deterioration pattern of the samples. The historical samples have higher amount of adsorbed water compared with the modern leather indicating their higher polarity. The significantly higher yield of carbon dioxide during the pyrolysis of historical leathers demonstrates that leather underwent various oxidation processes over time. The smaller yield of the pyrolysis products attributed to vegetable tannins detected in the chromatograms of historical leathers was related to the degradation of tannins (i.e., de-tanning), while the higher amount of 2-pyrrolidone and succinimide confirmed the oxidation of proline and hydroxyproline amino acid residues in the historical leathers. Leather de-tanning and collagen gelatinization were clearly evidenced by both micro-DSC and FTIR-ATR.
+

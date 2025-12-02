@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave pyrolysis of polypropylene, and high-density polyethylene, and catalytic gasification of waste coffee pods to hydrogen-rich gas Plastic waste poses a critical environmental challenge for the world. The proliferation of waste plastic coffee pods exacerbates this issue. Traditional disposal methods such as incineration and landfills are environmentally unfriendly, necessitating the exploration of alternative management strategies. One promising avenue is the pyrolysis in-line reforming process, which converts plastic waste into hydrogen. However, traditional pyrolysis methods are costly due to inefficiencies and heat losses. To address this, for the first time, our study investigates the use of microwave to enhance the pyrolysis process. We explored microwave pyrolysis for polypropylene (PP), high-density polypropylene (HDPE), and waste coffee pods, with the latter primarily comprising polypropylene. Additionally, catalytic ex-situ pyrolysis of coffee pod pyrolysis over a nickel-based catalyst was investigated to convert the evolved gas into hydrogen. The single-stage microwave pyrolysis results revealed the highest gas yield at 500 °C for HDPE, and 41 % and 58 % (by mass) for waste coffee pods and polypropylene at 700 °C, respectively. Polypropylene exhibited the highest gaseous yield, suggesting its readiness for pyrolytic degradation. Waste coffee pods uniquely produced carbon dioxide and carbon monoxide gases because of the oxygen present in their structure. Catalytic reforming of evolved gas from waste coffee pods using a 5 % nickel loaded activated carbon catalyst, yielded 76 % (by volume) hydrogen at 900 °C. These observed results were supported by elemental balance analysis. These findings highlight that two-stage microwave and catalysis assisted pyrolysis could be a promising method for the efficient management of waste coffee pods, particularly for producing clean energy.
+

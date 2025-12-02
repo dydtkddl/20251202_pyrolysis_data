@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and kinetic study on nitrogen conversion mechanism and nitrogen-containing polycyclic aromatic hydrocarbon formation of 4-ethylpyridine pyrolysis As a branched nitrogen-containing aromatic heterocycle, 4-ethylpyridine (4EP) serves as a representative model compound for investigating fuel-nitrogen conversion and the nitrogen-containing polycyclic aromatic hydrocarbons (NPAHs) formation mechanism of nitrogen-containing fuels. The 4EP pyrolysis kinetics were studied in a jet-stirred reactor (JSR) coupled with a synchrotron vacuum ultraviolet molecular beam mass spectrometer over the temperature range of 820–1090 K at atmospheric pressure. Among the 4EP pyrolysis products, three kinds of branched pyridine compounds, six kinds of NPAHs, and three kinds of PAHs were identified by the photoionization efficiency analysis compared with previous pyridine kinetic studies. The major pyrolysis products are ethylene, methane, 4-methylpyridine, pyridine, 4-vinylpyridine, HCN, and acetylene. A new 4EP pyrolysis kinetic model comprising 296 species and 1222 reactions was proposed. 4EP and major branched pyridine compounds could be reasonably predicted using the model developed in this work. 4-Methylpyridyl (C5H4NCH2) and pyridyl (C5H4N) radicals are two important intermediates for NPAHs formation process. NPAHs formation during 4EP pyrolysis occurs through three pathways, including PyCH2 + C2H4, PyCH2 + PyCH2, and PyCHCH2 + Py via C5H4NCH2+C2H4→C5H3NC3H6→C5H3NC3H4, 2C5H4NCH2→C12H12N2, and C5HNCHCH2+C5H4N→C12H10N2. The ethyl chain on the para-site of pyridine promotes NPAHs formation at a lower temperature compared with pyridine. The effect of nitrogen atom doping of 4EP on the reactivity is analyzed in comparison with ethylbenzene (EB), and the existence of a nitrogen atom in the aromatic structure inhibits the tendency to produce products with polycyclic aromatic structures.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Valorization of Agricultural Polyolefin Plastic Waste in the Kingdom of Morocco through Thermal Pyrolysis: Influence of Thermal Parameters on Pyrolytic Oil Yields This article focuses on exploring the recycling of agricultural plastic waste mixtures through the route of thermal cracking. In an experimental setting within a pilot-scale batch reactor, the impact of temperatures and heating rates on the yields obtained in the pyrolysis process have been meticulously examined. The temperatures of the pyrolysis process were varied between 360°C and 480°C, while the heating rates underwent changes, including 10, 15, and 30°C/min. The response parameters were the liquid, solid, and gas fractions. This research indicates that moderate temperatures and slower heating rates, resulting in extended reaction times, promote the generation of liquid fuel from pyrolysis. We achieved an optimal liquid fuel yield of 79% at 380°C, employing a temperature ramp of 10°C/min. Characterization of pyrolysis fuel resulting from the pyrolysis process revealed an extensive variety of hydrocarbons, requiring prior fractionation for optimal use in internal combustion engines. This step led to the separation into three distinct fractions: a light fraction (analogous to gasoline), accounting for 22.62% of the total weight, a middle fraction (similar to diesel), weighing 53.67% of the weight, and a heavy fraction (comparable to heavy diesel), totaling 23.71% of the weight. The light fraction presents an octane rating in line with conventional gasoline values, while the middle fraction meets the required cetane criteria for diesel.
+

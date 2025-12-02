@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrothermal liquefaction of pretreated polyethylene-based ocean-bound plastic waste in supercritical water Improper disposal of plastics has become a serious environmental issue. Particularly, recovering plastic waste from the ocean is challenging and expensive. Conventional plastic recycling methods such as mechanical recycling cannot handle mixed plastics and usually lead to down-cycling. To address this problem, hydrothermal liquefaction (HTL) was used to convert pretreated ocean-bound plastic waste (OPW), which mainly contains high-density polyethylene (HDPE) waste, into oil in supercritical water. HTL was carried out at 425–475 °C and 23 MPa with reaction times of 0.5–4 h. It was found that over 78 wt% of OPW can be converted into oil at 450–475 °C with a 2–4 h reaction time. Analyzed by gas chromatography–mass spectrometry, the chemical compositions of the oil and gas products were mainly composed of paraffins, olefins, cyclic hydrocarbons, or aromatics. As the reaction temperature or time increased, BTEX production up to 43% of peak area in the oil was obtained at 475°C-2h. Integrating all the characterization results, a reaction pathway for converting HDPE was proposed. Lastly, to understand how different kinds of HDPE waste react under HTL, another three streams of post-consumer HDPE waste bottles (sorted based on their colors, namely translucent, white, and colored) were converted into oil via HTL at 475 °C with a 2 h reaction time. Although post-consumer HDPE waste bottles contain more additives or contaminants than pretreated OPW, the oil yield remained in a similar range to OPW. Results from this study would contribute to developing an efficient chemical recycling method for challenging heterogeneous plastic waste such as ocean plastic waste.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fueling sustainability: Co-pyrolysis of microalgae biomass and waste plastics for renewable energy and waste mitigation The rising worldwide need for energy, driven by industrial expansion, population increase, and transportation demands, poses a substantial issue. Microalgae are extremely promising raw materials for biofuel production, and pyrolysis is an efficient method of turning biomass into bioenergy. However, biofuels generated from microalgae pyrolysis frequently have inferior fuel characteristics due to high quantities of moisture and nitrogen. At the same time, population growth has resulted in a large increase in plastic trash, causing serious environmental issues. While some plastics are recycled, a large portion stays useless, adding to environmental issues. The present research looks at how to overcome these issues by investigating the co-pyrolysis of waste plastics and microalgae biomass. This technique provides synergistic benefits for both fuel and value-added product manufacturing. The resultant materials can be utilized as chemicals and to absorb pollutants, providing ecologically acceptable waste management solutions and supporting sustainability. Co-pyrolysis inhibits the transformation of oxygen and nitrogen to bio-oil in a highly efficient method, increasing oxygen release as H2O and nitrogen conversion to gas products. The paper fully examines the physicochemical features of microalgae biomass and waste plastics, offering a thorough overview. It also summarizes the present research state of microalgae biomass and plastic co-pyrolysis technology, highlighting the synergistic impacts and identifying future development opportunities. The review's last part addresses the economic feasibility, critical challenges, and the potential of co-pyrolysis processes, offering light on this method of waste disposal and sustainable energy generation.
+

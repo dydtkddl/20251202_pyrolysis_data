@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave-assisted pyrolysis of biomass: Influence of feedstock and pyrolysis parameters on porous biochar properties Pyrolysis of biomass produces syngas, bio-oil and biochar, among which biochar requires low pyrolysis temperature and it usually has good adsorption ability due to its complex porous structures. In this study, microwave-assisted pyrolysis of different kinds of biomass such as rice husk, peanut shell, and corn straw to produce biochar was investigated. The yields, specific surface areas (SSA), average pore diameters, and total pore volumes of biochars produced at different pyrolysis temperatures (700, 750, 800, 850, and 900 °C), microwave powers (400, 450, 500, 550, and 600 W), and residence times (60, 90, 120, 150, and 180 min) were detailed. The biochar yields ranged in 30.76–43.28 wt%, 25.71–38.93 wt%, and 23.71–36.95 wt% for peanut shell, rice husk, and corn straw, respectively. With increase in pyrolysis temperature, microwave power or/and residence time, the yield of biochar decreased gradually and eventually became stable, while the SSA of 4.68–323.33 m2/g and total pore volume of 0.0085–0.2015 cc/g rose monotonously, and the average pore size of 2.19–16.55 nm decreased monotonously. The maximum SSA of 323.33 m2/g occurred at 900 °C, 500 W, and 120 min for corn straw. The proposed correlations for biochar pore structures and pyrolysis conditions will provide guidance for porous biochar production from biomass. Porous biochar can be widely used in soil remediation, environmental pollution control, high-performance catalyst/adsorbent research and development, etc. The accurate preparation of biochar with appropriate pore structure is of great significance to promote the efficient recovery and utilization of biomass resources.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation on catalytic pyrolysis of pine sawdust: Catalyst screening by Py-GC-MIP-AED On line Py-GC coupled to microwave induced plasma and atomic emission detector (Py-GC-MIP-AED) was used for screening the effect of various catalysts on the carbon yield of solid residue, gas and bio-oil from the pyrolysis at 500°C of pine sawdust. Bio-oil was further divided into volatile, semi-volatile and non-volatile (i.e. heavy matter HM) fractions. The ability of Py-GC-MIP-AED for screening purposes was investigated by comparing the results with those obtained from preparative pyrolysis with a bench scale reactor. Catalyst screening was performed on 31 catalysts directly admixed with pine sawdust at 1/1 (w/w) ratio. Tested catalysts included mesoporous silica supported metal oxides, bulk metal oxides, clays, zeolites and catalysts for methanol synthesis from syngas (MS). A significant decrease in non-volatile fraction and slight decrease in bio-oil yield were obtained with ZnO, CuO, Fe2O3 and mixed oxide catalysts usually used for methanol synthesis from syngas. These materials actively transformed non-volatile fraction into GC detectable products with a net increase of gas, volatile or semi-volatile products.
+

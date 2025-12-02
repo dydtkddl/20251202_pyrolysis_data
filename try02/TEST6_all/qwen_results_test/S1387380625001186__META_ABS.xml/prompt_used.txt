@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis and thermal extraction of polymeric materials with suction-driven, real-time ionization sources and rapid polarity switching, high resolution mass spectrometry Real-time sampling systems are assembled for analysis of pyrolyzed material using in-line ionization and high resolution mass spectrometry. Two commercial models of Pyroprobe pyrolyzer with either a wand-mounted coil or a drop-in sample chamber are reconfigured from the standard gas chromatograph interface. Either a flow cell containing a platinum coil or a drop-in pyrolysis chamber is connected to a heated transfer line that conducts pyrolysates directly to a photoionization or dielectric barrier discharge source. The ion source is mounted to the front of an Orbitrap system, drawing analyte through from the pyrolyzer using instrument vacuum and/or supplementary pumping. The mass spectrometer scans in rapidly-alternating polarity so that positive and negative mode analyses are acquired in a single run. Pyrolyzed samples of tens of micrograms of polymeric materials yielded robust and resolved signal, especially from halogenated ions in negative mode that otherwise did not produce enough electron impact ionization signal for identification. The photoionization source in particular was easily purged of lingering pyrolysate by temporarily increasing the supplemental flow rate, rapidly returning signal to baseline levels after an analytical run. Elimination of carryover allowed replicate analyses to be collected at a rate of every 2 min without an autosampler. Slow-ramp thermal extraction analyses was performed on the same system as flash pyrolysis without any change in hardware.
+

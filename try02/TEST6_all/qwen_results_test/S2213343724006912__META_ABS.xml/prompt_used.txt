@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Highly-efficient persulfate activation by nitrogen-doped biochar derived from dewatered sewage sludge for 2,4-dichlorophenol removal: Process and mechanism Sewage sludge represents a promising substrate, meriting investigation for its nutrient content and potential for repurposing. Nitrogen-doped biochar (NSC) was synthesized from dewatered sludge over a range of pyrolysis temperatures, spanning 400–800 ℃. This study explores the efficacy of NSC in enhancing the removal of 2,4-dichlorophenol (2,4-DCP) through the integrated processes of adsorption and persulfate (PS) activation, marking its inaugural investigation in this work. The adsorption behavior was best described by both the pseudo-second-order kinetic model and the Freundlich isotherm model. Under conditions with an unadjusted pH value, [PS] at 2 mM, [NSC] at 5 g/L, and [2,4-DCP] at 100 mg/L, the NSC800 (pyrolyzed at 800 ℃)/PS system achieved a complete removal of 2,4-DCP within 120 minutes. The results from radical quenching tests, electron paramagnetic resonance (EPR), and electrochemical analysis indicated that 2,4-DCP degradation occurred via both radical and non-radical mechanisms. Among the nitrogen species, graphitic N was identified as the predominant PS activation site. The NSC800/PS system demonstrated notable catalytic efficiency and stability in the removal of 2,4-DCP, maintaining its efficacy in the presence of Cl-, NO3 -, H2PO4 -, and CO3 2-. Significantly, the optimal reaction stoichiometric efficiency (RSE = 72.059%) was observed at the minimal PS concentration. This research introduces a novel methodology for municipal sludge valorization, proposing an economical biochar designed for the combined adsorption and catalytic degradation of organic pollutants.
+

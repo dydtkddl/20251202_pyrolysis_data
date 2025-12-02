@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Meta-analysis of CO2 conversion, energy efficiency, and other performance data of plasma-catalysis reactors with the open access PIONEER database This paper brings the comparison of performances of CO2 conversion by plasma and plasma-assisted catalysis based on the data collected from literature in this field, organised in an open access online database. This tool is open to all users to carry out their own analyses, but also to contributors who wish to add their data to the database in order to improve the relevance of the comparisons made, and ultimately to improve the efficiency of CO2 conversion by plasma-catalysis. The creation of this database and database user interface is motivated by the fact that plasma-catalysis is a fast-growing field for all CO2 conversion processes, be it methanation, dry reforming of methane, methanolisation, or others. As a result of this rapid increase, there is a need for a set of standard procedures to rigorously compare performances of different systems. However, this is currently not possible because the fundamental mechanisms of plasma-catalysis are still too poorly understood to define these standard procedures. Fortunately however, the accumulated data within the CO2 plasma-catalysis community has become large enough to warrant so-called “big data” studies more familiar in the fields of medicine and the social sciences. To enable comparisons between multiple data sets and make future research more effective, this work proposes the first database on CO2 conversion performances by plasma-catalysis open to the whole community. This database has been initiated in the framework of a H2020 European project and is called the “PIONEER DataBase”. The database gathers a large amount of CO2 conversion performance data such as conversion rate, energy efficiency, and selectivity for numerous plasma sources coupled with or without a catalyst. Each data set is associated with metadata describing the gas mixture, the plasma source, the nature of the catalyst, and the form of coupling with the plasma. Beyond the database itself, a data extraction tool with direct visualisation features or advanced filtering functionalities has been developed and is available online to the public. The simple and fast visualisation of the state of the art puts new results into context, identifies literal gaps in data, and consequently points towards promising research routes. More advanced data extraction illustrates the impact that the database can have in the understanding of plasma-catalyst coupling. Lessons learned from the review of a large amount of literature during the setup of the database lead to best practice advice to increase comparability between future CO2 plasma-catalytic studies. Finally, the community is strongly encouraged to contribute to the database not only to increase the visibility of their data but also the relevance of the comparisons allowed by this tool.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Analyze the mechanism of separating resin and glass fiber from the main beam material of retired wind turbine blades during the process of vacuum melting-gasification-decomposition-condensation The resource utilization of retired wind turbine blades is a key part of achieving the “dual carbon” goal. It is difficult to separate the adhesion between glass fiber and thermosetting resin in the main beam material of retired wind turbine blades, and the presence of thermosetting resin affects the recycling of glass fiber. The current separation technology has problems such as high technical difficulty and low availability of recycled products. In this study, it was verified that the vacuum melting-gasification-decomposition-condensation method could effectively separate glass fiber and thermosetting resin, and the thermosetting resin condensed in the pipe. The average heat release rate during decomposition is 48.26 kW/m2, and the heat treatment process is easy to control. The reaction sites were calculated and simulated by quantum chemistry, and the bond breaking energies of the thermosetting resin were 378.98 kJ/mol, 393.92 kJ/mol and 352.67 kJ/mol, respectively. The simulation results combined with the thermal decomposition characteristics show that the separation process goes through four parts: vacuum melting, gasification, decomposition and condensation. In addition, the material has a Young’s modulus of 33946.76 MPa, and has strong toughness and potential for recycling. This paper may be the first study to recycle glass fibers using vacuum melting-gasification-decomposition-condensation technology.
+

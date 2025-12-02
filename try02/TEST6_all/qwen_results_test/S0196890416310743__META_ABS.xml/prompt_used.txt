@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of fibre residues with plastic contamination from a paper recycling mill: Energy recoveries Pyrolysis is a promising technology for the production of marketable energy products from waste mixtures, as it decomposes heterogeneous material into homogenous fuel products. This research assessed the ability of slow pyrolysis to convert three waste streams, composed of fibre residues contaminated with different plastic mixtures, into char and tarry phase products at three different temperatures (300, 425 and 550°C). The products were characterised in terms of mass yield, higher heating value (HHV) and gross energy conversion (EC). Significant amounts of hydrocarbon plastics in the feed materials increased the calorific values of the char (up to 32.9MJ/kg) and tarry phase (up to 42.8MJ/kg) products, comparable to high volatile bituminous A coal and diesel respectively. For all three waste streams converted at 300°C, the majority of the energy in the feedstock was recovered in the char product (>80%), while deoxygenation of fibre component resulted in char with increased calorific value (up to 31.6MJ/kg) being produced. Pyrolysis at 425°C for two of the waste streams containing significant amounts of plastic produced both a valuable char and tarry phase, which resulted in an EC greater than 74%. Full conversion of plastic at 550°C increased the tarry phase yield but dramatically decreased the char HHV. The influence of temperature on product yield and HHV was discussed based on the pyrolysis mechanisms and in relation to the plastic composition of the waste streams.
+

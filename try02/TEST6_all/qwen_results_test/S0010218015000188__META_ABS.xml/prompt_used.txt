@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and kinetic modeling study of exo-TCD pyrolysis under low pressure The exo-TCD (exo-tricyclo[5.2.1.02,6]decane) pyrolysis (3.0vol.% exo-TCD in argon) was performed in a flow tube reactor at a temperature range of 900–1600K under low pressure (667Pa). The identification of products or intermediates and the isomeric distinction were accomplished by synchrotron vacuum ultraviolet photoionization mass spectrometry (SVUV-PIMS). Approximately 28 species were identified and quantified by near-threshold measurements of photoionization mass spectrum and photoionization efficiency spectrum. Meanwhile, the initial unimolecular decomposition rate of exo-TCD was estimated using transition states theory and Rice–Ramsperger–Kassel–Marcus (RRKM) theory. A detailed kinetic model of exo-TCD pyrolysis was developed including 316 species and 807 reactions. The simulation results generally agree well with the experimental data. ROP and sensitivity analysis indicate that under lower pressure the initial decomposition of exo-TCD is dominant by diradical channel rather than the unimolecular decomposition or H-abstraction channels, and that the methyl-cyclicC5 and methylene-cyclicC5 species may be one of the principal precursors for the formation of aromatics (benzene, toluene, etc.).
+

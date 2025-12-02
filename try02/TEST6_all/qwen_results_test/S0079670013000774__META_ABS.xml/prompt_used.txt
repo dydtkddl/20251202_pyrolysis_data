@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recent developments in the fire retardancy of polymeric materials The widespread applications of polymeric materials require the use of conventional flame retardants based on halogen and phosphorous compounds to satisfy fire safety regulatory standards. However, these compounds, particularly halogen-based examples, are persistent organic pollutants of global concern and generate corrosive/toxic combustion products. To account for eco-friendliness, ultimate mechanical/physical properties and processing difficulties, the window of options has become too narrow. Although the incorporation of non-toxic nanofillers in polymers shows positive potential towards flame retardancy, many obstacles remain. Moreover, most of the literature on these materials is qualitative, and often points to conflicting/misleading suggestions from the perspectives of short-term and long-term fire exposure tests. Hence, there is a renewed need to fundamentally understand the fire response of such materials, and complement experimental results with theoretical modelling and/or numerical simulation. A part of this review will highlight the ecological impacts of using conventional flame retardants, thereby signifying the necessity to use eco-friendly agents. In other sections, we explore the use of various nanofillers for this purpose, compare their performance with traditional systems, provide insights into different testing standards and combustion mechanisms, modelling aspects of the combustion behavior, and identify novel approaches that could be considered for meeting the fire safety standards with eco-friendly materials.
+

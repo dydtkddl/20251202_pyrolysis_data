@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Role of spent FCC catalyst in pyrolysis and CO2-assisted gasification of pinewood This paper examines the potential for synergistic benefits of co-utilizing three waste streams of pinewood, spent fluid catalytic cracking (sFCC) catalyst, and waste CO2 via thermochemical conversion. For this, a lab-scale fixed-bed semi-batch scale reactor facility is utilized to investigate the impact of using sFCC catalyst and its reusability on the syngas output, quality, and energy during pyrolysis and CO2-assisted gasification of pinewood 800–900 °C. Results are reported on the pyrolysis and CO2-assisted gasification of pinewood, as well as the impact of using sFCC catalyst and its reusability on syngas output, quality, and energy. Incorporating the catalyst without direct contact with the solid feedstock resulted in syngas enhancement and reusing this catalyst led to <5 wt% char formation from the gasification at 900 °C. The addition of FCC catalyst improved the total CO yield and its rate with an increase in temperature due to improved cracking of volatiles and their simultaneous reforming using CO2. In addition, the syngas and energy yields decreased when the catalyst was in direct contact with the solid biomass which also acted as a barrier between the feedstock and gasifying agent, leading to lower CO production. Catalytic gasification at 900 °C using CO2 provided combustible gas output that was 1.4 times higher than the feedstock mass which suggests that at least 0.4 g of CO2 consumption for combustible gases, such as H2 and CO. This points to the synergistic potential in co-utilization of waste streams of biomass, spent FCC catalyst, and CO2 that provided not only waste management and energy recovery but also energy efficient carbon sequestration. Temperature programmed oxidation of the char residue left from the pyrolysis and gasification tests and coke that forms on the sFCC catalyst revealed conversion of about 0.1 g of the feedstock to coke that was significantly more resistant to oxidation than the char formed.
+

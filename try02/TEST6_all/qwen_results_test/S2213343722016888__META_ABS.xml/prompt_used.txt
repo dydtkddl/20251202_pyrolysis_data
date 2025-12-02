@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Preparation of activated carbon from spent coffee grounds and functionalization by deep eutectic solvent: Effect of textural properties and surface chemistry on CO2 capture performance Spent coffee grounds have been selected as a potential feedstock to synthesize activated carbon (AC) through physical activation. The activation parameters were optimized by employing the Box-Behnken design method. The impact of input activation parameters included the activation temperature (600–800 ℃), holding time (60–120 mins) and CO2 flow rate (150–250 mL/min). Accordingly, at the optimum conditions obtained at 800 ℃, 90 min and 150 mL/min, the predicted response of specific surface area (1202.1 m2/g) was in good agreement with the actual response 1224 m2/g. Furthermore, natural deep eutectic solvent (DES) has been used to tailor the surface functionalities of the optimized AC (pristine). The change in textural characteristics, surface chemistry and morphology of the pristine and DES-AC samples were characterized by using complementary analytical techniques, including ultimate analysis, ash content, textural characteristics, XRD, CO2-TPD, TGA, XPS and SEM analyses. The studies highlighted change in physicochemical properties after the DES impregnation. For instance, the specific surface area of the DES-functionalized AC reduced to 1033 m2/g, but more basic functional moieties developed on the surface. The DES functionalised AC has shown adequate CO2 capture performance of 5.5 mmol/g compared to pristine AC (4.34 mmol/g) at 25 ℃ and 15 vol% of CO2 (in N2). Furthermore, DES functionalized AC has shown excellent selectivity in a dynamic mixture stream of CO2/N2 and facile regeneration (92% retention) after multiple adsorption-desorption runs. Hence, preparing AC from SCG derived biochar via physical activation and DES impregnation could be proposed as a promising valorization strategy to alleviate the CO2 emission problem.
+

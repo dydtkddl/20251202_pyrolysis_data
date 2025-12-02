@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Environmental-friendly extraction of di(2-ethylhexyl) phthalate from poly(vinyl chloride) using liquefied dimethyl ether Poly(vinyl chloride) (PVC) is one of the most widely used plastics. However, a major challenge in recycling PVC is that there is no economical method to separate and remove its toxic phthalate plasticizers. This research made a breakthrough by extracting PVC with liquefied dimethyl ether (DME) and successfully separating the plasticizer components. Nearly all (97.1 %) of the di(2-ethylhexyl) phthalate plasticizer was extracted within 30 min by passing liquefied DME (285 g) through PVC at 25 °C. The compatibility of PVC with organic solvents, including liquefied DME, was derived theoretically from their Hansen solubility parameters (HSP), and actual dissolution experiments were conducted to determine the optimal PVC solvents. A liquefied DME mixture was used to dissolve PVC, and the extract was diluted with ethanol to precipitate the dissolved PVC. We demonstrated that liquefied DME is a promising method for producing high quality recycled products and that the process retains the fundamental properties of plasticizers and PVC without inducing degradation or depolymerization. Because of its low boiling point, DME can be easily separated from the solute after extraction, allowing for efficient reuse of the solvent, extracted plasticizer, and PVC. DME does not require heat and produces little harmful wastewater, which significantly reduces the energy consumption of the plasticizer additive separation process.
+

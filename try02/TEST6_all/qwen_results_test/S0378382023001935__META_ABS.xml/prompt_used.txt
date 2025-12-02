@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-hydropyrolysis of pine and HDPE over bimetallic catalysts: Efficient BTEX production and process mechanism analysis Co-pyrolysis of plastics and biomass is expected to replace traditional petroleum processing to produce BTEX (benzene, toluene, ethylbenzene, and xylenes) on a large scale, which are important chemical raw materials. The introduction of bimetallic catalysts and hydrogen in co-pyrolysis systems is an effective strategy to increase the content of aromatic hydrocarbons in pyrolysis oils, which has not been studied so far. The present study investigated the efficacy of bimetallic catalysts in enhancing aromatization and Diels-Alder reactions in comparison to Mo/ZSM-5. The synergistic interaction between bimetals contributed to the improved selectivity of aromatic hydrocarbons, particularly BTEX. Results revealed that NiMo/ZSM-5 catalysts led to higher aromatics selectivity in liquid oil, whereas FeMo/ZSM-5 resulted in higher BTEX selectivity in aromatic hydrocarbons. Moreover, metal oxide-supported bimetallic catalysts exhibited lower selectivity for aromatic hydrocarbons in liquid oil, despite facilitating higher liquid-oil yield. Among the metal oxide-supported bimetallic catalysts, FeMo/TiO2 demonstrated the highest selectivity (56%) for aromatic hydrocarbons in liquid oils. The introduction of hydrogen resulted in 100% selectivity of BTEX in aromatic hydrocarbons, thus highlighting the significance of hydrogenation in enhancing the selectivity of BTEX. Combined with the experimental results and literature, a possible reaction mechanism was also proposed.
+

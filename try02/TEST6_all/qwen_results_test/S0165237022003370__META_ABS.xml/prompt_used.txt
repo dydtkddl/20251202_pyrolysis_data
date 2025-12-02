@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Simulation of the thermal degradation kinetics of biobased/biodegradable and non-biodegradable polymers using the random chain-scission model. Capabilities and limitations In literature, several models have been applied in the simulation of the thermal degradation of polymers. Often, the models used were taken from solid-state physics and found to simulate very well the experimental data, though without any real physical meaning. In this investigation, a systematic approach is carried out regarding the simulation of the thermal decomposition of polymers using the random chain-scission model. Specifically, the model developed by Sánchez-Jiménez, P é rez-Maqueda and Criado based on the original idea of Simha and Wall is analyzed and applied to several polymers including polyolefins, styrenics, aromatic or aliphatic polyesters both biobased/biodegradable and non-biodegradable. The aim is to compare the thermal stability of several polymers and provide kinetic parameters having physical meaning based on a meaningful kinetic model. In order to estimate the kinetic parameters independently and consistently, the following procedure is proposed: initially, one has to perform experiments at several heating rates in order to estimate the activation energy of the reaction using a differential or an advanced integral isoconversional approach. Following, a system of differential equations is set and solved based on the random scission model, using only one adjustable parameter, i.e. the pre-exponential factor. It was found that using the same set of parameters, thermogravimetric data for all these polymers at several different heating rates can be simulated very well in the range of relative degree of degradation from 30% to 90%. This observation verified the hypothesis that at this region of degradation the dominant mechanism for several polymers is that of random scission. The best set of kinetic parameters is proposed for several polymers with the activation energy mainly ranging in between 160 and 210 kJ/mol.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recycling of waste crystalline silicon photovoltaic modules: Efficient decapsulation and silver extraction using environmental-friendly reagents and deep eutectic solvents The transformation of the global energy structure has driven the rapid development of the photovoltaic industry, inevitably leading to the generation of upgraded and end-of-life photovoltaic waste. Effective treatment of this waste is crucial for environmental protection and advancing the circular economy. Crystalline silicon photovoltaic modules, which dominate the market, contain high-value recyclable materials such as plate glass and silver. Decapsulation, the critical first step in recycling, enables the separation of layered panel materials. This study employs environmental-friendly isopropyl myristate and diethyl malonate for decapsulation, achieving optimal processing within 60 min. These reagents retained high purity and generated minimal byproducts even after 40 reuse cycles, demonstrating excellent reusability. The characteristic functional group peaks of the ethylene vinyl acetate encapsulant remained unchanged, with only variations in peak intensity. The disruption and reorganization of its cross-linked structure weakened its adhesion to other panel layers. These reagents exhibited limited leaching effects on Ag from solar cells, facilitating subsequent Ag recovery. A stable deep eutectic solvents synthesized from FeCl3·6H2O and urea demonstrated low melting points of approximately −25.98 °C (molar ratio 1:1) and −54.09 °C (molar ratio 1:3). This deep eutectic solvents efficiently enriched Ag from delaminated solar cells, achieving a 93.55 % Ag extraction rate (20 min, 80 °C, 400 rpm). This study combines the wet decapsulation of photovoltaic modules with the Ag extraction of solar cells. The eco-friendly reagents adopted provide new guidance for the recycling of waste photovoltaic modules.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Heterointerface magic: How FeS2/NiS2@NC nanoparticles transform sodium-ion battery anode performance Transition metal sulfides (TMS) are acknowledged as potential anode materials for sodium ion batteries (SIBs); however, their practical application is significantly hindered by suboptimal cycling durability and inadequate rate performance, primarily stemming from limited electronic conductivity and substantial volume swelling during the sodiation/desodiation process. Constructing heterojunction incorporating multiple active components has been emerged as an effective strategy to mitigate these limitations. In this study, high lattice matching FeS2/NiS2 heterojunction nanoparticles anchored on a carbon skeleton (FeS2/NiS2@NC) were synthesized by a facile high-temperature pyrolysis and sulfidation process. The combination of experimental characteristics and theoretical simulations confirms that this unique heterojunction, characterized by an electric field at the interface, offers an adjustable electronic structure and strong Na+ adsorption energy, thus expediting Na+ diffusion kinetics. Consequently, the FeS2/NiS2@NC electrode demonstrates superior rate capabilities (491.2 mAh/g at 10.0 A/g) and enhanced cycling stability (490.8 and 274.7 mAh/g at 10.0 and 20.0 A/g over 5000 cycles) when employed as anode in SIBs. This research underscores the pivotal role of the heterointerface engineering in enhancing rechargeable battery performance and presents a promising avenue for optimizing the electrochemical properties of TMS.
+

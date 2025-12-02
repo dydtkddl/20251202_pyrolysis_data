@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characterization of flammability and species yields for PMMA burning at constant equivalence ratios in a fire propagation apparatus A new method for the measurement of the heat release rate and products of combustion at constant global equivalence ratios (GERs) was developed. This method was based on a modified Fire Propagation Apparatus (FPA) equipped with O2, CO2, CO, total hydrocarbons (THC), particulate matter (PM), NO, and HCN sensors. The control of GER was achieved by administering precisely calibrated, time-varying air flow to the combustion zone. To demonstrate this method's capabilities, the combustion of poly(methyl methacrylate) (PMMA) was investigated at GER ranging from 0.63 to 1.96. The CO2 yield, expressed as mass of species per mass of pyrolyzate, and heat of combustion were found to monotonically decrease from 2.04 to 1.05 and from 23.6 kJ g−1 to 15.1 kJ g−1, respectively, with increasing GER. Conversely, CO, PM, and THC yields increased from 0.019 to 0.263, from 0.015 to 0.051, and from 0.006 to 0.301, respectively, with increasing GER. Good carbon balance, within ±5 %, was achieved across the entire GER range. The characteristic time the combusting mixture spends in the FPA's test section was identified as another key parameter, alongside GER, that affected both species production and heat release. An empirical model was developed and validated to fully capture these dependencies.
+

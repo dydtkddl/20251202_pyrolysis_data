@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of temperature and time on initial pyrolysis of cellulose and xylan The aim of this study was to investigate the effects of temperature and reaction time on the primary pyrolysis of cellulose and xylan. Fast pyrolysis of cellulose and xylan was carried out with a micropyrolyser connected to a gas chromatograph-mass spectrometer/flame ionisation detector (GC–MS/FID) to separate and identify volatile components, both qualitatively and quantitatively. This set-up meant a minimum amount of secondary reactions, low impact of the heating period and at the same time provided rapid and accurate analyses. The two biomass components investigated were: cellulose and hemicellulose (represented by xylan). They were pyrolysed during 0.5, 1, 2 and 5 s (s) and within a temperature range of 400–600 °C. The results showed that levoglucosan (1, 6-anhydro β-D-glucopyranose) is the main chemical compound released during cellulose pyrolysis. It increased with increasing temperature and time. The main volatile compounds produced from pyrolysis of xylan are: 1-hydroxy-2-butanone, 4-hydroxy-5, 6-dihydro-(2 H)-pyran-2-one, 1-hydroxy-2-propanone (acetol), acetaldehyde and hydroxyacetaldehyde (HAA). HAA was the most abundant chemical compound released during xylan pyrolysis, increasing with higher temperatures and time. Acetol and acetaldehyde also showed similar behaviour. The chemical compounds released from cellulose and xylan fast pyrolysis are primary products and assumed to be produced directly from both cellulose and xylan molecules and not from secondary degradation. In this study, possible reaction routes during biomass primary pyrolysis are also suggested based on the product distribution from the thermal decomposition of cellulose and xylan.
+

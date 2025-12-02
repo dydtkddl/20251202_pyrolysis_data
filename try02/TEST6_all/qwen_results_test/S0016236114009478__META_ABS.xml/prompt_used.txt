@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Steam/oxygen gasification system for the production of clean syngas from switchgrass A pilot-scale 25kg/h fluidized bed, oxygen/steam blown gasifier and syngas cleaning system was developed to convert switchgrass into clean syngas. The system is rated for operation at gage pressures up to 1bar. The reactor vessel incorporated a novel guard heating system to simulate near-adiabatic operation of large commercial-scale gasifiers, and was effective for gasification temperatures up to 900°C. After removing particulate from the gas stream via cyclones, a warm-gas cleaning operation based on oil scrubbing was used to remove tars. Sulfur compounds were removed via solid-phase adsorption. Ammonia was removed by water scrubbing. Baseline gasification tests with steam and oxygen were conducted at equivalence ratios (ER) between 0.21 and 0.38 using switchgrass as fuel. Measurements on the raw and cleaned syngas included permanent gas composition, C2 hydrocarbons, water, heavy and light tars, gasification residues (char and ash), hydrogen sulfide (H2S), carbonyl sulfide (COS), carbon disulfide (CS2), ammonia (NH3), and the first reported measurements of hydrogen cyanide (HCN) for oxygen/steam blown gasification. Heavy tars were removed with high efficiency by the method employed, although more difficult to remove light tars reduced overall tar removal efficiency to less than 80%. The sulfur scrubbing system demonstrated 99.9% removal efficiency, resulting in less than 200ppb of H2S in the cleaned gas. The NH3 scrubbing system also accomplished greater than 99.9% removal efficiency, resulting in final NH3 concentrations of less than 1ppm.
+

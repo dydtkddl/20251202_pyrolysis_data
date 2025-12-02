@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Advances in catalytic pyrolysis of mixed plastic waste with algal biomass: A review on sustainable biofuel production and carbon capture The increasing demand for fuel and the growing environmental challenges posed by plastic waste have accelerated the development of alternative strategies for converting synthetic polymers into value-added products. Catalytic pyrolysis has emerged as a promising thermochemical technique to recover fuel and monomer precursors from plastic waste under inert conditions, and this approach can be further improved through the integration of algal biomass. This review provides an in-depth analysis of algae-assisted catalytic pyrolysis, emphasizing the synergistic interactions between plastic polymers, algae species—particularly Chlorella vulgaris—and various catalysts including ZSM-5, red mud, Ni/SiO₂, Co-Mo/Al₂O₃, and natural zeolites. The study explores the roles of these catalysts in improving reaction pathways, cracking efficiency, product selectivity, and dechlorination during the co-pyrolysis process. Algal biomass offers several advantages, including its high lipid and oxygen content, mineral composition, and capacity to act as a hydrogen donor, thereby promoting hydrocarbon formation and enhancing fuel quality. Moreover, algae-derived biochar can serve as a renewable and low-cost catalyst support. The review also presents a bibliometric analysis, highlighting trends in algae-integrated pyrolysis research, and discusses the influence of process parameters, reactor configurations, and catalyst regeneration methods. Techno-economic and environmental assessments demonstrate that algae-assisted catalytic pyrolysis offers an efficient and sustainable pathway for managing plastic waste, producing cleaner fuels, and advancing circular economy goals. Future research should focus on scaling up technology, optimizing catalyst design, and enhancing the energy integration between pyrolysis units and algae cultivation systems.
+

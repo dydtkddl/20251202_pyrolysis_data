@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Two-stage co-pyrolysis of Kraft lignin and palm oil mixture to biofuels: The role of lignin as a methylation agent for methyl ester formation In this work pyrolysis of palm oil and lignin has been investigated using a two-stage process at 550 °C, with a first step configuration of continuous condensation for vapors and separation of gases, and a second step with distillation of vapors. Experiments were realized as pyrolysis of palm oil, palmitic acid, and Kraft lignin, as well as co-pyrolysis of palm oil/lignin, palmitic acid/lignin and palmitic acid/guaiacol. It has been shown that the addition of lignin improves the quality of palm oil pyrolysis bio-oil, thanks to the conversion of fatty acids coproduct to fatty acid methyl esters (FAME). The production of methyl esters in the reaction environment using palm oil and lignin was studied by conducting experiments with palmitic acid and lignin, as well as palmitic acid and guaiacol (the main product obtained from lignin pyrolysis). The results highlighted that during pyrolysis, the production of FAME is a consequence of a direct esterification reaction on palmitic acid. The formation of FAMEs during pyrolysis presents a promising avenue to optimize the utilization of palm oil by generating FAMEs as supplementary fuel products, Furthermore, it is possible to consider the application of the studied process for the conversion of free fatty acids into FAME.
+

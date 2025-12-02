@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+DFT-based rate equation for thermochemical redox kinetics in a bubbling-fluidized bed reactor and its application to a manganese oxygen carrier in chemical looping Thermochemical redox reactions in a bubbling-fluidized bed reactor involve the surface→grain→particle→reactor scales from the microscope to the macroscope, and the reaction contains some physical and chemical steps. There is a requirement to develop a comprehensive and precise rate equation for the redox processes. This work established a density functional theory (DFT)-based multi-scale model to simulate the kinetic behaviors of the thermochemical reactions. The model was applied to predict the oxidation and reduction kinetics of a manganese oxygen carrier in chemical looping. The reaction mechanisms of the manganese oxygen carrier with H2 and O2 were firstly calculated by the DFT methods at the surface scale, both showing two-step reaction paths with the rate-limiting step energy barrier of 0.96 eV and 0.63 eV respectively. The reaction rate constants were 0.19/Pa/s for the oxidation and 3.50 × 10−2/Pa/s for the reduction at 900 °C, obtained by the transition state theory (TST). The DFT and TST results were introduced to establish a microkinetic rate equation at the grain scale, which realizes the coupling of the surface reactions and the O anion diffusion in the grain bulk. The rate equation was implemented in the mass transfer models, and the influences of the gas diffusion at the particle scale and the reactor scale were further considered, including the internal, external and interphase gas diffusion. The theoretical prediction results are validated by the experimental data from the micro-fluidized bed thermogravimetric analysis. It is demonstrated that the DFT-based model could realize an accurate prediction of the reaction kinetics of the manganese oxygen carrier in bubbling-fluidized bed reactor at a wide range of reaction temperatures and gas partial pressures. The developed DFT-based rate equation solves the theoretical problem of scale-span phenomenon for the thermochemical redox reactions, i.e. oxidation and reduction steps of an oxygen carrier in chemical looping.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+How nitrate and ammonium impact soil organic carbon transformation with reference to aggregate size While nitrogen (N) deposition and over-fertilization enrich N in soil, it is unclear how it impacts soil organic carbon (SOC) transformation at the aggregate scale. Herein, a 90-day study reveals the transformation mechanisms of SOC in soil aggregates under nitrate and ammonium enrichment conditions. Results showed that nitrate treatment (NT) and ammonium treatment (AT) significantly increased SOC content by 15.6 % and 18.9 %, respectively. In addition, NT increased SOC accrual in large macro-aggregates (LMA), while AT increased SOC accrual in small macro-aggregates (SMA) and micro-aggregates (MA). Further analysis of pyrolysis products showed that N enrichment drove the transformation of labile soil organic matter (SOM) composition into recalcitrant SOM, with polysaccharides declining from 19–30 % to 2–13 %, while lipids rose from 18–27 % to 33–45 %. LMA and SMA contained more aromatic compounds than MA. This is linked to the inhibition of the expression of C degradation function genes, while almost all genes encoding SOC degradation are down-regulated under N enrichment. In the meantime, NT increased the abundance of genes encoding the degradation of N-containing compounds in LMA. Moreover, NO3 − enrichment exerted a higher inhibitory effect on labile SOC degradation while NH4 + enrichment substantially inhibited recalcitrant SOC. Finally, Random Forest analysis confirmed that N enrichment elevated the importance of N-containing compounds' metabolism, which diminished when the size of soil aggregates decreased. In contrast, the importance of genes encoding saccharides and cellulose metabolism increased in smaller aggregates. This study highlights that both N type and aggregate size were determining factors in shaping SOC transformation in the N enrichment process.
+

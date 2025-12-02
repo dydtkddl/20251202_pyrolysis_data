@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The pyrolysis of biosolids in a novel fluidized bed heat exchanger reactor: Pilot plant trials, biochar properties, gas emissions testing, and fate of PFAS There are limited pilot-scale investigations of biosolids pyrolysis, particularly utilising an autothermal fluidised bed reactor system. This study reported the pilot trials of biosolids pyrolysis using the novel integrated fluidised bed heat exchanger, PYROCO™ reactor technology. The pilot plant was operated for 14 days at an average feed rate of 15 kg/h dry biosolids. The produced biochar was comprehensively characterized for its physicochemical properties and residual contaminant profile. Gas effluent streams sampled from various locations within the plant were analysed for traditional pollutants, including CO, SOx, NOx, dioxins, and furans, along with particulate matter, hydrocarbons, chlorides, fluorides, and metal(loid)s through independent gas emission testing. Additionally, the fate of per- and polyfluoroalkyl substances (PFAS) was evaluated through PFAS analysis in all solid, liquid, and gas streams, as well as through fluorine mass balance. The biochar produced exhibited a high carbon content (20–30 wt%) and retained beneficial agronomic properties, such as low O/C and H/C atomic ratios, along with high macronutrient contents. While concentrations of heavy metals and polycyclic aromatic hydrocarbons increased in the biochar, most persistent organic contaminants were effectively removed, resulting in non-detectable levels of PFAS, microplastics, pharmaceuticals, hormones, estrogens, and pesticides. The PFAS and fluorine mass balance analysis indicated that PFAS concentrations in the influent biosolids (58.1 ng/g) were reduced to non-detectable levels across all effluent streams, including biochar, scrubber water, and flue gas, demonstrating effective PFAS removal. Gas emissions testing revealed that all measured gas pollutants, except for particulate matter and mercury, were within acceptable industrial emission thresholds for thermal plants. Overall, the findings underscore that the PYROCO™ technology is a promising solution for the energy-efficient conversion of biosolids into high-quality biochar.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrothermal integrated chemical treatment of microplastics for efficient degradation: Mechanistic insight and degradation behavior Microplastics (MPs) pollution has become a hot topic for researchers due to its common presence in the environment. However, the low efficiency of the existing methods for removing MPs from an environment is a limitation. Advanced oxidation processes are cutting-edge methods for MPs degradation. This review highlights the role of chemical treatments in hydrothermal methods, focusing on mechanisms that enhance MP degradation efficiency. Hydrothermal methods, such as subcritical and supercritical water treatments, break down polymers into smaller molecules, producing 22 % gases and 95.5 % liquids. The integration of chemical reagents such as acids (HCl, H₂SO₄), bases (NaOH, KOH), and oxidizing agents (H₂O₂, KMnO₄) significantly enhances degradation efficiency by catalyzing hydrolysis, oxidation, and depolymerization. Acids facilitate polymer chain cleavage, bases accelerate hydrolysis, and oxidizing agents generate reactive oxygen species (ROS) that mineralize MPs into harmless by-products like CO₂ and water. The degradation behavior of MPs varies by polymer type, with polyethylene (PE) and polypropylene (PP) undergoing thermal degradation and oxidation, while polyethylene terephthalate (PET) and polyvinyl chloride (PVC) are more susceptible to hydrolysis and dechlorination. The analysis of degradation products, including gas-phase hydrocarbons, liquid-phase oils, and solid-phase char, reveals potential for resource recovery, though the toxicity of by-products, such as phthalates and bisphenol A, poses environmental risks. Future research should prioritize the optimization of HICT with respect to scalability, material stability, reactor compatibility, and environmental safety, while also aiming to minimize the formation of toxic by-products. Addressing these challenges will advance sustainable solutions for mitigating MPs pollution and its ecological impacts.
+

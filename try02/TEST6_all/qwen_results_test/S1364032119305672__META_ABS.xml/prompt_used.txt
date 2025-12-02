@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave vacuum pyrolysis of waste plastic and used cooking oil for simultaneous waste reduction and sustainable energy conversion: Recovery of cleaner liquid fuel and techno-economic analysis Microwave vacuum pyrolysis was examined and compared to conventional pyrolysis for its technical and economic feasibility in co-processing of waste plastic and used cooking oil simultaneously to generate fuel product. The pyrolysis demonstrated beneficial process features with respect to high heating rate (29 °C/min) to provide fast heating, high process temperature for extensive cracking (581 °C), short process time (20 min), and low electrical energy consumption (0.38 kWh). The combined use of microwave vacuum pyrolysis and activated carbon reaction bed produced up to 84 wt% yield of liquid oil, containing light hydrocarbons and higher heating value (49 MJ/kg) than diesel and gasoline, hence showing great promise for application as fuel. The use of activated carbon reaction bed showed beneficial effect in creating a reduction environment that prevented the oxidation or formation of oxygenated by-products. A positive synergistic effect between waste plastic and used cooking oil was also observed. The liquid oil obtained from this pyrolysis approach presented a low oxygen and nitrogen content, and free of sulphur, showing ‘cleaner’ properties with respect to reduced char residues, sludge formation, corrosiveness, degradation of oil quality, and emission of undesired SOx and NOx during its utilization in combustion process. The techno-economic analysis indicated that this pyrolysis approach showed low production cost (USD 0.25/L compared to USD 0.523/L of diesel price in Malaysia). Our results demonstrate that microwave vacuum pyrolysis is potentially economically feasible and show promise as a sustainable approach for energy conversion in providing improved process features and production of cleaner liquid fuel.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Torrefaction of spent coffee grounds for solid fuel production: A review Lignocellulosic solid fuels derived from biomass are emerging as a promising alternative to fossil fuels. However, due to a high moisture content, low energy density, and bulky volume, biomass is less favorable in terms of transport, storage, handling, and conversion. Pretreatment of biomass has shown to address these limitations, improving the efficiency of converting biomass into bioenergy. Among various methods, torrefaction is particularly promising, as it produces solid biogenic fuels that show a relatively higher conversion rate into bioenergy (on an equal mass basis) compared to the original biomass from which they are derived. This paper provides a comprehensive review of the state-of-the-art in torrefaction and its role in thermochemical conversion processes. Particularly, the characteristics of spent coffee grounds (SCGs) are examined, together with the potential of torrefaction for solid biofuel production from SCGs. Reactor technologies that may be used for this purpose are explored and the impact of process parameters and operating conditions is discussed. To gain deeper understanding of the reactions and mass & heat transfer phenomena involved in torrefaction, commonly applied reaction kinetics and previously established Computational Fluid Dynamics (CFD) models are reviewed. Challenges associated with scaling up methods for industrial applications and future perspectives of torrefaction in bioenergy production are also discussed. Finally, conclusions are drawn and research needs for further improvement of the torrefaction process are highlighted.
+

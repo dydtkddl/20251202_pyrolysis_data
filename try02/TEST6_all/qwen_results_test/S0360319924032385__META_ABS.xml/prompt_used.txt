@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Parameter study of waste shiitake substrate/waste polyethylene Co-gasification using Aspen Plus kinetic modeling Waste Shiitake Substrate, a major agricultural waste in Taiwan, is typically packaged in plastic bags (Waste Polyethylene, PE) during mushroom cultivation process. Consequently, these plastic bags become additional waste that requires proper disposal. In recent years, Taiwan has produced over 150,000 tons of waste shiitake substrate annually, with approximately 1580 tons of plastic bags used for mushroom cultivation. Up to now, there has not been an effective method for handling this waste. This study aims to develop a co-gasification process using the complementary characteristics of WSS and PE. Unlike traditional direct combustion, the co-gasification approach can convert these wastes into cleaner bioenergy. This study aims to develop an Aspen Plus model for a laboratory-scale 1 kWth bubbling fluidized bed gasifier. This model incorporates kinetic reactions and tar formation during co-gasification. The model accurately predicted the experimental results. Different variables were investigated, including gasifier temperature, blending ratio (BR) of the two fuels, mixing ratio (MR) of the gasifying agent, and equivalence ratio (ER). The results showed that hydrogen production correlated positively with the steam-to-carbon ratio in the gasification medium, whereas carbon monoxide (CO) was more affected by the feedstock type and equivalence ratio, with CO reaching its peak at an equivalence ratio of 0.2. When gasifying using only waste shiitake substrate (BR = 0%), at an ER of 0.2, a gasification furnace temperature of 950 °C, and an MR of 100% (pure CO2), the maximum CO mass flow rate in the syngas is obtained. Waste plastics contain significant amounts of volatile matter and no oxygen, leading to increased production of CH4, CO, and H2 during co-gasification with the addition of waste plastic. For plastics, high temperature and low ER conditions promote the production of CO, H2, and CH4 because of the significant tar content, thereby enhancing the Cold gas efficiency (CGE). When the gasification temperature is 950 °C, with 80% polyethylene (BR = 80%) and an ER of 0.1, the highest HHV is achieved. These results can serve as a reference for determining the operational conditions for the scale-up of gasification systems.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Production of hydrogen from packaging wastes by two-stage pyrolysis Plastic waste continues to increasingly pollute the environment. Currently, a significant portion of this waste is either landfilled or incinerated to generate energy, which leads to substantial CO2 emissions. However, thermochemical processing is a potential solution to create a circular economy, with pyrolysis combined with the subsequent high-temperature treatment of the vapour-gas mixture being a method preferable to incineration. This study investigated the optimal conditions for the two-stage pyrolysis of non-recyclable plastic waste. The process involved a low-temperature treatment of feedstock, followed by high-temperature exposure of the vapour-gas mixture in the presence of a carbon matrix. The final products of the two-stage pyrolysis were: synthesis gas, mainly consisting of hydrogen and carbon monoxide; solid pyrolysis residue obtained in the first stage and high-carbon material during the second stage was obtained. The first stage of the two-stage pyrolysis was carried out at various temperatures, ranging from 460 to 540 °C, followed by cracking at 600 to 1000 °C, with different ratios of packaging waste to wood charcoal (1:2, 1:4, 1:6). The conditions for obtaining more than 70 vol% hydrogen in the synthesis gas from packaging waste were determined, the effect of changing the process parameters was studied. The decomposition kinetics of packaging waste showed activation energies of the first and second steps: 165 and 255 kJ/mol (Ozawa–Flynn–Wall method), 164 and 259 kJ/mol (Kissinger–Akahira–Sunose method), respectively. This work contributes to the study of efficient recycling methods for non-recyclable packaging waste and promotes advancements in sustainable waste management practices.
+

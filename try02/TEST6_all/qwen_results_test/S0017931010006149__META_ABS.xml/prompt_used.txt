@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermodynamic optimization of fluidized catalytic cracking (FCC) units In this paper, a thermodynamic optimization procedure for FCC riser units has been developed. The formulation uses a 2D fluid flow and kinetic model to provide the necessary information for the optimization process. The thermodynamic analysis is based on the unit entropy generation minimization, i.e., the minimization of the destroyed exergy in the system. This kind of analysis has been widely used in power generation plants, with large benefits. It was verified that for any given catalyst mass flow rate, there exists an optimum value for the catalyst to oil mass flow rate ratio, COR, for maximum mass flow rate production of gasoline, or any other desired product. Next, the objective function (net exergy production rate) was maximized through the minimization of the destroyed exergy inside the FCC unit. The optimization was conducted with respect to the catalyst to oil ratio (COR). It is important to stress that all optima are sharp, i.e., for example with H/D =50, the variation of E ∼ net is greater than 50%, calculated from ( E ∼ net, max - E ∼ net, min ) / E ∼ net, max for 5<COR<25. Based on the lack of second law analysis related works for FCC plants in the technical literature and in view of the potential gains suggested by the results, the authors believe that thermodynamic optimization could bring new insight in the quest for better FCC plants. Therefore, a low computational time tool is made available for simulation, control, design and optimization of FCC units.
+

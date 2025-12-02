@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The role of CO2 in the dehydrogenation of n-octane using Cr-Fe catalysts supported on MgAl2O4 The effect of CO2 on the dehydrogenation of n-octane over Cr-Fe oxides supported on MgAl2O4 (MgAl) was investigated. Addition of Fe as a promoter facilitated the formation of Cr-O-Fe polymeric units, stabilizing the CrOx in the +3 state on the catalysts’ surface. Catalytic results revealed that the 2Cr-Fe catalyst was the most active and also stable (ca. 10 % CO2 conversion, 8 % n-octane conversion, 84 % selectivity to octene isomers) during a 30 h reaction. The stability and high octenes selectivity over this catalyst was reflected in its higher surface basicity. Based on a redox study using CO2, it was found that the dominant mechanism for CO2 activation was oxidative (Mars van Krevelen) over the monometallic Cr catalyst, while a non-oxidative (Reverse Water Gas Shift) mechanism applied over the nCr-Fe bimetallic catalysts. It is proposed that Cr-O-MgAl is the active site in the monometallic Cr catalyst, while the Cr-O-Fe polymeric units are the active sites in the bimetallic catalysts. Coke deposition was shown to be the major cause of deactivation of the catalysts.
+

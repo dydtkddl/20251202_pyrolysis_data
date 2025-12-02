@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Residual stress in tungsten fabricated by electron beam powder bed fusion: A review of finite element analysis and machine learning approaches Due to the global energy crisis, tungsten, as a critical material for nuclear fusion devices, is facing bottlenecks in its traditional manufacturing processes. Electron beam powder bed fusion (EB-PBF), leveraging its vacuum environment and high-temperature preheating capability, significantly suppresses cracking and reduces macroscopic residual stresses, making it the preferred solution for nuclear fusion tungsten components such as divertors. This paper addresses the challenge of predicting residual stresses in EB-PBF tungsten structures, where localized stress concentrations occur at the melt pool boundary and interlayer interfaces. Accordingly, a ‘FEM-ML’ collaborative framework is proposed: The finite element method (FEM) constructs datasets, enabling small-sample machine learning centered on physically consistent features like temperature gradients, process parameters, and melt pool geometry, while regularization and process constraints suppress overfitting. Prediction results are backtracked to enhance reliability. Future work will integrate online sensing to fuse physical knowledge with PLML for real-time residual stress prediction on EB-PBF tungsten components. This model will serve as the core engine of a digital twin, enabling adaptive closed-loop process control through high-fidelity simulation.
+

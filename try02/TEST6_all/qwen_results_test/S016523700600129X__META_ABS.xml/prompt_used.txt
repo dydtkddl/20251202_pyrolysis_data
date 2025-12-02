@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+High resolution gas chromatographic–mass spectrometric analysis of polyethylene and polypropylene thermal cracking products Low-density polyethylene and polypropylene were thermally decomposed individually in a batch reactor at temperatures up to 450°C as a recycling route from the aspect of the production of petrochemical feedstock. More detailed separation of polyalkenes splitting compounds was achieved using high resolution GC (efficiencies up to 490,000 plates) than before. The GC–MS as well as the dependence of homomorphy factors and isopropyl group increments on the number of carbon atoms of alk-1-enes, alk-2-enes, alka-α,ω-dienes and alkanes were used for identification of separated analytes. Thermal cracking of LDPE products in the range C5–C23 were characterized by quintets of peaks in the chromatogram which were assigned to n-alkanes, alk-1-enes, (E)-alk-2-enes, (Z)-alk-2-enes and alka-α,ω-dienes with average quantitative ratio 1:1.2:0.07:0.05:0.08. In fraction up to n-C8 140 GC peaks were separated and identified, including around 30 acyclic octenes. In contrast to the polyethylene thermal cracking which yields products with straight-chain hydrocarbon structure, polypropylene cracking is characterized by the formation of compounds with branched and high prevailingly unsaturated hydrocarbon structure. The pretention of this analytical problem lies in stereoisomerism and corresponding multicomponentity of branched alkenes, alkadienes and alkanes in a broad range of carbon atoms number as characteristic decomposition products of polypropylene. Partial separation of all four diastereoisomers of 2,4,6,8-tetramethylundec-1-ene, which is the most abundant compound except for 2,4-dimethylhept-1-ene, was obtained. In the liquid fraction up to n-C8 84 peaks including around 40 acyclic octenes were identified. Other 149 GC peaks were analysed in the C9–C25 fraction with quantitative ratio of alkane:alkene:alkadiene equal to 1:17:4.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Novel laser-driven fast pyrolysis of biomass: Insights into biochar characteristics and applications Biomass pyrolysis is a promising technology for producing biochar, but conventional methods often lack precise control over heating rates and real-time monitoring, particularly in fast pyrolysis. A novel laser-driven fast pyrolysis (LFP) system was developed, achieving ultrafast heating rates (100°C/s) and enabling non-contact temperature measurement through infrared thermometry. Experiments were conducted using poplar wood as feedstock, with heating rates of 10°C/s and 100°C/s, spanning temperatures from 400°C to 700°C. Results showed that fast heating significantly reduced biochar yield, predominantly below 400°C due to rapid devolatilization. The pore volume and specific surface area began increasing within a distinct temperature range (500–600°C), independent of heating rates. However, at 600°C, pore volume decreased by sixfold (0.127 → 0.021 ml/g) and specific surface area by eightfold (223.71 → 27.83 m2/g) under fast heating, accompanied by a four orders of magnitude electrical resistivity decrease (4.68e4 → 5.81 Ω·cm). These findings demonstrate the feasibility of the LFP system for providing critical technical parameters and guidance in optimizing biochar properties, particularly under fast heating conditions. By elucidating the effects of heating rates on biochar yield, porosity, specific surface area, and electrical resistivity, this study offers valuable insights into sustainable biomass conversion technologies.
+

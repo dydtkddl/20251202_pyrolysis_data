@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Quantitative assessment of nano-plastic aerosol particles emitted during machining of carbon fiber reinforced plastic Focusing on the relatively unexplored presence of micro- and nano-plastic aerosol particles, this study quantitatively assessed the emission of nano-plastic particles during the machining of carbon fiber reinforced plastic (CFRP) in the working environment. Measurements of aerosol particles smaller than 1 µm in size were performed by aerosol mass spectrometry. The findings revealed that concentrations of carbonous aerosol particles (organic aerosol and refractory black carbon (rBC)) were higher during working hours than during non-working hours. Positive matrix factorization identified CFRP particles as a significant source, contributing an average of approximately 30% of concentration of carbonous aerosol particles during working hours. This source apportionment was corroborated by the presence of bisphenol A and F fragments, principal components of the epoxy resins used in CFRP, and was corroborated by similarities to the carbon cluster ion distribution observed in rBC during CFRP pipe-cutting operations. Further, the particle size distribution suggested the existence of plastic aerosol particles smaller than 100 nm. This study established the method to quantitatively distinguish nano-plastic aerosol particles from other aerosol particles in high temporal resolution and these techniques are useful for accurately assessing exposure to nano-plastic aerosol particles in working environments.
+

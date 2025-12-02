@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on the effects of using a carbon dioxide atmosphere on the properties of vine shoots-derived biochar This study analyzes the effects of using a different atmosphere (pureN2 or pure CO2) at two levels of absolute pressure (0.1 and 1.1MPa) on the pyrolysis of vine shoots at a constant peak temperature of 600°C. Recycling CO2 from residual flue gases into the pyrolysis process may be economically beneficial, since CO2 can replace the use of an expensive N2 environment. In addition, the use of a moderate pressure (e.g., 1.1MPa) can result in higher carbonization efficiencies and an improvement in the pyrolysis gas (in terms of yield and composition). Results from our study suggest that the use of CO2 instead of N2 as pyrolysis environment led to similar carbonization efficiencies (i.e., fixed-carbon yields) and mass yields of biochar. The chemical properties related to the potential stability of biochar (i.e., fixed-carbon content and molar H:C and O:C ratios) were very similar for both pyrolysis atmospheres. Under an atmosphere of CO2, the yield of produced CO2 was drastically decreased at the expense of an increase in the yield of CO, probably as a consequence of the promotion of the reverse Boudouard reaction, especially at high pressure. The enhanced reverse Boudouard reaction can also explain the relatively high BET specific surface area and the macro-porosity development observed for the biochar produced under a CO2 environment at 1.1MPa. In summary, the pressurized pyrolysis of biomass under an atmosphere of CO2 appears as a very interesting route to produce highly stable and porous biochars and simultaneously improving the yield of CO.
+

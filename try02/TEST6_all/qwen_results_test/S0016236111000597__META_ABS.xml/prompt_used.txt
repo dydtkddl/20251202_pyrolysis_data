@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrogen production by catalysed pyrolysis of polymer blends Differently composed mixtures of HDPE and PMMA were pyrolysed at 700°C and 815°C in pyrolysis reactor. It was directly coupled with gas chromatography/mass spectrometry (GC/MS). On line pyrolysis GC/MS was applied in analysis of hydrogen, methane and carbon monoxide yielding in polymer blends pyrolyzate with/without metal (Ni,Co) coated particles, tested as a methane to hydrogen conversion catalysts supporting additives. They were prepared by electrochemical deposition of Ni and Co on the small iron particles surface. Maximum hydrogen production was confirmed at the highest pyrolysis temperature (815°C), and the highest HDPE contents in the blends mixture. Higher content of the PMMA in the mixture led to higher production of CO and lower hydrogen contents in pyrolyzate. Nickel and cobalt containing additives affected production of hydrogen and other components at both 700°C and 815°C pyrolysis temperatures. An effect of different heat distribution between metal particles and polyblends occurred and affected hydrogen production. Application of pyrolysis gas chromatography in hydrogen production from polyblends represents an important tool to model future technological outputs as well simultaneous hydrogen production and CO, CO2 elimination. Moreover, catalysis assisted conversion of methane to hydrogen can improve final hydrogen content in pyrolyzate. Effectivity of pyrolysis hydrogen production was determined by its quantification based on analytical calibration.
+

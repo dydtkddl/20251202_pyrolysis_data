@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation of single particle devolatilization in fluidized bed reactors by X-ray imaging techniques A non-intrusive X-ray imaging technique has been used to investigate the behaviour of solid feedstock particles in a lab-scale fluidized bed reactor operated at temperatures up to 650 °C. Beech wood and polypropylene particles of different sizes have been chosen to represent the main constituents of typical thermochemical processes feedstock. The experiments were conducted under either oxidizing or inert conditions. The presence of oxygen showed a strong effect on the overall devolatilization time, which was found to be in the range of 30–112 s and 40–174 s for beech wood and polypropylene, respectively. Surprisingly, the oxidizing nature of the fluidizing medium appears to have no influence on the volatiles release within the bed in form of the so-called endogenous bubbles. These volatiles bubbles are responsible for a lift force acting on the feedstock particle itself, which ultimately encourages the segregation towards the bed surface. A one-dimensional physical model has been developed to predict particle axial location over time, taking into account both dynamic and thermal conversion behaviour of a single feedstock particle. A revised version of the model has been proposed due to new knowledge of endogenous bubbles size provided by a novel X-ray imaging approach. Results showed very accurate predictions of the 1D model for biomass particles, which segregate towards the bed surface according to the multiple bubble segregation pattern. However, the model fails in describing plastics behaviour, possibly due to different mechanisms of reactions. The observations reported in this work show the importance of investigation at single particle level and may serve to promote new methods to gain a better understanding of plastics thermal decomposition in fluidized beds, whose mechanism is still uncertain.
+

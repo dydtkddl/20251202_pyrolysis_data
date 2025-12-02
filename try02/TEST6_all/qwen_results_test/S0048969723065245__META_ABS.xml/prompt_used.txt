@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+From plastic waste to potential wealth: Upcycling technologies, process synthesis, assessment and optimization Global plastics production has doubled since the beginning of 21st century. Efficient technology is called for plastics waste valorization. The current review provides an overview of the main waste plastic chemical upcycling technologies to produce value-added products. Various technologies including gasification and pyrolysis are under reviewed. However, several review literatures have paid attention to the details and experimental progress in these chemical upcycling techniques. In this review, we attempt to conclude the progress in a multi-scale systems-by-systems perspective. After a brief overview of the current state-of-the-art chemical upcycling techniques, larger-scale process synthesis, assessment, and optimization methodologies to address the sustainability and environmental issues are summarized. Techno-economic analysis and life cycle assessment are selected as two powerful tools for process assessment. Three particular application scenarios of optimization methodologies including experimental design, process synthesis and supply chain management are consequently introduced. Very little work on review articles have summarized the plastic waste-to-wealth process in the systems engineering perspective. Review results show that (1) gasification and pyrolysis offer promising avenues for the conversion of plastic waste into valuable products. These technologies can be integrated with other subsystems to enhance the economic and environmental performance of the overall system. (2) Response surface methodology is commonly used in experimental design and parameter optimization. It allows researchers to systematically investigate the effects of various parameters and optimize process conditions to maximize desired outputs. (3) Superstructure optimization frameworks are valuable tools for process synthesis and pathway selection in plastic waste conversion. However, the potential superstructure is pre-defined. (4) Green supply chain and multi-objective supply chain frameworks can be applied to the design of plastic waste recycling networks, taking into account both economic and environmental considerations.
+

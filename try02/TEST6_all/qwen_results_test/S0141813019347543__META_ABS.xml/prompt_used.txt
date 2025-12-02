@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Generalized kinetics for thermal degradation and melt rheology for poly (lactic acid)/poly (butylene succinate)/functionalized chitosan based reactive nanobiocomposite Systematic kinetics of melt-blended Poly(lactic acid) (PLA)/Poly(butylene succinate) (PBS) and PLA/PBS/functionalized chitosan (FCH) nanobiocomposites with dicumyl peroxide (DCP) and chemical changes thereof at degradation temperatures are evaluated using thermogravimetry (TGA) and thermogravimetry coupled to Fourier transform infrared spectroscopy (TGA–FTIR). A comprehensive kinetic model is employed on above blended samples, including (i) Flynn–Wall–Ozawa, Kissinger, Kissinger–Akahira–Sunose methods to investigate the kinetic and thermodynamic variables, and (ii) Generalized master plots to propose the thermal-induced mechanism. The thermal stability of PLA/PBS reduced with increasing FCH loading up to 3 wt%, and improved for DCP treated PLA/PBS/1FCH at maximum degradation temperature (Tmax) is noticed. The activation energy estimated from Flynn-Wall-Ozawa method are (129–139 kJmol−1), (116–152 kJmol−1), (109–146 kJmol−1), (132–169 kJmol−1) and (120–166 kJmol−1) for PLA/PBS, PLA/PBS/1FCH, PLA/PBS/3FCH, PLA/PBS/1DFCH and PLA/PBS/3DFCH respectively. The generalized master plots depicts that the PLA/PBS blend exhibited L2–F1 mechanism whereas their nanobiocomposite with or without DCP followed L2–Dn and A2–L2–Dn mechanism respectively. Coupled TGA–FTIR highlights the similar kinds of products such as lactide, acetaldehyde, esters, CO2 and CO liberated during the thermal degradation of PLA/PBS blend and their nanobiocomposites. These crosslinked/branched structures are postulated by the rheological behavior which confirmed increase in the complex viscosity (η*) and storage modulus (G′) of PLA/PBS/D/1FCH.
+

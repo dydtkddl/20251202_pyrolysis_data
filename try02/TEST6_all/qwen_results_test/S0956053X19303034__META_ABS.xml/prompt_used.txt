@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic fast pyrolysis of polyethylene terephthalate plastic for the selective production of terephthalonitrile under ammonia atmosphere Terephthalonitrile (TPN) was directly produced from polyethylene terephthalate (PET) plastic via catalytic fast pyrolysis with ammonia. The optimal condition for producing TPN was over 1 g γ-Al2O3-2 wt% catalyst at 500 °C under carrier gas (50% NH3 and 50% N2) with yield of nitriles and TPN of 58.1 and 52.3 C%, respectively. The selectivity of TPN in the nitriles was around 90%. Meanwhile, a bit of aromatics, benzonitrile, acetonitrile were also produced as by-products with the total yields of less than 3 C%. The catalyst deactivated slightly after 5 cycles. Possible reaction routes were proposed and it was found that terephthalic acid, benzoic acid, related esters and amides were the major intermediates from PET to nitriles. Acetonitrile could be produced from acetaldehyde and its corresponding imines. In addition, 32.1 C% TPN with high purity (>95%) was obtained via freezing recrystallization. Catalytic pyrolysis with ammonia process was a promising technology for converting waste PET plastics to TPN. This study provided a new method for producing N-containing chemicals from polyester plastics.
+

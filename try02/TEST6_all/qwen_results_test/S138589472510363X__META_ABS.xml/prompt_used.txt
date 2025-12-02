@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Supercritical CO₂ gasification of polyvinyl alcohol for efficient syngas production and enhanced carbon conversion The increasing environmental burden of plastic waste has intensified the pursuit of clean and efficient thermochemical conversion technologies. Polyvinyl alcohol (PVA), although water-soluble and partially biodegradable, requires low-emission disposal routes due to its growing usage. This study investigates the gasification of PVA in supercritical CO₂ (Sc-CO₂) as a sustainable waste-to-energy strategy. Experiments were performed across a range of temperatures (400–700 °C), residence times, and initial CO₂ pressures (4–7 MPa) to evaluate syngas yield, energy performance, and CO₂ reactivity. The results demonstrated that supercritical CO₂ significantly enhanced gasification, achieving peak carbon and hydrogen efficiencies of 44 % and 53 %, respectively, at 700 °C. The syngas exhibited a peak lower heating value (LHV) of 31.94 MJ/Nm3 at 400 °C, while the energy conversion efficiency (ECE) reached 74 % at 700 °C under the present conditions. Gas-phase analysis revealed selective enrichment of H₂ and CO, while gas chromatography–mass spectrometry (GC–MS) and scanning electron microscope (SEM) confirmed suppressed tar and char formation. A peak CO₂ conversion rate of 21.8 % validated its dual role as reactant and gasifying medium. A temperature-dependent pathway from depolymerization to gas evolution was proposed, with supercritical CO₂ facilitating bond cleavage and carbon recycling. These findings highlight the potential of supercritical CO₂ gasification as a scalable and carbon-reducing approach for polymer waste valorization.
+

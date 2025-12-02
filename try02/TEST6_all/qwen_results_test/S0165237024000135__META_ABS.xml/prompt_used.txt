@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Jet fuel range hydrocarbon generation from catalytic pyrolysis of lignin and polypropylene with iron-modified activated carbon In this study, iron was used to modify pyrolytic activated carbon (AC) to synthesize a bifunctional catalyst (Fe/AC). It was applied to the catalytic co-pyrolysis of lignin with polypropylene (PP) for the preparation of jet fuel range hydrocarbons. Relationships between iron loading, reaction temperature, catalyst/feedstock ratio, and lignin/PP ratio were investigated in connection to the yield, component distribution, carbon number distribution, and chain structure of pyrolysis products. The results indicated that the hydrocarbons with carbon numbers in the jet fuel range dominated the products obtained from the catalytic co-pyrolysis of lignin and polypropylene. Owing to the oxytropism of Fe3 + , the selectivity of oxygenated chemicals in pyrolysis oil decreased as the Fe loading rose. Consequently, the production of hydrocarbons in the jet fuel range was increased. Furthermore, the deoxygenation and alkylation reactions of phenols to high-carbon aromatics were facilitated by Fe3 + . The cyclization and dehydrogenation reactions were promoted with the reaction temperature increased, thus enhancing the selectivity of cyclic hydrocarbons (cycloalkanes and aromatics) in the jet fuel range. However, secondary reactions were boosted with the excessive temperature, reducing the yield of hydrocarbons and the percentage of high-carbon hydrocarbons in the jet fuel range. The reduction of the proportion of oxygenated compounds was facilitated by the use of catalysts. Thus, the selectivity of hydrocarbons in the jet fuel range was improved, but the yield of high-carbon hydrocarbons would be reduced. In addition, the cleavage of PP-derived chain hydrocarbons was promoted by the hydrogen abstraction reaction of lignin-derived oxygenates during co-pyrolysis. The hydrogen transfer reaction between hydrocarbons and phenols was enhanced, it was pushed for phenols to convert to aromatics. Thus, the yield of hydrocarbons in the range of jet fuel was improved. A new approach to the efficient application of lignin with PP might be offered by the current work.
+

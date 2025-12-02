@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+From wastewater to sludge: The role of microplastics in shaping anaerobic digestion performance and antibiotic resistance gene dynamics The presence of microplastics (MPs) in wastewater treatment plants (WWTPs) disrupt processes and threaten the effectiveness of anaerobic digestion (AD), raising critical environmental and operational concerns. This review assesses MP occurrence in WWTPs and its effects on biogas production and the fate of antibiotic resistance genes (ARGs) during AD to understand their impact on process efficiency and environmental health. Polypropylene (PP) and polyethylene (PE) are the most prevalent types of MPs which are found in WWTP influent at an average concentration of 801.5 particles per liter (P/L), decrease to 38.3 P/L in effluent, and accumulate in sludge at 70.5 P/L. The effect of MPs on AD performance is influenced by MP type, concentration, size, and AD conditions (i.e., feed substrate, reactor configuration, temperature, and incubation time). For example, certain MPs (polyamide 7 (PA7) and PP) increase methane production by 39.5 %, while aged MPs decrease it by 47.2 %. The review also explores how AD drives MP degradation mechanisms like oxidation, hydrolysis, mechanical stress, and biodegradation. Additionally, MPs significantly impact ARGs, with abundance increasing by 0.4–514.4 %, especially with aged MPs. Mechanistic effects of MPs on ARGs dissemination were also discussed, including horizontal gene transfer (reactive oxygen species production, cell membrane permeability, extracellular polymeric substances secretion, and ATP dynamics), vertical gene transfer, microbial community, and adsorbing pollutants. This analysis provides insights into the complex interactions between MPs, microbial processes, and ARGs, highlighting their implications for wastewater treatment and biogas production systems.
+

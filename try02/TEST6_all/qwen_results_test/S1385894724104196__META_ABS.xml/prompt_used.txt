@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Process electrification by magnetic heating of catalyst Electrification of the chemical and energy sector is a crucial step in the transition towards a carbon neutral society. Electrocatalysis is one way to selectively steer a reaction towards the desired products which relies on the electric field effects instead of temperature, but there is another way to solely heat the reaction site. Magnetic or induction heating of magnetic nanoparticles embedded within the catalyst can selectively heat the catalyst at the reaction site. Furthermore, such rapid and selective heating enables a construction of decentralised, intermediate-scale, adaptable, containerised and responsive units, capable of flexible operation as per the Europen Union’s new industrial paradigm. The possibly to utilize intermittent renewable energy and to operate reactors in highly dynamically responsive manner leads to energy efficiency, safer operation, reduced energy costs in downstream processing, keeping bulk fluid cold(er) compared to the catalyst grain to mention a few advantages. Recently, this concept has been successfully applied and reported but only in a relatively limited number of studies, which are reported and thoroughly reviewed in this work. This review aims to highlight and critically evaluate recent developments of magnetic materials used in magnetically heated catalysis and represent their magnetic and chemical properties in combination with an overview of reported chemical conversions. It can serve as guide to select optimal magnetic material for a targeted chemical conversion, highlighting (also schematically) their potential and restriction of use.
+

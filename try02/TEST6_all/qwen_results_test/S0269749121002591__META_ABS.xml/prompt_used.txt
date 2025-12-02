@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+In situ catalytic reforming of plastic pyrolysis vapors using MSW incineration ashes The valorization of municipal solid waste incineration bottom and fly ashes (IBA and IFA) as catalysts for thermochemical plastic treatment was investigated. As-received, calcined, and Ni-loaded ashes prepared via hydrothermal synthesis were used as low-cost waste-derived catalysts for in-line upgrading of volatile products from plastic pyrolysis. It was found that both IBA and air pollution control IFA (APC) promote selective production of BTEX compounds (i.e., benzene, toluene, ethylbenzene, and xylenes) without significantly affecting the formation of other gaseous and liquid species. There was insignificant change in the product distribution when electrostatic precipitator IFA (ESP) was used, probably due to the lack of active catalytic species. Calcined APC (C-APC) demonstrated further improvement in the BTEX yield that suggested the potential to enhance the catalytic properties of ashes through pre-treatment. By comparing with the leaching limit values stated in the European Council Decision, 2003/33/EC for the acceptance of hazardous waste at landfills, all the ashes applied remained in the same category after the calcination and pyrolysis processes, except the leaching of Cl− from the ESP, which was around the borderline. Therefore, the use of ashes in catalytic reforming application do not significantly deteriorate their metal leaching behavior. Considering its superior catalytic activity towards BTEX formation, C-APC was loaded with Ni at 15 and 30 wt%. The Ni-loading favored an increase in overall oil yield, while reducing the gas yield when compared to the benchmark Ni loaded ZSM catalyst. However, Ni addition also caused the formation of more heavier hydrocarbons (C20–C35) that would require post-treatment to recover favorable products like BTEX.
+

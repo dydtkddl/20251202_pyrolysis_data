@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Challenges and opportunities of light olefin production via thermal and catalytic pyrolysis of end-of-life polyolefins: Towards full recyclability Is full recyclability of polyolefins via chemical recycling a dream, or can it become a reality? The main problem in recycling plastic waste is that its composition is highly heterogeneous while sorting and purifying solutions to obtain mono-streams are complex and require large investments, thereby hampering the economy of scale. Ideally, novel chemical recycling processes are designed to have mixed plastic wastes as input and higher value products are produced such as C2–C4 olefins or aromatics instead of a low value oil. In this review we show the directions how we can realize these objectives. Classical thermal pyrolysis offers some possibilities but requires very high temperatures exceeding 800 °C to transform the plastic waste back into the desired temperatures. Nevertheless, because of its robustness, thermal pyrolysis of polyolefinic plastic waste is currently intensively studied and the first industrial applications are operated at low to medium temperature range to maximize oil as the main product. Catalytic pyrolysis is still under development, but under ideal lab-scale conditions around 85 wt.% of C2–C4 olefins can be produced when pure polyolefin feeds are used. With improved catalyst design it should be possible to get this number further up without affecting the catalyst stability. As the yield of light olefins in pyrolysis is impacted by both the process design (reactor type, the efficiency of plastic sorting prior to conversion, flexibility towards feed composition) and experimental parameters (temperature, catalyst type, catalyst/feed ratio, contact mode, residence time, addition of inert or reactants) also further improvements are possible in this respect. To industrialize pyrolysis of plastic waste, short residence times (<1 s) are crucial to avoid secondary reactions and by-products such as methane, coke, and aromatics. Pyrolysis reactors that are designed according to these principles, such as downers, spouted fluidized bed, and vortex reactors, are envisaged to result in optimal yields of C2–C4 olefins. However, coke formation seems to be inevitable and the reactor designs need to be sufficiently robust to allow for in-situ coke removal. For future research it will be crucial for the industrial viability of plastic waste pyrolysis to improve the purification of the plastic waste stream, optimize both the catalysts selectivity and stability, and design a suitable industrial reactor. It is envisaged that further innovations in these three areas will eventually allow reaching the 90 wt.% target.
+

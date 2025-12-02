@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhancing the adsorption capacity of organic and inorganic pollutants onto impregnated olive stone derived activated carbon This study presents a sustainable approach to activated carbon production from olive stones in comparison to commercial ones, using various activating agents such as H3PO4, KOH, and ZnCl2, for enhancing the adsorption properties and versatile adsorption capability to remove a range of pollutants including copper ion, methylene blue, and 2,4-Dichlorophenoxyacetic acid from aqueous solutions. The performances of activated carbons across varying conditions such as pollutant concentrations, temperatures, pH levels, and adsorbent amounts were tested. Increased initial pollutant concentrations correlated with higher adsorption capacities. Maximum adsorption capacities were achieved at pH levels of 5, 10, and 2 for Cu, MB, and 2,4-D, respectively. For KOSAC, Cu removal rose from 27 % to 52 %, for ZOSAC, MB removal increased from 39 % to 65 %, and for ZOSAC, 2,4-D removal surged from 33 % to 99 % at varying adsorbent amounts. Model validation was carried out utilizing the kinetic models (PFO, PSO) and isotherm models (Langmuir, Redlich-Peterson). The PFO kinetic model and Langmuir isotherm model proved more suitability for Cu adsorption, whereas PFO and PSO kinetic models, along with Redlich-Peterson isotherm models, were more prominent for MB and 2,4-D adsorption. Thermodynamic analysis revealed that the adsorption of Cu and 2,4-D was exothermic, while MB adsorption was endothermic. By optimization of experimental conditions, the maximum adsorption capacities were attained at 30.34 °C and 297.65 mg L−1 for KOSAC-Cu, 48.62 °C and 269.37 mg L−1 for ZOSAC-MB, and 30.31 °C and 299.02 mg L−1 for ZOSAC-2,4-D sorption. This research highlights ZOSAC's potential as a cost-effective, eco-friendly solution for water treatment, contributing to environmental sustainability and economical feasibility.
+

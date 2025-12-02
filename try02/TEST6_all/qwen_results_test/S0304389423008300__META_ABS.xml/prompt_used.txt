@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Controlling Diels-Alder reactions in catalytic pyrolysis of sawdust and polypropylene by coupling CO2 atmosphere and Fe-modified zeolite for enhanced light aromatics production Producing value-added light aromatics (BTEX) from solid waste streams holds excellent promise for resource recovery. Here we present a thermochemical conversion approach that enhanced BTEX production by coupling CO2 atmosphere and Fe-modified HZSM-5 zeolite to facilitate the Diels-Alder reactions in catalytic pyrolysis of sawdust and polypropylene. The Diels-Alder reactions between sawdust-derived furans and polypropylene-derived olefins could be controlled by tuning CO2 concentration and Fe loading amount. Sufficient CO2 (≥50%) with moderate Fe loading (10 wt%) were observed to produce more BTEX and fewer heavy fractions (C9 +aromatics). To deepen the mechanistic understanding, quantification of polycyclic aromatic hydrocarbons (PAHs) and catalyst coke was further conducted. The co-use of CO2 atmosphere and Fe modification suppressed the appearance of low-, medium-, and high-membered ring PAHs by over 40%, decreased pyrolysis oil toxicity from 42.1 to 12.8 μg/goil TEQ, and transformed coke from "hard" to "soft". Based on the characterization of CO2 adsorption behavior, it was deduced that the introduced CO2 was activated by loaded Fe and reacted in situ with H2 generated during aromatization to expedite H-transfer. Meanwhile, BTEX recondensation was prevented through the Boudouard reactions of CO2 and water-gas reactions between the resulting water and carbon deposits. These synergistically enhanced the production of BTEX and suppressed the formation of heavy species, including PAHs and catalyst coke.
+

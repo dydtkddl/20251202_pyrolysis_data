@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of organic additives on spectroscopic and molecular-level features of photo-induced dissolved organic matter from microplastics The environmental occurrence and impact of dissolved organic matter leached from microplastics (MP-DOM) has been the subject of increased research interest. Commercial plastics, which typically contain additives, are subject to natural weathering processes and can eventually lose their additives. However, the effects of organic additives in commercial microplastics (MPs) on the release of MP-DOM under UV irradiation remain poorly understood. In this study, four polymer MPs (polyethylene; PE, polypropylene; PP, polystyrene; PS, polyvinylchloride; PVC) and four commercial MPs, including a PE zip bag, a PP facial mask, a PVC sheet, Styrofoam, were subjected to leaching under UV irradiation, and the MP-DOM was characterized using Fourier transform ion cyclotron resonance mass spectrometry (FT-ICR-MS) and fluorescence excitation emission matrix-parallel factor analysis (EEM-PARAFAC). Although UV light promoted the leaching of MP-DOM from both MP groups, the amount released was more pronounced for the polymer MPs than for the commercial MPs. The commercial MP-DOM was characterized by a prominent protein/phenol-like component (C1), while a humic-like component (C2) prevailed in the polymer MPs. FT-ICR-MS identified a higher number of unique molecular formulas for the commercial than for the polymer MP-DOM. The unique molecular formulas of commercial MP-DOM included known organic additives and other breakdown products, while the polymer MP-DOM featured more pronounced unsaturated carbon structures in its identified unique formulas. Several molecular-level parameters showed significant correlations with fluorescence properties, such as CHO formulas (%) with C1 and condensed aromatic structure (CAS-like, %) with C2, suggesting the potential application of fluorescent components as an optical descriptor for the complex molecular-level composition. This study also revealed the possible high environmental reactivity of both polymer MPs and fully weathered plastics due to the unsaturated structures generated in sunlit environments.
+

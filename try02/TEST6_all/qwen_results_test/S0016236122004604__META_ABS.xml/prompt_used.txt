@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrothermal liquefaction of Chlorella vulgaris and catalytic upgrading of product: Effect of process parameter on bio-oil yield and thermodynamics modeling Replacing fossil fuel sources with biofuels is one way to degrade greenhouse gas issuance. Recently, the interest, effort, and investment of researchers around the world in biofuel technology, has been focused on microalgae. The aim of the present work was focused on optimizing the biocrude yield of hydrothermal liquefaction (HTL) of Chlorella vulgaris. The effect of temperature, reaction time and the weight ratio of feedstock in different conditions of hydrothermal liquefaction process has been investigated. Optimization of bio-oil performance was done applying design expert software and response surface method (central composite design). The consequences show that the highest yield of bio-oil was obtained from Chlorella vulgaris (56.21% by weight) at 287 °C, reaction time of 40 min, and microalgae to water ratio of 0.07 Analysis of variance (ANOVA), suggests that the liquefaction temperature and reaction time plays the influential role in the bio-oil yield. Ni-Mo/Al2O3 was applied as catalyst for upgrading Bio-oil. The amount of sulfur in bio-oil have completely removed and HHV increased 7% (41.11 MJ/Kg) by using catalyst. Moreover, GC/MS analysis illustrates the number of nitrogenous compounds in bio-oil using Ni-Mo/Al2O3 was reduced, so that the amount of pyrazine was changed from 4.25% to 2.10% and pyrrole from 4.75% to 3.11%. To thermodynamics modeling and predict the phase behavior of the liquefaction process, manipulation of the UNIFAC coefficients equation was model to minimize the Gibbs free energy. The theoretical model had a 9.8% prediction error. This generation of bio-oils is expected to be good support for biofuels.
+

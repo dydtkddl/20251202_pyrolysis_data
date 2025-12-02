@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Tuning ZSM-5 acidity via silicalite-sol: A strategy for coke-resistant dry reforming catalysts CO2 valorization through dry reforming of methane (DRM) offers a pragmatic way of reducing global warming by converting two greenhouse gases (CO2 and CH4), into value-added syn-gas. Developing catalysts with high surface area, tailored porosity, excellent redox properties, enhanced basicity, and well-dispersed nickel nanoparticles with small crystallite sizes is critical to achieving efficient DRM performance. In this study, the acidity and framework properties of MFI zeolite (ZSM-5) were modulated using silicalite seeds at varying ZSM-5/silicalite weight ratios. The resulting materials were impregnated with Ni to prepare coke-resistant DRM catalysts, denoted as Ni-ZS(x). Catalytic evaluations were conducted in a fixed-bed reactor at 750 °C and atmospheric pressure, with Ni-ZS(x) catalysts compared against unmodified Ni-ZSM-5. Among the series, Ni-ZS(0.5) exhibited superior catalytic performance and outperformed unmodified Ni-ZSM-5. Furthermore, the Ni-ZS(0.5) represents a stable catalyst with conversion of CH4 (82 %) and CO2 (75 %) at 24 h, having H2/CO ratio of ∼1.5. The increased activity could be attributed to improved basicity, nickel dispersion and textural properties, elucidated by temperature programmed analysis (CO2-TPD and H2-TPR), scanning and transmission electron microscopies (SEM and TEM), N2-sorption and XRD analysis. The modified catalysts with improved catalytic performance could be of potential interest for industrial purposes towards net zero emission.
+

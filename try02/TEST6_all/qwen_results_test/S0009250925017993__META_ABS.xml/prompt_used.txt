@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Elucidating jamming behaviors induced by polydispersity in biomass pyrolysis fluidized beds via coarse-grained CFD-DEM coupling model Particle polydispersity alters flow behavior, thereby strongly affecting heat transfer and biomass pyrolysis performance. However, the underlying mechanisms remain insufficiently understood. To gain deeper insight into the role of polydispersity, this study analyzed the effect of particle size distribution (PSD) width on biomass pyrolysis processes in fluidized beds. Firstly, a coarse-grained CFD-DEM coupling model for biomass pyrolysis was established. On this basis, particle velocity and bed voidage were analyzed. Under wide PSD conditions, particle velocity near the bed bottom approached 0 m/s. Meanwhile, the analyses of collision and drag force distributions showed that small particles disrupted the arching structures of a monodisperse system by altering the force balance. As the voids between large particles became progressively filled, the average collision force under a wide PSD increased by 57.8 %, promoting the development of localized jamming. The evolution of bed structures from arching to jamming consequently caused a transition in biomass particle trajectories. Furthermore, the effects of PSD width on particle temperature, heat transfer rate, reaction rate, and product yields were systematically investigated. The narrow PSD (σ/μ = 10–20 %) increased the interparticle heat transfer area, raising the fraction of biomass in the highest-temperature regions by 59.8 %, which consequently enhanced the reaction rates and tar yields. Based on the above results, a mechanism through bed structure evolution was finally proposed to elucidate the role of particle polydispersity on biomass pyrolysis. This work provides a theoretical foundation for regulating biomass pyrolysis characteristics and guiding the optimization of industrial fluidized bed reactors.
+

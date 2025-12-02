@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Impregnation of different coals and biomass with rapeseed oil for intensifying their ignition in a heated air stream during oil-free boiler start-up Studies were conducted to develop the scientific basis for the use of low-grade solid hydrocarbons and biomass as starting fuel and an energy additive to the main fuel for coal-fired boilers. Char, softwood sawdust, brown and bituminous coals with a particle size of 140–250 μm were used in an air-dry state and after impregnation with rapeseed oil. Analytical studies included surface texture analysis of solid fuel particles, determination of their wetting properties with respect to water and rapeseed oil, thermogravimetric and calorimetric analyses, FTIR analysis of gaseous combustion products, analysis of the elemental composition and texture of the ash surface. Fuel combustion characteristics were studied in conditions of fine fuel particles movement in a heated air stream: 5 m/s, 500–800 °C. Impregnation of solid fuels with oil led to the moisture displacement from the pores of fine particles (oil content in various solid fuels 5.6–22.4%). It increased the combustion completeness of fine particles in a shorter period of time (the ignition delay time reduced by 15–30%) and the thermal effect of the exothermic reaction (by 2.2–18.1%). Oil vapors first ignited in the vicinity of the particle, thereby intensifying the combustion of solid component in fossil fuels.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and kinetic modeling of p-cymene pyrolysis under atmospheric and high pressures Metabolic engineering has provided extremely convenient conditions for the manufacture of terpenoids, many of which are considered to be promising alternatives of traditional fossil fuels due to their compatibility with the corresponding structures and properties. One of the terpenoid alternative fuels is p-cymene, a renewable bio-aromatics which may be an excellent aromatics surrogate in jet fuel. In this work, the pyrolysis of p-cymene was experimentally investigated by a tandem micro-reactor and GC–MS/FID online analysis system under 0.1 and 2.0 MPa. A detailed kinetic model containing 172 species and 804 reactions was constructed based on the reference of kinetic models of previous studies on single-branched aromatics pyrolysis, according to which the comparison of experimental and simulated mole fractions of species proves the reasonable reproducibility. ROP (Rate of Production) and sensitivity analysis were performed to further explain the consumption pathways of p-cymene and reactions of significant products. Combined with the calculated BDEs (Bond Dissociation Energies) of p-cymene, the benzylic CC bond scission reaction was determined to be the chain initiation reaction and its proportion decreases from 17.2% at 0.1 MPa to 13.6% at 2.0 MPa, which is mainly due to that high pressure is not conducive to the progress of unimolecular decomposition reaction. The H-abstraction reactions occurring at three sites of p-cymene serve as the most important reactions, accounting for nearly 70% of the total consumption of p-cymene. The ipso-substitution reactions also play an important role in p-cymene consumption, which are critical for the generation of toluene and cumene.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic co-pyrolysis of biogas residue and plastic mulch film: Mechanisms and product selectivity control The co-pyrolysis of agricultural waste, specifically biogas residue (BR), and plastic mulch film (MF) faces significant challenges in product selectivity control due to the unclear mechanisms by which heating rates influence reaction pathways. This study systematically investigates the synergistic effects of heating rates and blending ratios during BR-MF co-pyrolysis by comparing slow pyrolysis (20 °C·min−1, tubular furnace) and flash pyrolysis (instantaneous heating to 600 °C, Py-GC/MS). Flash pyrolysis at a 1:1 mass ratio substantially increases the total hydrocarbon yield to 79.93 %, exceeding the theoretical value by 50.99 %, driven by alkyl radicals (·CH3, ·C2H5) from MF cracking that selectively cleave C-O/C-N bonds in BR. This reduces the formation of oxygenates and nitrogenous compounds by 22.53 % and 99.64 %, respectively. In contrast, slow pyrolysis facilitates hydrogen radical coupling with oxygenated fragments, increasing alcohol production by 8.04 %, and promotes secondary aromatization, enhancing aromatic hydrocarbon selectivity by 9.37 %. Flash pyrolysis, however, improves the selectivity of olefins and long-chain alcohols by 25.70 % and 17.93 %, respectively, via a hydrogen transfer-radical stabilization mechanism. These findings provide a scientific foundation for the valorization of agricultural waste and propose viable strategies for biofuel and chemical production, with substantial implications for environmental sustainability and energy recovery.
+

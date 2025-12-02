@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biodiesel production from Silybum marianum L. seed oil with high FFA content using sulfonated carbon catalyst for esterification and base catalyst for transesterification In this research work, waste of polyethylene terephthalate (PET) was converted into activated carbon and the latter was used in the preparation of a carbon acid catalyst. Waste of PET was converted into activated carbon via carbonization and steam activation, then the activated carbon was sulfonated using fuming sulfuric acid in order to produce the carbon acid catalyst. The prepared carbon acid catalyst was tested for esterification of high acid value non-edible oil, Silybum marianum L. seed oil (SMSO) via optimized protocol. Amount of the carbon acid catalyst, methanol to oil molar ratio, temperature and time were the experimental variables optimized. Esterification of SMSO with methanol using the prepared carbon acid catalyst reduced its parent acid value (20.0mgKOH/g) to the acceptable limits for base-catalyzed transesterification (<2.0mgKOH/g) using 6.0% w/w of the catalyst, 15:1 methanol to oil molar ratio, 68°C reaction temperature and 180min of reaction. The performance of the catalyst was reduced gradually during its recycling and reached to 60.0% at the 5th cycle. Kinetics of esterification of SMSO using the prepared carbon acid catalyst followed pseudo first order kinetics, and the activation energy was found to be 70.98kJ/mol. The esterified oil was converted to biodiesel through optimized base-catalyzed transesterification with methanol. Biodiesel with (96.98% yield and purity of 96.69% w/w) yield was obtained using 0.80% KOH w/w, 6:1 methanol to oil molar ratio, 60°C reaction temperature, 75min of reaction and 600rpm rate of stirring. The biodiesel properties were within the recommended biodiesel standards as prescribed by ASTM D 6751 and EN 14214. Transesterification of the esterified oil was found to fellow first order kinetics, and the activation energy was calculated to be 17.92kJ/mol.
+

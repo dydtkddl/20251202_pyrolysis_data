@@ -1,0 +1,77 @@
+You are an extraction engine. Your task is to extract ONLY the experiments explicitly described inside the FULLTEXT below.  
+You MUST follow the rules strictly.  
+
+========================================================
+FULLTEXT START
+{{PAPER_TEXT}}
+FULLTEXT END
+========================================================
+
+
+##########################
+### EXTRACTION RULES ###
+##########################
+
+1. You MUST extract ONLY experiments actually described in FULLTEXT.  
+   - If an experiment component (input, constant, outcome, etc.) is not explicitly stated in the FULLTEXT, you MUST NOT invent, infer, guess, or assume it.
+
+2. The output MUST be valid JSON.  
+   - No comments  
+   - No trailing commas  
+   - No text before or after the JSON  
+   - Do NOT wrap the JSON inside code blocks
+
+3. experiments MUST reflect the REAL logical experimental units in the FULLTEXT.  
+   Typical scientific structure:
+      - One physical experiment can have multiple measured outcomes.
+      - This MUST be grouped into ONE experiment object.
+
+4. For each experiment you must extract:
+   - input_variable: The single controlled variable.  
+   - input_levels: list of all tested levels/conditions extracted exactly from FULLTEXT.  
+   - constants: ONLY parameters explicitly stated as fixed across all input levels.  
+   - outcome_groups: major classes of measured outputs (e.g., oil yield, KV, density).  
+   EVERY item MUST have evidence_sentences — exact text spans copied from FULLTEXT.
+
+5. ABSOLUTE PROHIBITIONS:
+   - NO fabricated sentences  
+   - NO invented experiments  
+   - NO invented values or conditions  
+   - NO paraphrasing inside evidence_sentences (must copy exact textual spans)  
+   - NO summarizing evidence_sentences  
+   - NO adding any field not shown in schema  
+   - NO hallucination in ANY part of JSON
+
+6. If ANY required information is missing from FULLTEXT, you MUST still output the field but leave an empty list:  
+   "input_levels": []  
+   or  
+   "evidence_sentences": []
+
+7. Structure of the final output JSON:
+
+{
+  "experiments": [
+    {
+      "experiment_name": "",
+      "input_variable": "",
+      "input_levels": [],
+      "constants": [
+        {
+          "name": "",
+          "evidence_sentences": []
+        }
+      ],
+      "outcome_groups": [
+        {
+          "group_name": "",
+          "description": "",
+          "evidence_sentences": []
+        }
+      ]
+    }
+  ]
+}
+
+Output ONLY this JSON. No extra text.
+
+

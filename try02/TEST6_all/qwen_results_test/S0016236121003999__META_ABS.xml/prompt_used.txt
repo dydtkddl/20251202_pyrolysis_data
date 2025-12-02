@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of pressure on the gasification kinetics of two high-temperature beech wood chars with CO2, H2O and its mixture This paper presents experimental data and modeling approaches to describe the influence of CO2 and H2O partial pressure as well as absolute pressure on the gasification kinetics of two different beech wood chars. The chars were produced at 1400 °C (P1400) and 1600 °C (P1600) at high-heating rates and short residence times in a drop-tube reactor. The gasification experiments were conducted in a single-particle reactor with forced flow-through conditions reducing diffusional effects to a minimum. The interpretation of the experimentally determined reaction rates during gasification with CO2, H2O and its mixture is based on the char properties (graphitization, ash dispersion and morphology) presented in a previous publication. During gasification with CO2, P1600 shows higher reactivity as compared to P1400 for all CO2 partial pressures and temperatures applied. The higher reactivity of P1600 during CO2 gasification may be explained by a CaO film on the char surface catalyzing the char-CO2 gasification reaction. On the other hand, P1400 shows higher reactivity towards H2O which may be evoked by the lower graphitization degree and higher specific surface area. Reaction kinetic modeling for single atmosphere gasification was successfully carried out using a power law approach. The Langmuir-Hinshelwood model, however, only gave good results where a possible saturation of the char surface at high pressure was observed. Increasing the CO2 partial pressure during gasification in mixed CO2/H2O atmospheres leads to higher reactivity for both chars. The reaction rate r mix can be expressed by addition of the single atmosphere reaction rates in the low pressure area suggesting a separate active site mechanism. Catalytic activity of CaO increases the P1600 reactivity distinctively for lower H2O and CO2 partial pressures. For higher H2O and CO2 partial pressures, P1600 reactivity stagnates due to lower specific surface area and higher graphitization degree. Here, a common active sites mechanism can be assumed.
+

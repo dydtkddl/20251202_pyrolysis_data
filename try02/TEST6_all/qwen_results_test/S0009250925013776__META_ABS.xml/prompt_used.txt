@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A fast and accurate semi-analytical solution for lumped models of co-current moving bed reactors Moving bed reactors (MBRs) are widely used in various industrial processes, making the development of mathematical models crucial for their design, optimization, and control. This study presents a semi-analytical solution (SAS) for a lumped parameter kinetic and heat transfer model of a tubular MBR, where a first-order chemical reaction occurs uniformly within the particles. SAS is developed using the concepts of the finite analytic method: decomposition of the problem domain into small intervals, keeping the terms as linear and evaluated under the conditions at the beginning of each interval, and obtaining local analytical solutions in these intervals. SAS is a fast, consistent, and unconditionally stable numerical scheme that can handle very stiff systems ( S R = 10 305 ). A comparison of the SAS results with those of traditional ODE solvers – explicit Euler, Heun, Ralston, and Runge-Kutta of 3rd, 4th, and 5th order – shows excellent agreement. Moreover, for a case study with Biot number less than 0.11 and fourth Damköhler number less than 1.5, the comparison of SAS with a numerical solution (using the finite difference method) of a distributed parameter model, shows a maximum relative error of 0.17 %, 0.04 % and 6.3 % for particle temperature, fluid temperature and conversion, respectively. SAS is (partially) validated by comparison with experimental data from thermogravimetric analysis of kaolinite calcination. In addition, a specific methodology for error analysis is presented, which allows rounding and linearization errors to be estimated.
+

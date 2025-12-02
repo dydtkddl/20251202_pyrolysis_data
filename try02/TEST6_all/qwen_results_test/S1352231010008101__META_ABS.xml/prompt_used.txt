@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Exploratory study on the pyrolysis and PAH emissions of polylactic acid The emission factors for 16 U.S. EPA priority polycyclic aromatic hydrocarbons (PAHs) from the polylactic acid (PLA) pyrolysis and the decomposition mechanism were investigated in this study. The fragments and gas compositions using on-line thermogravimetry-mass spectrometry (TG-MS) were determined. A temperature series of 7 fragments was analyzed in helium, and was found to include: m/z =16, which may represent methane; 28, which may be carbon monoxide; 44, which may be acetaldehyde; 56, which may be methylketene, 144, which may be oligomers of lactide. In addition, there are little amount of 100, and 200 which are oligomers of lactides observed in the pyrolysis of PLA. The pyrolysis of PLA is a non-radical, backbiting ester interchange reaction involving the OH chain ends. Depending on the size of the cyclic transition state, the product can be a lactide molecule, an oligomeric ring with more than two repeat units, methylketene, or acetaldehyde. Carbon monoxide and methane are contributions from the decomposition of acetaldehyde. Experimentally, not detected (n.d.)-40.47μg of 16 PAH emissions were determined from per gram of PLA pyrolysis. The PAH profiles showed a predominance of naphthalene (58.9%), phenanthrene (12.5%), and fluoranthene (5.9%). The total PAH emissions for PLA pyrolysis is significantly lower than the values associated with PLA combustion. From the viewpoint of air pollution control, this result suggests that pyrolysis seems a better alternative than combustion for the disposal of waste PLA. Also, since pyrolysis is the first step for an incineration process, these results can provide important information on the control of PAHs formation for a commercialized incinerator.
+

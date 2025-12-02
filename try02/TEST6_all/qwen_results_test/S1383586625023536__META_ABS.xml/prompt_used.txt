@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of process parameters on the purity of chitin isolated from black soldier fly larvae biomass using a subcritical methanol–water mixture Black soldier fly (BSF, Hermetia illucens) larvae efficiently convert low-value waste streams into high-value larval biomass, containing substantial amounts of lipids, proteins, and chitin (the latter 4.73 ± 0.25 % dry matter). Although these larvae are mainly used as animal feed, isolating substances like chitin significantly boosts their economic value. However, the presence of chitin-binding proteins presents a major challenge in the isolation. Traditional chemical processes for isolating chitin typically produce large amounts of chemical waste, degrade chitin quality, and are time-consuming. This study introduces an innovative method for separating chitin from larval biomass using a subcritical methanol–water mixture, which is more sustainable and less time-consuming. Given the novelty of this process with the methanol–water mixture, the effect of process parameters on the purification was previously unknown. To address this, a design of experiments (DoE) was employed to assess the influence of reaction temperature, time, and methanol-to-water ratio on the chitin and amino acid content of the purified chitin. Following model fitting, optimal settings for maximal purity were predicted and experimentally verified. As it stands, a treatment with a 7:1 w:w methanol–water mixture at 250 °C for 158 min resulted in chitin with (74.7 ± 2.0 %) purity, and 77 – 85 % acetylation. Furthermore, the purified chitin contained very few amino acids (i.e., 0.27 ± 0.04 %, primarily Glx), indicating that the covalently bound proteins are almost entirely removed. Thus, the proposed process presents a significant advancement over current methods for chitin purification from insect biomass.
+

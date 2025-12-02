@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recent advances in biochar-based materials for CO₂ capture: From preparation to application in value-added chemicals and fuels The escalating rise in global carbon dioxide (CO₂) emissions, primarily from the combustion of fossil fuels, necessitates the advancement of efficient carbon capture technologies. Biochar has emerged as a promising adsorbent due to its tunable properties, cost-effectiveness, and low emissions production. This review presents recent advancements in engineered biochar for CO₂ capture, including biochar modification strategies such as physical treatment, chemical activation, and heteroatom (N, S) doping, which significantly enhance CO₂ capture capacity. Engineered biochar’s achieved CO2 adsorption capacities up to 7.52 mmol/g at 1 bar and 25 °C, due to the development of microstructure < 1 nm and surface functional groups (N/O-containing). Chemical activation methods have achieved ultrahigh surface areas exceeding 1700 m²/g, while surface doping enhances CO₂ uptake. However, critical challenges remain, including a loss of adsorption stability of more than 20 % after 10 cycles and the need for upscaling production for industrial applications. Beyond capture, engineered biochar in CO₂ conversion to value-added chemicals and fuels, such as syngas, methane, and methanol. Innovative strategies such as functionalization, machine learning (ML) algorithms, and AI-guided design approaches are discussed as future directions to optimize performance. This review identifies critical research gaps and emphasizes the need for pilot-scale validation to bridge laboratory developments with large-scale implementation. Overall, this work positions engineered biochar as a key enabler in next-generation CO2 mitigation technologies aligned with global carbon neutrality goals.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unravelling the structure-performance relationship of zeolite Beta in the catalytic cracking of low-density polyethylene by proposing gasoline factor as the descriptor Plastics are widely used in daily life and industry. However, the natural degradation of waste plastics is very slow, causing considerable environmental problems. Catalytic cracking is able to convert waste plastics into fuels and chemicals, being an efficient and sustainable utilization route for waste plastics. Zeolites are commonly used as catalysts for this process, with the performance mainly affected by diffusion and acidity properties. It is necessary to elucidate the combinatorial effect of these two factors. Herein, zeolite Beta was used as the model catalyst for the catalytic cracking of low-density polyethylene (LDPE). The synergistic effect of diffusion and acidity on the catalytic performance was explored by systematically controlling the Si/Al ratio (SAR) and particle size of zeolite Beta. By correlating the acidity and pore structure of Beta zeolites with the catalytic performance, a gasoline yield descriptor − gasoline factor (GF) was proposed, and GF fitted well with the gasoline yields of LDPE cracking by Beta zeolites, demonstrating that GF may provide theoretical guidance for the optimized design of zeolite catalysts in the LDPE cracking. Through fine analysis of the gasoline composition with M4 multi-dimensional chromatography, for the first time, a high proportion of cyclo-olefins was discovered in the gasoline products of all zeolite catalysts, which was ascribed to the unique long hydrocarbon chains of LDPE. Considering that cyclo-olefin copolymers possess high thermal stability and excellent chemical resistance, the cyclo-olefin monomers produced by the cracking of LDPE exhibit high potential in commercial applications.
+

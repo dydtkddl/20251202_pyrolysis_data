@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and kinetic study on the solar-driven iron-based chemical looping dry reforming of methane The chemical looping dry reforming of methane (CL-DRM) represents a promising pathway for large-scale engineering applications of thermochemical decarbonization techniques. To elucidate the intricate reaction mechanism of CL-DRM, a comprehensive kinetic model encompassing both gas-phase reactions and ferrite surface reactions is developed in this study. This model can serve as a numerical foundation for tracing the reaction progression of comparable iron-based oxygen carriers, allowing visualization of all reaction pathways and further determination of optimal reaction conditions. Besides, foam-structured materials employing NiO-doped CoFe 2 O 4 as oxygen carriers were prepared to conduct application experiments for the CL-DRM on a self-designed solar thermochemical platform. The experimental outcomes, obtained under temperature conditions guided by numerical predictions, validate the promising feasibility of employing Ni-doped ferrite in the CL-DRM reaction system. At a reaction temperature of only 1150 K, remarkable peaks in H 2 yield of 23.5 mLmin − 1 g − 1 , CO yield of 11.6 mLmin − 1 g − 1 , and CH 4 conversion around 90% are attained, with a net solar-to-fuel conversion efficiency of 1.93%. A comparative analysis conducted with the conventional two-step thermochemical cycle under the same experimental setup underscores the notable advantages of CL-DRM in terms of syngas production capacity and conversion efficiency. Consequently, CL-DRM can be regarded as a pivotal transition towards the realization of a fully carbon-free thermochemical technology.
+

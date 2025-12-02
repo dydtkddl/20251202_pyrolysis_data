@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic performance of Na-Mn2O3-based catalysts towards oxidative coupling of methane Various active materials (NaCl and Na2WO4 doped on Mn2O3) and supports (SiC, SiO2, WO4, CoO, La2O3, Ce2O3, ZnO, Al2O3, Cr2O3, La0.3Sr0.7Cr0.7Fe0.3O3-δ (LSCF), and clinker) were prepared and tested for use in the OCM reaction in a packed-bed reactor. NaCl-Mn2O3/SiO2 showed the best performance among the catalysts, with 37.5 % methane conversion, 60.5 % C2 selectivity, and 22.7 C2 yield at an optimum temperature of 750 °C under atmospheric pressure. The ethylene-to-ethane ratio of NaCl-Mn2O3/SiO2 (7.5) was found to be the highest, and higher than that of Na2WO4-Mn2O3/SiO2 (1.4), possibly due to its high basicity. Na2WO4-Mn2O3/SiO2 showed good catalytic stability during 12 h time-on-stream experiment whereas slight deactivation was observed in NaCl-Mn2O3/SiO2 due to the decomposition of NaCl, evidenced from traces of gaseous chloride compounds such as CH3CH2Cl, CH3Cl, and Cl2 in the outlet stream. However, the degree of deactivation was found to be more severe when (1) level of NaCl was lower (from 60 % to 10 %) and (2) time-on-stream experiment was tested for the longer period of time (12 h–62 h). The loss of chloride was estimated at 57 and 69 % (by weight) after 12 and 62 h TOS, respectively. The results were in good agreement with information received from XRD where Na2SiO3 was observed due to the loss of chloride, when the deactivation was extreme. From O2-TPSR result, Na2WO4-Mn2O3/SiO2 showed no coke deposition, which could be the result of the high surface oxygen (Os) contained in Na2WO4. Carbon formation at 56.36 μmol/g.hr was detected when using NaCl-Mn2O3/SiO2 as catalyst. The solid-gas mechanism of the catalytic OCM reaction was predicted using the CH4-TPSR technique.
+

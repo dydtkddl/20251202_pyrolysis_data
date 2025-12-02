@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Numerical simulation of a simplified, transient, 2D, non-reactive heat transfer model of a lab-scale fixed-bed pyrolysis reactor Pyrolysis of agro-industrial residues can be used to produce alternative liquid fuels to reduce consumption of fossil fuels. To study these biomass pyrolysis processes, experimentation and numerical simulations are commonly compared. For the latter, thermophysical properties of biomasses and proper thermal models of pyrolysis reactors are required in numerical simulations. This paper presents values for the specific heat capacity, density, and thermal conductivity of Colombian Coffee Husk, as well as a simplified non-reactive heat transfer model of a lab-scale, fixed-bed pyrolysis reactor. The thermal conductivity was determined by combining the axial rod method with transient temperature measurements and an inverse problem solution. CH properties values determined were 1.62 kJ/kg K, 1390 kg/m3, and 0.19 W/mK. To test the validity of the reactor’s thermal model simulation, temperature profiles results were compared with results from an experimental study employing a pyrolysis reactor with the same characteristics. Variations of temperature profiles in time were compared and good agreement between numerical and experimental results was observed for temperatures lower than pyrolysis temperatures (300–400 °C), validating the simplified model. Temperature differences above 300–400 °C were expected as chemical reactions were not included in the numerical model.
+

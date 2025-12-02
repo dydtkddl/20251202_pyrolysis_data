@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-gasification of municipal solid waste with high alkali coal char in a three-stage gasifier The commercial scale up of municipal solid waste (MSW) gasification system is restricted by the low quality of the syngas, especially due to the low heating value and high contents of tar and HCl. In this study, an innovative three-stage system for co-gasification of MSW with high alkali coal char was developed. The modeled MSW was pyrolyzed in the first stage and the raw syngas was partially oxidized in the second stage and then reduced with high alkali coal char in the final stage to produce high quality syngas. The effects of temperatures and equivalence ratios (ER) have been evaluated experimentally and the concentration of condensable tar species and HCl was examined carefully. In general, the two key pollutants in produced gas could be controlled as low as 11.3 mg/Nm3 (tar content) and 17.6 mg/Nm3 (HCl content). Meanwhile, the level of H2, CO, CH4 in synthesis gas reach a stable high level of 41.9 vol%, 29.3 vol% and 7.49 vol%, respectively, while the lower heating value (LHV) attains 12.2 MJ/Nm3, meeting the intake-gas conditions for internal combustion engines. The experimental results confirm that the highest pyrolysis temperature leads to the maximum gas yield from oxidation stage (i.e., 0.913 Nm3/kg at 650 °C), to be compared with 0.898 Nm3/kg (550 °C) and 0.747 Nm3/kg (450 °C). The lowest gasification temperature (800 °C) is indicated as most favorable for HCl removal from syngas, linked with the advancement of reversible reactions between HCl and Ca-based compounds. H2, tar and LHV all decrease with rising equivalence ratio. In summary, the high-quality syngas can be produced at a steady yield rate of 1.57 Nm3/kg from three-stage gasifier, due to dichlorination and catalytic tar cracking action of high alkali coal char at a low cost.
+

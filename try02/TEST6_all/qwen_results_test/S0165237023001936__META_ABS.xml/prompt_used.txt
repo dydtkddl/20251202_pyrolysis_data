@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comparing bed materials for fluidized bed steam cracking of high-density polyethylene: Olivine, bauxite, silica-sand, and feldspar Steam cracking in fluidized beds is an alternative method for producing valuable petrochemicals from plastic waste. Previous studies on the conversion of plastics in fluidized beds have revolved around non-catalytic cracking using silica sand as the bed material. On the other hand, studies on catalytic cracking have focused on the use of active materials such as olivine, bauxite, feldspar, and zeolites. The potential influence of the above-mentioned materials, in their natural or inactive state, on fluidized bed hydrocarbon cracking, is not well-documented in the literature. In this paper, steam cracking of polyethylene in a bubbling fluidized bed at 750 °C is investigated in the presence of four different natural ores: olivine, bauxite, silica sand, and feldspar. The paper compares the performance of the steam cracking process in terms of cracking severity, conversion, and product distribution among different hydrocarbon groups. The results show that there is only a marginal difference in cracking severity among the different bed materials, while the conversion remain relatively consistent, ranging from 93% to 95% (carbon.%). The yields of paraffins and carbon oxides are narrow, ranging from 15% to 16% and 3–4%, respectively, while the yields of light olefins and aromatics show a slightly wider range. The yield of olefins is in the range of 52–57%, and for aromatics, it ranges from 16% to 21%. The paper also discusses the potential impact of these bed materials on the cracking reactions, including their thermal and reactive interactions.
+

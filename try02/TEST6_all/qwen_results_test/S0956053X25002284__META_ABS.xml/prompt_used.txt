@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Zeolite synthesis using recycled silicon and aluminum components from spent FCC catalysts Significant efforts have been made to partially reuse FCC catalysts, particularly rare earth elements (REE), but only comprehensive recycling strategies can effectively contribute to a sustainable chemical industry. This work presents a novel recycling process for spent FCC catalyst materials, involving pre-treatment, selective separation of silica and alumina species, and synthesis of zeolites or zeolite-like materials. The process exclusively utilizes silicon and aluminum recovered from the spent FCC catalyst to produce high-quality catalyst components and sorbents. Optional rare earth element (REE) leaching, acid treatment after reactivation with sodium hydroxide, precipitation, and filtration yield silicon species (silica). The acidic, aluminum-rich filtrate is processed further by converting it into an alkaline medium with sodium hydroxide, enabling the precipitation and removal of unwanted heavy metals and rare earth elements. Aluminum species are recovered through neutralization of the alkaline solution, followed by precipitation and filtration. Overall, up to 95 % of the silicic acid and aluminum oxide are recovered. Subsequent chemical syntheses yield high-crystalline zeolite Y and ZSM-5 as active zeolites for FCC catalysts, alongside AlPO4 as an alternative binder. A techno-economic analysis reveals a manageable turnover on industrial scale next to a refinery, while the costs still surpass current market prices, as long they do not care about environmental remediation. Unlike recent studies, no additional silicon and aluminum sources are required, which promotes a more independent local recycling. Furthermore, zeolite A was synthesized as a sorbent using the filtrate solution obtained during the production of zeolite Y, thus nearly completing the recycling loop.
+

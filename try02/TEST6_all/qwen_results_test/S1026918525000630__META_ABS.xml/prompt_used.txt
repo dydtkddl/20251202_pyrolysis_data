@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic co-pyrolysis of polyethylene terephthalate and hibiscus rosa-sinensis: Catalytic mechanisms for optimizing pyrolysis yields This study investigated the co-pyrolysis of Polyethylene Terephthalate (PET) and Hibiscus rosa-sinensis (HRS) biomass as a sustainable approach for waste valorization and biofuels production. This study improves both yield and fuel quality by emphasizing HRS's potential as a valuable co-feedstock for sustainably valorising PET waste and producing biofuels. Various PET and HRS weight ratios (100 %, 95 %: 5 %, 90 %: 10 %, 85 %: 15 %, and 80 %: 20 %) were employed at 350 °C pyrolysis temperature. Both the experimental and simulation results indicated that product distribution was significantly affected by HRS. The slight addition of HRS (90:10) had a synergistic effect, yielding a maximum oil output of 538 ml and 393 g (78,6 % yield), exceeding the yield from pure PET pyrolysis. The oil yield indicated that the fuel characteristics were superior at this ratio. The octane number increased to 98, the calorific value remained approximately constant at 46.65 MJ/kg, but viscosity and density exhibited variations. Moreover, the addition of HRS significantly increased and accelerated gas yields, particularly CH₄ and H₂, indicating HRS's catalytic role in facilitating cracking and reforming processes. The catalytic activity of HRS is primarily related to its flavonoid compounds. The flavonoid greatly improves the co-pyrolysis of PET and HRS by encouraging bond cleavage, increasing the formation of oxygenated compounds, making it easier to turn long-chain hydrocarbons into valuable gases, and making the pyrolysis yields better overall in terms of quality and stability. HyperChem simulation results demonstrate alterations in molecular design, polarizability, and energy dynamics, thereby providing a molecular-level understanding of these synergistic effects.
+

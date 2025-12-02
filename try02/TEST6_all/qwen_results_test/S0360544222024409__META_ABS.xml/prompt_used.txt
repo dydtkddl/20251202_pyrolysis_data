@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characteristics of biochar derived from the co-pyrolysis of corn stalk and mulch film waste The characteristics of biochar produced from the co-pyrolysis of corn stalk (CS) and mulch film (MF) were analyzed. Cellulose, hemicellulose, lignin were applied to explore the synergistic eﬀects of CS and MF during co-pyrolysis. Upon increasing the proportion of MF, the yield of liquid products increased, and the yield of solid products decreased. Interactions of cellulose, hemicelluloses, and lignin, during the pyrolysis of CS were promoted. The content of CO and CO2 increased when the proportion of MF was 25%, but the content of CO decreased upon increasing the proportion of MF. When the MF content increased from 25% to 75%, the caloriﬁc values of the co-pyrolysis gases were respectively 0.43, 1.15, and 1.49 times higher than those when CS was pyrolyzed alone. In addition, analysis of biochar characteristics showed that the specific surface area of biochar produced from the co-pyrolysis of CS and MF increased by 0.54, 0.21, and 1.36 times, respectively, compared with that of CS pyrolysis. The number of oxygen-containing functional groups was decreased, and most hydroxyl and carboxyl groups decomposed when the content of MF was 25% during co-pyrolysis. These results indicate that a lower MF content during co-pyrolysis can promote the fuel characteristics of biochar.
+

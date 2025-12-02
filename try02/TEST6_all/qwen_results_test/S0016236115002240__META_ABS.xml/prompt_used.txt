@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Combining Mo–Cu/HZSM-5 with a two-stage catalytic pyrolysis system for pine sawdust thermal conversion Mo–Cu/HZSM-5 catalysts for pine sawdust thermal conversion were prepared using an impregnation method. The Mo–Cu/HZSM-5 catalysts and HZSM-5 were characterized by Brunauer–Emmett–Teller (BET), X-ray diffraction (XRD) and transmission electron microscopy (TEM). All characterization results indicated that the introduction of CuO is beneficial to the dispersion of MoO3 in the HZSM-5. Combined with the two-stage catalytic pyrolysis system, the Mo–Cu/HZSM-5 catalysts were used for pine sawdust thermal conversion. The products included gas, bio-oil and bio-char. The gas was analyzed by Gas chromatography (GC). Gas chromatography–mass spectrometry (GC–MS) was used to identify the compounds in bio-oils. The water content, higher heating value (HHV) and viscosity of bio-oils were measured. The HHV and elements of bio-char were determined. The results indicated that Mo(3%)–Cu(3%)/HZSM-5 treatment yielded the highest amount of C6–C12 hydrocarbons, showed a robust ability to convert methane in the gas to bio-oil, and displayed no significant difference in the properties of bio-char when compared to different treatments in the same pyrolysis conditions.
+

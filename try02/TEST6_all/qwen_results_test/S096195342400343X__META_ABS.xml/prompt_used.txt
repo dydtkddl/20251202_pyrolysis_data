@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Gasification of mixed plastic-biomass pellets in an updraft fixed bed reactor: A simplified dynamic model In the context of materials recycling, updraft gasifiers are promising small and middle-scale reactors to obtain building blocks and/or energy from waste plastic and biomasses. To this aim, these kinds of materials can also be mixed and reduced into pellets, while the needed heat enters the process with a heated carrier gas. In order to preliminarily design a gasifier to check its feasibility with an available feedstock, currently available models are inadequate. Thermodynamic ones are useless for the purposes of sizing, while too detailed rate-based models (e.g. based on fluid-dynamic modelling) are too substrate specific, need detailed input data and are extremely time consuming. A dynamic model of a fixed-bed reactor for biomass gasification is presented here. The gasifier is loaded continuously from the top with solid pellets and fed with counter-current air flow. The model considers: i) a one-step gasification kinetics, yielding a product spectrum which matches experimental data from the literature; ii) dynamic gas and solid energy balances and iii) steady-state energy balance for the furnace. The model has been applied to describe a tubular furnace (Ø 40 cm) which gasifies 500–1000 kg day−1 of mixed wastes using air heated up to 1200 °C: on the basis of the produced chemicals, the energy consumption was estimated as ca. 2 MJ per kg of solid feedstock. This simplified approach proved robust in describing the overall yields and start-up dynamics, showing higher reliability than equilibrium models in addressing the temperature profiles, at the cost of a simplified reaction kinetic and pellet description with respect to more complex simulation models. The model validation was done by comparison between the calculations results and available pilot-plant data. An overall good fit of the data can be concluded. The solid-gas heat transfer and the bed packing are the main computational criticalities to achieve a reliable process description.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Simulation of biomass-plastic co-gasification in a fluidized bed reactor using Aspen plus A detailed process model was developed for co-gasification of biomass and plastics in a fluidized bed reactor using Aspen Plus with kinetic-based reactors. Governing kinetic expressions were adopted from the literature and nested in the Aspen Plus software to carry out the simulation. This study involves steam co-gasification of sawdust with Polyethylene (PE) and Polypropylene (PP). It is aimed at determining the synergistic effects of mixing PE and PP (0–30%) with lignocellulosic biomass on the syngas composition, hydrogen to carbon monoxide ratio (H2/CO), and higher heating value (HHV). Effects of process parameters including the reactor temperature, steam/feedstock ratio (S/F), plastic content and pressure are also discussed. Increase in plastic content leads to higher hydrogen concentration in the syngas resulting from primary and secondary reforming reactions. Highest hydrogen concentrations of 65.32% and 63.80% were obtained respectively for PE-biomass and PP-biomass gasification at 30% plastic content and 750 °C. Reduction in CO was obtained due to the decrease in oxygen content in the feedstock with increase in plastic content and consequently leads to increase in H2/CO. Increased hydrogen content and syngas with higher HHV is achieved as the gasification temperature was increased. Hydrogen content was increased to a maximum of 61.99% and 60.57% at 800 °C for PE and PP co-gasification, respectively.
+

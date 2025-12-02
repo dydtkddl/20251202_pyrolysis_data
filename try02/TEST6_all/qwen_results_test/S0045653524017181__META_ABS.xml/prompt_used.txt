@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sewage sludge pyrolysis ‘kills two birds with one stone’: Biochar synergies with persulfate for pollutants removal and energy recovery The disposal and resource utilization of sewage sludge (SS) have always been significant challenges for environmental protection. This study employed straightforward pyrolysis to prepare iron-containing sludge biochar (SBC) used as a catalyst and to recover bio-oil used as fuel energy. The results indicated that SBC-700 could effectively activate persulfate (PS) to remove 97.2% of 2,4-dichlorophenol (2,4-DCP) within 60 min. Benefiting from the appropriate iron content, oxygen-containing functional groups and defective structures provide abundant active sites. Meanwhile, SBC-700 exhibits good stability and reusability in cyclic tests and can be easily recovered by magnetic separation. The role of non-radicals is emphasized in the SBC-700/PS system, and in particular, single linear oxygen (1O2) is proposed to be the dominant reactive oxygen. The bio-oil, a byproduct of pyrolysis, exhibits a higher heating value (HHV) of about 30 MJ/kg, with H/C and O/C ratios comparable to those of biodiesel. The energy recovery rate of the SS pyrolysis system was calculated at 80.5% with a lower input cost. In conclusion, this investigation offers a low-energy consumption and sustainable strategy for the resource utilization of SS while simultaneously degrading contaminants.
+

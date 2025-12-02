@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A strategy for industrial waste mitigation—thermal treatment of non-woven polyester fabric debris on ultrahigh-porosity MgO under CO2 atmosphere Unproperly treated industrial waste creates serious environmental pollution that requires immediate remediation strategies. Non-woven polyester fabrics are widely used in a variety of industrial applications; thus, their debris becomes a major portion of industrial waste. To contribute to advanced industrial waste treatment processes, this study investigated catalytic thermal treatment of non-woven polyester fabric debris on a novel ultrahigh-porosity MgO material under a CO2 environment. The ultrahigh-porosity MgO was synthesized from hydromagnesite via a series of thermal reactions, having a surface area of 208.8 m2 g−1, total pore volume of 0.34 cm3 g−1, and average pore diameter of 2.37 nm. Using the MgO as the catalyst for thermolysis of non-woven polyester fabric debris in CO2 promoted thermal cracking of volatilized species evolved from the non-woven polyester fabric debris thermolysis, thereby increasing the gas product yield and decreasing the liquid product and wax yields. In addition, dehydrogenation and reverse water gas reaction was promoted by the MgO catalyst, leading to more than higher syngas production (up to 16.1 wt% syngas yield) compared to non-catalytic thermolysis (up to 8 wt% syngas yield). The selectivity toward esters was increased, while the selectivities toward benzoic and phthalic acids were decreased, most likely due to the MgO promoting decarboxylation and esterification reactions during the thermolysis. Moreover, the ultrahigh-porosity MgO catalyst was reusable for at least two consecutive cycles. It is hoped that the applicability of the novel material as a catalyst is widened for advanced treatment processes to minimize negative effects of industrial wastes on the environment.
+

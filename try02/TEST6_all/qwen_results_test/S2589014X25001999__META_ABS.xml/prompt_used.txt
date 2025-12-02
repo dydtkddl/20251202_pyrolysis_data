@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimization of syngas production and biochar utilization from municipal solid waste (MSW) via integrated pyrolysis-gasification for electricity generation Municipal solid waste (MSW) presents an environmental challenge and an untapped energy resource. This study explores the integration of pyrolysis and gasification as a thermochemical conversion method to produce synthesis gas (syngas) from MSW, with the hypothesis that the recycling biochar from pyrolysis process due to its high fixed carbon content and catalytic properties, effectively reducing tar formation and enhancing syngas quality, optimize energy recovery and potentially emissions from the system. From Aspen Plus simulation, resulting the indication that the highest low heating value (LHV) of 11.892 MJ/Nm3 is achieved at S/M = 0.7 and 850 °C, with CO (19.808 %) and H2 (73.042 %) as dominant components, CCE reaching 84.593 % and CGE 66.984 %. With optimization, the optimum conditions are at 934.135 °C and S/M ratio is 0.7. This condition produced H2 concentration of 73.13 %, CO of 20.3 %, CH4 of 4 % and CO2 of 1.1 %, LHV reached 11.878 MJ/Nm3, CCE 85.20 % and CGE 68.50 %. For the LHV value, although lower than another LHV range in methane-rich syngas, this value aligns with the high hydrogen content and clean combustion characteristics of the syngas produced. The syngas is further analyzed using Diesel-RK to simulate its conversion into electricity and produced final power output of 7.109 MW, mechanical efficiency of 90.4 %, NO2 emission 25.545 g/kWh and 7.114 MW, mechanical efficiency 90.4 % after optimization, and lower NO2 emission at 25.534 g/kWh. This research presents a viable waste-to-energy solution, contributing to sustainable energy production and waste management strategies. However, further research is needed to determine the economic feasibility, industrial scale, and regulatory feasibility.
+

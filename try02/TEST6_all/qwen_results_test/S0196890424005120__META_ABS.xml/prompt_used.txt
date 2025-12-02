@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Tandem pyrolysis catalytic reforming of plastic waste to high-yield monocyclic aromatics by one-step microwave catalysis The recycling and processing of plastic waste to promote resource sustainability has emerged as a global concern. Selectivily upcycling polyolefins into valuable monocyclic aromatic hydrocarbons (MAHs) is a promising strategy to promote a circular economy but limited by low yield and selectivity. In this study, one-step microwave-triggered tandem pyrolysis coupling ZSM-5 catalytic reforming technology was explored, which is efficient for selectively transforming plastic into benzene, toluene, ethylbenzene, and xylene (BTEX) riched oil products. Pyrolysis and catalytic processes were achieved by mixing plastic and ZSM-5 with graphite, respectively, and placing them in the bottom and top layers of the reactor. Results indicate the mass ratio of plastic or ZSM-5 to graphite and microwave irradiation power would influence the selectivity and yield of MAHs. After careful investigation, the optimum reaction conditions are deemed to be 600 W, and the mass ratio of LDPE and ZSM-5 to graphite is 3:1 and 1:1, respectively, and delightful selectivity and yield of MAHs of 82.06% and 28.12 wt% are obtained under the above conditions. More importantly, the BTEX accounted for a significant amount in the MAHs with the selectivity and yield of 70.53% and 24.17 wt%, demonstrating a strong ability to produce high-value BTEX, which is attributed to the ZSM-5 providing a sufficient active site for reforming the pyrolysis vapors and promote the formation of BTEX by cracking, aromatization and Diels-Alder reactions. Additionally, gas products are rich in C2H4, C3H6 and C4H8 olefin monomers accounting for around 60% of the gas products, which also manifest high value. Besides, the ZSM-5 can be stabilized by exceeding three successive cycles, and this strategy is also suitable for the catalytic upcycling of PP and mixed plastics to produce MAHs selectively. Therefore, this one-step microwave-triggered tandem pyrolysis coupling ZSM-5 catalytic reforming technology provides a potential waste resource utilization method to convert plastic waste into high-value petrochemical products.
+

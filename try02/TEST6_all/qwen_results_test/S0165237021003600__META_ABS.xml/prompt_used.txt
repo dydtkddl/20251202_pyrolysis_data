@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fast pyrolysis of polyurethanes and polyisocyanurate with and without flame retardant: Compounds of interest for chemical recycling To date, the recycling of polyurethane (PU) and polyisocyanurate (PIR) waste still poses a significant problem. Within this contribution, the thermal degradation of high-resilient ether PU, semirigid PU, rigid PU, and (PIR) with and without TCPP flame retardant was studied at different temperatures to identify and quantify the main products. For this, a tandem micropyrolyzer coupled to GC × GC with FID and ToF-MS detectors was used, and the yield volatiles, light gases, and residue was quantified. The volatile pyrolysis vapours obtained from pyrolyzing high-resilient ether PU and semirigid PU at 600 °C were very similar, and the main products obtained were ethylene and propylene (combined yield of ~13 wt%), ~16 wt% of various oxygenates, and 4–6 wt% organic nitrogen compounds. The oxygenates included mostly poly-ether type compounds with varying molecular weight, and these are attributed to the decomposition of the polyol chains forming the soft segments of the polymer. The main semi-volatile nitrogen compound was 4,4′-methylenedianiline, attributed to the decomposition of the hard segments in the PU structure synthesized from MDI. The pyrolysis vapours from rigid PU contained several ether-type compounds and high yields of heteroatom-free monoaromatics—in particular styrene. The PIRs were more difficult to decompose and volatilize than the PUs, resulting in ~20 wt% higher residue yields. The charring propensity was even higher in the absence of a flame retardant in the formulation. Pyrolysis of TCPP-containing PIR produced Cl-containing pyrolysis vapours such as allyl chlorides. While the yield of H2O was comparable for the different PUs and PIR, pyrolysis of PIR produced higher yields of CO2 and less CO compared to the different PUs. The use of catalysts can help to convert PU waste pyrolysis vapours more efficiently to desirable chemicals.
+

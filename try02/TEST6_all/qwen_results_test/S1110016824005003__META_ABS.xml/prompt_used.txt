@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrogen combustion, production, and applications: A review The demand for fossil fuels is rising rapidly, leading to increased greenhouse gas emissions. Hydrogen has emerged as a promising clean energy alternative that could help meet future demands way sustainably, especially if produced using renewable methods. For hydrogen to meaningfully contribute to energy transitions, it needs more integration into sectors like transportation, buildings, and power that currently have minimal hydrogen usage. This requires developing extensive cross-sector hydrogen infrastructure. This review examines hydrogen combustion as a fuel by exploring and comparing production techniques, enriching ammonia with hydrogen as a CO2-free option, and hydrogen applications in engines. Additionally, a techno-economic environmental risk analysis is discussed. Results showed steam methane reforming is the most established and cost-effective production method at $1.3–1.5/kg H2 and 70–85% efficiency but generates CO2. Biomass gasification costs $1.25–2.20/kg H2 and pyrolysis $1.77–2.05/kg H2 offering renewable options. However, bio-photolysis currently has high costs of $1.42–2.13/kg H2 due to low conversion rates requiring large reactors. Blending H2/NH3 could enable carbon-free combustion, aiding carbon neutrality pursuits, but minimizing resultant NOx is crucial. Hydrogen's wide uses from transportation to power underline its potential as a transformational energy carrier.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Adsorption of H2S, NH3 and TMA from indoor air using porous corncob activated carbon: Isotherm and kinetics study In this study, a corncob-derived activated carbon was prepared via chemical activation using potassium hydroxide as a chemical activating agent for the adsorption of H2S, NH3 and trimethylamine. The activated carbon was impregnated with copper to improve its H2S, NH3 and TMA adsorption performance. SEM, EDX, nitrogen adsorption-desorption, TGA/DTA, proximate and elemental analysis tests were employed to characterize the activated carbon samples. Removal efficiencies of the activated carbon samples for H2S, NH3 and TMA were conducted through batch experiments. The H2S, NH3 and TMA adsorption potentials of the CAC were 164.54, 190.68 and 323.56 mg g−1 respectively. The isotherm analysis results showed that the Langmuir adsorption isotherm model was the most suitable to describe the adsorption isotherm of H2S, NH3 and TMA. Similarly, pseudo-second order kinetic model well explained the adsorption kinetics of NH3 and TMA while pseudo-first order showed better fit towards the adsorption of H2S. The findings revealed that the copper-catalyzed corncob activated carbon is a promising and sustainable adsorbent for the removal of toxic gases from indoor areas.
+

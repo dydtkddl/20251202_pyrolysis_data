@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical looping gasification of high-moisture content biomass: The interactions between H2O and oxygen carrier The control and utilization of water is crucial during chemical looping gasification of high-moisture-content biomass waste. In this study, digestate, as a typical high-moisture-content biomass, was selected as the feedstock. Three types of gasification conditions, including self-moisture pyrolysis (SMP), self-moisture CLG (SMCLG), and externally injected steam CLG (SCLG), were tested to comparatively investigate the effects of different types of H2O on CLG. The transformation of H2O during gasification and the interactions between H2O and LaCu0.5Fe0.5O3 OC were also explored. Results showed that, SMCLG showed the best performance, and the highest gasification efficiency reached 81.83% when the self-moisture content was 40%. The characterization results showed that OC could absorb H2O at low temperature and release it at higher temperature, thus facilitating the gasification of pyrolytic char. Based on density functional theory (DFT) calculation, the migration path of H2O on OC was explained. The adsorption of H2O was mainly due to the formation of FeO bond between Fe and H2O, and then H2O dissociated into OH and H on Fe atom. H is transferred to La atom to form LaH. This study investigated the effect of OC on the migration and transformation of H2O in CLG, which provided a new perspective and development direction for the engineering treatment of digestate, as well as scientific support for the promotion and application of CLG.
+

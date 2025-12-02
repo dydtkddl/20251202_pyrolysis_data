@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Direct production of olefins from the auger reactor-assisted steam pyrolysis of waste polyethylene Waste polyethylene was pyrolyzed using a process that combines auger reactor (AR) and fluidized bed reactor (FBR). This study primarily investigated the effects of the AR temperature, fluidized bed temperature, FBR freeboard temperature, and the type of fluidizing medium (steam vs. N2) on product distribution and light olefin yield. The most critical aspect of the process is the role of the AR. When the AR temperature is maintained at around 300 °C, the polymers inside the reactor melt. In this molten state, they are fed into the FBR, where pyrolysis takes place. Introducing polymers into the pyrolysis reactor in a molten, rather than solid state promotes their decomposition more effectively, resulting in enhanced production of light olefins. The experimental results confirmed this hypothesis. When the AR temperature was at 300–350 °C, the yield of C2–C4 olefins ranged from 50 to 52 wt%, which is up to approximately 8 wt% higher than the yield (44 wt%) obtained when the AR was unheated. The fluidized bed and freeboard temperatures were also found to influence gas production and the yield of C2–C4 olefins. In contrast, the choice of fluidizing medium had only a minimal effect on product distribution and light olefin yields. In conclusion, this study suggests that the AR-assisted steam pyrolysis process could serve as a straightforward method for the large-scale production of light olefins from plastic waste.
+

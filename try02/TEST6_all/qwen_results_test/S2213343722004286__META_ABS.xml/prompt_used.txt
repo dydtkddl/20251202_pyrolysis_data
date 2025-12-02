@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Oil production from waste polyethylene and polystyrene co-pyrolysis: Interactions of temperature and carrier gas flow rate This study investigated the co-pyrolysis of waste polyethylene (WPE) and polystyrene (WPS) for oil production under different operating conditions (temperature and carrier gas flow rate). The ratio of the real-life WPE and WPS is different in different regions. Therefore, the interactions of operating conditions were investigated under different WPE/WPS mixture compositions. A hybrid model of artificial neural network-genetic algorithm (ANN-GA) was adopted to predict and optimize the co-pyrolysis oil yield due to the complex interactions of the WPE/WPS mixture composition and operating conditions. Consequently, the highest oil yield was 82.33 wt% under 525°C, 10 wt% PS, and a non-sweeping atmosphere (0 mL/min). The results indicated that high temperature, low PS mass fraction, and low carrier gas flow rate led to a higher oil yield. The WPE/WPS co-pyrolysis oils were composed of alkanes, alkenes, and aromatics. Meanwhile, styrene accounted for the highest proportion of aromatics in oils. ANN-GA was also adopted to predict and optimize the oil components and fractions. The results revealed that low temperature, high PS mass fraction, and low carrier gas flow rate were conducive to a light WPE/WPS co-pyrolysis oil production. The findings could guide the industrial process of waste plastic pyrolysis in different regions. Moreover, ANN-GA coupled with central-composite design can be used to regulate different target products under more complex conditions due to its good robustness.
+

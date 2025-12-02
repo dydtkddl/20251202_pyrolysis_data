@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Melamine-doped plastic-derived adsorbents for carbon capture: the influence of plastic type on textural properties and CO2 uptake. Melamine-doped adsorbents were synthesized from single PET and mixed plastics (MP) via the 2-pot method involving co-carbonisation with melamine, followed by KOH impregnation, and thermal activation. Under dynamic conditions at 25 °C and 1 bar, the PET- and MP-doped adsorbents exhibited CO₂ adsorption capacities of 1.98 and 1.59 mmol g−1, respectively, representing 10.6 and 17.8 % increase over their N-free counterparts (PET: 1.79 mmol g−1; MP: 1.35 mmol g−1). This also indicates that melamine doping had a greater impact on the adsorptive properties of the material derived from mixed plastics. Both doped adsorbents also showed excellent cyclic stability, maintaining regeneration efficiencies above 85 % over ten cycles, although slightly lower than the > 90 % seen in N-free adsorbents tested under the same regeneration conditions (100 °C with 50 mL min−1 of N2). Elemental analysis revealed higher nitrogen incorporation in N-MP (1.37 wt%) than in N-PET (0.24 wt%), despite an identical added amount of melamine, suggesting more efficient N-doping in the mixed plastics compared with PET. Although doped adsorbents exhibited lower surface area, total pore volume, and micropore volume compared to their N-free versions, they showed higher ultra-micropore volumes, which can enhance affinity for CO₂ adsorption at the pressure tested. Lastly, the type of plastic precursor had minimal effect on the adsorption mechanism or kinetics, as all adsorbents followed the Sips isotherm and Avrami’s kinetic models.
+

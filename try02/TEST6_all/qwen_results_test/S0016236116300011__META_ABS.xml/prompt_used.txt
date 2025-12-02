@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A study on raw, torrefied, and steam-exploded wood: Fine grinding, drop-tube reactor combustion tests in N2/O2 and CO2/O2 atmospheres, particle geometry analysis, and numerical kinetics modeling The purpose of this study was to compare the fine grinding properties and combustion behavior of three wood pellet products: raw, torrefied, and steam-exploded wood. The energy required to fine grind the pellets was tested, and so was the geometry and size distribution of the resulting ground products. Out of all the samples the steam-exploded wood pellet required the most energy for grinding. However, it also produced more sphere-like particles compared to the other two types of samples. The combustion behavior of the samples was tested in a laminar drop-tube reactor (DTR). The samples were preground and the particles were sieved with vibration sieves with an opening of 112–125μm. The pyrolysis process was examined separately at a temperature range of 973–1173K. The combined pyrolysis and combustion tests were carried out at a reactor temperature of 1123K. The O2 concentrations used in the measurements were 3–21vol-% in either N2 or CO2 atmospheres. The initial size distribution of the sample particles as well as their diameter evolution during pyrolysis and combustion was studied by using optical techniques. The surface temperature of the combusting particles was measured with a two-color pyrometer from within the DTR. The density, specific surface area, and pore diameter were measured from the ground samples with a mercury porosimeter. The chemical kinetic parameters, which describe the pyrolysis and char oxidation rates of the samples, were determined by using the data from the measurements.
+

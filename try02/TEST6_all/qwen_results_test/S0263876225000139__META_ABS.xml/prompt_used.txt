@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A preliminary study of thermal plasma gasification of an automobile waste under CO2 atmosphere for high calorific value syngas production Plastics in automobile waste pose major ecological issues since they are non-biodegradable and expensive to recycle, but can potentially be used to recover energy due to their high heating value. Therefore, the current study performs thermal plasma gasification of a car dashboard (CDB) in CO2 atmosphere to convert into a tar-free syngas. CO2 is chosen due to its environmental attention and ability to break the aromatic hydrocarbons by oxygen-free radicals formed under plasma. To measure the process yield, the influence of plasma power, CDB and CO2 plasma gas flow rate is investigated. A maximum concentration of H2 of 49.09 vol% and CO of 35.87 vol% are obtained at the highest plasma power of 1.12 kW. However, the maximum syngas yield (84.11 %), LHV (19.22 MJ/m3) and cold gas efficiency (67.70 %) are found for the optimum conditions of plasma power of 0.75 kW. The residue with high ash content (13 %) and LHV of 1.28 MJ/kg is obtained after plasma gasification as a by-product. The metals in ash such as Si, Ni, Al, etc., if recovered has valuable applications in the preparation of catalysts, pigments, glass making, etc.
+

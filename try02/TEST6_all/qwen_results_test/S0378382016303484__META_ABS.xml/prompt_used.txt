@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Numerical and experimental investigation on co-combustion characteristics of hydrothermally treated municipal solid waste with coal in a fluidized bed This research describes numerical and experimental studies on the co-combustion characteristics of hydrothermally treated municipal solid waste (HT MSW) with coal by utilizing a bubbling fluidized bed (BFB) reactor. The developed model is supported by some experimental test on co-combustion of coal with HT MSW to simulate the combustion process in a BFB and to evaluate the possibility of co-combustion application in a BFB reactor with different MSW blending ratios. HT MSW mixing ratios of 10, 20, 30, and 50% are chosen and examined at 700, 800, and 900°C to determine at which temperature coal could be substituted with the HT MSW regarding emissions, such as CO, SO2 and HCl. Emissions of NO, N2O, NH3 and HCN from the mixtures are measured, simulated, and contrasted with the results of only combustion of coal. Hydrodynamics and heat and mass transfer, along with reactions during combustion, e.g., coal/waste devolatilization, volatile combustion and char combustion, are taken into account. The results obtained in this part of the study ensure the possibility of accepting the mixing ratio of the hydrothermally treated MSW, co-combusted with coal up to 30% (wt.%) without major modification of the coal-fired BFB reactor. The simulation results are compared with experimental data, which show that the gas species versus time at different heights from the fluidized bed is reasonably simulated. This indicates that the numerical model presented is valid and provides a promising way to simulate the combustion of solid waste in a BFB, which is the predominant technology for co-combustion of waste. The advantage of the theoretical study lies in its ability to reveal features of the detailed structure of the combustion process inside a solid bed.
+

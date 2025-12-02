@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Facemasks: An insight into their abundance in wetlands, degradation, and potential ecotoxicity Disposable facemasks represent a new form of environmental contamination worldwide. This study aimed at addressing the abundance of facemasks in an overlooked natural environment with high ecological and economic value – the wetlands (Ria de Aveiro, Portugal, as study case), evaluating their potential biodegradation using naturally occurring fungi and assessing the potential ecotoxicity of released microfibres on local bivalves. All masks collected within 6500 m2 area of Aveiro wetland were 100 % disposable ones (PP-based, confirmed by Fourier transform infrared spectroscopy - FTIR) with an initial abundance of 0.0023 items/m2 in Sept. 2021, which was reduced by ∼40 % in Apr. 2022 and ∼87 % in Sept. 2022, as a reflection of the government policies. Analysis of the carbonyl index (0.03 to 1.79) underlined their state of degradation, primarily due to sun exposure during low tides. In laboratory conditions, 1 mm2 microplastics obtained from new disposable facemasks were prone to biodegradation by Penicillium brevicompactum and Zalerion maritimum inferred from microplastics mass loss (∼22 to −26 % and ∼40 to 50 %, respectively) and FTIR spectra (particularly in the hydroxyl and carbonyl groups). In addition, microfibres released from facemasks induced sublethal effects on the clam, Venerupis corrugata, mostly in their UV-aged form when compared to pristine ones, characterised by a decrease in cellular energy allocation (CEA) and an increase in aerobic energy metabolism (ETS). Concomitantly, clams exposed to 1250 items/L of UV-aged microplastics (similar to field-reported concentrations) expressed greater clearance capacity, indicating a need to compensate for the potential energy unbalance. This study provides the first baseline monitoring of facemasks in wetlands while bringing new evidence on their biodegradation and ecotoxicity, considering environmentally relevant conditions and keystone organisms in such environments. Such studies require scientific attention for rapid regulatory action against this emerging and persistent pollutant, also targeting remediation and mitigation strategies considering these items under pandemic scenarios.
+

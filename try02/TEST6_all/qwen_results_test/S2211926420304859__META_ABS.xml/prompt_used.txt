@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microalgae pyrolysis under isothermal and non-isothermal conditions The present work analyzes and compares the non-isothermal and isothermal pyrolysis processes of two different kinds of microalgae: Spirulina platensis and Chlorella pyrenoidosa. The non-isothermal pyrolysis process is carried out in a Thermogravimetric Analyzer (TGA), whereas a macro-TGA bubbling fluidized bed reactor is used for the isothermal pyrolysis reaction. The simplified Distributed Activation Energy Model (DAEM) is employed to derive the kinetic parameters of the reaction in the TGA, i.e., the pre-exponential factor and the activation energy. A consecutive reaction, first-order pyrolysis model with three competitive pseudo-components for the released pyrolysis vapors is proposed to evaluate the isothermal pyrolysis experiments conducted in a macro-TGA bubbling fluidized bed. The fluidized bed experimental setup allows measuring the real-time mass evolution during the microalgae pyrolysis process, which could be used to obtain the kinetic parameters of the different reactions of which the consecutive reaction model is comprised. The activation energies of the reactions using this isothermal pyrolysis model are in good agreement, both qualitatively and quantitatively, with those obtained from the non-isothermal pyrolysis measurements run in the TGA. A quantitative comparison reveals that the TGA measurements could be employed to provide a useful first estimation of the activation energy of the isothermal pyrolysis process in the bubbling fluidized bed. Qualitatively, the Differential Thermogravimetric (DTG) curves obtained from the thermogravimetric analysis revealed the presence of three peaks in the Chlorella pyrenoidosa DTG curve and two peaks in the Spirulina platensis DTG curve, which is in agreement with the number of pseudo-component reactions in the isothermal pyrolysis model. This indicates the capability of the non-isothermal pyrolysis tests in a TGA to predict the number of reactions required to characterize the isothermal pyrolysis process.
+

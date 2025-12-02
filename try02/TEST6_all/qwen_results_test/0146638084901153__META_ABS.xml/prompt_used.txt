@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Organic geochemistry of Deep Sea Drilling Project sediments from the Gulf of Calofornia—hydrothermal effects on unconsolidated diatom ooze The effects of intrusive thermal stress have been studied on a number of Pleistocene sediment samples obtained from Leg 64 of the DSDP-IPOD program in the Gulf of California. Samples were selected from Sites 477, 478 and 481 where the organic matter was subjected to thermal stress from sill intrusions. For comparison purposes, samples from Sites 474 and 479 were selected as representative of unaltered material. The GC and GC-MS data show that lipids of the thermally unaltered samples were derived from microbial and terrestrial higher-plant detritus. Samples from sill proximities were found to contain thermally-derived distillates and those adjacent to sills contained essentially no lipids. Curie point pyrolysis combined with GC and GC-MS was used to show that kerogens from the unaltered samples reflected their predominantly autochthonous microbial origin. Pyrograms of the altered kerogens were much less complex than the unaltered samples, reflecting the thermal effects. The kerogens adjacent to the sills produce little or no pyrolysis products since these intrusions into unconsolidated, wet sediments resulted in in situ pyrolysis of the organic matter. Examination of the kerogens by ESR showed that spin density and line width pass through a maximum during the course of alteration but ESR g-values show no correlation with maturity. Stable carbon isotope (δ13C) values of kerogens decrease by 1–1.5‰ near the sills at Sites 477 and 481 and the atomic N/C decreases slightly with proximity to a smaller sill at Site 478. Differences in maturation behavior between Site 477 and 481 and Site 478 are attributed to dissimilarities in thermal stress and to chemical and isotopic heterogeneity of Guaymas Basin protokerogen.
+

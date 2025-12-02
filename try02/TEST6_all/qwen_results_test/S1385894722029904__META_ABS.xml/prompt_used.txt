@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Beneficial use of Fe-impregnated bentonite as a catalyst for pyrolysis of grass cut into syngas, bio-oil and biochar Fe-impregnated bentonite was employed in CO2-assisted pyrolysis of grass cut as a catalyst to improve syngas production, bio-oil quality, and biochar sorptive property. The gas analysis revealed that H2 and CO production was enhanced by 332 and 7,110%, respectively, by applying Fe-impregnated bentonite in pyrolysis of grass cut while untreated bentonite had a limited influence on syngas production. Bio-oil produced from Fe-impregnated bentonite and grass cut (Fe-BG) had more homogenized chemical species in bio-oil as compared to that produced from pyrolysis of grass cut, and contained methyl 1,1-methyl-dodecanoate (C14H28O2), one of the major components in biodiesel. The produced biochar had high surface area (69.2 m2 g−1) and possessed Fe0 and graphitic carbon structure, which was deemed to arise from reduction of Fe-oxides by syngas. Biochar also showed high As(V) adsorption capacity. The overall results of this work demonstrated the beneficial utility of Fe-impregnated bentonite in pyrolysis of biomass to improve syngas production as well as the quality of pyrogenic products.
+

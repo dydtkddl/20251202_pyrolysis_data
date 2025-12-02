@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhanced performance and reprocessability in polypropylene-lignin blends through plasma treatment In this work, a new compatibilization strategy for polypropylene-lignin blends was presented, which did not rely on the use of solvents or other chemicals. Soda lignin was subjected to plasma treatment in an argon atmosphere employing a gliding-arc-tornado reactor configuration. The effect of this process was evaluated using electron paramagnetic resonance spectroscopy, nuclear magnetic resonance spectroscopy, differential scanning calorimetry, and thermogravimetric analysis, evidencing significant chemical-structural modifications in lignin, including an increased concentration of phenoxy radicals (60%) and depletion of hydroxyl functionalities (35%). Polypropylene-lignin blends incorporating 5% (w/w), 10% (w/w), and 20% (w/w) of either pristine or plasma-treated lignin were then prepared by melt-blending in a twin-screw extruder, and their thermo-mechanical and rheological properties were investigated in detail. As a result of the plasma-induced modifications occurred in lignin, blends incorporating the plasma-treated material exhibited greater thermo-oxidative stability, more favorable viscoelastic response, significantly improved mechanical performance (137% and 294% strain at break for polypropylene (PP) containing 5% (w/w) and 10% (w/w) of treated lignin, respectively), and enhanced thermo-mechanical reprocessability (> 95% retention of yield strength and strain at break after re-extrusion). This work provided the first demonstration of the effectiveness of plasma treatment as a viable and sustainable strategy to improve filler-matrix interactions in polypropylene-lignin blends without the use of solvents, chemical compatibilizers or additional wet-chemistry steps, paving the way for the development of lignin-based thermoplastic polyolefin materials with enhanced thermo-mechanical characteristics and improved reprocessability.
+

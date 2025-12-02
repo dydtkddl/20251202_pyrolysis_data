@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microplastics as vectors of other contaminants: Analytical determination techniques and remediation methods The ubiquitous and persistent presence of microplastics (MPs) in aquatic and terrestrial ecosystems has raised global concerns due to their detrimental effects on human health and the natural environment. These minuscule plastic fragments not only threaten biodiversity but also serve as vectors for contaminants, absorbing organic and inorganic pollutants, thereby causing a range of health and environmental issues. This review provides an overview of microplastics and their effects. This work highlights available analytical techniques for detecting and characterizing microplastics in different environmental matrices, assessing their advantages and limitations. Additionally, this review explores innovative remediation approaches, such as microbial degradation and other advanced methods, offering promising prospects for combatting microplastic accumulation in contaminated environments. The focus on environmentally-friendly technologies, such as the use of microorganisms and enzymes for microplastic degradation, underscores the importance of sustainable solutions in plastic pollution management. In conclusion, this article not only deepens our understanding of the microplastic issue and its impact but also advocates for the urgent need to develop and implement effective strategies to mitigate this critical environmental challenge. In this context, the crucial role of advanced technologies, like quantitative Nuclear Magnetic Resonance spectroscopy (qNMR), as promising tools for rapid and efficient microplastic detection, is emphasized. Furthermore, the potential of the enzyme PETase (polyethylene terephthalate esterase) in microplastic degradation is examined, aiming to address the growing plastic pollution, particularly in saline environments like oceanic ecosystems. These innovations offer hope for effectively addressing microplastic accumulation in contaminated environments and minimizing its adverse impacts.
+

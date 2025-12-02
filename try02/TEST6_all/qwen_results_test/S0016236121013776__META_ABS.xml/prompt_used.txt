@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Numerical modeling and validation of hydrothermal liquefaction of a lignin particle for biocrude production Lignin liquefaction process under catalyst-free conditions in a temperature range from 573 K to 647 K is investigated with this mathematical model. Based on the theoretical understanding of the physical and chemical processes of the liquefaction process in subcritical temperatures, a comprehensive mathematical model for the decomposition of lignin by hydrolysis reaction pathway is developed on the results of a series of batch experiments. The model consists of four main sections. They are liquefaction of lignin particle, oily film, and inorganic (ash) layer formation behavior during the liquefaction, kinetic model to model further liquefaction process of initial products, and the layer model for the intraparticle processes. Hydrolysis of the lignin particle is modeled using the shrinking core concept. The formation of oily film and an inorganic layer around the lignin particle and their behavior is modeled considering water transport through layers, diffusion of products, and dissolution of products in water. Moreover, the layer model is used to obtain surface and center point temperatures of the particle using mass transfer. .The kinetic model consists of ten components and 21 reactions. . Variations of aromatic hydrocarbons and phenolic compounds are given significance. In the experimental study highest biocrude yield of 0.28 w/w0 is obtained at an operating temperature of 573 K. Aromatic hydrocarbons are reduced from 0.23 w/w0 to 0.145 w/w0 with the increase of operating temperature from 573 K to 623 K. For an increase of operating temperature from 573 K to 623 K, phenol shows an increase from 2.5 × 10−4 w/w0 to 3 × 10−3 w/w0. At 573 K and with a particle of radius 0.08 mm, oily film and ash layer show a maximum thickness of 2 × 10−12 m and 7.5 × 10−3 m, respectively. Both oily film and ash layer show a faster formation and faster dissolution in water with increasing operating temperature. Finally, the model's liquefaction results are analyzed and validated with the experimental data and the literature data, where it shows a reasonable agreement.
+

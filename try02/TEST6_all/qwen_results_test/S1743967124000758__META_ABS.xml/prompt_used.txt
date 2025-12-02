@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on ex-situ catalytic pyrolysis of poplar to produce aromatics over a dual-catalyst system of hydroxyapatite and HZSM-5 The ex-situ catalytic pyrolysis of poplar in a dual-catalyst system of hydroxyapatite (HAP) and HZSM-5 was performed using a bench-scale device to enhance the aromatics production. Results indicated that the introduction of HAP could effectively achieve the deoxygenation of macromolecular oxygenates, which were then converted into hydrocarbon precursors. The combination of HAP and HZSM-5 exceedingly promoted the production of aromatics especially monocyclic aromatics (MAHs) than single HZSM-5. The effects of operating conditions on aromatics yield and distribution were investigated. Under the catalyst layout of mode B, with the optimum conditions reaching the catalytic temperature of 500 °C, HAP to HZSM-5 ratio of 2:4, and catalyst to biomass ratio of 1:1, the maximum aromatics yield of 9.10 wt% was achieved, accompanied by the monocyclic aromatics/polycyclic aromatics ratio enhanced to 2.33. At this point, the synergistic effect for MAHs and total aromatics reached 170.09% and 214.14%, respectively. Compared to the conventional metal oxides, the HAP/HZSM-5 dual-catalyst system exhibited superior performance in aromatics production. Besides, the anti-coking capability of HZSM-5 in the dual-catalyst system was also better than that of pure HZSM-5. This research provided a new perspective for the efficient utilization of biomass energy.
+

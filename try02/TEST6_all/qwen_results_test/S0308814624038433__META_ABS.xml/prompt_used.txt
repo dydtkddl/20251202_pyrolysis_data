@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comprehensive pyrolysis-gas chromatography/mass spectrometry analysis for the assessment of microplastics in various salts Analytical pyrolysis-gas chromatography/mass spectrometry(Py-GC/MS) was chosen to quantify microplastics(MPs) in edible salts: sea salt(SS), deep-sea salt(DSS), rock salt(RS), and lake salt(LS). Samples were filtered by two-step using 20 μm(MPs20) and 1 μm(MPs1) filters. Two Py-GC/MS methods with split ratios of 100/1 for high-level and 10/1 for low-level MPs were used. Quality control measures were taken to avoid pre-contamination. Methods showed high linearities (R2 > 0.995) and recoveries (84.2–118.1 %) for standards, polyethylene(PE), polypropylene(PP), polystyrene(PS), and polyethylene terephthalate(PET). SS showed highest MPs concentration (584.5 ± 204.4 μg/kg), followed by RS(34.2 ± 16.7 μg/kg) and LS(6.2 μg/kg). Over 7.2 % of detected MPs in SS and RS were smaller than 20 μm. PE, PP, and PET comprised 98.4 % of MPs in SS and 88.1 % in RS. MPs contamination from packaging materials was experimentally confirmed by the presence of similarly shaped PS particles in RS. MPs annual exposure was highest in SS(2304 μg/person), followed by RS(135 μg/person), and LS(24 μg/person), indicating substantial variation in exposure based on salt type.
+

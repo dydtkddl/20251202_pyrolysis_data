@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Advancing small-scale biomass gasification (10–200 kW) for energy access: Syngas purification, system modeling and the role of artificial intelligence-A review Agro-industrial and food industries produce significant lignocellulosic bio-waste, which has a negative impact on the environment if poorly managed. Gasification provides a solution by converting this waste into energy. However, optimizing small-scale technologies for decentralized bioenergy production is challenging. This study explores biomass gasification systems (10–200 kW) and optimization methods, including AI, to enhance off-grid energy access. The results established that the fixed-bed downdraft reactors, particularly Imbert-type configurations with throats provided more advantages for small-scale applications. This configuration showed higher cold gas efficiency and lower tar content. These systems were well suited to situations where skilled labor was limited. Integrated purification approaches combining biomass pretreatment and mechanical purification, such as bio-filtering and ceramic membrane filtration, were best suited to small-scale gasification systems. The catalysts addition in fixed-bed gasification was found to be less viable for small-scale applications. It was more important to verify the intrinsic catalytic potential of the feedstocks in a gasification process by calculating the catalytic index. Gasification optimization should adopt a dual approach, combining experimental studies with theoretical modeling. The AI-based modeling approaches showed great efficiency in syngas yield prediction but were limited in tar prediction and reactor geometry optimization. The inaccessibility of homogenous data due to differences in studies conditions was the fundamental limitation in the accuracy of AI-based models. Collaborative initiatives are essential to address data accessibility challenges and ensure AI tools are practical and transparent for real-world applications. Effective AI algorithms identified include Layers Recurrent with Particle Swarm Optimization (LR-PSO), and Random Forest Snake Optimization (RFSO). Future efforts should focus on integrating detailed chemical kinetics into non-ideal gasifier models and developing hybrid AI frameworks. To enhance model interpretability, leveraging SHAP values and RF-based feature analysis could also be a good alternative. This would help maximize gas yields and minimize tar production. This review offers a comprehensive roadmap for optimizing small-scale gasification technologies to support clean and accessible energy production.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergy and evolved gas analysis of spent coffee ground with plastic waste in pyrolysis environment The growth in coffee consumption is directly linked to the generation of vast amount of solid wastes such as coffee husk, coffee pulp, coffee silver skin, and spent coffee grounds. Numerous environmental issues and ecotoxicological concerns arise from directly disposing of this waste in landfills or via incineration, attributable to organic constituents such as dioxins, furans, polyaromatic hydrocarbons, volatile organic compounds, and persistent organic pollutants. There is a need for a suitable alternative strategy to resolve these issues and utilize this waste as a functional product, as it is a carbon-rich source with high energy content. This work includes synergetic studies and utilization of online TG-FTIR and Py-GC/MS systems to investigate spent coffee ground (SCG) and plastic bottles (PET) co-pyrolysis characteristics and mechanisms. This study examined the product distribution, emission of pollutants, and change in functional groups and composition with temperature during the process to evaluate the optimum proportion and nature of bio-oil and gaseous products. The kinetic and thermodynamic parameters were also calculated to understand the behavior of SCG-PET blend pyrolysis using a model-free approach and to optimize the process to scale-up to the industrial level. The results revealed that co-pyrolysis of spent coffee grounds (SCG) and PET at high temperatures yields a condensed bio-oil enriched with energy-dense aromatic hydrocarbons, highlighting its potential as a promising drop-in transportation fuel, chemical feed stocks, intermediates, and solvent in different industries. During synergy analysis, positive synergy was observed throughout the temperature range (25–800 °C), indicating the lower energy requirement and enhanced product quality; however, the oxygenated compounds can be further removed by catalytic cracking or hydro-treatment to make it more feasible.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and DFT investigation on the impact of red mud waste on syngas and char from lignite partial gasification In this study, partial gasification experiments of Shaerhu coal (SC) were conducted under varying temperatures and RM addition ratios, combined with DFT calculations and characterization techniques, to investigate their effects on the properties of products. The results showed that elevated temperatures promoted CO and H2 generation, whereas RM primarily enhanced H2 production. Consequently, CGC yields increased by 416.49 mL/g and 47.93 mL/g under temperature rise and RM addition, respectively. Temperature elevation facilitated char graphitization and lateral growth, with oxygen-containing groups initially decreasing and then increasing. RM addition caused an initial increase in oxygenated groups due to enhanced surface reactivity, followed by their consumption and later regeneration. DFT calculations revealed that α-Fe2O3, the active component in RM, formed Fe-O-C coordination bonds with SC and acted as a bridge to adsorb O2, reducing the adsorption energy from −0.32 eV to −0.54 eV and lowering the activation energy. This promoted the cleavage of aromatic structures and regeneration of oxygen-containing groups, explaining their N-shaped variation with RM. The pore structure of char showed a rise-then-fall trend with both temperature and RM, while reactivity declined with temperature but also exhibited an N-type trend with RM, indicating reactivity was primarily governed by chemical structure rather than physical porosity.
+

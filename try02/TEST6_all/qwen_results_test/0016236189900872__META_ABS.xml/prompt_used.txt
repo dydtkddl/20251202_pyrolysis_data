@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Secondary reactions of flash pyrolysis tars measured in a fluidized bed pyrolysis reactor with some novel design features A fluidized bed pyrolysis reactor with variable freeboard height was constructed to investigate the effect of time-temperature history on freshly formed pyrolysis tars. The apparatus allowed direct measurement of tar loss through gas phase reactions in the freeboard, and calculation of the quantities of tar cracked or coked within the fluidized bed itself. At 600 °C about 30 wt% more tar (daf cellulose) appears to crack in the freeboard for 3.5 s residence time compared with 0.25 s. At this temperature, 19 wt% (daf cellulose) tar is destroyed within the fluidized bed before reaching the freeboard. The amount of tar destroyed within the bed was found to increase sharply with temperature, reaching nearly 50 wt% (daf cellulose) at 700 °C. Four other substrates were studied: silver birch, pulverized municipal solid waste, a Turkish lignite (Can), and a low rank British bituminous coal (Linby). Results indicate that the temperatures corresponding to maximum tar yields and thermal stabilities of the tars broadly correlate with substrate rank. At higher reactor temperatures, biomass tars lose their predominantly carbohydrate character and heteroatom content, and become more aromatic in character, with increasing contents of condensed aromatic ring systems.
+

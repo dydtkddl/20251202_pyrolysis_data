@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microalgae for biofuel: Comparing the performance of solvent-free sulfated zirconia catalysts and zeolite Y for the catalytic pyrolysis of freshwater microalgae (Chlorella vulgaris) Microalgae's high photosynthetic efficiency and CO2 sequestration capability makes it an attractive feedstock for biofuels and value-added compounds. Zeolite Y is widely used in biomass conversion due to its affordability and high catalytic activity, but its limited acidity and susceptibility to coking present challenges. This study investigates whether sulfated zirconia, with its superacidic properties, can serve as an alternative catalyst to zeolite Y for improving bio-oil quality in Chlorella vulgaris pyrolysis. Sulfated zirconia catalysts with zirconium-to-sulfate ratios of 1:1 and 1:6 (wt/wt) were synthesized using a solvent-free method and evaluated alongside zeolite Y using Pyrolysis Gas Chromatography/Mass Spectrometry (Py-GCMS) and isothermal pyrolysis at 400, 500, and 600°C. Py-GC/MS analysis revealed that zeolite Y, sulfated zirconia (1:1), and sulfated zirconia (1:6) increased aromatic content by 227 %, 69 %, and 50 %, respectively, than the non-catalytic process. Additionally, sulfated zirconia at 400 °C produced bio-oil with a 29.9 % higher heating value (HHV) than the non-catalytic process. This is comparable to the highest HHV of 37.8 % achieved with zeolite Y at 500 °C. These results suggest that sulfated zirconia catalysts effectively enhance aromatic production while suppressing nitrogen-containing and acidic compounds, making them a viable alternative to zeolite Y in Chlorella vulgaris pyrolysis. Furthermore, a comparison of catalytic and non-catalytic reaction mechanisms highlights the significant influence of acid site distribution on product selectivity, demonstrating the potential of sulfated zirconia in optimizing biofuel composition.
+

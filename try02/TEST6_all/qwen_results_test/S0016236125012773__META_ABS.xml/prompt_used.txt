@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-combustion behaviour of municipal waste and food waste using TG-FTIR and Py-GC/MS: Thermo-kinetic behaviour and gaseous pollutants emission In China, co-combustion of municipal waste (MW) and food waste (FW) emerged as an attractive option for addressing fuel demand, optimizing blending ratio, and better waste management efficiency. This study investigates the co-combustion of industrially pre-treated MW, FW, and their blend samples, with a concentration on kinetics, thermal degradation, pollutant emissions, volatile products, and waste-to-energy potential using TG-FTIR-Py-GC/MS analysis from 40-1000 °C at 20 °C/min. The co-combustion of MW and FW involved four primary stages: drying (<252 °C), volatile emission (252–400 °C), combustion (400–550 °C), and char oxidation (550–1000 °C). The combustion indices linearly increased with increased FW blend. MW significantly interacted with FW in the active combustion temperature region (252–550 °C), with the evident synergistic effect and peak combustion indices observed at 50% FW. The lowest Ea exhibited by 35% FW (KAS:121.34 KJ/mol-Starink:119.87 KJ/mol) indicated a better choice for the energy recovery system. The FTIR analysis found that released gaseous pollutants were HCN, CO2, CO, HCl, CH4, C=C, NO, SO2, etc. Further investigation found that the addition of 50% FW to MW exhibited adverse catalytic denitrification and dichlorination effects, with maximum reduction in hazardous pollutant emissions (CO, NO, SO2, and HCl) at 300–600 °C. The Py-GC/MS analysis found that the presence of a high concentration of CaO in bottom ash catalysis during co-combustion reduced aromatic hydrocarbons and enhanced the value-added products aliphatic hydrocarbons and ketones. This study provides a fundamental reference for the co-combustion of MW, FW and thier blends in terms of potential feasibility, pollutant emission control, optimization, value added product for practical co-incineration application.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Upcycling of pine and sodium silicate composites through pyrolysis: Effects of pyrolysis temperature and sodium silicate content In 3D-printing, sodium silicate (SS) can be used as an inorganic binder for wood-based composites due to its better rheological properties, high strength, and affordability. Investigating the recyclability of 3D-printed composites is necessary to understand the reusability of demolished additively manufactured construction waste. In this work, the bio-oil through pyrolysis was produced using pine and SS composites and further characterized to observe the effects of the pyrolysis temperatures and the proportion of SS in composites. Pine and SS composites with 0, 33.33, 50, and 66.67 % of the SS on a mass basis were prepared and cured to mimic the 3D-printed composites. Then, pyrolysis of cured composites was performed in a bench-scale fixed bed pyrolysis reactor at four temperatures (450–600 °C). From the pyrolysis of composites with 66 % SS at 600 ℃, a maximum condensed liquid yield of 68 % (wt.%, dry basis) was obtained. Further, it was observed that the selectivity towards hydrocarbons and alkyl phenols increased by increasing the proportion of SS in the composite, but methoxy phenols decreased, which enhanced bio-fuel production. A maximum hydroxyl concentration of 6.54 mmol g−1 was observed for the bio-oil from pyrolysis of SS-based composite at 600 ℃. This study shows the feasibility of upcycling the 3D-printed wood composites through pyrolysis to generate bio-oil that can be used for bio-based resin synthesis and bio-fuel applications.
+

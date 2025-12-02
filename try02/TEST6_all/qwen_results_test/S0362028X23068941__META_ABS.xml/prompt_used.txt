@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Minimum Concentrations of Slow Pyrolysis Paper and Walnut Hull Cyclone Biochars Needed to Inactivate Escherichia coli O157:H7 in Soil Antimicrobial properties of biochar have been attributed to its ability to inactivate foodborne pathogens in soil, to varying degrees. High concentrations of biochar have reduced E. coli O157:H7 in soil and dairy manure compost, based on alkaline pH. Preliminary studies evaluating 31 different biochars determined that two slow pyrolysis biochars (paper biochar and walnut hull cyclone biochar) were the most effective at inactivating E. coli in soil. A study was conducted to determine the lowest percentages of paper and walnut hull cyclone biochars needed to reduce E. coli O157:H7 in soil. A model soil was adjusted to 17.75% moisture, and the two types of biochar were added at concentrations of 1.0, 1.5, 2.0, 2.5, 3.5, 4.5, 5.5, and 6.5%. Nontoxigenic E. coli O157:H7 were inoculated into soil at 6.84 log CFU/g and stored for up to 6 weeks at 21°C. Mean E. coli O157:H7 counts were 6.01–6.86 log CFU/g at all weeks between 1 and 6 in soil-only positive control samples. Populations in all soil amended with 1.0 and 1.5% of either type of biochar (as well as 2.0% of the walnut hull biochar) resulted in ≤0.68 log reductions at week 6, when compared with positive controls. All other concentrations (i.e., ≥2.0% paper and ≥2.5% walnut hull) inactivated ≥2.7 log at all weeks between 1 and 6 (p < 0.05). At the end of 6 weeks, E. coli O157:H7 declined by 2.84 log in 2.0% paper biochar samples, while concentrations of between 2.5 and 6.5% paper biochar completely inactivated E. coli O157:H7, as determined by spiral plating, at weeks 5 and 6. In contrast, 2.0% walnut hull biochar lowered populations by only 0.38 log at week 6, although 2.5–6.5% concentrations of walnut hull biochar resulted in complete inactivation at all weeks between 3 and 6, as assessed by spiral plating. In summary, ≥2.5% paper or walnut hull biochar reduced ≥5.0 log of E. coli O157:H7 during the 6-week storage period, which we attribute to high soil alkalinity. Amended at a 2.5% concentration, the pH of soil with paper or walnut hull biochar was 10.67 and 10.06, respectively. Results from this study may assist growers in the use of alkaline biochar for inactivating E. coli O157:H7 in soil.
+

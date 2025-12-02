@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical looping combustion of biomass using metal ferrites as oxygen carriers The evaluation of chemical looping combustion (CLC) for CO2 capture was conducted via a thermogravimetric analyzer (TGA) and a laboratory-scale fluidized bed using pine sawdust (PS) as fuel and metal ferrites, MFe2O4 (M=Cu, Ni and Co), as oxygen carriers. Metal ferrites were prepared by sol-gel method. The fresh, reduced and after five redox cycles oxygen carriers were characterized by X-ray diffraction (XRD), scanning electron microscopy (SEM) and accelerated surface area porosimetry. Thermodynamic simulation was performed using software HSC Chemistry 6.0. The TGA results indicated that CuFe2O4 shows a lower initial reaction temperature, and CoFe2O4 has a faster oxygen uptake rate. Both carbon conversion ( x c ) and carbon capture efficiency ( ηCO2 ) increased with temperature. The maximum values of x c and ηCO2 were 96.86% and 95.48%, 95.45% and 94.25%, and 95.17% and 94.04% for CuFe2O4, CoFe2O4, and NiFe2O4 at 900°C, respectively. The CuFe2O4 shows higher reaction reactivity, while NiFe2O4 has a higher catalytic activity for decomposition of tar in fluidized bed tests. The XRD results show CoFe2O4 is more readily reduced to FeO, which agreed with the results of thermodynamic simulation, and three metal ferrites can be regenerated completely after five cycles. The values of xc and ηCO2 remained high for both CuFe2O4 and CoFe2O4, while a significant decrease in xc and ηCO2 for NiFe2O4 was observed after five cycles due to significant sintering. Both CuFe2O4 and CoFe2O4 are more applicable as oxygen carriers in biomass CLC compared with NiFe2O4.
+

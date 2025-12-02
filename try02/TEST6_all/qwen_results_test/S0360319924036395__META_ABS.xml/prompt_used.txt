@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic hydrothermal conversion of end-of-life plastic waste in near supercritical water Upcycling of plastic waste to low carbon fuels remains technologically challenging. This study presents near-supercritical catalytic hydrothermal conversion of automotive, marine, agricultural and model plastic wastes to hydrogen and value-added products. At 350 °C, 3000–3300 psi and 1 h of reaction time using a sodium hydroxide catalyst, the hydrothermal conversion of plastic wastes produced between 23 and 76 g of hydrogen per kg of feedstock with few other gases present. The activation energy of the plastic gasification reaction was found to be 6.38–6.83 kJ/mol through the 1 h unsteady state hydrothermal ramping at average of 5.5 °C/min. The highly contaminated, heterogeneous automotive fluff (AF) containing polymeric and natural fiber waste, had the highest hydrogen production of 76 g(H2)/kg(feed) and was further evaluated with additional alkali and non-precious metal catalysts. Alkali catalysts increased hydrogen production in the following order: NaOH > KOH > K2CO3 and were more effective than non-precious metal catalysts whose order was Fe/MCM41 > Ni/SiAl > Fe/ZSM-5. The use of non-precious metal and no catalyst led to mainly CO and CO2 production, reaching 1251 g(CO2)/kg(feed) with no hydrogen produced using the Fe/ZSM-5 catalyst. Valuable chemical products including phenol, cresols, guaiacol, and straight chain alkanes dominated the oil phase. The solid analysis revealed new and enhanced peak intensities in the hydrochar functional groups that were absent in the feedstocks. Regular spherical, hexagonal, and cylindrical structural surface morphologies showed varying amounts of carbon and inorganic elements. This work highlights a viable technology for safe upcycling of challenging waste.
+

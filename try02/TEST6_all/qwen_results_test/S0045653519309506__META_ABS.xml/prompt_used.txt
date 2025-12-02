@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave pyrolysis valorization of used baby diaper Used baby diaper consists of a combination of decomposable cellulose, non-biodegradable plastic materials (e.g. polyolefins) and super-absorbent polymer materials, thus making it difficult to be sorted and separated for recycling. Microwave pyrolysis was examined for its potential as an approach to transform used baby diapers into value-added products. Influence of the key operating parameters comprising process temperature and microwave power were investigated. The pyrolysis showed a rapid heating process (up to 43 °C/min of heating rate) and quick reaction time (20–40 min) in valorizing the used diapers to generate pyrolysis products comprising up to 43 wt% production of liquid oil, 29 wt% gases and 28 wt% char product. Microwave power and operating temperature were observed to have impacts on the heating rate, process time, production and characteristics of the liquid oil and solid char. The liquid oil contained alkanes, alkenes and esters that can potentially be used as chemical additives, cosmetic products and fuel. The solid char contained high carbon, low nitrogen and free of sulphur, thus showing potential for use as adsorbents and soil additives. These observations demonstrate that microwave pyrolysis has great prospect in transforming used baby diaper into liquid oil and char products that can be utilised in several applications.
+

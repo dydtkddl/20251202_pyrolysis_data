@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Slow pyrolysis of an LDPE/PP mixture: Kinetics and process performance High- and low-density polyethylene (HDPE and LDPE) and polypropylene (PP) are the most common polymers among plastic waste as they have multiple commercial applications. This study focused on thermal degradation characteristics and kinetic of a plastic mixture with a composition of 92.5 wt% LDPE and 7.5% PP. Thermal decomposition characteristics of the plastic mixture was analysed through thermo-gravimetric analysis (TGA). The overall kinetic of the process was studied using the modified Coats−Redfern method and the Ozawa-Flynn-Wall (OFW) method. The apparent activation energy (E) and pre-exponential factor (A) obtained were 316.0 kJ/mol; 8.09E+21 min−1 and 311.5 kJ/mol; 4.35E+21 min−1, respectively. Slow pyrolysis of the analysed mixture was carried out in a semi-batch reactor under atmospheric pressure and nitrogen atmosphere and three different pyrolysis temperatures were investigated: 420 °C, 450 °C and 500 °C. H2, CH4, C2H4, C2H6 and C3H8 were the main components of the gas phase. Liquid (oil/wax phase) yields increased with increasing operative temperature from 42% at 420 °C to 62% at 500 °C. On the other hand, solid phase showed a specular behaviour compared to the oil/wax phase, decreasing from 21% to 5% in the considered temperature range. On the contrary, gas phase did not change much with pyrolysis temperature, with a decrease from 37% at 420 °C to 34% at 500 °C. Products’ energy yields were also estimated at 420 °C. They ranged from 7.4% to 37.8% and 43.0% for solid, gas and oil fraction, respectively. Oil fraction collected from pyrolysis at 420 °C was also characterized.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Discreteness and dispersity in the design of polymeric materials Nature produces macromolecules with discrete molar mass and precise composition, both of which are essential for ensuring structural control, distinctive properties, and specific functions. However, in some cases, bioderived components are heterogeneous in size, and this plays a crucial role in defining their physicochemical characteristics. In a similar way, polymer scientists have been striving to develop robust synthetic protocols to access macromolecules with homogeneous composition and discrete molar mass. Simultaneously, significant advances in controlled polymerization techniques have enabled the precise regulation of chain length heterogeneity, or dispersity (Đ), across a wide range of values. Achieving perfectly monodisperse polymers is not only a remarkable synthetic achievement but also provides fundamental building blocks for new classes of polymeric materials. These materials could be either free of defects or exhibit properties that are precisely tunable in a quantized manner. On the other hand, obtaining polymer samples with controlled dispersity provides an additional tuning parameter for the physicochemical properties of a variety of materials formulations. By leveraging macromolecular discreteness and fine-tuning polymer dispersity, we have expanded the toolbox for designing advanced “soft” materials. Block copolymers with discrete segment lengths or controlled dispersity can be used to create novel nanostructured materials. Stimuli-responsive polymeric systems can be engineered to precisely adjust their physical transitions while maintaining a constant chemical composition. In addition, tailoring polymer dispersity during the fabrication of gels and brush coatings enhances the ability to fine-tune their physicochemical properties, further broadening their potential applications.
+

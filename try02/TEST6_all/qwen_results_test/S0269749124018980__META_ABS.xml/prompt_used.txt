@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mass concentrations, compositions and burial fluxes of nano- and micro-plastics in a multi-species saltmarsh Plastic pollution poses a serious threat to marine ecosystems; yet quantifying the mass concentrations of nano- and microplastics (NMPs) in saltmarsh sediments at the ocean-land interface remains a critical research gap. Here, the study employed reliable and efficient analytical techniques, namely pressurized liquid extraction and the double-shot model of thermal desorption/pyrolysis-gas chromatography-mass spectrometry, to quantify six different types of NMPs in the sediment of a multi-species saltmarsh, providing the first comprehensive assessment of NMP mass concentration and burial in this saltmarsh environment. The results demonstrate that polyethylene, polyvinyl chloride, and polypropylene dominated the NMP composition in sediments, constituting 72.6%, 17.3%, and 4.5% of the total NMPs, respectively. The measured NMPs represent an anthropogenic intrusion, constituting 0.10%–0.23% of the carbon storage in the saltmarsh. By examining the vertical concentration profiles, this study unveiled the influence of saltmarsh vegetation on NMP deposition in sediments, establishing a connection with local sedimentation patterns and the historical zonation of plant species such as Scirpus mariqueter, Phragmites australis and Spartina alterniflora. These findings underscore the crucial role of saltmarsh vegetation in facilitating NMP settling and retention, highlighting the necessity of considering vegetation dynamics in examining the emerging NMP pollution in coastal wetlands.
+

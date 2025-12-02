@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental studies, molecular simulation and process modelling\simulation of adsorption-based post-combustion carbon capture for power plants: A state-of-the-art review Adsorption-based post-combustion carbon capture is a promising emerging technology for capturing CO2 emissions from fossil-fueled power plants due to the ease of adsorbent regeneration in comparison with solvent-based technologies. To increase its competitiveness, research efforts have focused on the development of new adsorbent materials and processes. This paper presents a state-of-the-art review of such efforts, focusing on lab synthesis and characterization of adsorbent materials, (carbon capture) experimental studies, molecular simulation, process modelling\simulation and techno-economic analysis. Most experimental studies on adsorption-based post-combustion capture are at bench scale. Just a few experimental studies are at pilot scale. There are currently no commercial deployment of adsorption-based post-combustion capture technology. This review paper points out challenges encountered in these experimental investigations utilizing different adsorbent materials, limiting its commercial deployment. These gaps in experimental investigations need further research especially in the chemical modification of the adsorbent materials to increase the adsorption capacity. Molecular simulation of adsorbents and process modelling\simulation of carbon capture processes are cost-effective and time efficient approaches for the assessment of adsorbents’ CO2 capture performance. The review also highlighted the need for more research in the model development of adsorbent materials at molecular scale and the model development of adsorption-based post-combustion process adopting new reactor configurations to further reduce the cost of CO2 capture.
+

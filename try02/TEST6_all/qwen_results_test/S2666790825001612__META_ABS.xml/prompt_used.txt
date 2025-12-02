@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Machine learning and thermodynamic modeling for optimizing hydrogen production via algae-biomass co-gasification Global energy transition demands sustainable hydrogen (H2) production technologies to replace fossil fuels and mitigate climate change impacts. Although biomass gasification presents a promising pathway, conventional single-feedstock approaches suffer from low H2 yields and process inefficiencies. Current biomass gasification research lacks integration of advanced algae co-feedstocks with intelligent process optimization. Existing studies rely on either experimental trials or simulation modeling in isolation, missing opportunities for comprehensive optimization through machine learning (ML)-enhanced thermodynamic analysis. This study pioneers the integration of algae-biomass co-gasification with six ML algorithms to optimize H2 production and syngas quality through comprehensive thermodynamic modeling and artificial intelligence (AI). Three microalgae species (Chlorella vulgaris, Nannochloropsis oculata, Fucus serratus) were co-gasified with biomass feedstocks (Fir Pellet (FP), Palm Empty Fruit Bunch (PEFB), Pellet Pine Wood (PPW)) using Aspen Plus® simulation based on Gibbs free energy minimization. Six ML algorithms (XGB, RF, SVR, KNN, ANN, DT) with Shapley additive explanations (SHAP) analysis predicted H2 yield and syngas lower heating value (LHV) from 3609 data points across 24 input parameters. C. vulgaris emerged as the superior algae species, with C. vulgaris-FP combinations achieving maximum H2 yield (9.87 %) and exergy efficiency (84.84 %), while C. vulgaris-PPW delivered peak energy efficiency (87.73 %). C. vulgaris consistently produced the highest LHV syngas regardless of biomass type. XGB demonstrated superior predictive accuracy (R2 > 0.96, RMSE = 0.327) for H2 yield, while RF excelled in LHV prediction (R2 = 0.951). SHAP analysis identified gasification temperature (GT), steam-to-fuel ratio (S/F), equivalence ratio (ER), and blend percentage (BF) as critical optimization parameters. This methodology establishes new benchmarks for algae-biomass co-gasification, outperforming conventional approaches. The framework enables real-time optimization and industrial scalability for sustainable energy systems.
+

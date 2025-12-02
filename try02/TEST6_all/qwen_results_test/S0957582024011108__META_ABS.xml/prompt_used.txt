@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of polypropylene and high-density polyethylene on isothermal pyrolytic degradation of discarded bakelite: Kinetic analysis and batch pyrolysis studies The recycling of thermosetting plastics such as discarded bakelite poses greater challenges than thermoplastic polymers like polypropylene (PP) and high-density polyethylene (HDPE), particularly through pyrolysis requiring specialized reactors. This study examines the isothermal thermal degradation kinetics and batch pyrolysis behaviors of bakelite, along with its blends with PP and HDPE, emphasizing the characterization of pyrolytic oils for designing optimized reactors. For the study on isothermal thermal degradation kinetics, isothermal thermogravimetric analysis was performed at specified temperatures (300, 350, 400, 450, and 500°C), chosen based on the predominant non-isothermal degradation behavior of bakelite. The batch pyrolysis of discarded bakelite and blended bakelite with PP/HDPE is carried out at 450°C. The chemical composition analysis of pyrolytic oils is performed using Fourier transform infrared (FTIR) spectroscopy, with comprehensive compound analysis conducted using Gas Chromatography-Mass Spectrometry (GCMS). Isothermal thermogravimetry at temperatures ranging from 300°C to 500°C reveals increased thermal degradation with rising pyrolytic temperatures, reaching maximum weight losses of 55 % for bakelite, 82.74 % for PP-bakelite blends, and 90.8 % for HDPE-bakelite blends at 500°C. The isothermal kinetics study reveals that bakelite degrades via D1-diffusion, polypropylene-blended bakelite via A2-Avrami-Erofeyev, and high-density polyethylene-blended bakelite via A3-Avrami-Erofeyev, with activation energies of 17.178, 7.193, and 3.550 kJ/mol, and Arrhenius constants of 0.095, 0.042, and 0.017 min.−1, respectively. The highest condensable yield of 58.76 % during PP-blended bakelite co-pyrolysis underscores its potential for resource recovery. FTIR and GC-MS confirm the presence of alkanes, cycloalkanes, alkenes, cycloalkenes, aromatic hydrocarbons, and oxygenated compounds in the pyrolytic oils, providing detailed insights into their chemical composition. These findings offer critical insights into the thermal degradation behavior and kinetics of bakelite and polypropylene/high-density polyethylene-blended bakelite, highlighting opportunities for efficient waste plastic utilization through pyrolysis for resource recovery and energy generation, and providing essential knowledge for designing isothermal pyrolysis reactors.
+

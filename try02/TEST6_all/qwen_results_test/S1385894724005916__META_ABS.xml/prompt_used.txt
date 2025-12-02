@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis kinetics and characteristics of waste tyres: Products distribution and optimization via TG-FTIR-MS and rapid infrared heating techniques Developing efficient strategies to clean utilize waste tyres (WT) is essential for reducing the harm to environment. TG-FTIR-MS, infrared heating technique and response surface method (RSM) were employed to investigate the fast pyrolysis characteristics of WT in this study. Effects of temperatures and heating rates on products distribution and pyrolysis characteristics were researched in the reactor that was heated with rapid infrared heating. The TG-FTIR spectrum of volatiles indicates that there are S-O and N-H groups presented in volatiles. RSM was employed to optimize the experimental conditions to obtain a higher pyrolysis oil yield, indicating that the highest oil yield is 53 wt% at 625 °C and 25 °C/s. The pyrolysis product distribution of WT denotes that the infrared rapid heating significantly enhanced the yields of pyrolysis oil. Raising the temperature from 400 °C to 600 °C, the pyrolysis oil yield increased from 41.62 wt% to 50.66 wt%, while the temperature further rose to 700 °C, the oil yield dropped to 50.22 wt%. Meanwhile, as the heating rate elevated from 10 °C/s to 40 °C/s, the pyrolysis oil increased before decreasing and reached the maximum of 51.74 wt% at 30 °C/s. According to the GC–MS results, the primary compounds in the pyrolysis oil are aromatic and aliphatic hydrocarbons with a content of over 70 %. Moreover, N/S-containing compounds in oil retain a low yield of 6 %. The SIMDIS results prove that the light fraction of oil increased by 13.43 % and 6 % as rising pyrolysis temperature and heating rate. The results of N2 adsorption and desorption show that the higher temperature promoted the development of the pore structure of char, while faster heating rates caused the collapse of the carbon pore structure.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Semi-empirical lumped models of polymer pyrolysis for poly(methyl methacrylate) and polyoxymethylene Quantitative lumped-kinetics models are constructed for pyrolysis of poly(methyl methacrylate) (PMMA) and polyoxymethylene (POM) by using known reaction classes to describe mass loss (volatiles loss) by purely 1st-order decomposition rates, averting the need for molar- or number-based concentrations. These semi-empirical models will aid in establishing fundamental kinetics of polymer decomposition for solid rocket fuels and thermal recycling. Simultaneous thermogravimetric analysis and differential scanning calorimetry (TGA-DSC) are applied to measure mass-loss and heat-consumption rates and the influences of heating rate, sample size, and end groups as a basis for modeling. This combination of rate data and products is useful for proposing pathways and establishing mechanisms. PMMA and POM homopolymers were selected for base-case pyrolysis studies due to their relatively simple structures and their tendencies to yield primarily monomer. For comparison, kinetics was also measured for POM copolymer, where -CH2CH2O- units are interspersed among the -CH2O- units. Two-, three-, and four-lumped-reaction parameterized models are presented for pyrolysis rates and yields from POM homopolymer, POM copolymer, and PMMA, respectively. The lumped reactions correspond to temperature regions that are dominated by a single type of first-order reaction, each with a mass fractional yield of volatiles, an Arrhenius pre-exponential factor, and an activation energy. The first, lowest-temperature lump may be pericyclic reactions to molecular intermediates, or the main chain or weakly bound end groups or side groups may homolytically scission. Polymer-radical fragments could be trapped by recombination and be too large to be volatile. If enough polymeric radicals are formed, beta-scission into monomers can be rate-limiting for volatiles formation, and at higher temperatures, homolytic scission would be rate-limiting. At highest temperatures, stages can be rate-limited by internal H-abstraction or termination via exothermic reactions to make strongly bound char residues.
+

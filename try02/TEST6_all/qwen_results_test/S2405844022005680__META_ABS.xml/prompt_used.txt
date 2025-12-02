@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Multi-objective atom search optimization of biodiesel production from palm empty fruit bunch pyrolysis In this study, palm empty fruit bunch (PEFB) pyrolysis, bio-oil improvement, and generating electricity were all simulated using Aspen plus. This research employed a kinetic reactor for pyrolysis at 500 °C based on 1,000 tons of PEFB per day. The simulation results indicated that 1 kg/hr. PEFB generated 0.11 kg/hr of char, 0.21 kg/hr of gas, and 0.67 kg/hr of bio-oil, which is in good agreement with literature. The relationship between biodiesel yield, CO2 emissions, and utility costs was then investigated the effect of the distillate-to-feed ratio of biodiesel distillation, heat exchanger temperature, and the flash drum pressure from the process simulation by using central composite design (CCD). The coefficient of determination (R2) values for biodiesel yield, CO2 emissions, and utility costs were 0.9940, 0.9941, and 0.9959, respectively, which was a reason for the excellent model fitting. The optimum response (the biodiesel yield, the CO2 emission, and the utility cost) was obtained at 5,562.73 kg/hr, 33,696.55 kg/hr, and 2,953.99 USD/hr., respectively, with optimum conditions for the distillate-to-feed ratio of 0.899999, temperature of 56.0356 °C and pressure of 18.1479 bar. After that, a quadratic polynomial equation from the RSM was employed as the fitness function to evaluate the fitness value of the multi-objective optimization (MOO) by atom search optimization (ASO) to maximize biodiesel yield and minimize the CO2 emissions and utility costs. The ASO performance was generated into the Pareto optimal solution of 200 generations. The optimal CCD was then compared with the ASO results. It was found that the ASO could reduce CO2 emissions by 1.33% and reduce utility costs by 5.03% while increasing biodiesel yields by 7.01%. It can be observed that the ASO was more efficient at finding parameters than the CCD.
+

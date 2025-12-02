@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis behavior, engine performance characteristics, and thermodynamics of liquid fuels from mahua seeds and waste thermocol: A comprehensive study In the present study, the co-pyrolysis of mahua seeds (MS) and waste thermocol (WTC) (1:1) blends was performed at 450–600 °C. The obtained co-pyrolysis oil (CPO) was characterized for physicochemical properties and its suitability as an alternative fuel. The performance, emission, and combustion characteristics of six different CPO diesel (CPOD) blends (B10, B20, B30, B40, B50, and B60) were also assessed at various engine loads. The experimental results indicated a maximum pyrolysis oil yield of 99.6% for waste thermocol pyrolytic oil (WTCPO) and 74.2% for CPO at 525 °C. The physicochemical characterization specified that CPO has a specific gravity, kinematic viscosity, and calorific value of 0.91 mL g−1, 1.94 cSt, and 40.6 MJ kg−1, respectively with a carbon chain length of C7–C24. The brake thermal efficiency (30.9 to 27.1%) and NO emission decreased with an increase in CPO percentage in the blends. The maximum heat release rate of CPOD blends increased with an increase in the percentage of CPO in diesel. The estimated mean value of activation energy (E a), pre-exponential factors, enthalpy (ΔH), and Gibbs free energy (ΔG) for MS, WTC, and MS:WTC (1:1) blend were 135.1, 186.3, and 171.4 kJ mol−1; 18.1, 25.6, and 24.4 min−1; 130.6, 180.5, and 165.6 kJ mol−1; and 188.5, 301.1, and 206.3 kJ mol−1, respectively. The reaction function for the thermal degradation of MS and WTC was expressed as f(x) = (1– x)2.9, and f(x) = (1 – x)0.93 (0.017 + x 0.35) using multivariate nonlinear regression. The present research provides comprehensive data in understanding the engine performance characteristics, thermal behavior of biomass, and waste plastics that coexist in municipal solid waste.
+

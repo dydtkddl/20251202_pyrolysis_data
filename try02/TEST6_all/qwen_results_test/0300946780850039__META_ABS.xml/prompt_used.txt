@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Steady-state behavior of gas—liquid—solid fluidized-bed reactors A model for a three-phase fluidized-bed reactor is presented. In industrial processes such as hydrocracking, coal liquefaction, etc., gas absorption, gas desorption and reactions in the liquid phase occur simultaneously and competitively. In processes such as these, the desorbed gases (mainly lighter hydrocarbons) usually have much higher molecular weights than the gas being absorbed (usually hydrogen). This results in significant loss of the original liquid owing to formation of volatile products (vaporization is insignificant at low temperatures but nearly 100% vaporization may result at high temperatures). Hence both the gas and liquid axial velocities may chance in the reactor depending upon the relative magnitudes of the local absorption and desorption rates, and on the average molecular weights of the absorbed and desorbed gases. The proposed model is applicable up to a high degree of vaporization of the liquid phase. The assumption of isothermal operation may limit the use of this model to pilot scale or prototype units. The results outlined are interesting and some of them agree with the observed and expected experimental facts. The flexibility of the model may be particularly useful in scale-up considerations. The model presented for a solid distribution is quite general and is applicable over a wide range of particle sizes and solid loading encountered in industrial practice. It is also seen that settling of catalyst particles can be beneficial to a certain extent in the case of cocurrent reactors and helps to improve the yields. Too low or too high a catalyst concentration as well as too high or too low a liquid hold-up may reduce the catalytic reactions in fluidized-bed reactors.
+

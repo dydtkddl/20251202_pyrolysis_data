@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Continuous microwave co-pyrolysis of LDPE and PET coupled ex-situ catalysis to monocyclic aromatic hydrocarbons using different structural forms of HZSM-5 as catalysts Continuous microwave co-pyrolysis of LDPE and PET coupled ex-situ catalysis to monocyclic aromatic hydrocarbons (MAHs) using coconut husk-based biochar as absorbent and different structural forms of HZSM-5 including granular HZSM-5 (GH), pelletized HZSM-5 (PH), irregular HZSM-5/SiC foam ceramic (IH) and structured HZSM-5/SiC foam ceramic (SH) as catalysts was investigated. The highest liquid yield of 50.92 wt.% and the highest peak relative content of MAHs of 67.40% were obtained with SH. SH maintained a stable relative content of MAHs in the first 40-min time on stream, which was higher than peak relative content of MAHs with the other three catalysts. This was because the mass transfer of both the reactants and products was enhanced through three-dimensional structure of SiC foam ceramic. However, due to severe acid site loss of SH, catalytic activity rapidly decreased to about 55% of the initial value in the last 20-min time on stream. After regeneration, the physicochemical properties of SH were not restored to the level of the fresh catalyst, indicating an irreversible deactivation, while irreversible deactivation rate gradually increased as 5 run-regeneration cycles proceeded. In comparison, the addition of mesoporous Al2O3 in PH diluted catalytic activity of HZSM-5, but it alleviated deactivation of HZSM-5 by playing a role of external coke storage station.
+

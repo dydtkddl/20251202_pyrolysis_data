@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A reduced methane pyrolysis mechanism for above-atmospheric pressure conditions Methane pyrolysis has recently gained significant attention because of its potential to produce hydrogen without any CO2 emissions. Modeling a methane pyrolysis reactor requires a detailed multi-step reaction mechanism consisting of the full reaction pathway up to soot formation. Several models have been proposed in the literature; however, they have not been validated and calibrated to above-atmospheric pressure conditions. Due to the high number of parameters, adjusting the current models parameter set to high-pressure requires mechanism reduction and optimization. In this work, an existing methane pyrolysis mechanism consisting of 1516 reactions and 325 species was reduced using the directed relation graph with error propagation within a temperature and pressure range of 1000–1400 K and 0.1–4 atm. A skeletal mechanism consisting of 343 reactions and 60 species was obtained; resulting in a reaction and species reduction ratio of 4.4 and 5.3, respectively. The target species concentrations, namely CH4, H2, C2H2, C2H4, C2H6, α -C3H4, p -C3H4, were found to be in good agreement with the original mechanism predictions. Then, the rate parameters of the reduced mechanism were fitted against in-house experimental data in the temperature range of 892–1292 K and at a pressure of 4 atm to extend the model validity to above atmospheric pressures. The optimized model showed significant improvement in capturing the experimental data profiles compared to the reduced model predictions. A carbon element flux transfer was performed to identify the importance of additional pathways under high-pressure in aiding faster methane decomposition. The proposed model can be used for the accurate prediction of methane pyrolysis products at a wide range of temperatures and pressures.
+

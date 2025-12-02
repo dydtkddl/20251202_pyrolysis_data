@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhanced enzymatic digestibility of steam-exploded short rotation hardwood species Betula pendula and its potential for lactic acid production Biomass from the dedicated woody crops is a promising source of lignocellulose-based material for producing bio-based products like lactic acid. This work addresses for the first time a process conversion of the hardwood species Betula pendula biomass into lactic acid through steam explosion pretreatment, enzymatic hydrolysis and lactic fermentation of the obtained sugars. Steam-explosion-pretreated Betula pendula biomass displayed significant changes in biomass composition compared to raw material that led to a remarkable enhancement of enzymatic digestibility of the pretreated material, reaching maximum enzymatic hydrolysis conversion yield of cellulose and xylan of 96.2 and close to 96%, respectively, in enzymatic hydrolysis tests at low solid consistency (5% (w/v)). The optimization of enzyme dosage in enzymatic hydrolysis experiments at 15 and 20% (w/w) solid loads allowed successful enzymatic hydrolysis runs in a high solids bioreactor that resulted in reaction broths containing close to 113 g L−1 of sugars after 48 h enzymatic hydrolysis, which are subsequently used for lactic fermentation. Both the results of enzymatic digestibility of pretreated material in tests at low and high solid loadings reflect the high suitability of steam explosion technology to pretreat Betula pendula biomass, resulting in carbohydrate conversion yields and final sugar concentrations much superior than those found with other hardwoods. Here, 88.8 g L−1 of lactic acid were produced by Heyndrickxia coagulans DSM 2314, at a yield of 0.923 g g−1 (g lactic acid per g monosaccharides) and an average productivity of 1.92 g L−1·h−1. These promising fermentation results point to good prospects for obtaining lactic acid from Betula pendula.
+

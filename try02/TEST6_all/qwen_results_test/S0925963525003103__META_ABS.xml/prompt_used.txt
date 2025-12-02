@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Multi-channel hollow carbon microfiber from raw jute fiber: Solvent free synthesis and characterization Jute is a cheap source of biodegradable and environment friendly natural fiber that possesses unique application potential in packaging material, home textiles, insulation material, floor coverings, geo-composites, medical and health related products. In order to amplify the applications of jute fiber, preparation of light-weight carbon microfiber is attempted via a simple solvent-free high temperature carbonization in a sealed stainless autoclave at 650 ± 50 °C followed by cooling. The heating-cooling cycle is repeated 10 times without any chemical activation. The bulk density, particle density and hollowness/porosity of as-prepared carbon fiber are 0.2609 g cm−3, 4.02 g cm−3, and 93.51 % respectively. Scanning electron microscopic images revealed the presence of multi-channel hollow structure and Brunauer–Emmett–Teller (BET) surface measurement indicated mesoporous surface. The overall average diameter of raw jute fiber (RJF) is declined from 79.7 μm to around 6.7 μm after high temperature carbonization. The as prepared carbon fiber is named as multi-channel hollow carbon microfiber (MCHCMF). Few of the microfibers also contained single hollow along the longitudinal axis. Surface characterization of MCHCMF confirmed the reduction of oxygen containing -OH, CO, -CH2 and C-O-C groups and enhancement of CC ring structure. The sorption behavior of different organic solvents and surfactants on MCHCMF displayed significant sorption because of large specific surface area and mesoporous hollow structure. Hence, such MCHCMF can be applied in environmental restoration, energy storage, catalysis, decolorizer and in wide range of industries ranging from membrane, mat to chemical and pharmaceutical industries.
+

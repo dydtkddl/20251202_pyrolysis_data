@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Coordination and organometallic precursors of group 10 and 11: Focused electron beam induced deposition of metals and insight gained from chemical vapour deposition, atomic layer deposition, and fundamental surface and gas phase studies Nanostructured materials made from group 10 (Ni, Pd, Pt) and group 11 (Cu, Ag, Au) elements have outstanding technological relevance in microelectronics, nano-optics, catalysis, and energy conversion. Processes that allow for the easy and reliable fabrication of such nanostructures are heavily sought after. Focused electron beam induced deposition (FEBID) is the only direct-write technique that can fabricate nanostructures with arbitrary shape and dimensions down to the sub-10 nm regime. However, the complex chemistry of FEBID involving electron-induced dissociation processes of metalorganic precursors molecules, surface kinetics, and thermal effects is poorly understood and far from being optimized. Here, we review in a comparative manner the performance and the underlying chemical reactions of surface deposition processes, namely, chemical vapour deposition (CVD), atomic layer deposition (ALD), and FEBID itself. The knowledge gained in CVD and ALD as related surface deposition techniques will help us to understand the spatially selective chemistry occurring in FEBID. Fundamental surface and gas phase studies provide insight to electron-induced chemistry and desorption of precursor fragments. Specific emphasis is put on the type of the ligands and their different behaviour under thermal, surface-related, and electron-induced processes. The comprehensive overview of the current state of FEBID for group 10 and 11 metals includes reactive environments and purification approaches as these may provide valuable information on the design of novel precursors. The evaluation of the precursor and process performance is extended to include W, Co, Fe, Ru, Rh, and Ir to represent a general guide towards future developments in FEBID. These may not only rely on the design of novel compounds but also on optimized deposition strategies inspired by ALD and CVD.
+

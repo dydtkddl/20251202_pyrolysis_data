@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of discarded bakelite with polystyrene to fuel: Thermokinetic, thermodynamic, synergetic analysis and batch pyrolysis studies The discarded bakelite cannot be easily recycled into useful products as it gets charred upon heating. The addition of thermoplastics like polystyrene (PS) to bakelite during pyrolysis may improve the decomposition of the bakelite. The design of a co-pyrolysis process needs kinetic and thermodynamic analysis. So, this work investigates the co-pyrolysis kinetics, and synergy of PS-blended bakelite (BL) (1:1 by weight) by using model-fitting and model-free methods. This is followed by thermodynamic analysis and batch pyrolysis studies to understand the feasibility of the process. To achieve it, the thermal degradation experiments are conducted at 5, 10, 20, 30, and 50 °C/min heating rates in a nitrogen environment, from 30 to 1000 °C. The TG-DTG curve of the blended sample includes two major weight loss steps (215-375 °C and 375-490 °C). The blending of PS with bakelite causes a shift in the pyrolytic degradation temperature zone and the appearance of a synergetic effect. Significant variation in the kinetics, thermodynamics, and mechanism of thermal degradation is observed due to the blending of polystyrene. The pyrolytic oils obtained in batch pyrolysis at 450 °C contain 58.27 wt% aromatic hydrocarbons (C7-30) and 40.93 wt% saturated hydrocarbons (C12-29) as major ingredients, as per the GC–MS analysis.
+

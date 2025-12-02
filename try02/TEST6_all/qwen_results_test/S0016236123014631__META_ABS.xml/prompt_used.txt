@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermo-catalytic pyrolysis of marine debris: A waste to wealth conversion study for energy recovery The rapid increase in marine waste has resulted in the accumulation of plastic marine debris (PMD), which is of concern to the scientific community due to the need for its safe disposal worldwide. PMD primarily consists of non-degradable polymeric waste, namely thermoplastics, which contain a substantial amount of energy as they are made from petroleum-based sources. Proper disposal and energy reclamation of this waste have become pressing topics. This study aimed to investigate PMD through thermogravimetric analysis followed by pyrolysis in the temperature range of 450–600 °C. Additionally, two catalysts, 10% nickel impregnated activated alumina (10% Ni/Al2O3) and sodium aluminosilicate (AlNaO6Si2), were incorporated (non-contacting method) to evaluate their effect on product yield and quality. During the non-catalytic process, the highest yield (∼78%) was achieved at a temperature of 550 °C while the presence of a catalyst had a minimal effect on oil density (0.74–0.76), and the percentage yield decreased to ∼ 58 and ∼ 62% using AlNaO6Si2 and 10% Ni/Al2O3 at 550 °C. The catalyst had a significant effect on the fraction of oxygenated compounds in the oil, reducing it by ∼ 18% from the non-catalytic process. AlNaO6Si2 resulted in a higher fraction of gasoline-range compounds, while 10% Ni/Al2O3 showed a higher similarity towards diesel fractions. Gas chromatography-mass spectrometry (GC–MS) analysis identified the presence of alkanes, alkenes, aromatics, alcohols, and other compounds in the oil product, with variations observed depending on the catalyst used. The results showed that among all hydrocarbons, propane had the maximum fraction, followed by ethane, methane, and butane in the gaseous compounds. Based on the degradation mechanism, yield distribution, and component evolution, the dissociation mechanism for both processes was explained.
+

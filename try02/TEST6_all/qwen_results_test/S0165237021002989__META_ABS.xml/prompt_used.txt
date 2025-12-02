@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comparing the effects of different metal oxides on low temperature decomposition of PVC Polyvinyl chloride (PVC) is one of the most widely used plastics in the world. When PVC is heated, HCl will form, causing equipment corrosion, product quality decline, environmental pollution and other problems. Therefore, more attention is paid to recycling of PVC than other plastics. In this study, the reaction mechanisms of PVC with different metal oxides (MO x : CaO, ZnO, CuO, MgO, Fe2O3, Al2O3) at low temperature (310 °C) were compared, with focus on chlorine capture and dehydrochlorination product (De-Cl PVC) property. The results showed that when the radius of metal ion was smaller, the extrapolated onset temperature (Ti ) of PVC-MO x pyrolysis tended to be lower, such as PVC-ZnO, PVC-CuO and PVC-Al2O3. Direct reaction of PVC and MO x was deduced for PVC-CuO and PVC-ZnO pyrolysis, based on the lower Ti and peak temperature (T max) than that of PVC pyrolysis. MO x that did not significantly lower T max was supposed to react with HCl that dissociated from PVC. The addition of ZnO significantly reduced the release of HCl (0.5%) and captured 97.6% of chlorine as inorganic chloride salts. However, the chloride salts produced from PVC-MgO pyrolysis could decompose at low temperature, thus releasing HCl again, and the C atoms in PVC-CuO system could react with copper chloride salts and H2O, to form and release HCl. The capture effects of chlorine by Fe2O3 and Al2O3 were not good. With addition of MO x , all De-Cl PVCs were rich in C=C-H and (C)3C-H structures. Fe2O3, MgO and CuO reduced the release of volatile hydrocarbons, while CaO, ZnO and Al2O3 increased the release of volatile hydrocarbons. Except for CaO and CuO, the other MO x increased the amount of residual hydrocarbon (De-Cl PVC).
+

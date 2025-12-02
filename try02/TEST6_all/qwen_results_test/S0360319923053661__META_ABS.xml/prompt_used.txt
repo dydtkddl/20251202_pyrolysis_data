@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An analytical review of recent advancements on solid-state hydrogen storage As global energy consumption is rapidly climbing to maximum, fossil fuel resources face depletion on a global scale. The rapid depletion and higher energy demand consequences an escalation of energy prices originating from conventional sources as well as the release of greenhouse gases into the environment. Hydrogen as an alternative energy source merged as an ideal candidate, distinguished by its remarkable attributes and manifold advantages. It has an exceptional energy density of 120 MJ/kg and encompasses non-toxicity, sustainability, and a favorable environmental profile. Renewable and non-renewable sources can produce hydrogen and have versatile applications in transportation, power generation via fuel cells, and other industrial processes. Beyond having these advantages hydrogen has the benefits of energy security and can be produced locally. Nevertheless, commercial hydrogen has exceptionally low volumetric density under standard conditions which is the major obstacle in the way of its development. To cater this issue and to enhance its economic feasibility, two well-established methodologies are used by alterations in temperature and/or pressure conditions which facilitate the storage of hydrogen either in a pressurized gas or a cryogenic liquid. However, both methods incur energy consumption and pose safety concerns and complexity in the system, which raises the question of having other storage solutions. An emerging technology based on Solid-state hydrogen storage systems has recently gained substantial attention because of its high storage capacity and relatively mild temperature and pressure requirements. However, this technology is not yet mature enough because it doesn't fulfil the requirements to be implemented for industrial applications. But, intensive research in this field is underway to develop novel materials with enhanced performance at both the material and the system level. The current review report is focused on a comprehensive and in-depth comparative analysis of various hydrogen storage methods, with a major focus on the enhancement of the performance of the material which is suitable for solid-state hydrogen storage applications.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Novel efficient enzymatic synthesis of the key-reaction intermediate of PET depolymerization, mono(2-hydroxyethyl terephthalate) – MHET Poly(ethylene terephthalate) (PET) is one of the main synthetic plastics produced worldwide. The extensive use of this polymer causes several problems due to its low degradability. In this scenario, biocatalysts dawn as an alternative to enhance PET recycling. The enzymatic hydrolysis of PET results in a mixture of terephthalic acid (TPA), ethylene glycol (EG), mono-(2-hydroxyethyl) terephthalate (MHET) and bis-(2-hydroxyethyl) terephthalate (BHET) as main products. This work developed a new methodology to quantify the hydrolytic activity of biocatalysts, using BHET as a model substrate. The protocol can be used in screening enzymes for PET depolymerization reactions, amongst other applications. The very good fitting (R2 = 0.993) between experimental data and the mathematical model confirmed the feasibility of the Michaelis-Menten equation to analyze the effect of BHET concentration (8–200 mmol L−1) on initial hydrolysis rate catalyzed by Humicola insolens cutinase (HiC). In addition to evaluating the effects of enzyme and substrate concentration on the enzymatic hydrolysis of BHET, a novel and straightforward method for MHET synthesis was developed using an enzyme load of 0.025 gprotein gBHET −1 and BHET concentration of 60 mmol L−1 at 40 °C. MHET was synthesized with high selectivity (97 %) and yield (82 %). The synthesized MHET properties were studied using differential scanning calorimetry (DSC), thermogravimetry (TGA), and proton nuclear magnetic resonance (1H NMR), observing the high purity of the final product (86.7 %). As MHET is not available commercially, this synthesis using substrate and enzyme from open suppliers adds new perspectives to monitoring PET hydrolysis reactions.
+

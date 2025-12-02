@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolytic-gasification of biomass and plastic accompanied with catalytic sequential tar reformation into hydrogen-rich gas Synthetic Fe–CaO–Ni-mayenite-CeO2 catalyst was adopted in the production of H2-rich gas from formed tar obtained from biomass-plastic pyrolysis and gasification. The molar ratio of the individual components in the catalyst (Fe–CaO–Ni-mayenite-CeO2) is 1:1:1: 1:2 as designed for the catalytic reforming of tar. The steam flow rate was fixed at 0.5 g/min. The role of mayenite-CeO2 in the catalyst and the temperature at which the catalyst was calcined during the pyrolysis–gasification of the Hazelnut shell/polypropylene mixture was examined. The inclusion of Mayenite was to provide the desired support for the activity of Ni–Fe. In addition, sulfur poisoning influences the activity of the Fe–CaO–Ni-Mayenite catalyst. On the other hand, CaO can easily become deactivated by biomass-tar, hence the reason it was impregnated with Fe along with Mayenite which was present on the surface of the catalyst's support as evidenced by the result from characterization. As a promoter, CeO2 improves nickel's resistance to carbon deposits while also boosting its sulfur tolerance. The activity of the catalyst was also monitored at varying space velocities, temperatures, steam to carbon ratios, residence times and particle sizes. The production of H2-rich gas was achieved at 1000 °C using 30 wt% of the catalyst.
+

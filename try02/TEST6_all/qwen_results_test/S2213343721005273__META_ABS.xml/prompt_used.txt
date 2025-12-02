@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Waste as feedstock for polyhydroxyalkanoate production from activated sludge: Implications of aerobic dynamic feeding and acidogenic fermentation Polyhydroxyalkanoates (PHA) are the ideal substitute for petroleum-derived non-biodegradable plastics. However, the cost of polymer production restricts the large-scale implementation. Waste feedstocks are a perfect carbon source to balance the cost and waste disposal and minimization. The suitability of activated sludge as inoculum for PHA production from potential waste feedstocks was analyzed for an affordable production strategy through waste management in a three-step methodology. The methodology involves a combined acidogenic fermentation and aerobic dynamic feeding strategy to improve PHA accumulation. Firstly, the specificity of waste feedstock for storage response was increased through volatile fatty acid (VFAs) production by tuning the process elements during acidogenic fermentation depending on the type of substrate. Secondly, activated sludge enriched through aerobic dynamic feeding strategy for improved storage response weeds out non-accumulators through various approaches. Finally, PHA accumulation bulks the enriched mix culture with PHA through different routes to enable economic downstream processing. The acidogenic fermentation critically impacts PHA composition and property along with operating conditions during the process. These studies point towards the feasibility of integrating PHA production by three-step methodology to the existing waste treatment facility and its future scope. Further investigations to improve the efficiency of the process and polymer properties can lead to cheaper polymer production more comprehensive market application.
+

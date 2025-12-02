@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Regulation of biomass physicochemical properties for fuel quality improvement by pretreatment technology: A review To address the issues of high oxygen content, low energy density, and difficulties in transportation and storage associated with biomass, utilizing pretreatment technologies to enhance the conversion efficiency for producing biofuels and high-value chemicals, improve product yield and quality, reduce energy consumption in subsequent conversion processes, and decrease the number of enzymes or other chemicals required, thereby lowering overall production costs and increasing market competitiveness. Given the diversity and complex composition of biomass and varying impacts on pyrolysis, it is crucial to select appropriate pretreatment methods suitable for specific biomass types. The renewability of biomass is one of the main bottlenecks in the development of lignocellulosic biorefining, and physicochemical pretreatment combined with enzymatic hydrolysis are two methods that can work together to overcome this instability. The combined application of mechanical crushing, thermal treatment, and other physical technologies can achieve synergy effects, improving processing efficiency. This work provides a comprehensive summary of pretreatment technologies prior to biomass pyrolysis, detailing the mechanisms, advantages, and disadvantages. Considering issues such as economic viability, environmental protection, and scalability, highlighting the significant potential value of combined pretreatment technologies in the high-value utilization of biomass, along with the shortcomings of current pretreatment technologies and future development trends. It emphasizes the impact of torrefaction on the quality of subsequent pyrolysis products (bio-oil, biochar, and biogas), as well as the economic benefits and future directions it brings to production applications, while also providing a theoretical foundation and guidance for the large-scale application of alcohol fuels.
+

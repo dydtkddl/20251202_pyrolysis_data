@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of catalyst contact mode and gas atmosphere during catalytic pyrolysis of waste plastics In the present study, polyethylene (PE), polypropylene (PP), polystyrene (PS) and polyethylene terephthalate (PET) were pyrolyzed using HZSM-5 zeolite in a tandem micro-pyrolyzer to investigate the effects of plastic type, catalyst and feedstock contact mode, as well as the type of carrier gas on product distribution. Among the four plastics, PS produced highest aromatic yields up to 85% whereas PE and PP mainly produced aliphatic hydrocarbons. In comparison to ex-situ pyrolysis, in-situ pyrolysis of the plastics produced more solid residue but also promoted the formation of aromatic hydrocarbons, except PS. For PS, ex-situ pyrolysis produced a higher yield of aromatics than in-situ pyrolysis, mostly contributed by high styrene yield. During in-situ pyrolysis, the catalyst reduced the decomposition temperatures of the plastics in the order of PE, PP, PS and PET from high to low. Hydrogen carrier gas reduced solid residue and also increased the selectivity of single ring aromatics in comparison to inert pyrolysis. Hydrogen was more beneficial to PS and PET than PE and PP in terms of reducing coke yield and increasing hydrocarbon yield. The present study also showed that catalytically co-pyrolyzing PS and PE, or PET and PE increases the yield of aromatics and reduces the yield of solid residue due to hydrogen transfer from PE to PS or PET and alkylation reactions among the plastic-derivatives.
+

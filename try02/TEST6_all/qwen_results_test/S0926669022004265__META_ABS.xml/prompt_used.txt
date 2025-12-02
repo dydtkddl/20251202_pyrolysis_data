@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Facile preparation of lignin nanoparticles from waste Camellia oleifera shell: The solvent effect on the structural characteristic of lignin nanoparticles This study investigated the water-organic co-solvent for the fractionation of lignin in camellia oleifera shell and further fabrication of lignin nanoparticles (LNPs). The highest dissolution (88.6 wt%) of lignin was obtained in H2O/GVL (3/7, v/v) co-solvent, which was mainly ascribed to the adjacent Hildebrand solubility parameter (δ) between lignin and co-solvent. The LNPs prepared by solvent-shifting method and precipitation exhibited round or oval shape with even distribution. Among which, LNPs obtained from the lignin fraction dissolved in H2O-ethanol co-solvent (denoted as LNP-ETH) showed the smallest average particle size of 136 nm and the highest negative zeta potential of − 39.6 mV, which implied the relatively stable lignin nanoparticles prepared from H2O-ETH co-solvent. The structural analysis of lignin nanoparticles revealed that LNPs maintained the lignin aromatic skeleton, C-O-C/C-C linkages and basic structural units (G, S and H). So far, this research offered great potential for the preparation of lignin-based materials from abundant forestry waste camellia shell.
+

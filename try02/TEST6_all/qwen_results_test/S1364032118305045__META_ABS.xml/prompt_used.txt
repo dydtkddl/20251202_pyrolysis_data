@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Preparation, modification and development of Ni-based catalysts for catalytic reforming of tar produced from biomass gasification Biomass gasification is one of the most promising technologies to convert renewable biomass feedstock to useful energy and chemicals for decarbonizing the current industrial activities. However, complex tar compounds are formed in the produced syngas. The presence of tar in syngas is undesirable due to a series problems caused, such as the decrease of overall efficiency and the clogging and contamination of downstream equipment. Until now, catalytic steam reforming has been widely studied for the efficient removal of tar. Previous review articles have focused on the catalytic reforming of tar by categorizing various catalysts as basic catalysts, nickel-based catalysts, non-nickel based catalysts, alkali metal catalysts, zeolite catalysts, and carbon-supported catalysts, etc. Ni-based steam-reforming catalysts have attracted much attention due to their high activity for tar reduction, low-cost and easy regeneration. However, the deactivation caused by the coke deposition and metal sintering remains the greatest challenge for the deployment of the technology. Therefore, modified Ni-based catalysts are now most frequently used for catalytic reforming of tar. At present, few review articles reported the modification of Ni-based catalysts for catalytic reforming of tar compounds. Based on this, the preparation, modification and development methods of Ni-based catalysts for catalytic reforming of tar are reviewed in this paper, aiming at promoting the catalytic performance of conventional Ni-based catalysts, in terms of high catalytic activity, long-term stability and better selectivity towards low molecular weight compounds.
+

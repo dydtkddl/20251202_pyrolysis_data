@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Grafted nickel-promoter catalysts for dry reforming of methane identified through high-throughput experimentation High-throughput synthesis of a series of monometallic and bimetallic catalysts (45 bimetallic and 50 monometallic samples) consisting of nickel and one of nine different metal promoters (B, Co, Cu, Fe, Mg, Mn, Sn, V and Zn) supported on one of five different metal oxides (alumina, ceria, magnesia, silica and titania) is carried out via organometallic grafting using a robotic platform. The catalysts are evaluated for their activity and selectivity for the dry reforming of methane at a feed ratio of CH4:CO2 of 1 at 650–800 °C in a parallel flow reactor system. The type of oxide support prevails over the type of additive for both catalyst activity and stability. On Al2O3 and MgO, Fe was found to be the best promoter; on SiO2, Cu is the best promoter at 700 °C and higher, while on TiO2, Mn is found to enhance the conversion at 800 °C. On CeO2, all additives except Fe have beneficial effects. Twenty-five catalysts show > 90% methane conversion with ten catalysts showing > 95% conversion at 800 °C with the H2:CO ratios ranging from 0.8 to 1.2. Amongst the ten highest performers, NiFe/Al2O3 and NiFe/MgO are more active than Ni/Al2O3 and Ni/MgO, respectively and were stable over a period of 25 h at 800 °C. Characterization on the as-prepared samples reveals highly dispersed phase, while after reduction in H2, highly dispersed and reduced nickel particles up to 10 nm are formed. The particles do not increase in size under dry reforming reaction conditions at 800 °C. An increased hydrogen consumption observed during H2-TPR of the nickel particles is positively correlated with methane conversion for Al2O3-based catalysts. The resistance to deactivation by coking and variation in coke structure are investigated by spectroscopic and microscopic methods to identify the relationship between metal promoters, alloy formation, and type of surface carbon deposits. Carbon whiskers were observed on the ten selected spent samples and are preferentially deposited on Ni rather than on the promoters. Carbon nanotube formation and metal particle removal from support were not observed to cause deactivation while amorphous carbon formation was clearly linked to catalyst deactivation, as amorphous carbon could encapsulate Ni, either on the support or at the end of the carbon nanotube. The organometallic grafting technique is an efficient and suitable technique for synthesizing highly dispersed and homogeneous phases which lead to high conversion and high durability for dry reforming of methane.
+

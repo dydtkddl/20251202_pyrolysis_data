@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Feasibility study on co-processing of automobile shredder residue in coal-fired power plants via pyrolysis Facing the challenges of organic industrial solid waste (OISW) disposal, co-processing of OISW by power plants has become a developing trend. In order to avoid feeding problems of OISW and enhance the combustion adaptability of the furnace, pyrolysis coupled with incineration technology is proposed as a potential method. Among various OISW, automobile shredder residue (ASR) is regarded as a promising fuel due to its high heating value. In view of engineering application, the researches focused on the products’ properties and economic evaluation under a wide range of heating rates which are insufficient. In this study, regarding the rapid pyrolysis by conducting the high-temperature flue gas as heating source in power plants, the pyrolysis behavior of ASR was correspondingly studied under a wide range of heating rates. The formation of volatiles and property’s improvement were further investigated for generating high-valued oil. Results showed that the high heating rate is not only beneficial to the homogenization of pyrolytic products but also the aromatization in oil and radical generation in gases. Importantly, it also contributed to the cleavage of the single bond connected to the benzene ring and carbon-oxygen single bond for esters. By conducting the enhanced cracking of volatiles, the wax-like fraction was significantly reduced. In addition, the deoxygenation in oil (oxygen content decreased by 20 wt%) and high heating value of gases (increased by 73%) were improved. Our findings demonstrated the feasibility and economic efficiency for the co-processing of ASR in coal-fired power plants via pyrolysis and thus provide guidance for future commercial application.
+

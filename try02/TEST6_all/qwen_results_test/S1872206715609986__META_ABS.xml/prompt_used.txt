@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Derived oil production by catalytic pyrolysis of scrap tires Scrap tires were pyrolyzed in a continuously stirred batch reactor in the presence and absence of catalysts. The maximum yield of derived oil was up to 55.65 wt% at the optimum temperature, 500 °C. The catalytic pyrolysis was performed using 1.0 wt% (on a scrap tire weight basis) of catalysts based on ZSM-5, USY, β, SAPO-11, and ZSM-22. The oil products were characterized using simulation distillation, elemental analysis, and gas chromatography-mass spectrometry. The results show that using a catalyst can increase the conversion of scrap tires to gas and decrease char by-products; the yield of derived oil remains unchanged or a little lower. The oils derived from catalytic pyrolysis had H/C ratios of 1.55–1.65 and contained approximately 70–75 wt% light oil, 0.3–0.58 wt% S and 0.78–1.0 wt% N. Catalysts with high acid strengths and appropriate pore sizes, such as ZSM-5, USY, β, and SAPO-11, increased the amount of single-ring aromatics in the light-middle-fraction oil to 45 wt%. The derived oil can therefore be used as a petrochemical feedstock for producing high-value-added chemical products or fuel oil.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synthesis of fluorinated polymers by chemical modification Polymers that contain atomic fluorine in or along the backbone possess many desirable physical properties. In general, fluoropolymers exhibit high thermal stability, enhanced chemical resistance, and low surface energy when compared to their non-fluorinated analogs. Two distinct routes are ordinarily utilized for the synthesis of these interesting macromolecules. Firstly, they can be prepared by the polymerization of fluorine-containing monomers (e.g. polytetrafluoroethylene from tetrafluoroethylene). Secondly, fluoropolymers can be prepared through polymer modification reactions that incorporate fluorine atoms or fluorine-containing moieties into a non-fluorinated parent polymer. Many commercially available fluoropolymers are prepared by the polymerization of fluorinated monomers. However, the different types of fluoropolymers that can be prepared by this route are limited by the availability of unique, suitably reactive fluorine-containing monomers. On the other hand, polymer fluorination methods, while less commonly practiced, allow for the preparation of novel fluorinated materials for which there is no suitable fluorine-containing monomer. Numerous methods have been described for the fluorination of polymers. These methods range from reactions that use fluorinated reagents to degrade or crosslink the polymeric substrate, to reactions that add fluorine atoms to the polymer in a highly non-specific fashion, to methods that introduce fluorine in a very selective manner to specific functional groups present in the parent polymer backbone. In the context of this review, ideal polymer fluorination methods are ones that allow for the selective and controlled introduction of fluorine atoms or fluorine-containing molecules to functional groups in or the polymer backbone without inducing degradation or crosslinking of the parent polymer chains. This article reviews methods for the bulk incorporation of fluorine in or along the backbone of macromolecules with fluorination procedures adhering to these criteria.
+

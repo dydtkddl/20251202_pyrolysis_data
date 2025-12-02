@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review on pyrolysis and coking of liquid hydrocarbons in heated pipe Pyrolysis coking of hydrocarbon fuels in heated pipe has attracted extensive attention in regenerative cooling technology, ethylene cracking industry and combustion engine. The reactor geometry, feedstock types, and product detection and characterization mean of concern are abstracted from engineering practice. Liquid hydrocarbon produces small molecules of alkanes, alkenes and aromatics by gas phase pyrolysis, then transforms into coke through chemical vapor deposition. Due to the extremely low partial pressure of carbon on coke surface, the process from hydrocarbon gas to solid coke was modeled into a pseudo-homogeneous process. In order to realize the dynamic simulation of the coking process, researchers found the characteristic time of gas-phase reaction was much shorter than that of the surface reaction. Therefore, the corresponding coking kinetics model was built based on the specific experimental coking mode and was widely used in the multi-physical field coupling CFD calculation. This study demonstrates that the dynamic evolution of coke morphology plays a pivotal role in governing transient variations of coking rates. Therefore, capturing the instantaneous evolution of coke morphology could serve as a novel approach to constructing unsteady-state coking model. The in-situ carbon protective layer is formed to shield catalytic sites and precursors, addressing the challenges of poor adhesion between coatings and substrates, as well as the tendency of coatings to delamination. Moreover, coke-removal coatings that catalyze carbon conversion and enable online de-coking show significant potential for development. Additionally, the introduction of functional additives—such as O2, CO2, syngas, ammonia, alcohols, and furans—represents an emerging direction for suppressing coke formation.
+

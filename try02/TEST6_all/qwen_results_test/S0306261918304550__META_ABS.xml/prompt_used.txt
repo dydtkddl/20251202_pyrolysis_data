@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetics of synergistic effects in co-pyrolysis of biomass with plastic wastes Co-pyrolysis of pinewood and different kinds of plastic wastes in different mass fractions using polypropylene (PP), polyethylene terephthalate (PETE), and polycarbonate (BPC) were investigated. The results compared with the pyrolysis of individual components revealed non-additive synergistic effects from co-pyrolysis. Differential thermography (DTG) results showed enhanced decomposition peaks of biomass along with longer evolution of syngas and decreased peak of plastic polymers using BPC or PETE. Char residue was non-additively reduced by some 5% (dry wt. basis) using PP and BPC, and by 2–3% using PETE when pyrolyzed with biomass. This suggests increased carbon conversion efficiency and volatiles yield during co-pyrolysis compared to individual component pyrolysis. First order distributed activation energy modeling (DAEM) with 5 pseudo-components revealed that the synergistic effects of biomass with PP or PETE were mainly due to physical nature of the polymers as observed from increased activation energy bandwidth of biomass decomposition. BPC and pinewood mixtures showed an overlap in their activation energy distribution between 100 and 150 kJ/mol. This overlap caused the set of reaction with similar energetics to mutually interact chemically and enhance the composite mixture pyrolysis. Activation energy of BPC in the presence of pinewood was reduced by some 50 kJ/mol compared to individually examined polymer decomposition. The observed quantitative synergistic kinetics results in co-pyrolysis of biomass-plastic wastes mixtures as compared to individual component pyrolysis provide vital information towards the development of feed-flexible, clean pyrolysis and gasification system for efficient fuels production.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Producing upgradeable bio-oil from food bio-waste via hybrid-assisted pretreatment coupled with catalytic hydrotreatment Slurry food waste sourced from Renova (Gothenburg, Sweden) was investigated as a model for generating upgradeable bio-oil via a hybrid-assisted pretreatment along with a catalytic hydrotreatment process. Hybrid-assisted pretreatment has been examined for extracting and stabilizing of reactive-derived substances. For the resulting bio-crude and residual solids, the properties of the heteroatoms were also examined prior to the catalytic hydrotreatment experiments. Hybrid-assisted pretreatment is an interesting solution in that it maximizes the bio-crude yield and transfers significant amounts of the nitrogenous content (De-N ∼83.3 %, dry basis) into the residual solids. Nearly 87 wt% of the oxygenated monomers were found in the obtained bio-crude, which possessed 52.0 wt% of alcohols. The highest upgradeable bio-oil of 86.0 wt% was achieved during catalytic hydrotreatment of the bio-crude and residual solids jointly: producing blends of up to 78 wt% of hydrocarbons, 14 wt% oxygenated and <6 wt% of cyclic, aromatics, N-containing components.
+

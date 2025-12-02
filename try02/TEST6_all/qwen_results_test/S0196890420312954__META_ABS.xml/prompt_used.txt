@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic effects on co-pyrolysis of low-temperature hydrothermally pretreated high-protein microalgae and polypropylene Protein-rich (58.50%) Chlorella sp. was hydrothermally pretreated at 175 °C to remove part of N, and the obtained solid residue (ChSR) was then co-pyrolyzed with polypropylene (PP) to reduce O content and improve bio-oil quality. About 48.25% of N was enriched into the aqueous phase during hydrothermal pretreatment (HTP) process, and about 15.70% of bio-oil with low N content (3.45%) was obtained. Compared with that of raw sample, the structure of ChSR was further aromatized as revealed by 13C NMR analysis. The interaction between ChSR and PP was deeply investigated with the help of online TG-FTIR-MS and Py-GC/MS. The co-pyrolysis process of ChSR-PP blends was generally divided into two thermal decomposition stages. The first stage (150–400 °C) was mainly associated with decomposition of ChSR, while the second stage (400–550 °C) was the results of combination of thermal degradations of ChSR and PP, with the primary contribution from the degradation of PP. The addition of PP accelerated pyrolysis of ChSR and inhibited the release of C2H5O+/COOH+ and NH3 but promoted CO2 releasing at the first stage. However, ChSR delayed the pyrolysis of PP and prohibited release of H2 and light hydrocarbons (i.e., CH4, C2H2, C2H6, C3H7, and so on) from PP at the second stage. Kinetic analysis based on the Flynn-Wall-Ozawa (FWO) method revealed that the average activation energy (E) of the blends at the two decomposition stages were 159.10–164.12 kJ/kg and 194.20–219.86 kJ/kg, respectively. Results of Py-GC/MS indicated that, the synergistic effect between ChSR and PP significantly enhanced the formation of hydrocarbons (i.e., cyclohexane derivatives and 2,4-Dimethyl-1-heptene), and the interaction achieved maximum when the ratio of ChSR:PP was 80:20. The yields of O-containing compounds (alcohols, and phenols) and BTEXs (Benzene series) were decreased. It should be noted that both the amounts and kinds of N-heterocyclic compounds were decreased. Finally, the possible mechanism on interaction between ChSR and PP was also proposed. This work will provide useful information on better utilization of high-protein microalgae.
+

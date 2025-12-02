@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis and catalytic reforming of disposable plastic waste for syngas production with adjustable H2/CO ratio The gasification technology has shown great potential to upcycle plastic waste for clean and high-value fuel. Gasification of disposable plastic masks was investigated in a two-stage pyrolysis-catalytic reforming system, aiming at producing the syngas with flexible H2 to CO ratio which can be tuned for various downstream applications without further purification and adjustment. To maximize the syngas yield and minimize the carbon deposition, different gasifying agents in the staged catalytic process was explored. The results showed that CO2 significantly promoted syngas production mainly by increasing CO yield. However, H2-rich syngas was obtained via using steam as the gasifying agent. Competitive and synergistic relationships between CO2 and H2O agent at co-feeding process were further revealed. CO2 facilitated the reforming of H2O at low dose of steam while exhibiting a main competition with adequate steam except for synergy at 5 mL/min CO2 flow rate. An optimum H2-rich syngas yield of 135.59 mmol/gplastic with H2/CO ratio of 2 was obtained at co-feeding reactants. Therefore, the co-feeding of H2O and CO2 could show positive effect for both coke removal and syngas quality regulation. Results found in this work increased the overall operational flexibility and economy of pyrolysis and catalytic reforming of plastic waste.
+

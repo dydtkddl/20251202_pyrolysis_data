@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The effect of carbon dioxide on flame propagation speed of wood combustion in a fixed bed under oxy-fuel conditions This paper presents an investigation of wood combustion in a laboratory-scale fixed bed with an aim of establishing the effect of CO2 environment on flame propagation speed and flame structures. Different oxy-fuel combustion atmospheres in which the composition of O2 in CO2 was varied from 21% to 50% by volume were tested and compared to air-fuel condition. Euler-Lagrange (Computational Fluid Dynamics - Discrete Element Method, CFD-DEM) approach which captures information of individual particle processes is used to model wood conversion in a packed bed. Results show that flame front propagation speed in oxy-fuel atmosphere reduced to 78% of that of the air-fuel condition with similar O2 concentration. For oxy-fuel conditions, propagation speed increased with increase in O2 concentration. The CFD-DEM model agrees very well with experimental values for mass loss, propagation speed and flame front positions. However, peak temperatures are poorly predicted at lower oxygen concentrations. The accuracy of temperature prediction improves at higher oxygen concentrations. During initial and devolatilization stage, mass fraction of tar predicted in CO2 environment are smaller than in N2 environment, while the amount of CO predicted is almost equal in both environments. However, during char combustion stage a high amount of CO is observed in oxy-fuel conditions.
+

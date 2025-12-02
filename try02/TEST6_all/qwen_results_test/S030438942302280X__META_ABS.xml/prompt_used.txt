@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Processing plastic waste via pyrolysis-thermolysis into hydrogen and solid carbon additive to ethylene-vinyl acetate foam for cushioning applications A strategy for enhancing value creation from pyrolysis gas and oil, derived from plastic waste, through the generation of two additional outputs of solid carbon and hydrogen was investigated. Three types of hard-to-recycle plastic waste (marine plastic litter, household mixed plastics and cosmetic products packaging) were thermally treated in two stages: (i) decomposition of feedstock into gas and oil via pyrolysis at 600 °C; and (ii) thermolytic conversion of the pyrolysis gas and a fraction of oil into hydrogen and solid carbon at 1300 °C separately. The thermolysis of both pyrolysis gas and oil fractions predominantly resulted in the production of solid carbon (39–70 wt% per plastic feedstock and carbon content of 91.3–98.6 wt%) and H2-rich gas (H2 yield of 5.9–10.8 wt% per plastic waste feedstock and H2 content of 71.4–97.2 vol% per gas volume). The incorporation of pyrolysis oil into the thermolysis process could enhance the outputs of solid carbon and hydrogen. Characterizations of solid carbon and hydrogen obtained from pyrolysis gas and oil fractions were further conducted. The observed similar properties of H2 and solid carbon from pyrolysis gas and oil supported the feasibility of introducing all the pyrolytic products together into the thermolysis process without condensation of oil. To enhance the value of these solid carbon derived from plastics for practical usage, we utilized the obtained solid carbon as a reinforcing agent for polymer composite foam development. The solid carbon reinforced composite foam displayed great abrasion resistance (wear loss: 240 mg), compression strength (0.347 MPa), and dynamic impact properties (energy returned: 124 J/m and energy absorbed: 57.3 J/m), emphasizing the viability of solid carbon as a nucleating agent and reinforcing filler in polymer foam for cushioning applications. Overall, the strategy of pyrolysis-thermolysis, which harnesses both pyrolysis gas and oil, unlocks additional value creation by producing two new outputs from plastic waste. Depending on the market prices for solid carbon and hydrogen, this can substantially change the economics of plastic waste management and create new revenue streams, incentivizing plastic waste collection and processing.
+

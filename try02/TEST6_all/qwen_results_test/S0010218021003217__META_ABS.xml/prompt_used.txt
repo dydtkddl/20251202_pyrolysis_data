@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An experimental and detailed kinetic modeling study of the pyrolysis and oxidation of allene and propyne over a wide range of conditions Allene and propyne are important intermediates in the pyrolysis and oxidation of higher hydrocarbon fuels, and they are also a major source of propargyl radical formation, which can recombine into different C6H6 isomers and finally produce soot. In a prior work (Panigrahy et al., “A comprehensive experimental and improved kinetic modeling study on the pyrolysis and oxidation of propyne”, Proc. Combust. Inst 38 (2021)), the pyrolysis, ignition , and laminar flame speed of propyne were investigated. To understand the kinetic features of initial fuel breakdown and oxidation of the two C3H4 isomers, new measurements for allene pyrolysis and oxidation are conducted in the present paper at the same operating conditions as those studied previously for propyne. Ignition delay times of allene are measured using a high-pressure shock tube and a heated twin-opposed piston rapid compression machine in the temperature range 690–1450 K at equivalence ratios of 0.5, 1.0 and 2.0 in ‘air’, and at pressures of 10 and 30 bar. Pyrolysis species measurements of allene and propyne are also performed using a gas chromatography integrated single-pulse shock tube in the temperature range 1000–1700 K at pressure of 2 and 5 bar. Furthermore, laminar flame speeds of allene are measured at elevated gas temperatures of 373 K at pressures of 1 and 2 bar for a wide range of equivalence ratios from 0.6 to 1.5. A newly updated kinetic mechanism developed for this study is the first model that can well reproduce all of the experimental results for both allene and propyne. It is observed that in the pyrolysis process, allene dissociates faster than propyne. Both isomers exhibit similar ignition delay times at high temperatures (>1000 K), while, at intermediate temperatures (770–1000 K) propyne is the faster to ignite, and at lower temperatures (< 770 K) allene becomes more reactive. Furthermore, laminar flame speeds for propyne are found to be slightly faster than those for allene under the conditions studied in this work.
+

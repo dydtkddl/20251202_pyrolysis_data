@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Nickel ferrite spinel as catalyst precursor in the dry reforming of methane: Synthesis, characterization and catalytic properties Dry reforming of methane by CO2 using nickel ferrite as precursor of catalysts was investigated. Nickel ferrite crystalline particles were prepared by coprecipitation of nitrates with NaOH or ammonia followed by calcination, or by hydrothermal synthesis without calcination step. The textural and structural properties were determined by a number of analysis methods, including X-ray diffraction (XRD), Raman spectroscopy and X-ray photoelectron spectroscopy (XPS), among which X-ray diffraction (XRD) was at room and variable temperatures. All synthesized oxides showed the presence of micro or nanoparticles of NiFe2O4 inverse spinel, but Fe2O3 (hematite) was also present when ammonia was used for coprecipitation. The reducibility by hydrogen was studied by temperature-programmed reduction (TPR) and in situ XRD, which showed the influence of the preparation method. The surface area (BET), particle size (Rietveld refinement), as well as surface Ni/Fe atomic ratio (XPS) and the behavior upon reduction varied according to the synthesis method. The catalytic reactivity was investigated using isopropanol decomposition to determine the acid/base properties. The catalytic performance of methane reforming with CO2 was measured with and without the pre-treatment of catalysts under H2 in 650-800 °C range. The catalytic conversions of methane and CO2 were quite low but they increased when the catalysts were pre-reduced. A significant contribution of reverse water gas shift reaction accounted for the low values of H2/CO ratio. No coking was observed as shown by the reoxidation step performed after the catalytic reactions. The possible formation of nickel-iron alloy observed during the study of reducibility by hydrogen was invoked to account for the catalytic behavior.
+

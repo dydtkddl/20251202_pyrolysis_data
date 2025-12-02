@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic ozonation of ammonia using biomass char and wood fly ash Catalytic ozonation of gaseous ammonia was investigated at room temperature using wood fly ash (WFA) and biomass char as catalysts. WFA gave the best results, removing ammonia (11ppmv NH3, 45% conversion) at 23°C at a residence time of 0.34s, using 5g of catalyst or ash at the lowest ozone concentration (62ppmv). Assuming pseudo zero order kinetics in ozone, a power rate law of - r NH 3 = 7.2 × 10 - 8 C NH 3 0.25 (r, molg−1 s−1, C NH3 molL−1) was determined at 510ppmv O3 and 23°C for WFA. Water vapor approximately doubled the oxidation rate using WFA and catalytic ozonation activity was not measured for the char without humidifying the air stream. Overall oxidation rates using the crude catalysts were lower than commercial catalysts, but the catalytic ozonation process operated at significantly lower temperatures (23 vs. 300°C). Nitric oxide was not detected and the percentage of NO2 formed from NH3 oxidation ranged from 0.3% to 3% (v/v), with WFA resulting in the lowest NO2 level (at low O3 levels). However, we could not verify that N2O was not formed, so further research is needed to determine if N2 is the primary end-product. Additional research is required to develop techniques to enhance the oxidation activity and industrial application of the crude, but potentially inexpensive catalysts.
+

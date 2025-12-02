@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Partial upgrading of bitumen with supercritical water— liquid products characteristics, gas composition and coke morphology The study aimed to investigate the partial upgrading of bitumen in the absence of water (non-water) and the presence of supercritical water (SCW). Partial upgrading experiments were conducted at the target temperature of 420 °C, with the reaction time varying from zero to 60 min in a batch reactor. The liquid products were analyzed for density, viscosity, composition, total acid number (TAN), olefin content, and elemental analysis. The gas composition and morphology of solid products were also studied. The experimental results revealed that while partial upgrading of bitumen with SCW could accelerate improvement in oil quality, particularly in terms of API and viscosity, it concurrently led to elevated gas and coke formation levels. Moreover, the difference in the distribution of oil fractions between the two environments (absence and presence of SCW) tends to diminish with an extended residence time. Additionally, as the residence time increases, the efficiency of TAN reduction under SCW conditions is less pronounced compared to the non-water conditions. Liquid products obtained in an SCW environment exhibited higher olefin content (between 3 and 4 wt %) compared to non-water conditions (between 1.8 and 2.7 wt %). In both environments, the olefin content was initially increased up to a residence time of 20 min and then decreased. Regarding heteroatoms, the sulphur (S) and nitrogen (N) contents decreased up to 36 % and 72 %, respectively, while a greater reduction was observed in the presence of SCW. More non-hydrocarbon gases (H2S, CO2 and CO) were produced in the presence of SCW. SEM images showed that an extended residence time led to a shift in coke morphology towards a more uniform and compact structure, regardless of the upgrading environment. However, the porous structures of coke samples obtained under SCW are distinguished from those formed without water, which is attributed to the phase inversion of precursors. The findings of this study confirm that SCW plays a beneficial role as a solvent in the partial upgrading of bitumen, expediting the process. However, the increased level of coke formation and olefin contents suggest that it may not function effectively as a hydrogen donor in the process.
+

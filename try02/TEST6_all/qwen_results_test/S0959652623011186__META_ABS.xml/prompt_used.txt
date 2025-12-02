@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation of high-density polyethylene pyrolyzed wax for asphalt binder modification: Mechanism, thermal properties, and ageing performance The thermal pyrolysis of high-density polyethylene in a fixed bed reactor has been studied in the temperature range of 450–550 °C with two different nitrogen carrier gas flowrates, 2 and 4nullLnullmin−1, to study the effect of these process parameters as well as the resultant vapour residence times on the formation of wax and its chemical and thermal properties. The technology had a high selectivity to waxes, with a yield of up to 91.87% wax from high-density polyethylene at 500 °C using a nitrogen carrier gas flowrate of 4nullLnullmin−1 and subsequent 1.76 second vapour residence time, calculated using the ideal gas law. The waxes were characterised using techniques including gas-chromatography-mass spectroscopy (GC-MS), Fourier transform infrared spectroscopy (FTIR), thermal gravimetric analysis (TGA) and differential scanning calorimetry (DSC). The process operating temperature especially and its subsequent effect on vapour residence times within the reactor had a considerable impact on both the chemical and thermal properties of the waxes. Higher operating temperatures yielded more olefinic waxes due to the promotion of degradation radical mechanisms such as β-scission. They were observed to have higher melting points and thermal stability. An investigation was conducted to assess the thermal properties and ageing performance of the waxes. Thermal conditioning in an ashing oven at 170 °C for 0–6 hours was conducted with a detailed analysis of GC-MS and FTIR at each stage of thermal exposure to further support thermal characterisation results. The changes in chemical composition were attributed mainly to oxidation and polymerization ageing reactions and were seen to be more prominent in the more unsaturated waxes produced at higher pyrolysis temperatures. The wax produced at 550 °C was determined the optimal wax for binder modification in hot-mix asphalt pavement design due to lower volatile/mass loss. A lower temperature range was suggested for optimal blending conditions to further reduce loss of volatiles with initial blending and storage.
+

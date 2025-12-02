@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The role of CaO in the steam gasification of plastic wastes recovered from the municipal solid waste in a fluidized bed reactor The worldwide solid waste composition indicates that polymeric materials account for, approximately, 10 % of municipal solid waste (MSW). After sorting, MSW still contains a fraction of plastic (Municipal Plastic Waste - MPW) which is a potential raw material for thermochemical processes. Among the thermochemical processes, combustion, pyrolysis and gasification are the most important. This study reports the steam gasification process of the MPW after the MSW sorting of the selective collection in the municipality of Garibaldi, southern Brazil. The samples were obtained after the separation of materials intended for recycling. A total of 29.8 % of the MSW after sorting was found to be made of polymeric materials incorrectly sent to landfill. The MPW was characterized by gravimetric composition, particle size distribution, ultimate and proximate analyzes. The polymeric materials with the highest participation in MPW are polypropylene (28.77 %), polystyrene (23.53 %) and polyethylene (16.67 %). The gasification experiments were carried out in a fluidized bed reactor at different temperatures (800, 850 and 900 °C), by using steam as gasification agent (0.3 kg/h). Gasification experiments were also performed with calcium oxide (CaO). The remaining ash had its morphology analyzed by Scanning Electron Microscopy (SEM) and X-Ray Diffraction (XRD), while gas from steam gasification was evaluated between 0−90 min by Gas Chromatography (GC). The steam gasification of MPW with CaO increased both dry gas yield and hydrogen yield. The maximum dry gas yield (3.12 Nm3/kgMPW) was obtained at 900 °C with CaO, as well as a high H2 yield (104 mol/kgMPW). This energy reuse can help to reduce energy demand bottlenecks, as well as the decrease of landfills.
+

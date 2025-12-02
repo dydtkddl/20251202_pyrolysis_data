@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Jet fuel and hydrogen produced from waste plastics catalytic pyrolysis with activated carbon and MgO Catalytic pyrolysis of waste plastics to produce jet fuel and hydrogen using activated carbon and MgO as catalysts was studied. The effects of catalyst to waste plastics ratio experimental temperature, catalyst placement and activated carbon to MgO ratio on the yields and distributions of pyrolysis products were studied. The placement of catalysts played an important role on the catalytic pyrolysis of LDPE, and the pyrolytic volatiles first flowing through MgO and then biomass-derived activated carbon (BAC) could obtain an excellent result to produce H2 and jet fuel-rich products. The higher pyrolysis temperature converted diesel range alkanes into jet fuel range alkanes and promoted the aromatization of alkanes to generate aromatic hydrocarbons. BAC and MgO as catalysts had excellent performance in catalytic conversion of LDPE to produce hydrogen and jet fuel. 100 area.% jet fuel range products can be obtained in LDPE catalytic pyrolysis under desired experimental conditions. The combination of BAC and MgO as catalysts had a synergy effect on the gaseous product distribution and promoted the production of hydrogen, and up to 94.8 vol% of the obtained gaseous components belonged to hydrogen. This work provided an effective, convenient and economical pathway to produce jet fuel and hydrogen from waste plastics.
+

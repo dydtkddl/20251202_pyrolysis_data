@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermolysis of waste plastics to liquid fuel A suitable method for plastic waste management and manufacture of value added products—A world prospective The present rate of economic growth is unsustainable without saving of fossil energy like crude oil, natural gas or coal. Thus mankind has to rely on the alternate/renewable energy sources like biomass, hydropower, geothermal energy, wind energy, solar energy, nuclear energy, etc. On the other hand, suitable waste management strategy is another important aspect of sustainable development. The growth of welfare levels in modern society during the past decades has brought about a huge increase in the production of all kinds of commodities, which indirectly generate waste. Plastics have been one of the materials with the fastest growth because of their wide range of applications due to versatility and relatively low cost. Since the duration of life of plastic products is relatively small, there is a vast plastics waste stream that reaches each year to the final recipients creating a serious environmental problem. Again, because disposal of post consumer plastics is increasingly being constrained by legislation and escalating costs, there is considerable demand for alternatives to disposal or land filling. Advanced research in the field of green chemistry could yield biodegradable/green polymers but is too limited at this point of time to substitute the non-biodegradable plastics in different applications. Once standards are developed for degradable plastics they can be used to evaluate the specific formulations of materials which will find best application in this state as regards their performance and use characteristics. Among the alternatives available are source reduction, reuse, recycling, and recovery of the inherent energy value through waste-to-energy incineration and processed fuel applications. Production of liquid fuel would be a better alternative as the calorific value of the plastics is comparable to that of fuels, around 40MJ/kg. Each of these options potentially reduces waste and conserves natural resources. Plastics recycling, continues to progress with a wide range of old and new technologies. Many research projects have been undertaken on chemical recycling of waste plastics to fuel and monomer. This is also reflected by a number of pilot, demonstration, and commercial plants processing various types of plastic wastes in Germany, Japan, USA, India, and elsewhere. Further investigations are required to enhance the generation of value added products (fuel) with low investments without affecting the environment. The paper reviews the available literature in this field of active research and identifies the gaps that need further attention.
+

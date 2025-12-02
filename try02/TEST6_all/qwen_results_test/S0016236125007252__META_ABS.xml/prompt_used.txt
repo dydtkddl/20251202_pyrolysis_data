@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Critical assessment of machine learning prediction of biomass pyrolysis Biomass pyrolysis is a complex process, quite challenging to model physically and Modern AI methods could improve its prediction and characterization. However, AI model construction requires high-quality datasets. Existing datasets in literature, usually only a few hundred records, are inadequate for robust AI applications. A first goal of the study was to make best use of the currently available body of experimental data on fixed bed non-catalytic biomass pyrolysis by comprehensively compiling available data from nearly 160 sources into a new dataset of 1137 records. Each record was carefully standardized to overcome inconsistencies in terminology and lack of uniformity among different sources. This extended dataset (including biomass properties, pyrolysis operating conditions, and bioliquid yield), integrating previous ones, is intended to promote community-based data sharing. The compiled dataset was characterized by remarkable data sparsity, due to lack of completeness of the original data. A second goal was benchmarking different regression and data imputation models to assess the predictive ability of ML applied to the collected dataset. The most accurate estimates were obtained by leveraging a subset of about 500 instances without missing values, resulting in a Mean Absolute Error (MAE) of 2.28. Application of ML to the entire dataset with imputed missing data yielded a less accurate estimate (MAE = 3.45), a feature that underlines the criticality of missing data imputation, and of the sparsity of the dataset. A third and mostly relevant goal was the critical assessment of Explainable Artificial Intelligence (XAI) techniques that come into play when ML is aimed at evaluating the importance and directional trends of selected features. XAI tools, namely Partial Dependence Plots (PDP) and SHAP, have been applied to the dataset to assess their trustworthiness to support mechanistic inference of the importance and directional trends of key biomass properties and process operational parameters on pyrolysis yields. The result of this analysis is far from satisfactory. Significant discrepancies across studies, inconsistencies among different methods and somewhat erratic trends in PDP plots reflect the challenge in achieving consistent mechanistic insights from purely data-driven approaches, suggesting the adoption of physics-informed machine learning embodying physico-chemical relationships to improved Explainable AI.
+

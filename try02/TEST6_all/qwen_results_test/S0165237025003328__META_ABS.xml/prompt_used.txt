@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recent advances in co-pyrolysis of lignocellulosic biomass with plastic waste as a sustainable waste-to-energy solution toward a low-carbon economy: A bibliometric review of the last 5 years of research With the climate crisis, the demand for new sustainable fuels to diversify the global energy matrix has intensified. In this context, the co-pyrolysis of biomass/plastic mixtures has emerged as a promising alternative. Therefore, this article proposes a bibliometric analysis, whose novelty lies in identifying thematic patterns, major advances, and challenges faced in the field during the period from 2020 to 2025. Data were extracted from the Scopus and Web of Science platforms, classified according to the PRISMA 2020 methodology as strongly related, weakly related, and unrelated, and analyzed using the VOSviewer and Bibliometrix software tools. From the initial 889 documents (Scopus: 281; WoS: 608), 337 were selected, indicating the scientific leadership of China and India, with a predominance of laboratory-scale studies (TRL 2–3). The recurring use of thermogravimetric analyzers and analytical systems, along with a growing interest in microwave-assisted pyrolysis, was identified. In the catalytic field, HZSM-5 zeolite stands out. Regarding feedstocks, biomass, such as wood and sawdust, prevails, typically combined with widely available polymers, including polyethylene, polystyrene, and polypropylene. The analysis revealed five priority research fronts: (i) scaling up to pilot plants; (ii) low-cost catalysts; (iii) microwave-specific reactors; (iv) diversification of feedstocks, including hard-to-recycle plastics; and (v) strengthening international collaboration networks. These advancements are crucial to establishing co-pyrolysis as a strategic technology within the circular economy and energy transition, directly contributing to the achievement of the Sustainable Development Goals (SDGs 7, 11, 12, and 13).
+

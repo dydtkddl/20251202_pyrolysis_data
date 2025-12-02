@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Insights into pyrolysis and catalytic co-pyrolysis upgrading of biomass and waste rubber seed oil to promote the formation of aromatics hydrocarbon To solve the problem of low aromatic hydrocarbon yield and selectivity in biomass catalytic pyrolysis, we used added oxygen-containing hydrogen supplier of rubber seed oil (RSO) with a higher hydrogen-to-carbon ratio to investigate the thermal decomposition behaviors, kinetic and production distribution of biomass, cellulose and RSO with the weight ratio of 1:2 using thermogravimetric analyzer (TGA) for kinetic analysis and fixed bed reactor with the feed composition of 1.2 g: 0.4 mL/min (Biomass to RSO) for product distribution in non-catalytic and catalytic co-pyrolysis over a HZSM-5 catalyst. The results show that there was a positive synergistic interaction between biomass and RSO according to the difference in weight loss, which could decrease the formation of solid coke at the end of experiment. The addition of the HZSM-5 catalyst can markedly increase the reaction activity, accelerate the reaction rate, and the reaction Ea, leading to a substantial increase in the conversion rate; furthermore, the residual carbon content will decrease, and the activations of Cellulose + RSO + Catalyst and Biomass + RSO + Catalyst are only 50.80 kJ/mol and 62.36 kJ/mol, respectively. The kinetic analysis showed that adding a catalyst did not change the decomposition mechanism. Co-pyrolysis of biomass and RSO could effectively improve the yield and selectivity of aromatics, when the pyrolysis temperature and catalytic temperature were 550 °C and 500 °C, respectively, the mass space velocity of RSO was 0.4 mL/min, the reaction time was 30min, the yields of benzene, toluene, xylene and ethyl benzene (BTXE) were up to 78.77%, and the selectivity of benzene, toluene and xylene was much better. Finally, the coke yield was substantially lower.
+

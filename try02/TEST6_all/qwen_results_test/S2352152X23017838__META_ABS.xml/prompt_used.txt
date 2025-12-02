@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermochemical heat storage through CaO-Mayenite/CaCO3 system: Thermal performances comparison for two synthesis methods ThermoChemical Storage systems (TCS) are gaining attention for long term-thermal energy storage applications. Those systems can successfully increase the electricity generation flexibility in CSP (Concentrated Solar Power) plants or optimize the heat recovery and storage in energy-intensive industries (EII) as well. CaO/CaCO3 based systems are currently broadly investigated for thermochemical storage, either natural or synthetic materials. Among these, CaO/Mayenite (Ca12Al14O33) sorbents are considered very promising. CaO/Mayenite (Ca12Al14O33) based material was developed according to two different synthesis methods. The first one consisted in a one-step sol-gel method where aluminium precursor and pure CaO are weighted to obtain the exact weight ratio of 75/25 (CaO/Ca12Al14O33). In the second one, a two-step method was adopted: pure Mayenite was preliminarily synthetized by one step sol-gel method and CaO/Mayenite was obtained by direct wet mixing with pure CaO. Samples obtained were characterized by XRD, SEM, TGA, nitrogen physisorption, Raman spectroscopy and thermal stability was tested over 40 charging/discharging cycles in TGA. Raman spectra revealed free oxygen O2 − presence in the structure of Mayenite and in CaO-Mayenite samples as well, lying at 1128 cm-1. Thermal properties such as thermal conductivity, heat capacity and volumetric energy density storage have been determined. The thermal conductivity found were 0.377 ± 0.004 (W/mK) for A; 0.101 ± 0.006 (W/mK) for B and for Mayenite 1.16 ± 2.7 10−4 (W/mK). It was found that two step method led to a better performing material in terms of carbonation reaction reactivity, and hence thermal storage. This material showed 50 % carbonation reaction conversion value at 40th cycle, corresponding to 0.250 g CO2/g dry sample, which is 4 times higher than CaO conversion. At 40th cycle, moderate sintering effect is remarked, with 2.3 % conversion drop, indicating that Mayenite insertion effectively acts as spacer. Volumetric storage energy density Sd has been determined for both samples and compared to CaO at increasing cycle number. Sample B storage density was effectively even at 40th cycle with 0.69 GJ/m3, thus about 3.5 times higher than CaO.
+

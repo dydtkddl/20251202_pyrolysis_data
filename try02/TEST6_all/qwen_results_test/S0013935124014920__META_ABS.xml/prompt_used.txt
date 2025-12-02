@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Identification of suitable catalyst among HZSM-5, HY and γ-Al2O3 to obtain upgraded pyrolysis oil with augmented liquid oil yield This study examines catalytic ability of various zeolite materials in converting discarded tire pyrolyzed oil by employing a moderate sized pyrolysis plant of a 10 L working volume. The study revealed that the yield of liquid fractions using γ-Al2O3 was greater than that of HZSM-5 and HY, while the yield of condensates were limited in the absence of catalyst. The tire waste pyrolysis oil catalytcially enhanced by alumina catalyst analyzed using Fourier transform infrared spectroscopy exhibited the stretching bands corresponding to aromatic and non-aromatic compounds. The GC MS analysis revealed that the cyclic unsaturated fragment percentages in liquids were decreased by the catalysts to 53.9% with HY, 59.0% with γ-Al2O3, and 62.2% with HZSM-5, which in turn was converted into aromatic chemicals. Nitrogen adsorption desorption analysis revealed that γ-Al2O3 has an enhanced surface area of 635 m2/g which improved its catalytic performance. The cracked liquid oil had viscosity (10.36 cSt), values of pour and flash temperatures of −2.2 °C and 41 °C respectively, analogous to petroleum diesel. The upgraded pyrolysis oil (10%) is blended with gasoline (90%), and emission analysis was performed. Moreover, liquid oil needs post treatment (refining) for its use as energy source in transportation application. The novelty of this research is in its comparative analysis of multiple catalysts under controlled conditions using a small pilot-scale pyrolysis reactor, which provides insights into optimizing the pyrolysis process for industrial applications.
+

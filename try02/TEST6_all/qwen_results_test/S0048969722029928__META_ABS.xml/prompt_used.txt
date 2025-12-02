@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recycling of plastic wastes generated from COVID-19: A comprehensive illustration of type and properties of plastics with remedial options Plastic has contributed enormously to the healthcare sector and towards public health safety during the COVID-19 pandemic. With the frequent usage of plastic-based personal protective equipment (PPEs) (including face masks, gloves, protective body suits, aprons, gowns, face shields, surgical masks, and goggles), by frontline health workers, there has been a tremendous increase in their manufacture and distribution. Different types of plastic polymers are used in the manufacture of this equipment, depending upon their usage. However, since a majority of these plastics are still single-use plastics (SUP), they are not at all eco-friendly and end up generating large quantities of plastic waste. The overview presents the various available and practiced methods in vogue for disposal cum treatment of these highly contaminated plastic wastes. Among the current methods of plastic waste disposal, incineration and land filling are the most common ones, but both these methods have their negative impacts on the environment. Alongside, numerous methods that can be used to sterilize them before any treatment have been discussed. There are several new sorting technologies, to help produce purer polymers that can be made to undergo thermal or chemical treatments. Microbial degradation is one such novel method that is under the spotlight currently and being studied extensively, because of its ecological advantages, cost-effectiveness, ease of use, and maintenance. In addition to the deliberations on the methods, strategies have been enumerated for combination of different methods, vis-à-vis studying the life cycle assessment towards a more circular economy in handling this menace to protect mankind.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Revealing the intensification effect of circulating hydrothermal pretreatment: A sustainable route for biorefinery Hydrothermal pretreatment (HTP) has received huge progress in converting biomass waste into available products at a large scale, but challenges in massive water input and wastewater output still block sustainable biorefinery future. Herein, a circulating hydrothermal technique was proposed by reusing the process wastewater into the next HTP process to enhance energy efficiency and suppress the environmental burdens. During hydrothermal liquid (HL) recycling, the variation of lignin chemical structure, cellulose accessibility, and soluble components were investigated for an in-depth understanding of what happened to lignocellulose. An enhanced hemicellulose dissolution (from 78.1 % to ∼ 85 %) was achieved by the aqueous phase recycling. The reactions of dehydration and polymerization occurred during the circulating HTP process, which contributed to the generation of pseudo-lignin on the cellulose surface, causing a slight weakening of cellulose accessibility. Meanwhile, the organic acid-catalyzed hydrothermal process can facilitate the cleavage of lignin β-O-4 ether linkage and condensation reaction, endowing its potential amphiphilic properties. An in-depth analysis of the evolution of HL components substantiated the potential intensification effect on biomass deconstruction by the generation of hemicellulose-derived organic acids. Life cycle assessment revealed that the circulating HTP technique resulted in about a 29 % reduction in primary energy depletion and an order of magnitude reduction in CO2 emissions as opposed to that of the conventional one. This work unveils the structure evolutions of lignocellulose clearly during the HL recycled process, and also highlights a feasible route for the sustainable biorefinery.
+

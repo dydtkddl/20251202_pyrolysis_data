@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Steam catalytic cracking of crude oil over novel hierarchical zeolite–containing mesoporous silica–alumina core-shell catalysts The direct conversion of crude oil to basic chemicals was studied over novel core-shell structured ZSM-5 zeolite containing mesoporous silica-alumina (MSA) composites. A template-directed sol-gel method in an alkaline medium was used to prepare a core-shell structured ZSM-5 containing MSA composites employing CTAB as template, tetraethyl orthosilicate (TEOS), and aluminum sulfate. This approach resulted in the formation of a uniform mesoporous silica-alumina shell around the zeolite crystal. The shell thickness (tune in the 8–26 nm range) and its alumina content were controlled by varying the TEOS/zeolite and TEOS/aluminum sulfate ratios. The physicochemical properties and steam catalytic cracking performance of Arab Extra Light (AXL) crude oil were investigated to enhance the yield of C2-C4 light olefins. For comparative study, conventional and mesoporous silica-alumina composites were mixed with kaolin (50%), steam deactivated (810 °C for 6 h) and tested in a fixed-bed reactor operated at 675 °C, residence time of 10 s and steam/oil ratio (g/g) of 0.5. The optimized mesoporous silica-alumina composite Z30 @ MSA (TEOS/zeolite = 0.85 and TEOS/aluminum sulfate = 15.86) had improved textural characteristics, moderate acidity, and AXL crude oil cracking potential at higher conversion (~70%) and selectivity towards light olefins (49.4%) than the unmodified ZSM-5(30). The mesoporous core-shell composite's distinct reaction pattern resulted in the formation of a unique mesoporous silica-alumina core-shell catalyst, which eased the rapid diffusion of desired products from intra-framework channels while inhibiting the formation of coke deposits.
+

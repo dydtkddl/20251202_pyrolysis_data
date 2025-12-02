@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comprehensive review on the similarity and disparity of torrefied biomass and coal properties The use of coal for energy generation is facing serious scrutiny because of environmental concerns. As a result, there is a growing global interest in biomass, a renewable and readily available energy source. However, the utilization of biomass comes with significant drawbacks, including its heterogeneity, low bulk density, and calorific value. Biomass also has a low energy content, high moisture, poor grindability, and high volatile matter, which affect its handling, bulk transportation, and storage. Torrefaction technology has been employed in previous works to improve the properties of biomass for subsequent handling and transportation and for low-cost energy generation. Since coal is a promising precursor for energy generation, it is imperative to compare the physicochemical properties of coal with that of torrefied biomass. Therefore, this study aims to conduct a comprehensive comparison between various grades of coal and torrefied biomass. The review revealed that torrefied biomass could replace coal, as its properties are similar to those of coal, except for high-grade coals. The proximate and ultimate analyses of coals (lignite and bituminous) were found to be comparable to various torrefied biomass materials. The fuel ratio (0.5–2.0), and higher heating values (16,100–19,000 kJ/kg) of coal and torrefied biomass were within the range useful for coal-fired plants. Additionally, ash analyses, ash fusion temperature, hygroscopic tendency, functional group study, and microstructural comparison were reviewed in this study. The results from various studies have shown close similarities with only small disimilarities in the fuel properties between coal and torrefied biomass. Therefore, torrefied biomass is proposed as a complimentary feedstock to coal in various applications.
+

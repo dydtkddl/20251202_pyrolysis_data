@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+In situ formation of partially carbonized polyvinylpyrrolidone as a green binder for high-voltage Li-ion battery cathode with improved electrochemical performance We propose the in situ formation of partially carbonized polyvinylpyrrolidone (PC-PVP) as a green binder for high-voltage LiNi0.5Mn1.5O4 (LNMO) cathodes. A mixture of water and ethanol with an equal volume ratio is shown to enable a more uniform dispersion of LNMO particles in the active material matrix with fewer crevices rather than pure water or pure ethanol. Conformal coverage of LNMO with PC-PVP can be achieved through a stepwise thermal process, which not only enhances the electrical conductance of the cathode material but also protects the electrode surface from overreaction with the electrolyte at high voltages. This can be attributed to the coral reef-like structure of the PC-PVP coating layer, which offers abundant electrical contact without sacrificing ion transport pathways. In addition, the specific nitrogen-containing groups of PC-PVP promote ion transport within the electrode. Furthermore, a carbon paper (CP) substrate is introduced as a current collector to support the PC-PVP/LNMO material layer and to establish a good interconnection. Owing to these features, the PC-PVP/LNMO/CP electrode outperforms the PVDF/LNMO/Al counterpart in terms of high-voltage cycling stability and rate capability. The improved electrode performance is supported by the reduced cathode–electrolyte interphase (CEI) resistance, which corresponds to mitigated electrolyte decomposition and stable CEI formation.
+

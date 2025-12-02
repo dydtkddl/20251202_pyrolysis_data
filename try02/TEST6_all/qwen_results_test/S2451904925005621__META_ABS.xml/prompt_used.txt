@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetic and synergistic effect of co-pyrolysis of peanut straw and plastic film Investigating the kinetics and synergistic effects of co-pyrolysis of biomass and waste plastics is an effective method to improve the economic revenue of recycling these wastes. This study calculated the kinetic parameters and analyzed the synergistic effects of peanut straw (PW) and plastic film (LDPE) at mixing ratios of 1:1, 1:4, 1:7, and 1:10 using model-free and model-fitting methods. The results indicate that the co-pyrolysis of PW and LDPE reduces the apparent activation energy required for the reaction, with the lowest value of 218 kJ·mol−1 at a PW to LDPE ratio of 1:7. Analysis of the pyrolysis products reveals that as the proportion of LDPE increases, the O/C ratio of PW and LDPE gradually decreases. At a PW to LDPE ratio of 1:7, the O/C ratio reduces to 0.09, resulting in a maximum oil yield of 76 %, 16.24 % higher than the theoretical yield. As the proportion of LDPE increases, the pyrolysis-induced softening of LDPE coats the PW, thereby weakening the synergistic effect. The experiments showed that the highest pyrolysis oil yield and the most substantial synergistic effect were achieved when the ratio of PW to LDPE was 1:7. Co-pyrolysis of PW and plastic film provides a viable approach for the efficient resource utilization of waste, facilitates the synergistic treatment of agricultural and plastic waste, and offers new theoretical foundations for sustainable material and energy production.
+

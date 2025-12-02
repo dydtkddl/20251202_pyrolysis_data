@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sorptive removal of salicylic acid and ibuprofen from aqueous solutions using pine wood fast pyrolysis biochar Pine wood biochar, prepared at 698K with a residence time of 20–30s in an auger-fed reactor, was used as a 3-dimensional adsorbent to remove salicylic acid and ibuprofen from aqueous solutions. This biochar was characterized by FT-IR spectroscopy, scanning electron microscopy, transmission electron microscopy, surface area determination, and zero point charge measurements. Batch sorption studies were carried out at pH values from 2 to 10, adsorbate concentrations from 25 to 100mg/L and temperatures from 298 to 318K. The adsorption of both adsorbates was highest at low pH values, dropped as pH increased and then exhibited a second increase related to the pKa of these carboxylic acid adsorbates. This was followed by a further drop at high pH. Conjugate acid/base equilibria of the adsorbates and the phenolic hydroxyl and carboxylic acid biochar sites versus pH dominated the mechanism. Sorption followed pseudo-second order kinetics. Sorption was evaluated from 298 to 318K using the Freundlich, Langmuir, Redlich–Peterson, Toth, Sips, and Radke–Prausnitz adsorption isotherm models. Langmuir adsorption capacities for both salicylic acid and ibuprofen were 22.70 and 10.74mg/g, respectively. This low surface area pinewood biochar (1.35m2/g) can adsorb far more adsorbate compared to commercial activated carbons per unit of measured surface area. Methanol stripping achieved 93% and 88% desorption of salicylic acid and ibuprofen, respectively, from the spent biochar, and 76% and 72% of the initial salicylic acid and ibuprofen adsorption capacity, respectively, remained after four full capacity equilibrium recycles.
+

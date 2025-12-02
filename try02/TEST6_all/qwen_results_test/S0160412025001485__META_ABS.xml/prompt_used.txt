@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Technologies to eliminate microplastic from water: Current approaches and future prospects Microplastic (MP) pollution has become a widespread environmental threat which must be addressed as it affects the water bodies, soil as well as air. MPs originally from synthetic textiles, tire abrasion, plastic waste, etc. pose the significant risks to both the environment and health due to its structure, ability to absorb toxins and act as carriers of harmful substances. This characteristic enables MPs to accumulate toxic substances and spread them within the food chain which leads to adverse effects on both the environment and human health including possible endocrine disruption. This problem needs to be solved in order to protect the self-regulatory systems of the environment and safeguard for human health. This review investigates various methods developed to eliminate MPs from water which each method exposes its own strengths and limitations. Conventional methods, such as filtration, coagulation-flocculation, and sedimentation serve as the primary line of defense but often struggle with smaller particles. Membrane filtration, magnetic separation, and electrochemical methods have shown better performance particularly for a wider MPs size range. However, their adoption is limited due to high costs and high energy requirement. A chemical approach focuses on the use of reactors to degrade MPs as a means of overcoming the problem posed by the persistent particles. Biological approaches, including bioremediation through bacteria, fungi, and algae offer eco-friendly alternatives by breaking down MPs into less harmful components. Future directions in MPs management involve the integration of these technologies for enhanced removal efficiency, the development of novel materials, and improved system designs to reduce costs and environmental impact. In summary, advancing research in biotechnological solutions and optimizing existing methods is critical to address the widespread and complex nature of MPs pollution to ensure healthier ecosystems and safer water supplies.
+

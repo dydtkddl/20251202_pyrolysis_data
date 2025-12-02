@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Critical review of heat transfer advancements using bubbles injection in heat exchangers This review analyzes the role of bubble injection on the enhancement of heat transfer processes across various heat exchanger configurations. Bubble injection disrupts the formation of the thermal boundary layer, induces turbulence, and enhances convective mixing, particularly in the bubbly flow regime, which demonstrates superior thermal performance. Key mechanisms include bubble-induced turbulence, breakup, and coalescence significantly influence fluid mixing and heat transfer enhancement. Its application extends beyond traditional systems, but includes solar collectors and thermal energy storage units, offering improved thermal uniformity and efficiency. Despite these advantages, several challenges and limitations persist. Therefore, high-resolution experimental studies are required to understand small-scale turbulence and bubble dynamics more accurately. Sparger design optimization and precise control of injection parameters also demand further investigation. Empirical data are limited for plate and double pipe heat exchangers, and the effects of surfactants and non-Newtonian fluids remain underexplored. Moreover, advanced CFD models for multiphase bubbly flows, particularly in complex geometries such as shell and coil heat exchangers, are still developing. Future work should prioritize enhancing interface-capturing techniques, integrating high-fidelity turbulence and multiphysics models, and developing efficient computational algorithms. Machine learning can further support the prediction of bubble behavior and the optimization of system performance. Additionally, techno-economic analyses are crucial to assessing the cost-effectiveness of this approach. A multidisciplinary strategy is critical to fully unlock the potential of bubble injection in industrial heat transfer applications. A bibliometric analysis using VOSviewer identified Applied Thermal Engineering as the leading journal in this field.
+

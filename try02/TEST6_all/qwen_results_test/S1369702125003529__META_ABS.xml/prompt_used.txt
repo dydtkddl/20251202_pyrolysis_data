@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Integrating life into material design for living materials 4.0: Navigating challenges and future trajectories from static to dynamic evolution With over two-thirds of research in the area of “Living materials” emerging in the past five years, it is essential to not only highlight the key insights and historical milestones but also to delve into long-term implications and future challenges. This review presents a visionary roadmap for unlocking the full potential of living materials by discussing the commercially available and historically existing living materials, as well as introducing a generational categorization akin to other technological advancements. Unique to this review is a comprehensive analysis of design, optimization, evaluation, and safety, covering biocompatibility, signaling dynamics, cell-matrix interactions, and adhesion across the spectrum of self-generated to artificially integrated matrices. Herein, the detailed status of recent developments in living materials in drug delivery, cell therapy, tissue scaffolding, biosensing, building materials, and environmental applications has been presented. Besides, this review highlights the need for advanced in-vitro/in-vivo models and regulatory considerations to mitigate the long-term consequences, ensuring reliable clinical translation, industrial adoption, and market acceptability. Finally, this review pioneers the introduction of living materials into five unexplored areas; optics, packaging, coatings, energy, and textiles, marking the systematic effort to expand the field beyond its current landscape through strategic identification of emerging opportunities.
+

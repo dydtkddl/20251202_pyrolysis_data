@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Valuable oil recovery from plastic wastes via pressurized thermal and catalytic pyrolysis The accumulating amounts of long-life plastic wastes simultaneously with the global emerging need to discover alternative energy sources, have both increased the importance of plastic pyrolysis-based refineries. This study was devoted to examine the effectiveness of municipal plastic wastes recycling into a potential source of hydrocarbon fuel. Thermoplastic wastes of polypropylene (PP), polystyrene (PS), high-density and low-density polyethylene (HDPE) (LDPE), were converted into a combustible oil via semi-batch pressurized thermal (Th-PP) and catalytic pyrolysis (Cat-PP) in a fixed-bed reactor. During Th-PP, the recovered amounts of oil were (67.6 % −89.25 %) in the order PP > LDPE > HDPE > PS. Moreover, it was shown that 77.5% of the PP pyro-oil was in the range of gasoline fraction (C6 – C12) with maximum iso-paraffins of 12.52% compared to other plastic pyro-oils. The Cat-PP process, involved the catalytic cracking via a Ni-Mo-w/zeolite-based catalyst (Z-503). It was noticed that the catalyst resulted in further cracking reactions leading to the increase of the light gases vs oil product. Oil yields via Cat-PP were (55.1%–68.2%) in the order LDPE > PP > PS > HDPE. The catalytic pyrolysis showed a major tendency to the formation of diesel (C12 – C24). However, the selectivity analysis regarding both physical and chemical characteristics of the obtained oils vs conventional fuels, indicated that PP pyro-oil produced via the thermal pyrolysis, exhibited the highest selectivity of all oils towards conventional gasoline. This study has introduced a promising alternative energy source together with an effective recycling technology, solving the environmental plastic dilemma.
+

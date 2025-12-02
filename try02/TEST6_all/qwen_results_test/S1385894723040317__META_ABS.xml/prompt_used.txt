@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Assessing pyrolysis performance and product evolution of various medical wastes based on model-free and TG-FTIR-MS methods The COVID-19 pandemic has caused a substantial rise in the amount of medical waste, posing additional hurdles in waste management. Disposing of this waste properly is essential to curb transmission of the diseases. The pyrolysis reaction kinetics, synergistic interactions, and pyrolysis gas release behavior of typical constituents of medical waste (MW): syringe (SY), medical gloves (MG), cotton swab sticks (CS), and their blends were examined by utilizing advanced analytical techniques including TG, TG-FTIR, TG-MS, and kinetic models (Friedman, KAS). The experiments were conducted using a wide range of heating rates, namely 10, 20, 30, and 40 °C⋅min−1. The pyrolysis reactions were mainly endothermic, with main stages ranging from 352.0–480.0 °C, from 381.0–511.0 °C, from 200.0–404.5 °C, 336.6–509.9 °C, 375.4–477.6 °C, 384.0–500.9 °C, for SY, MG, CS, SY5MG5, SY7CS3, and MG7CS3, respectively. According to the KAS method, the average activation energies for the mono-pyrolysis of SY, MG, and CS were determined as 240.8, 226.1, and 147.5 kJ⋅mol−1 respectively. Interestingly, during the pyrolysis of blends such as SY5MG5, SY7CS3, and MG7CS3, the activation energies decreased to 177.2, 159.9, and 149.1 kJ⋅mol−1 respectively. Notably, the experimental activation energy values (Eexp) obtained during the co-pyrolysis were significantly lower than the calculated values (Ecal), revealing an apparent synergistic effect during the pyrolysis of various MW blends. The pyrolysis process of MW blends resulted in the release of significant volatile components, including CH4, CO, C3H6, CO2, C2H5OH, C4H8, C5H8, C6H6, C6H14, C7H8, and C8H10. The specific composition of these volatile components varied depending on the types of waste present in the blends.
+

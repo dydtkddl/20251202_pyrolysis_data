@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal and catalytic pyrolysis of automotive plastic wastes to diesel range fuel This study investigated the pyrolysis of automotive plastic wastes (APW) for the production of diesel-grade oil products using a modified calcium bentonite clay catalyst. The research aimed to optimize the process for maximum oil yield and diesel range organics yield. The APW was characterized by its chemical composition and physical properties and the optimal temperature and catalyst amount were determined for maximum oil yield and diesel range hydrocarbons. The results showed that the APW contained mixed Acrylonitrile Butadiene Styrene (ABS), High/Low Density Polyethylene (H/LDPE), Polypropylene (PP), Polystrene (PS) and fiberglass, with a large quantity of volatiles and ash. The average oil yield was higher in the catalytic process compared to that in the thermal process. Generally, higher temperature above 450 °C produced waxy oil, thus lower temperature favoured more Diesel Range Organics (DRO). Both processes yield similar yields of C8–C24 DRO, and in both cases, lower temperature favoured high yield of C8-C24 hydrocarbons. The catalyst significantly increased the yield of oil, but did not significantly increase C8–C24 DRO yield. The optimal conditions for a maximum oil yield of 78.6 % and DRO yield of 79.5 % was a temperature of 416 °C and 24.3 wt% clay. Thus, the modified calcium bentonite clay can be used to improve oil yield from pyrolysis of APW. The oil produced had properties such as calorific value (49.85 MJ/kg), flash point (113 °C ) and total aromatics 3.55 area%, similar to those of commercial diesel, and comprised mostly of 2,4-Dimethyl-1-heptene (25.37 ± 2.01 %) of thermal and 2, 4 – Dimethyl – 1 – heptane (23.44 ± 2.42) in the catalytic process. The study suggests further research to explore different catalysts, maximization of both DRO and gasoline range organics, recover energy from residues, and conduct techno-economic assessments for plant-scale operations. Additionally, policies on the management of end-of-life vehicles should include provisions for stripping and segregation of plastic components by accredited providers for the purpose of plastics recycling.
+

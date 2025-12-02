@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Brazing characteristics, microstructure, and wettability of laser powder bed fusion additive manufactured GRCop-84 compared to CuCrZr and OFC, and brazing to titanium-zirconium-molybdenum alloy limiters Laser Powder Bed Fusion (L-PBF) of Glenn Research Copper 84 (GRCop-84), a Cr2Nb (8 at. % Cr, 4 at. % Nb) precipitation hardened alloy, produces a fully dense, high conductivity alloy with a yield strength of 500 MPa and ultimate tensile strength (UTS) of 740 MPa with 20% elongation; superior to other competing copper alloys. Braze wetting characteristics of GRCop-84 with Ag-Cu-X, and Au-Cu brazes were similar to CuCrZr, but less than oxygen free copper. No difference in wetting was observed between infill and surface contour areas in L-PBF GRCop-84. Wet sanding to 240 grit (Ra=0.24 µm) was considered the optimal surface condition. Silver diffusing through GRCop-84 depleted Cr2Nb precipitates from the copper grain and deposited agglomerations of coarsened precipitates within silver-rich regions of intergranular diffusion once a density threshold was reached. Microstructure modification was minimized with 50Au-50Cu braze implying that silver caused precipitate coarsening and agglomeration, and not high temperature exposure. Coarsened precipitates were observed on the surface within braze pools implying a contribution to braze wetting. Palcusil-25, Ticusil, CuSil-ABA, and 50Au-50Cu brazes were suitable for brazing to unplated Titanium-Zirconium-Molybdenum (TZM), while sulfamate nickel plating to allows wetting with CuSil or other non-active brazes. Vacuum brazing techniques were developed to join a 1 mm thick layer of TZM to the front of additive manufactured GRCop-84 waveguides considering the brazing characteristics of both GRCop-84, TZM, and internal stress from the difference in coefficient in thermal expansion.
+

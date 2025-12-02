@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation of microwave-assisted pyrolysis of biomass with char in a rectangular waveguide applicator with built-in phase-shifting Fast biomass pyrolysis is a promising technique for thermochemical conversion of biomass into chemicals and biofuels (bio-oil and syngas). Microwave heating can increase process efficiency. The effect of microwave absorber and microwave power level are studied for their effect on pyrolysis process temperature, product yields, and product composition. A novel microwave system was designed with a continuous sliding short enabling phase shifting to mitigate standing wave effects in the low loss load. Pyrolysis experiments on pine sawdust were carried out at varying microwave input powers (600, 900, 1200, and 1500 W) and with varying amounts of biochar added to the feedstock (0, 10, and 20% by weight) in a 4 × 3 full factorial experimental design. Pine sawdust without the aid of microwave absorber failed to reach pyrolysis temperatures by dielectric heating, only reaching 200 °C even at 1500 W power. Pyrolysis yields were correlated to absorbed power rather than input power as temperature is more strongly correlated to absorbed power. Addition of biochar was found to have a significant effect on the absorbed powers and resulting pyrolysis temperatures, increasing temperatures 4 fold from 0% to 10% char, however, no significant difference was found when char mixture was increased from 10 to 20%. Yields of char decreased with increasing absorbed microwave power, while non-condensable gas increased, indicating increased thermal cracking to non-condensable gases with increasing process temperature. Water-free bio-oil yields were found to increase with absorbed power. The liquid product from microwave pyrolysis of pine sawdust is composed primarily of phenols, with little changes in yield at all absorbed powers. Carbonyl functional groups and furans decreased while polyaromatics increased with increasing absorbed power due to the increased decomposition of lignin. The greatest net energy yields were observed for pyrolysis run at 900 W applied microwave power and 20% char.
+

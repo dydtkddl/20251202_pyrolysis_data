@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sustainable valorisation of sewage sludge via carbon dioxide-assisted pyrolysis The escalating volume of sewage sludge (SS) generated poses challenges in disposal, given its potential harm to the environment and human health. This study explored sustainable solutions for SS management with a focus on energy recovery. Employing CO2-assisted pyrolysis, we converted SS into flammable gases (H2 and CO; syngas). Single-stage pyrolysis of SS in a CO2 conditions demonstrated that CO2 enhances flammable gas production (especially CO) through gas phase reactions (GPRs) with volatile matter (VM) at temperatures ≥520 °C. Specifically, the CO2 partially oxidized the VM released from SS and concurrently underwent reduction into CO. To enhance the syngas production at temperatures ≤520 °C, multi-stage pyrolysis setup with additional heat energy and a Ni/Al2O3 catalyst were utilized. These configurations significantly increased flammable gas production, particularly CO, at temperatures ≤520 °C. Indeed, the flammable gas yield in the catalytic pyrolysis of SS increased from 200.3 mmol under N2 conditions to 219.2 mmol under CO2 conditions, representing a 4.4-fold increase compared to single-stage pyrolysis under CO2 conditions (50.0 mmol). By integrating a water-gas-shift reaction, the flammable gases produced from CO2-assisted catalytic pyrolysis were expected to have the potential to generate revenue of US$4.04 billion. These findings highlight the effectiveness of employing CO2 in SS pyrolysis as a sustainable and effective approach for treating and valorising SS into valuable energy resources.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A novel method for industrial production of clean hydrogen (H2) from mixed plastic waste This study describes a novel Hybrid Microwave Plasma Enhanced Gasification (HMPEG) method for converting plastic waste into hydrogen (H2). Thermal processing of plastic waste is a low-cost method of producing H2. Current methods, however, such as pyrolysis and gasification, are limited by inefficient heating and contaminants in syngas, resulting in a low H2 yield. Our approach consists of a novel rotary pyrolysis reactor that employs an external microwave heater and an electrodeless microwave torch reformer, thereby addressing issues with current methods. In this study, pyrolysis of mixed plastic produces pyro-gas which is reformed at a temperature above 1500 °C by the steam plasma torch powered by microwave. The result is a 150 g/kg H2 yield with a 67 vol.% higher production rate, an H2/CO ratio of 7, and a conversion efficiency of 97.4%. Tar and dioxin concentrations in the syngas were found to be 0.078 g/Nm3 and 0.024 ng-TEQ/Nm3, respectively, much less than the legal limit. A novel microwave pyrolyzer cuts electrical power consumption by half, and the pure H2 produced is suitable for direct use in hydrogen cars, power generation, and other applications. Once implemented, the energy-efficient HMPEG could aid in expanding H2 commercial plants that use plastic waste as a raw input fuel.
+

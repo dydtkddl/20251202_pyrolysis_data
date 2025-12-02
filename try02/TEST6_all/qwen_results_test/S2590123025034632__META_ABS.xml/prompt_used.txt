@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic pyrolysis of mixed plastic wastes from public places to liquid oil: A case of Kathmandu Valley, Nepal This study addresses the challenge of plastic waste disposal by exploring its potential as an alternative fuel source. It investigates the conversion of a plastic waste mixture (20 % LDPE, 40 % HDPE, and 40 % PET) into liquid fuel through catalytic pyrolysis. Using a custom-designed small-scale pyrolysis plant, the plastic samples were converted into liquid fuel with the aid of locally sourced bentonite powder as a catalyst, at temperatures ranging from 250 °C to 450 °C. Results demonstrate that the oil yield increases with both temperature and use of bentonite powder as a catalyst. At 450 °C, 351±7.64 ml of liquid oil was produced with 10 g of catalyst, increasing to 355±4.17 ml with 15 g and 358±2.65 ml with 20 g, using 1 Kg of plastic waste sample. The retention time is reduced from 1.5 h without a catalyst to 30 min with it. A 20 % liquid oil and 80 % gasoline blend demonstrated comparable power, torque, and engine temperature with respect to standard gasoline, achieving a mileage of 19.64±1.55 Km/L, engine torque of 1.37 Nm and engine temperature of 110 °C at 3000 rpm, though higher blends show diminished performance. Key limitations include a low cetane number (43.8), use of old motorcycles, and lack of advanced chemical analysis (GC–MS/FTIR). Despite this, the study bridges lab research to practical application via intermediate-scale experiments and real-engine tests with a low-cost local catalyst. While further refining and emissions testing are needed, it highlights pyrolysis oil's potential as a sustainable fuel in the future.
+

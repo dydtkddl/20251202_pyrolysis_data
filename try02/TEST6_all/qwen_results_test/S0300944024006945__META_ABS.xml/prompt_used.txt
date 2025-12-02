@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+MXene-coated polystyrene microparticles for amorphous photonic crystal coating with enhanced color saturation, flame retardancy, and electromagnetic interference shielding To enhance the color saturation of the amorphous photonic crystal (APC) coating composed of polystyrene (PS) microparticles, MXene nanosheets were deposited on the surface of the PS microparticles through strong electrostatic attraction. Three distinct colored APC coatings were achieved using Mayer rod-coating methods, employing PS microparticles of varying sizes. The intrinsic black nature of MXenes results in these coatings exhibiting high brightness of structural colors under ambient lighting conditions. Additionally, the three distinct colored APC coatings demonstrate high color saturation and low angular dependence. The thermal stability and flame retardancy of PS and PS@MXene microparticles with different MXene content were investigated. PS@MXene microparticles (three different diameters) containing 5 wt% MXene exhibited char residues of 11.0, 8.7, and 6.7 wt% at 700 °C during decomposition, whereas pure PS microparticles showed a char residue of <1.7 wt%. The peak heat release rate and total heat release of the PS@MXene microparticles were lower than those of pure PS, as characterized by a microscale combustion calorimeter. Furthermore, crack-free APC coatings on a black polyurethane substrate were successfully prepared using the Mayer rod-coating method, assisted by polyacrylic acid and ethylene glycol. The APC coatings containing PS@MXene microparticles with 5 wt% MXene, deposited on the surface of the polyurethane film, demonstrated shielding performances of approximately 20 dB. This work presents a straightforward and environmentally friendly method for constructing multifunctional APC coatings.
+

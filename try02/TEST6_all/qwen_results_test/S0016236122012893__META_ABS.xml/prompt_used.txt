@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic effects for cellulose-based model fuels under low and high heating rate in air and oxy-fuel atmosphere The detailed catalytic influence of minerals on solid biomass in oxy-fuel combustion is yet to be fully understood. The catalytic influence of metal sulfates on a mineral-free, cellulose-based model biomass was investigated during slow and high heating in air and oxy-fuel combustion. Measurements were performed in a thermogravimetric setup in air with slow heating rates and in a flat-flame burner in oxy-fuel combustion atmosphere with high heating rates. Temperature-programmed experiments identified the catalytic activity scale of Fe > K > Na > Mg ∼ Ca in synthetic air (20% O2/He) for the sulfates. The highly active metals Fe and K were chosen for more detailed investigations in oxy-fuel combustion experiments using an additional loading of Mg as less-volatile mineral tracer. Samples doped with Fe and Mg (FeMg-MH) exhibited lower thermal stability and higher particle combustion temperatures in the flat-flame burner compared with the undoped model fuel, while the combination of K and Mg (KMg-MH) decreased the particle combustion temperature drastically during oxy-fuel combustion. X-ray diffraction patterns acquired between 25 and 800 °C showed that in FeMg-MH the mineral phases FeSO4 and MgSO4 were still separated and independently active, while the addition of MgSO4 to K2SO4 formed the stable mineral phase Langbeinite inhibiting the K mobility. The influence of metal chlorides and nitrates was also investigated by slow heating rate TGA experiments showing an overlapping of metal salts decomposition and carbon devolatilization and oxidation.
+

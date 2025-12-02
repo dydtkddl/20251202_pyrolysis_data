@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+In-depth understanding of the synergistic effect in catalytic copyrolysis of lignin-plastic mixtures with lignin-tailored hierarchical HZSM‑5 catalysts To overcome the diffusion limitations of DZSM-5 and increase the yield of hydrocarbon-rich bio-oil, a structurally tailored hierarchical catalyst was synthesized via alkaline treatment and waste biomass-derived lignin-assisted reassembly. The physicochemical properties, such as the crystallinity, porosity, acidity and morphology, were characterized with various methods. The catalytic activities were evaluated with various lignin doping contents and lignin-to-LDPE ratios. Additionally, the product distributions, reaction mechanisms and reusability were also investigated. A detailed experiment suggested that lignin significantly increased the porosity of the hierarchical catalyst and led to the formation of a well-developed micro-mesoporous structure via lignin doping reassembly, which facilitated the passage of pyrolysis volatiles. Additionally, the increased porosity and intracrystalline mesoporosity of the material resulted in excellent dehydrogenation, decarbonylation and β-O-4 cleavage activities. Lower lignin doping levels produced olefins and alkylbenzenes and inhibited PAH formation; in contrast, higher lignin loadings facilitated aromatics and BTXE formation. A synergistic effect between the lignin and LDPE was observed for HCs formation with enhanced hydrogen transfer and Diels-Alder reactions. The optimal 0.50 % C@DZSM-5 exhibited excellent catalytic activity, with a hydrocarbon yield of 71.29 % and an olefin selectivity of 30.78 % at a lignin-to-LDPE ratio of 1:1. Furthermore, 0.50 % C@DZSM-5 exhibited good reusability and stability after three runs, and ∼95 % of the content was maintained. The micropore specific surface area coverage and micropore volume blockage were the main reasons for catalyst deactivation.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of a large-scale molecular model for Illinois no. 6 coal using the ReaxFF reactive force field Reactive molecular dynamics simulations are a useful approach for investigating chemical reactions and structural transformations in complex systems. Coal pyrolysis is one such area in which additional insights would be beneficial for utilization improvements and pollution control. Here the ReaxFF reactive force field was used to perform pyrolysis simulations on a large-scale (>50,000 atoms) molecular model for Illinois no. 6 coal to examine structural modifications and reactions associated with coal pyrolysis. The previously constructed large-scale molecular model of Illinois no. 6 coal composed of 728 diverse molecules was used in pyrolysis simulations at 2000K for 250ps. This high temperature enabled chemical reactions to occur within a practical simulation time. The ReaxFF simulation was performed until about 60% of the cross-links had been disrupted primarily through thermolysis. For this coal pyrolysis was mainly initiated by the release of hydroxyl groups, dehydrogenation of hydroaromatic structures, and by cleavage of heteroatom-containing cross-links. The main pyrolysis products were hydrogen, methyl, ethylene, acetylene, formaldehyde, ethynol, alkylphenols, alkylnaphthalenes and alkylnaphthols, in agreement with experimental data. During pyrolysis the molecular weight distributions shifted to lower molar mass values due to thermal decomposition to form smaller fragments. Tar structural components were also found to be in reasonable agreement with literature data. The thermal degradation of sulfurated and oxygenated cross-links was more substantial than that of alkyl linkages, indicating a higher reactivity around these heteroatoms. Analysis of sulfur form distribution showed that aliphatic sulfur decomposed more rapidly while thiophenic sulfur was more thermally stable, in agreement with experimental results. The extent of decomposition for heterocyclic 5-membered rings was as follows: 57% for pyrrolic, 47% for thiophenic, and 29% for furanic type structures. The ReaxFF simulation was repeated on a sulfur-free model to further analyze the role of organic sulfur forms in Illinois coal pyrolysis. Analysis of trajectories showed that the rate of generation of inorganic gases and tars was higher in the presence of sulfur. Further analysis of ReaxFF simulations showed that aryl and alkyl CS bonds are weaker than aryl and alkyl CC bonds. Hence, cleavage of the CS bonds resulted in more extensive fragmentation leading to larger quantities of aliphatic and aromatic structures that evolved as inorganic gases and tars within Illinois coal model (sulfur containing) compared to sulfur-free model. Thus, sulfur atoms enhanced the reaction kinetics during coal pyrolysis. This work demonstrates that ReaxFF integration with representative coal molecular models can be a useful tool for probing complex chemical processes and transformations involved in coal pyrolysis.
+

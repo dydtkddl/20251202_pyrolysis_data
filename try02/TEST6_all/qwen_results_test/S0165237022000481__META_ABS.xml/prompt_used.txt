@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Multi-products oriented co-pyrolysis of papers, plastics, and textiles in MSW and the synergistic effects Plastics, papers, and textiles are the main dry waste components of municipal solid waste (MSW). Product-oriented pyrolysis of these wastes under proper blend ratio could be important not only for improving the quality of char, oil, or gas from MSW pyrolysis, but also for enhancing the recycle of plastics from MSW. In this study, the pyrolysis characteristics of papers (ivory board, coated duplex board with grey back, kraft paper and offset printing paper), plastics (polypropylene and polyethylene), and textiles (cotton and polyester) were studied using thermogravimetric-Fourier transform infrared (TG-FTIR) analysis, gas chromatography (GC) and gas chromatography-mass spectrometry (GC-MS) to obtain the optimum blend ratios for the desired products (gas, oil, volatile and char). The synergistic effects amongst different components during pyrolysis were investigated. Results showed that the co-pyrolysis of papers, plastics, and textiles under equal blend ratio promoted the production of aromatics, alkenes, water, alcohol, and phenol in volatile, but inhibited the production of CO2, CO, alkanes, and carbonyls. The optimum mass blend ratios were found to be paper: plastic: textile = 25 wt%: 50 wt%: 25 wt% and 12 wt%: 50 wt%: 38 wt%, respectively for obtaining the highest energy share in volatile and gas. While for producing char with higher surface area, higher paper ratio and lower plastics ratio is preferred. When the plastics percentage in mixture was increased from 12.5 wt% to 25 wt%, the oxygenates percentage in pyrolysis oil was reduced from 82 area% to 19 area%, further increase in plastics percentage, or, alterations of papers and textiles percentages did not show significant influence on oil composition, indicating that plastics can be recycled, without lowering the calorific values of pyrolysis oil or MSW for incineration, when their blend ratio in MSW exceeds 25 wt%.
+

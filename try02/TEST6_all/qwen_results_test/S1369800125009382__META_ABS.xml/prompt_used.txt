@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Perovskite materials for multifaceted energy applications: From fundamental properties to industrialization challenges Perovskite materials exhibit transformative potential across energy technologies—including photovoltaics, catalysis, energy storage, and optoelectronics—due to their tunable crystal structures, exceptional optoelectronic properties, and solution processability. This review examines how dimensional engineering (0D quantum dots to 3D frameworks) harnesses quantum confinement, anisotropic charge transport, interfacial architectures, and catalytic platforms to optimize carrier dynamics and functional performance. However, widespread deployment confronts critical bottlenecks: intrinsic instability under moisture/heat/light stress, scalability limitations in large-area fabrication, environmental concerns regarding lead content, and synthesis-dependent defect control. Emerging solutions leverage synergistic strategies such as low-dimensional heterostructures for defect passivation and stability enhancement, multi-cation/halogen alloying to suppress ion migration, and advanced processing techniques for uniform film formation. Future advancements require integrated material-process co-design spanning atomic-scale lattice engineering to system-level integration. Priority directions include developing self-healing perovskite frameworks responsive to operational stressors, establishing closed-loop green manufacturing protocols, and implementing lead-immobilization strategies throughout device lifecycles. Cross-disciplinary innovation in intelligent material design and scalable production will accelerate perovskite adoption in flexible electronics, grid-storage systems, and carbon-neutral technologies, ultimately bridging the gap between laboratory breakthroughs and industrial implementation.
+

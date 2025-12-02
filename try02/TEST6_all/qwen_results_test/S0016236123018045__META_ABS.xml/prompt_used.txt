@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Insight into the engine performance of pyro-oil synthesized through catalytic co-pyrolysis of mixed waste plastics in the presence of dolomite modified with silica and ZSM-5 The production of hydrocarbon-rich liquid fuels from mixed waste plastics through the catalytic pyrolysis process is reported including engine performance. Four different catalysts, viz., DOL, SiDOL, ZSM-5, and ZSMDOL, were prepared and characterized using XRD, FTIR, FE-SEM, and EDX. The catalytic activity was assessed in pyrolysis process to produce pyro-oils. The fuel properties were determined using various ASTM methods. The analysis showed that catalysts can change fuel properties such as viscosity, density, cloud & pour points, flash & fire points, calorific values, etc. The GC–MS results suggested a higher fraction (66–85%) of lower hydrocarbons (<C12) are formed during catalytic cracking as compared to thermal cracking (∼51%). FTIR and NMR analysis confirmed the presence of different hydrocarbons (paraffin, olefin, and aromatics) in pyro-oils. A higher percentage of aromatic hydrocarbons was seen with ZSM-5 catalyst due to diffusion of primary pyrolysis products into catalyst pores resulting in formation of aromatics via a common hydrocarbon pool and higher H/C value in the feedstock. Engine performance test with 10% pyro-oil blending enhanced the brake-thermal efficiency by 1.01–10% and reduces brake-specific fuel consumption by 8.72–10.1%. On the other hand, CO emission was reduced by 40.4%, 20%, 16.1%, 8.9%, and 6.2% when commercial diesel was blended with PO-NC, PO-DOL, PO-SiDOL, PO-ZSM, and PO-ZSMDOL, respectively. Similarly, the emissions of HC and NOx were reduced by 61% and 10.85%, respectively, when the pyro-oil blend was used. Approx. 54% reduction in carbon residue was also achieved in the case of catalytic pyro-oils blended fuel sample.
+

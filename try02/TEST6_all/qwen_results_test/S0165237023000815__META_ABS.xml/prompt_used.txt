@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A thermoanalytical insight into the composition of biodegradable polymers and commercial products by EGA-MS and Py-GC-MS Biodegradable polymers are proposed as a potential solution to environmental problems related to plastic pollution. Potential benefits have been suggested in applications such as agricultural mulching and fishing gear, where there can be considerable difficulty recovering products from the environment at the end of their service life. Biodegradation is a complex process influenced by both the properties of the material and the receiving environment in which it needs to biodegrade. Assessing the degradation process necessitates the chemical composition (i.e. polymer and additives) of biodegradable products to be characterised by reliable analytical methods. Pyrolysis coupled to Gas Chromatography and Mass Spectrometry (Py-GC-MS) and Evolved Gas Analysis coupled to Mass Spectrometry (EGA-MS) are emerging techniques to characterise plastic materials, providing a greater sensitivity and resolution when compared to more widely used spectroscopic techniques (FTIR and Raman). In this work, we have applied a systematic approach combining EGA-MS and multi-shot Py-GC-MS for the thermoanalytical investigation of 5 biodegradable polymers and 5 biodegradable-labelled commercial products. We identified thermal degradation profiles, main m/z ions and pyrolysis markers for the polymers PBAT, PBS, PBHV and two types of PLA. We applied the obtained information to investigate the composition of 4 mulch films and 1 fishing net. EGA-MS was fundamental to optimise single or multi shot pyrolysis acquisition, allowing an optimal Py-GC-MS separation and identification of the pyrolysis products. PLA and PBAT were detected in three mulch films, with the addition of starch in a film labelled as Mater-Bi and in one of unknown composition. Online silylation was crucial for detecting polysaccharides in a composite film containing hemp fibres. The presence of butylene, succinate, adipate and terephthalate units was highlighted analysing a fishing net made of a newly developed PBSAT resin. Finally, Py-GC-MS was effective in identifying the presence of additives such as 1,6-diisocyanato-hexane (chain extender) and di(3-butenyl) ester of sebacic acid derived from the plasticizer dibutyl sebacate.
+

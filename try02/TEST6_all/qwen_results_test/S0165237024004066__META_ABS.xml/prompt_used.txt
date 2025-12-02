@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Theoretical and experimental study on the pyrolysis of N-methylpyrrolidone As a widely used organic solvent, N-methylpyrrolidone (NMP) may suffer thermal decomposition during large-scale industrial usage. The complex potential energy surface and corresponding pressure-dependent rate coefficients of NMP and NMP radicals were obtained at a high level of theory. The intermediates and products of NMP pyrolysis within 900–1200 K were identified and measured by synchrotron vacuum ultraviolet photoionization mass spectrometry. Theoretical calculations show that the Keto-enol tautomerization and direct ring-opening channel yielding C2H4, CO, and CH3NCH2 exhibit the highest rate coefficient among NMP unimolecular reactions at low and high temperatures, respectively. However, the fuel decomposition process cannot be exclusively dominated by single low-barrier channel. The ring-opening reaction forming imino aldehyde radical and following decarbonylation reactions are favored channels during the NMP radical decomposition, while the formation of the dihydropyrrolidone via H or CH3 loss competes with them at higher temperatures. Various smaller heterocycle radicals can be produced and act as intermediates for the multi-step isomerization of the ring-opening products with a relatively low energy barrier, changing the position of the functional group and radical site. A variety of nitrogenous and oxygenated species were observed in the experiment, such as ketene, methyl isocyanate, pyrrole, benzene, and different kinds of imines. Among them, C2H4, HCN, and CO are the major products for NMP decomposition. Potential reaction pathways from NMP to the major experimentally observed products were inferred based on the calculated results and existing knowledge on the pyrolysis of nitrogenous and oxygenated compounds. These results shed light on the complex C/H/O/N reaction system. The calculated rate coefficients and extensive mole fractions data could provide good support for the modeling of a detailed reaction mechanism in the future.
+

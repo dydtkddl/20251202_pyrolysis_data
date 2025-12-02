@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermophilic and mesophilic biogas production from PLA-based materials: Possibilities and limitations Recently, the use of bio-based products, including biodegradable poly(lactic acid) (PLA), has increased, causing their rapid growth in municipal waste streams. The presence of PLA in biowaste may increase biogas production (BP). However, the rate of PLA biodegradation, which affects the time frame of anaerobic digestion, is a key parameter for an efficient process. In this study, detailed kinetics of BP from PLA were determined at 58 °C and 37 °C. At both temperatures, lag phases were observed: 40 days at 37 °C, and 10 days at 58 °C. After the lag phase BP proceeded in two phases, differed in process rate. At 58 °C, during the 1st phase (up to day 30), the rate of BP (rB1,58) equaled about 35 L/(kg OM·d). At the end of this phase, the amount of biogas was 710 L/kg OM, which constituted 84% of the maximal BP (831–849 L/kg OM). In the 2nd phase (10 days), only 13% of maximal BP was produced (rB2,58 of 16.1 L/(kg OM·d)). At 37 °C, maximal BP (obtained after 280 days) was 1.5-fold lower (558–570 L/kg OM) than at 58 °C. In the 1st phase (100 days), rB1,37 was 1.4 L/(kg OM·d); at the end of this phase, BP constituted merely 14% of the maximal BP. A majority of biogas was produced in the 2nd phase (the next 180 days), and rB2,37 doubled to 2.6 L/(kg OM·d)). At 58 °C, intensive biogas production took place when PLA pieces were still visible. At 37 °C, in contrast, biogas was mainly produced when the PLA pieces had been disintegrated. Although PLA anaerobically biodegrades and produces a high yield of biogas, the time frame of PLA digestion is much longer than that of biowaste and, in thermophilic conditions requires separate digesters. In mesophilic conditions, however, is unacceptable at technical scale.
+

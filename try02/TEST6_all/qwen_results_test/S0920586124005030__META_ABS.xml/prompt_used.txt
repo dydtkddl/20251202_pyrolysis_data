@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Desulfurization reactions of thiophene and cyclohexane over Zn and Nb modified zeolites in FCC process In refineries, one of the most important production units is Fluid Catalytic Cracking (FCC). In them, the incorporation of additives to the catalyst is a very interesting option to reduce the sulfur content of gasoline, and thus obtain commercial fuel specifications. In this study, the transformation of thiophene into a cyclohexane (HC) stream for its in-situ desulfurization has been investigated, using catalysts based on niobium or zinc (6 wt%) incorporated into three types of zeolites: HUSY, HBeta and HZSM-5. Catalytic tests were carried out at 773 K in an automatically controlled fixed-bed tubular reactor. The reaction products were analyzed online by gas chromatography, with FID detector for hydrocarbons and SCD for sulfur compounds, and the catalysts were characterized by XRD, FTIR, N2 adsorption isotherms, HRTEM, XRF, 29Si and 27Al solid state NMR, NH3-TPD and FTIR-pyridine techniques. The results indicate that the addition of metals did not significantly alter the textural and structural properties of the zeolites, and that the Nb/HB and Nb/HY catalysts were the most effective in the conversion of thiophene, and selective toward paraffins and H2S mainly. The performance of these materials was attributed to the existence of an optimal balance between the Brønsted and Lewis acid sites, which increased the hydrogen transfer coefficient (HTC) during the cyclohexane transformation, resulting in higher desulfurization activity. The addition of zinc drastically increased the density of the Lewis acid sites and decreased the HTC, favoring the production of aromatics and thiophene condensation reactions, thus transferring sulfur to the gasoline streams. In general, the catalysts investigated are of significant interest as additives for sulfur reduction in FCC gasoline streams, either by producing easily removable H2S or by transferring sulfur to heavier fractions.
+

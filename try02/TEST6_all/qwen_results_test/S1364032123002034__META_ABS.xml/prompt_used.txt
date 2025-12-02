@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Valorization of hazardous plastic wastes into value-added resources by catalytic pyrolysis-gasification: A review of techno-economic analysis Plastic waste pollution has grown exponentially since the 1950s. This situation was exacerbated when the volume of personal protective equipment (PPE)-based plastic waste surged after the COVID-19 pandemic. Plastic waste management such as landfills and incineration have adverse effects on the environment and human health due to the leaching of hazardous chemicals and the emission of toxic gases. Modern solutions such as biodegradable plastics and green brick technology are expensive and not well developed to valorize the current accumulation of plastic waste. This has led to the emergence of thermal degradation processes, which is faster and more realistic to solve the PPE-based plastic waste buildup. Pyrolysis and gasification systems to valorize plastic waste into hydrocarbons and fuels are discussed and compared with examples respectively. Scoping review approach is employed to conduct this study. To further increase the value of the final product of plastic waste management, the integrated pyrolysis system to upcycle plastic waste to carbon nanomaterials (CNMs) and the factors affecting the production of non-condensable gases are critically reviewed. The importance of feedstock composition, catalyst type, pyrolysis operating condition (including gas condition and temperature profiles) based on various studies is discussed. The potential and limitation of an integrated pyrolysis system are assessed from kinetic analysis, economic analysis and life-cycle assessment. This review is expected to contribute to the industrial-scale development of sustainable upcycling of plastic waste and enhance the production of desirable gas components for CNM synthesis for environmental sustainability.
+

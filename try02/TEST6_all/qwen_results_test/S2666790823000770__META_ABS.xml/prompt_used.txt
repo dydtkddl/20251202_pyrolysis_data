@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Modelling and optimisation of intermediate pyrolysis synthesis of bio-oil production from palm kernel shell A Palm Kernel Shell (PKS) is an enclosed shell obtained as residue from processing palm kernel. Its regarded as lignocellulosic biomass that serves as an abundant renewable energy source. The thermal and physicochemical behaviour was investigated, and results showed a low Fixed Carbon (FC) (22.60 wt%), high Volatile Matter (VM) (74.60 wt%), and high Higher Heating Value (HHV) of 19.78 MJ/kg. The elemental results showed the presence of C (48.70 wt%), H (5.58 wt%), N (0.23 wt%), O (45.02 wt%), and S (0.04 wt%). The fixed-bed pyrolysis reactor was utilised for the decomposition of the PKS to produce an optimum bio-oil of 47.10 wt% at temperature (520 °C), reaction time (15 min), nitrogen (175 cm3/min), particle size (0.70 mm), and heating rate (22.5 °C/min). The efficient Response Surface Methodology (RSM) via Central Composite Design (CCD) was employed to model and optimise the operating parameters. P<0.05, a high F-value for bio-oil makes the established model predicted, suitable, responsive, and reliable. The actual and predicted value for the quantity of bio-oil produced showed clearly that the data is reasonably in consonance with the predicted value. Screening with FT-IR revealed that the peak of 3339.7, 1416 cm−1 attributed to O–H stretching vibrations depicted the presence of alcohol and carboxylic acids, respectively, the resent, while the peak at 1636.3, 1274.7 was due to C–H bend and C–O stretch indicating the presence of aromatic compounds and aromatic ester respectively. The most significant element in the bio-oil obtained via Gas Chromatography–Mass Spectrometry (GC–MS) analysis is phenol, 9, 17 – octadecadienoyl, oleic acids, 2-cyclo pentane-1-one, and pent ethylene glycol are the by-products in the sample. Hence, the bio-oil produced is suitable for high-speed diesel engines, vehicle locomotion, powering heavy machines, marine equipment, manufacturing industries, and mining types of machinery. This is a significant contribution in the field of bio-oil production and application.
+

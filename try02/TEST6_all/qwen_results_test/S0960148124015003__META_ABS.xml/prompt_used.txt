@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Integrating microwave pyrolysis and hydrotreating for converting low-density polyethylene into jet fuel With the increasing plastic waste and its environmental impact, finding effective recycling solutions is essential. Cracking plastic waste followed by hydrogenation could be a promising method for producing jet fuels. In the present work, microwave-assisted pyrolysis (MAP) with MgO combined with hydrotreating with a Ni/Biochar catalyst was firstly proposed to convert low-density polyethylene (LDPE) into jet fuel. The pyrolysis process yielded 48.5 wt% of liquid product, with C5−C15 hydrocarbons and olefins accounting for 87.6% and 65.5%, respectively. During the hydrotreating process with 10% Ni/Biochar at 300°C of temperature and 2 MPa of initial H2 pressure, the pyrolysis oil was successfully hydrotreated, resulting in 98.4% paraffins and 1.6% aromatics with liquid yield of 80.6 wt%. Among them, C5−C15 hydrocarbons created 96.1%. The kinetic analysis indicated an activation energy of 89.9 kJ/mol for hydrogenated LDPE pyrolysis oil (HPPO). Characterization of the Ni/Biochar catalyst after reaction showed a BET surface area of 438 m2/g, similar to that of the fresh catalyst, with minimal coke formation noted via XRD, TEM, and TG analyses. XPS and FTIR indicated negligible oxidation of Ni0 during hydroprocessing. After 6 cycles, the catalyst remained high abundance for paraffins and C5−C15 hydrocarbons, namely, 98.4% and 94.0%, respectively, demonstrating its stability.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Review on advancing heavy metals removal: The use of iron oxide nanoparticles and microalgae-based adsorbents Industrial effluent comprises several highly toxic substances that have polluted water and harmed natural resources. The existence of heavy metals in wastewater, on the other hand, limits the biodegradability of major organic pollutants, transforming them into long-term ecosystem components. Membrane separation, advanced oxidation, and adsorption have all been used to treat wastewater, but adsorption has proven to be preferable due to its low technical skill demand and relatively high pollutant removal efficiency while employing a low adsorbent dose. As a result, one of the approaches that has yielded promising results and sparked widespread attention is the synthesis of novel adsorbents. Recently, there has been a lot of interest in immobilizing microbial cells on biosorbents to reduce contaminants. Compared to other biological treatment technologies, biosorbent immobilized microorganisms can increase microbial abundance, repeated utilization ratio, microbial metabolic capability, and so on. However, the study on this approach is still in its early stages. The interaction between biosorbent and microbes has received little attention, with many research projects limited to laboratory settings. Further explanation is needed to address issues such as challenging recovery and secondary contamination from remaining contaminants following biosorbent adsorption. This article provides a detailed overview of biosorbent-based wastewater treatment technologies. It investigated the mechanics of immobilized microorganisms and assessed their applicability in wastewater treatment using biosorbents.
+

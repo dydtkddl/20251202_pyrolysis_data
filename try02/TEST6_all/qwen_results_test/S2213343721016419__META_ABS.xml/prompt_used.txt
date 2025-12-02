@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Degradation of organic pollutants in hazardous spent sulfuric acid by catalytic oxidation reaction with agricultural waste-derived catalyst The discharge of spent sulfuric acid generates significant toxic wastes and poses serious hazards to the environment. The effective treatment of spent sulfuric acid remains a great challenge because conventional thermochemical pyrolysis is limited by energy-intensive processing, high equipment investment, and severe equipment corrosion. In this study, we propose an energy-efficient and moderate catalytic oxidation reaction to treat spent sulfuric acid. During the catalytic oxidation reaction, the organic pollutants, especially refractory acid-soluble oil (ASO), in the conversion of spent sulfuric acid and ammonia wastewater were oxidized and degraded into CO2, H2O, and inorganic structures with H2O2 as the oxidant and ozone-treated activated carbon (OAC), derived from coconut shells, as a catalyst. The catalytic activity of OAC enhanced the degradation efficiency of organic pollutants under mild conditions, which was ascribed to the abundant acidic functional groups, and the anchored metal ions on the OAC promoted the generation of highly reactive radicals. The purified (NH4)2SO4 solution with an ASO removal of 96.4% and total organic carbon (TOC) removal of ~92% under the optimum conditions was used to prepare the qualified (NH4)2SO4 product. This work demonstrates the effective utilization of spent sulfuric acid and a cost-effective route to prepare catalysts from agricultural waste for the oxidative degradation of organic pollutants.
+

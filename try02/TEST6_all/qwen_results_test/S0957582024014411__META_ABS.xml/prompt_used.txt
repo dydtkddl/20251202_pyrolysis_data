@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic conversion of plastic waste into diesel fuel through pyrolysis and hydroprocessing This study evaluates the potential of hydro-processed plastic pyrolysis oil (HPO) as a sustainable alternative fuel derived from mixed plastic waste. The physicochemical properties of diesel, mixed plastic pyrolysis oil (MPPO), and HPO were thoroughly analyzed according to IS standards, enabling a direct comparison and alignment of HPO characteristics with EN590 diesel fuel standards. Gas chromatography-mass spectrometry (GC-MS) analysis identified key fuel components—n-alkanes, alkenes, benzene, and naphthalene with HPO showing 98 % compositional similarity to commercial diesel. The HPO blend with various percentage of pure diesel ratio is (30:70, 60:40 and 90:10). The hydroprocessing technique effectively reduced the alkene content of MPPO, enhancing the purity and quality of the resulting HPO. This refinement was crucial in ensuring that the oil met the necessary fuel standards. Engine performance evaluations further indicated that blending HPO with conventional diesel resulted in emissions with 95 % similarity to those of standard diesel fuel. This close match in emission profiles underscores the potential of HPO as a cleaner and more environmentally friendly fuel alternative. Additionally, the increased aromatic content in HPO, due to hydroprocessing, significantly improved combustion properties. This enhancement not only supports the feasibility of using HPO as a substitute for traditional diesel but also suggests that HPO may offer superior performance in specific applications. Overall, these findings highlight the potential of HPO as a sustainable fuel option, capable of addressing the environmental impacts associated with both plastic waste and fossil fuel consumption. The study demonstrates the environmental benefits of converting plastic waste into valuable fuel through pyrolysis and hydroprocessing, offering a promising strategy for sustainable plastic waste management and advancements in environmental sustainability and the fuel industry.
+

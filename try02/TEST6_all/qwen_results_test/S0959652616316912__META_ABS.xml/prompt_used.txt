@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Lignin valorization from side-streams produced during agricultural waste pulping and total chlorine free bleaching Blue agave biomass (bagasse and leave fibers) was subjected to an organosolv pulping process along with a total chlorine free bleaching sequence to obtain cellulose for nanocellulose production. In this work, black liquors were collected after each pulping and bleaching stages, isolating lignin by selective precipitation. Physico-chemical characterization of the different samples was accomplished. Higher yields in lignin extraction are achieved from bagasse than from leaves. High recovery lignin yields could be achieved (∼90% for bagasse and ∼75% for leaves. As it was expected, the lignin extraction yields were reduced as bleaching sequence went on. An exhaustive physico-chemical characterization of all the samples was accomplished. The purity of the lignins, referred to the acid insoluble and soluble lignins, were lower for the bleaching stages, but remained with a purity level higher than 75% for every sample, which is a good purity level compared to lignin from other feedstock, and higher than 85% for the lignin from organsolv stage regardless of its source and being always higher for organsolv lignin than leaves ones. The molecular sizes of lignin samples were also measured. Chemical analysis was effected through Fourier transform infrared spectroscopy, nuclear magnetic resonance and pyrolysis, establishing in this way the chemical structure of the different lignins. Thermal properties were evaluated demonstrating by this the potential of valorization of lignin as part of an integrated biorefinery process. Bagasse lignins presented higher yield, purity and even better conditions in some case to be use in an integrated biorefinery.
+

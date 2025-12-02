@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-gasification of rice husk and industrial organic waste: Performance evaluation and ash characterization Co-gasification boosts syngas quality and conversion efficiency by leveraging the benefits of multiple feedstocks. It also facilitates improved waste management, lowers greenhouse gas emissions, and aids in shifting towards cleaner and sustainable energy systems. The present work investigates, for the first time, the use of Rice Husk and Industrial Organic Waste (derived from a mixed industrial cluster of pharmaceutical and dye industries) for efficient co-gasification. It further examines the impact of the equivalence ratio (ER) on gasification parameters and the characterization of the resultant ash. A syngas purification mechanism-equipped laboratory-scale downdraft gasification setup was used for the study. The impact of two different ERs (0.25 and 0.29) on the co-gasification of Industrial Organic Waste and Rice Husk of varying proportions was investigated. The Lower Heating Value (LHV) of the syngas, temperature profiles inside the gasifier, syngas composition, and carbon conversion efficiency were examined. Feedstock consisting of 50 % Industrial Organic Waste and 50 % rice husk exhibited the best co-gasification performance with syngas composition of 17.22 % H2 and 23.3 % CO with a LHV of 5.25 MJ/Nm3 and Carbon Conversion Efficiency (CCE) of 25.69 % at an ER of 0.25. Furthermore, physicochemical properties of ashes generated from co-gasification were examined using Fourier Transform Infrared Spectroscopy (FTIR), X-ray Diffraction (XRD), X-ray Fluorescence (XRF), Thermogravimetric Analysis, Proximate and Ultimate Analysis. The present study promises to open further avenues in co-gasification using organic wastes in industrial clusters, underlining its potential as a scalable strategy for energy generation and sustainable waste valorization.
+

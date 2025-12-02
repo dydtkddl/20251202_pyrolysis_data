@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The behavior of heteroatom compounds during the pyrolysis of waste composite plastics Multilayer composite packaging plastic is commonly used in daily life. Due to the complex structures and the existence of heteroatoms, such as nitrogen and oxygen, the recycling of this kind of plastic is challenging. Recycling through the pyrolysis method may provide an efficient option with respect to the mechanical and solvent methods. An understanding of the behaviour of heteroatoms during pyrolysis is significant to optimize the operating conditions. In this work, two composite packaging plastics of PET/LDPE (Polyethylene Terephthalate/Low Density Polyethylene) and PA/LDPE (Polyamide//Low Density Polyethylene) were pyrolysed at various temperatures between 400 and 500 °C in a fixed bed reactor. Heteroatom balance and composition analysis were conducted. Especially, the composition of O- and N-containing compounds in oils was fully understood by using GC-MS (Gas Chromatograph - Mass Spectrometer) and APPI FT-ICR MS (Atmospheric Pressure Photoionization Fourier Transform-Ion Cyclotron Resonance Mass Spectrometer) instruments. At 400 °C, only 2.2 wt% oxygen was left in 53.9 wt% solid residues for PET/LDPE and 3.6 wt% nitrogen was retained in 61.0 wt% solid residues for PA6/LDPE, whereas nearly no oxygen was retained in solid residues for PA6/LDPE. So the PET/PA6 can be degraded in a much lower temperature range than LDPE indicating the possibility of separating heteroatoms by step-wise pyrolysis. A large amount of O-containing compounds were observed in oils from PET/LDPE pyrolysis, while O, N-containing compounds existed in oils from PA6/LDPE. The APPI FT-ICR MS analysis revealed that parts of O-containing compounds were generated through the interaction between O-containing functional groups and aliphatics during the PET/LDPE pyrolysis. For PA6/LDPE, the deoxygenation reaction was easier to occur than the denitrification reaction.
+

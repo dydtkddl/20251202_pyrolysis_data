@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic pyrolysis of plastic waste using activated carbon from cotton waste This study introduces a novel approach to plastic waste management and energy recovery by synthesizing highly porous activated carbon from an often-overlooked resource, waste cotton fabric (WCF), using H3PO4 as an activating agent. The synthesized waste cotton fabric activated carbon samples (WCF-AC) were utilized as a solid acid catalyst in the catalytic pyrolysis of low-density polyethylene (LDPE), with the aim of converting LDPE into fuel-range hydrocarbons. This research highlights the potential of bio-based waste materials in the synthesis of eco-friendly and cost-effective catalysts for feedstock recycling. The impact of the H3PO4 impregnation ratio and the carbonization/activation temperature on the physicochemical properties of the resulting WCF-AC samples was investigated, providing valuable insights into the optimization of activated carbon production. The catalytic activity of the synthesized WCF-AC samples was evaluated, demonstrating a reduction of 12°C in the LDPE degradation temperature. Furthermore, this work revealed a substantial increase in the formation of carbocyclic compounds, with light aromatics such as benzene, toluene, and xylene constituting up to 43 % of the pyrolysis output. In certain instances, a decrease in heavier hydrocarbons beyond C11 was observed, indicating the selective yield of specific range hydrocarbons. This study underscores the potential of bio-based acid catalysts, such as the synthesized activated carbon presented here, in plastic recycling. The approach adopted in this research aligns with the principles of the circular economy, promoting resource efficiency and sustainability.
+

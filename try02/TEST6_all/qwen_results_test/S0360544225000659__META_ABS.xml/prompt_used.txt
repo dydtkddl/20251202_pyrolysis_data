@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unveiling the role of Pd-Ni @ 2D/3D catalyst for the production of Bio-Jet(A) fuel analogues from biomass-derived compound: Multi-parameter optimization and kinetic-thermodynamic investigation Addressing the current energy crisis and environmental pollution, this study aims to improve the efficiency of hierarchical zeolite catalysts in the hydrodeoxygenation process and convert eugenol, a component of a biomass-derived model compound, into renewable bio-jet fuel. Specifically, the research investigates the sustainable production of renewable biofuel analogues such as n-Propyl benzene, Jet-A fuel range hydrocarbon in the ASTM D 1655 specification record, by breaking down complex oxygenate bonds in eugenol using a highly versatile catalyst consisting of Pd and Ni supported on SBA-15/HZSM-5. The SBA-15/HZSM-5 catalyst demonstrated exceptional performance due to the synergistic effect of its micro- and mesoporous properties. The SBA-15/HZSM-5 was meticulously fabricated using the hydrothermal method, followed by the impregnation of different wt.% of Pdx-Ni10-x (x = 1,3, and 5) into the SBA-15/HZSM-5. Various characterization techniques were employed to evaluate the produced hierarchical catalysts. The optimal catalyst, 3 % Pd–7% Ni/SBA-15-HZSM-5, exhibited a 100 % conversion rate with a maximum yield of 40.80 % for n-Propyl benzene at 350 °C in a fixed bed vapour phase reactor, demonstrating its potential as a Bio-Jet(A) fuel analogue under atmospheric pressure. The catalyst maintained consistent stability and reproducibility over five cycles, highlighting its practical applicability and potential for industrial-scale renewable fuel production.
+

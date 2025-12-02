@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhancing strength and CO₂ uptake in lignite-based fly ash geopolymer mortar through supercritical carbonation This study demonstrates the potential of supercritical CO₂ curing to enhance the performance and sustainability of lignite-based fly ash geopolymer mortar offering a promising approach to reducing CO₂ emissions in the construction industry while improving material properties. The research comprehensively compared conventional curing (GEO-REF) with supercritical CO₂ curing (GEO-CO₂), revealing that GEO-CO₂ samples exhibited higher compressive and flexural strengths, achieving peak performance almost immediately after curing. Supercritical CO₂ exposure resulted in enhanced carbonation, with a depth of up to 7.6 mm and a carbonation rate of up to 67 %. XRD confirmed phase changes due to CO₂ curing, with GEO-CO₂ showing additional calcium carbonate-calcite, calcium carbonate-aragonite, and calcium silicate hydroxide compared to GEO-REF. Nitrogen adsorption/desorption studies indicated larger pore diameters but a reduced BET surface area in GEO-CO₂ samples, suggesting structural changes due to CO₂ exposure. TGA analysis revealed that supercritical CO₂ curing reduced water retention and enhanced carbonation, resulting in increased CaCO₃ content and changes in Ca(OH)₂ levels.
+

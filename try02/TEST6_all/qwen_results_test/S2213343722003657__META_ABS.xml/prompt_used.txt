@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Low temperature upcycling of polyethylene to gasoline range chemicals: Hydrogen transfer and heat compensation to endothermic pyrolysis reaction over zeolites Selective production of gasoline ranged chemicals were of great interest in the field of plastic upcycling. This work reports exothermic hydrogen transfer reaction which was observed when HY zeolite was adopted to catalytic pyrolyze the polyethylene to gasoline ranged chemicals, while it was not observed when H-ZSM5 was used as catalyst. Both zeolite catalysts could significantly bring down the reaction temperature from 500 to 300–350 °C. TG-FITR analysis revealed that products obtained with HY zeolites were dominated with saturated hydrocarbons as compared to H-ZSM5 where the combination of alkanes, alkenes, and aromatics was obtained. In addition to the formation of saturated compounds, the TG-DSC analysis confirmed that, over the HY zeolites, the endothermic hydrogen transfer reaction of olefins occurred along with the pyrolysis of LDPE visibly when the zeolite ratio in the zeolite/polyethylene mixture exceeded 50% by mass. The TG results also indicated that the polyethylene undergone nearly 100% converted with very few residues. Further product analysis from batch pyrolysis by GC-MS confirmed that gasoline ranged iso-alkanes were produced over HY zeolite. This study highlighted that coupling exothermic hydrogen transfer reactions with endothermic pyrolysis could be an energy-efficient way of producing gasoline ranged chemicals. Chemical upcycling of plastics is tunable by using different zeolite combinations for the formation of desired products.
+

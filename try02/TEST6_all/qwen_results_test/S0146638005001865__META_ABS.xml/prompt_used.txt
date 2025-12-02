@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal stability of dibenzothiophene in closed system pyrolysis: Experimental study and kinetic modelling The aim of this study was to determine the thermal stability of a model compound, dibenzothiophene (DBT), that is representative of sulfur aromatic hydrocarbons of oils. Pyrolysis experiments were carried out in an anhydrous closed system (gold bags) over times ranging from 1h to 2 months, under isothermal conditions (375–500°C), at a constant pressure of 100bar. Pyrolysis products were recovered quantitatively according to their solubility in different organic solvents. Gases were identified and quantified separately. Dibenzothiophene thermal cracking leads to the generation of sulfur-containing molecules such as hydrogen sulfide, DBT-dimers, benzothiophene, phenyl-dibenzothiophene or benzo-bis-benzothiophene, as well as sulfur-free compounds that include H2, methane, biphenyl and benzene. Pyrolyses corresponding to low conversions (<3%) were performed in order to identify and quantify primary cracking products which proved to be DBT-dimers, H2, hydrogen sulfide H2S, and biphenyl. A kinetic model for DBT degradation was proposed to describe qualitatively the generation of experimental primary products. Stoichiometries were deduced from this model and compared with experimental mass balances and good agreement was obtained for conversions below 3%. This kinetic model has to be quantitatively tested by additional ab initio modeling. For higher conversions, high-molecular weight sulfurised products are observed implying that the thermal cracking of dibenzothiophene leads mainly to aromatisation and, thus, is not a way to remove sulfur.
+

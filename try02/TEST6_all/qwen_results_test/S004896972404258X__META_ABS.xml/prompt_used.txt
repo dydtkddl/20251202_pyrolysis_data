@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhancing sustainable waste management: Hydrothermal carbonization of polyethylene terephthalate and polystyrene plastics for energy recovery Hydrothermal carbonization (HTC) of single plastic polymers such as polyethylene terephthalate (PET) and polystyrene (PS) has not yet been explored on a large scale, particularly their thermal behavior, chemical transformations under subcritical conditions, and the energy properties of the resultant hydrochar. This study investigated these aspects by employing techniques, such as thermogravimetric analysis (TGA), Fourier transformed infrared spectroscopy (FTIR), elemental and calorific analysis. The results show that PET hydrochar has a superior energy densification (1.37) and energy yield (89 %) compared to PS hydrochar (1.13, 54 %). Hydrothermal carbonization modifies the chemical structure of the polymers by increasing the number of carbonyl groups (CO) in PET and forming new ones in PS, and by enhancing hydroxyl groups (OH) in PET while retaining them in PS. Both materials preserve their aromatic and aliphatic structures, with the introduction of alkenes groups (CC) in the PET hydrochar. PET hydrochar begins to decompose at lower temperatures (150–270 °C) than PS hydrochar (242–283 °C) but reaches higher peak temperatures (420–585 °C vs. 390–470 °C), with both types achieving similar burnout temperatures (650–800 °C). PET hydrochar recorded a higher activation energy (121–126 kJ/mol) than PS hydrochar (67–74 kJ/mol) with the Mampel first-order reaction model as the best fit.
+

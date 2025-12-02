@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluating the fixed-bed column adsorption capacity of olive pomace biochar activated with KOH and H3PO4 for olive mill wastewater treatment: Insights from TOC and HPLC analysis This study explores the treatment of olive mill wastewater (OMWW) using activated carbon derived from olive mill solid waste (OMSW). The OMSW was first converted into biochar on a pilot scale and then activated using potassium hydroxide (KOH) and phosphoric acid (H3PO4). Characterization revealed that AC/KOH had a higher BET surface area (829 m2 g−1) than AC/H3PO4 (749 m2 g−1). Fixed-bed column experiments showed breakthrough times of 250 min for AC/KOH and 220 min for AC/H3PO4. The adsorption capacities determined by the Thomas model were 275.9 mg g−1 for total phenolics (TP), 774.7 mg g−1 for total organic carbon (TOC) with AC/KOH, and 309.1 mg g−1 for TP, 823.5 mg g−1 for TOC with AC/H3PO4. The Adams-Bohart model showed kinetic constants (KAB) of 0.332 for TP and 3.66∗10−5 for TOC with AC/KOH, compared to 0.1926 for TP and 2.21∗10−5 for TOC with AC/H3PO4. The Yoon-Nelson model indicated τ50 % values of 171.57 min for TP 60.39 min for TOC with AC/KOH, 111.79 min for TP, and 41.75 min for TOC with AC/H3PO4. High-performance liquid chromatography (HPLC) analysis revealed hydroxytyrosol concentration decreased from 4.9 g.L−1 to 0.37 g.L−1 with AC/H3PO4 and 0.42 g.L−1 with AC/KOH. The total phenolic concentration reduced from 5.57 g.L−1 in untreated OMWW to 0.66 g.L−1 with AC/H3PO4 and 0.84 g.L−1 with AC/KOH. These results demonstrate that both activated carbons effectively reduce phenolic concentrations. This study achieves some of the highest adsorption capacities reported for OMWW treatment, this technique demonstrates the outstanding performance of the developed materials. Unlike most research, which focuses on static conditions, less than 10 % of studies explore dynamic fixed-bed setups, underscoring the novelty of this work. The materials can be easily integrated into conventional treatment processes, providing a cost-effective and sustainable solution. By utilizing byproducts from the olive oil industry to treat its wastewater, the approach creates a closed-loop system. Furthermore, the activated carbons are regenerable and reusable, enhancing their practicality while enabling the recovery of valuable polyphenols for added resource valorization.
+

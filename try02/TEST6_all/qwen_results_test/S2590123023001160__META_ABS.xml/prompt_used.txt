@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of biomass and plastic: Circularity of wastes and comprehensive review of synergistic mechanism Fossil fuels have provided humans with an enormous and stable primary energy source to rapidly develop advanced technologies, increasingly efficient machines and industries, as well as greater varieties of consumer products. While humans enjoy the conveniences of the modern world, critical global issues have also been created, such as an exponential hike in waste generation, rapid depletion of finite fossil fuels, greater environmental pollution, and climate change. Two major anthropogenic wastes are biomass waste and plastic waste. Each year, 464 million tonnes of plastic waste are generated globally, with only 20% recycled, 25% incinerated, while 55% landfilled. Likewise, 140 billion tonnes of biomass from the agriculture sector and 181.5 billion tonnes of lignocellulosic biomass from forestry and agricultural residues are produced worldwide annually, with only 40% and 4.5% biomass reuse respectively. This mountainous underutilised biomass and plastic wastes presented a good opportunity for recycling into biofuels instead of landfilling or open dumping, thus promoting circular bioeconomy. Pyrolysis stands out as a promising thermochemical route to synthesize biofuels, and co-pyrolysis of biomass and plastic benefits from synergistic interactions between both feedstocks, enhancing the yield and quality of biofuels. Therefore, in this review, the synergistic mechanism of biomass and plastic co-pyrolysis is described, and recent advances in this field are comprehensively presented. The importance of applying circular bioeconomy frameworks on biomass and plastic wastes are also highlighted.
+

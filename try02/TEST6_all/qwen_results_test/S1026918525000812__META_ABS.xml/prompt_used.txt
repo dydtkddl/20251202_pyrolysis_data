@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental evaluation of product yield by pyrolysis of medical waste: a way of energy recovery The proper management of medical waste is a significant global concern, requiring new disposal methods while also recovering energy. This paper explores the viability of energy recovery from medical waste by pyrolysis with a focus on experimentally evaluating the product yield. To conduct the pyrolysis process, an external heating batch reactor was built, where various types of medical waste, including saline bottles, syringes, and medical gloves, were thermally degraded. The main goals of the study were to investigate the effects of varying medical waste mixtures and temperatures on product yields and to determine the physicochemical properties of the produced pyrolytic oil. The maximum yield of liquid products was about 59.5 % at 350 °C for the saline bottle-syringe blend. The maximum liquid yield for the hand gloves-saline bottle blend, hand gloves-syringe blend, and saline bottle-syringe-hand gloves blend was 49 %, 48 %, and 50 %, respectively, at 400 °C. These yields were slightly lower than the saline bottle-syringe blend due to the presence of rubber compound hand gloves in these mixtures. The pyrolytic oil exhibited a density range from 777.5–849.3 kg/m3, while its viscosity ranged from 1.15–2.1 cSt. The flash point of the oil ranged from 38–41 °C, and the boiling point ranged from 99–129 °C. The calorific value of pyrolytic oil was found to be 41.1 MJ/kg, which is very close to that of conventional fuels. The FTIR analysis of the pyrolytic oil samples showed characteristic functional groups, primarily alkanes and alkenes. The findings reveal insights into the optimal conditions for maximizing product yield and highlight the potential of pyrolysis as a viable method for both waste management and energy recovery within the medical sector. This study contributes to the advancement of sustainable practices in healthcare waste management and underscores the importance of exploring alternative energy sources for a more environmentally conscious future.
+

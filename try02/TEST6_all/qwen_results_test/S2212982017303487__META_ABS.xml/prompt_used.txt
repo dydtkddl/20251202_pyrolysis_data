@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of paper mill sludge and spend coffee ground using CO2 as reaction medium Here in this study, co-pyrolysis of paper mill sludge (PMS) and spent coffee ground (SCG) was conducted to mainly recover energy and additionally produce engineered biochar as an adsorbent. More specifically, to enhance the generation of syngas (H2 and CO) through co-pyrolysis of PMS and SCG and modify the physico-chemical properties of biochar, carbon dioxide (CO2) was used as reaction medium. The CO2 co-feeding impact on co-pyrolysis with various mass ratios of PMS and SCG was also evaluated to explore any catalytic effects arising from CO2 and Fe/Ca species in PMS. The decrease in pyrolytic oil substances was apparent due to the synergistic effects of CO2 and Fe/Ca species. Moreover, the generation of CO was catalytically enhanced in the presence of Fe/Ca species in PMS. Co-pyrolysis in CO2 not only converted the impregnated Fe ions into magnetite (Fe3O4), but also created porous biochar. One biochar fabricated at the optimal mass ratio (PMS:SCG=7:3) exhibited the highest adsorption capability toward As(V) due to adequate balancing between the amount of Fe/Ca solid minerals and biochar porosity. As a result, co-pyrolysis using CO2 as reaction medium can be a feasible option for the generation of CO along with production of biochar as a byproduct which can be used in environmental application.
+

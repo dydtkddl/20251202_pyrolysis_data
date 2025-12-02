@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic cracking of biomass tar for hydrogen-rich gas production: Parameter optimization using response surface methodology combined with deterministic finite automaton In a two-stage fixed-bed reaction system, with Ni-Ca-Co/HZSM-5 as the catalyst and toluene as the tar model compound, a Box-Behnken experiment was designed using the response surface module in Design-Expert.V8.0.6.1, investigating the influences of cracking time, injection rate of model compound, and catalyst dosage. The process conditions of catalytic cracking of tar were determined using the external standard method of areas with hydrogen-rich gas yield and H2 concentration as two response values. Subsequently, these conditions were optimized and validated using the deterministic finite automaton (DFA). Further exploration was conducted on the pathways for catalytic cracking of different categories of tar model compounds to produce hydrogen-enriched gas. The findings demonstrate that the quadratic polynomial mathematical model established from Box-Behnken experimental data is highly significant at P < 0.01. The adjusted coefficient of determination R2 (adj) is 0.9964, with a prediction coefficient R2 (pred) (0.9785) differing by only 0.02, indicating strong agreement between experimental and predicted values. The model exhibits high reliability and precision. Based on the DFA, the optimal conditions for the catalytic cracking of tar were identified, including a catalyst dosage of 5.00 g, cracking time of 70.93 min, and injection rate of model compound of 0.84 mL/min. An appropriate injection rate of model compound and extended residence time can enhance hydrogen yield, achieving high-quality hydrogen-rich gas. Under these conditions, the catalytic cracking of toluene yielded hydrogen-rich gas at a rate of 213.90 mL/g-toluene, and H2 comprised 60.40 % of total gas production. The predicted satisfaction value of 0.9788 approximates the actual satisfaction of 0.9873, validating good model fit and repeatability. This verifies that combining the response surface methodology (RSM) with the DFA to optimize the conditions for the catalytic cracking of tar to prepare high-purity hydrogen-enrich gas is highly reliable. Significant differences in gas release rates and component concentrations were observed among representative tar model compounds in the Ni-Ca-Co-modified catalytic system with HZSM-5 molecular sieve. Through investigating the cracking pathways of tar model compounds, the possible reactions, and synergies among components during real tar cracking were identified. This research lays a solid groundwork for understanding the mechanisms of cracking of real tar, thereby advancing biomass conversion efficiency, and the purification and utilization of high-temperature gases.
+

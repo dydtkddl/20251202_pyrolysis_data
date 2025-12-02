@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Tailoring catalyst acidity and hierarchical pore structure for enhanced BTX yields in plastic waste pyrolysis The exponential increase in global plastic production, coupled with the limited efficiency of current recycling technologies, calls for innovative and scalable waste management solutions. Catalytic pyrolysis has emerged as a promising method to upcycle plastic waste into valuable chemicals and fuels. However, a major challenge remains in efficiently converting complex municipal plastic waste into valuable downstream products, which requires improving the product distribution toward the aromatic fraction, particularly benzene, toluene, and xylene compounds (BTX), which hold significant value in refinery operations. BTX are key building blocks in the chemical industry, used in the production of polymers, solvents, detergents etc. Their recovery from plastic waste not only adds economic value but also supports circular economy goals by reducing reliance on fossil-derived aromatics. This study addresses these challenges by designing and evaluating catalysts with tailored acidity and hierarchical pore structures to enhance the productivity of BTX. A comparative analysis was performed on the microporous zeolites (HZSM5), mesoporous catalysts (mesocellular foams, MCF), and hierarchical variants synthesized via top-down modifications, benchmarked against an equilibrium fluid catalytic cracking (FCC) catalyst for BTX production. Feedstock characterization revealed a heterogeneous composition with a substantial inorganic fraction, highlighting the need for robust catalytic systems. Systematic evaluation reveals hierarchical zeolite and zeolitized mesocellular foams, outperforming conventional catalysts by balancing acid site concentration with pore accessibility. The hierarchical structures improve mass transport, reduce over-cracking, and increase BTX selectivity. These findings offer valuable insights for refinery-integrated plastic conversion and support the development of more efficient and sustainable plastic waste valorization strategies.
+

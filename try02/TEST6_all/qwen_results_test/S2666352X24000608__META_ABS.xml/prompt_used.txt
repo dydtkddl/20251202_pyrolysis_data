@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Clean energy technology: Hydro-processing of waste tyre pyrolysis oil (WTPO) to diesel fuel in a continuous reactor using Co/SBA-15 catalyst The need for sustainable fuel sources and efficient waste management has led researchers to explore innovative methods for converting waste into fuel. One promising avenue is the utilization of 100 % tyre oil (TO), which could offer a profitable and environmentally friendly solution for disposing of waste tyres. With rising fossil fuel costs, environmental concerns, and the challenges of waste tyre landfilling, there is increased interest in waste tyre pyrolysis oils (WTPO) as an alternative energy source. This study examines the hydro processed WTPO (HWTPO) was analysed using a metallic catalyst, specifically Co/SBA-15. This method involves hydrolysing WTPO with the metallic catalyst, assessing the physical-chemical properties, formulation efficiency compared to petroleum products, and diesel engine performance like the impact on fuel consumption, combustion, and emissions. The synthetic HWTPO's chemical and physical properties were found to be comparable to European diesel specifications (European standard 590). Under hydroprocessing conditions (80 bar and 375 °C), the Co/SBA-15 catalyst produced isoalkanes, n-alkanes, and aromatics in quantities nearly equivalent to 100 % diesel. HWTPO demonstrated the potential to maximize greenhouse gas emissions reduction and enhance the performance of diesel-powered engines. The favourable properties of HWTPO suggest that waste tyre pyrolysis oil could be a viable transportation fuel.
+

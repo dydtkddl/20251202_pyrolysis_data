@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mechanical properties and molecular structures of virgin and recycled HDPE polymers used in gravity sewer systems The widespread use of plastics in the conditioning, packaging and building material sectors generates an enormous amount of industrial waste which could be recycled for wastewater pipes and fittings. Nevertheless, current manufacturing standards in the piping industry recommend against the use of post-consumer recycled materials—a policy based on inadequate understanding of the properties and long-term mechanical performance of recycled materials. The present study compared the material characteristics of virgin and recycled high-density polyethylene (HDPE) plastics commonly found in the piping industry. Mechanical testing, oxidative induction time (OIT), melt flow index (MFI) and thermal analysis were used in conjunction with X-ray fluorescence (μ-XRF), size exclusion chromatography and 13C solid-state NMR to evaluate mechanical behavior and molecular structure as well as contaminant or filler contents. This study provides evidence for the degradation processes impact that can occur when post-industrial and post-consumer polymers are recycled. However, the study identified two measures to improve the material qualities of post-consumer recycled HDPE: 1) reducing the amount of contaminants or, alternatively, improving their compatibility with HDPE resins, and 2) improving current sorting and recycling processes to increase the amount of tie molecules in HDPE materials.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Syngas production through CO2-mediated pyrolysis of polyoxymethylene Plastics have become an integral part of our daily lives owing to their exceptional physicochemical properties, such as durability, low density, and cost-effectiveness, compared to traditional materials. However, the escalating production of plastics has resulted in a proportional increase in waste generation. This paper proposes environmentally benign valorization/disposal methods for plastic waste, with a particular focus on adopting a pyrolysis process that utilizes CO2 as a strategic reaction medium. As a case study, polyoxymethylene (POM), a widely used engineering plastic, was valorized through CO2-mediated pyrolysis. This study experimentally demonstrates the mechanistic effectiveness of CO2 in expediting the reaction kinetics of the thermal decomposition, specifically dehydrogenation and deoxygenation, of volatile matter derived from POM. The results revealed that employing CO2 as a reactant in the two-stage pyrolysis at 500 °C produced 30.47 mmol more syngas than under inert conditions. In conclusion, the strategic utilization of a two-stage pyrolysis process at 500 °C with CO2 as the reactant has emerged as an effective approach to the valorization of POM. This study contributes to developing sustainable methods for managing plastic waste by addressing environmental concerns and the need for efficient material recovery.
+

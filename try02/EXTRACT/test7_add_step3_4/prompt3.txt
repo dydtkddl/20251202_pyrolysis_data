@@ -1,0 +1,50 @@
+You are an expert in scientific experiment analysis.
+
+Below is the PAPER_TEXT that contains the full experimental description.
+Use ONLY this content as evidence.
+
+==================== PAPER_TEXT ====================
+{{PAPER_TEXT}}
+====================================================
+
+Below is the EXPERIMENT_GROUPS extracted from Step1.
+Use them to determine the variable and constants for each group.
+
+==================== EXPERIMENT_GROUPS ====================
+{{EXTRACTION_JSON}}
+===========================================================
+
+TASK:
+For each experiment group, identify:
+1. The variable parameter that was intentionally changed.
+2. The experimental conditions that were held constant.
+3. Sentences from PAPER_TEXT supporting the variable/constant identification.
+
+DEFINITIONS:
+- "variable" = parameter deliberately varied in the group.
+- "constants" = all conditions kept identical across samples in that group
+  (temperature, heating rate, reactor type, N₂ purge, pressure, distillation setup, etc.)
+- "evidence_sentences" must be directly copied from PAPER_TEXT.
+
+RULES:
+- Use ONLY evidence explicitly in PAPER_TEXT.
+- DO NOT infer missing information.
+- Think step-by-step internally but DO NOT reveal reasoning.
+- DO NOT summarize.
+- Output STRICT JSON only.
+
+==================== REQUIRED OUTPUT FORMAT ====================
+{
+  "groups": [
+    {
+      "group_name": "",
+      "variable": "",
+      "constants": [""],
+      "evidence_sentences": [""]
+    }
+  ]
+}
+================================================================
+
+Now produce ONLY the JSON.
+

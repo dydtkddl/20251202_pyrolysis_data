@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synthesis, functionalization and photocatalytic applications of coal-derived carbonaceous materials This article comprehensively reviews the latest advancements in coal-derived carbonaceous materials for photocatalytic applications. Contemporary research advancements have revealed the potential of coal-derived substances (including coal tar and gangue minerals) as precursor materials for synthesizing high-efficiency photocatalytic composites. These photon-mediated redox systems demonstrate versatile applications across three principal domains including environmental remediation, energy conversion technologies (CO2 photoconversion), and sophisticated organic synthesis processes. Modern materials engineering approaches employing advanced chemical functionalization and nanostructural modification techniques enable the transformation of carbonaceous matrices into hierarchically organized photocatalysts with optimized quantum yields and broad-spectrum responsiveness. This critical review provides a systematic analysis of fundamental mechanisms and contemporary developments in photocatalytic materials science, focusing on three key aspects: 1) Novel synthesis methods for coal-derived catalytic materials; 2) Performance optimization through crystalline defect engineering and heterostructure design; 3) Multiscale application mechanisms in integrated environmental-energy systems. Besides, the deep mechanism analysis confirmed by DFT calculations was also summarized. We further propose an integrative development paradigm combining resource circularity with sustainable manufacturing principles to advance next-generation photocatalyst innovation while promoting ecological transformation of traditional energy-intensive industries. The establishment of precise structure–activity correlations and the development of intelligent photocatalytic systems are highlighted as crucial research priorities for future technological breakthroughs in this field.
+

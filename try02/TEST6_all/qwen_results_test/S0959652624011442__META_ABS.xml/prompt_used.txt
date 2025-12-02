@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Resourceful utilization of combustible solid wastes throughout steelmaking processes: Recent progress and prospects The efficient consumption of combustible solid wastes (CSWs) is still a serious global problem due to the environmental pollution and energy waste brought by conventional disposal methods. Utilizing typical high-temperature kilns, including sintering machines, coke ovens and blast furnaces, throughout the whole steelmaking chain to consume CSWs on a large scale is a promising approach, which is characterized by energy recovering and volume reduction. This review systematically summarizes the recent progress in the substitution of CSWs as renewable and recyclable alternative fuels, as well as addressing the limitations of these techniques and identifying opportunities for future research. Types, sources and resources of CSWs are introduced in this paper, which mainly include renewable biomass and recyclable carbon-rich wastes such as waste plastics, waste tires, and municipal sludge. The basic characteristics and utilization of typical CSWs are compared, and the combustion characteristics, application effects and enhancement technologies (pretreatment such as pre-dealkalization, pre-granulation and pre-melting, thermochemical conversion, optimization of fuel performance, sintering process parameters, and raw material structure) of different CSWs consumed in sintering machines, coking ovens and blast furnaces are discussed. For these high-temperature kilns, biomass is the most promising CSW, but its substitution ratio is still limited by combustion characteristics. Finally, a clear roadmap of specific next steps and priorities for research and development based on remaining challenges and suggestions on how to improve the fuel substitution ratio, establish processing center and develop life cycle model are put forward.
+

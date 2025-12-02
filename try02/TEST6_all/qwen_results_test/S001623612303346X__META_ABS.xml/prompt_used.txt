@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+In-depth understanding of the microscopic mechanism of biochar carbonaceous structures during thermochemical conversion: Pyrolysis, combustion and gasification The thermochemical utilization of biomass char is vital for addressing environmental pollution and the energy crisis. The carbonaceous structure plays a crucial role in this process, and understanding the conversion mechanism aids in optimizing biomass reactors. This study performs a comprehensive analysis of high-temperature rice husk char using 13C NMR, XPS, and FTIR techniques. The carbonaceous structure is classified based on carbon bonding modes and the forms of O and N. The reaction mechanisms of thermochemical transformations under various atmospheres (N2, O2, CO2, H2O) are investigated using ReaxFF-MD. The reaction characteristics are determined, and the reaction activities are compared. The results indicate that the nitrogen-containing heterocycles remain in pyridine-type pyrolysis products under the N2 atmosphere (pyrolysis). Repolymerization occurs in the initial stages of pyrolysis, with the size of aromatic rings affecting the formation of heavy components. Under the O2 atmosphere (combustion), the degree of complete carbon oxidation is linked to the number of aromatic rings. The reactivity of aliphatic carbonaceous structures depends on the hydrogen content. Under the CO2 atmosphere (gasification), the pyrrole-type structure exhibits the highest gasification activity. Aromatic structures with oxygen functional groups are more susceptible to reacting with CO2, indicating higher sensitivity. Aliphatic H atoms tend to be oxidized into H2O. Under the H2O atmosphere (gasification), hydrogen in the gasification of aromatic carbon primarily originates from H at the aromatic boundary. In N2 and CO2 atmospheres, the CO bridge bond breaks first, followed by reactions. In H2O gasification, the breaking of bridge bonds connected to aliphatic carbon occurs simultaneously with gasification. Each reaction system's product distribution and elemental migration processes are also determined. The findings provide valuable theoretical insights into the application of biomass char.
+

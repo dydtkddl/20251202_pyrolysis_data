@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sustainable chemical recycling of waste plastics into olefins through low-pressure hydrothermal liquefaction and microwave pyrolysis: Techno-economic analysis and life cycle assessment Plastics pose environmental challenges in landfills, persisting for extended periods spanning thousands to millions of years. Consequently, research into plastic depolymerization has gained significance, aiming to address the problem of plastic waste management and the increasing demand for plastics. This study proposes a novel process for recovering olefins, specifically ethylene and propylene, from waste polyethylene (PE) and polypropylene (PP) through low-pressure hydrothermal liquefaction (LP-HTL) and microwave steam pyrolysis (MSP) chemical recycling. Mixed waste PE and PP undergo LP-HTL to produce gas and oil. Subsequently, the oil from the LP-HTL undergoes cracking via MSP to enhance olefin recovery. Olefin compounds produced through distillation serve as refrigerants. The results demonstrated the production of 39.75 wt% C2H4 and 13.32 wt% C3H6, achieving a total recovery of 53.07 wt% of olefin materials. The levelized cost of ethylene (LCOE) in the proposed process was calculated at 0.89 USD/kg C2H4, equating to a 72.86 % reduction compared with that in flash pyrolysis. Furthermore, the life cycle assessment (LCA) results indicated reduced 100-year global temperature potential and global warming potential (GTP100 and GWP100) emissions of 2.46 and 2.55 kg CO2 eq/kg C2H4, respectively, approximately 90 % lower than that in the flash process. Thus, the proposed process, with its energy efficiency and high recovery rates, can serve as a benchmark for future plastic depolymerization endeavors aimed at achieving a circular carbon economy.
+

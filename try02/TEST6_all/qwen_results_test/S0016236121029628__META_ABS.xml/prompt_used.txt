@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Gasification characteristics of waste plastics (SRF) in a bubbling fluidized bed: Use of activated carbon and olivine for tar removal and the effect of steam/carbon ratio This study investigates the gasification characteristics of waste plastic (SRF; solid refuse fuel) and tar removal properties of activated carbon (AC) and olivine using 1 kg/h lab scale bubbling fluidized bed gasifier. The steam gasification was conducted at steam/carbon (S/C) ratio from 1.0 to 2.0 to increase the product gas quality. AC bed gas velocity is 0.12 m/s and temperature is varied from 600 to 800 °C. AC triggers the cracking and reforming of heavier compounds, reducing the tar content by 64% at 800 °C and increases H2 and CO content. Increasing AC bed temperature causes reduction of C2-C3 hydrocarbons, thus decreasing carbon conversion efficiency (CCE), cold gas efficiency (CGE), and lower heating value (LHV) of product gas. Using olivine as the bed material increases contents of H2, CO, CH4 and reduces content of CO2 in the product gas, therefore improving CCE and CGE. Olivine reduces the tar content up to 32% due to the steam–iron process and increases light aromatics but reduces naphthalene content in tar. Steam gasification significantly increases H2 and CO content of the product gas compared to air gasification. Increasing S/C ratio further increases the H2 and CO content, and the CO2, CH4, and C2-C3 hydrocarbons decreases due to intensification of water–gas shift, steam reforming, and water–gas reactions. Exceeding S/C ratio above 1.5 decreases the H2 and CO content, but increases CCE, CGE, and LHV of the gas due to higher C2 –C3 hydrocarbons content in the product gas. Increasing S/C ratio above 1.5 also increases condensable tar content of the product gas, increases consumption of AC bed thus reducing its catalytic effect.
+

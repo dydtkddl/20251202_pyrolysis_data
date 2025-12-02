@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic effects of CO2 on complete thermal degradation of plastic waste mixture through a catalytic pyrolysis platform: A case study of disposable diaper Consumption of diverse plastics has posed an environmental threat because their disposal practices, landfilling and incineration, release toxic chemicals and microplastics into all environmental media. Indeed, heterogeneous matrix of plastic wastes makes them hard to be disposed. As such, this study aimed to introduce an environmentally benign/reliable disposal platform for complete decomposition of plastic wastes. Pyrolysis process was adapted to convert plastics into syngas, and a disposable diaper (DD) was used as model plastic waste, because it is composed of a variety of polymeric materials. Pyrolysis of DD resulted in the formation of gaseous products and pyrogenic oils, composed of (oxygenated) hydrocarbons. Nonetheless, reactivity of CO2 as an oxidant in pyrolysis of DD was negligible. To impart the strong/desired reactivity of CO2, Ni-based catalyst was adopted. Ni catalyst enhanced H2 and CO formations 4 and 15 times more than pyrolysis without catalyst at 700 °C under CO2. The value-added syngas production was originated from the reduction of polymeric waste, and its derivatives including aromatic compounds. Thus, CO2 offered a strategic means to produce value-added chemicals and reduce aromaticity of pyrogenic products. The observations could offer an innovative way to control the fate of toxic chemicals derived from plastic pyrolysis.
+

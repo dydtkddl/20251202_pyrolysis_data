@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A melt-based reaction pathway for CO2 and CH4 conversion to syngas and carbon using liquid In–Sn Molten In–Sn has been recently reported as an effective catalyst for directly producing 2:1 H2:CO syngas and solid carbon from CO2 and CH4 in a single reaction, equivalent to the combined reactions of methane pyrolysis and dry reforming. In the present work, when reactants are alternately fed, mass balances indicate that CO2 reacts to form an [O] species that oxidizes CH4. Also, CH4 is converted to a [C] species that reduces CO2. The presence of accumulated [O] did not significantly affect the experimentally determined activation energies of 229 kJ/mol vs. 222 kJ/mol. We performed ab initio molecular dynamics (AIMD) simulations and density functional theory (DFT) calculations, to probe the dynamic structural evolution and to obtain atomistic insights into the behavior of the molten In–Sn alloy at the molecular level. This integrated approach also facilitated the evaluation of activation energy barriers associated with key reaction pathways. Simulations indicate that [O] are solvated; rapidly switching neighbors between Sn and In, which is unique to a molten catalyst. The presence of accumulated [C] significantly decreased the experimentally observed apparent CO2 activation energy from 154 kJ/mol to 75 kJ/mol, which is lower than the direct reaction between CO2 and solid graphite. This finding supports the simulations that indicate [C] formed in the melt is solvated, chemically distinct from solid carbon, and can play a critical role in enhancing catalytic performance. Large fluctuations in adsorbate binding energies were theoretically observed over time, suggesting the creation of transient sites that are fleetingly active, and facilitate the formation of solvated [O] and [C] intermediates unique to a molten catalyst surface.
+

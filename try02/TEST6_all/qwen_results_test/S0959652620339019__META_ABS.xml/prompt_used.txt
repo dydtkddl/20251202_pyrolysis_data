@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comprehensive utilization of Chinese medicine residues for industry and environment protection: Turning waste into treasure Chinese herbal medicine has a long history spanning more than 2000 years, and it is widely used to prevent and treat diseases in China and even in Southeast Asia. Given the popularity of Chinese herbal medicine and the continuous development of the pharmaceutical industry, large amounts of Chinese medicine residues are produced in China every year. Chinese medicine residues are mainly made up of medicinal plant materials intended for human utilization that are subsequently discharged, lost, degraded or contaminated. The traditional methods of disposal of Chinese medicine residues include incineration, stacking and burying. However, these methods not only affect the ecological environment but also cause a great waste of Chinese medicine residues. In the past few years, the utilization of Chinese medicine residues for industry and environment protection has aroused widespread concern. Extensive studies have explored Chinese medicine residues, especially with regard to energy generation applications. In this work, the origin, chemical composition and potential of Chinese medicine residues in terms of energy generation, paper making, composite material preparation, re-extraction of bioactive components and environmental protection are summarized. This review is aimed at providing an overview of the current progress on the utilization of Chinese medicine residues for industry and environment protection and discussing the existing problems and future development.
+

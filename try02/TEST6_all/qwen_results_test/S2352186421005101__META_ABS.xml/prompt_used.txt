@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Polymerization of lactic acid produced from food waste by metal oxide-assisted dark fermentation Lactic acid (LA) is the precursor monomer used in the production of biodegradable and eco-friendly polylactic acid (PLA) polymer. The purpose of this study was to first determine the role of nano-metal oxides in improving the production of L-LA from food waste via the dark fermentation process and then to compare the conversion of L-LA to PLA using conventional and novel catalysts. Compared to the control run without nanoparticles (NPs) addition, maximum L-LA concentration (38.86 g/L), yield (0.194 g/g- TS), and productivity (3.88 g/L-day) were achieved for iron oxide (FeO x ) nanoparticles (NPs)-assisted fermentation at an optimal dosage of 15 mg/L. Nickel oxide (NiO x ) and cobalt oxide (CoO x ) NPs also showed similar enhancing effects for L-LA production. However, high dosages of the metal oxide NPs decreased the LA production in the medium. Moreover, a new nanocatalyst, iron phosphate (FePO4), was prepared and examined for PLA production from the as-synthesized L-LA monomeric units by ring-opening polymerization. A high yield of lactide (84.71%) was produced in a shorter reaction time (10 h) using FePO4 than the conventional tin chloride (SnCl2) catalyst. PLA polymer with molecular weights in the range of 4,900–5,200 Da was obtained using FePO4 and tin chloride dihydrates (SnCl2) catalysts under the optimized conditions. As such, this work has demonstrated a practical way to improve LA production from organic waste streams and its effective conversion to PLA for potential applications in the biomedical and bioplastic sectors.
+

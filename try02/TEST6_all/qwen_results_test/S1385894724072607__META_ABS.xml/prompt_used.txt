@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of hydrogen peroxide and sodium nitrate on microwave-assisted polyethylene oxidative degradation in the presence of nitric acid Polyethylene (PE) upcycling has been challenging due to the chemical robustness of non-activated C-C and C-H bonds. One promising strategy is oxidative degradation, in which a strong oxidizing agent, usually nitric acid, oxidizes PE to produce a mixture of organic acids (C4 to C7 diacids and acetic acid). However, current research focuses on how to utilize the obtained organic acids as feedstock (e.g. for plasticizer and gaseous hydrocarbon synthesis) rather than improving the process itself. In this study, we evaluated the effects of adding hydrogen peroxide and sodium nitrate at 200 °C, considering possible PE oxidation mechanisms in the presence of nitric acid. Hydrogen peroxide can partially replace nitric acid, thereby reducing the required amount of nitric acid in the process. This is because, at sufficient nitric acid concentrations, hydrogen peroxide accelerates PE oxidation, while nitric acid simultaneously prevents the overoxidation of the resulting organic acids by hydrogen peroxide. When a nitric acid/hydrogen peroxide solution (1:1 mol/L) was employed for 3 h, the carbon efficiency and total organic acid concentration were 35.6 % and 14.0 g/L, respectively. Furthermore, the addition of sodium nitrate improved overall reaction efficiency through the Baeyer-Villiger type oxidation, which involves a nucleophilic attack on the protonated carbonyls by the nitrate ions. When a nitric acid/sodium nitrate solution (1.5:0.5 mol/L) was employed for 1.5 h, the carbon efficiency and the organic acid yield increased to 39.0 % and 15.3 g/L, respectively. Finally, the potential for upcycling waste PE was also demonstrated using both HNO3/H2O2 and HNO3/NaNO3 conditions, producing organic acids from waste linear low-density polyethylene (LLDPE) and high-density polyethylene (HDPE). This study comfirms the potential to reduce the amount of nitric acid used in the microwave-assisted upcycling of waste PE, an aspect that had been previously overlooked. This reduction can contribute to a more environmentally friendly transformation of the proposed process, facilitating the conversion of waste PE into valuable chemicals.
+

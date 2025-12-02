@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-gasification and recent developments on waste-to-energy conversion: A review Biomass is currently seen as a promising renewable energy source, which can be sustainably utilized in the production of fuels and electric energy adding no carbon dioxide to the environment. Co-gasification has unveiled its potential amongst thermal techniques, as a result of the valuable products obtained, strengthening a solid position in the conversion of residues. Thus, the prevention of a complete depletion of non-renewable sources is supported and the effects of their utilization alleviated. Extensive literature review was conducted and, few reports on co-gasification of biomass and wastes were found. In this context, this review addresses their thermal conversion, highlighting issues related to the equipment, operating conditions and physicochemical phenomena involved in such a complex process. Among other conclusions, the most important finding of this work was the synergy often encountered between the two feedstocks, proving co-gasification can overcome several of the individual gasification issues enhancing products quality and yields over biomass or wastes alone, and attesting its environmental-friendly character, with lower greenhouse gas emissions. It was also possible to depict some trends on the effect of biomass and waste blending ratios, as well as elucidating some of the mechanisms involved in their interaction. These are majorly explained by the response of molecules during pyrolysis and by hydrogen transfer from waste polymers to biomass derivatives. Experimental conditions were also assessed, fluidized beds being reported as the most suitable reactors for biomass and wastes, under several different possible combinations of operational parameters. A critical discussion is presented, aiming to contribute to a more profound understanding of this matter, its key points and noteworthy potential.
+

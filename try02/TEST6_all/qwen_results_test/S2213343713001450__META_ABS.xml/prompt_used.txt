@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Tertiary recycling of poly(ethylene terephthalate) wastes for production of polyurethane–polyisocyanurate foams The present work aims at tertiary recycling of poly(ethylene terephthalate) (PET) wastes to derive raw materials for production of polyurethane–polyisocyanurate foams. The first step involves glycolytic depolymerization of PET in the presence of diethylene glycol (DEG), under the influence of microwave irradiation with an aim to reduce the energy intensiveness of the process. Experimental conditions like PET:DEG ratio and reaction time were optimized to maximize the extent of PET conversion. Multiple extrusion of PET led to reduction in its molecular weight, which increased its reactivity towards glycolysis. The time required for glycolytic depolymerization of PET could be significantly reduced by employing microwave irradiation instead of conventional thermal process. The glycolysate was subsequently reacted with two different diacids: adipic acid (AA) and sebacic acid (SA) to obtain aromatic oligoesters. For the purpose of comparison, analogous aliphatic oligoesters were also prepared by reacting AA and SA with DEG under similar reaction conditions. The oligoesters were subsequently employed as a raw material for the preparation of polyurethane foams by reacting with diphenylmethane diisocyanate. The hydroxyl:isocyanate ratio in the formulation was decreased to introduce isocyanurate linkages, which resulted in the formation of polyisocyanurate foams with high compressive strength. Various characterization techniques were employed to determine the effect of the aromatic phenyl group and chain length of the diacid on the mechanical and structural properties of the resultant foams.
+

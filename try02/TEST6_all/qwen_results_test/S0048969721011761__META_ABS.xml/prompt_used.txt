@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave drying behavior, energy consumption, and mathematical modeling of sewage sludge in a novel pilot-scale microwave drying system Microwave drying is attracting increasing attention due to its energy efficiency. A self-developed pilot-scale microwave dryer was used in this study to dry two different common types of sewage sludge, namely mechanically dewatered sewage sludge and composting dewatered sewage sludge, by using two heating modes: constant temperature and constant power modes. The microwave drying behavior, specific energy consumption, average drying rate, energy efficiency, and drying effect were explored considering the influences of microwave output power, initial mass, and heating mode. Results showed that the output power had the largest influence on specific energy consumption, energy efficiency, and drying efficiency, followed by the constant temperature and initial mass. The specific energy consumption of mechanically dewatered sewage sludge decreased by roughly 14%. By contrast, the average drying rate increased by approximately 6%, and the energy efficiency increased by approximately 20% for each 1 kW increase in output power. Meanwhile, composting dewatered sewage sludge displayed drying effects at an output power of 3 kW, and the temperature exceeded 80 °C. The comparison of the two modes suggested that the constant temperature mode was better than the constant power mode considering product quality and operational safety. Compared with six thin-layer drying mathematical models, the Midilli–Kucuk model could provide a good fit for the constant temperature mode. The proposed microwave drying process exhibited effective performance in drying rate. This process also demonstrated considerable application potential for sewage sludge drying.
+

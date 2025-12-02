@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal degradation mechanism of poly(ethylene succinate) and poly(butylene succinate): Comparative study Two aliphatic polyesters that consisted from succinic acid, ethylene glycol and butylene glycol, —poly(ethylene succinate) (PESu) and poly(butylene succinate) (PBSu)—, were prepared by melt polycondensation process in a glass batch reactor. These polyesters were characterized by DSC, 1H NMR and molecular weight distribution. Their number average molecular weight is almost identical in both polyesters, close to 7000g/mol, as well as their carboxyl end groups (80eq/106 g). From TG and Differential TG (DTG) thermograms it was found that the decomposition step appears at a temperature 399°C for PBSu and 413°C for PESu. This is an indication that PESu is more stable than PBSu and that chemical structure plays an important role in the thermal decomposition process. In both polyesters degradation takes place in two stages, the first that corresponds to a very small mass loss, and the second at elevated temperatures being the main degradation stage. The two stages are attributed to different decomposition mechanisms as is verified from the values of activation energy determined with iso-conversional methods of Ozawa, Flyn, Wall and Friedman. The first mechanism that takes place at low temperatures, is auto-catalysis with activation energy E =128 and E =182kJ/mol and reaction order n =0.75 and 1.84 for PBSu and PESu, respectively. The second mechanism is nth-order reaction with E =189 and 256kJ/mol and reaction order n =0.68 and 0.96 for PBSu and PESu, respectively, as they were calculated from the fitting of experimental results.
+

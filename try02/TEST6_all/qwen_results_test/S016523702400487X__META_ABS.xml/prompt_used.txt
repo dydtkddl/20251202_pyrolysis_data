@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Laboratory-scale simulation study of pyrolysis process in a fixed-bed gasifier for municipal solid waste pellets: Effects of temperature distribution and residence time In this study, stepwise heating pyrolysis was designed to simulate the pyrolysis process of municipal solid waste (MSW) pellet in an updraft fixed bed gasifier at a laboratory scale. Differences in pyrolysis product between fixed bed stepwise heating pyrolysis (FBS, ranging from 300 °C to 800 °C) and continuous heating pyrolysis (FBC, maintained at 800 °C) were revealed. The impact of residence time at various temperature ranges on MSW pyrolysis was also investigated. Results indicated that compared to FBC, the gas yield of FBS decreased by 30.74 %, while its liquid yield increased by 11.96 %. It was primarily due to the lower heating rate reduced the secondary conversion of aliphatic hydrocarbons, oxygenated compounds, and monoaromatic hydrocarbons (MAHs) within liquid products. In addition, the composition of MSW pyrolysis products was changed by adjusting the residence time. Maintaining a uniform residence time of 5 min for MSW pellets at each temperature was considered optimal for gas yield, which was mainly attributed to the enhanced cracking of long-chain aliphatic and polycondensation of MAHs and polycyclic aromatic hydrocarbons (PAHs). Besides, the volatiles (C- and O-containing compounds) of the char were almost completely released. The underlying influence mechanism of residence time on the pyrolysis behavior of MSW was also proposed, which could provide insights for the implementation of MSW gasification.
+

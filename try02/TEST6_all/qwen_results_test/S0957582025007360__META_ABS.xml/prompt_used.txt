@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave-assisted hydrothermal carbonization of microalgae grown in swine wastewater: Process optimization and application of hydrochar for dye adsorption This study presents an eco-friendly approach for converting microalgae cultivated in swine wastewater into value-added hydrochar via microwave-assisted hydrothermal carbonization (MHTC). Process parameters, including temperature, residence time, and biomass-to-water ratio, were optimized using response surface methodology (RSM) based on a Box–Behnken design. The optimal conditions—190 °C, 10 min, and a 7.5 % biomass-to-water ratio—resulted in a maximum hydrochar yield of 58.8 wt%. The resulting hydrochar exhibited a high carbon content (52.83 %) and a higher heating value (23.56 MJ/kg), with well-developed surface functionality and microporous structure, as confirmed by FTIR, SEM, and BET analyses. Its applicability as an adsorbent was demonstrated through batch adsorption experiments targeting methylene blue dye. The hydrochar achieved a maximum adsorption capacity of 107.5 mg/g with a removal efficiency of 87 %. Adsorption data fitted best with the Freundlich isotherm and pseudo-second-order kinetic models, indicating multilayer sorption on a heterogeneous surface. These findings highlight the dual environmental benefit of using swine wastewater as a nutrient source for microalgal cultivation and the subsequent valorization of biomass into functional hydrochar. This work contributes to advancing circular bioeconomy strategies by integrating waste treatment, carbon recovery, and low-cost dye remediation solutions.
+

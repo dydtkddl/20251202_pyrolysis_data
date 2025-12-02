@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave-assisted catalytic gasification of mixed plastics and corn stover for low tar, hydrogen-rich syngas production The challenge for efficient management of post-consumer plastic and biomass waste has grown over the past few decades due to their dramatic increases. In comparison to conventional gasification, microwave-assisted co-gasification of plastics and corn stover offers many benefits, including increased H2 yield and gas components compared to unfavorable char/tar. Nonetheless, for future commercialization of the process and ease of product separation, further reduction of the undesirable tar is necessary, which can be achieved over the catalytic route. In this work, we studied the catalytic effect of magnetite for microwave-assisted co-gasification of corn stover and plastic to make syngas with higher H2 and lower tar selectivity over non-catalytic conditions. A 1:1:1 ratio of plastic-corn stover-magnetite was used to evaluate the reaction parameters such as temperature, space velocity, heating media, and catalytic cycles under gasification conditions. In comparison with the microwave non-catalytic route, a 100% increase in the total H2 yield with 76% higher H2 production efficiency (mmol/kWh) was achieved in the presence of the magnetite catalyst, while reducing the overall tar formation from 9% to 2%. When magnetite was reduced in situ during the reaction, it coupled with microwave and delivered oxygen radicals that cracked down plastic and corn stover intermediates generated from the synergistic effect under microwave heating. Soon after the oxygen transfer process initiated, magnetite reached its final oxidation state consisting of microwave-active Fe and Fe3C phases that continued coupling with microwaves along with the generated graphitic carbon to maintain the heat necessary to further reduce the generated tar and make additional gaseous products, as confirmed by XRD, Raman, and TGA analyses.
+

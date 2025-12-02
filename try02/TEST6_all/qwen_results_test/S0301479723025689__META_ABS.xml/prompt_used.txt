@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Climate footprint assessment of plastic waste pyrolysis and impacts on the Danish waste management system Increased plastic recycling is necessary to reduce environmental impacts related to manufacturing and end-of-life of plastic products, however, mechanical recycling (MR) – currently the most widespread recycling option for plastic waste – is limited by quality requirements for inputs and reduced quality of outputs. In this study, pyrolysis of plastic waste is assessed against MR, municipal solid waste incineration (MSWI) and fuel substitution through climate footprint assessment (CFA) based on primary data from pyrolysis of plastic waste sourced from Danish waste producers. Results of the CFA are scaled to the Danish plastic waste resource in an impact assessment of current Danish plastic waste management, and scenarios are constructed to assess reductions through utilization of pyrolysis. Results of the CFA show highest benefits utilizing pyrolysis for monomer recovery (−1400 and −4800 kg CO2e per ton polystyrene (PS) and polymethyl methacrylate (PMMA), respectively) and MR for single polymer polyolefins (−1000 kg CO2e per ton PE). The two management options perform similarly with mixed plastic waste (200 kg CO2e per ton plastic waste). MSWI has the highest impact (1600–2200 kg CO2e per ton plastic waste) and should be avoided when alternatives are available. Scaling the results of the CFA to the full Danish plastic waste resource reveals an impact of 0.79 Mt CO2e in year 2020 of current plastic waste management. Utilizing pyrolysis to manage MR residues reduces the system impact by 15%. Greater reductions are possible through increased separation of plastic from residual waste. The best performance is achieved through a combination of MR and pyrolysis.
+

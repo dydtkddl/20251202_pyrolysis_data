@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluation of thermal source in the yield of a hydrothermal liquefaction batch reactor Hydrothermal liquefaction is a thermochemical process that converts wet biomass into biofuels and valuable byproducts; however, its high energy demands limit its sustainability. Solar energy offers a renewable and sustainable alternative to address these energy requirements. This study investigates the use of a high-flux solar simulator as a heat source for the hydrothermal liquefaction of pinewood sawdust biomass, analyzing its heating rates, thermal uniformity, and performance in comparison to conventional heating methods. Experiments were conducted using a commercially available reactor loaded with 10 % w/w pine wood sawdust (Pinus oocarpa) slurry and deionized water, with heating stopped at 573 K under four configurations: muffle furnace, heating plate, fixed reactor and rotary reactor (120° rotation at 6°/s) under high-flux solar irradiance source (497.92 ± 8 kW/m2). Computational fluid dynamics analysis was performed to evaluate internal heat transfer dynamics under different heating methods and validated with experimental data. Statistical analysis (Tukey’s test, 95 % confidence) confirmed significant differences in yields among the treatments. The rotary solar reactor system achieved the highest bio-oil yield (34.41 %) and the lowest char formation (20.66 %), surpassing the fixed solar reactor (32.45 % bio-oil, 22.63 % char), heating plate (29.16 % bio-oil, 25.49 % char), and muffle furnace (21.43 % bio-oil, 32.7 % char). Fluid dynamics simulations revealed that the rotating solar reactor system enhanced the internal heat transfer coefficient by 17.8 times compared to the muffle furnace, leading to more uniform heat distribution and faster heating rates. The strong agreement between simulations and experimental results, with determination coefficients (R2) exceeding 0.94, underscores the reliability of the modeling approach. These findings confirm that solar-powered hydrothermal liquefaction systems are a viable and sustainable alternative, offering higher biofuel yields, improved efficiency, and significant potential for integration with renewable energy sources to minimize the environmental impact of biofuel production.
+

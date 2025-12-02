@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synthesis, characterization, and performance evaluation of different sulfonated lignin-based carbon catalysts for upgrading waste vegetable oil to biodiesel Lignin, an agro-byproduct of lignocellulosic bio-refineries, was utilized as the precursor biomass for synthesizing sulfonated carbon catalysts employed in producing biodiesel from waste vegetable oils. Various synthesis methods were explored, including H3PO4 activation and sol–gel techniques for producing lignin aerogels (LA) and xerogels (LX), to enhance lignin’s porosity. Characterization techniques (FTIR, BET, EDX, XRD, TGA, TEM, SEM) revealed that the activation method and sulfonation conditions significantly influenced the catalysts’ surface area, porosity, and catalytic activity. Catalysts prepared via H3PO4 impregnation or based on xerogels exhibited lower catalytic efficiency due to their compact structures and reduced surface area, which limited access to active sites. In contrast, the carbon aerogel catalyst, prepared at 400 °C and sulfonated at a solid-to-acid ratio of 1:10 for 10 h (LCA(M1)(1-400°C)-S(1:10)(10)), exhibited an acid density of 2.81 mmol/g, a surface area of 78.1 m2/g, and the highest biodiesel conversion of 96.58 %. The relationship between biodiesel conversion and yield was investigated using this catalyst, considering variables such as catalyst concentration, oil-to-methanol molar ratio, reaction time, and mixing speed. Response Surface Methodology (RSM) was employed to develop a model predicting conversion and yield and to determine the optimal reaction conditions for biodiesel production. RSM analysis revealed that all factors had a statistically significant impact (p < 0.000), with the quadratic model showing a strong correlation with experimental results. The optimal conditions identified were 12.5 % catalyst concentration, 4.89 h reaction time, 484 rpm mixing speed, and an oil-to-methanol molar ratio of 1:41.5. Under these conditions, the predicted conversion and yield were 97.2 % and 93.80 %, respectively. The produced biodiesel met ASTM D6751 and EN 14214 standards, underscoring its practical applicability.
+

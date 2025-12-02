@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal plasma assisted pyrolysis and gasification of RDF by utilizing sequestered CO2 as gasifying agent A growing global population coupled with rising industrialization has led to an ever increasing energy demand, which in turn forced us to turn to fossils without sufficient consideration of the consequences. The most serious consequence, as is evident today, is the increase in CO2 levels responsible for adverse climate change, which compelled the United Nations to develop the Sustainable Energy Goal 13 (SDG-13), calling for immediate action to combat climate change and its effects. On the other hand, the increase in population has also resulted in a tremendous increase in waste generation, necessitating the need for safe and sustainable waste treatment. Over recent years, research has been concentrating on advanced thermal plasma technology to valorize diverse wastes into useful energy. The generated syngas can be utilized for energetic (such as heat and electricity) and chemical (such as methanol and dimethyl ether) end applications. The current investigation analyzes the viability of the thermal plasma system (a water-stabilized DC plasma torch) for the pyrolysis, partial pyrolysis, and gasification of refuse-derived fuel (RDF) coupled with the implementation of the CCUS concept using waste CO2 as a gasifying agent (which is planned to be separated from flue gas coming from waste combustion) and converting it into CO in the syngas through plasma valorization of RDF. A comparative evaluation of the attributes, impurities, and yield of syngas and the generation of solids (ash and char) is carried out along with the analysis of performance parameters for four different cases (with variable inputs of CO2, namely 173, 62, 26 and 0 L/m with gasification ratio ranging from 1.04 to 0.4). The syngas constituents are compared to the equilibrium compositions deduced by developing an equilibrium model in Aspen Plus (V 11.0) thermodynamic environment and are found to be close to the theoretical compositions. The highest gas yield is found for Case-I with 3.44 m3/kg due to the maximum carbon conversion, while the minimum gas yield is assessed as 1.60 m3/kg for Case-IV with high char production. Furthermore, H2 production was found to be almost the same for all cases (1.06–1.12 m3/kg of fuel). Furthermore, energetic efficiencies for all the four cases (63 %, 60 %, 62 % and 58 %) clearly reveal an encouraging energy balance. The theoretical maximum values of contaminants such as NH3, H2S, HCl, HF and HBr are calculated and a design of a syngas cleaning system is proposed. The promising results of the study can be considered a small but significant step towards SDG-13.
+

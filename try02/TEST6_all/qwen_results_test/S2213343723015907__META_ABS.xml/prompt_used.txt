@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Gases production from microwave-assisted pyrolysis of polypropylene plastic Polypropylene (PP) is widely used around the world, but PP waste has caused environmental problems after being abandoned. To deal with this massive PP waste, pyrolysis is one of the potential technologies appropriate for PP final utilization. Microwave assisted heating was adopted in this study to investigate the effects of pyrolysis temperatures from: 700, 750, 800, 850 and 900 ℃; microwave power set at: 600, 700, 800, 900 and 1000 Watts; and SiC/PP mass ratios of: 60:5, 60:10, 60:15, 60:20 and 60:25. Results for the above range of operating conditions were recorded for: product gas yields, pyrolytic gas transient compositions, and product gas heating values (HHVs). The transient product gases included C3H6, CH4 and H2 with stable concentrations ranging from 7.5 to 22.1 vol%, 5.1–20.2 vol% and 5.4–21.1 vol%, respectively. The optimal gas yield of 70.7 wt% was obtained when the pyrolysis temperature, microwave power, and mass ratio were 900 ℃, 1000 Watts, and 60:15, respectively. Based on the gas components, the corresponding HHVs ranged from 13.9 to 34.4 MJ/Nm3.
+

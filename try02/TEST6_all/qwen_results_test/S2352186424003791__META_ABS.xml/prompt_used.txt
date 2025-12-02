@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Assessing environmental impacts of various solvent-dissolution routes for the pelletization of mixed plastic waste The vast majority of mixed plastic waste (MPW) does not degrade, thereby contributing to permanent environmental pollution. To address this, solvent-dissolution processes have been developed to recycle MPW into usable materials like blended pellets. This study evaluates five solvent-dissolution pathways, with a focus on mixed polyolefin, which constitutes about 60 % of MPW. The pathways explored include xylene, paraffin waxheptane, paraffin waxhexane, mineral oilheptane, and mineral oilhexane. Although paraffin wax and mineral oil are considered environmentally friendly, their recovery processes involve hexane or heptane, leading to higher energy use and carbon emissions. The xylene-based pathway, however, showed about four times lower energy consumption (48 MJ) and significantly reduced emissions (1.24 kg CO2 eq.) compared to fossil fuel-derived methods. In addition, mechanical property tests were conducted on the HD-PP blends which revealed a tensile modulus of 762 MPa and a tensile strength of 24 MPa, rendering them potentially advantageous for applications necessitating moderate elasticity and strength. Additionally, the study identifies dissolution and extrusion as the key stages affecting the life cycle assessment (LCA) and suggests powder production as a more cost-effective and sustainable alternative to pelletization, with lower carbon emissions. These findings offer valuable insights for improving MPW recycling through solvent-dissolution.
+

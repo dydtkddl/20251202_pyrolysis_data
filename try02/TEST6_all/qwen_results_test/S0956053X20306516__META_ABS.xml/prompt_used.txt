@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of waste expanded polystyrene and reduction of styrene via in-situ multiphase pyrolysis of product oil for the production of fuel range hydrocarbons Upgraded fuel oil was produced from the waste expanded polystyrene (WEPS) using pyrolysis and in-situ selective aromatization in a specially designed reactor. The catalytic pyrolysis of WEPS was performed keeping the catalyst in three different types of catalyst arrangements inside the reactor i.e., A-type/catalyst in liquid phase, B-type/catalyst in vapour phase, and AB-type or Multiphase/catalyst in both liquid and vapour phases, respectively. The ZSM-5 ammonium powder was used as a catalyst with varying feed to catalyst ratio and 20:1 was found to be optimum. Aromatics of fuel range like benzene, toluene, and ethylbenzene (BTE) were significantly increased and styrene got reduced by many folds when AB-type/multiphase catalytic pyrolysis was performed. The thermal pyrolysis produced maximum liquid yield of 94.37 wt% at a temperature of 650 °C and a heating rate of 15 °C/min. The maximum liquid yield of 88.05 wt%, 78.85 wt%, and 75.11 wt% were obtained for the A-type, B-type, and AB-type catalytic pyrolysis at the temperature of 600 °C, 550 °C and 550 °C, respectively using the same heating rate. The liquid oil of thermal pyrolysis contains very low amount of fuel range aromatics i.e., BTE of 11.38 wt% and the highest amount of styrene (84.74 wt%). In contrarily, BTE content for the catalytic process increased progressively in the order of 18.98 wt% (A-type) < 24.27 wt% (B-type) < 28.12 wt% (AB-type). The styrene content significantly decreased to a very low value of 46.30 wt% for AB-type/multiphase pyrolysis at the temperature of 550 °C.
+

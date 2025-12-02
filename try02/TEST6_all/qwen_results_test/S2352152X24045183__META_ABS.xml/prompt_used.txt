@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation of chemical kinetic models for electrolyte solvent vapors released from thermal runaway lithium-ion batteries The vent gas generated from electrolyte decomposition during thermal runaway is the primary cause of fires in lithium-ion batteries. Accurate chemical kinetic models contribute to a deeper understanding of the rapid redox and reaction kinetics during the thermal runaway process in lithium-ion batteries, laying the foundation for the design of safer storage batteries. This study conducted combustion experiments on ethyl methyl carbonate (EMC) and optimized a comprehensive chemical kinetic model for linear carbonate esters (LCEs). The laminar burning velocity (LBV) of EMC/air was measured via a 36-l constant volume combustion chamber at an initial temperature of 373 ± 2 K, initial pressure of 0.7–1.6 atm, and equivalence ratio of 0.6–1.6. Here, we present a novel method to optimize chemical kinetic models of LCEs. The method accurately screens the candidate reactions in the seed kinetic model through global sensitivity analysis and perturbation testing. The genetic algorithm was subsequently used to optimize the rates of candidate reactions in the new kinetic model within a small range (0.2–5 times the original values). The optimized model (Modelopt) enhanced the predictive accuracy of LBV and IDT by 28.4 % and 43.1 %, respectively, and reduced the prediction errors for EMC and DMC pyrolysis while retaining the prediction accuracy of DEC pyrolysis. Finally, experimental data outside of the optimization procedure were used to further validate the applicability of Modelopt.
+

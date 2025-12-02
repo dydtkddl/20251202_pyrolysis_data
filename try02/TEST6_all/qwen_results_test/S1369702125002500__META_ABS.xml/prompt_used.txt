@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Revolutionizing fiber materials for space: Multi-scale interface engineering unlocks new aerospace frontiers Space exploration represents a critical frontier for advancing human knowledge and technology. However, the extreme space environment—characterized by wide temperature fluctuations, vacuum, radiation, atomic oxygen erosion, and micrometeoroid impacts—places exceptional demands on spacecraft materials. These conditions necessitate materials that are lightweight, thermally stable, radiation- and corrosion-resistant, and mechanically robust. High-performance fibers and fiber-reinforced composites have emerged as key candidates due to their excellent specific strength, stiffness, and tunable functionalities, finding broad use in spacecraft components, astronaut gear, and shielding systems. Despite growing interest in space-applied fiber materials, comprehensive reviews integrating material design principles, interface engineering strategies, and practical aerospace applications remain scarce. This review addresses that gap by systematically analyzing recent advances in high-performance fibers and composites for space use. It focuses on their performance under multifactorial space conditions and the impact of interfacial modification and matrix architectures on composite mechanics. Functional applications—such as atomic oxygen resistance, thermal protection systems, and electromagnetic shielding—are critically discussed, with an emphasis on limitations and challenges. Finally, we highlight future directions for material innovation, emphasizing the need for interdisciplinary approaches to advance next-generation aerospace fiber systems that not only meet demanding mission requirements but also support long-term sustainability for deep-space exploration.
+

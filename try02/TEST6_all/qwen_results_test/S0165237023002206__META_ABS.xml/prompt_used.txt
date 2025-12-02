@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Possible use of spent FCC catalyst for upgrading of wax from the pyrolysis of plastics to liquid fuel The cracking of heavy wax derived from mixed plastics (high-density polyethylene, low-density polyethylene, and polypropylene) to chemical and fuel purposes was explored using spent fluid catalytic cracking catalyst (spent FCC). The wax cracking was performed by a fixed-bed pyrolysis reactor with a slow heating rate. All catalysts, when compared to other catalysts (HY zeolite and MCM-41), could enhance liquid oil and gas production. While the spent FCC catalyst produced the highest liquid oil with least amount of coke production. The influence of spent FCC catalyst ratio on product distribution revealed that a catalyst-wax ratio of up to 1:1 resulted in a higher liquid oil yield than a low ratio. Additionally, the increase of cracking temperature promoted more oil production; however, at high temperature (above 400 °C) the evaporation of wax became more significant, and consequently a high portion of produced wax was obtained. Therefore, under suitable conditions, the spent FCC catalyst demonstrated the possibility of upgrading the heavy wax into liquid fuels and chemicals. In addition, this study also compared the products obtained from two processing routes using the spent FCC catalyst. The first route involved the pyrolysis of plastics into wax and then cracking the wax into liquid fuel, while the second route involved a one-step process that directly converted plastics into liquid fuel. The spent FCC catalyst promoted the production of diesel-range hydrocarbons and suppressed the aromatic production for the wax cracking. By contrast, the spent FCC catalyst significantly enhanced aromatic production during the cracking of mixed plastics.
+

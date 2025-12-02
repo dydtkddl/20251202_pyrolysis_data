@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+An inclusive experimental and kinetic understanding of the slurry phase hydroprocessing of crude oil with an active dispersed catalyst to obtain refined fuel The shift of the industrial focus from fuel to chemicals has urged the researchers to obtain a suitable petrochemical feedstock for the FCC unit. Currently, the slurry phase hydroprocessing is a boon for industrialists to upgrade the crude oil using dispersed catalysts. This hydroprocessed crude oil obtained from slurry phase reaction prevents the FCC catalyst unit from getting rapidly poisoned as most of the impurities is removed from the crude oil such as asphaltenes, resins, heavy metal, sulfur etc. This study puts forward the influence of reaction temperature and time on the hydroprocessing of the crude oil. First, the screening of three separate forms of unsupported trimetallic NiMoW catalysts i.e., as-synthesized (CAT1), sulfided (CAT2), and oil-soluble sulfided (CAT3) at 420 °C and 120 bar of hydrogen pressure has been performed. After screening out the best catalyst (CAT3) based on greater conversion results of heavier hydrocarbon fractions to lighter hydrocarbon fractions, further a detailed experimental study for the hydroprocessing of crude oil under hydrogen pressure (120 bar) with varying reaction temperatures (410, 420, 430 °C) and time period (3, 4 and 5 hours) has been carried. With the rise in temperature from 410 to 430 °C, although the higher conversion of heavier fractions is obtained but the increased amount in the coke weight % restricts the use of very high temperatures for slurry hydroprocessing of crude oil. At 420 °C and 120 bar H2 pressure, CAT1 catalyst shows a reduction in heavy vacuum gas oil (>450 °C) from 20.05 wt% to 11.1 wt%, and a rise in middle distillate from 37.02 wt% to 50.4 wt%. When CAT2 catalyst is employed, a decrease in heavy VGO from 20.05 wt% to 9.3 wt% was observed with an increase in the middle distillates from 37.02 wt% to 52.1 wt%. CAT3 catalyst leads to maximum reduction in heavy VGO from 20.05 wt% to 7.1 wt% with an increase in the middle distillates from 37.02 wt% to 55.2 wt%, which shows the importance of oil-soluble catalyst to obtain better quality petro FCC feed. The kinetic study has also been performed for a better understanding of the reaction pathway. Based on the kinetic study, the activation energy associated with each hydrocarbon fraction has been determined and presented in the work. Such a detailed study covering all these valuable parameters along with kinetic study has not been presented till now which is the novelty of our work also.
+

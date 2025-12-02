@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Efficient and complete biodegradation of Poly (butylene adipate-co-terephthalate) by a novel dual-member bacterial consortium from compost: Metabolic division of labor between BDP053 and BDT04 Poly (butylene adipate-co-terephthalate) has been widely used, but its natural degradation is sluggish and microbes degrading PBAT efficiently are still limited. Herein, two novel bacteria BDP053 and BDT04 were isolated from compost and formed a PBAT-degrading consortium through metabolic complementation. They represent novel genus and species in families Steroidobacteraceae and Alcaligenaceae, respectively. Strain BDP053 can degrade 2 g/L PBAT with a weight loss over 99.1 % within 110 h at 50 ℃. It assimilated adipic acid, 1, 4-butanediol and was proposed to transform mono (4-hydroxybutyl) terephthalate via two newly reported possible oxidative intermediate metabolites in 210 h into terephthalic acid, which was assimilated by BDT04 within 24 h. The metabolic pathways of the monomers are exist in their genomes. This consortium degrade three commercial PBATs completely in 9 days. Particularly, PBAT with aromatic components > 50 mol% was firstly reported to degrade in 16 days. The intermediates had no significant effect on seed germination rate and plant morphology in Arabidopsis thaliana. The consortium maintained good biodegradability to PBAT and composites PBAT-PLA/PHA at mesophilic temperatures. The consortium is competitive in polymicrobial composting microcosms and can be applied at home or industrial composting to accelerate PBAT-based waste materials’ degradation.
+

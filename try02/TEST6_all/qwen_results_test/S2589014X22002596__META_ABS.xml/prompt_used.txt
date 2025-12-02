@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recent technological innovations on continuous microwave assisted biomass pyrolysis and perspectives for industrial scale applications Continuous microwave pyrolysis (CMP) is one of the most promising technologies for biomass valorization into biochar, bio-oil and, syngas. This review shows the recent technological innovations for the continuous pyrolysis of biomass assisted by microwave. The main challenges for the transition of CMP to the industrial scale are analyzed: to ensure the propagation of the waves and their absorption in larger volumes; to control the penetration of the waves in a way that the irradiated volume continues to be compatible with the depth of penetration; to control the evolution of the medium (solid-liquid-gas multiphase) the evacuation and the separation of the process products; the fouling of the reactor; the energy efficiency of the technology and the compatibility of the power density with the change of scale, considering that the power of the magnetrons is limited. Several different types of continuous microwave reactors are presented, paying attention to the innovations presented on patent databases. To achieve economic viability, further development of this technology is necessary, as multi-mode propagation and temperature homogenization are not necessarily adequate to fully exploit the specificity and advantages of microwaves. Energy optimization of the CMP is also necessary to increase its economic viability, for example by reducing heat loss and utilizing waste energy.
+

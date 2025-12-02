@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Modeling and tracing of polycarbonate (PC) degradation in soil microcosm with a PC microplastics quantification method based on pyrolysis GC–MS Understanding the migration and transformation of polycarbonate (PC) plastic wastes in the natural environment is crucial for assessing their environmental impact and bioremediation. In this study, PC plastic degradation was modeled and traced in soil microcosm by investigating physiochemical properties changes of PC, the formation of microplastics, and changes in soil microbial communities. Notably, PC microplastics quantification method was also successfully devised by pyrolysis gas chromatography mass spectrometry and also applied herein. Through gel permeation chromatography analysis, the molecular weight of the naturally aged PC film obviously reduced, whereas no change for unaged ones. After 12 months of soil burial, the surface corrosion and holes formation were emerged on the surfaces of both PC films in the non-sterilized soil harboring indigenous microorganisms by scanning electron microscope. The worsened thermal stability of both PC films in non-sterilized soil was demonstrated by thermogravimetric analysis. Meanwhile, the presence of increased hydroxyl group absorption and decreased carbonyl peak highlighted molecular chain breakage in both PC films by Fourier transform infrared spectroscopy. In particular, all the changes were more significant in aged PC than unaged ones. Furthermore, the increase of quantified PC microplastics on the surface of PC film in the non-sterilized soil accompanied the decreasing of microbial diversity and the enrichment of potential functional microorganisms. These findings revealed that the combination of natural aging and indigenous microbes exhibited a noticeable performance in PC plastics degradation in soil microcosm, providing new insights into the degradation mechanism of PC plastic wastes in the natural environment.
+

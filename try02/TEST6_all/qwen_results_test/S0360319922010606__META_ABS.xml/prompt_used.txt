@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic hydropyrolysis of crop straws with different biochemical composition In this study, four kinds of straws with different biochemical compositions, including soybean straw (SS), peanut straw (PS), rice straw (RS), and corn straw (CS), were subjected to catalytic hydropyrolysis (HyPy) to explore the influence of biochemical composition on the products distribution and properties of the pyrolysis oil. The HyPy reactions were performed at 400 °C for 2 h with added 10 wt% Pd/C and 4 MPa H2. During the HyPy, hydrogen and catalyst broke the coating structure and hydrogen bond between cellulose (CL) and hemicellulose (HCL), and thus significantly weakened the biochemical composition effect on the yield and elemental composition of the bio-oil. The bio-oil yield varied between 11.75 wt% and 13.05 wt%, and the C, H, N, O, and S content fell into the following ranges of 82.06–85.15 wt%, 9.24–9.61 wt%, 1.18–1.43 wt%, 4.62–7.86 wt%, 45–130 ppm, respectively. Biochemical composition of straw, especially the mass ratio of CL to HCL (m CL/m HCL), markedly influenced the molecular composition of the bio-oil. Hydrocarbons (20.15–46.66%) and phenolic compounds (17.01–47.98%) accounted for the vast majority of the identified compounds. SS and PS with higher m CL/m HCL (1.92 and 1.80, respectively) tended to produce bio-oils with more aromatics (22.63% and 20.70%, respectively) and fewer phenolic compounds (17.01% and 22.56%, respectively).
+

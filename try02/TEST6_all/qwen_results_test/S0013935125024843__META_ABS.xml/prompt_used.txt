@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recycled PET-derived MOF for photocatalytic degradation of emerging pollutants: Recent progress and critical considerations Plastic pollution, especially from polyethylene terephthalate (PET), represents a major environmental crisis, with annual global production exceeding 70 million tons and persistently low recycling rates. Traditional recycling methods have notable limitations, and PET's environmental persistence exacerbates ecological and health risks. Simultaneously, emerging water pollutants such as pharmaceuticals, synthetic dyes, and pesticides often evade conventional treatment systems, requiring more advanced remediation strategies. This review explores the intersection of these challenges through the development of metal–organic frameworks (MOF) synthesized from recycled PET waste for photocatalytic degradation of emerging pollutants in water. PET is chemically depolymerized into terephthalic acid linkers, enabling the fabrication of high-performance photocatalysts that tackle both plastic accumulation and water contamination. Recent progress shows that PET-derived MOF can achieve degradation efficiencies above 90 % for a broad spectrum of pollutants under artificial and solar light. Performance has been further enhanced by strategies incorporating Fenton-like processes, sulfate radical generation, and photothermal activation, while multifunctional systems allow for simultaneous pollutant degradation and antimicrobial disinfection or hydrogen evolution. Synthesis innovations, including one-pot hydrothermal and mechanochemical approaches, have reduced complexity and energy demand. Nonetheless, critical challenges remain regarding real-world deployment, including limited testing in complex water matrices, the absence of scalable photocatalytic systems, and a lack of techno-economic and lifecycle assessments. This review highlights barriers from PET sourcing to photocatalyst durability and outlines research priorities to support implementation. Valorizing PET into MOF offers a promising route toward circular economy solutions, provided that scalability, cost, and environmental impact are thoroughly addressed.
+

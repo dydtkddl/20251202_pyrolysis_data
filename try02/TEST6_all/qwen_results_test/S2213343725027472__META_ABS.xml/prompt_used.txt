@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Waste-derived electrocatalysts for electrochemical CO2 reduction: A circular approach to carbon valorization Transforming waste into opportunity is central to climate resilience and sustainable development. This review explores the cutting-edge use of waste-derived electrocatalysts for electrochemical CO2 reduction (eCO2RR) to convert CO2 into valuable chemicals and fuels. The broader implementation of eCO2RR hinges on developing cost-effective, high-performance electrocatalysts. Over 45 waste streams encompassing electronic waste, biomass, industrial byproducts, and plastics have been examined for their potential to be transformed into functional catalysts through pyrolysis, hydrothermal synthesis, chemical leaching, mechanical separation, and hybrid recycling. These materials leverage the inherent metal content, heteroatom functionalities, and carbon-rich structures found in waste, achieving Faradaic efficiencies of up to 98 % for products including CO, formate, and methanol. The relationship between structural features and catalytic performance was emphasized, particularly how surface area tuning, nitrogen doping, and active site engineering enhance selectivity and reaction kinetics. By redefining waste as a valuable feedstock for carbon conversion, this review provides a comprehensive framework for advancing low-carbon chemical manufacturing and accelerating the transition toward a circular carbon economy.
+

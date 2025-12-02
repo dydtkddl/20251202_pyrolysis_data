@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Waste plastic thermal-transformed CNT@Fe–Mo/MgO for free radical activation and bacteria sterilization Pyrolysis technology has been focused on waste plastics for recycling. However, there is rare research for reusing pyrolysis products (carbon nanotubes). Based on pyrolysis technology of waste polypropylene (PP) plastic, carbon nanotube coated Fe–Mo/MgO nanomaterial (CNT@Fe–Mo/MgO) was prepared by chemical vapor deposition to remove Gram-pathogenic bacteria. The addition of Mo and MgO promoted the cracking of PP plastic and the formation of MWCNTs. The as-obtained CNT@Fe–Mo/MgO can stimulate H2O/O2 to produce abundant ·OH, ·O2 − and 1O2 radicals, which probably resulting from the synergistic effect of delocalization of CNTs and REDOX pair of Fe3O4. Consequently, the removal rate of Escherichia coli and Staphylococcus aureus by CNT@Fe–Mo/MgO composite catalyst can reach 100% within 2h, without the help of any additional energy or active oxidant. At the same time, the material is remarkable stability and reusability with complete removal of pathogens after six cycles. This study not only provides a method for the synthesis of highly effective sterilizers, but also opens up a new direction for the application of functional carbon nanocomposites prepared by pyrolysis of waste plastics.
+

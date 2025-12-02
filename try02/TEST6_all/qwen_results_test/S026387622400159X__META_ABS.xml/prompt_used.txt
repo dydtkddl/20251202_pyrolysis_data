@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolyzed coal base high surface area and mesoporous activated carbon for methyl violet 2B dye removal: Optimization of preparation conditions and adsorption key parameters Herein, a low-grade Malaysian coal namely Merit Karpit coal (MRTKC) was transformed into high surface area mesoporous activated carbon (MRTKC-AC) via pyrolysis-assisted ZnCl2 activation. A numerical optimization approach rooted in the Box-Behnken design (BBD) was employed to determine the best operational conditions such as A: dosage of MRTKC-AC (ranging from 0.02 to 0.1 g/100 mL), B: the pH of the solution (varying from 4 to 10), and C: the contact time (ranging from 5 to 25 min). A notable surface area of 1229.1 m2/g and a distinctive mesoporous structure with an average pore diameter of 2.9 nm was achieved at optimum impregnation ratio (1 MRTKC: 2 ZnCl2), heating temperature 500 °C, and residence time 60 min. Moreover, the application of MRTKC-AC was evaluated through the removal of methyl violet (MV) from the aqueous environment. The comprehensive equilibrium and kinetic adsorption analyses showed that the adsorption of MV by MRTKC-AC matched closely to the Langmuir isotherm model, while the kinetic behavior was suitably described by the pseudo-second order model. Thus, the maximum adsorption capacity (q max) for MV dye onto MRTKC-AC was ascertained to be a substantial 238.6 mg/g. The MV dye adsorption mechanism onto MRTKC-AC surface indicates various dye–adsorbent interactions: electrostatic attraction, p–p interaction, and H-bonding. This work shows that Malaysian low-rank coal is an economical precursor for producing low-cost and efficient mesoporous activated carbon with substantive surface area.
+

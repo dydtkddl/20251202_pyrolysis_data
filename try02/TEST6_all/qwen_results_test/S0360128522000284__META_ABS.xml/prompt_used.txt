@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical kinetics of cyclic ethers in combustion Cyclic Ethers (CEs) belong to a class of compounds of importance to understand the chemistry of both the engine auto-ignition of hydrocarbon fuels and the combustion of oxygenated biofuels. This article, divided in six parts, aims at systematically analyzing how up-to-date experimental and theoretical methods were applied to unveil the gas-phase oxidation chemistry of these compounds. The first part gives a brief overview on the significance of CEs as intermediates formed during alkane low-temperature oxidation summarizing its generally accepted chemical mechanism. This part also addresses the role of CEs as potential biofuels derived from lignocellulosic biomass and discusses the production methods of these molecules and their combustion performances in engine. The second part presents the different theoretical methods dedicated to calculate the electronic structure, thermochemical and kinetic data of CEs. The third part introduces the experimental methods used in studies related to CEs with a special focus on mass spectrometry and gas chromatography. The fourth part reviews the experimental and modeling studies related to CE formation during the low-temperature oxidation of linear, branched, cyclic alkanes, alkylbenzenes, olefins, and oxygenated fuels. The fifth part analyses the published work concerning the CE degradation chemistry and highlights the dominant involved reactions. To finish, the sixth part concludes and proposes future research directions.
+

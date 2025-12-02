@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Novel application of liquid chromatography/mass spectrometry for the characterization of drying oils in art: Elucidation on the composition of original paint materials used by Edvard Munch (1863–1944) Modern oil paints, introduced at the beginning of the 20th century, differ from those classically used in antiquity in their chemical and compositional features. The main ingredients were still traditional drying oils, often used in mixtures with less expensive oils and added with several classes of additives. Consequently, detailed lipid profiling, together with the study of lipid degradation processes, is essential for the knowledge and the conservation of paint materials used in modern and contemporary art. A multi-analytical approach based on mass spectrometry was used for the study of original paint materials from Munch's atelier, owned by the Munch Museum in Oslo. The results obtained in the analysis of paint tubes were compared with those obtained by characterizing a paint sample collected from one of the artist's sketches for the decoration of the Festival Hall of the University of Oslo (1909–1916). Py-GC/MS was used as screening method to evaluate the presence of lipid, proteic or polysaccaridic materials. GC/MS after hydrolysis and derivatization allowed us to determine the fatty acid profile of the paint tubes, and to evaluate the molecular changes associated to curing and ageing. The determination of the fatty acid profile is not conclusive for the characterization of complex mixtures of lipid materials, thus the characterization of the triglyceride profiles was performed using an analytical procedure based on HPLC-ESI-Q-ToF. This paper describes the first application of HPLC-ESI-Q-ToF for the acquisition of the triglyceride profile in a modern paint sample, showing the potentialities of liquid chromatography in the field of lipid characterization in modern paint materials. Moreover, our results highlighted that the application of this approach can contribute to address dating, authenticity and conservation issues relative to modern and contemporary artworks.
+

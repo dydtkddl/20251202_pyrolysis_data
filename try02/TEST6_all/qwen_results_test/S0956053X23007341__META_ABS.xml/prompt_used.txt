@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biodegradability of PBAT/PLA coated paper and bioplastic bags under anaerobic digestion Poly (lactic acid) (PLA) and Poly(butylene adipate-co-terephthalate) (PBAT) are two of biodegradable plastics with the highest production capacities in 2021. Bioplastic waste management can be easily integrated with organic waste management, especially when bioplastics are used as food packaging material, since they are potentially biodegradable. The aim of this study was to assess the biodegradability of biodegradable polymer-coated paper (BPCP) and bioplastic bags made from PBAT/PLA blend during mesophilic and thermophilic anaerobic digestion (AD) and to reveal the changes in the physicochemical properties of the bioplastics. BPCP obtained 155 NmL-CH4/g VS and 307.3 NmL-CH4/g VS under mesophilic and thermophilic conditions, respectively, but left bioplastic film residues. The bioplastic bags did not exhibit significant biodegradation during the AD processes. 1H NMR results indicated that the ratio of PLA to PBAT decreased significantly after AD of the BPCP film and that PLA monomers were formed from the bioplastic bags, leading to a decrease in the hydrophobicity on the surfaces of the materials. Methanoculleus was found to be enriched on the bioplastic surface after mesophilic AD. From the perspective of coupling bioplastic waste management with the food waste management, the incorporation of BPCP into the AD reactor not only enhances system stability and methane production to a greater extent than biodegradable plastic bags but also raises concerns regarding the residual biofilm when utilizing the digestate for direct land applications.
+

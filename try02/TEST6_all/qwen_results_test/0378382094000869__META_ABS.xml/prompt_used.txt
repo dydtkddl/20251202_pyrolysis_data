@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Reactivities of in situ and ex situ coal chars during gasification in steam at 1000–1400°C A unique feature of this study is the gasification of chars (in situ chars) in steam, starting from coals and proceedings uninterrupted, as opposed toa large number of previous studies, in which coals are first devolatilized in inert atmosphere, and the resulting chars (ex situ chars) are then gasified under conditions different from that of devolatilization. A large number of conversion and reactivity data were determined for both in situ and ex situ chars gasified in steam at 1000–1400°C. The results obtained for bituminous coal, subbituminous coal and lignite indicate that the reactivities of the resulting in situ chars are up to six times higher than that of the corresponding ex situ chars. Further, the reactivities of all the in situ chars drcrease monotonically as gasification proceeds, whereas maximum reactivities exist for ex situ chars at carbon conversions between 0.05 and 0.15. For all the in situ or the ex situ chars investigated in this work, the conversion at different gasification temperatures, when plotted against a dimensionless gasification time τ, ‘unified’ into a single characteristic curve with distinctly different shape for each type of char. The activation energies of the in the situ chars obtained are in the range of 56–85 kJ/mol, while that of the ex situ chars are between 63 and 99 kJ/mol. In addition, the dependence of initial reactivity of the in situ char on steam partial pressure during gasification may be described by a Langmuir-type expression.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Non-isothermal kinetic studies on co-processing of vacuum residue, plastics, coal and petrocrop Co-processing of petroleum vacuum residue (BVR) with plastics (polypropylene, bakelite), coal (Samla coal), and biomass (bagasse, Calotropis procera) was carried out in a thermogravimetric analyzer (TGA) reaction system in nitrogen atmosphere with a view to comparing the process of the mixture with those of the individual components. Experiments were conducted at heating rate of 40°C/min, in the temperature range of 30–900°C. Based on the results obtained, three temperature regimes were selected for studying the non-isothermal kinetics of TGA of individual BVR, plastics, coal, biomass as well as of the co-processing of these with BVR, i.e., below 400°C, between 400 and 500°C and above 500°C. The kinetic studies were performed using Coats and Redfern kinetic-modeling equations. The overall activation energies were 60.83kJ/mole for petroleum residue, 99.41kJ/mole for polypropylene, 21.08kJ/mole for coal, 22.68kJ/mole for C. procera and 31.9kJ/mole for the mixture of these four materials. Thus, it has been found that there exists an overall synergy, when four materials were co-processed together. The overall orders and activation energies change during co-processing of two, three or four different macromolecules including petroleum residue as observed presently. The results obtained are being reported.
+

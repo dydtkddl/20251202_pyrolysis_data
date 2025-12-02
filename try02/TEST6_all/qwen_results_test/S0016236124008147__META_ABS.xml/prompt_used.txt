@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic hydrotreatment of fast pyrolysis liquids from Pine wood using Ru-based catalysts supported on nitrogen-doped carbon materials Catalytic hydrotreatment is one of the promising routes for upgrading pyrolysis liquids (PLs) to intermediates that can be co-fed with vacuum gas oil for FCC refinery. Among all the factors, catalysts are always crucial in catalytic hydrotreatment of PLs as hydrogenation and repolymerization reactions occur in parallel. Therefore, catalysts with sufficient hydrogenation activity are generally required to enhance the hydrogenation reaction and to inhibit the repolymerization reaction of the thermally liable compounds in PLs. Among all noble metal catalysts tested, Ru/C catalysts showed a better performance than other catalysts in terms of the oil yield and deoxygenation level. However, a clear repolymerization was observed during catalytic hydrotreatment of PLs using Ru/C catalysts, especially during mild hydrotreatment, thus there is still ample room for their activity improvement. Here, a series of Ru-based catalysts supported on nitrogen-doped carbon materials (NC) and activated carbon (AC) were prepared. The catalytic performance was evaluated for hydrotreatment of PLs in a batch autoclave (250 °C, 8 MPa H2, 4 h for mild hydrotreatment; 340 °C, 6 MPa H2, 4 h for deep hydrotreatment). The Ru catalyst supported on nitrogen-doped carbon materials, obtained by the polyol reduction method with polyvinylpyrrolidone (PVP) as the protective agent (Ru/NC (PVP)), showed a better performance (in terms of product oil properties) than the other catalysts investigated in this work, due to a good distribution of the ruthenium nanoparticles. For mild hydrotreatment the H/C ratio, O/C ratio and MCRT value were 1.42, 0.37 and 9.9 wt%, respectively. For deep hydrotreatment the H/C ratio, O/C ratio and MCRT value were 1.26, 0.16 and 4.6 wt%. The comparison with results published earlier for other hydrotreatment catalysts is satisfactory but also shows room for further improvement. GC–MS and 1H NMR results showed that the contents of thermal liable components like aldehydes (16.7 %), ketones (24.3 %) and sugars (4.0 %) in PLs were quantitatively converted under mild hydrotreatment, while phenols and alkanes significantly increased from 35.9 %, 0 % to 49.1 %, 35.3 %, respectively, especially for deep hydrotreatment compared with PLs feed. The catalyst characterization revealed that Ru/NC (PVP) with the most uniform dispersion and the smallest average particle size (1.5 nm), rendered the best performance. These findings indicate that Ru/NC (PVP) catalyst is a promising candidate for the catalytic hydrotreatment of PLs.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Lumping procedures in detailed kinetic modeling of gasification, pyrolysis, partial oxidation and combustion of hydrocarbon mixtures Kinetic modeling can prove to be a powerful tool in the analysis of many systems. It has already been applied to a wide variety of chemical engineering problems, including gas phase and liquid phase pyrolysis, polymer thermal degradation, oxidative coupling and several other chemical processes. Extended kinetic schemes are now being used with increasing frequency in practical applications and most of them are available in the technical literature. Their dimensions and complexity justify the adoption of analogy rules and other simplifying assumptions within the different chemical reaction classes. The levels of simplification have to be carefully evaluated to make them coherent with the final aim of the model. Owing to the huge amount of possible isomers for large hydrocarbons, it is usually necessary to lump a large number of real components into a properly selected number of equivalent components. Consequently, the corresponding elementary reactions are also grouped into equivalent or lumped reactions. The application of automatic generation techniques is particularly attractive where the extension of a core kinetic mechanism to higher hydrocarbons is concerned. Generally speaking, this extension only requires a relatively limited set of independent elementary kinetic parameters. This approach has been successfully applied for many years to vapor phase hydrocarbon pyrolysis; more recently, it was also extended to the liquid phase pyrolysis of complex hydrocarbon mixtures (such as visbreaking or delayed coking of refinery residues), to polyolefin thermal degradation and hydrocarbon mixture combustion processes. Similarly, the low and high temperature mechanisms of the oxidation process can be organized into a comprehensive kinetic scheme able to simulate the oxidation of natural gas, commercial gasolines and jet-fuels. Several examples are reported here to demonstrate the reliability and effectiveness of these mechanistic schemes and, more importantly, to discuss the adopted lumping and simplifying rules.
+

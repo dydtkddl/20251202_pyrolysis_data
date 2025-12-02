@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of beech wood and polyamide-6: Effect of HZSM-5 catalyst on the properties of pyrolysis oils Biomass residues and waste can be converted into bioliquids by pyrolysis, which can contribute to both the production of renewable fuels and the recycling of waste. In this paper, the pyrolysis of pure beech wood (BW) and of a mixture of BW + polyamide-6 (PA6), a nitrogen-containing plastic, was investigated to assess the effect of PA6 on the properties of bio-oils, obtained either by thermal pyrolysis or by pyrolysis with ex-situ catalytic treatment of the vapors. The presence of 20 wt% PA6 in the blend affected the pyrolysis products yields and distribution (gases, liquids, chars), but also the composition of the bioliquids. In absence of a catalyst, the production of phenolic compounds (guaïacol, syringol…), sugars, furans decreased significantly with the BW+PA6 blend compared to pure BW, and N-containing compounds derived from PA6 were found in the bioliquids. When HZSM-5 catalyst was applied for the treatment of vapors, a beneficial effect of the catalyst on the reduction of the sugars and furans content in the bioliquids and on the production of deoxygenated compounds was observed with pure BW. This effect was mitigated with BW+PA6 blends and the formation of fully deoxygenated compounds was almost totally suppressed, suggesting that the strong catalyst acid sites were poisoned. Caprolactam was by far the main product of PA6 degradation found in the bioliquids, but the N-containing by-products were different depending on the absence or presence of HZSM-5 catalyst. In particular, the formation of 5-cyano-1-pentene in a fairly large proportion was only observed in the presence of the catalyst.
+

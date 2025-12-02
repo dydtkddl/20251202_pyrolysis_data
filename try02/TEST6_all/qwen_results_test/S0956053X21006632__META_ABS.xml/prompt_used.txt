@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of end-of-life polystyrene in a pilot-scale reactor: Maximizing styrene production Chemical recycling of polystyrene (PS) via pyrolysis is of great industrial, and academic interest, with styrene being the primary product of interest. To identify the optimal process conditions, the pyrolysis of end-of-life PS was studied in a pilot-scale unit consisting of an extruder, and a continuous stirred tank reactor (CSTR). The PS was pyrolyzed with continuous feeding at a pressure range from 0.02 to 1.0bara, and a temperature range from 450 to 600 °C, giving primarily styrene, other mono-aromatics, and oligomers. The comprehensive two-dimensional gas chromatography (GC × GC) coupled with flame ionization detector (FID), and time-of-flight mass spectrometer (ToF-MS) as well as GC with thermal conductivity detector (TCD) were used to characterize the liquid, and gaseous products exhaustively. The styrene yield increased from 36 wt% at 1.0bara, and 450 °C to 56 wt% at 0.02bara, and 550 °C. Working under a vacuum enhanced the styrene recovery at all corresponding temperature levels. The yield of benzene, toluene, ethylbenzene, and xylene (BTEX) increased from 4 wt% at 450 °C, and 0.02 bara to 17 wt% at 450 °C, and 1.0 bara. The experimental results have been used in a mathematical model that can explain the combined effect of temperature, and pressure on the yield of the primary products. The present work illustrates the potential of a continuous pyrolysis process for end-of-life PS, and paves the way for this technology to be rapidly transferred from mere laboratory use to industrial processes in the circular (petro-) chemical industry.
+

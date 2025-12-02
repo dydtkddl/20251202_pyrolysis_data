@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Structural analysis and gasification reactivity of chars derived from the slow pyrolysis of extruded coal fines and recycled plastic The evolution of char resulting from the co-pyrolysis of recycled plastic and discard fine coal, along with the impact of varying plastic additions on the characteristics of the formed char and its subsequent gasification reactivity, remains unexplored. In this study, extrudates were produced using discarded South African Highveld coal fines, combined with either recycled low-density polyethylene (LDPE) or polypropylene (PP), respectively, and charred under a nitrogen atmosphere at three different temperatures (520, 720, and 920 °C). Co-gasification of plastic and coal provides an opportunity to reduce two waste streams simultaneously. The characteristics of the chars produced from the coal fines were compared to those produced from the extrudates formulated at varying plastic content (10, 25 and 50 %wt), using petrographic carbon form analysis, surface area and porosity analysis, as well as XRD carbon crystallite analysis. Thermal fragmentation was observed to degrade the integrity of the extrudates when the plastic content exceeded 10 %, therefore, the chars produced at 920 °C were pulverized (75–150 μm) before undergoing CO2 gasification at 800, 825 and 850 °C in the chemical-controlled regime. Carbon crystalline analyses showed that the chars were more ordered with an increase in plastic content. However, even with the more ordered structure, the gasification reactivity increased similarly with an increase in plastic content for both the extrudate derived chars containing LDPE and PP. Petrographic carbon form analysis showed an increase in crack and pore formation with an increase in plastic addition during all stages of the chars’ evolution as the pyrolysis temperature increased. The VRM time factor showed a positive linear correlation with an increase in BET surface area, especially for the LDPE derived chars (R2 > 0.7720). Therefore, the observed reactivity increase with an increase in plastic content can be correlated to an increase in surface area. Results allude to the possibility of increasing gasification rates in Industrial gasifiers while reducing both coal and plastic waste. Further work should be conducted to minimise the thermal fragmentation propensity of the plastic-containing fine coal bound extrudates to make the extrudates suitable for fixed bed gasification.
+

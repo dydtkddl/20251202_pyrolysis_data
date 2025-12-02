@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recent advances, synthetic and adaptive approaches of graphitic carbon nitride based nanocomposites towards sustainable applications: A review Graphitic carbon nitride (g-C3N4) has emerged as a next-generation photocatalyst, attracting remarkable attention for energy and environmental applications owing to its unique structural and electronic properties. As the demand for efficient and cost-effective solar energy conversion materials grows, g-C3N4 stands out due to its tunable band gap (∼2.7 eV), excellent photochemical stability, and fascinating electronic band structure. Structurally, g-C3N4 is a layered, polymeric semiconductor composed of carbon and nitrogen atoms arranged in a tris-triazine framework, offering abundant opportunities for chemical modification and functionalization. Compared to graphene, g-C3N4 is an efficient visible-light-driven photocatalyst with a moderate band gap and excellent chemical and thermal stability, making it suitable for a wide range of reactions. This review focuses on various synthesis strategies for g-C3N4 nanomaterials, including quantum dots, nanosheets, and nanotubes, with controlled morphology and structure. However, pristine g-C3N4 suffers from limitations such as low surface area, poor light absorption, and rapid electron–hole recombination, which significantly restrict its photocatalytic efficiency in many applications. Therefore, this review summarizes several modification strategies for g-C3N4 including metal and non-metal doping, co-doping, heterojunction construction, coupling with metal-free carbon materials, and defect engineering. These approaches aim to enhance photocatalytic activity by extending light absorption, improving charge transfer and separation, increasing surface area, reducing band gap energy, and suppressing charge recombination. Moreover, this review provides a comprehensive overview of the state-of-the-art progress, emerging trends, and key challenges associated with novel g-C3N4 nanostructures. Their applications in diverse fields including photovoltaics, environmental remediation through photocatalytic degradation of hazardous pollutants, sustainable fuel generation via water splitting and CO2 reduction, and sensing are discussed in detail. In addition, this critical review highlights the major limitations and unresolved issues of g–C3N4–based materials that must be addressed to enable large-scale, real-world implementation. Finally, future research directions are proposed, emphasizing innovative synthesis strategies, advanced structural engineering, and the integration of g-C3N4 with next-generation materials to unlock its full potential for energy and environmental applications.
+

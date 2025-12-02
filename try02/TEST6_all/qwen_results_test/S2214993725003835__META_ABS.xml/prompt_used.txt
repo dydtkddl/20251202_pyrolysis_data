@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Interface-confined sulfidation metallurgy (ICSM): Sustainable recovery of high-purity Te/Cd/Sn and glass from EoL CdTe photovoltaics CdTe thin-film solar cells, as a core component of photovoltaic devices, have been commercially deployed for over 30 years with global installations surpassing 30 GWp. Decommissioning has surged since 2010, showing major material recovery potential from retired modules. However, CdTe thin-film solar cells feature ultra-precise architectures with micron-sized CdTe/CdS/SnO2 functional layers deposited on glass substrates. This structural complexity and ultralow metal concentrations create significant technical barriers for metal recovery. Current recycling technologies in both literature and practice exhibit insufficient constituent recovery and secondary waste generation, necessitating advanced separation technologies. This study developed an innovative recycling process achieving multi-component recovery: intact glass substrates, high-purity Te powder (99.9 wt%), CdS precipitates (99.0 wt%), and sodium thiostannate (Na2SnS3) solutions. There were four steps: (1) Decommissioned modules were heated in air at 300 °C for 1 h to degrade EVA and recover intact back glass; (2) Front glass with functional layers further reacted with NaHS at 400 °C, converting CdTe/CdS/SnO₂ into Te/CdS/SnS₂ powder and recovering clean front glass; (3) Mixed powder was processed at 500 °C for 2 h (99.9 wt% Te with 98.31 % ± 2.11 % recovery; (4) Na₂S leaching (140 g/L, L/S = 10:1, 40 °C, 2 h) yielded 99.0 wt% CdS precipitate and Na₂SnS₃ solution with >99 % metal recovery. Material balance analysis and life cycle assessment demonstrated that the proposed technology exhibits superior cost-effectiveness and minimized environmental footprint, while maintaining industrial scalability.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biomass waste conversion into value-added products via microwave-assisted Co-Pyrolysis platform The current work is focused to investigate the synergetic interactions between biomass (groundnut shell, bagasse, rice husk, Prosopis juliflora, mixed wood sawdust) and hydro-rich plastics (Low-density polyethylene (LDPE) and Polyisoprene (PIP)) in microwave co-pyrolysis. The heating value of co-pyrolysis oil (38–42 MJ kg−1) was enhanced dramatically compared to biomass pyrolysis oil (20–28 MJ kg−1). Among biomasses studied, the energy yield of bio-oil obtained from rice husk with LDPE mixture is higher (42%). Whereas bio-oil from polyisoprene and groundnut shell mixture has the highest energy yield (78%). Each gram of co-pyrolysis feedstock consumed 12–18 kJ of incident microwave energy. An increase in overall energy efficiency in co-pyrolysis (62–70%) is observed compared to that of biomass pyrolysis (46–57%). Actual mass yield (31–47 wt%) of co-pyrolysis bio-crude is lower than its predicted value (42–57 wt%) due to the formation of lighter gases. In the combinations of and hydrogen-rich plastics considered in this study, it was found that co-pyrolysis of LDPE: bagasse has produced bio-crude with the highest yield of aliphatic hydrocarbons (25.78%), and co-pyrolysis of LDPE: rice husk has produced bio-crude with high selectivity of aromatics (11.7%). The extent of de-oxygenation was promoted in the co-pyrolysis due to synergy.
+

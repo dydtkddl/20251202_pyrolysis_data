@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and modeling studies of exo-tetrahydrobicyclopentadiene and tetrahydrotricyclopentadiene pyrolysis at 1 and 30 atm To better understand the decomposition behaviors of exo-tetrahydrobicyclopentadiene (exo-TCD, a main component of JP-10) and tetrahydrotricyclopentadiene (THTCPD), the experiments were performed in a flow tube reactor at 1.0-30.0 atm over a temperature range of 773–1148 K with high helium dilution. The mole fraction profiles of pyrolysis products, involving C1-C5 small hydrocarbons, monocyclic and polycyclic aromatic hydrocarbons (MAHs and PAHs), were obtained using online GC–MS/FID. A universal kinetic model of exo-TCD and THTCPD pyrolysis was developed by coupling a common base mechanism and their respective sub-mechanisms. It was validated against a wide range of pyrolysis experimental data, newly measured in this work as well as taken from the literature covering the intermediate-to-high temperature range in different reactors. The rate of production analysis shows that for the decomposition of two fuels, the unimolecular C-C dissociations and H-abstractions by H and aC3H5 attacking play a dominant role at both 1.0 and 30.0 atm. Due to the lower C-C bond dissociation energy and more H-abstraction sites, THTCDP exhibits a faster pyrolysis curve and covers a lower temperature range than exo-TCD. The simultaneously formed fuel radicals in exo-TCD and THTCPD pyrolysis impact the formation pathways of C1–C5 small products and MAHs. Notably, an extra five-membered ring in THTCPD results in slightly high production of C5 cycloalkenes, involving 1,3-cyclopentadiene and cyclopentene. The formation of MAHs, such as benzene, toluene and ethylbenzene, is also affected by fuel-specific reaction channels, yielding different peak concentrations. Concerning the two- and four-ring PAHs, the speciation profiles show a large extent of similarity in the decomposition of two fuels, which is mainly attributed to the similar formation pathways, especially at high temperature. Their formation is dominated by the bi-molecular addition reactions of c-C5H5 with c-C5H5, c-C5H6, as well as a series of resonantly stabilized radicals, which are barely influenced by the specific fuel chemistry.
+

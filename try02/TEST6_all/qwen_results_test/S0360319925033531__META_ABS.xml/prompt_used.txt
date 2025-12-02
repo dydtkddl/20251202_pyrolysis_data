@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic optimization in hydrogen production from co-gasification of canola meal and N95 filter mask through supercritical water: Products analysis and reaction pathway This study presents a novel approach for hydrogen production via catalytic supercritical water gasification (SCWG) of canola meal and N95 mask waste, two underexplored and compositionally distinct feedstocks. Their selection was guided by a machine learning model developed in our previous work, identifying them as optimal candidates under specific reaction conditions. To optimize reaction conditions, 29 non-catalytic tests were designed using Design-Expert software, varying temperature (385, 400, and 415 °C), feedstock concentration (1, 3, and 5 %wt), residence time (30, 45, and 60 min), and mixing ratio (25:75, 50:50, and 75:25) in a batch reactor without a stirrer. The software identified the optimal conditions (415 °C, 45 min, 3 %wt feed concentration, and a 50:50 mixing ratio) to maximize hydrogen yield. Under these optimized conditions, four nickel-based catalysts (Ni/Al2O3, Ni/MgO, Ni/ZnO, and Ni/ZrO2) were synthesized via wet impregnation and characterized using BET surface area analysis, X-ray diffraction, Fourier transform infrared spectroscopy (FTIR), field emission scanning electron microscopy (FESEM), and temperature-programmed desorption (TPD) techniques with ammonia (NH3) and carbon dioxide (CO2). Ni/MgO exhibited the highest hydrogen yield (5.45 mmol/g) and selectivity (72.8 %), while Ni/Al2O3 achieved the highest total gas yield (15.35 mmol/g) by promoting diverse gasification reactions. Catalytic enhancement resulted in a 78 % increase in hydrogen production compared to non-catalytic conditions. FTIR analysis of hydrochars confirmed that Ni/MgO facilitated the removal of oxygen and nitrogen-containing functional groups, increasing aromatic content and carbonization. Gas chromatography–mass spectrometry (GC-MS) revealed that elevated temperatures promoted the formation of phenols, alkanes, and hydrocarbons in the liquid product. Catalysts such as Ni/Al2O3 and Ni/ZnO led to an increased proportion of light hydrocarbons and a notable reduction in phenolic compounds, indicating enhanced hydrogenation and deoxygenation capabilities. A proposed reaction pathway, supported by experimental evidence, demonstrated a synergistic effect between biomass and plastic waste, where polypropylene enhanced hydrogen transfer reactions, facilitating the decomposition of lignin and hemicellulose into light hydrocarbons.
+

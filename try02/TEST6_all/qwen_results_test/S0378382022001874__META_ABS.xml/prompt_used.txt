@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of indirectly heated steam-blown gasification process conditions on biochar physico-chemical properties Our work provides a thorough characterization of different biochars produced by a novel 50 kWth Indirectly Heated Bubbling Fluidized Bed Steam Reformer. This study investigates the effect of temperature and gasification agent on the physico-chemical properties of biochars. We combined macro, micro and nano characterization techniques to provide a clear picture of the biochar characteristics, surface functionality and its “inert” nature toward potential applications. Our results demonstrate that indirect gasification is capable of producing carbon-rich biochars (> 92%) with increased porosity (89–198 cm3.g−1), high heating value (28–31 MJ.kg−1 a.r.) and aromaticity compared to the parent biomass. All biochars have lower O/C (0.02–0.04) and H/C atomic ratios (0.09–0.19), similar to anthracite. For the range of tested gasification conditions, air/steam gasification at an equivalence ratio of 0.20 and steam-to-biomass ratio of 1.2 provides the highest biochar yield (7.3%), while maintaining syngas composition optimal. On the other hand, air gasification produces biochars with relatively high content of inorganic elements. Indirectly heated biochars are compliant with the European Biochar Certificate regarding the carbon content, O/C ratio, H/C ratio. Our biochars may provide an improvement in agricultural yield and CO2 adsorption, especially those produced under air/steam gasification conditions. Our novel indirect design not only constitutes a promising development in the field of biomass allothermal gasification but also can help improving gasification circularity through the production of high quality biochar.
+

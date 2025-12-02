@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Gasification of non-recycled plastic packaging material containing aluminum: Hydrogen energy production and aluminum recovery This research aims to recover aluminum and hydrogen energy from non-recycled plastic material containing aluminum (NRP) using gasification. The gasification was conducted by a lab-scale fixed bed gasifier with controlling different temperature and equivalent ratio (ER) ranged from 600 °C to 900 °C and from 0.10 to 0.30, respectively. According to the syngas yield analytical results, the syngas yield increased significantly with an increase in ER. In the 900 °C case, the syngas yield increased from 4.47 m3/kg to 7.73 m3/kg with ER increasing from 0.1 to 0.3. This is because good gasification practice occurred at higher ER resulting in oxidation and exothermic reactions. Based on the measured syngas composition results, the H2 and CO fractions increased with increased gasification temperature. In the ER 0.3 case, as the gasification temperature increased from 600 °C to 900 °C, the H2 and CO fractions increased from 0.64 mol.% to 15.54 mol.% and from 2.89 mol.% to 15.54 mol.%, respectively. The syngas heating values were calculated ranging between 0.8 MJ/Nm3 and 5.1 MJ/Nm3. Meanwhile, cold gas efficiency (CGE) was approximately 72.2%, implying that 72.2% recovered energy was produced from gasified non-recycled plastic packaging material containing aluminum. The major recovered aluminum speciation was metallic aluminum using XRD identification. The recovered aluminum purity and recovery ranged from 73.1 wt% to 100.0 wt% and from 79% to 105%, respectively. In summary, the hydrogen energy production and aluminum recovery produced from non-recycled plastic packaging material containing aluminum using gasification was successfully developed.
+

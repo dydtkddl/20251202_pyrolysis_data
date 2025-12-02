@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal conversion of polystyrene plastic waste to liquid fuel via ethanolysis Since decades, one of the major troublesome environmental issue to the society is Polystyrene waste. Thermal conversion method can be used to transform the plastic waste into useful energy source. In this study, liquefaction technique using ethanol as a solvent was used to produce liquid fuel from polystyrene. The experiments were performed at different temperatures (290–370 °C), ethanol to polystyrene ratios (0.25:1–4:1) and reaction times (15–75 min) in an autoclave batch reactor. After characterization, quantitative and qualitative evaluation of liquid products; results showed that at temperature of 350 °C, ethanol to polystyrene ratio of 0.5:1 and reaction time of 60 min, highest liquid yield of 84.7 wt% was achieved. The viscosity, density, pH, calorific value and flash point of the oil product at this condition was 0.36 cP, 0.88 g/mL, 6.86, 40.91 MJ/kg and 55 °C respectively. Through GC–MS analysis, it was found that the oil product was mostly composed of aromatics, alkenes and alkyls; which made the liquid oil suitable to be used as fuel. In addition, comparative study was conducted by replacing ethanol with water as solvent under same conditions. Based on results, study proved ethanol to be better solvent than water which is commonly used in liquefaction process. Lastly, the liquid fuel produced is suitable to be used as alternative energy source for conventional fossil fuels.
+

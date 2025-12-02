@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Simplified dynamic simulation model of plastic waste pyrolysis in laboratory and pilot scale tubular reactor Thermal pyrolysis of plastic wastes in tubular reactor has been studied with Direct Computer Mapping based simulation methodology, combined with genetic algorithm. Degradation process was carried out in laboratory and pilot scale tubular reactor. The investigated pyrolysis temperature range was 465–545°C, and raw material feeding rate was between 6 and 20g/min. A dynamic simulation model has been developed based on a four-step degradation scheme, considering four cracking product fractions (gas, naphtha, middle distillate and heavy oil) and their hydrocarbon composition (paraffin, olefin and aromatic). A collaborating genetic algorithm was used for the identification of kinetic and stoichiometric model parameters. Having analyzed the identification results we concluded that some of the stoichiometric parameters, moreover all of the kinetic parameters and vapour/liquid phase ratios were independent from the reaction parameters, however they depend on the quality of raw material. The temperature and feeding rate dependency of the model were considered by two calculated parameters (pLiq, pAro). According to the investigations, the rate determining factor of the degradation process is the effectively utilized enthalpy resulting from the heat transfer through the wall of the equipment. The simplified dynamic simulation model can support the scale-up procedure of the pyrolysis technology.
+

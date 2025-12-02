@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review of solar thermochemical processes This paper reviews development in the field of solar thermochemical processing by considering experimental demonstrations, reactor technology development, thermodynamic, economic and life cycle analyses. The review then builds on these aspects and compares various solar thermochemical processes. Solar upgrading of carbon feed has been demonstrated on pilot scale. It is observed that for the thermochemical cycles, only iron and ceria based redox pair have been demonstrated on pilot scale. For industrial applications, solar thermochemical production of zinc, upgrading of landfill gas and organic waste have been demonstrated on pilot scale. However, long term performance data of these pilot plants is not reported in literature. Thermodynamic comparison reveals that the processes involving upgrading of carbon feed have energy and exergy efficiency at 50–90% and 46–48% respectively. Multistep thermochemical cycles operating at 900–1200K have energy efficiency of 34–38%. Metal oxide redox pair based thermochemical cycles operating at 1900–2300K have energy and exergy efficiencies of 12–32% and 20–36% respectively. Methane reforming and lime production processes have chemical efficiencies of 55% and 35% respectively and have demonstrated better performance than other solar thermochemical processes. A few processes like solar gasification of solid carbon feed have demonstrated lower chemical efficiency of around 10% even at pilot scale. The hydrogen production cost for solar upgrading of fossil fuels is estimated at 3.21–6.10$/kg and is lower than thermochemical cycles at 7.17–19.26$/kg and CSP driven electrolysis at 3.15–10.23$/kg. It is observed that there is limited actual data and significant uncertainty in cost. Under these circumstances, it is recommended that initial screening of processes be done by net energy, material and life cycle analysis.
+

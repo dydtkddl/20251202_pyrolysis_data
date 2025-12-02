@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Dechlorination of a real plastic waste pyrolysis oil by adsorption with zeolites The adsorptive dechlorination of a pyrolysis oil coming from real plastic waste was investigated using different Na-zeolites (4A, 13X, and Y) as adsorbents. The dechlorination experiments were performed in a fixed bed trap under inert atmosphere operating at moderate temperatures (< 180 °C). The dechlorination efficiency of the adsorbents was significantly improved by performing a dehydration pre-treatment due to the removal of water molecules physisorbed on the zeolite surface. Among the zeolitic materials tested, 13X zeolite showed the best dechlorination efficiency, which was related to its high content of Lewis acid sites (attributed to the presence of Na+ cations ionically interacting with the zeolite framework), acting as chemisorption sites, as well as the high accessibility of the FAU-zeolitic topology to the Cl-containing compounds. For that sample, a detailed study of the adsorption temperature (from 30 to 180 °C) and time on stream (1–6 h) was further carried out. The maximum chlorine removal efficiency was achieved, reducing the chlorine content of the pyrolysis oil from 421 to 45 ppm, at temperatures of about 150 – 180 °C. Interestingly, under these conditions, thermal or catalytic cracking effects of the zeolite on the feedstock were not observed. However, the study of the time on stream showed that, after 3 h, the chlorine removal efficiency of the zeolite started to decrease. Thus, different regeneration treatments were evaluated proving that, after a combustion at 600 °C, the zeolite recovered its initial dechlorination efficiency. This research reveals the potential of the adsorptive dechlorination process with Na-zeolites to reduce the chlorine content in plastic pyrolysis oils under mild operating conditions.
+

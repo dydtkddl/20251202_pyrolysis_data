@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A functional-group-based approach to modeling real-fuel combustion chemistry – I: Prediction of stoichiometric parameters for lumped pyrolysis reactions Real fuels are complex mixtures of hundreds of molecules, which makes it challenging to unravel their combustion chemistry. Several approaches in the literature have helped to clarify fuel combustion, including multi-component surrogates, lumped fuel chemistry modeling, and functional-group based methods. This work presents an innovative advancement to the lumped fuel chemistry modeling approach, using functional groups for mechanism development (FGMech). Stoichiometric parameters of lumped fuel decomposition reactions dictate the population of the key pyrolysis products, previously obtained by fitting experimental data of real-fuel pyrolysis. In this work, a functional group-based approach is proposed, which can account for real-fuel variability and predict stoichiometric parameters without experimentation. A database of the stoichiometric parameters and/or yields of key pyrolysis products was first constructed for approximately 50 neat fuels, based on previous pyrolysis data and a lumped kinetic model we developed. The effects of functional groups on the stoichiometric parameters and/or yields of key pyrolysis products were then identified and quantified. A quantitative structure-stoichiometry relationship was developed by multiple linear regression (MLR) model, which was used to predict the stoichiometric parameters and/or yields of key pyrolysis products based on ten input features (eight functional groups, molecular weight, and branching index). Products from the pyrolysis of surrogate mixtures and real-fuels were predicted using the MLR model and validated against experimental data in the literature. Comparison with the stoichiometric parameters from the HyChem experiment-based approach (Xu et al., 2018) showed that the predicted values in this work were in reasonable agreement (generally within a factor of two). When the stoichiometric parameters in the jet fuel (POSF 10325) HyChem kinetic model were replaced with this functional-group based prediction, only minor discrepancies were observed in the predictions of key pyrolysis products and global combustion parameters (such as ignition delay times and laminar flame speeds). Sensitivity analysis on stoichiometric parameters revealed their different roles in predicting speciation and global parameters. The functional group approach for predicting stoichiometric parameters in this work was the first step towards developing FGMech for modeling real-fuel combustion chemistry. Further development of the FGMech model's thermodynamic, kinetic, and transport data will be presented in a following study.
+

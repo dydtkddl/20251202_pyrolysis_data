@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal decomposition of spent lithium-ion batteries pouch: Investigating kinetic and thermodynamic compensation effects A deeper understanding of the pyrolysis process for main and additional components in spent lithium-ion batteries (LIBs) could provide valuable insights for optimizing their recycling processes. This study examined the thermal behavior, kinetics, thermodynamics, and product evolution during the pyrolysis of laminate pouch primarily composed of polypropylene and polyamide. The kinetic compensation effect (KCE) and thermodynamic compensation effect (TCE) were also probed to provide a comprehensive understanding of the conversion. The degradation process was divided into three stages, with total mass loss ranging from 31.14 to 40.28 % and peak temperatures between 419 and 472 °C. The average activation energy was determined to be 118.06 kJ mol−1, with specific values of 99.25, 119.06 and 139.31 kJ mol−1 within conversion rate of 0.10–0.30, 0.35–0.75 and 0.80–0.95, respectively. The pouch conversion followed D1 diffusion mechanism. The KCE was confirmed and reconstructed f α = α 0.45316 ( 2 α 1.55 ) - 1 displayed an excellent fit. Thermodynamic analysis implied that this conversion process was endothermic and non-spontaneous. Enthalpy and entropy relationship demonstrated the existence of TEC with compensation temperature (Tcomp) and experimental temperature (Texp) of 676.20 K and 693.23 K, respectively. In addition, free energy of compensation (ΔGcomp) was found to be 164.51 kJ mol−1, in agreement with experimental binding free energy (ΔGexp) range of 166.48–170.65 kJ mol−1, further confirmed the validity of the adopted mechanism.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Ion liquid selective depolymerization of epoxy resin insulation materials from electric power industry in a polar aprotic solvent system Growing interest has been shown in environmentally friendly, cost-effective methods for recovering and reusing glass fiber-reinforced epoxy resin composites. An efficient strategy was developed for chemical recycling of cured epoxy resin from retired composite insulator mandrel using 1-ethyl-3-methylimidazole acetate ([Emim][OAc])/dimethyl sulfoxide (DMSO) as the depolymerization system. Epoxy resin with chain structure could be recovered with water as precipitant. The process became more affordable and sustainable by eliminating water and then reusing reaction solvent. The resin products' fourier transform infrared spectroscopy (FTIR) and hydrogen nuclear magnetic resonance (HNMR) analysis before and following the decomposition process revealed that the cured crosslink segments (ester group) of epoxy resins could be selectively destroyed. The density functional theory (DFT) illustrated that the solvation effect of DMSO weakened the electrostatic interaction between [OAc]− and [Emim]+, which was significantly more conducive to the nucleophilic addition of imidazole cation. Furthermore, it was proposed to control the selective breaking process of the epoxy resin cured crosslinked ester group by nitrogen heterocyclic carbene reaction, and further esterification to obtain regenerated resin containing ester carbonyl. This recovery process opened up a sustainable path with high atom economy. Retaining of epoxy chain structure was conducive to subsequent secondary curing recovery, and the reaction system could be reused many times.
+

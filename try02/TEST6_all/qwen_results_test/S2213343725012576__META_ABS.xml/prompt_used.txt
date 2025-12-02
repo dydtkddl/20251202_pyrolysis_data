@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Reactor design and process optimization in chemical looping combustion: Insights into fuel types, oxygen carriers, and process design Chemical looping combustion (CLC) is a novel technique developed for inherent carbon capture and storage (CCS). CLC utilizes an oxygen carrier (OC) to transport oxygen to the fuel for combustion, hence making the process oxy-fuel combustion. This article aims to review the process of CLC in terms of improving carbon capture efficiency and fuel conversion by studying the reaction mechanism, effect of temperature and pressure, and the effect of reactivity of OC towards fuel. The applications of several reactors, including fluidized bed reactor, have been discussed with reference to the operating conditions employed. The quantitative findings reported in various studies proved the efficient performance of copper based carriers achieving efficiency as high as 93 % when the gasification temperature was 930°C. Fuel conversion efficiencies reach 89–93.5 % for solid fuels like pine sawdust with Cu-based carriers, and up to 100 % for liquid fuels like glycerin and propane using metallic and nickel-based oxygen carriers, respectively. Carbon capture efficiencies vary, with pet coke achieving 97 % using ilmenite and Mn-based carriers.The energy duty for CLC is estimated at 0.3 GJ/tCO₂, with studies showing a 6 % reduction in CAPEX and a 14 % drop in OPEX compared to amine-based absorption. Future scope and challenges to be addressed in the chemical looping studies are identified.
+

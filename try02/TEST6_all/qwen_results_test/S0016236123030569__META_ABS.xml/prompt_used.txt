@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic catalysis of tandem catalysts of γ-Al2O3 and HZSM-5 for the conversion of 1-naphthol from coal tar to light aromatics High energy consumption, environmental pollution, and poor conversion are major challenges to the efficient utilization of coal tar. Tandem catalysis is considered one of the most promising technologies for the high-value utilization of coal tar. The main challenge for the efficient utilization of coal tar is the low added value and complexity of the products, while tandem catalytic technology is considered as one of the most promising technologies for the high-value utilization of coal tar. It is report here a strategy for the highly selective conversion of 1-naphthol to light aromatics catalyzed by a homemade tandem of macroporous γ-Al2O3 and HZSM-5 catalysts with large specific surface area. We demonstrate that 1-naphthol first undergoes dehydroxylation on γ-Al2O3, and then the naphthalene-dominated intermediates undergo further cracking-selective reactions on the adjacent HZSM-5 bed to produce BTEX. This work was carried out under the loading conditions optimized by machine learning modeling. By adjusting the loading mode, adjusting the mass ratio (bed thickness), optimizing the reaction temperature, enhancing the proximity effect, adjusting the pore structure of HZSM-5, and modifying HZSM-5 with three metals 1Ni-5W-0.2La, the maximum conversion rate of 1-naphthol (R1-naphthol) and the selectivity of light aromatics BTEXN (SBTEXN) reached 67.31 % and 47.43 %, respectively. Additionally, the structure–activity relationship between the physicochemical properties of the catalyst and the SBTEXN, R1-naphthol was also explored. The results of this study can provide a unique reference perspective for the efficient preparation of light aromatic hydrocarbons from phenol-rich coal tar.
+

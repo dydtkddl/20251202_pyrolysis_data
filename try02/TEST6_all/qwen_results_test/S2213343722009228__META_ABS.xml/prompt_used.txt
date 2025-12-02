@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Additive manufacturing of functional devices for environmental applications: A review Additive manufacturing (3D printing) technologies are growing rapidly due to the unique advantages they present, such as rapid prototyping, multi-purpose device manufacturing designs, reduced waste generation, and ease of reproduction on a large scale. Recently, the application of 3D printed materials to the environmental area has gained prominence. Research lines focus on environmental remediation, with the detection, removal, and degradation of emerging contaminants. Printed materials serve as molds or supports for the fabrication of microreactional or adsorptive devices, and in the one-step fabrication of devices with photocatalytic or conductive properties. However, the literature reports current challenges in the manufacture of these prototypes, such as the quality of micrometer-scale channels, the need to functionalize the supports, and the complexity in the production process of functional materials in a single step. Among the different techniques, fused deposition modeling (FDM) stands out as the cheapest 3D printing technique, becoming the most popular in these prototypes manufacturing. The main limitation of the FDM process is the manufacture of non-functional parts since the final parts are produced from polymeric filaments such as ABS and PLA. Therefore, the production of functional filaments for 3D printing is an attractive solution to bring functionality to printed parts. This production step is still very challenging, as specific physical properties of the matrix and polymer particles are necessary for printing with adequate performance. From this perspective, this review presents the state-of-the-art of 3D printing technology applied to the development of devices aimed to environmental protection. Furthermore, this review also reports a literature exam of four different types of environmental devices: microreactors, 3D printed supports functionalized with adsorbents, and functional devices with photocatalytic and conductive properties. Also, this review presents the challenges of 3D printing applied to the manufacture of these devices, such as the issue of print quality for microscale devices, the functionalization of printed surfaces, and the production of functional filaments.
+

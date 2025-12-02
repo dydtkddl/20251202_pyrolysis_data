@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic microwave modulation of tobacco straw and LDPE co-pyrolysis product distribution by HZSM-5/graphite felt composite catalyst: Directed synthesis of monocyclic aromatic hydrocarbons and inhibition of polycyclic aromatic hydrocarbons Catalytic fast pyrolysis is a pivotal technology for achieving high-value utilization of biomass. However, the traditional HZSM-5 zeolite catalyst faces significant challenges, including low mass transfer efficiency, poor product selectivity, and difficulty in suppressing the formation of polycyclic aromatic hydrocarbons (PAHs). This study proposes a novel synergistic strategy of HZSM-5/ graphite felt (GF) composite catalyst and microwave energy fields for the directional modulation of co-pyrolysis products from tobacco straw (TS) and low-density polyethylene (LDPE). The experimental results demonstrated that the redistribution of acidic sites on the composite catalyst (with the Brønsted/Lewis acid ratio decreasing from 0.87 to 0.33) combined with the macroporous mass transfer characteristics of GF significantly enhanced the selectivity of monocyclic aromatic hydrocarbons (MAHs). Simultaneously, the high thermal conductivity and wave-absorbing properties of GF optimized the distribution of the microwave heat field, effectively suppressing PAHs condensation reactions induced by local overheating. When the mass ratio of HZSM-5 loading to feedstock was 0.8:1 the total aromatic selectivity reached 83.24 %, with MAHs accounting for 41.47 % (6.4 times higher than that of HZSM-5), while the content of PAHs decreased from 58.3 % to 42.94 %. Furthermore, although the catalytic activity of the HZSM-5/GF composite catalyst decreased notably after five consecutive experimental cycles, it remained superior to that of pure HZSM-5. This work elucidates the synergistic effect of "pore-acid-microwave" and provides a theoretical foundation and technical pathway for product regulation and large-scale application of biomass catalytic pyrolysis.
+

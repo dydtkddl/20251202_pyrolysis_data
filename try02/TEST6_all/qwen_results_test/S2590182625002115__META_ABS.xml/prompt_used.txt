@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Rethinking plastics through microbial biodegradation and circular economy innovation – A review The global plastic crisis has evolved into a complex socio-environmental emergency, driven by unsustainable production patterns, weak waste management infrastructure, and the ecological persistence of synthetic polymers. Microplastics and nanoplastics now permeate terrestrial and aquatic ecosystems, posing chemical and biological risks across trophic levels. This review presents a comprehensive analysis of emerging biotechnological and circular strategies for plastic sustainability, with a particular focus on microbial ecosystems and enzymatic innovation. Abiotic and biotic degradation pathways are examined, detailing how environmental factors such as photodegradation, thermo-oxidation, and hydrolysis facilitate microbial colonization and polymer fragmentation. Key microbial taxa—including bacteria, fungi, actinomycetes, and algae—are evaluated for their roles in enzymatic depolymerization, while consortia-based models demonstrate synergistic potential in degrading complex plastic mixtures. Enzymes such as polyethylene terephthalate hydrolase, mono(2-hydroxyethyl) terephthalate hydrolase, laccases, and peroxidases are discussed alongside computational and synthetic biology approaches for enhancing their catalytic performance. The review further integrates these biological innovations into broader systems-based frameworks, exploring hybrid degradation technologies, bio-based valorization, and alignment with circular economy principles. Policy landscapes and public engagement mechanisms are assessed, along with international efforts to harmonize action through multilateral frameworks and sustainable development goals. Critical gaps in scalability, regulatory coherence, and lifecycle optimization are identified, and a roadmap is proposed for transitioning from linear to bio-integrated plastic economies. Through interdisciplinary synthesis, this review positions microbial and enzymatic biodegradation not as isolated tools, but as keystones in a globally coordinated response to plastic pollution and environmental resilience.
+

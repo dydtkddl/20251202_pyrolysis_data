@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The effect of additives on the co-pelletization of sewage sludge and extraction residue on combustion behavior and off-gas emission reduction Co-combustion of biomass and sludge is a promising method for waste treatment and power generation. In this study, additives such as ammonium dihydrogen phosphate (ADP), calcium oxide (CaO), attapulgite (AT), and their combinations were added into the co-pelletization of semi-dry sludge (with approximately 50% water content) and extraction residue from vegetable oil processing. The objective of the studies was to examine the pelletization behavior, reduce off-gas emissions during the combustion, and investigate the mechanisms influenced by these additives through the thermogravimetric analysis and the tube furnace combustion experiment. The results of the analysis of variance (ANOVA) indicated an increase in pellet density due to the addition of additives. During the combustion, the addition of AT and compound additives generated more complex compounds with high melting temperatures, thereby mitigating the high slagging tendency. Meanwhile, additives facilitated the conversion of ultrafine particles (PM0.1) to fine particles, leading to a reduction in PM0.1 emissions by 15.60–42.40%. The additives exhibited efficacy in reducing SO2 emissions, with a reduction range of 5.00–23.20%. However, the addition of ADP additives resulted in a 12.00% increase in NO emissions. Consequently, adding additives to pellets could address the slagging issue and reduce the emission of air pollutants during combustion.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Novel plant waste-based cost-effective adsorbent to remove contaminants from sewage wastewater Discharge of untreated or partially treated sewage wastewater into waterbodies contaminates soil and groundwater. Reducing heavily-laden contaminants from wastewater is an utmost necessity. Recently, the use of organic adsorbents has become a promising approach for wastewater treatment due to their efficacy and sustainability. Objectives of the present study are (a) to explore novel plant waste material for the synthesis of adsorbents (biochars) with and without modifications to reduce inorganic contaminants and excess nutrients from sewage wastewater (b) to validate the efficacy of novel synthesized biochars on germination of Vigna radiata when grown in sewage wastewater. Plant waste materials (Turmeric leaves, Cyperus roots, Juniper leaves, and berries) were collected after oil extraction and Fe-modified and pristine biochars were further synthesized at 500 °C. The highest heavy metals efficiency and maximum seedling germination was observed in biochars derived from turmeric leaf followed by Cyperus root > Juniper leaf > Juniper berry. Fe-modified Turmeric leaf biochar showed 83.9, 96.7, and 94.8% removal for Ni, As, and Pb, respectively. The highest removal for PO4 3−, NO3 −, NO2 −, Cl−, and SO4 2− were observed in Fe-modified Cyperus root biochar as 96, 88, 84, 70, and 70%, respectively. Fe-modification enhance the higher surface area of biochars in the order of CRMBC (143.21 m2 g−1) > TLMBC (93.317 m2 g−1) > JBMBC (79.561 m2 g−1) > JLMBC (77.764 m2 g−1) that amplified the adsorption capacity. Fe-modification developed mesoporous structures that made biochar more thermally stable which was confirmed by thermo-gravimetric analysis, scanning electron microscopy energy dispersive X-ray, and Fourier-transform infrared spectroscopy. Fe-modified biochars offer a sustainable and easily recoverable option for wastewater treatment to efficiently reduce inorganic contaminants and to make treated wastewater suitable for irrigation and other purposes.
+

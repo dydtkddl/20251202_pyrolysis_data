@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluation of two approaches for the synthesis of hierarchical micro-/mesoporous catalysts for HDPE hydrocracking Plastic waste management has become a pressing global issue. A viable and sustainable alternative to incineration is the conversion of polyethylene into chemicals or fuels by through hydrocracking. To improve the catalytic performance during hydrocracking, bifunctional catalysts are required, in which the zeolite imparts the acid function, and the metallic function is provided by a noble or transition metal, such as nickel. In this study, acid supports were synthesized using two strategies, namely zeolitisation and desilication, for comparison. The synthesized materials exhibited Si/Al molar ratios of approximately 10, hierarchical micro-/mesoporosities, and a bifunctional character after incorporation of nickel up to 5 wt%. The materials were extensively characterized by various techniques, including powder X-Ray diffraction, N2 sorption, acidity measurement, and scanning electron microscopy. The characterization results showed that the desilicated HZSM5 zeolite was the most effective support for nickel impregnation, leading to a quantitative conversion of High-Density Polyethylene (HDPE) by hydrocracking and the formation of predominantly hydrocarbons with 5 carbon atoms. A clear disparity in composition, with a prevalence of a gasoline-type fraction, was observable in the liquid phase from HZSM5 to Ni particles supported on hierarchical HZSM-5 (Ni@m-HZSM-5w). The hierarchy factor (HF), the molar ratio between Lewis and Brønsted acid sites, and the accessibility factor (ACI) were combined to form the interplay factor (IF). The investigation resulted in materials with IF values between 0.35 and 7, and a positive correlation between HDPE conversion and IF values is observed. In conclusion, this study suggests that the desilication of HZSM5 zeolite is a promising route for the development of efficient catalysts for the hydrocracking of plastic waste.
+

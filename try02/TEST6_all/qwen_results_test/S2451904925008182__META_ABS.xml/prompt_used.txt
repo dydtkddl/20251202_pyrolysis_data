@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Heating-rate-dependent pyrolysis mechanism of Dayan lignite: Integrating experimental studies and ReaxFF-MD Coal pyrolysis technology serves as a critical pathway for achieving clean and efficient coal utilization. To elucidate the pyrolysis mechanisms of lignite, this study systematically investigated the heating-rate-dependent pyrolysis behavior of Dayan lignite through an integrated approach combining experimental characterization and reactive force field molecular dynamics (ReaxFF-MD) simulations. Thermogravimetric (TG) analysis revealed three distinct pyrolysis stages, with the primary decomposition occurring between 300–600 °C. Furthermore, increased heating rates were found to correspondingly elevate the maximum pyrolysis temperature (Tmax), demonstrating more pronounced thermal hysteresis effects. ReaxFF-MD simulations similarly identified three pyrolysis stages: the initial pyrolysis stage (300–1300 K), the primary pyrolysis stage (1300–2700 K), and the secondary reactions stage (2700–3000 K). Reaction pathway analysis indicated that pyrolysis was primarily governed by cleavage and formation of C–C and C–O bonds. Furthermore, the influence of varying heating rates on pyrolysis mechanisms was investigated. The results demonstrated significant heating-rate dependence on product distribution, attributable to tar secondary reactions. Secondary reactions required sustained high temperatures, thus proceeding more extensively at slower heating rates. Moreover, gas product distributions varied significantly across heating rates. The number of molecules of gas products (CO2, H2O, C2H2O) exhibited decreasing trends with increasing heating rates. Finally, the formation pathways of characteristic gas products (H2O, C2H4, C2H2O) were analyzed at 2 K/ps. In general, by combining experimental and ReaxFF-MD approaches, this work elucidates the complete reaction pathways and product evolution during lignite pyrolysis. The findings provide critical insights for optimizing pyrolysis conditions to enhance tar and gas yields in industrial applications.
+

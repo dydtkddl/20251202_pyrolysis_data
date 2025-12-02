@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Addressing agricultural (micro)plastics pollution: The promises and perspectives of framework-based photocatalysis Plastics, renowned for their flexibility, stability, and cost-effectiveness, have become indispensable materials in modern life. However, their extensive use has led to a global environmental and health crisis. Especially, plastic products infiltrate agroecosystems through atmospheric deposition, irrigation water, soil contamination, and the degradation of plastic mulch films, posing significant risks to vegetable quality and safety. Traditional disposal methods, such as incineration and landfilling, are energy-intensive and ecologically harmful, necessitating the development and application of innovative technologies for plastic removal. This paper reviews representative advanced (micro)plastic removal technologies, with a particular focus on frameworks-containing photocatalysis as a promising green method for processing (micro)plastics. First, we analyze and compare traditional, then discuss emerging removal technologies. Next, we elaborate on the principles of photocatalytic degradation of plastic products, discuss key influencing factors, and classify various photocatalysts. Additionally, we highlight the limitations of conventional photocatalysts, such as TiO2 and ZnO, and emphasize the advantages of framework materials (e.g., MOFs, COFs, ZIFs) in photocatalytic degradation, including their structural tunability and development potential. Finally, based on the current progress and applications of framework photocatalysts, we identify existing limitations and propose future research directions. This review provides a theoretical foundation and innovative technological insights to address the global challenge of plastic pollution.
+

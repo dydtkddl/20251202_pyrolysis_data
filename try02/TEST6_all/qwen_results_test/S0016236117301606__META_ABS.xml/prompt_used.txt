@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Upgrading fuel quality of moso bamboo via low temperature thermochemical treatments: Dry torrefaction and hydrothermal carbonization The application of raw bamboo as biomass energy is restricted due to its large particle size, high oxygen content, low energy density and weak water resistance. In order to upgrade the fuel quality of moso bamboo, dry torrefaction (DT) and hydrothermal carbonization (HTC) have been investigated in this study. The physicochemical properties, thermal stability and microstructures of solid products were examined by varying the reaction temperature among 220, 260 and 300°C. The results showed that increasing temperature reduced the mass yield and energy yield, however, it significantly improved the calorific value of solid products. Through the HTC process, the bamboo hydrochar obtained the calorific value of 28.29MJ/kg, the energy yield of 59.77% and the fixed carbon content of 63.08% at the temperature of 260°C, indicating enhanced potential as a solid fuel. In comparison, the grindability (including particle size and bulk density), hydrophobicity, and thermal stability of torrefied bamboo were considerably lower than that of bamboo hydrochar produced at the same temperature. Furthermore, the transformation of chemical bonds demonstrated that hydrolysis, dehydration and decarboxylation took place during the HTC process. The porous structure was only slightly enhanced with increasing reaction temperature, exhibiting variation consistent with that of hydrophobicity.
+

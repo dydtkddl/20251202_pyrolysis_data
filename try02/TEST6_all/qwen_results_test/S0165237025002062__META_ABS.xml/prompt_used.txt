@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemical characterization of liquid products from the pyrolysis of plastic wastes Industrial plastic wastes (PE and PP) were pyrolysed in a novel industrial prototype, with and without a zeolite catalyst, in the range 390–430 °C. Notably, the operating temperature range was set after preliminary characterization of the feedstock by thermogravimetric analysis (TGA) and pyrolysis tests in a lab scale reactor. The liquid products collected from the prototype unit looked like oil and were collected in cooled traps. These oils were characterized for their chemical composition and their potential application and commerciality. TGA of the oils was carried out as a preliminary screening, providing indication on the volatility ranges of the sample. Gas chromatography-mass spectrometry (GC-MS) was applied to provide a more detailed indication on the chemical composition of the samples, in particular on the content and length of alkanes and alkenes as well as on the presence of trace compounds. Notably, prior to GC-MS analysis, the sample had to be dissolved in an organic solvent and dichloromethane (DCM) was selected as the best solvent, after an accurate screening process. Both the TGA and the chromatographic analysis of the samples highlighted a good quality of the pyrolysis liquid products obtained at 390 °C, with modest effects of the catalyst, despite, unfortunately, rather low yields. On the contrary, the quality of the products obtained at 430 °C was lower, but the yields adequate (about 70 %). The analysis of the condensed liquids produced has also shown that the effects of the catalyst at 430 °C appear not to be negligible. Indeed, it can be observed that the catalyst causes a decrease in the concentration of aliphatic hydrocarbons with a number of C atoms greater than 25, but favors dehydrogenation, increasing alkenes concentration. These two factors are contrasting, therefore it cannot be considered that the catalyst improves the quality of the liquid products, making them more similar to a typical diesel oil. In order to test the commercial applications for the pyrolysis oils, additional analyses were conducted in independent labs, showing that, through mild chemico-physical treatments, the oil produced at 390 °C with catalyst is suitable as additive (20 %) for diesel fuel, while the lower-quality oils, as produced, can be mixed with heavy fuel oil (up to very high percentage) or with diesel oils in amounts as high as 5 %.
+

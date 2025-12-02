@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hierarchical pore structure engineering in bamboo shoot sheath-derived biochar: Synergistic effects of bio-templated chemical activation and gradient pyrolysis The combustion of fossil fuels has led to excessive CO2 emissions and severe climate impacts, making efficient CO2 capture an urgent priority. Although chemical activation can enhance the CO2 adsorption performance of biochar, its extensive use often entails environmental, equipment, and cost challenges. In this study, we present an innovative bio-templating strategy to synthesize hierarchically porous, heteroatom-enriched biochars derived from waste bamboo shoot shells and starch, using K2CO3 as an activator and yeast as the bio-template. This method significantly reduces activator consumption compared with conventional activation processes. The optimized biochar, BAS0.5KC-800, exhibited exceptional CO2 adsorption capacities of 5.15 mmol/g at 0 ℃ and 3.38 mmol/g at 25 ℃. Structural analysis revealed that its high specific surface area (1186 m2/g) and micropore volume (0.55 cm3/g) provide abundant CO2 adsorption sites. Furthermore, the bio-templating process successfully introduced N and O heteroatoms into the carbon framework. These functional groups enhance the affinity between biochar and CO2 through electronic interactions, ensuring excellent adsorption stability over multiple adsorption–desorption cycles. Isotherm and kinetic analyses indicate that CO2 adsorption proceeds via a multilayer diffusion-controlled mechanism. Moreover, density functional theory (DFT) calculations reveal that N dopants facilitate CO2 capture through hydrogen bonding, whereas O atoms strengthen dipole–quadrupole interactions. Overall, this study presents a sustainable and cost-effective approach to produce high-performance CO2 adsorbents from waste biomass and provides comprehensive mechanistic insights into how heteroatom doping promotes CO2 capture efficiency.
+

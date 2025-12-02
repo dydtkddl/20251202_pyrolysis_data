@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A semi-detailed pyrolytic gas-phase kinetic model for the volatiles of polyethylene thermal degradation In a circular economy approach, plastic waste is a source of valuable chemicals and energy vectors. Thermochemical technologies such as pyrolysis, gasification, and combustion enable the valorization of even complex and contaminated waste streams. While condensed-phase degradation governs overall reactivity, accurately modeling the gas-phase reactivity of pyrolysis products is essential for scaling up valorization processes in industrial reactors. Isolating the pyrolysis behavior of volatiles first allows the decoupling of complexities associated with the low-temperature oxygen reactivity. This work presents a semi-detailed kinetic model to address the pyrolytic gas-phase reactivity of volatiles formed during the thermal degradation of polyethylene (PE). The model builds on a validated multi-step condensed-phase kinetic model and employs established lumping approaches. Short-chain compounds are modeled with high detail, while long-chain ones are described by surrogate species representative of diesel-cuts (NC16H32) and waxes (NC30H60). The reactivity of short chains is described through the comprehensive CRECK kinetic model by incorporating recent experimental data to refine reaction pathways of C5 C7 olefins. Due to the lack of experimental data for longer olefins, their reactivity is modeled by analogy to the shorter ones, ensuring an asymptotic behavior with increasing carbon numbers. The semi-detailed model is validated against experimental data on PE pyrolysis, assuming instantaneous mixing of the inert inlet flow with released volatiles, followed by a segregated plug-flow behavior. Validation across different reactor setups confirms the model’s capability to predict detailed product distributions. Despite minor discrepancies, the proposed model effectively captures experimental trends. Future work will address modeling the reactivity in oxygen-containing environments.
+

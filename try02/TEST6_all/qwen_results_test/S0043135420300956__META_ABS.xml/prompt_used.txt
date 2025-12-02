@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic degradation of ciprofloxacin by a visible-light-assisted peroxymonosulfate activation system: Performance and mechanism Peroxymonosulfate (PMS) is extensively used as an oxidant to develop the sulfate radical-based advanced oxidation processes in the decontamination of organic pollutants and various PMS activation methods have been explored. Visible-light-assisted PMS activation to construct a Fenton-like process has shown a great potential for pollution control. In our work, BiVO4 nanosheets were prepared using a hydrothermal process and used to activate PMS under visible light. A rapid degradation of ciprofloxacin (CIP) was achieved by dosing PMS (0.96 g/L), BiVO4 (0.32 g/L) under visible light with a reaction rate constant of 77.72-fold higher than that in the BiVO4/visible light process. The electron spin resonance and free radical quenching experiments indicate that reactive species of •O2 −, h+, •OH and SO4 •− all worked, where h+, •OH and SO4 •− were found as the dominant contributors to the CIP degradation. The spectroscopic analyses further demonstrate that the photoinduced electrons were directly involved in the PMS activation process. The generated •O2 − was partially utilized to activate PMS and more •OH was produced because of the chain reactions between SO4 •− and H2O/OH−. In this process, PMS acted as an electron acceptor to transfer the photo-induced charges from the conduction band of BiVO4 and PMS was successfully activated to yield the high-powered oxidative species. From the degradation intermediates of CIP detected by a liquid-chromatography-mass spectrometer, the possible degradation pathways were proposed. The substantially decreased toxicity of CIP after the reaction was also observed. This work might provide new insights into the visible-light-assisted PMS activation mechanisms and is useful to construct environmentally-friendly catalytic processes for the efficient degradation of organic pollutants.
+

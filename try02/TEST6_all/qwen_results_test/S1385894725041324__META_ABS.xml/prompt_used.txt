@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A rapid-heating copper block reactor system for improved isothermal kinetics of polyethylene pyrolysis Developing continuous-flow pyrolysis reactor systems is essential to meet the increasing demand for plastic pyrolysis oil. Most literature polymer pyrolysis kinetic studies use non-isothermal thermal gravimetric (TG) equipment or batch systems. Most systems are characterized by prolonged heating times. This may lead to significant polymer conversion before reaching the isothermal temperature, affecting the kinetic measurements. We present a novel, affordable, copper-block semi-batch reactor system that reaches the desired reaction temperature in less than four minutes. Through simulation, we demonstrate the superiority of this system over the commonly used stainless-steel reactors. We utilized this system to measure the isothermal kinetics of PE pyrolysis at temperatures between 411 and 449 °C. Employing a discrete lump methodology, we identified a five-lump reaction model: three polymer chains with descending molecular weights (S1, S2, S3), liquid (L), and gas (G), with reactions progressing in series and then in parallel. The initial decomposition steps exhibited similar activation energies of 360 ± 17 and 357 ± 6 kJ/mol, indicating that molecular weight has little effect on the initial PE pyrolysis rate. The parallel paths producing liquid and gas had activation energies of 288 ± 2 and 179 ± 13 kJ/mol. The proposed system facilitates accurate isothermal kinetic data measurement, enabling the design of improved continuous-flow reactor systems for plastics pyrolysis, ultimately contributing to global sustainability goals.
+

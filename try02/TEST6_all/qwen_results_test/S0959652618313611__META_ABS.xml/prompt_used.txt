@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Operating conditions-induced changes in product yield and characteristics during thermal-conversion of peanut shell to biochar in relation to economic analysis The influences of pyrolysis conditions on the products yield distribution and physico-chemical characteristics of biochar derived from peanut shell in a fixed-bed reactor were investigated in this study. The pyrolysis conditions included the pyrolysis temperature (300–700 °C), retention time (15–90 min), heating rate (1–10 °C min−1), gas flow rate (20–200 mL min−1) and feedstock particle size (<0.075, 0.075–0.150, 0.150–0.300 and 0.300–2.00 mm). Various analytical techniques were used to characterize the biochar for ultimate and proximate analyses, higher heating value (23.99–30.44 MJ kg−1), pH (8.11–12.89), electrical conductivity (22.78–34.44 mS cm−1), surface functional groups (acidic, carboxylic and basic groups), Fourier transform infrared spectroscopy analysis, pore volume (0.055–1.241 cm3 g−1) and specific surface area (7.12–20.96 m2 g−1). The results demonstrated that the temperature predominantly regulated the product yields distribution and characteristics of produced biochar. Furthermore, the heating rate considerably influenced the biochar proximate composition, micropore surface area and pore size. Particle size had significant influences on biochar surface porosity and bio-oil yield. The economic analysis of the pyrolysis system indicated its feasibility and superiority with a positive net present value of 12.07 × 106 USD after twenty-five years of operation.
+

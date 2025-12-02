@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Inactivation of polyphenol oxidase and peroxidase in whole wheat flour using atmospheric cold plasma treatment: Kinetics, mechanism, and impact on its compositional properties This study examines polyphenol oxidase (PPO) and peroxidase (POD) inactivation in whole wheat flour (WWF) using atmospheric cold plasma (5–25 kV/1–10 min) and steam treatment (100 °C/1–6 min) while assessing the changes in enzyme structure. Cold plasma at 25 kV/10 min and steam at 100 °C/6 min achieved ≥99 % inactivation of PPO and POD. The inactivation followed nth-order kinetics, with orders of 1.15 for PPO and 1.1 for POD under cold plasma exposure. PPO was more resistant than POD in WWF. Both treatments increased random coil content, confirming enzyme unfolding. Increasing plasma exposure led to higher optical emission intensities of reactive nitrogen species (328–426 nm), hydroxyl radicals (314 nm), and oxygen molecular bands (739 and 778 nm). Cold plasma at 25 kV/10 min preserved the color and proximate composition of WWF. These findings highlight cold plasma's potential as a non-thermal alternative for PPO and POD inactivation while maintaining WWF's compositional integrity.
+

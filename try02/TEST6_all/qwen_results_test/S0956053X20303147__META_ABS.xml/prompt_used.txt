@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Development of 8 ton/day gasification process to generate electricity using a gas engine for solid refuse fuel An 8 ton/day solid refuse fuel gasification process with air oxidant was operated under various conditions to generate electricity. Solid refuse fuels with fluff type feedstock were fabricated from municipal solid wastes. The tested experimental conditions included feedstock charging rate into the gasifier, equivalence ratio, and oxygen enrichment; varying these conditions resulted in different gasification characteristics, such as cold gas efficiency and carbon conversion ratio. Optimum conditions were a charging rate of 50 to 60% by volume (504.71 to 605.65 kg/Sm2) of feedstock in the gasifier, equivalence ratio of 0.21 to 0.33, and no oxygen enrichment. Average cold gas efficiency and carbon conversion ratio were 71.30% and 72.07%, respectively, at optimum conditions. Pollutants such as dust, tar, and gases, were analyzed at the outlet of the cleaning facility and gasifier, and their low concentrations in the producer gas were sufficient to allow for operation of the gas engine. The gasification process exhibited stable operation over 288 h, which included the facility check period. The average gasifier temperature was 825 °C, 17.14% by volume of producer gas was syngas, and gas engine power generation was 235 kWh during this period; power consumption of the entire system was 68 kWh. These results demonstrate that the gasification process for converting solid waste to energy can be operated at a commercial scale.
+

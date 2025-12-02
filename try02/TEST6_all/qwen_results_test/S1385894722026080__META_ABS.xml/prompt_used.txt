@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Coupling AFEX and steam-exploded sugarcane residue pellets with a room temperature CIIII-activation step lowered enzyme dosage requirements for sugar conversion In this study, the potential integration of steam explosion (StEx) and ammonia fiber expansion (AFEX) with existing sugar/ethanol mills to form decentralized pre-processing depots was explored. Both StEx and AFEX pretreatment facilitated the production of sugarcane bagasse (SCB) and cane leaf matter (CLM) pellets with significantly higher bulk density, mechanical durability, and hydrophobicity relative to their untreated biomass pellet controls. However, ethanol production from standalone StEx and AFEX-treated SCB and CLM pellets required enzyme dosages greater than 21 mg/g glucan to achieve enzymatic hydrolysis sugar yields of 75% and ethanol titres greater than 40 g.L−1. Coupling AFEX-treated SCB or CLM pellets with a room temperature CIIII-activation step using liquid ammonia lowered enzyme dosage requirements by more than 50% without affecting ethanol titers and production yields (greater than300 L per Mg residual dry matter raw dry biomass (RDM)). In contrast, treating StEx-treated pellets with CIIII-activation using liquid ammonia did not result in similar enzyme dosage reductions, due to pseudo-lignin formation, leading to enzyme deactivation and/or lignin blockage that retarded enzymatic hydrolysis at low enzyme dosages. A gross energy conversion assessment revealed that low enzyme dosage (3-4 mg enzyme/g RDM) ethanol and electricity co-production from AFEX and CIIII-activated SCB and CLM can recover up to 73% of the energy in the untreated biomass, compared to 54% recovered by StEx and CIIII-activation. The results from this work suggest that StEx or AFEX based pre-processing depots can produce dense and mechanically durable biomass pellets. The AFEX-treated pellets can be easily upgraded using a room temperature CIIII-activation step at the biorefinery to significantly reduce bioconversion enzymes.
+

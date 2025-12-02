@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Ultrasonic pretreatment of soft wood biomass prior to conventional pyrolysis: Scale-up effects and limitations After finding a successful ultrasonic wood treatment that enhanced bio-oil yield prior to pyrolysis in our laboratory, the next logical step was the scaling up of the process. Hence, this work aims to study the effects and limitations of an ultrasonic wood pretreatment scale-up from the laboratory scale (200 g) to the pilot scale (700 g). Wood chips were characterized by elemental chemical analysis, X-ray Photoelectrons Spectroscopy (XPS), Thermogravimetric Analysis (TGA), and Scanning Electron Microscopy (SEM). XPS and TGA did not show any change in the surface chemical composition. However, the SEM images clearly showed that the treatment in the bath allowed surface cleaning of the wood, thus creating an opening in the wood physical structure and allowing better heat transfer, as seen in the TGA analysis. As often found in such an endeavor, it was shown that these same ultrasonic conditions applied to a larger scale did not lead to the same results. The wood from the pilot scale unit (PSU) exhibited the same characteristics as the untreated wood. Thus, PSU did not allow an opening in the wood structure, as shown in the SEM images, which would have resulted in better heat transfer and thus in a higher bio-oil yield. From our experience with such systems, a hypothesis could be dependent on the greater efficiency of the PSU, especially at high frequencies, which could lead to the opposite effect than what was expected. Further investigations are necessary to overcome this limitation and to truly assess the phenomenon.
+

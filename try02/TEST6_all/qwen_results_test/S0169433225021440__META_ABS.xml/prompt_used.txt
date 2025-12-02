@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Sustainable adsorbents for wastewater treatment: Comparative study of commercial and potassium hydroxide-activated carbon for crystal violet dye removal Industrial wastewater containing synthetic dyes like crystal violet (CV) poses significant environmental and health risks. This study presents a comparative evaluation of commercial activated carbon (CAC) and a novel activated carbon (PAC9A) derived from industrial mixed plastic char (PC) and activated with potassium hydroxide (KOH). The adsorption performance of both adsorbents was assessed under varying conditions, including pH, contact time, dosage, and dye concentration. Adsorption data fitted well with the Langmuir isotherm and pseudo-second-order kinetics, indicating monolayer adsorption and chemisorption mechanism. Under optimal conditions (pH 8, 120 min, 10 mg dosage, 50–200 mg L−1 CV), PAC9A achieved a maximum Langmuir adsorption capacity of 1086 mg g−1, while CAC reached 1772 mg g−1. Despite CAC’s higher capacity, PAC9A demonstrated excellent reusability, maintaining 70 % removal efficiency over five cycles. These results highlight PAC9A’s potential as a sustainable, cost-effective alternative for dye remediation, promoting waste valorization and environmental sustainability. This work contributes to the development of efficient adsorbents from waste materials for practical wastewater treatment applications.
+

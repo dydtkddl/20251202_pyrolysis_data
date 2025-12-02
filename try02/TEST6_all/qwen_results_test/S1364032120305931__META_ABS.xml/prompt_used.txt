@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic pyrolysis of lignocellulosic biomass: A review of variations in process factors and system structure Increasing global energy demand and concerns of carbon emissions have driven the utilisation of renewable sources such as biomass. Biomass pyrolysis in the presence of catalyst, i.e., biomass catalytic pyrolysis (CP), is one of the most efficient routes for generating renewable hydrocarbon fuels or commodity chemicals. Most previous review papers on biomass CP focused on the summary of catalyst classification, properties and performance based on product yields and oil quality. Information on biomass CP process especially effects of different reaction atmospheres has not been reviewed or discussed in sufficient detail. This paper aims to provide a review and insights of the essential process factors and system structure of the lignocellulosic biomass CP with emphasis on process performance indexes such as bio-oil’s effective hydrogen to carbon ratio, deoxygenation degree, carbon efficiency and energy efficiency. The paper sections are organised in order of biomass CP catalysts, biomasss CP assessment, modification of essential process factors (e.g., biomass pre-treatment, co-feeding with other materials, atmosphere and temperature) and variations in the system structure (e.g., heat source alternatives, staged catalysis and process integration). Variations in process factors and system structure can possibly tailor the products and improve the economic attraction. A number of questions about biomass CP are still unclear. The current status, challenges and future research directions of biomass CP are also discussed in the paper. The comprehensive review and insights of the biomass CP process in this work will provide reference for the research and industrialisation of biomass CP for renewable fuel production.
+

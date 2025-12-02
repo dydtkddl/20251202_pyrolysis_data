@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review of hydrogen generation through gasification and pyrolysis of waste plastic and tires: Opportunities and challenges The global annual production of plastics and tires exceeds 6.5 billion tons, with only 10% being recycled, leading to significant environmental problems. Thermochemical gasification of these waste materials offers a potential avenue for producing renewable hydrogen while harnessing underutilized carbon-based waste streams. This review highlights the research on thermochemical conversion of plastics and tires, providing key inferences regarding yield optimization, technical hurdles, and techno-economic viability. It indicates that strategic catalyst design and optimized integrated system configurations can significantly improve the hydrogen yields from plastic and tire pyrolysis/gasification. The key results of this work are that catalyzed gasification reactions show the most potential for maximizing hydrogen yield from plastic and tire waste. The related studies demonstrated that catalysts like Ni, Fe and Ce-doped mixtures can significantly increase hydrogen yield from plastic waste pyrolysis and gasification by suppressing coke formation and promoting reforming/shift reactions. Optimization of temperature, steam ratio and residence time also improves yield. Feedstock synergies exhibiting multiple reaction pathways likewise maximize yield. Computational modeling plays a valuable role by providing mechanistic insights through equilibrium and kinetic simulations. Integrated gasification with carbon/methane reforming shows potential to improve efficiency and lower costs. Techno-economic analyses indicate plastic/tire gasification may achieve cost parity with steam methane reforming through optimized integrated designs incorporating heat recovery. Integrated processes combining multiple conversion steps could further boost efficiency but require additional modeling and testing. A deeper understanding of reaction mechanisms, achieved through advanced modeling approaches, coupled with comprehensive lifecycle analyses of integrated solutions, can pinpoint optimized processing conditions and system designs capable of matching or surpassing the economic and environmental performance of conventional fossil fuel-based hydrogen production. The recommendations provided aim to guide future research prioritization, facilitating the realization of the large-scale potential inherent in waste-derived renewable hydrogen pathways.
+

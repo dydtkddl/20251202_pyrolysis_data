@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Characterization of Zhundong lignite and biomass co-pyrolysis in a thermogravimetric analyzer and a fixed bed reactor The co-pyrolysis characteristics of Zhundong lignite and pine sawdust were investigated in a thermogravimetric analyzer and a fixed bed reactor. This study found that the obtained activation energies were generally lower than the calculated values. Particularly in the conversion range of 0.2–0.6, most of the relative deviation values was lower than −10% for the blends, indicating positive synergistic effect between Zhundong lignite and pine sawdust in volatiles release during non-isothermal pyrolysis. From the isothermal pyroylysis in the fixed bed reactor, the experimental values of gas yield were greater than the calculated, while both experimental tar and char yields became lower. Pronounced synergy effect occurred at ZD and PS mass ratio of 1:1 and 2:1 for tar and gas product, indicating that enough hydrogen-donors could be provided to promote degradation reactions. The experimental yields of four main gas components, CO, H2, CO2 and CH4, were all higher than that of the calculated values. SEM results indicated both Zhundong lignite and pine sawdust residue chars became more porous, and metals salt in Zhundong lignite volatilized and condensed on the surface of Zhundong lignite and pine sawdust, which may perform as catalyst during co-pyrolysis.
+

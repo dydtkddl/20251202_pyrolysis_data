@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Solid-state dealumination of zeolites for use as catalysts in alcohol dehydration The dealumination of zeolites has been studied to tune acidity, resulting in enhanced catalytic efficiency. MOR, FER, and ZSM-5 were dealuminated to remove 5, 10, 15, or 20mol% of Al with (NH4)2SiF6 (solid-state reaction at 80°C). XRD, SEM, and FT-IR showed structural maintenance. Aluminum removal was confirmed by the total Si/Al ratio (XRF and AAS) and 27Al MAS NMR. The dealuminated samples were tested in the dehydration of different alcohols and compared to the protonic parent zeolites. Dealuminated MOR samples exhibited a decrease in coke formation (maximum decrease of 18.3%, 18.2%, and 6.1% for methanol, ethanol, and 1-propanol dehydration, respectively), and an increase in conversion values (maximum increase of 29.0%, 13.9%, and 6.2% for methanol, ethanol, and 1-propanol dehydration). H-FER/20% showed an improvement in methanol (19.9%) and ethanol (3.8%) conversions and a reduction of coke (decrease of 8.6% and 5.6%, respectively), corroborating the highest value of acid sites (0.73mmolg−1). All catalysts showed 100% selectivity to each desired product. The mechanisms for all dehydrations were related to the presence of Brønsted acid sites. Methanol dehydration might involve the generation of methoxonion ion, and ethoxy groups might be formed for ethanol conversion. For ZSM-5, Lewis acid sites may also participate in the elimination mechanism. High reaction temperature (300°C) favored intramolecular dehydration to ethylene, avoiding formation of diethyl ether and oligomers. Structural defects on H-ZSM-5/15% could facilitate the access of 1-propanol to active sites, leading to the best combination of TON (0.67), conversion (100%), and coke formation (0.35%).
+

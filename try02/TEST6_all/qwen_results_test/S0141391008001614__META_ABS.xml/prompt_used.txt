@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Photocatalytic degradation of methyl methacrylate copolymers The photolytic and photocatalytic degradation of the copolymers poly(methyl methacrylate-co-butyl methacrylate) (MMA–BMA), poly(methyl methacrylate-co-ethyl acrylate) (MMA–EA) and poly(methyl methacrylate-co-methacrylic acid) (MMA–MAA) have been carried out in solution in the presence of solution combustion synthesized TiO2 (CS TiO2) and commercial Degussa P-25 TiO2 (DP 25). The degradation rates of the copolymers were compared with the respective homopolymers. The copolymers and the homopolymers degraded randomly along the chain. The degradation rate was determined using continuous distribution kinetics. For all the polymers, CS TiO2 exhibited superior photo-activity compared to the uncatalysed and DP 25 systems, owing to its high surface hydroxyl content and high specific surface area. The time evolution of the hydroxyl and hydroperoxide stretching vibration in the Fourier transform-infrared (FT-IR) spectra of the copolymers indicated that the degradation rate follows the order MMA–MAA>MMA–EA>MMA–BMA. The same order is observed for the rate coefficients of photocatalytic degradation. The photodegradation rate coefficients were compared with the activation energy of pyrolytic degradation. In degradation by pyrolysis, it was observed that MMA–BMA was the least stable followed by MMA–EA and MMA–MAA. The observed contrast in the order of thermal stability compared to the photo-stability of these copolymers was attributed to the two different mechanisms governing the scission of the polymer and the evolution of the products.
+

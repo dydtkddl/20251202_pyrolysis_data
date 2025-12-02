@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A two-stage fixed-bed reactor for direct hydrotreatment of volatiles from the hydropyrolysis of biomass: effect of catalyst temperature, pressure and catalyst ageing time on product characteristics This investigation involved the hydropyrolysis of biomass (eucalyptus globulus) and the immediate catalytic hydrocracking of pyrolytic oils in the second stage of the reactor. The effects of temperature, pressure and the catalyst ageing time on the final product tar have been studied using the catalyst Zeolite H-ZSM5. The catalytically hydrocracked tar/oil products were characterised and compared with the hydropyrolysis product from the first stage of the reactor to determine the effect of catalytic hydrocracking. The carbon deposition on the catalyst has been examined using thermogravimetric analysis. The tar yields after catalytic hydrocracking decreased with increasing pressure and temperature of the cracking stage. The tar yields at 10bar pressure were greater than those at 40bar pressure. The fresh zeolite catalyst trapped more than 40% of the product from the hydropyrolysis stage and TGA evidence indicated that this was not as carbon deposition but as volatiles trapped in the zeolite matrix. Reuse of the catalyst resulted in little more uptake of volatiles; however, extended use of the catalyst did not result in increased yields of liquid products but in increased production of light volatiles or gas. The H-ZSM5 catalyst appeared to act as a more active cracking catalyst rather than to promote hydrogenation or deoxygenation of the liquids produced in the hydropyrolysis stage. Characterisation of the liquids by SEC and UV fluoresence indicated that structural changes were relatively minor despite the significant changes in yields of liquids with process conditions. Available reaction routes do not appear to allow specific deoxygenation pathways to predominate without disintegration of parent molecules to lighter volatiles, under the conditions used here.
+

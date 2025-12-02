@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Upcycling PET waste into Al-MOFs with one-step hydrothermal method and its application in flame retardant of PA66 We developed a sustainable closed-loop strategy to convert post-consumer PET waste into functional aluminum-based metal-organic frameworks (Al-MOFs) via a one-step hydrothermal method. This process uses PET-derived terephthalic acid as the organic linker. The resulting rod-like Al-MOFs (5–10 μm, MIL-53 structure) exhibit high thermal stability and were incorporated into polyamide 66 (PA66) as flame-retardant additives. At an optimal 4 wt% loading, the PA66/Al composite achieves a 40 % increase in limiting oxygen index (from 25 % to 35 %) and reduces peak heat release rate by 33.04 % (from 727.61 kW·m⁻² to 487.24 kW·m⁻²), while enhancing tensile strength by 19.74 % (from 57.42 MPa to 68.76 MPa). Mechanistic studies confirm that Al-MOFs function through a condensed-phase flame-retardant mechanism: catalytic carbonization promotes continuous char formation, evidenced by a 47.71 % increase in experimental char residue (4.895 %) over the theoretical value (3.314 %) under N₂. Concurrently, in situ-generated Al₂O₃ (XPS Al 2p at 74.6 eV) reinforces the char barrier, suppressing heat/oxygen transfer and volatile release. This effect further reduces peak smoke production rate by 56.38 % (0.1442 to 0.0629 m²·s⁻¹) and decreases CO/CO₂ evolution. The combined flame suppression and mechanical enhancement stem from interfacial interactions between Al-MOFs carboxyl groups and PA66 amide bonds. This work provides a scalable approach to transform plastic waste into high-performance polymer additives that simultaneously impart flame retardancy and reinforcement without compromising material properties.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Atmospheric pressure pin-to-plate cold plasma modification of high methoxyl apple pectin: Impact on functional properties Modification of hydrocolloids by employing “green” processes such as cold plasma has gained attention in recent times. Apple pectin is a highly branched pectin, which leads to a low emulsification capacity. This study aims to understand the effect of cold plasma on the structural and functional properties of pectin, ranging from emulsification to antioxidant properties. In this study, atmospheric pressure cold plasma (230 V|3–15 min) was used for the modification of apple pectin (Degree of esterification (DE)∼68%). The viscosity-average-molecular weight decreased from 160677.4 to 98352.3 g mol−1 within 6 min of plasma treatment. A decrease in DE from 68 to 54% was observed after 15 min of treatment. An increase in galacturonic acid from 0.653 to 0.816 g g−1 and reducing sugars from 0.243 to 1.134% was noted after 15 min of treatment. The highest amount of unsaturated GalA residues (2.36 mmol/g) was formed after 12 min of treatment. The Ca2+ sensitivity of the acid-sugar-pectin gels increased from 22.2 to 65.3 mPa s after 15 min of treatment. An increase in the whiteness index and a decrease in flow properties of the pectin powder were observed with the increasing duration of the treatment. This was well-evidenced in the Hausner's and Carr's indices, which increased from 1.23 to 1.48 and 0.24 to 0.35, respectively after 12 min of treatment. Prolonged treatments (>9min) negatively impacted emulsion stability. The DPPH radical scavenging activity and reducing power of pectin increased with the duration of plasma treatments for low concentrations of pectin (0.5–1.5%). The maximum DPPH radical scavenging activity (26.11%) was observed for 2% pectin dispersions, which were made from 12 min-plasma modified pectin. The future course of work can include the exploration of advanced applications of plasma-treated pectin in food matrices.
+

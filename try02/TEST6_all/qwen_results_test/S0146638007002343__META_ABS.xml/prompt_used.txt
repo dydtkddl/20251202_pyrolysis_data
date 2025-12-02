@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Role of NSO compounds during primary cracking of a Type II kerogen and a Type III lignite The aim of this work is to follow the generation of NSO compounds during the artificial maturation of an immature Type II kerogen and a Type III lignite in order to determine the different sources of the petroleum potential during primary cracking. Experiments were carried out in closed system pyrolysis in the temperature range from 225 to 350°C. Two types of NSOs were recovered: one is soluble in n-pentane and the second in dichloromethane. A kinetic scheme was optimised including both kerogen and NSO cracking. It was validated by complementary experiments carried out on isolated asphaltenes generated from the Type II kerogen and on the total n-pentane and DCM extracts generated from the Type III lignite. Results show that kerogen and lignite first decompose into DCM NSOs with minor generation of hydrocarbons. Then, the main source of petroleum potential originates from secondary cracking of both DCM and n-pentane NSOs through successive decomposition reactions. These results confirm the model proposed by Tissot [Tissot, B., 1969. Premières données sur les mécanismes et la cinétique de la formation du pétrole dans les bassins sédimentaires. Simulation d’un schéma réactionnel sur ordinateur. Oil and Gas Science and Technology 24, 470–501] in which the main source of hydrocarbons is not the insoluble organic matter, but the NSO fraction. As secondary cracking of the NSOs largely overlaps that of the kerogen, it was demonstrated that bulk kinetics in open system is a result of both kerogen and NSO cracking. Thus, another kinetic scheme for primary cracking in open system was built as a combination of kerogen and NSO cracking. This new kinetic scheme accounts for both the rate and amounts of hydrocarbons generated in a closed pyrolysis system. Thus, the concept of successive steps for hydrocarbon generation is valid for the two types of pyrolysis system and, for the first time, a common kinetic scheme is available for extrapolating results to natural case studies.
+

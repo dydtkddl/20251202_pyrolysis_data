@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+SolvX: Solvothermal conversion of mixed waste plastics in supercritical toluene in presence of Pd/C catalyst As the world's ability to cope with the fast-rising output of disposable plastic products is limited, plastic pollution has emerged as one of the most important environmental challenges. Catalytic solvothermal conversion (SolvX) could potentially utilize mixed waste plastics (MWPs) for sustainable fuels and chemical production. In this study, the effect of SolvX reaction time (1 – 5 h), Pd/C catalyst loading (0 – 10 wt%), and hydrogen loading (0–75 bar) on MWPs were investigated using supercritical toluene as solvent at temperature 350 °C. Four major waste plastics including low-density polyethylene (#4), polypropylene (#5), polystyrene (#6), and polyurethane (#7) were used as feedstock for this study. Along with SolvX conversion, the liquid products (crude oils) were characterized for elemental composition changes using ultimate analysis, boiling point distribution via thermogravimetric analysis, functional groups alteration using Fourier transform infrared spectroscopy, and product identification via gas chromatography-mass spectrometry. The results showed that the addition of catalyst and hydrogen have positive effects on the SolvX conversion. According to the elemental analysis, the SolvX crude oils' higher heating values (HHV) range from 32 to 38 MJ/Kg. The range of boiling points demonstrates that Pd/C increases the formation of lighter hydrocarbons. Additionally, a proposed catalytic SolvX reaction mechanism shows that the aromaticity raised with the increment of residence time and Pd/C enhances hydrodenitrogenation and deoxygenation at higher hydrogen loading.
+

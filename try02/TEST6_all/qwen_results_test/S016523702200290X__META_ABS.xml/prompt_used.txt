@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+In situ formation of fatty acid methyl esters via thermally assisted methylation by lignin during torrefaction of oil palm biomass Torrefaction of oil palm empty fruit bunch (EFB) biomass was performed at six temperatures between 210 and 360 °C. The composition of the evolved and trapped condensates was analyzed by GC/MS and the torrefied biomass samples were characterized by pyrolysis-GC/MS (Py-GC/MS). The analyses showed that the thermal treatment of the biomass produced significant amounts of fatty acid methyl esters (FAMEs). The in situ FAME formation was explained by the reaction of the lipid and lignin contents of the biomass; i.e., the fatty acid moieties of triglycerides were methylated by the methoxy side groups of lignin during the thermal treatment. The reaction was verified by the pyrolysis of a model mixture, using Py-GC/MS and thermogravimetry/mass spectrometry, which consisted of the EFB lipid extract and an isolated beech wood lignin. Demethylation of lignin resulted changes in its thermal decomposition; smaller amounts of 4-methylguaiacol and 4-methylsyringol were evolved and the char yield was increased. The GC/MS analysis of the EFB condensates showed that FAME conversion was the highest and the sources of fatty acid moieties were depleted if the torrefaction temperature had been set at and above 330 °C. The free fatty acid content of EFB was relatively high, which evaporated at lower temperatures before the rate of FAME formation increased between 270 and 300 °C. In comparison with torrefaction, only a small portion of FAMEs formed during the flash pyrolysis of raw EFB at 450 °C indicating that the prolonged heating of the oily biomass favors the FAME formation. Pyrolysis-GC/MS measurements of the torrefied samples showed that the triglyceride residue could also be utilized if the torrefaction as pretreatment was performed at or below 300 °C. In addition, torrefaction increased the accessibility of the biomass components for FAME formation. Some other fatty acid derivatives (i.e., ketone, hydrocarbon, amide, and nitrile) were also detected in smaller amounts. The phenomenon of in situ FAME formation during pyrolysis might be a useful process to enhance pyrolytic biomass utilization by producing FAMEs as additional fuel products and increasing the char yield simultaneously.
+

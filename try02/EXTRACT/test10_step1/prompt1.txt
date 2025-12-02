@@ -1,0 +1,107 @@
+BEGIN PAPER_TEXT:
+{{PAPER_TEXT}}
+END PAPER_TEXT
+
+You are an expert scientific information extractor. 
+Your task is to extract **one unified experiment** performed in the paper.
+
+IMPORTANT:
+- The paper describes a *single experimental setup* with *one input variable* (HDPE ratio) that is varied across multiple levels.
+- All outcome measurements (oil yield, distillation fractions, fuel properties, AH/PAH) are **not separate experiments**. 
+  They are **multiple outputs measured from the same single experiment**.
+
+Your job is to output the experiment in a unified structured form.
+
+====================================================
+ STRICT EXTRACTION RULES (VERY IMPORTANT)
+====================================================
+
+1. FULLTEXT MUST BE USED. Do not rely on prior knowledge.
+2. There is exactly **one** experiment, with:
+   - one input variable
+   - several distinct outcome_groups
+3. NEVER split different outcomes into different “experiments”.
+4. NEVER mix evidence between groups.
+5. Each outcome_group must reference ONLY its own evidence sentences.
+6. Each constant MUST have explicit evidence sentences taken VERBATIM from the text.
+
+====================================================
+ STRUCTURE REQUIRED (MANDATORY)
+====================================================
+
+{
+  "experiment": {
+    "input_variable": "",
+    "input_levels": [],
+    "constants": [
+      {
+        "name": "",
+        "evidence_sentences": [""]
+      }
+    ],
+    "outcome_groups": [
+      {
+        "group_name": "",
+        "description": "",
+        "evidence_sentences": [""]
+      }
+    ]
+  }
+}
+
+====================================================
+ DETAILED REQUIREMENTS
+====================================================
+
+### A) input_variable
+- MUST be the *actual variable intentionally varied* by the authors.
+- MUST NOT be inferred.
+
+### B) input_levels
+- Extract EXACT sample codes or ratios.
+- Order must follow the paper’s order (PPO111 → PPO211 → PPO411 → PPO811).
+- Do NOT reduce levels to simple numbers like “1,2,4,8”.
+
+### C) constants
+A constant must:
+- remain fixed across all experiments,
+- be explicitly stated in the paper,
+- have at least one verbatim evidence sentence.
+
+Allowed constants include:
+- pyrolysis temperature
+- heating rate
+- nitrogen purge duration
+- condenser temperature
+- reactor pressure
+- distillation cut temperatures
+
+Forbidden constants:
+- inferential constants
+- speculative constants
+- anything not explicitly mentioned
+
+### D) outcome_groups
+MUST include the following 4 groups:
+
+1. **Oil yield**
+2. **Distillation fractions** (petrol/diesel/residue)
+3. **Fuel properties** (KV, density, CI, HHV)
+4. **Aromatic hydrocarbons (AH/PAH)**
+
+Rules:
+- Each group must use ONLY evidence related to that property.
+- Never duplicate evidence sentences between groups.
+- Never include a measurement in the wrong group.
+
+====================================================
+ OUTPUT FORMAT RULES
+====================================================
+- Output JSON ONLY.
+- NO comments, NO explanations.
+- NO invented text.
+- Evidence sentences must be EXACT strings from the paper.
+====================================================
+
+BEGIN EXTRACTION:
+

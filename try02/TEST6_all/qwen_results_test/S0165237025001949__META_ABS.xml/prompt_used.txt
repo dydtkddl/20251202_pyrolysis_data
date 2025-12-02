@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and ReaxFF MD study on the thermo-oxidative behavior of polyether ether ketone Polyether ether ketone (PEEK) is a suitable thermoplastic matrix for composite materials in various industrial applications. Thermal treatment presents a promising approach for recycling high-performance engineering plastics through the recovery of valuable byproducts. This study investigated the thermo-oxidative behavior of PEEK using thermogravimetric analysis (TGA) and a customized pyrolysis-gas chromatography/mass spectrometry (Py-GC/MS) system to perform real-time analysis under oxidative atmospheres. Reactive force field molecular dynamics (ReaxFF-MD) simulations were employed to explore its chemical degradation mechanisms. TGA revealed that the initial degradation of PEEK occurred above 540 °C, highlighting its exceptional thermal stability. Oxygen lowered the degradation temperature by approximately 20 °C, leading to a distinct two-stage process. Notably, chemical structure changes were observed below 500 °C, consistent with ReaxFF-MD findings indicating oligomer formation first through main chain cleavage. Py-GC/MS analysis showed that PEEK pyrolysis generated valuable phenolic compounds, primarily phenol and p-phenoxyphenol. Dibenzofuran, along with significant production of CO2/CO and H2O were the predominant oxidation products. Py-GC/MS and ReaxFF-MD combined demonstrated that ether and ketone groups cleaved initially, with terminal phenylene-carbonyl radicals breaking more readily than phenoxy radicals, resulting in early CO release. Aryloxy radicals underwent chain cleavage, hydrogen abstraction, and hydrogen transfer reactions to form various phenolics. Oxygen attacked the main chains to form •HO2 and •OH radicals, which subsequently reacted with terminal rings through hydrogenation and hydrodeoxygenation. Ultimately, ring-opening reactions converted intermediates into CO2, CO, and H2O. These results offer insights into the thermo-oxidative behavior of PEEK and suggest potential for recovering high-value chemicals from waste PEEK composites.
+

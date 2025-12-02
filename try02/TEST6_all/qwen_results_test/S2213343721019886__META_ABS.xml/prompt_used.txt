@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of lipids on sludge and chlorella protein pyrolysis by thermogravimetry Fourier transform infrared spectrometry Biomass pyrolysis has attracted attention; however, its development has been restricted by the formation of NOx precursors, which result mainly from protein pyrolysis. In addition, the effect of lipids on this process is not clear. We extracted proteins and lipids from chlorella and sewage sludge to investigate the thermal decomposition characteristics, thermodynamic properties, kinetic parameters, and reaction mechanisms of protein with or without lipids. Two model-free methods Flynn-Wall-Ozawa (FWO) and Friedman (FM) were used to calculate the kinetic energy. Between 150 and 600 ℃, the average activation energy (E) of sludge protein was 73.63 kJ/mol (FM) or 72.53 kJ/mol (FWO), whereas with lipids, it was 129.19 kJ/mol (FM) or 124.55 kJ/mol (FWO), indicating that lipids restrict the pyrolysis of sludge protein. There was no significant difference between E of chlorella protein pyrolysis with or without lipids. Moreover, the proteins in sludge and chlorella released less NH3 under the influence of lipids; however, the formation of HCN was affected slightly. The results of this study provide a reliable reference for the regulation of protein pyrolysis, considering the production of NOx precursors.
+

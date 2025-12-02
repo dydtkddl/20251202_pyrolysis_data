@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetic analysis and fuel characterization with hydrocarbon distribution in pyro-oil produced from co-pyrolysis of rice husk and low-density polyethylene The expansion of the human population, urbanization, environmental damage, and energy demand have depleted the fossil fuel supply. As a result, the primary problems of the current global socioeconomic restructuring require substantial and long-term alternative energy resources. This study studies the synergistic potential of co-pyrolysis, a promising thermochemical conversion process, to produce hydrocarbon-rich fuel from a blend of low-density polyethylene (LDPE) and rice husk biomass. The thermal behavior of the blended feedstock at different weight ratios was investigated using TGA. For pyrolysis experiments, several mixes of waste plastics (80, 60, and 50 wt%) were combined with biomass and pyrolyzed in a semi-batch reactor under optimal conditions (550 °C temperature, 10 °C/min heating rate, and 200 mL/min N2 flow rate). The fuel characteristics of co-pyrolyzed fuel were assessed using ASTM techniques. The physicochemical parameters of the co-pyrolyzed fuel were characterized using experimental investigations, which included its energy content, elemental composition, density, viscosity, and stability. The results show that pyrolyzing LDPE and rice husk together produces a hydrocarbon-rich fuel with good combustion properties. The fuel has higher energy content and lower viscosity than individual feedstocks, making it a feasible alternative to traditional petroleum-based fuels. FTIR and NMR investigations indicated the presence of a variety of functional groups, most notably aromatic compounds, acids, phenols, water, esters, and ethers. Furthermore, NMR study indicated that adding waste plastics enhances aromatic content while decreasing paraffinic chemicals. Furthermore, a GC-MS examination revealed a considerable rise in hydrocarbons and decreased oxygen-rich compounds when waste plastic LDPE was added to the blend.
+

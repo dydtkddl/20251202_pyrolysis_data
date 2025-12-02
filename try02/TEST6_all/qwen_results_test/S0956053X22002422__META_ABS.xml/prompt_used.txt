@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The effects of digestate pyrolysis liquid on the thermophilic anaerobic digestion of sewage sludge — Perspective for a centralized biogas plant using thermal hydrolysis pretreatment The use of pyrolysis process to valorize digestate from anaerobic digestion (AD) of municipal sewage sludge for biochar production was piloted in a central biogas plant. The pyrolysis also generates pyrolysis liquid with high organics and nutrient contents that currently has no value and requires treatment, which could potentially be done in AD. As the pyrolysis liquid may contain inhibitory compounds, we investigated the effects of adding the pyrolysis liquid on AD of sewage sludge and thermal hydrolysis pretreated sewage sludge (THSS) simulating the full-scale centralized biogas plant conditions. In batch assays, the pyrolysis liquid as such did not produce any methane, and the 1% and 5% (v/w) shares suppressed the methane production from THSS by 14–19%, while a smaller decrease in methane production was observed with sewage sludge. However, in the semi-continuous reactor experiments, pyrolysis liquid at a 1% (v/w) share was added in sewage sludge or THSS feed without affecting the methane yields or digestate characteristics. The laboratory results indicated that pyrolysis liquid can be treated in AD, while extrapolating the results to the centralized biogas plant indicated minor increase in the overall methane production and an increased potential for ammonium recovery.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Advancements and synergistic mechanism about co-pyrolysis of oily sludge and agricultural biomasses: A review The annual production of 60 million tons of oil-containing sludge, totaling over 1 billion tons, and the agricultural sector's contribution of 140 billion tons of underutilized biomass each year pose significant long-term challenges for human development. Co-pyrolysis of oily sludge and biomass has emerged as a promising approach to address this issue by enabling resource recovery and reducing environmental risks. This scholarly article explores the composition of oil sludge, its associated environmental and health risks. And the study delves into the specific synergistic mechanisms, encompassing reaction kinetics, product distribution profiles, and optimal operating conditions. Thermogravimetric analysis of co-pyrolysis demonstrates a notable increase in the weight loss rate and a reduction in the activation energy of the reaction. In fixed-bed analysis, co-pyrolysis in fixed-bed studies can notably modify the yield of pyrolysis products. Specifically, it enriches the pyrolysis oil with high-energy components such as aromatic hydrocarbons and phenolic compounds, leading to alterations in its physical and chemical characteristics including viscosity, density, and acid value. These modifications play a crucial role in elevating the energy density of the pyrolysis oil, thus rendering it more valuable for applications as fuel or chemical feedstock. Furthermore, the incorporation of certain metal oxide catalysts has been shown to enhance the quality and stability of bio-oil. High-quality biochar generated through pyrolysis can decrease heavy metal hazards, boost the physical and chemical characteristics like porosity and specific surface area of the charred material. Notably, Co-pyrolysis also enhances yielding valuable gases like methane (CH4) and carbon monoxide (CO) while reducing harmful emissions. This research underscores the potential of co-pyrolysis technology in advancing oil sludge treatment methods and developing environmentally sustainable solutions.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+PAH sampling and quantification from woody biomass fast pyrolysis in a pyroprobe reactor with a modified tar sampling system The present work focuses on the sampling procedure and quantification of the PAH yield from the fast pyrolysis of waste softwood. In particular, fast pyrolysis experiments were conducted using a CDS Pyroprobe 5200 at temperatures between 500 °C and 1000 °C, at a heating rate of 600 °C/s for a sample size of 30 mg. High performance liquid chromatography (HPLC) was used for the determination of the PAH compounds present in the liquid sample fraction, while a micro – GC was employed for the analysis of the main gaseous products (CO, CO2, CH4 and H2). An alternative tar sampling protocol was proposed, which employed the use of a cold trap (50 °C) and an isopropanol filled impinger bottle for the collection of the condensable products. The experiments were compared to heated foil reactor based pyrolysis tests within the same temperature range and heating rate, except for a slightly lower sample size (10 mg). The Pyroprobe and adapted sampling system proved to be more efficient regarding PAH capture and quantification compared to the heated foil reactor. Naphthalene, acenaphthylene and phenanthrene were the main PAH compounds detected. The PAH yields increased with pyrolysis temperature, up to values corresponding to roughly 0.2 wt% of the overall yield at 1000 °C. From the results it was derived that PAH evolution is mainly a product of secondary decomposition of primary tar, since the char yield stabilized for higher temperatures and the yields of CO, H2 and CH4 increased. Overall mass balance closure values were around 80 wt% on average. Char and gas yields were determined with high reproducibility, however gravimetric liquid analysis lacked due to the inability to gravimetrically measure the yield condensing in the impinger bottle. Future work is aimed on improving on this particular aspect. Overall, the alternative tar sampling system proposed was successful in the quantification of PAH from biomass fast pyrolysis experiments offering increased flexibility, accuracy and practicality of use.
+

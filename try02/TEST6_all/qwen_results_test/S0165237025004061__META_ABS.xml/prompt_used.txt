@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comprehensive study on the pyrolysis characteristics of end-of-life photovoltaic module backsheet: Kinetic analysis, ReaxFF MD simulation and DFT calculation Comprehensive investigation of the pyrolysis of typical Tedlar-PET-Tedlar (TPT) backsheet was conducted under nitrogen, integrating macro-scale thermal analysis with atomistic simulations using reactive force field molecular dynamics (ReaxFF-MD) and density functional theory (DFT). Thermogravimetric experiments reveal that TPT backsheet undergoes single-stage weight-loss process with activation energy increasing initially and then leveling off to an approximately constant value. The iso-conversional method identified pyrolysis kinetic triplet parameters. Furthermore, the reaction mechanism function was reconstructed and optimized based on an adjustment function, which showed improved accuracy in predicting actual pyrolysis behavior compared to traditional solid-state reaction kinetic models. ReaxFF-MD simulations indicate that random scission of polymer chains dominates the pyrolysis process. The decomposition initiates at the C-O bonds adjacent to ester groups in the polyethylene terephthalate (PET) chains, leading to the formation of terephthalic acid (TPA) as major intermediate. Concerted reaction involving six-membered ring transition state with energy barrier of 210.50 kJ/mol was identified as the dominant pathway in the initial pyrolysis of TPT. Subsequently, dehydrofluorination of polyvinyl fluoride (PVF) side groups occurs with energy barrier of 242.90 kJ/mol, producing HF. Synergistic effect between PVF and PET was observed. Fluorinated radicals generated from PVF can react with radicals such as TPA to form fluorinated carbon compounds. Additionally, HF facilitates the cleavage of ester bonds in PET, thus lowering the initial depolymerization barrier to 174.73 kJ/mol. The reaction network constructed, together with the calculated energy barriers and identified rate-determining steps, provides critical insights for the development of energy-efficient and pollution-reducing pyrolysis processes for end-of-life PV backsheet recycling.
+

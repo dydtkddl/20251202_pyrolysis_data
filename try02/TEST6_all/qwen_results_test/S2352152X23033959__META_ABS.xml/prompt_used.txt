@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Waste biomass-derived activated carbons for various energy storage device applications: A review Energy, water, and clean air constitute the fundamental necessities for human survival, and these resources are deeply interconnected. The detrimental effects of modern lifestyle activities and increasing energy requirements have led to amplified use of fossil fuels. This situation is further exacerbated by the improper disposal of substantial amounts of biomass waste, especially in developing nations. However, there is an innovative solution that can address these pressing issues - the carbonization process, which transforms biomass waste into valuable advanced materials. Among the extraordinary materials generated through this procedure are porous activated carbons derived from diverse forms of biomass. Our discussion has explored various biomass sources for activated carbon and their corresponding electrochemical characteristics. Within the realm of energy storage applications, we have delved into the utilization of bio sources including waste tyre, wood, lotus husk, banana peels, bamboo waste, green tea waste, datura, and pineapple leaves in the form of activated carbons. These activated carbons possess remarkable energy storage capabilities in supercapacitors, with reported specific capacitances reaching an impressive value 1400 F/g. Furthermore, we have highlighted the functionalities of supercapacitors and batteries, as well as the distinct roles played by their individual components in energy storage. This all-inclusive assessment not only summarizes the most recent advancements in biomass-derived activated carbon but also underscores its pivotal role in storing energy. Moreover, the assessment delves into the key factors that influence the efficiency of biomass-derived activated carbon in these specific applications, perfectly catering to the requirements of future demands.
+

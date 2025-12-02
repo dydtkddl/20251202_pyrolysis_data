@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolytic characteristics of abutilon stalk waste using TG-FTIR, Py-GC/MS, and artificial neural networks: Kinetics, thermodynamics, and gaseous products distribution The physicochemical properties of abutilon stalk (ABUS) were investigated to assess its suitability for pyrolytic conversion into bioenergy and bio-based chemicals based on kinetic triplet state, thermodynamic parameters, decomposition mechanisms and product distributions. The pyrolysis behavior of ABUS was studied using a thermogravimetric analyzer at five heating rates in a nitrogen atmosphere. The Gaussian deconvolution function indicated that the pyrolysis process of ABUS can be successfully modeled as four parallel devolatilization events (R2 > 0.99), divided into the devolatilization of pseudo drying (PO-D), hemicellulose (PO-H), cellulose (PO-C), and lignin (PO-L), respectively. The average apparent activation energies were 34.89 kJ/mol for PO-D, 163.02 kJ/mol for PO-H, 169.55 kJ/mol for PO-C, and 107.51 kJ/mol for PO-L using four model-free methods (Ozawa-Flynn-Wall, Kissinger-Akahira-Sunose, Starink, and Tang). The pyrolysis process was accurately predicted using diffusional, power law, geometrical contraction, and order-based reaction mechanism models. Thermal degradation process for each devolatilization event was successfully reconstructed using combined kinetics (R2 > 0.96), providing a useful theoretical basis and mathematical model for predicting the pyrolysis behavior of ABUS. The volatile products produced by ABUS pyrolysis were characterized using an integrated TGA-FTIR and Py-GC/MS system, confirming the proportion of high-energy compounds (benzenes, phenols, ketones, alcohols, aldehydes, acids, esters, hydrocarbons and their derivatives, N-heterocyclic substances, and N-containing compounds) and gas emission levels (CO > CH4 > C-O > H2O > CO2 > CO > C-O(H) > HCN > NH3 > SO2). Artificial neural network (ANN) was used to predict the pyrolysis behaviors of ABUS, and the best ANN model was ANN (5 *11 *1) with high R2 of 0.99998. Based on the kinetics, thermodynamics, and gaseous products distribution, ABUS has great application potential as raw material for bioenergy production.
+

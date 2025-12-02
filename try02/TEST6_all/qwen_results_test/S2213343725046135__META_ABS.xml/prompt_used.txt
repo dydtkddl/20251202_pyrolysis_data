@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-gasification of coal, biomass with waste plastic in a fluidized bed: Machine learning model optimized and gasification scheme Co-gasification of coal, biomass, and waste plastic not only mitigates the environmental issues caused by waste plastic but also curtails the CO2 emissions from coal gasification. Machine learning (ML) models: support vector machine, random forest, multi-layer perceptron (MLP), and artificial neural network (ANN) were firstly conducted to support these processes and the parameters for MLP and ANN were further optimized. The MLP and ANN models demonstrated superior performance. Feed-forward Back Propagation neural network model with genetic algorithms showed the best performance of coefficient (R2) of 0.998, mean square error (MSE) of 0.0002, mean absolute error (MAE) of 0.024, and mean absolute percentage error (MAPE) of 0.001. The refined ANN model was subsequently employed to compared with experimental data from the literature and later predict the content of H2, CO, H2/CO ratio, lower heating value (LHV), syngas yield (Qs) and tar emission (Ctar) under different gasification agent scenarios, such as air gasification, oxygen-enriched air gasification, air with steam gasification, and oxygen with carbon dioxide gasification. At small equivalence ratio (ER), the H2, CO, H2/CO, LHV and Ctar decreased, and Qs increased. With the increased of steam flow rate, H2, H2/CO, LHV and Qs increased, but CO decreased. Highest hydrogen concentration of 25.6 % and H2/CO ratio of 1.64 were achieved through air with steam gasification. The highest LHV of 9.3 MJ/m3and gas yield Qs of 2.8 m3/kg was obtained during oxygen with air gasification. The simulation trend showed strong agreement with the experimental data from the literature, which could be used as a tool to guide the industry operation.
+

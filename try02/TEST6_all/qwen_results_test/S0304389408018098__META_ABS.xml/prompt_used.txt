@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Behaviour of antimony during thermal treatment of Sb-rich halogenated waste Antimony compounds have a wide range of industrial applications, particularly as additives in flame retardants. To ensure environmentally friendly waste incineration of Sb-rich wastes, it is essential to strengthen the knowledge about the fate of antimony and the potential formation of harmful species. Investigations should be conducted particularly in relation with the main operational parameters controlling the process, chiefly temperature, residence time and air supply in the oven and in the post-combustion zone, prior final adapted cleaning of the flue-gas stream. Experimental studies focusing on antimony behaviour were undertaken through laboratory-scale thermal treatment at 850°C and 1100°C of a Sb-rich halogenated waste, originating from the sector of flame retardants formulation. The configuration of our laboratory experimental device allowed to achieve only low oxidative conditions in the waste bed, but high oxidative strength coupled with high temperature and sufficient gas residence time in the post-combustion zone, as prescribed during the incineration of hazardous wastes. Atomic absorption spectroscopy was used to assess the partition of antimony in the different compartments of the process. The oxidation degree of antimony in the gas-phase was determined by the use of electrochemical techniques, namely polarography coupled with anodic stripping voltamperometry. The partition of antimony between the residual ash and the gas-phase under moderate oxidative conditions in the waste bed was constant, whatever the temperature: the volatilization rate for antimony was ∼64%, while a ∼36% fraction remained in the residual bottom ashes. But interestingly, while at 850°C, antimony was mainly present in the gas-phase at a +III oxidation degree, an increase in temperature of 250°C favoured the presence of antimony to its highest oxidation degree +V in the flue-gas stream, a valence known to be involved in less toxic species.
+

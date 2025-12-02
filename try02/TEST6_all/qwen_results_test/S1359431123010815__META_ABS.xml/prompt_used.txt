@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental study of performance enhancement strategies for hydrogen production-purification systems in packed-bed reactors under power fluctuations Methanol reforming for hydrogen production and purification is a key technology in current fuel cell hydrogen source systems. The packed-bed reactor has a simple structure and is widely used, yet it has disadvantages such as slow dynamic response and limited heat and mass transfer. In this paper, an experimental approach is used to simulate the reaction characteristics of the packed bed during power fluctuation and start-up phase. It is found that the combined catalysts are the best in terms of both economical and purification effects, especially the precious metal combined copper-based catalysts. Meanwhile, the methanol conversion rate can seriously affect CO-PROX during the fuel cell start-up phase, and the use of combined catalysts can mitigate the impact of power fluctuation on the system and reduce the CO concentration. The combination of catalysts in such a way that the noble metal should be ensured in the front section, the optimal reaction temperature of copper-based combination noble metal-based catalysts is explored, with reforming temperature of 200 °C and CO-PROX temperature of 180–200 °C, and optimal O2/CO ratio between 0.5 and 1.5, when methanol conversion reaches more than 70%, CO concentration as low as 0.42% and hydrogen concentration higher than 40%.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recovery of methyl methacrylate from waste poly (methyl methacrylate) pellets using a low-temperature plasma and zeolites A dielectric barrier discharge (DBD) plasma method with zeolite catalysts was applied to waste poly (methyl methacrylate) (PMMA) pellets to retrieve methyl methacrylate (MMA), methacrylic acid, and methanol at a relatively low temperature. Waste PMMA pellets were provided in the form of post-industrial recycled (PIR) PMMA. Three types of zeolite catalysts such as HY, H-zeolite socony mobil-5 (HZSM-5), and H-mobil composition of matter-22 (HMCM-22) were tested to assess their catalytic performance for retrieval under plasma irradiation. By conducting comparative examples such as non-catalytic, catalytic, and plasma-assisted non-catalytic thermolysis reactions, the cooperative effects of the DBD plasma discharge and zeolite catalyst were investigated. HMCM-22 was found to be more effective, especially for the retrieval of MMA. In the cases of non-catalytic and catalytic thermolysis at 300 °C, conversions of PMMA were found 50.9 % and 52.6 %, respectively. By contrast, plasma-assisted non-catalytic thermolysis showed that the PMMA conversion improved by up to 90.6 %, whereas the yield of MMA was relatively low (34.6 %). Using zeolite catalysts in the plasma bed also improved PMMA conversion by up to nearly 90 %. The liquid products yields were comparable for HY and HZSM-5. By contrast, HMCM-22 afforded the highest liquid product yield. Notably, the HMCM-22 case showed highest MMA yield at nearly 53.1 %, which seems highly related to a large amount of Brønsted acid sites. More importantly, the byproducts having odor issue such as methyl pyruvate and 2,3-butanedione were not produced in such a plasma-assisted catalytic or non-catalytic conversion method.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unraveling synergistic effects on pyrolysis reactivity and indene formation in co-pyrolysis of toluene and acetylene Synergistic effect is one of the most important interactions between different fuel components and is very influential on combustion characteristics such as polycyclic aromatic hydrocarbon (PAH) and soot emissions, pyrolysis/oxidation reactivity and so on. In order to explore the potential synergistic effects between aromatics and open-chained fuels, pure toluene pyrolysis, pure acetylene pyrolysis and co-pyrolysis of toluene and acetylene were investigated in a flow reactor using synchrotron vacuum ultraviolet photoionization mass spectrometry at 1057–1340 K and 1 atm. Mole fractions of fuels and key products including both stable and reactive ones were evaluated. The experimental results indicate that in the co-pyrolysis of toluene and acetylene, the decomposition of both fuels is greatly stimulated and the formation of indene is significantly improved compared to the pyrolysis of pure toluene and pure acetylene. As a result, remarkable synergistic effects can be observed on pyrolysis reactivity and indene formation. A kinetic model for co-pyrolysis of toluene and acetylene was updated from our previous toluene model and was validated against the new data. The modeling analysis reveals that the unimolecular decomposition reaction of toluene producing benzyl radical and H atom is the chain-initiation reaction in both pure toluene pyrolysis and co-pyrolysis of toluene and acetylene. In the pure toluene pyrolysis, the self-combination reaction forming bibenzyl dominates the consumption of benzyl radical and results in strong chain termination. In the co-pyrolysis of toluene and acetylene, instead of the chain-termination reaction, a circulating reaction sequence initiating from the reaction between benzyl radical and acetylene continuously converts toluene and acetylene to indene and H2, which can explain the observed synergistic effects on pyrolysis reactivity and indene formation in the co-pyrolysis of toluene and acetylene.
+

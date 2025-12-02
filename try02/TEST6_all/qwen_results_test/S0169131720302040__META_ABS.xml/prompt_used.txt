@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Vermiculites from Brazil and Palabora: Structural changes upon heat treatment and influence on the depolymerization of polystyrene Although clay minerals have been widely used as catalysts and catalyst supports, the reports of natural clay minerals studied in their role as a catalyst are still rare. This work, therefore, for the first time reports the possible catalytic effects of the two raw vermiculites from Brazil (VerS) and Palabora (VerP) on the depolymerization of polystyrene (PS). The main experimental methods used to obtain a detailed structural characterization of vermiculites before and after the depolymerization experiment were X-ray powder diffraction (XRD), thermogravimetric DTA/TG analysis, infrared (FT-IR) and Raman spectroscopy. The detailed assignment of the vibration bands of vermiculites occurring in the near-IR and the analysis of carbon coatings on the surface of vermiculite using Raman spectra are performed for the first time. The thermal products of PS are styrene monomer (SM) about 54.5 mass% and pyrolytic volatile oligomers (dimers and trimers) about 32.1 mass%. The presence of VerS and VerP changes the relation between SM (about 50.7 and 53.6 mass%, respectively) and oligomers (about 37 and 33.3 mass%) due to the pyrolytic carbons deposited on the VerS as coke and on the VerP as glassy carbon. The variable yields of the products can be attributed to the natural vermiculite properties such as are different negative layer charge emerging from the cation substitution in tetrahedra, number of water molecules released during thermal treatment, and textural properties (S BET and pores).
+

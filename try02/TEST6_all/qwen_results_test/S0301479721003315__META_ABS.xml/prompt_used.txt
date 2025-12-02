@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Wind turbine blade recycling: An evaluation of the European market potential for recycled composite materials The limited literature on the cost of various recycling methodologies for thermoset composites sets the background of this work, focusing mainly on the identification of an upper and lower economic value of glass fibre recovered from wind turbine blades recycling. The study briefly reviews the materials used by various original equipment manufacturers (OEM) for wind turbine blades. Successively, it provides an overview of the various recycling methods with interest in recovered materials, mechanical and physical properties, which are used, for estimating a maximum expected value. All recycling processes show a negative effect on mechanical properties with strength loss between 30% and 60%. Process energy demands are reviewed, and considerations are set forward to estimate the minimum cost of operating mechanical, pyrolysis and fluidized bed plants in Germany. Ultimately, current applications of recovered material and related markets are explored. Through interviews and secondary data, it is highlighted that despite the lower mechanical properties, grinded material finds applications in traditional processes, cement kilns and new products. It is also found that pyrolysed fibres can be used as insulation material and oils can be easy to distil. Pyrolysis is a relatively expensive process, thereby, distillation of the oils and energy recovery are necessary enablers towards commercial viability. Mechanically grinded material presents the lowest process cost with ca. €90/tonne, thus, below landfilling and incineration and falling within the attention of private businesses. Numerous markets are available for recovered materials from wind turbine blades, primarily for grinded products and secondly for pyrolysed glass fibre.
+

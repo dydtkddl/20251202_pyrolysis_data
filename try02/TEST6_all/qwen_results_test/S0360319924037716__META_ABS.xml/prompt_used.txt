@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Exploring the superior mild temperature performance of nickel-infused fibrous titania silica for enhanced dry reforming of methane Carbon (IV) oxide (CO2) and methane (CH4) contribute significantly to greenhouse gas emissions and global warming. One potential approach for reducing their environmental impact is transforming these gases into synthesis gas (CO + H2). This study illustrates the advancement of catalysts supported by fibrous titania silica (FTS), which have nickel loadings of 1%, 3%, and 5%. The FTS support, a modified variant of silica-titania, has a distinct fibrous structure and exhibits mesoporous material properties such as a type IV isotherm and an H1 hysteresis loop. After 72 h of operation, the 1Ni/FTS catalyst converted over 80% of CH4 and CO2 with low coke deposition, outperforming other catalysts. The bare FTS support had reduced CH4 conversion at 600 °C, CO2 conversion at 650 °C, and H2/CO ratio at 700 °C. However, the 5Ni/FTS and 3Ni/FTS catalysts showed consistent increases in CH4 conversion at 600 °C. The 1Ni/FTS catalyst, with a pore size of 7.39 nm, had strong metal-support interaction and moderate basicity sites, which helped with reactant dissociation and coke gasification. Despite the slightly higher CH4 conversion of the 3Ni/FTS catalyst and the high basicity of the 5Ni/FTS catalyst, the 1Ni/FTS catalyst demonstrated superior thermal stability and coking resistance, as evidenced by negligible weight loss during TGA analysis. Raman shifts revealed the presence of carbon synthesis and the buildup of disordered amorphous carbon. The Id/Ig ratios of FTS, 1Ni/FTS, 3Ni/FTS, and 5Ni/FTS were 1.01, 0.98, 1.01, and 1.01, respectively. The lower Id/Ig ratio of 1Ni/FTS suggests less disorder. The FTS support promises mild-temperature, carbon-neutral CH4 reforming with long-term catalytic applications. This study demonstrates the efficacy of FTS-supported catalysts in constructing long-term and efficient systems for converting greenhouse gasses.
+

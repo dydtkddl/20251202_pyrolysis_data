@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic aquathermolysis of contaminated polyolefin plastic waste over an in situ iron hydroxide/oxide nanocatalyst derived from an oil-soluble iron precursor With the substantial increase in global plastic consumption over the past 50 y, society faces the challenges of managing and recovering resources from considerable amounts of plastic waste. A promising strategy for use in addressing this problem is to upcycle plastic waste into valuable materials via thermochemical conversion, and hydrothermal liquefaction, which uses low-cost and green H2O, has attracted attention as a sustainable technology. In this study, we introduced an aquathermolysis system using oil-soluble Fe-2-ethylhexanoate (Fe-2EH) as a catalyst precursor under superheated steam conditions to convert highly contaminated polyolefin plastic waste to liquid fuel. The excellent dispersibility and decomposition behavior of Fe-2EH facilitated the formation of highly dispersed in situ Fe-based catalysts, enabling their involvement in the early stages of aquathermolysis. The presence of H2O and the in situ catalyst significantly promoted the decomposition of C–X bonds (X = Cl, S, N, or O) rather than C–C bonds, and C–C cleavage was driven by thermal energy. Moreover, the presence of H2O with the catalysts reduced the proportion of non-paraffinic products, including olefins and aromatics that cause char/coke formation. During the reaction, the in situ catalyst particles comprised nanosized Fe oxide cores with Fe hydroxide-rich surfaces, preventing the accumulation of metal contaminants. Based on deuterium tracing studies, the H transfer index of the catalyst was closely related to the catalytic performance. These results indicated that catalytic aquathermolysis using Fe-2EH is an efficient system for use in improving product quality by effectively removing contaminants and suppressing char/coke formation.
+

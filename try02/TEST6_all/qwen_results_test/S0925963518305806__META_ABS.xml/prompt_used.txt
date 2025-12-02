@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synthesis of chain-like carbon nano-onions by a flame assisted pyrolysis technique using different collecting plates A flame assisted pyrolysis method was used to synthesize chain-like graphitic carbon nano-onions from ghee oil as a carbon precursor (CNOs; ca. d ≤ 60 nm), collected over both brass and glass collecting plates. While the gram scale yields of CNOs produced from both procedures were similar, the carbons nanomaterials displayed different chemical and structural morphological properties. For instance, high magnification TEM micrographs revealed that the produced CNOs were quasi-spherical nanomaterials with varying average diameters, i.e. ca. 37 ± 3.3 nm (from brass) and ca. 55 ± 4.1 nm (from glass). The BET analysis showed that the surface areas of the pristine CNOs (pCNOs) were similar for both materials (brass, ~59 m2/g; glass, ~53 m2/g). The thermal analysis data revealed that pCNOs product collected using the brass collecting plate (BCP) was different from those produced using a glass collecting plate (GCP). Furthermore, the thermal treatment of pCNOs produced from both collecting plates (at 900 °C, under Ar) resulted in different TGA data in which the CNOs produced using a GCP showed broader first order derivative peaks than those collected using a BCP. Raman analysis showed a lower defect density ratio (ID/IG, ca. ~0.89) for the pCNOs synthesized using a BCP, indicating that they were more graphitic than those obtained using a GCP (ca. ~1.00). It is thus clear that control of the thermal properties of the collector device plays an important role is determining the characteristics of CNOs.
+

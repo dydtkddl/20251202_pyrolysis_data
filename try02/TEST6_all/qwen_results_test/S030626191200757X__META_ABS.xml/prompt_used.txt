@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Fixed bed downdraft gasification of paper industry wastes The two main wastes generated from secondary fibre paper mills are rejects (composed mainly of plastics and fibres) and de-inking sludge, both of which are evolved from the pulping process during paper manufacture. The current practice for the disposal of these wastes is either by land-spreading or land-filling. This work explores the gasification of blends of pre-conditioned rejects and de-inking sludge pellets with mixed wood chips in an Imbert type fixed bed downdraft gasifier with a maximum feeding capacity of 10kg/h. The producer gases evolved would generate combined heat and power (CHP) in an internal combustion engine. The results show that as much as 80wt.% of a brown paper mill’s rejects (consisting of 20wt.% mixed plastics and 80wt.% paper fibres) could be successfully gasified in a blend with 20wt.% mixed wood chips. The producer gas composition was 16.24% H2, 23.34% CO, 12.71% CO2 5.21% CH4 and 42.49% N2 (v/v%) with a higher heating value of 7.3MJ/Nm3. After the removal of tar and water condensate the producer gas was of sufficient calorific value and flow rate to power a 10kWe gas engine. Some blends using rejects from other mill types were not successful, and the limiting factor was usually the agglomeration of plastics present within the fuel.
+

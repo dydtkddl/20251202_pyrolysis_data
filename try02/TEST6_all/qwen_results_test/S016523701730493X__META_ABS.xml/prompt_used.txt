@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal conversion of polyolefins/polystyrene ternary mixtures: Kinetics and pyrolysis on a laboratory and commercial scales The thermal treatment of the three-component mixtures of polyethylene, polypropylene and polystyrene has been investigated. Thermal reactions have been described and the kinetics of thermal decomposition using the Friedmańs differential isoconversional method have been evaluated; slow pyrolysis on a laboratory scale and the pyrolysis of a contaminated waste mixture on a commercial scale have been carried out. The obtained results show that polystyrene radicals promote the decomposition of polyolefins, as a result of which the thermal decomposition of polyethylene and polypropylene proceeds faster and the yields of the gas and oil obtained during pyrolysis are quite high: 4–6wt.% of gas and 88–90wt.% of oil in the case of laboratory-scale pyrolysis and 15wt.% of gas and losses and 80wt.% of oil in the case of commercial-scale pyrolysis. TG-FTIR and TG-MS analyses have proved that the composition of volatile pyrolysis products varies. In the case of the ternary mixture with prevailing polyethylene (and polypropylene and polystyrene being in minority), the volatiles contained mainly aliphatic hydrocarbons and substituted benzenes; in the case of the ternary mixture with prevailing polypropylene, a significantly higher amount of substituted alicyclic compounds was found. This was confirmed by the GC–MS analysis of the oils obtained. Considering the quite high HHV and LHV of oils (46–48MJ/kg and 43–45MJ/kg, resp., in the case of laboratory-scale pyrolysis and 43 and 41MJ/kg, resp., in the case of commercial-scale pyrolysis) as well as the very low content of sulfur and nitrogen, the oils can be used as a clean liquid fuel; because of their composition, they can also serve as a source of chemicals and solvents.
+

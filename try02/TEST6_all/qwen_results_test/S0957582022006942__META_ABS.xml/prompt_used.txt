@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microwave-assisted in-situ catalytic pyrolysis of polystyrene: Analysis of product formation and energy consumption using machine learning approach Microwave-assisted catalytic pyrolysis is a prominent technology for the production of high-quality fuel intermediates and value-added chemicals from polystyrene waste. The objectives of this study were to understand the role of catalyst (KOH) on polystyrene (PS) pyrolysis. Pyrolysis experiments were conducted using a microwave oven at a power of 450 W and a temperature of 600 °C. Graphite susceptor (10 g) was used to achieve the required pyrolysis conditions. In addition, the design of experiments (DoE) with machine learning (ML) was used to understand the loading of PS (5 g, 27.5 g, and 50 g), and KOH (5 g, 7.5 g, and 10 g). The products including oil, gas, and char were collected in every experiment. The average heating rates achieved were in the range of 30–50 °C/min. The specific microwave power (microwave power per unit mass of feedstock) decreased with an increase in PS amount from 90 to 9 W/g. However, the specific microwave energy (microwave energy per unit mass of feedstock) (27–73 kJ/g) was in line with the average heating rate. The maximum yield of pyrolysis oil was found to be 95 wt%, which was obtained with a PS:KOH ratio of 27.5 g: 7.5 g. The oil yield increased from 80 to 95 wt% when the mass of the catalyst increased from 5 to 7.5 g. On the other hand, the gas yield (3–18 wt%) varied significantly and char yield (1–2 wt%) was not influenced. The yields predicted by ML matched well with the experimental yields. This study demonstrated the potential of KOH as a catalyst for PS pyrolysis technology as the formation of aliphatic hydrocarbons in the oil fraction was significantly promoted.
+

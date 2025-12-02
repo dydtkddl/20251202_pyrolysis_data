@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biomass pyrolysis gas conditioning over an iron-based catalyst for mild deoxygenation and hydrogen production Bio-crude is a renewable source for production of valuable energy carriers. Prior to its utilization, a conditioning step of the raw pyrolysis gas can be beneficial before the bio-crude is converted via catalytic hydrodeoxygenation (HDO) into liquid hydrocarbon products, or via steam reforming (SR) to synthesis gas/hydrogen. An experimental small industrial-scale study for the chemistry of atmospheric pressure pyrolysis gas conditioning resulting in bio-crude deoxygenation and a hydrogen-rich gas is presented and discussed. This study is performed using an iron-based catalyst without addition of hydrogen or steam. Following a short catalyst stabilization period with fluctuating bed temperatures, the catalyst operated near 450°C at a space velocity of 1100h−1 for 8h under stable conditions during which no significant catalyst deactivation was observed. Experimental results indicate a 70–80% reduction of acetic acid, methoxy phenols, and catechol, and a 55–65% reduction in non-aromatic ketones, BTX, and heterocycles. Alkyl phenols and phenols were least affected, showing a 30–35% reduction. Conditioning of the pyrolysis gas resulted in a 56% and an 18wt% increase in water and permanent (dry) gas yield, respectively, and a 29% loss of condensable carbon. A significant reduction of CO amount (−38%), and production of H2 (+1063%) and CO2 (+36%) over the catalyst was achieved, while there was no or minimal change in light hydrocarbon content. Probing the catalyst after the test, the bulk phase of the catalyst was found to be magnetite (Fe3O4) and the catalyst exhibited significant water gas shift (WGS) reaction activity. The measured gas composition during the test was indicative of no or very limited Fischer-Tropsch (FT) CO/CO2 hydrogenation activity, and this infers that the active surface phase of the catalyst during the test also was Fe-oxide, rather than Fe-carbide. The results show that iron-based materials are potential candidates for application in a pyrolysis gas pre-conditioning step before further treatment or use, and a way of generating a hydrogen-enriched gas without the need for bio-crude condensation.
+

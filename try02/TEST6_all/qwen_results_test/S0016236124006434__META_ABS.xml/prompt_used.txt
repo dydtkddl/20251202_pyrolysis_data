@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic co-pyrolysis of Vachellia Farnesiana with polypropylene plastic to produce bio-oil: Parameter optimization study Catalytic co-pyrolysis of biomass Vachellia Farnesiana (VF) and Polyropylene (PP) plastic was carried out using sodium carbonate (Na2CO3) catalyst to produce high quality oil. A semi batch pyrolysis reactor was used to perform the co-pyrolysis of VF and PP at different temperatures (350–550 °C), time (20-60mins), VF/PP ratio (0–100 %) and catalyst loading (0–10 %). The experiments were conducted using 40 g feed mixture to optimize the feed ratio, temperature, reaction time, and Na2CO3 catalyst ratio. The best conditions for the process were thus found to be 450 °C temperature, 40 min time, and 5 wt% Na2CO3 catalyst. Under these conditions, the maximum fuel oil yield of ∼ 64 % was achieved, which was approximately 4 % higher than oil yield obtained without utilization of Na2CO3 catalyst. Variations in temperature, the VF/PP ratio, and the Na2CO3 catalyst parameters had the most significant effects on improving the quality of the oil. The utilization of Na2CO3, along with an increase in temperature and the amount of PP in the VF/PP blend, contributed to higher yields and a greater gross calorific value (GCV) of the obtained oil. FTIR analysis was conducted to identify the functional groups present in the oil. Similarly, GCMS analysis further revealed that the presence of a significant alkanes and alkenes, along with fewer oxygenates, was responsible for the favorable GCV of the oil. The addition of the Na2CO3 catalyst was found to increase the concentrations of alkanes, alkenes, and alcohols, while reducing acids, ethers, and ketones. As a result, it was able to enhance the quality of the oil.
+

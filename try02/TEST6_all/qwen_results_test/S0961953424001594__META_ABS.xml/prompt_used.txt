@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biochar from sugarcane bagasse: Synthesis, characterization, and application in an electrochemical sensor for copper (II) determination Biochar (BC) is a carbonaceous material obtained from the thermal decomposition of organic matter under limited oxygen supply that plays an attractive role in waste management. In this study, biochar was prepared from sugarcane bagasse, using pyrolysis temperatures from 300 to 700 °C, and chemically activated with HNO3. Structural characterizations showed that degradation increased as pyrolysis temperature increased. Furthermore, a higher number of functional groups were observed for the materials produced under the lowest temperatures. Chemical activation resulted in oxidation and nitration of carbonaceous structure, increasing the number of functional groups on the materials. All materials were evaluated for the construction of electrochemical sensors towards Cu2+ ions voltammetric determination. The material produced at 400 °C pyrolysis temperature and activated (BCA400) provided the most intense response, which can be related to the presence of one of the highest numbers of surface groups, such as oxygen groups, on it. A method for Cu2+ determination was successfully developed based on differential pulse adsorptive stripping voltammetry (DPAdSV). A linear dynamic range (LDR) from 1.0 to 15.0 μmol L−1 was achieved, with limit of detection (LOD) of 0.36 μmol L−1, and limit of quantification (LOQ) of 1.09 μmol L−1. The method was also adequate in terms of accuracy and precision, as well as selective against most cationic species commonly found in tap water. The analyte was determined in tap water samples, in natura and spiked with the maximum concentration allowed by Brazilian legislation, and successful recovery values were obtained. Therefore, biochar from sugarcane bagasse, an environmentally-friendly material, was successfully used to construct an electrochemical sensor and determining an environmental and health interest analyte.
+

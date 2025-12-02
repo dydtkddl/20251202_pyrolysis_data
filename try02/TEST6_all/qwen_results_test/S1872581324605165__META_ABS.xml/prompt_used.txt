@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalyzed oxidative desulfurization of coal tar pitch with trifluoroacetic acid/choline chloride eutectic solvent To avoid the adverse effects of sulfur in coal tar pitch (CTP) on properties of the prepared carbon materials and environment, organic acids with different acidity and choline chloride (ChCl) were selected to prepare deep eutectic solvents (DES) by low-temperature heating, and H2O2 as the oxidant to compose a catalytic oxidation-extraction desulfurization system of CTP. The effects of DES composition, oxidation temperature, oxidation time, and H2O2 dosage on desulfurization of CTP were investigated. The results show that trifluoroacetic acid (TFA)/ChCl DES has a certain effect in catalyzing the oxidative desulfurization of CTP, and the optimal desulfurization rate of CTP reaches 38.7%. The products obtained under various reaction conditions were analyzed by means of elemental analysis, FT-IR, XRD and XPS. The results show that the oxidative desulfurization of CTP catalyzed by acidic DES not only greatly improves hydrophilicity of CTP to solvent by introducing a certain amount of oxygen-containing functional groups, but also changes surface micromorphology of CTP, resulting in cracks and small particles. All these promote oxidation of thiophene sulfur in CTP to sulfone, which is further oxidized to soluble sulfate, thereby achieving sulfur removal. At the same time, oxygen content of CTP after DES catalytic oxidation treatment is relatively low, which has little effect on crystal alignment of carbonized pitch char. This work provides a technical basis for expanding high-value utilization of high-sulfur CTP.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimization study of linseed biodiesel production via in-situ transesterification and slow pyrolysis of obtained linseed residue Biodiesel production by the in-situ transesterification method can be advantageous in reducing process costs due to the elimination of the oil extraction step. Also, consecutive use of biomass pyrolysis process after the biodiesel production process can help make the biofuel production process more economical. In the present study, optimization of biodiesel production by the in-situ transesterification from linseed, a non-edible, and inexpensive seed, was performed. At the end of the biodiesel production process, the linseed residue from the in-situ transesterification process was converted into valuable products by a slow pyrolysis process. Experimental design and optimization of biodiesel production experiments were done by Design Expert 11 software; where the three parameters of linseed particle size (Mesh No.), solvent to solid ratio (SSR), and co-solvent to alcohol ratio (C–S/A) were examined as the main parameters of the experimental design. Finally, the software proposed optimal conditions in the linseed particle size range of 0.212–0.300 mm (Mesh No. Of 50–70), solvent to seed ratio of 9.14 ml/g, co-solvent to alcohol ratio of 0.52 ml/ml, catalyst concentration of 5% (oil-based), agitation rate of 800 rpm, reaction temperature of 55 °C, and reaction time of 180 min. By performing experiments under these conditions, the purity and yield of biodiesel were 96.80% and 95.98%, respectively. Eventually, at the linseed residue pyrolysis process (at 500 °C and N2 rate of 200 cm3⁄min), the biomass conversion was 79.64%, and the bio-oil, biochar, and biogas yields were obtained at 32.68%, 20.36%, and 46.96%, respectively.
+

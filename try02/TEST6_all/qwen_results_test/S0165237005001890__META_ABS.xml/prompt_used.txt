@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+TG/FT-IR analysis of HZSM5 and HUSY deactivation during the catalytic pyrolysis of polyethylene The TG/FT-IR technique has been employed to study the evolution of the gases evolved during the thermal and catalytic decomposition of low density (LDPE) and high density polyethylene (HDPE). This technique allows to obtain the FT-IR spectra of the gases evolved in situ, as they are generated. The evolution of the gases obtained during the progressive deactivation of the catalysts employed (HZSM5 and HUSY) has also been studied. In the thermal processes the relative intensity of bands related to CH2 respect to those related to CH3 is greater, and the presence of aromatics and olefins is nearly negligible, independently on the branching degree of the polymer. Nevertheless, in the catalytic processes, the composition of the gases evolved depends on the zeolite and the polymer structure. The relative intensity of the bands related to the CH3 group increases at the expense of those related to CH2 indicating, as expected, the reduction in the average molecular weight of the gases evolved during the catalytic process. Higher amounts of alkenes and aromatic compounds were detected with HZSM5 than with HUSY. When the coked catalyst is used in successive cycles, the gases obtained become progressively more similar to those generated in the thermal process, and the same happens with the temperature at which decomposition takes place, thus enabling a nice illustration of the catalyst deactivation through the evolution of the FT-IR spectra.
+

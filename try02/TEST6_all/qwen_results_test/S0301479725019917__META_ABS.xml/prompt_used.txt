@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Processing of bio-based photocatalytic sponge-like structures containing C,N-TiO2 colloidally dispersed onto cellulose nanofibers for microplastic remediation This study presents an innovative approach for immobilizing a highly efficient photocatalyst on a bio-based matrix derived from biorefinery processing of agricultural biomass. This strategy adds significant value to the lignocellulosic fraction, while reducing the number of unit operations typically required for photocatalyst recovery (e.g., filtration, centrifugation, or sedimentation) in the photocatalysis of microplastics (MPs) for water pollution control. The removal of polyethylene (PE) MPs was investigated using a green photocatalytic C,N-TiO2 powder immobilized on a cellulose nanofiber (CNF) support. The resulting sponge-like structures (aerogels) combined the photocatalytic activity of C,N-TiO2 with the physical collection capabilities of CNF to enhance the removal of MPs. At low pH and MPs concentrations, CNF-C,N-TiO2 achieved 18.46 % MPs removal after 6 h of irradiation at 254 nm, primarily via photocatalytic degradation driven by reactive oxygen species (ROS) rather than physical collection. Photocatalysis was confirmed by MPs surface roughness reduction, formation of C=O bond-containing compounds, and OH● scavenger tests. Additionally, smaller PE fragments were detected in the CNF-C,N-TiO2 aerogel. Comparative analysis of the pure CNF and CNF-P25 TiO2 structures showed limited MP removal. This was attributed to photolysis for CNF, and to photocatalysis and physical collection for CNF-P25 TiO2. Overall, this study highlights the potential of CNF-C,N-TiO2 sponge-like structures for MPs removal through a combined photocatalytic and physical approach, while also emphasizing the need to optimize the reaction conditions for maximum efficiency.
+

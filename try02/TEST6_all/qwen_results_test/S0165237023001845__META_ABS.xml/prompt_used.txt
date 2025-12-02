@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Multi-scale analysis of the exothermic behavior of agricultural biomass pyrolysis Potato crop residues are one of the few feedstocks which, packed in a bed heated for a narrow range of low temperatures, undergo pyrolytic runaway. This regime is assimilable to intrinsically fast pyrolysis, rapidly occurring in the presence of large temperature overshoots, potentially exploitable for autothermal conversion. To understand the origin of the exothermicity, the influences of the plant parts (foliage, branches, stem and top and bottom parts of the stem) are studied on the packed bed characteristics for a heating temperature of 605 K. The magnitude of the temperature overshoot is maximum for the bottom part of the stem and tends to decrease for the top part and the branches (local and spatially averaged maxima roughly in the range 290–230 K and 260–200 K, respectively). These findings can be associated with a corresponding decrease in the cellulose/starch contents and thickness of the stem/branch wall. Hence the concentration, the reactivity and the intra-particle residence time of primary vapors are progressively reduced as well as the exothermic activity of secondary charring reactions. Foliage does not contribute significantly to the process exothermicity (maximum spatially averaged temperature overshoots around 20 K). Micro-scale thermograms, dominated by primary decomposition, globally show mild, medium and high exothermicity for the foliage, branches and stem in the order (global reaction heats around −80, −300 and −420 J/g, versus 270 J/g for beech wood).
+

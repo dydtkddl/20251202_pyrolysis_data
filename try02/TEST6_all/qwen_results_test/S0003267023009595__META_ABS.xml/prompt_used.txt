@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Efficient mapping of lignin depolymerization product pools and quantification of specific monomers through rapid GPC-HPLC-UV/VIS analysis Background Growing research on lignin depolymerization to functionalized bio-aromatics has necessitated dedicated analysis techniques. However, immense variability in molecular weight and functional groups of the depolymerization products impedes fast analysis of a large number of samples while remaining in-depth enough for catalyst screening or reaction condition optimization. While GPC-HPLC-UV/VIS has been a promising technique, up until now, the information it provides is largely qualitative. By enabling quantification of key monomeric products and through further reduction of overall analysis time, this study aims to increase the potential of GPC-HPLC-UV/VIS for fast and in-depth characterization of lignin depolymerization product pools. Results Analysis of selected samples, isolated from GPC-HPLC-UV/VIS analyses of lignin depolymerization product pools, with gas chromatography (GC) equipped with an Orbitrap high-resolution accurate mass spectrometer (Orbitrap-HR/AM-MS) is successful in identifying the main low monomeric products. Moreover, these identifications are further substantiated through GPC-HPLC-UV/VIS analysis of standards. Furthermore, straight forward quantification of these products directly within GPC-HPLC-UV/VIS is successfully developed with limits of detection ≤0.05 mmol/L, which is at least on par with more complex analysis techniques. Additionally, several different reversed phase columns are assessed to reduce 2nd dimension (2D) time and, hence, overall analysis time while maintaining the possibility for quantification. A reduction in overall analysis time of about 30% as compared to the state-of-the-art is achieved by using a YMC Triart BIO C4 column as 2D. Significance Through the enhancements introduced in this study, GPC-HPLC-UV/VIS emerges as a unique technique for the analysis of lignin depolymerization product pools, which is capable of fast yet sufficiently in-depth analysis of a large volume of samples. This capability is indispensable for catalyst screening and fine-tuning reaction conditions.
+

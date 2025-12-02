@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Decoupling the effects of additives and particle size on hydrothermal dechlorination kinetics of polyvinyl chloride End-of-life polyvinyl chloride (PVC) poses major challenges for sustainable recycling because it releases corrosive HCl and toxic chlorinated organics during disposal or thermal processing. Hydrothermal dechlorination (HTD), which uses subcritical water to remove chlorine, offers a promising pathway to mitigate these environmental and technical risks. However, commercial PVC exhibits diverse particle sizes and complex formulations owing to additives such as stabilizers, fillers, plasticizers, and smoke suppressants that influence its behavior during HTD through interdependent pathways. We employed simplified formulations, HTD, and density functional theory (DFT) to decouple the effects of additives and particle size on PVC behavior. The filler CaCO₃ initially suppressed dechlorination by neutralizing HCl but subsequently enhanced porosity and late-stage diffusion. The plasticizer diisononyl phthalate (DINP) improved thermal equilibration and accelerated early kinetics but impeded late-stage reactivity due to diffusional resistance. ZnCl₂ derived from the stabilizer ZnSt₂ catalyzed the elimination pathway and enhanced overall dechlorination. Increasing particle size decreased transition dechlorination efficiency, indicating a shift toward thermal pathways. To capture these behaviors, a product-layer-dependent shrinking core model was applied, which accounts for the evolving product layer and its effect on diffusion and kinetic transitions, providing a more realistic description than the traditional SCM. Kinetic analysis of PVC pipe revealed activation energies of 232 ± 13.05 kJ/mol (slow substage) and 212 ± 32.85 kJ/mol (rapid substage), confirming that additives exert a cumulative inhibitory effect. These results provide an integrated description of how additives and particle size interact to control HTD kinetics, supporting the rational design of sustainable recycling strategies.
+

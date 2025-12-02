@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The investigation of the effects of two different polymers and three catalysts on pyrolysis of hazelnut shell This study covers an investigation of three catalyst candidates namely; calcium carbonate (CaCO3), Perlite and potassium dichromate (K2Cr2O7) on pyrolysis of mixtures of hazelnut shell (HS) with ultra-high molecular weight polyethylene (UHMWPE) and polyethylene oxide (PEO) by measuring percentages of solid, liquid and gas products amounts gravimetrically. Pyrolysis processes were executed in a batch type tubular reactor at 500 and 650°C for fifteen minutes. Catalysts have behaved differently on compounded mixtures. Especially the obtained liquid products from pyrolysis of mixtures shows smooth distribution compared to anomalous results of pure raw materials. The effect of catalysts on the pyrolysis of HS becomes more obvious in the presence of polymers which produces more gaseous product for K2Cr2O7 case. The other catalysts (CaCO3, Perlite) are more effective without addition of polymers which produce more liquid products. The ratio of HS should not be beyond the 0.5 for production of commercial materials and in their possible recycling process such as pyrolysis for acquisition of combustible liquids. These results may allow some clues for compounding of environmentally safe commercial materials, and easy and efficient recycling technologies.
+

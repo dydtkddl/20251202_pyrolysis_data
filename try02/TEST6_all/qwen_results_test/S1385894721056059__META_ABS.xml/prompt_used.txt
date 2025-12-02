@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Synergistic effects during co-pyrolysis of milled wood lignin and polyolefins at the gas phase and liquid/solid phase contacting modes Co-pyrolysis of biomass and waste plastics is the preferred technology for enhancing the production of fuels and valuable chemicals. Here, we studied the co-pyrolysis of milled wood lignin (MWL) with polyethylene (PE) and polypropylene (PP) at various weight ratios by thermogravimetry (TG), evolved gas analysis–mass spectrometry (EGA–MS), and product recovery tests using a fixed-bed reactor. Two reaction modes, liquid/solid phase (LSP) and gas phase (GP) contacting modes, were applied to investigate the physical prevention of melted polymers on the interactions between the vapored intermediates. The TG results showed that the weight losses were slightly altered in the MWL/PE and the decomposition was delayed in MWL/PP blends, whereas the EGA-MS analysis indicated that more vaporized products from the blends were detected by MS. The fixed-bed experiments showed that the yield of liquid was largely enhanced by the higher proportion of PE or PP in the blends, primarily due to the formation of lower oligomeric hydrocarbons from polyolefins. The yields of gasoline and kerosene were significantly increased in the GP mode from the co-pyrolysis of MWL with PE and PP, respectively. These results suggest that the MWL pyrolysates could enhance the cracking of PE intermediates in the GP reaction mode, whereas the rearrangement reactions of PP intermediates may be inhibited in the LSP reaction mode, converting more wax products into liquid. This paper provides a better understanding of the detailed synergistic effects during biomass and plastics co-pyrolysis.
+

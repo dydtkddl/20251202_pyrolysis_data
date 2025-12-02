@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Upgrading biomass-derived pyrolysis bio-oil to bio-jet fuel through catalytic cracking and hydrodeoxygenation: A review of recent progress Biomass-to-liquid thermochemical routes are the leading green alternatives for producing sustainable hydrocarbon fuels in the near future, including bio-jet fuel. Fast pyrolysis is among the most prospective approaches for converting waste biomass, including agricultural wastes and forestry residues, into liquid fuels. However, despite its maturity, pyrolysis-derived bio-oil bears a poor quality, attributed to the presence of numerous oxygenated compounds and high water content, making it chemically unstable, viscous, and corrosive, with a low heating value. Such inferior properties exclude the direct use of bio-oil as a drop-in fuel, and extensive upgrading is required before it could be utilized as a kerosene fraction and/or blend. Two catalytic post-treatment approaches have shown to be most promising for upgrading bio-oil and refining it to a finished product; catalytic cracking of fast pyrolysis vapor and hydrodeoxygenation. This review focuses on the conversion of biomass-derived bio-oil, excluding triglyceride-based oils, into jet fuel range hydrocarbon through catalytic cracking (associated with catalytic fast pyrolysis) and hydroprocessing (hydrogenation and hydrodeoxygenation), according to the most recent literature efforts. It provides an in-depth overview of the challenges and most recent progress in upgrading real pyrolysis bio-oil to bio-jet fuel through these two routes, emphasizing the conversion pathways. Due to the complex composition of raw bio-oil, very few studies have been devoted to mechanistic aspects of raw bio-oil upgrading, and most studies have been focused on individual model compounds. Hence, research opportunities remain open for extensive studies on real bio-oil upgrading to bio-jet fuels.
+

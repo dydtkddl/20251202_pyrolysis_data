@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unlocking naphtha from polyolefins using Ni-based hydrocracking catalysts Naphtha (C5-C12 alkanes) is a platform feedstock in the petroleum industry and an ideal target for reutilizing plastic waste at scale. Hydrocracking has emerged as a promising technology for deconstructing polyolefins to naphtha. However, contemporary catalysts rely on Pt to achieve high rates, while earth-abundant metals (EAM) perform poorly. Herein, we develop high-performance Ni/BEA catalysts for polyolefin hydrocracking, achieving complete low-density polyethylene (LDPE) deconstruction with 80 % maximum naphtha yield within 12 h at 250 °C, 60 bar H2, and a catalyst-to-polymer ratio of 1:100. These catalysts are versatile, accommodating virgin resins and commercial polymer products, and are directly reusable and regenerable. Comparative analysis highlights that 5Ni/BEA(25) exhibits the highest naphtha productivity of 11.4 g Naphtha g cat ∙ h , surpassing previously reported Pt- and EAM-based catalysts by 2.5–6.2x. Technoeconomic and life-cycle analyses reveal naphtha from LDPE hydrocracking is economically and environmentally competitive to fossil-fuel-derived naphtha. These advancements pave the way for the industrial implementation of earth-abundant Ni-based catalysts in polyolefin hydrocracking, followed by retrofitting steam crackers to address plastics waste at scale.
+

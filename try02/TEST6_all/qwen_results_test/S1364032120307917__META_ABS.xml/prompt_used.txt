@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review of recent developments and future prospects in gasification systems and their modeling Gasification is receiving a renaissance in response to global warming mitigation. Total gasification installation, construction and planning energy capacity has increased from 42 GWth to 400 GWth between 1999 and 2020. One of the drivers of gasification technologies that has influenced their increase is their capability to accommodate low-value feedstock and organic wastes. Another driving factor is the technology prospect for enhanced power efficiency and environmental performance when used in Integration Combined Cycle (IGCC) with carbon capture. Although gasification has been at the forefront of many studies, it is missing comprehensiveness and organization of the vast information in the literature. There are more than 600,000 studies that focus on gasification and they are mostly very chaotic for their usage for further research development and policy decision making. For instance, the field of modeling and simulation of reactive flow has expanded and high fidelity analyses have been utilized in addressing gasification challenges significantly. Moreover, there had been new developments in areas such as plasma gasification, supercritical water gasification, small scale gasification systems developments, co-gasification and coupling of gasification with other technologies such as anaerobic digestion. Hence, in this work we present a systematic organization of the reported findings, recent developments and future prospects. Recent developments on feed material characteristics of different fuels utilized for gasification in order to evaluate their potential is reported herein. In addition, literature survey of gasification processes, classifications of gasification and influence of process parameters and technologies were also reported. The effect of different parameters like pressure, catalyst, and temperature on the gasification efficiency and gas composition were extracted and presented. At the end, some areas that have witnessed recent progress were highlighted and future prospects in this continually growing thermochemical conversion field was presented.
+

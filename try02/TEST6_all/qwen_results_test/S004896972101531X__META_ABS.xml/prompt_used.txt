@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic upcycling of waste plastics over nanocellulose derived biochar catalyst for the coupling harvest of hydrogen and liquid fuels A powerful simple biochar catalyst derived from nanocellulose was applied to the catalytic upcycling of waste plastics into H2 and liquid fuels for the first time. For the results from model low-density polyethylene (LDPE) pyrolysis, the C8-C16 aliphatics and monocyclic aromatics were dominant constitutes of the liquid product with the yields ranging from 22 to 68 wt%. At the temperature of 500 °C and biochar to LDPE ratio surpassing 3, the LDPE could be completely degraded into liquid and gas without wax production. A wax yield of 16 wt% was observed at the temperature of 450 °C and biochar to LDPE ratio of 4, which was dramatically lower than that (77 wt%) from the absence of biochar at the temperature of 500 °C. Up to 92 vol% of H2 was detected in the gaseous product with a yield of 36 wt%. The lower temperatures and higher biochar to LDPE ratios favored increasing the generation of H2 at the expense of light gas C n H m especially CH4. Moreover, this biochar catalyst was tested effectively to convert the real waste plastics including grocery bags and packaging tray into valuable liquid and H2-enriched gas.
+

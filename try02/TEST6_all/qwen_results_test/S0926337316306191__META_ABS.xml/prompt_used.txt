@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Performance of basic mixed oxides for aqueous-phase 5-hydroxymethylfurfural-acetone aldol condensation This paper is focused on the study of the catalytic activity of MgAl and MgZr mixed oxides in the aqueous-phase aldol-condensation of 5-hydroxymethylfurfural (5-HMF) and acetone. The experiment is carried out in a stirred batch reactor. It considers the effect of reaction conditions (namely temperature, reactant concentration and catalyst loading) on catalyst performance. It also looks into the stability of the materials (catalyst reusability in subsequent reaction cycles), as well as into the development and validation of a simplified kinetic model. MgZr catalyst provides the best yield to aldol condensation products, especially for the formation of the second adduct (C15). This material high activity results from its optimum acid/basic sites ratio, mainly medium-strength. Retroaldolization, promoted by stronger basic sites, was identified as an important side-reaction, whereas adsorption effects and oligomerization reactions (evaluated using thermogravimetric analysis and temperature-programmed oxidation of the spent catalysts) determine catalyst stability. Concerning the effect of operation conditions, the best results were obtained working with 0.5g of MgZr, at 323K. The highest C15 yield was reached with 5-HMF excess (2:1) (16.1%), whereas the whole yield is maximized at equimolar conditions (37%).
+

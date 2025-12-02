@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Investigation on the synergistic effect between different components in pyrolysis of paper-plastic composite material Pyrolysis characteristics of Tetra Pak, a paperboard-polyethylene-aluminium foil, were investigated in this study with a focus on the synergistic effect between its individual components. Scanning electron microscopy analysis indicated that molten LDPE coating on cellulose surface led to suppression on mass and heat transfer and the increased activation energy of pyrolysis reaction. Samples of individual components and simulated Tetra Pak packaging were pyrolyzed in a thermogravimetric analyzer at various heating rates. Synergistic effect between cellulose and LDPE on E a and the formation of characteristic products are investigated: Kinetic analysis showed that the cellulose decomposition peak in the simulated mixture exhibited a higher E a than that of pure cellulose at each conversion rate. For LDPE, the free radicals formed from cellulose pyrolysis enhanced the degradation of plastic polymers, resulting that E a of its decomposition peak in the mixture being lower in comparison to pure LDPE, with a discrepancy of around 16–27 kJ·mol−1. The formation of characteristic products including levoglucosan, furfural, 5-hydroxymethylfurfural, and alkanes from pyrolysis of cellulose and LDPE mixture with different mass ratios was further investigated in a micro-pyrolyzer. The results suggested that synergistic effects and physical barrier existed during fast pyrolysis between cellulose and LDPE. The extent of the synergy effect depended on the proportion of cellulose and LDPE in the mixture.
+

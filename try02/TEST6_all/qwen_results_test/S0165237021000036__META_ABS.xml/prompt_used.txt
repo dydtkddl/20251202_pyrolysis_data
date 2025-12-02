@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Evaluation of the applicability of polymeric materials to BTEX and fine product transformation by catalytic and non-catalytic pyrolysis as a part of the closed loop material economy This article presents experimental results on the pyrolysis of different mixtures of polymer waste. ABS copolymer, PET, PP, tire waste styrene-butadiene rubber (SBR) and pure non-vulcanised SBR were used in the experiments under different catalyst conditions: (i) without a catalyst, (ii) with an unmodified ZSM-5 catalyst, (iii) with a ZSM-5 catalyst possessing ammonium groups, and (iv) with a ZSM-5 catalyst containing 10 % Ni. The primary objective of this study was to select suitable conditions to pyrolyse polymeric materials depending on the polymer type and properties of the desired final products, e.g., aromatic and heteroaromatic hydrocarbons and valuable chemical subproducts. Suitable conditions can be determined for the thermal conversion of polymeric materials, and using non-catalytic pyrolysis can yield chemical compounds such as alpha-methyl styrene from acrylonitrile-butadiene-styrene (ABS) and limonene from tire waste, which can be used in both fine chemicals and industrial production. The pyrolysis conditions can be modified in terms of the catalyst based on the tested waste polymer and result in products rich in BTEX fractions. Among all tested catalysts, the ZSM-5 catalyst based on aluminosilicate impregnated with nickel ions yielded the highest total fraction of aromatic and heteroaromatic hydrocarbons, especially from the pyrolysis of PP and PET. With this catalyst, more than 75 area% of the product stream (of the total identified product peaks by MS) consisted of aromatic and heteroaromatic fractions (e.g., terephthalonitrile from polyethylene terephthalate), which were composed of 5.6 and 19.9 area% benzene, 7.0 and 10.8 area% toluene, 5.7 and 10.6 area% ethylbenzene and 1.2 and 1.4 area% xylene for PP and PET, respectively. High proportions of the aromatic and heteroaromatic fractions were observed in the product stream during the ABS pyrolysis with two types of catalysts: aluminosilicate with ammonium groups (73 area% of the aromatic and heteroaromatic hydrocarbons) and aluminosilicate impregnated with nickel ions (85 area% of the aromatic and heteroaromatic hydrocarbons).
+

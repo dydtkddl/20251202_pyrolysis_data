@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A comprehensive study of methyl decanoate pyrolysis The thermal decomposition of methyl decanoate (MD) was studied in a bench-scale pyrolysis set-up equipped with a dedicated on-line analysis section including a GC×GC-FID/(TOF-MS). This analysis section enables quantitative and qualitative on-line analyses of the entire reactor effluent with high level of detail including measurement of formaldehyde and water. The reactor temperature was varied from 873K to 1123K at a fixed pressure of 1.7bar and a fixed residence time of 0.5s, for both high ( 10 mol N 2 / mol MD ) and low ( 0.6 mol N 2 / mol MD ) nitrogen dilution. Thus covering a wide conversion range in both dilution regimes. In these experiments, significant amounts of large linear olefins and unsaturated esters were observed at lower temperatures, the amounts of which decreased at higher temperatures in favor of permanent gasses (CO, CO2, CH4) and light olefins. At the highest temperatures more than 5wt% of mono-aromatic and poly-aromatic components were observed. The acquired dataset was used to validate 3 recently published microkinetic models which were developed to model oxidation and/or pyrolysis of methyl decanoate. The results showed that these models accurately predict the product distribution, although important discrepancies were observed for some major products such as certain unsaturated esters, CO2 and H2O. Reaction path analyses and CBS-QB3 quantum-chemical calculations are presented and discussed in order to explain the observed differences.
+

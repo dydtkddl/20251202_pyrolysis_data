@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of pine cone with synthetic polymers Biomass from pine cone (Pinus pinea L.) was co-pyrolyzed with synthetic polymers (PE, PP and PS) in order to investigate the effect of biomass and plastic nature on the product yields and quality of pyrolysis oils and chars. The pyrolysis temperature was of 500°C and it was selected based on results from thermogravimetric analysis of the studied samples. Co-pyrolysis products namely gases, aqueous and tar fraction coming from biomass, oils from synthetic polymers and residual char were collected and analyzed. Due to the synergistic effect in the pyrolysis of the biomass/polymer mixtures, higher amounts of liquid products were obtained compared to theoretical ones. To investigate the effect of biomass content on the co-pyrolysis, the co-pyrolysis of pure cellulose as model natural polymer for biomass with polymer mixture was also carried out. In the presence of cellulose, degradation reaction leading to more gas formation and less char yield was more advanced than in the case of co-pyrolysis with pine cone. Co-pyrolysis gave polar oxygenated compounds distributed between tar and aqueous phase and hydrocarbon oils with composition depending on the type of synthetic polyolefin. Co-pyrolysis chars had higher calorific values compared to pyrolysis of biomass alone.
+

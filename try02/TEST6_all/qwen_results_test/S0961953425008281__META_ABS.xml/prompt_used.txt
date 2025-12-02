@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recent developments in separation and storage of lignocellulosic biomass-derived liquid and gaseous biofuels: A comprehensive review The global availability of nearly 200 billion tonnes of lignocellulosic biomass has intensified the pursuit of advanced separation, purification, and storage technologies to enhance the quality, yield, and accessibility of sustainable biofuels. The complex composition of biomass hydrolysates, the presence of inhibitory byproducts, and the energy-intensive nature of separation and storage often contributing 40–70 % of total production costs present major challenges for the efficient separation and storage of biomass-derived liquid and gaseous biofuels. Novel approaches to liquid biofuel purification, such as advanced distillation (extractive, azeotropic), membrane separation (nanofiltration, pervaporation), and adsorption (molecular sieves, activated carbon), have shown promise whereas integrated membrane-distillation systems, further, reduce energy consumption by up to 57 % while achieving & > 99.5 % purity in ethanol and butanol. In bioethanol, biobutanol, liquid-liquid extraction, and gas stripping have gained popularity, while pyrolysis oil fractional condensation is used to separate valuable fractions. Advancements in gaseous biofuel purification include pressure swing adsorption for biogas upgrading and membrane technologies for CO2 and H2S removal. Emerging technologies like ionic liquids and deep eutectic solvents offer potential for energy-efficient, selective separation, while cryogenic storage at −253 °C and pressures up to 700 bar, along with hybrid storage systems, further improve the safety and stability of gaseous fuels. Process intensification through modular and integrated systems, combined with the use of (Artificial Intelligence) AI for optimization, is reshaping purification workflows. Sustainability assessments highlight the importance of striking a balance between efficiency and environmental impact. This review emphasizes the importance of separation and storage in enabling the commercial viability of lignocellulosic biofuels, as well as providing insights for developing renewable energy systems.
+

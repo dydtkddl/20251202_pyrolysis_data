@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Autothermal downdraft oxy-steam co-gasification of biomass and plastic wastes for hydrogen-rich syngas production: An Aspen plus modelling The potential of H2-rich syngas generation using downdraft co-gasification of biomass and plastic wastes is investigated using an autothermal restricted equilibrium study using Aspen Plus. A comprehensive sensitivity analysis is carried out to impart the influence of important process parameters, viz. equivalence ratio(ER: 0.1–0.5), feed plastic content(FPC: 0–30 %), steam to feed ratio(SFR: 0–4) and steam temperature(150–1000 °C) on performance parameters, viz. syngas composition, gasification temperature(GT), lower heating value(LHV), cold gas efficiency(CGE), gasification energy efficiency(GEE) and hydrogen energy efficiency(HEE). The ER and SFR showed dominant effects on performance. The increase in ER from 0.1 to 0.5 causes an increase in GT from 565 °C to 1734 °C. The highest syngas H2 content and HEE of 52.1 % and 36.9 %, respectively, are obtained for 0.25 ER. The increase in SFR improves the syngas H2 content at the cost of LHV and GEE, with the highest HEE of 36.9 % obtained at 0.25 ER. The analysis of variance(ANOVA) and response surface methodology(RSM) has also been studied along with the multi-objective optimisation(MOO).
+

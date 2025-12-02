@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A techno-economic review of silicon photovoltaic module recycling Even with a long lifetime of 25–30 years of green energy production, end-of-life treatment of solar photovoltaic modules can negatively impact the environment if not handled properly. This is particularly urgent when the use of photovoltaics has grown at an unprecedented rate, generating clean energy all over the world. Therefore, it is essential to develop commercially viable end-of-life recycling technologies to guarantee a sustainable future for the photovoltaic technology. Silicon photovoltaic modules, the most popular photovoltaic technology, have been shown to be economically unattractive for recycling - the materials are mixed and difficult to separate, and have low value, so that the cost of recycling is hardly recovered. In this paper, we review the state-of-art recycling technology and associate it with a quantitative economic assessment to breakdown the cost structure and better understand the presented economic barrier. The techno-economic review allows us to identify essential framework and technology changes required to overcome the current barrier to implementing commercial-scale recycling. (i) The authority may impose price signal to impress direct landfill of end-of-life modules while proactively establish an effective collection network. (ii) The local recyclers may aim at value recovery as a step beyond mass recovery, especially targeting at recovery of intact silicon wafers and silver to guarantee the recycling revenue. Meanwhile, efforts should be put on reducing the recycling processing cost. (iii) Photovoltaic module manufacturers may take end-of-life responsibilities and up-design the product to facilitate end-of-life recycling, which includes features for simple disassembly, recycling, and reducing or eliminating the use of toxic components.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Process optimisation and scale-up of biocrude oil production through catalytic hydrothermal liquefaction utilising Chlorella minutissima biomass In response to the growing global demand for sustainable energy, this study investigates the optimisation and scale-up of biocrude oil production from Chlorella minutissima biomass using catalytic hydrothermal liquefaction (HTL). A preliminary evaluation in a 2-L reactor was conducted to determine the efficiency of various solvents in extracting biocrude oil. The results revealed dichloromethane exhibiting the maximum yield and energy recovery of 40.2 wt% and 71.4 %, respectively, compared to acetone, acetonitrile, hexane and diethyl ether. Later, the effect of biomass load, pH, and catalyst concentration on biocrude oil yield was examined and optimised using response surface methodology. The optimum biocrude yield of 47 wt% was observed at process conditions of 39.2 % w/v biomass load, pH 3.6, and 1.4 M catalyst concentration. These conditions were successfully applied during scale-up in a 10-L HTL reactor, maintaining consistent yields. Comprehensive analysis of the biocrude oil using FTIR, thermogravimetric, and GC-MS techniques confirmed the presence of alkyl, carbonyl, and aromatic groups, ∼90 % volatile fractions, as well as fatty acid methyl esters, alkanes, alcohols, and acetates. This study highlights the importance of reaction optimisation, solvent selection, and by-product valorisation for advancing industrial-scale biofuel production and supporting energy sustainability.
+

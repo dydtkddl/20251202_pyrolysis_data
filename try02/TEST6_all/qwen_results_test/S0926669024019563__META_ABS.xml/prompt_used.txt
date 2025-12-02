@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unveiling oak leaves-derived biochar/Fe3O4/CuO nanocatalyst for biodiesel production and declining tractor engine exhaust emissions Biodiesel production using biochar/Fe₃O₄-CuO is advantageous due to the combined high surface area, magnetic properties, and enhanced catalytic activity, which improve reaction efficiency and enable easy catalyst recovery. In this scientific research, the biochar/Fe3O4-CuO nanocatalyst was synthesized using pyrolysis and co-precipitation techniques and then employed as a highly reclaimable heterogeneous catalyst for the synthesis of biodiesel from Annona reticulata L. oil. Several analytical techniques were employed to assess the catalyst structure, which demonstrated that the biochar/Fe3O4-CuO nanocatalyst possesses a high specific surface area along with significant magnetic properties. The ultrasonic irradiation transesterification was conducted to produce biodiesel from Annona reticulata oil to enhance the reaction rate and reduce the reaction time and energy consumption. Besides, the catalytic efficiency was notable, achieving a maximum biodiesel yield of 97.90 % within just 30 min and optimum conditions (methanol to oil ratio=12.2 mol/mol, catalyst content=2.13 wt%, and temperature= 65 °C). The reusability of the biochar/Fe3O4-CuO nanocatalyst was also assessed, showing remarkable stability. Even after seven reuse cycles, the catalyst maintained a biodiesel yield of over 90 %, underscoring its durability and cost-effectiveness for repeated applications. Moreover, thermodynamic and kinetic analyses revealed that the biodiesel production process was endothermic, with an enthalpy change (∆H°) of 89.6 kJ/mol. The activation energy for the transesterification process was determined to be 57.42 kJ/mol, indicating that the biochar/Fe3O4-CuO nanocatalyst provides substantial activation energy to drive the reaction efficiently. Further studies examined the impact of blending biodiesel at 10, 20, and 30 vol% with diesel and assessed the effects on a tractor diesel engine. The results demonstrated positive outcomes, particularly in the reduction of carbon monoxide and unburnt hydrocarbon emissions. This suggests that the biodiesel blends not only perform well in terms of energy production but also contribute to environmental benefits by lowering harmful emissions.
+

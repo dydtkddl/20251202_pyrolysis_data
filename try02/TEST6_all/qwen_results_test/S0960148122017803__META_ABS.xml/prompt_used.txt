@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The effects of pore structures and functional groups on the catalytic performance of activated carbon catalysts for the co-pyrolysis of biomass and plastic into aromatics and hydrogen-rich syngas The catalytic co-pyrolysis of Douglas fir and low-density polyethylene over different activated carbons (AC) was conducted using a fixed bed reactor, and the roles of AC pore structures and active functional groups in product yields and compositions was explored. While the liquid yield varied in the range of 36.7%–50.0%, the maximum yield was obtained using an H3PO4 activated AC catalyst. The AC catalysts activated by steam had well-developed micro-mesoporous structures dominated by micropores, which displayed high selectivity towards mono-aromatics. Whereas, the AC catalysts activated by H3PO4 exhibited additional mesoporous properties and P-containing functional groups, providing adequate space and reactive sites for converting bulky co-pyrolytic intermediates into double-ring aromatics, which were accompanied by the release of hydrogen (up to 80.6 vol%). A synergistic catalytic effect during co-pyrolysis promoted gas production at the expense of liquid. All the AC catalysts enhanced aromatics formation and reduced the yield of oxygenates and > C16 aliphatic hydrocarbons. In contrast to H3PO4 activated AC catalysts, steam activated AC catalysts exhibited a negative effect on hydrogen production, indicating different synergistic pathways during co-pyrolysis. These findings provide a reference for improving the catalytic activity of AC catalysts by regulating the pore structure and functional groups.
+

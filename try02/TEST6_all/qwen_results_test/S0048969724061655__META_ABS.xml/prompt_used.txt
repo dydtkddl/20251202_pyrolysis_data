@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Quantitative analysis of microplastics in beach sand via low-temperature solvent extraction and thermal degradation: Effects of particle size and sample depth Quantifying trace levels of microplastics in complex environmental media remains a challenge. In this study, an approach combining field collection of samples from different depths, sample size fractionation, and plastic quantification via pyrolysis-gas chromatography–mass spectrometry (Py-GC–MS) was employed to identify and quantify microplastics at two public beaches along the northeast coast of the U.S. (Salisbury beach, MA and Hampton beach, NH). A simple sampling tool was used to collect beach sand from depth intervals of 0–5 cm and 5–10 cm, respectively. The samples were sieved to give three size fractions: coarse (>1.2 mm), intermediate (100 μ m–1.2 mm), and fine (1.2 μ m–100 μ m) particles. Following density separation and wet peroxide oxidation, a low-temperature solvent extraction protocol involving 2-chlorophenol was used to extract polyester (PET), polystyrene (PS), polyamide (PA), and polyvinyl chloride (PVC). The extract was analyzed using Py-GC–MS for the respective polymers, while the solid residue was pyrolyzed separately for polyethylene (PE) and polypropylene (PP). The one-step solvent extraction method significantly simplified the sample matrix and improved the sensitivity of analysis. Among the samples, PET was detected in greater quantities in the fine fraction than in the intermediate size fraction, and PET fine particles were located predominantly in the surface sand. Similar to PET, PS was detected at higher mass concentrations in the fine particles in most samples. These results underscore the importance of beach environment for plastic fragmentation, where a combination of factors including UV irradiation, mechanical abrasion, and water exposure promote plastic breakdown. Surface accumulation of fine plastic particles may also be attributed to transport of microplastics through wind and tides. The proposed sample treatment and analysis methods may allow sensitive and quantitative measurements of size or depth-related distribution patterns of microplastics in complex environmental media.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Performance of activated carbon derived from tea twigs for carbon dioxide adsorption Activated carbon from agro-industrial waste, namely tea twigs derived from the processing of Camellia Sinensis branches, using a potassium hydroxide activator for CO2 adsorption has been conducted in this study. Various carbonization temperatures (4000C and 5000C) and heating times of 1 h and 3 h were used in this study. The concentration of potassium hydroxide (40 % and 60 %) and the ratios of activator solutions to carbon precursor made from pyrolysis of tea twigs (2:1 and 4:1) were varied for the chemical activation process. The effectiveness results of the obtained activated carbon were characterized through using Brunauer-Emmett-Teller analyzer and Temperature Programme Desorption-CO2 to determine the surface area and capacity maximum of CO2 adsorption. The optimum condition for the synthesis of activated carbon that produces high surface area was obtained at sample CCS 400/1 A2B1 where biochar carbonized at temperature of 400 °C kept for 1 h with a ratio of activator solution and precursor 4:1 using KOH concentration of 40 %. The highest surface area was obtained 1403 m2 g−1 with pore volume 0.9 m2 g−1 and pore size 1.11 nm and proved the presence of microporous areas in produced activated carbon. The maximum CO2 adsorption capacity obtained in this study was 5.1573 mmol g−1. This result could be related to the higher amount of microporous present in the activated carbon that facilitates the access of CO2 to the active sites at the pores of activated carbon.
+

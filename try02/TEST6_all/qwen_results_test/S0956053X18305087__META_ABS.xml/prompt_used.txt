@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The effect of slow pyrolysis on the conversion of packaging waste plastics (PE and PP) into fuel Packaging plastic waste consisting of low and high-density polyethylene and polypropylene were pyrolyzed in a lab scale semi-batch reactor at a very slow dynamic condition (1 °C min−1). Gaseous and liquid products were collected at regular intervals starting from their inception during the degradation process. Detailed analysis was carried out to estimate the properties of plastic derive oil (PDO) obtained at different stages of the pyrolysis process. The pyrolysis temperature has a significant effect on the product compositions. The paraffin concentration increases with increasing pyrolysis temperatures. On the other hand, increased pyrolysis temperature decreases olefin concentration. Olefinic content in the PDO was found comparatively higher when PP was in the feed. Presence of polypropylene in the feed caused the production of PDOs with branch-chain hydrocarbon components with high isoparaffin index and research octane number (RON). The PDOs obtained (for all feed studied) at the early stages of the degradation process have light hydrocarbon liquid fractions belonging to light and middle distillates of petroleum (C6 – C20). The yield of both light and middle fractions decreased as the pyrolysis reactor temperature reached the maximum value (∼400 °C). Gas evolution pattern depends on both pyrolysis temperature and the feed composition. Propylene was found more dominating among other major components of gases like methane, ethane, ethylene, propane, n-butane, 1-butene, isobutylene and n-pentane etc.
+

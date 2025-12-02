@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Organic waste-derived pore formers for macroporous ceramics fabrication: A review on synthesis, durability properties and potential applications Researchers have switched their focus on advancing the exploitation of the cost-effective pore-forming agent (PFA) fabrication method due to the capital-intensive nature of the cutting-edge technologies for the manufacture of macroporous ceramics with tailored porosity. The introduction of synthetic pore formers, however, has raised serious concerns since it poses the risk of increasing the cost, complexity, and turnaround time of this fabrication process. In light of these problems, developing porous ceramics using organic wastes as pore formers is emerging as a popular substitute method for incorporating pores into ceramic matrices. This review discusses the overall performance and critical assessment of macroporous ceramic systems developed using PFAs derived from organic wastes from starch and agricultural wastes. In relation to the requirements and criteria for manufacturing processes, the tremendous potential of these intriguing porous ceramics for energy- and environment-based applications, such as insulation, filtration, energy storage and conversion media, and energy harvesting systems are highlighted. This paper is expected to serve as a guide for producing advanced macroporous ceramics developed from organic waste that have the appropriate pore architectures and properties needed for a range of applications. Finally, this review demonstrates how the development of present and upcoming energy and environmental technologies may benefit from the use of these porous ceramics.
+

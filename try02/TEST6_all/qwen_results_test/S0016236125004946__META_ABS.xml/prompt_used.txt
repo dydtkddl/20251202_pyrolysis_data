@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Ammonia-rich pyrolysis mechanism of pyridine derivatives: A study based on ReaxFF molecular dynamics simulation In the context of the dual-carbon strategy, coal/NH3 co-combustion has emerged as a crucial technological pathway for achieving low-carbon transition. The pyrolysis process of NH3 and coal is of paramount importance for flame stabilization and boiler safe operation. Consequently, a comprehensive understanding of the coal/NH3 co-pyrolysis process and its underlying mechanisms is essential. In this work, the pyrolysis of pyridine, 2-hydroxypyridine, and 2-picolinic acid, which are important derivatives of pyridine, has been systematically investigated to illustrate the influence of oxygen-containing functional group through ReaxFF MD simulations. In addition, the pyrolysis characteristics of the model compounds in different atmospheres (NH3, H2, N2) were also taken into account. The results demonstrate that hydroxyl groups (–OH) and carboxyl groups (–COOH) promote deeper pyrolysis through the generation of active OH radicals. Therefore, this results in faster pyrolysis rates, lower pyrolysis activation energy, and rapid bond cleavage of C–C bonds and C-N in the initial pyrolysis process. Pyrolysis in NH3/H2 atmospheres simultaneously produces H/N-containing free radicals, lowering the activation energy and facilitating the pyrolysis process. Lastly, and most importantly, this work provides the reaction network of model compounds under N2, H2, and NH3 atmospheres. It is worth noting that N-containing groups generated in the NH3 atmosphere participate in carbon-containing fragments, enhancing the early stages of model compound pyrolysis while inhibiting the condensation processes, thereby leading to more short chain carbon compounds and more HCN production. These findings underscore the important influence of NH3 atmosphere on the decomposition of the model compounds. In summary, this research not only elucidates the fundamental principles of N-containing model compound pyrolysis but also provides insights into reaction pathways under high-temperature conditions. The findings offer valuable implications for future experimental and computational studies in this field.
+

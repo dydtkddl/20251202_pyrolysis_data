@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Recovery of polyhydroxyalkanoates (PHAs) polymers from a mixed microbial culture through combined ultrasonic disruption and alkaline digestion PHAs are a form of cellular storage polymers with diverse structural and material properties, and their biodegradable and renewable nature makes them a potential green alternative to fossil fuel-based plastics. PHAs are obtained through extraction via various mechanical, physical and chemical processes after their intracellular synthesis. Most studies have until now focused on pure cultures, while information on mixed microbial cultures (MMC) remains limited. In this study, ultrasonic (US) disruption and alkaline digestion by NaOH were applied individually and in combination to obtain PHAs products from an acclimated MMC using phenol as the carbon source. Various parameters were tested, including ultrasonic sound energy density, NaOH concentration, treatment time and temperature, and biomass density. US alone caused limited cell lysis and resulted in high energy consumption and low efficiency. NaOH of 0.05–0.2 M was more efficient in cell disruption, but led to PHAs degradation under elevated temperature and prolonged treatment. Combining US and NaOH significantly improved the overall process efficiency, which could reduce energy consumption by 2/3rds with only minimal PHAs degradation. The most significant factor was identified to be NaOH dosage and treatment time, with US sound energy density playing a minor role. Under the semi-optimized condition (0.2 M NaOH, 1300 W L-1, 10 min), over 70% recovery and 80% purity were achieved from a 3 g L−1 MMC slurry of approximately 50% PHAs fraction. The material and thermal properties of the products were analyzed, and the polymers obtained from US + NaOH treatments showed comparable or higher molecular weight to previously reported results. The products also exhibited good thermal stability and rheological properties, compared to the commercial standard. In conclusion, the combined US and NaOH method has the potential in real application as an efficient process to obtain high quality PHAs from MMC, and cost-effectiveness can be further optimized.
+

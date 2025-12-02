@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Raman spectroscopy of biochar from the pyrolysis of three typical Chinese biomasses: A novel method for rapidly evaluating the biochar property Biochar from the pyrolysis of rice husk, pine wood and rice straw under the temperature from 250 °C to 800 °C were obtained and characterized by Raman spectroscopy. The biochar properties and chemical structure evolution were investigated, and correlations between biochar properties and Raman spectral parameters were set up. The results indicate that pyrolysis temperature has a more significant influence on biochar yield than feedstock. The volatile content in raw biomass linearly decreases with the decrease of biochar yield, and the atom H/C ratio of biochar linearly decreases with the decrease of Vdaf (volatile content in dry ash free basis). The change characteristics of Raman bands position and bandwidth indicate that carbon order degree of biochar progressively increases with the increase of pyrolysis temperature, and detailed chemical structure of biochar from different raw biomass can significantly differ from each other. Reasonable correlations between biochar properties including yield, Vdaf, the atom H/C ratio and the fluorescence interference degree in Raman spectrum (defined as α) of biochar have been found. A series of functions were proposed for rapid evaluation of biochar properties. Specially, the correlation that H/C = 0.3652 + 2.2887∗α-2.4035∗α^2 + 0.8221∗α^3 can be universal for carbon-based fuels including biochar, coals, coal chars and bio-oil chars.
+

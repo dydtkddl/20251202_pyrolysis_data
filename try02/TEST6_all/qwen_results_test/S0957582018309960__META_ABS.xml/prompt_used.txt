@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Adsorption of Bisphenol-A from aqueous solution using amberlite XAD-7 impregnated with aliquat 336: Batch, column, and design studies Bisphenol-A (BPA) was removed from water solution using washed (WX7) and impregnated (IX7) Amberlite XAD-7 resin with Aliquat-336 (A336). 0.5 g (IX7-0.5) and 1 g (IX7-1) of A336 per g of WX7 were loaded on the resin. Characterization of prepared adsorbents was done by FTIR, FE-SEM, EDS, BET. Point of zero charge study was also conducted to find the point at which the surface of adsorbent became neutrally charged. Equilibrium and kinetic experiments in the batch mode were carried out to observe the influence of contact time, amount of adsorbent, the initial concentration of BPA, pH, temperature, and ionic strength of solution (NaCl and Na2SO4) on the adsorption. IX7-1 showed comparatively better removal efficiency than that of IX7-0.5 or WX7. 5 g L-1 was determined to be the optimum mass of adsorbent (WX7, IX7-0.5, and IX7-1). Equilibrium (Langmuir, Freundlich, Temkin, and Dubinin-Radushkevich) and kinetic (pseudo-first-order, pseudo-second-order, intraparticle diffusion, and Elovich) models were fitted to the experimental results. Used IX7-1 was regenerated up to 5 times, and showed almost the same removal and good reusability of impregnated resin even after 5th cycle. Studies in a fixed bed column were also done by changing the flow rate, the height of the bed, and initial BPA concentration to evaluate the performance of IX7-1. Models like Thomas, Adham Bohart, and BDST were used to predict the column behavior, and to estimate the parameters for the scale-up of the process. Finally, the economic analysis of prepared resin was done, and the cost of impregnated resin (IX7-1) was found to be $2.055/g.
+

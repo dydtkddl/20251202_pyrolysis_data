@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetic modeling of polyethylene pyrolysis under microwave irradiation toward predictive product distribution Microwave-assisted pyrolysis offers an approach for the chemical recycling of polymeric waste, contributing to sustainable energy solutions and environmental mitigation. The efficient tracking of pyrolytic gas for further upgrading necessitates a comprehensive understanding of the dominant reaction mechanisms and identifying optimal operating conditions. This study investigates the thermal pyrolysis of low-density polyethylene (LDPE) under microwave irradiation, focusing on the effects of temperature on product distribution while developing a non-isothermal kinetic model for hydrocarbon cracking. The potential decomposition mechanism was explored through ab initio molecular dynamics (AIMD) simulations, conducted over a 4–6 ps time frame at each temperature in the range of 800–4500 K. These simulations revealed fundamental product formation trends as a function of temperature, which were further validated against experimentally obtained primary gas evolution profiles. Pyrolysis experiments were conducted at microwave power levels ranging from 400 to 800 W, categorizing the resulting products into hydrogen and hydrocarbons of varying molecular weights. Model validation against experimental data confirmed a dominant second-order reaction mechanism driven by rapid microwave heating, with Sestak-Berggren Pearson's linear correlation and associated parameter values of n at 1.7 and m at 0.02. Kinetic analysis through the iso-conversional Friedman method revealed an activation energy range of 101 ± 4 kJ·mol−1, exhibiting slight variation with conversion. A simplified reaction network was developed to predict product evolution, incorporating sinusoidal temperature fluctuations induced by microwave irradiation. The proposed kinetic model advances the design of microwave-assisted pyrolysis processes, offering potential for integration with catalytic stages and further upgrading to enhance process efficiency and product selectivity.
+

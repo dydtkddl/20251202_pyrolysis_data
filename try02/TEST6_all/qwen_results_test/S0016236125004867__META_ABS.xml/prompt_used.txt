@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mathematical modeling of multi-step kinetics of biomass pyrolysis applied to agave bagasse and char oxidation reactivity Computational Fluid Dynamics (CFD) modeling was used to investigate the pyrolysis multi-step kinetics of lignocellulosic biomass, focusing on agave bagasse (AB), including drying, devolatilization, and secondary reactions such as tar cracking and the subsequent char gasification reactivity (both heterogeneous and homogeneous reaction). The pyrolysis was carried out between 100 and 1000 °C. During this process, the release of non-condensable gases such as H2, CH4, CO, and CO2, as well as the evolution of char and its composition in terms of carbon, hydrogen, oxygen, and ash content, were simulated and validated using a thermogravimetric analyzer (TGA). The simulation results showed that the char produced at temperatures above 700 °C primarily consisted of carbon and ash, with values above 72.85 wt% and 12.39 wt%, confirmed by experimental data. Subsequently, the pyrolysis process was followed by both isothermal and non-isothermal partial oxidation reactions with air. In the non-isothermal oxidation was conducted between 700 and 1000 °C, the influence of heating rate on both gaseous and char products was examined, while in the isothermal oxidation was carried out at 850, 900, 950, and 1000 °C, the reactivity index and the peak temperature were examined to express the oxidation reactivity. The CFD results show that the reactivity rate of chars increases proportionally from 0.0080 min−1 at 850 °C to 0.0129 min−1 at 1000 °C. The models used for homogeneous and heterogeneous reactions accurately predicted the experimental results of the evolution of the gas and char products during the oxidation under isothermal and non-isothermal conditions studied.
+

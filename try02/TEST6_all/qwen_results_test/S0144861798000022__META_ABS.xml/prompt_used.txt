@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The events leading to the formation of ghost remnants from the starch granule surface and the contribution of the granule surface to the gelatinization endotherm During the process of gelatinization, the external layers of starch granules form granule envelopes which degrade into ghost remnants. These envelopes contribute to the gelatinization endotherm of starch through the controlled dispersion of internal starch polymer. Ghost remnants are shown to be derived from the external layers of the granules for a range of starches with different amylose/amylopectin ratios. The ghost remnants are composed primarily of amylopectin and exhibit elastic/plastic properties. The surface amylopectin is shown to be structurally distinct from internal amylopectin. During the early stages of granule gelatinization, high amylopectin starch granules swell by 200% in size, where the outer layer of the granule forms an envelope surrounding the disrupted internal starch polymers. High amylose starches do not swell, but do form envelopes at high temperatures (≥ 90 °C). At a critical stress point the swollen envelope ruptures becoming a ghost, releasing the majority of the internal starch molecules, while a minority of the starch polymers remain trapped by the collapsed ghost. During the final stages of gelatinization the ruptured envelope degrades into ghost remnants. Manipulation of the starch granule surface, either genetically or chemically, would result in alteration of the gelatinization endotherm.
+

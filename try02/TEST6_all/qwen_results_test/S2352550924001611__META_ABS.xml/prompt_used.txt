@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Modelling of carbon flows in the value chain of packaging plastics in the context of sustainable carbon management The low share of plastic recycling means significant losses for the economy as well as for the environment, especially for plastic packaging materials since they are the largest end-use market for plastics and characterized by a typical short first-use cycle. The main polymers used in packaging applications are basic polymers, such as PE, PP, PS and PET, which consist mainly of fossil carbon locked up in polymer form. This study attempts to map carbon flows across the packaging plastics value chain with the goal to optimize carbon fixation in relevant polymers over multiple life cycles and minimize carbon loss to the atmosphere via CO2 emissions. Evaluating these carbon balances in the production, consumption and end-of-life treatment phase of these polymers provides more insight in the carbon losses during their life cycle. Three case studies were considered; (1) a baseline route ( BASE ), representing the current linear plastics economy model which is benchmarked with two theoretical sustainable scenarios: (2) an electrified ( ELEC ) and (3) a biobased ( BIO ) route. Specific parameters and assumptions in these three cases were adapted, such as feedstock type, recycling rate, type of recycling etc. Improved recycling rates and advanced recycling methods were applied in the sustainable cases and had a positive effect on carbon retention in products. Allowing a numerical comparison, a method was developed to quantify this carbon retention via the half lifetime of carbon in materials over multiple life cycles. The half lifetime evolved from 0.3 year in the BASE route to 2.0 and 2.6 years in the BIO and ELEC route, respectively. However, even these sustainable, optimized routes remained insufficient to embed carbon in plastic products for many years without too much carbon loss. It is inevitable that an enhanced (carbon) circularity in these routes comes by a certain energy cost; about 46 GJ more energy was required per extra recycled ton carbon in the ELEC route (compared to BASE ). But at the same time this intensified carbon conservation leads to a CO2 emission reduction potential of 80 %. The present work illustrates the potential of chemical recycling, and carbon capture and utilization (CCU) techniques for end-of-life treatment of plastic packaging products, but additional process development and process intensification in all facets of the value chain are needed to minimize carbon leakage over multiple lifecycles. Hence, waste management policy could be an important instrument to support further enhancement in plastics circularity.
+

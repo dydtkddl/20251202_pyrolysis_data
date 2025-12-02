@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Coupling thermal and catalytic cracking of polymer wastes to boost carbon nanotubes production: Effects of HZSM-5 zeolites The efficient synthesis of carbon nanotubes from polymer wastes has been considered one promising technology for the effective management of current environment crisis. In the two-stage reaction system, HZSM-5 zeolites were introduced into the two-stage reaction system between the upper and lower stages, which was expected to upgrade the pyrolysis gas from polymer wastes and boost the growth of carbon nanotubes on Fe-Al2O3 catalyst. The physicochemical properties of HZSM-5 zeolites, Fe-Al2O3 catalyst and the as-obtained carbon materials were systematically characterized by XRD, N2 physisorption, 27Al MAS NMR, NH3-TPD, H2-TPR, SEM, TEM, TG-DSC and Raman. It was found that the presence of HZSM-5 zeolites increased the length and yield, and narrowed the diameter of carbon nanotubes. In the absence of HZSM-5 zeolites, the yield of carbon nanotubes was 34 mg/g with an average diameter of 19 nm. The introduction of HZSM-5 and meso-HZSM-5 increased the yield of carbon nanotubes to 109 mg/g and 90 mg/g, and recduced the average diameter to 15 nm and 13 nm, respectively. The improvement of HZSM-5 zeolites on the synthesis of carbon nanotubes was observed for divrese polymer wastes inlcluding LDPE, HDPE and PP. It was attributed to the unique acidity and porosity of HZSM-5 zeolites, which enhanced the secondary cracking of the pyrolysis gas and the formation of light hydrocarbons.
+

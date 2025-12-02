@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic cracking of polystyrene pyrolysis oil: Effect of Nb2O5 and NiO/Nb2O5 catalyst on the liquid product composition The catalytic cracking of polystyrene pyrolysis oil was investigated over a Nb2O5 and a NiO/Nb2O5 catalyst in a fixed bed reactor. First, the pyrolysis of two different polystyrene feedstock (polystyrene foam and polystyrene pellet) was carried out in a semi-batch reactor, and the resulting polystyrene pellets pyrolysis oil was selected for catalytic cracking reaction because of its high liquid yield (85%). Catalytic cracking experiments were then performed at different temperatures (350–500 °C) using Nb2O5 or NiO/Nb2O5 catalyst. Gas chromatography–mass spectrometry analysis of liquid product obtained from the catalytic cracking process showed that the dimers in the pyrolysis oil were converted to monomers during the catalytic cracking process. The catalytic cracking results also showed that the NiO/Nb2O5 catalyst (having slightly higher acidic sites) had slightly higher activity for monomer conversion than the Nb2O5 catalyst (having less acidic sites). X-ray diffraction, transmission electron microscopy, pyridine Fourier transform infrared spectroscopy, NH3 Temperature Programmed Desorption and X-ray photoelectron spectroscopy were used to characterize the catalyst. The highest catalytic cracking activity was observed at 400 °C with the Nb2O5 catalyst with 4% toluene, 6% ethylbenzene, approximately 50% styrene, 13% α-methyl styrene, and only 6% of dimers in the liquid oil. The increase in temperature positively affected the yield of gases during catalytic cracking process.
+

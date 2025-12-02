@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review on current technologies for plastic waste treatment with focus on pyrolysis for energy recovery Plastic waste pollution is a growing global concern as the rate of plastic production continues to rise, far exceeding current recycling capabilities. A significant portion of this waste is discarded into the environment, where it poses serious threats to ecosystems and human health due to its non-biodegradable nature. With traditional recycling proving to be insufficient and economically challenging, there is an urgent need to explore more sustainable and efficient methods for plastic waste disposal. This article presents a critical review of various plastic waste management strategies, focusing particularly on pyrolysis, an emerging thermochemical technique that offers promising results. Pyrolysis involves the thermal degradation of plastic waste in the absence of oxygen, converting it into high-calorific-value products such as pyrolysis oil, syngas, and char. These products can be reused as alternative fuels or chemical feedstocks, supporting both energy recovery and resource circularity. Compared to conventional disposal methods like landfilling and incineration, pyrolysis generates fewer toxic emissions and offers higher material recovery efficiency. As plastic consumption and waste generation are expected to increase, pyrolysis provides a viable, scalable, and environmentally friendly alternative for waste reduction. This review emphasizes the role of pyrolysis as a key technology for plastic depolymerization, highlighting its advantages, limitations, and future potential in the context of sustainable waste management. The adoption of pyrolysis, supported by regulatory frameworks, technological advancements, and public awareness, could significantly reduce the environmental impact of plastic waste while contributing to the development of a circular economy and sustainable energy systems.
+

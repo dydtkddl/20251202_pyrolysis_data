@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Controlling generation of benzenes and polycyclic aromatic hydrocarbons in thermolysis of polyvinyl chloride in CO2 This study emphasizes the control of benzene derivatives and polycyclic aromatic hydrocarbons (PAHs) in thermolysis of polyvinyl chloride (PVC) using CO2. To this end, the generation of benzenes and PAHs from the thermolysis of PVC in N2 was characterized and all experimental findings from the thermolysis of PVC in N2 were used as the reference value to configure the role of CO2 in the thermolysis of PVC. The formation of hydrogen chloride (HCl) followed by the subsequent dechlorination in the thermolysis of PVC in N2 resulted in the high yield of charring compounds, providing a favorable condition for forming benzene derivatives and PAHs. However, the thermal degradation of PVC in CO2 showed the genuine thermal degradation patterns. For instance, despite the presence of the source for oxygen, the formation of CO at temperatures higher than 600 °C was observed in the thermolysis of PVC in CO2, suggesting that some unknown reactions between hydrocarbons from the thermolysis of PVC and CO2 are initiated to form CO. In addition to these unknown reactions, the enhanced thermal cracking induced by CO2 was observed. Two identified roles of CO2 during the thermolysis of CO2 was only limited at temperatures higher than 600 °C. However, despite no precise description for the mechanistic role of CO2 at this stage of study, the formation of benzene derivatives and PAHs was effectively controlled in the presence of CO2 at temperatures higher than 480 °C. Thus, these empirical findings in this study are necessary to further be investigated in the future, which offers a great venue offering a new means for modifying and/or controlling the harmful chemical species.
+

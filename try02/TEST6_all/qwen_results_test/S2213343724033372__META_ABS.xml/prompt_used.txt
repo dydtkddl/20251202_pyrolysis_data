@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Impact of hydrothermal pretreatment on enhancing anaerobic co-digestion of food waste and biodegradable plastics Polylactic acid (PLA) and polybutylene adipate terephthalate (PBAT) are often mixed as common materials for commercial plastic bags, which are often collected together with food waste for subsequent anaerobic digestion, but their degradation rate in the anaerobic digestion system is relatively slow. The mixture of food waste and PLA/PBAT were pretreated at 80, 100, and 120°C, respectively. This investigation assessed the impact of hydrothermal pretreatment (HTP) on enhancing anaerobic co-digestion of food waste and PLA/PBAT biodegradable plastics with different thicknesses (30μm and 40μm). Compared to the control group, the methane production of the mixture of food waste and 40μm bioplastics group was increased by 5.8 % at a HTP temperature of 100°C. Under the condition of a HTP temperature of 80°C, the 30μm bioplastics group achieved the best gain in methane yield, being 23.48 % higher than the control group. By contrast, both groups of 40μm and 30μm bioplastics had lower methane production than the control group at a high pretreatment temperature (120°C). Analysis of microorganisms showed that the diversity of bacterial and archaeal community in the pretreated groups was greater than that in the untreated group, especially in the group of 30μm bioplastics treated with HTP at 80°C. PICRUSt2 functional prediction analysis showed that the abundance of key enzymes (acetate kinase and phosphate acetyltransferase) related to aceticlastic methanogenesis was enhanced in the 30μm bioplastics group with HTP of 80°C. Phytotoxicity tests revealed that the digestate of the 40μm bioplastics groups was not conducive to the extension of seed root.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A review on dual functionality of dimensional carbon nanomaterials for adsorption and mediated degradation of MPs in wastewater The presence of microplastics (MPs) in wastewater has formed an emerging area of environmental concern. These tiny plastic particles, derived from the degradation of synthetic polymers, accumulate in ecosystems, posing severe threats to aquatic life and human health through physico-toxicological effects, and the transport of co-pollutants like heavy metals and pathogens. Conventional removal methods often fall short, necessitating advanced remediation strategies. This review explores the dual functionality of dimensional carbon nanomaterials (CNMs) in adsorbing and degrading MPs, offering a sustainable and efficient solution. Leveraging their tunable dimensionality, high surface area, and catalytic properties, CNMs excel in capturing MPs and facilitating their photocatalytic or microbial-assisted degradation. Therefore, the review examines the CNMs architectures, emphasizing how material dimensionality influences their performance. The dimensionality and unique properties of the CNMs have been highlighted as a driving force for their adsorption, microbial-assisted photocatalytic/photocatalytic-assisted degradation efficiency in the remediation of the MPs. The key findings emphasize that this dimensional matching strategy tailored CNM structures to complement MPs geometries, creating optimal interfaces for simultaneous adsorption and degradation, overcoming size-dependent remediation challenges. The review critically analyzes how dimensional synergy of the CNMs enhances the removal efficiency and degradation kinetics through optimized structural and surface dimensional interactions, demonstrating superior performance over conventional methods while enabling morphology-specific degradation pathways. Dimensionality governs functionality, as 2D materials enable photocatalytic degradation, 1D CNTs facilitate π-π stacking capture, and 3D aerogels combine adsorption with catalytic sites. Hybrid systems can achieve >90 % removal but face agglomeration and regeneration challenges for scale-up. Despite promising advances, challenges such as the architectural design of advanced CNMs for long-term stability and their effective applications for real wastewater remediation and sustainability for large-scale implementation remain persistent issue of MPs remediation in wastewater. However, the analysis culminates in a critical techno-economic assessment demonstrates that 3D aerogels are the most viable structure, as their physical encapsulation mechanism provides necessary resilience against natural organic matter (NOM) fouling and salt-induced restacking, directly translating to superior material lifespan and lower lifecycle cost in high-volume MPs remediation. Hence, this can bridge the gap between laboratory innovation and practical implementation.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis of oil palm trunk and polypropylene: Pyrolysis oil composition and formation mechanism Pyrolysis oil can be used as a precursor to synthesize value-added biochemicals. Co-pyrolysis of two or more feedstocks generally improves the selectivity and yield of the target compounds. In this work, oil palm trunk (OPT) was subjected to single-feed pyrolysis and co-pyrolysis with polypropylene (PP) from 500 to 700 °C. The highest pyrolysis oil yield of 26.33 wt.% was obtained from OPT at 700 °C, which mainly contributed by the lignin decomposition in OPT. Phenolics (51.77–57.78%) and oxygenates (36.31–46.99%) were the major compounds detected in the OPT-derived pyrolysis oil. The addition of PP enhanced the formation of hydrocarbons (5.19–10.22%) and decreased the contents of phenolics (34.01–41.85%) in the co-pyrolysis oil. In the case of co-pyrolysis, the intermolecular reactions between PP and OPT-derived radicals led to the formation of ketones and alcohols, which contributed to the increase of oxygenates content. The highest oil yield of 16.17 wt.% was obtained at 600 °C from co-pyrolysis, the oil of which contained mainly phenolic compounds, oxygenated compounds (i.e., ketones and furans), and hydrocarbons. These findings highlighted the potential of oil derived from the pyrolysis of OPT (single feed) and co-pyrolysis of OPT and PP (binary feed) for the production of value-added chemicals.
+

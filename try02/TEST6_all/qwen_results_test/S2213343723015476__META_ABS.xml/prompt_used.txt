@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mechanism investigations on co-pyrolysis of polyethylene and biomass using ReaxFF simulation and DFT computation Co-pyrolysis of plastics and biomass is a promising solution for waste management and renewable energy utilization. There is still no consensus on the distributions of co-pyrolysis products and the reaction mechanisms between the polyethylene (PE) plastics and biomass components at the molecular level. In this work, the product distribution, co-pyrolysis mechanism, and electronic characteristic of PE and major biomass components such as cellulose (CE), hemicellulose (HC), and lignin (LG) were investigated at the atomistic level using reactive force field simulation and density functional theory computation. The co-pyrolysis of PE and biomass facilitates the release of non-carbon radicals, which enhances the reactivity of macromolecular fractions to high-quality oils. HC promotes the char degradation and oxygenated oil retention, whereas CE accelerates the decomposition of oxygen-free char to light hydrocarbons and inorganic gases. LG inhibits the conversion of oxygenated oil to CO/CO2 and retards the secondary cracking of oxygen-free oil. Alkyne is mostly generated from α-O-4 LG dimer, whereas olefin is mainly derived from γ-O-4 LG dimer. β-O-4 LG dimer accelerates the conversion of char to oil, while it decreases gas emissions. The electronic characteristics such as the Fukui function, frontier orbitals, and total electron density demonstrate the reaction sites of biomass monomers. For CE and HC, the hydroxyl groups on methylene are the nucleophilic sites, and the O atoms of hydroxyl on the pyran ring are prone to the electrophilic attack by PE. Except for O atoms in LG dimers, the unsubstituted C atoms on the benzene ring are inclined to the nucleophilic sites, whereas the C and para-C atoms located at hydroxyl and methoxy are susceptible to the electrophilic attack by PE. This work elucidates the differences in the co-pyrolysis reaction characteristics of various biomass structures, which provides scientific and theoretical guidance for the efficient resource exploitation of biomass and waste plastics.
+

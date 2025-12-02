@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Breakthrough Technologies for the Biorefining of Organic Solid and Liquid Wastes Organic solid and liquid wastes contain large amounts of energy, nutrients, and water, and should not be perceived as merely waste. Recycling, composting, and combustion of non-recyclables have been practiced for decades to capture the energy and values from municipal solid wastes. Treatment and disposal have been the primary management strategy for wastewater. As new technologies are emerging, alternative options for the utilization of both solid wastes and wastewater have become available. Considering the complexity of the chemical, physical, and biological properties of these wastes, multiple technologies may be required to maximize the energy and value recovery from the wastes. For this purpose, biorefining tends to be an appropriate approach to completely utilize the energy and value available in wastes. Research has demonstrated that non-recyclable waste materials and bio-solids can be converted into usable heat, electricity, fuel, and chemicals through a variety of processes, and the liquid waste streams have the potential to support crop and algae growth and provide other energy recovery and food production options. In this paper, we propose new biorefining schemes aimed at organic solid and liquid wastes from municipal sources, food and biological processing plants, and animal production facilities. Four new breakthrough technologies—namely, vacuum-assisted thermophilic anaerobic digestion, extended aquaponics, oily wastes to biodiesel via glycerolysis, and microwave-assisted thermochemical conversion—can be incorporated into the biorefining schemes, thereby enabling the complete utilization of those wastes for the production of chemicals, fertilizer, energy (biogas, syngas, biodiesel, and bio-oil), foods, and feeds, and resulting in clean water and a significant reduction in pollutant emissions.
+

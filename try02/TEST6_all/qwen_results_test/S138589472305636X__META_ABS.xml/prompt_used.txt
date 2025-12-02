@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hybridization of the thermo-chemical process of polyvinyl chloride in the production of bioethanol using horse hay The improper disposal of polyvinyl chloride (PVC) is hazardous to the environment. To rectify the inappropriate disposal of PVC, this study proposes a sustainable method to valorize hydrogen chloride (HCl) (from the thermolysis of PVC) in bioethanol (BE) production. Prior to saccharification, lignocellulosic biomass (horse hay) was treated with HCl. The optimized parameters for acid treatment were determined from a series of saccharification tests. In detail, the sugar recovery yield was 75 % after 2 % HCl, 120 °C, and 2 h treatment of horse hay. In addition, this study suggests that a nitrogen source is required during fermentation to enhance BE productivity. To valorize the residual materials from the saccharification of horse hay and dechlorination of PVC, they were pyrolyzed. Co-pyrolysis of the residues was performed in a CO2 gas environment. The gas-phase reaction of CO2 and volatiles stemming from the two residues was observed, which directly led to the enhanced generation of carbon monoxide (CO). These observations are attributed to the simultaneous redox mechanisms of CO2 and volatiles. To accelerate the reaction rate of the redox mechanisms, catalytic co-pyrolysis of the residues over Co/SiO2 was performed, and such attempts were confirmed by the enhanced formation of H2 and CO. This study highlights that the hybridization of the thermochemical process of PVC in the production of BE could be a viable approach for waste valorization.
+

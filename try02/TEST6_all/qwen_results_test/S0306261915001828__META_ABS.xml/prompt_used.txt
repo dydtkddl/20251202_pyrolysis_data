@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Thermal decomposition kinetic of salt hydrates for heat storage systems Thermal energy or heat storage systems using chemical reactions to store and release energy operate in charging and discharging phases. The charging phase in this work is a dehydration process with constant heating rate decomposing salt hydrates as chemical components resulting in the obtention of a less hydrated or anhydrous form and, at the same time, storing the released heat (energy storage). Latest research on thermal decomposition of several salt-hydrates concerned experimental and numerical investigations (Huang et al., 2010; Sugimoto et al., 2007). A mathematical model of heat and mass transfer in a fixed-bed reactor for heat storage is proposed on the basis of a set of partial differential equations (PDEs) controlling the balances of mass, conversion, and energy in the bed and the reactor. These PDEs are numerically solved by means of the finite element method using Comsol Multiphysics 4.3a. The objective of this paper is to describe an adaptive modelling approach and establish a correct set of PDEs describing the physical system and appropriate parameters for simulating the thermal decomposition process. Thus it could help in the design of thermal energy storage system. The recommendations the International Confederation for Thermal Analysis and Calorimetry (Vyazovkin et al., 2011) on kinetic behaviour were used to explain transport phenomena and reactions mechanism in gas and solid phases. The generalized Prout–Tompkins equation was therefore adopted with some modifications based on thermal analysis experiments and literature. The experimental data from the TGA–DSC measurements are then used to validate the kinetic model. This latter result after validation is used in the Comsol model to simulate the lab-scale reactor in charging mode (thermal decomposition).
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Enhanced production of BTX from PET-LDPE co-pyrolysis via Ga- and Zn-impregnated HZSM-5 catalysts The coexistence of polyethylene terephthalate (PET) and polyolefins in plastic waste poses a significant challenge for pyrolysis-based recycling, as PET decomposition generates oxygenates that reduce product quality. To address this, we developed a two-stage reactor system that catalytically upgrades vapors from PET–LDPE mixtures using Ga- and Zn-impregnated HZSM-5 catalysts. XPS analysis revealed that impregnation with Ga and Zn leads to the formation of GaOx and ZnOH+ species, which introduce new Lewis acid sites. When these sites are located near Brønsted acid sites, synergistic interactions enhance both deoxygenation and aromatization, improving the catalytic performance of HZSM-5. At 600 °C, PET pyrolysis produces significant amounts of CO2, CO, and benzoic acid, resulting in oxygen-rich pyrolysis oil. While unmodified HZSM-5 achieves full deoxygenation, the resulting PyOil yield is modest, ranging from 24 to 34 wt%. In contrast, Ga- and Zn-modified catalysts increase PyOil yield to ∼50 wt% and improve mono-aromatic (BTX) selectivity to 80–89 % by shifting the acid site distribution toward weaker acidity, thereby favoring decarboxylation, decarbonylation, and aromatization. Notably, Zn-HZSM-5 maintained high BTX selectivity even with increasing PET content, outperforming Ga-HZSM-5, which exhibited higher polyaromatic hydrocarbon formation under similar conditions. These results demonstrate the potential of Ga- and Zn-modified HZSM-5 catalysts for the efficient conversion of mixed plastic waste into BTX-rich oils suitable for fuel and chemical applications.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Polychlorinated dibenzo-p-dioxins and dibenzofurans in a three-stage municipal solid waste gasifier The quantified emissions of polychlorinated dibenzo-p-dioxins and polychlorinated dibenzofuran (PCDD/Fs) have not yet been reported comprehensively with the whole gasifier system. In this study, the emission characteristics of PCDD/Fs concentration, toxicity equivalent quantity, reaction mechanism are examined for a three-stage gasification system. This system first features the pyrolysis of municipal solid waste (MSW), next the oxidation of the pyrolysis products and as a final third step its high temperature cracking on two types of char (coal coke and rice husk char). The effect of the reduction temperature (800, 900, and 1000 °C) and char type have been experimentally evaluated. In general, the final I-TEQ of PCDD/Fs are controlled at a low level (0.068–0.085 ng I-TEQ/Nm3), due to the absence of oxygen and decomposition of PCDD/Fs during reduction at a high temperature. Meanwhile, the PCDD/Fs concentration (P = 4 to 8) decreased significantly, maintaining in a range of 1.32–1.58 ng/Nm3. The decrease of 2,3,7,8-tetrachlorodibenzo-p-dioxin (TCDD), 1,2,3,7,8-pentachlorodibenzo-p-dioxin (PeCDD) and 2,3,4,7,8-pentachlorodibenzo-furan (PeCDF) collectively resulted in the decline of total I-TEQ values for coal char after reduction reaction, while the 2,3,7,8-TCDD and 1,2,3,7,8-PeCDD both increased their contribution in total I-TEQ values. The low-chlorinated PCDDs were easier to transform into high-chlorinated PCDDs for coal char during the reduction stage, which is opposite to that for rice husk char. The chlorophenol precursor routes apparently played an increasing role in PCDD/Fs formation with the reduction temperature increasing from 800 to 1000 °C. Furthermore, the primary PCDD/Fs formation reactions have converted from the chlorophenol precursor routes (secondary reactions) into de novo reactions for the coal char sample, while the chlorophenol precursor reactions strengthened their leading role during the reduction stage for rice husk char.
+

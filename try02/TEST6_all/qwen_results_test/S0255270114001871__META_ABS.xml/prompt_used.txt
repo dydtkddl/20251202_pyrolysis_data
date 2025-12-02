@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Kinetic studies of semibatch emulsion copolymerization of methyl methacrylate and styrene in the presence of high intensity ultrasound and initiator The present work deals with kinetic studies of copolymerization of methyl methacrylate and styrene using ultrasound assisted semibatch emulsion copolymerization in the presence of sodium dodecyl sulfate (emulsifier) and potassium persulfate (external initiator). The effect of temperature, acoustic intensity, initiator loading, surfactant concentration and monomer concentration on the extent of conversion has been investigated. The extent of polymerization was observed to increase with an increase in the temperature, and concentrations of initiator, monomer and surfactant. Further, the initial polymerization rate increased with an increase in the acoustic intensity from 11.2 to 23.1Wcm−2 and then it was found to decrease with a further increase to 33.80Wcm−2. The novelty of this work lies in the fact that there have been only limited kinetic studies for the approach of ultrasound assisted emulsion copolymerization. It has been also established in the present work that the formation of fine and stable monomer droplets, due to the cavitational activity at/near the interface of immiscible monomer phase and subsequent disruption by micro jets, leads to the smaller final polymer particle size and under optimized conditions, it was found to be about 40nm.
+

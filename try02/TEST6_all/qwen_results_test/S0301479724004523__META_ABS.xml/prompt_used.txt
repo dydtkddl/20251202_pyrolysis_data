@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Household mixed plastic waste derived adsorbents for CO2 capture: A feasibility study The feasibility of producing activated carbon (AC) from real Household Mixed Plastic Waste (HMPW) comprising of LDPE, HDPE, PP, PS, and PET for carbon capture via direct carbonisation followed by microwave-assisted or conventional thermally assisted chemical activation was investigated. A microwave-assisted activation procedure was adopted to assess the impact on the CO2 capture capacity of the resulting AC using both a lower temperature (400 °C vs. 700 °C) and a shorter duration (5 vs. 120 mins) than that required for conventional activation. The results obtained showed that the AC yield was 71 and 78% for the conventional and microwave-assisted samples, respectively. Microwave activation consumed five-fold less energy (0.19 kWh) than the conventional activation (0.98 kWh). Thermal stability results indicated total weight loss of 10.0 and 8.3 wt%, respectively, for conventional and microwave-activated samples over the temperature range of 25–1000 °C, with ACs from both activation routes displaying a type 1 nitrogen isotherm. The dynamic CO2 uptake capacity at 1 bar and 25 °C was 1.53 mmol/g, with maximum equilibrium uptake ranging between 1.32 and 2.39 mmol/g at temperatures (0–50 °C) and 1 bar for the conventionally activated AC. The analogous microwave-activated sample showed a higher dynamic CO2 uptake of 1.62 mmol/g and equilibrium uptake in the range 1.58–2.88 mmol/g under equivalent conditions. The results therefore indicate that microwave activation results in enhanced carbon capture potential. To the best of our knowledge, this is the first-time microwave heating has been employed to convert household mixed plastic wastes directly into ACs for carbon capture applications. This report therefore demonstrates that the management of mixed plastics could lead to the development of a circular economy through the conversion of waste into value-added materials.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Six-lump kinetic model for plastic pyrolysis oil (PPO) and vacuum gasoil (VGO) blend hydroprocessing considering selective catalyst deactivation A six-lump kinetic model has been developed for the hydroprocessing of a mixture of vacuum gas oil (VGO) and plastic pyrolysis oil (PPO) in a ratio of 90:10 wt%, using a NiW/HY catalyst. This process aims to valorize waste plastics by producing valuable oil fractions such as naphtha and light cycle oil (LCO). The experiments were conducted in a semi-continuous stirred tank reactor across a temperature range of 370–440 °C and under 80 bar hydrogen pressure. Special attention was given on developing models to quantify the deactivation effects caused by coke and metal (Fe) deposition, with the latter having a lesser impact. These models are based on experimentally validated mechanisms of these phenomena, investigated through different post-mortem characterization techniques applied to spent catalysts. The successful fit of a separable deactivation model –featuring different deactivation functions for each reaction lump and an activity function related to the coke content– highlights the significant impact of pore blocking due to coke deposition. This blocking selectively affects the diffusion of molecules within the different lumps, depending on their volume. The results indicate that increasing the temperature has a favorable effect on the yield of naphtha and LCO fractions. At 440 °C and 180 min, the yield of these lumps exceeds 70 wt%, with a conversion greater than 75 %. Notably, at this elevated temperature, the hydrocracking of coke components becomes more favorable mitigating the deactivation caused by coke deposition.
+

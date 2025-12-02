@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-hydrothermal liquefaction of polyamide 6 and polycarbonate: Synergistic depolymerization mechanisms via experiments and DFT calculations Green recycling of heteroatomic plastics, such as polyamide (PA6) and polycarbonate (PC), is essential for addressing plastic pollution and achieving carbon neutrality. Existing research has focused on a single-plastic treatment paradigm, limiting theoretical support for designing synergistic depolymerization pathways. This gap hinders the development of large-scale plastic recycling processes. In this study, we applied hydrothermal liquefaction (HTL) technology to treat PA6, PC, and their mixtures at 240–300 °C for 1 h. Solid residue and aqueous/oil-phase products were analyzed to uncover synergistic mechanisms, complemented by density functional theory (DFT) calculations. Experimental results showed that the degradation efficiency of PA6 and PC co-HTL at 270 °C reached 100 %, apparently higher than that of individual depolymerization tests (PA6: 75.0 %, PC: 34.2 %). Main products included PC-derived bisphenol A, 4-isopropenylphenol, phenol, and PA6-derived caprolactam (CPL), dimer, and oligomers. PA6 degradation products were water-soluble, while PC products (except phenol) were oil-soluble, enabling easy separation. DFT calculations verified that CPL or 6-aminocaproic acid (6-ACA) facilitates PC aminolysis via nucleophilic addition-elimination. Using diphenyl carbonate as a model compound, its depolymerization energy barrier was reduced to 162.2 kJ/mol in the presence of 6-ACA, a 62.1 kJ/mol reduction from the simple hydrolysis barrier (224.3 kJ/mol). Concurrently, carbonic acid (an intermediate from PC hydrolysis) functioned as an acidic catalyst, accelerating PA6 hydrolysis. These findings advance HTL technology for plastic recycling, contributing to a circular plastic economy and sustainable future.
+

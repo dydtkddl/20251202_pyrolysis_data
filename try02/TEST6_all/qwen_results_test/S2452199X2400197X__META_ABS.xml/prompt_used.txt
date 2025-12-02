@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Biodegradable PMMA coated Zn–Mg alloy with bimodal grain structure for orthopedic applications - A promising alternative The study examines the impact of microstructure and polymethyl methacrylate (PMMA) grafting on the degradability of Zn–Mg alloys. The mechanical properties of a Zn alloy containing 0.68 wt% Mg and extruded at 200 °C are enhanced for degradable load-bearing applications, addressing a crucial need in the field. The material exhibits a bimodal grain size distribution that is random texture, consisting of secondary phases, grains, and sub-grains. With an elongation to failure of 16 %, the yield and ultimate tensile strengths are 325.9 and 414.5 MPa, respectively, and the compressive yield strength is 450.5 MPa. The “grafting-from” method was used to coat a few micrometers thick of PMMA on both bulk and scaffold Zn alloys to mitigate the corrosion rate. The last one is a porous structure, with a porosity of 65.8 %, considered as in the first approach of an orthopedic implant. After being immersed for 720 h, the PMMA-grafted bulk alloy's corrosion rate decreased from 0.43 to 0.25 mm/y. Similarly, the scaffold alloy's corrosion rate reduced from 1.24 to 0.49 mm/y. These results indicate that the method employed could be used for future orthopedic applications.
+

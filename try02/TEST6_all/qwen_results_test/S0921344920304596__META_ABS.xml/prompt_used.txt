@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Comparison of the effects of incineration, vacuum pyrolysis and dynamic pyrolysis on the composition of NMC-lithium battery cathode-material production scraps and separation of the current collector The rising demand for lithium batteries is challenging battery producers to increase their production. This is causing an accumulation of production scrap which must be treated to allow re-utilization of cathode material in production. Several industrial lithium battery recycling processes use thermal pre-treatment in an oxidative or inert atmosphere, or in a vacuum, to separate the battery components and remove organic material. However, a comparison of the effects of incineration, dynamic pyrolysis (under a constant flow of inert gas), and pyrolysis under vacuum on the microstructure and composition of scrap cathode material has not been explored. Scrap cathodes, with active material based on Li(NixMnyCoz)Oj, were subjected to incineration, dynamic pyrolysis, and pyrolysis under vacuum at 450˚, 550˚, and 650°C for 30, 60, 90, and 150 min to determine the best approach to cathode material recovery. While the incineration did not cause any chemical transformation of cathode material, under pyrolysis conditions the organic components in the cathodes triggered carbothermic reduction of the active material, yielding Co3O4, NiO, Mn3O4, and Li2CO3 as products. In the gas by-products, formed from the decomposition of the organic material, CO, CO2, and HF were determined. The decomposition especially of the binder in polyvinylidene fluoride (PVDF) facilitated the separation of the active material from the current collector by mechanical treatment. By subsequent ball milling, the best technique to recover cathode material is the incineration at a temperature higher than 550˚ C and below 650˚ C for at least 90 min, with >95% of recovered active material.
+

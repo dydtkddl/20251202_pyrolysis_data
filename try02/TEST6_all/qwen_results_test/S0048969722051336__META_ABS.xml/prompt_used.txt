@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-hydrothermal carbonization of organic solid wastes to hydrochar as potential fuel: A review The organic solid waste (OSW) is a potential resource that loses its original value in people's daily production process. It can be used for secondary energy utilization through hydrothermal technology, which is similar to artificially simulating the natural coalification process. Co-hydrothermal carbonization (co-HTC) is a promising thermochemical conversion pathway, and advanced mechanisms can eliminate the drawbacks of single-feedstock hydrothermal carbonization (HTC). The preparation and production process of hydrochar can solve the problems of energy crisis and environmental pollution. This paper comprehensively reviews the key mechanisms of co-HTC to prepare solid fuels, and reviews the development process and practical application of hydrothermal technology. To begin with, the physical and chemical properties and combustion performance of co-hydrochar depend on the production method, process parameters, and selection of raw materials. The co-hydrochar usually has a higher HHV and a low atomic ratio of H/C and O/C, which improves combustion performance. Subsequently, the transformation path of the hydrothermal process of lignocellulosic and protein OSW was comprehensively expounded, and the reaction mechanism of the co-HTC of the two OSWs was effectively proposed. The effect of the ratio of different raw materials on the synergistic effect of co-HTC was also analyzed. Furthermore, the typical advantages and disadvantages of environmental safety, technical economy, and practical application in the co-HTC process are expounded. All in all, this review provides some foundations and new directions for the co-HTC of OSWs to prepare potential fuel. In addition, several prospects for the development and integrated application of co-HTC are presented in the future.
+

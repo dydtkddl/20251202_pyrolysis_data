@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Volatile and semivolatile emissions from the pyrolysis of almond shell loaded with heavy metals Heavy metal-loaded almond shell was subjected to pyrolysis to understand the effect of the presence of different heavy metals on its thermal degradation. Pyrolysis behavior of native and metal-loaded samples was studied by thermogravimetric analysis. Similar shapes of thermogravimetric curves indicate that the presence of cadmium (Cd), chromium (Cr), copper (Cu), nickel (Ni) and lead (Pb) did not change the main degradation pathways of almond shell. However, the temperature at which the decomposition in each stage takes place at a higher rate and char yield was considerably modified by the presence of Cr and Ni. Then, pyrolysis tests of the almond shell samples were performed in a moving tubular reactor at 700°C. Gases and volatile organic compounds were collected using Tedlar bags and semivolatile organic compounds were collected using a resin as adsorbent. Significant changes were obtained in the composition of the gaseous fraction as a result of the metal impregnation. The main changes in the composition of the gas were observed for Ni-loaded sample, which presented the highest H2 and CO yields. Also, the yields of most of the light hydrocarbons decrease in the presence of metal, while the rest remain quite similar. The total PAH yields reached 103μg/g for nickel-loaded sample (NiAS), 164μg/g for copper-loaded sample (CuAS), 172μg/g for lead-loaded sample (PbAS), 245μg/g for native sample (AS), 248μg/g for cadmium-loaded sample (CdAS) and 283μg/g for chromium-loaded sample (CrAS). Nickel is the most effective in the higher aromatic tar reduction, followed by Cu and Pb, whereas the presence of Cd does not affect the total emissions of PAHs. Finally, the carcinogenic potency of the samples was calculated. Native sample and the sample loaded with Cr presented slightly higher values associated to the presence of small amounts of benzo(a)pyrene.
+

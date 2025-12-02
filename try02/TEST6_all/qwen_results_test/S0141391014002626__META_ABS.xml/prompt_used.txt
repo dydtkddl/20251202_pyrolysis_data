@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Study on mild cracking of polyolefins to liquid hydrocarbons in a closed batch reactor for subsequent olefin recovery The polyolefins mild cracking experiments have been carried out in a closed batch reactor under inert nitrogen atmosphere over a temperature range from 370 °C to 420 °C and the characterization of the mild cracking products has been investigated. The objective of this work is to study the cracking mechanism and reaction path for the mild cracking of polyolefins with lower heating rate (the isothermal and non-isothermal process), and to find the appropriate operating conditions (temperature and residence time) for optimal yield of liquid hydrocarbons (oils/waxes) as the suitable feedstock of olefin recovery. The advantages of this work can be summarized as high yield of light fraction, low aromatics content and mild cracking conditions. More viscosity-reducing and less volatiles-loss can be simultaneously achieved in mild cracking of polyolefins by selecting the reasonable residence time-temperature combination. The results confirm that chain scission reactions are significantly predominant in these experimental conditions. Intramolecular hydrogen transfer and intermolecular hydrogen transfer, which are responsible for the reduction in molecular weight of liquid products, can be improved in lower temperature and longer residence time, and intermolecular hydrogen transfer can also be enhanced in the PE/PP mixture cracking. For polyolefins mixture cracking, the cracking temperature can be reduced about 20 °C, or the cracking time can be shortened significantly, and so utilizing the whole polyolefins mixture without a need of further separation is very desirable in the chemical recycling.
+

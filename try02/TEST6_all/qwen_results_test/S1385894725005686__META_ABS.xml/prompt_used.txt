@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Three-dimensional porous Pt/N-MXene catalyst for dehydrogenation of a liquid organic hydrogen carrier A novel synthetic strategy is proposed to create high zero-valent platinum (Pt) components, sub-nanometer Pt clusters, and three-dimensional (3D) Pt/ nitrogen-doped MXene (N-Ti3C2Tx) catalyst through electrostatic self-assembly combined with non-in-situ doping pyrolysis. Compared with the primary Pt/Ti3C2Tx, the N-doped Pt/N-Ti3C2Tx, which has a 3D wrinkled porous structure, increases the residence time of methylcyclohexane (MCH) on the catalyst surface during gas–solid reactions and improves the mass transfer efficiency of MCH. In addition, the N-doped Pt/N-Ti3C2Tx, which optimizes the electronic coordination environment, produces sub-nanometer Pt clusters, in which Pt mainly exists as Pt (0) (80.78 %) and avoids the presence of low catalytic activity Pt (IV). The Pt0.5%/N-MXene catalyst exhibits significant catalytic performance in the dehydrogenation of MCH in a fixed-bed reactor, with a hydrogen evolution rate of 636.30 mmol·g Pt -1·min- 1, which significantly surpasses 176.60 mmol·g Pt -1·min- 1 for N-undoped Pt1%/MXene and 78.13 mmol·g Pt -1·min- 1 for commercial Pt1%/TiO2. Density functional theory calculations, Pt/N-Ti3C2Tx exhibits lower Pt electronic states and has a d-band center closer to the Fermi level than Pt/Ti3C2Tx. This configuration leads to the stronger MCH adsorption on the Pt sites of Pt/N-Ti3C2Tx, promoting faster H2 generation and release, thereby achieving a higher catalytic activity.
+

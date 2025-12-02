@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Microplastics’ analysis in water: Easy handling of samples by a new Thermal Extraction Desorption-Gas Chromatography-Mass Spectrometry (TED-GC/MS) methodology Thermal Extraction-Desorption (TED) using a thermobalance coupled to a gas chromatograph (GC) with mass spectrometer (MS) detector is an extended method for polymers identification in complex matrixes. A new TED-GC/MS method for microplastics identification is developed in this study, where the whole filter with solids collected from water is thermal treated in a furnace, instead of using a small portion in a Thermogravimetric analysis (TGA) device, avoiding sample handling. Pyrolyzing the whole filter in a tubular furnace has advantages with respect to the standard procedure of using a TGA with a small crucible in TED-GC/MS. The main advantage is the easy manipulation of the sample, since the filter does not have to be manipulated to extract the sample or cut some portions, avoiding sample losses during handling and ensuring that inhomogeneity on the filter surface is not a problem. Furthermore, there are no limitations on the weight of the sample beyond the adsorbent's ability to trap decomposition compounds without becoming saturated, so high intensity signals can be obtained in order to avoid confuse signals with noise, false negatives or values so close of the quantification limit.
+

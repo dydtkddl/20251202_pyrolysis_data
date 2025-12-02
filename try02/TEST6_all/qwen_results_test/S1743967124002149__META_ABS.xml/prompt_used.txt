@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Co-pyrolysis characteristics and kinetic analysis of sewage sludge and peanut shells by TG-MS This paper is a study on the pyrolysis characteristics and kinetics of sewage sludge, peanut shells, and their mixtures. The pyrolysis characteristics of sludge have been investigated by using TG-MS with different heating rates and peanut shell mixing ratios. The results indicate that reaction intensity increases with higher heating rates and the pyrolysis process occurs predominantly at higher temperature range. At a heating rate of 10 °C/min, sludge and peanut shells exhibited maximum pyrolysis weight loss of 48.32 % and 94.99 %, correspondingly. As the heating rate reduced, modifications in the heating rate exerted a more significant impact on the gas particles' current intensity. When the heating rate during the pyrolysis of peanut shells was elevated from 5 °C/min to 10 °C/min, the H2 particle current's intensity increased by a factor of 0.31 from 1.3 × 10-10 A to 1.7 × 10-10 A. During pyrolysis, a synergistic effect was observed in the mixture of sludge and peanut shells. The peanut shell mixing ratio that showed the highest synergistic pyrolysis effect was 40 wt%. An increase of 8.12 % in the maximum weight loss (TG) and 0.05 %/°C in the maximum weight loss rate (DTG) were check observed when compared to theoretical values. Additionally, the minimum activation energy needed for a sample to lose 1 % of its weight was only 0.323 kJ/mol. The higher the activation energy, the more significant the impact of the rate of warming was on the activation energy of the reaction. However, at low rates of temperature increase, the temperature rate increases a noteworthy impact on the activation energy necessary for the reaction. The optimization of the sludge-mixed peanut shell pyrolysis gasification process was supported by the theoretical reference and fundamental data available. In order to reduce the environmental burden of sludge treatment, biomass has been added to provide new solutions and ideas for sludge the reduction, and biomass reduction, resourcefulness and high-value utilization of sludge and biomass.
+

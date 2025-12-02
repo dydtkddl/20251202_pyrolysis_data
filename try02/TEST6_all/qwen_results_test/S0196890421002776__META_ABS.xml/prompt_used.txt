@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effects of dry and hydrothermal carbonisation on the properties of solid recovered fuels from construction and municipal solid wastes The growing production of non-recyclable urban wastes generates environmental problems that impose new alternatives for their energetic valorisation. Nonetheless, some of these wastes do not have adequate properties to be directly used in waste-to-energy technologies, thus requiring adequate pre-treatments to improve their fuel properties. This work aimed to evaluate dry and hydrothermal carbonisation (DC and HTC) as technologies to convert solid recovered fuel (SRF) from construction and municipal solid wastes to biochars or hydrochars with improved fuel quality. The operational parameters evaluated were temperature, mass ratio of SRF:water, and incorporation of a liquid additive (used cooking oil, UCO). The chars were characterised for chemical composition, calorific value, TGA profiles and surface functional groups. The chemical oxygen demand (COD), concentration of total phenols, pH, conductivity and the main components in process waters were determined. Results showed an improvement of fuel characteristics in terms of hydrophobicity and calorific value, enabling the use of chars for waste-to-energy technologies. HTC produced hydrochars with better fuel characteristics, presenting calorific values of 28–33 MJ/kg db, and lower average ash and chlorine contents (2.8 wt% db and 3.1 wt% db, respectively). The addition of UCO improved these fuel characteristics. However, the generation of an effluent that needs further decontamination and the lower amount of moisture present in SRF possibly made DC more attractive in terms of energy and costs requirements. A treatment at 350 °C during 30 min was recommended for a good compromise among process costs and char properties.
+

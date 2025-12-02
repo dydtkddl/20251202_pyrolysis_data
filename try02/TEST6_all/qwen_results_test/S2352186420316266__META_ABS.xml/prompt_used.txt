@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Bio-oil production by hydrothermal liquefaction of Rhodococcus opacus biomass utilizing refinery wastewater: Biomass valorization and process optimization In this research, a pure culture of Rhodococcus opacus strain PD630 was used to treat wastewater generated from a refinery and the lipid rich bacterial biomass obtained was converted to bio-oil. A very high removal (70 ± 5%) of organics present in the wastewater was achieved at pH 7 within 96 h along with lipid accumulation of 50 ± 4% w ∕ w by the bacteria. The lipid containing biomass procured by using the wastewater as the sole substrate was converted into bio-oil by hydrothermal liquefaction (HTL) technique. Different operational parameters viz. temperature, time and biomass/water ratio were optimized employing Response Surface Methodology (RSM) to achieve maximum bio-oil yield. The optimum conditions for maximum bio-oil yield (25.53%) were found to be 215 °C, 125 min and 0.25 biomass/water ratio; the bio-oil had a high heating value (HHV) of 20.73MJ/Kg, and it also contained a very low amount of water soluble products in it. GC–MS analysis of the obtained bio-oil product revealed the presence of a variety of compounds, mainly aldehydes, ketones and fatty acids, whereas the water soluble product contained mainly alcohols and phenolic compounds. Further analysis of the aqueous phase obtained as a byproduct concluded its potential for reuse owing to the presence of nutritional compounds. FTIR spectra of bio-oil revealed the presence of C–H bonds due to alkanes as the predominant functional group present in the product. FAME analysis results and other properties of the transesterified bio-oil matched well with the ASTM standard thus indicating its potential for bio-fuel application. This experimental study thus demonstrated that the lipid rich R. opacus biomass grown on cheaply available refinery wastewater is highly suited for potential bio-oil production.
+

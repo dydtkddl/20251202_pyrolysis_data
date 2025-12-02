@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental investigation on fast pyrolysis of freshwater algae. Prospects for alternative bio-fuel production Several technologies have been developed with the aim of obtaining fuels from algae. In the present work, the fast pyrolysis of three different types of microalgae (Botryococcus braunii, Spirulina platensis, and Pithophora sp.) is investigated focusing on the quality and yield of the liquid product as a potential biofuel. The characterization of microalgae shows an elevated content of lipids in Botryococcus braunii, higher levels of proteins in Spirulina, and an equal number of proteins and carbohydrates in Pithophora sp. A fixed bed reactor, connected to a vacuum system, and nitrogen as inert gas flow are used in the pyrolysis experiments at 300, 400, 500, and 600 °C. At 500 °C, Botryococcus braunii produces the maximum amount of pyrolytic oil (65% yield) while Spirulina and Pithophora sp. affords the greatest amount at 600 °C, in 45% and 28% yield, respectively. Gas chromatography-mass spectrometry (GC–MS) analysis of the Botryococcus braunii-derived oils shows a high content of long-chain derivatives of alcohols, carboxylic acids, and unsaturated hydrocarbons. On the other hand, Spirulina-derived oil consists mostly of nitrogenated compounds while oil from Pithophora sp. is composed of oxygenated and/or nitrogenated products, depending on the reaction temperature. The measured higher heating value (HHV) of Botryococcus braunii-derived oil produced at 500 °C is 45 MJ/kg and this bio-oil could be used as a feedstock for fuel production after chemical upgrading to decrease the oxygen content (6.59 wt%).
+

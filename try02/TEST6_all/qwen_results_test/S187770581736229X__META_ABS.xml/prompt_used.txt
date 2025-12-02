@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Properties and Reliability Evaluation of Consecutive Pyrolysis and Incineration Disposal Process for FR-4 Waste Printed Circuit Boards Properties and reliability of using newly-developed pyrolysis and incineration process to dispose typical Waste Electrical and Electronic Equipment (WEEE) like motherboard of personal computer (MPC) and circuit board of Light Emitting Diode subtitle (CBLEDS) (model: FR-4) have been explored by utilizing large-scale self-developed 50.0 kg/h consecutive pyrolysis incinerator. First confined Pyrolysis Chamber (PC) is used to thermally degrade and gasify wastes into gaseous products and chars in low-oxygen level atmosphere first, and gaseous products are transmitted to second confined High-temperature Burning Chamber (HTBC) for further clean incineration in this setup. Diesel oil and pine wood were adopted as piloted ignitor and fuel in PC respectively. Disposed solid WEEE waste materials were mixed at the same mass ratio (wood: circuit board=3:1). The technical reliability (reflected by waste temperature of incinerator, combustion efficiency, gas residence time, thermal reduction rate, mass loss ratio and volume reduction ratio) was analyzed and evaluated, environmental pollution levels of 13 items like SO2 and NOx were inspected according to a series of Chinese Standards like GB/T16157-1996 and GB18484-2001. Results show flue gas peak temperature of MPC and CBLEDS in HTBC reach 910.0 ℃ and 1120.0 ℃, combustion efficiency in HTBC is as high as 99.90 %, gas residence time of pyrolysis in PC of both MPC and CBLEDS are 3.0 s, their thermally reduction rates of residues are 1.87 % and 1.76 %, mass loss ratios reach 85.80 % and 83.01 % and volume reduction ratios reach 78.06 % and 72.13 % respectively, the detection results of exhaust ringelman emittance hazardous gas and heavy metal content basically comply with atmospheric pollutant emission permit requirements, indicating FR-4 based WEEE can be disposed by consecutive pyrolysis and incineration process quite well with high temperature stability, technical reliability, combustion efficiency and friendly environmental safety.
+

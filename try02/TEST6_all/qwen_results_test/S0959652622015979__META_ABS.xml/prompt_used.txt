@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Conversion of low-density polyethylene into monocyclic aromatic hydrocarbons by catalytic pyrolysis: Comparison of HZSM-5, Hβ, HY and MCM-41 The catalytic properties of different catalytic materials on the pyrolysis of plastics have been extensively investigated. In order to better understand the relevant mechanism of catalytic pyrolysis of plastic waste, the effect of different acidity and pore size of catalytic material on its pyrolysis kinetic parameters and the distribution of pyrolysis products needs to be studied to provide a stronger theoretical basis for its resource utilization. This study aims to study the effects of HZSM-5, Hβ, HY and MCM-41 on the thermodynamic properties, kinetic parameters and pyrolysis characteristics of low-density polyethylene (LDPE), analyze the relationship between the specific catalytic pyrolysis products and the properties of the catalyst. Among the four catalysts, HZSM-5 obtained the most concentrated product distribution and the highest yield of monocyclic aromatic hydrocarbons, and it was found that the cracking of LDPE mainly occurred in its pores. Due to the large pore size and low concentration of acid sites, the main product type obtained by MCM-41 was olefins. In addition, it was found that HY reduced the pyrolysis temperature of LDPE and the activation energy of the reaction to the greatest extent. The different catalytic effects were mainly caused by different pore structures and acid site concentration. Moreover, it was found that the addition of catalyst changed the cracking mechanism of LDPE. Under the comprehensive consideration with the goal of producing monocyclic aromatic hydrocarbons, HZSM-5 is the most suitable catalyst among them.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of ramial chipped wood and poultry manure amendments on soil chemical properties and fungal communities in Benin This study investigated effects of soil amendments with ramial chipped wood (RCW) derived from Gmelina arborea and Sarcocephalus latifolius, together with poultry manure, on soil chemical properties and fungal communities in northern and southern Benin. The trial was a split-plot experiment, where treatments included volume of irrigation water (V1 and V2 = 0.5 *V1) as the whole-plot factor, with organic amendment (45 t/ha RCW; 15 t/ha poultry manure, PM; 45 t/ha RCW + 15 t/ha of PM, RCW_PM; and control) as the sub-plot factor. Topsoil was sampled before and after 24 months of in situ organic amendment application. Humic acid (HA) was extracted from soil and purified prior to FTIR spectroscopy, NMR, and Py-GC-MS analyses. RCW treatments (RCW and RCW_PM) contributed substantially to organic carbon storage and soil nutrient (N, P, K, Ca, Mg) increases (the latter by up to 1.5 times) compared to the control. Accordingly, soils that were amended with the RCW produced significant amounts of HA. High concentrations of lignin-related compounds were determined in pyrolysis products from humic acids in the RCW-amended soils. Using ITS2 region sequencing on the Illumina Miseq platform, RCW amendments markedly altered fungal compositions, with increased relative abundance of Ascomycota (up to 92% of total fungal community), Mucoromycota (2.7%), Basidiomycota (2.5%) and Rozellomycota (0.3%). These fungal phyla contain species that participate in organic matter decomposition and compound transformations but did not selectively degrade lignin in RCW. Our results suggest that RCW amendments significantly increased fungal activity and improved soil nutrient availability. Thus, this agrotechnology is recommended for regenerative agriculture.
+

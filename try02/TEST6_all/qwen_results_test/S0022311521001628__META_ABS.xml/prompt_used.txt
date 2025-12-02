@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Influence of neutron irradiation on Al-6061 alloy produced via ultrasonic additive manufacturing Samples of aluminum alloy 6061 produced via ultrasonic additive manufacturing (UAM) were irradiated in the High Flux Isotope Reactor (HFIR) up to 17.3 dpa at ~70°C while in contact with water using perforated rabbit capsules. The irradiation campaign included as-received (AR) material, specimens subjected to various post-weld heat treatments (PWHTs, including hot isostatic pressing [HIP]), and reference (wrought) alloy samples. Mechanical tensile tests, accompanied by digital image correlation (DIC) analysis, fractography, and metallography, were performed as a part of the post-irradiation evaluation. The X- and Y-specimens (i.e., oriented in the sonotrode moving and vibration directions, respectively) showed pronounced radiation hardening and ductility decrease. Specific serration flow behavior and propagation of deformation bands were observed under various material conditions up to 3.5 dpa but disappeared at 17.3 dpa. In all cases, the fracture mechanism of X- and Y-specimens was ductile; ductile dimples dominated the fracture surface. Irradiated X- and Y-specimens showed good performance, regardless of material conditions (AR or PWHT). The performance of Z-specimens oriented in the build direction was strongly dependent on the PWHT. The AR and aged specimens showed fracture stress decrease with dose, and they experienced fracture under irradiation after 3.5 dpa; specimen cross section analysis revealed specific interface degradation that was likely related to corrosion. Recrystallization significantly improved in-reactor performance. HIP suppressed interface degradation due to recrystallization and pore removal, which led to good in-reactor performance for Z-specimens.
+

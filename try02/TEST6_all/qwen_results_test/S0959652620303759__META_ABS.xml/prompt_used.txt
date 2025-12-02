@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+The atmospheric, vacuum and pressurized pyrolysis of used bleaching soils along with polymeric wastes to reach the valuable and economical fuels The atmospheric, vacuum and pressurized pyrolysis of oil-rich bleached soil with polymeric wastes was investigated using a semi batch stirred reactor. Also, the gas chromatograph mass spectrometry (GC/MS) instrument was used to measure the hydrocarbon components containing paraffin, olefin, naphtehene and aromatic (PONA) and carbon number of the liquid product which the liquid products were classified to the different commercial fuel ranges. The atmospheric co-pyrolysis of oil-rich bleached soil with polyethylene tended to produce the heavy hydrocarbons while the pressurized pyrolysis decreased the products molecular weight obviously. The atmospheric co-pyrolysis of oil-rich bleached soil with polypropylene (PP) and polystyrene (PS) shifted to the medium and light fuels respectively. Also, manual filtration of the co-pyrolysis oils with the regenerated fluid cracking catalyst (FCC) at ambient temperature showed that the obtained oil from co-pyrolysis of polypropylene and bleached soil did not require re-filtration and had a very light color. The vacuum co-pyrolysis of bleached soil and the polymers produced more liquid with less cyclic compounds and lighter color compared to nitrogen pyrolysis. The pressurized pyrolysis of polyethylene and bleached soil using different carrier gases such as nitrogen, hydrogen, ethylene and propylene, tended to produce the lighter products in the commercial fuels range. Also, re-polymerization of the obtained liquid from co-pyrolysis, was carried out using benzoyl peroxide at 95 °C and atmospheric pressure, which only polystyrene and bleached soil co-pyrolysis product was able to take part in the polymerization process and two other co-pyrolysis products did not react with peroxide clearly.
+

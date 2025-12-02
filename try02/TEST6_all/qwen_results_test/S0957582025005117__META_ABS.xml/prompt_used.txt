@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Hydrocarbon recovery from on-shore oil-based drill cuttings (OBDCs) by fast pyrolysis over waste-derived ZSM-5 and CaO catalysts using Py-GCMS Oil-based drill cuttings (OBDCs), by-products generated during the oil exploration and production process, are classified as hazardous waste, leading to severe environmental safety problems. As a result, the treatment of OBDCs has gained increased attention. Among the treatment methods, pyrolysis is considered a promising technology due to its high economic benefits, efficient energy recovery, and low pollutant emissions. In this work, OBDCs obtained from an onshore drilling site in Thailand were used as feedstocks. The catalytic pyrolysis of OBDCs over ZSM-5 derived from fly ash (FA-ZSM-5) and CaO derived from paper industrial waste (LM-CaO) was investigated using Py-GC/MS. To study the feasibility of reducing heavy hydrocarbon as well as oxygenates and N-containing compounds in drilling cutting residues, the effect of pyrolysis temperatures (400–700°C), types of catalysts and catalyst to OBDC ratio (1:1, 5;1 and 10:1) on hydrocarbon selectivity was studied. In the non-catalytic run, a high hydrocarbon content of 86.72 % was achieved at 600°C, with a low content of oxygenates and nitrogen-containing compounds. In catalytic pyrolysis, FA-ZSM-5 exhibited superior efficiency in enhancing the production of aliphatics and aromatics while simultaneously reducing heteroatom compounds. This enhanced performance can be attributed to its high surface area, acidity, and unique pore structure. At an FA-ZSM-5 to OBDC ratio of 5:1, the aliphatic fraction increased to 91.09 %, while the levels of oxygenated and nitrogen-containing compounds were significantly reduced. Additionally, the aromatic content remained below 5 %, with no detectable formation of polycyclic aromatic hydrocarbons (PAHs). Both FA-ZSM-5 and LM-CaO catalysts improved the selectivity of gasoline (C5-C11) and diesel (C12-C22), while the selectivity of long chain hydrocarbon (C>22) decreased. Furthermore, the highest selectivity for light hydrocarbons (C5-C22) was achieved when using the FA-ZSM-5 catalyst at low catalyst contents (ratios of 1:1 and 1:5). These findings suggest that OBDCs can be effectively treated through the catalytic pyrolysis process using ZSM-5 and CaO catalysts derived from industrial waste to produce alternative fuels with reduced heavy components, particularly within the gasoline and diesel range, as well as valuable chemicals.
+

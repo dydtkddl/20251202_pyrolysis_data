@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis behavior of polypropylene and PVC medical waste: multi-scale analysis via TGA, FTIR, GC–MS and kinetic modeling This study investigates the pyrolysis behavior of two common medical waste polymers—polypropylene (PP) and polyvinyl chloride (PVC)—through an integrated approach that combines thermogravimetric analysis (TGA) with in-situ Fourier transform infrared spectroscopy (FTIR), gas chromatography–mass spectrometry (GC–MS), and model-free kinetic analysis. The TGA/DTG results indicate that PP-based waste (e.g., surgical gown material) undergoes a single-step degradation at approximately 450 °C, producing negligible residual char. In contrast, PVC-based waste (e.g., gloves and tubing) demonstrates a two-stage mass loss: initial devolatilization occurring between 250 °C and 350 °C due to dehydrochlorination and plasticizer loss, followed by char breakdown at temperatures up to 600 °C. FTIR gas analysis reveals that the volatiles generated from PP pyrolysis are predominantly aliphatic hydrocarbons, characterized by strong C–H bands, while the pyrolysis of PVC releases significant amounts of HCl during the first stage and aromatic compounds in the second stage. Correspondingly, GC–MS analysis confirms that PP primarily yields hydrocarbons within the C5–C20 range, whereas PVC generates a variety of chlorinated and aromatic byproducts. The iso-conversional kinetic analysis indicates a relatively constant activation energy of approximately 200 kJ/mol for PP decomposition, contrasting with a two-phase profile for PVC, which exhibits lower apparent activation energies (ranging from 100 to 180 kJ/mol) during the initial HCl evolution and much higher values (exceeding 400 kJ/mol) during char decomposition. These findings offering valuable insights for optimizing reactor design and emission control strategies in the pyrolysis of medical waste.
+

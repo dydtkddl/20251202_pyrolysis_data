@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mechanism on catalytic cracking tar with CaO-based catalysts for hydrogen-rich gas by DFT and experiments As the model compound of tar, the catalytic cracking performances of toluene with CaO-based catalysts were studied by DFT simulation and fixed bed experiment. The DFT results showed the adsorption energy of toluene on (1 0 0) surfaces increased as FC < CaO < NC < NFC at 650 °C. The optimal reaction path for toluene to dissociate H was obtained in the process of toluene cracking using NC and NFC catalysts. The NC catalyst doped with Fe enhanced the catalytic activity of Ni, and the rate determining step reaction activation barrier to generate H2 was decreased from 1.50 eV to 0.58 eV. And the activation barrier for CH4 formation was higher than that for H2, which promoted the cracking reaction to produce H2. The experimental results showed that the catalytic toluene cracking effect of NFC was the best among the four catalysts at 650 °C, with 98.11% conversion rate and 93.11% H2 yield. Compared with NC, H2 yield was increased by 27.92%, CH4 yield was decreased by 50.43%. Thermogravimetric results showed that NFC was less likely to be inactivated due to carbon deposition than NC. NFC will be a kind of compound catalyst for tar cracking with high efficiency.
+

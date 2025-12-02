@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Liquid-fed waste plastic pyrolysis pilot plant: Effect of reactor volume on product yields A unique waste plastic pyrolysis pilot plant was used for fast pyrolysis (1–5 s vapor residence time) of HDPE at 600 °C. A dissolution pre-treatment step dissolved the high-density polyethylene (HDPE) in recycled pyrolysis wax to create a liquid feed to the pyrolysis reactor, avoiding clogging and bridging of the plastic particles that is common in alternative feeding strategies. Three different reactor volumes were tested to determine the effect of residence time on product distribution. Pyrolysis products were cooled through a series of two condenser to separate the products into three groups: a heavy, waxy product (> C15), a lighter liquid product (C6-C15), and a gaseous product (C1-C6). GC/MS analysis was used to characterize the composition of each product. Multiphysics modeling was conducted to estimate the residence time in the reactor and compare the pilot plant results to previously published micropyrolysis research. It was found that residence time had a significant effect on product distribution, with an increase from 1 to 4.5 s of residence time causing a 9 wt% drop in wax (C20-C30) production and a 11 wt% increase in light oil (C5-C10) production. The trends for product distribution as a function of residence time were found to be consistent between both the pilot plant and micropyrolysis systems, demonstrating that the pilot plant system can be “tuned” to produce the desired pyrolysis product.
+

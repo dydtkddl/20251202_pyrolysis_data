@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Chemometric interpretation of different biomass gasification processes based on the syngas quality: Assessment of crude glycerol co-gasification with lignocellulosic biomass This paper reviews data available in the literature on biomass gasification parameters in order to elucidate the general information common for different gasification systems fueled with different biomass feedstocks by applying principal component analysis (PCA). Focus was given to the co-gasification of crude glycerol derived as by-product in biodiesel plants, with olive kernel derived from olive oil processing plants, a lignocellulosic biomass locally available in the Mediterranean region, which might be considered as an important step towards economic and sustainable biodiesel production, particularly in small and medium-scale plants. The PCA was applied for the first time on the literature-based input data sets of the thermochemical conversion processes of various biomass, aiming to: (a) characterize syngases obtained under different conditions during co-gasification of crude glycerol and olive kernel, (b) compare syngases obtained by co-gasification and co-pyrolysis of crude glycerol and olive kernel, and (c) assess general information common for different gasification systems, comparing the syngas from co-gasification of crude glycerol with olive kernel with those produced by other non-woody and woody biomass gasification processes. PCA has evidenced the strongest correlations among the variables included in the sets, which were further used to discuss the similarities among the produced gases. Some of the major conclusions derived from PCA results concern the comparability of gases produced by co-gasification of crude glycerol and olive kernel with the published data, particularly with gases produced by gasification of olive residues with intermediate to the highest H2 contents, intermediate to low CO2 contents and intermediate H2/CO ratios. Even though olive-based waste gasification may result in wide range of the gas composition, the majority of the considered syngases was separated on the PCA biplots from gases produced by gasification of woody and other non-woody biomass due to higher H2/CO ratios.
+

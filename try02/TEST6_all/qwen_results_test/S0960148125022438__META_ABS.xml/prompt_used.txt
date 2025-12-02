@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Optimizing hydrocarbon yield from co-pyrolysis of Agave sisalana bagasse and multilayer plastic film wastes for sustainable fuel production using simplex-centroid mixture design and principal component analysis The production of alternative fuels to replace fossil-derived products constitutes a significant research topic, given the need for sustainable solutions that support energy transition and decarbonization of the transport sector. In this context, this pioneering study investigates the co-pyrolysis of Agave sisalana (sisal) bagasse with two types of multilayer plastic waste: polyethylene film with an aluminum barrier (PFA) and polyethylene film with an ethylene-vinyl alcohol barrier (PFE). The experiments were conducted in a micro-pyrolyzer coupled with gas chromatography and mass spectrometry (Py-GC/MS), using a simplex centroid mixture design to optimize compositions and principal component analysis (PCA) to interpret the data. While the isolated pyrolysis of sisal bagasse resulted in 58.78 % oxygenated compounds, co-pyrolysis with 50 % PFA provided a maximum yield of 91.39 % aliphatic hydrocarbons, representing a 2.97-fold increase compared to the pyrolysis of the isolated residue. PFA demonstrated a superior synergistic effect to PFE when combined with sisal bagasse. The results indicate that this combination can produce hydrocarbon-rich pyrolytic oil, significantly contributing to sustainable waste management and advancing the “waste-to-energy” concept by converting residual materials into alternative transportation fuels.
+

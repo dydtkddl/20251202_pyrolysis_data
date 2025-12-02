@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Selective production of aromatics from waste plastic pyrolysis by using sewage sludge derived char catalyst Sewage sludge char was used as the catalyst to realize the selective production of aromatics in the pyrolysis of waste mixed plastics. The effect of catalytic temperature, residence time, and plastic compositions on the product yield and distribution were investigated. The catalytic behavior of main ash components was evaluated and discussed. It was found that the selectivity of sludge char to monocyclic aromatics was up to 75.3% when catalytic temperature was 600 °C with a residence time of 1 s. The content of styrene and xylene reached 29.1% and 12.5% in oil, respectively. The selectivity of sludge char to bicyclic aromatics was up to 64.4% when the temperature was 800 °C with the same residence time of 1 s. Naphthalenes accounted for 47.5% of the pyrolysis oil. The interaction among polyethylene, polypropylene, and polystyrene improved the selectivity of bicyclic aromatics from 46.8% to 53.7%. It can be concluded that principal ash components in sludge char could increase the aromatization degree of chain hydrocarbons and reduce the condensation degree of already formed aromatics. Acid sites (mainly aluminum phosphate) and dehydrogenation active sites (mainly -PO, sulfides, etc.) could promote the formation of aromatics by catalyzing direct dehydrogenation, hydrogen transfer reaction, and Diels-Alder reaction; while ring-opening active sites (mainly calcium oxide and iron species) could prevent the formation of excessively heavy aromatics by hydrogenation and ring-opening process.
+

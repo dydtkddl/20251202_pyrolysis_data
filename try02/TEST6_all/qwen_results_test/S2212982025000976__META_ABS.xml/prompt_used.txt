@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Catalytic pyrolysis of disposable masks: Fine-tuning nickel content ratios in catalysts for enhanced hydrogen-rich gas and carbon nanomaterial quality The widespread use and disposal of disposable masks have raised significant environmental and social concerns. In response to this issue, recent studies have explored resource recovery through the pyrolysis of discarded masks. However, limited research has been conducted on tuning the content ratios of active metal and applying various catalyst supports for targeting hydrogen (H2) and carbon nanomaterials. To address this gap, we implemented a two-zone catalytic pyrolysis system. The nickel content ratio in non-noble catalysts (Ni/Al2O3, Ni/Zeolite 4 A, and LaNiO3) was fine-tuned and applied in the catalytic reforming zone to optimize hydrogen production and graphite-like carbon nanomaterial formation. Impregnated catalysts (Ni(25)/Al2O3, Ni(25)/Zeolite 4 A) and LaNiO3 demonstrated comparable results in terms of hydrogen concentration up to 64.6 vol% and the structural purity of carbon nanomaterial by Raman Spectroscopy, suggesting that the nickel content ratio on the catalyst plays a critical role in hydrogen production during catalytic pyrolysis. These findings are anticipated to contribute to the sustainable production of clean fuel gas products through catalytic pyrolysis, offering a viable solution to the disposal of waste masks.
+

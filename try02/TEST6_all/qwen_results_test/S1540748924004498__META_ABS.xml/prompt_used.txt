@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Quantitative evaluation of four oxygen carriers for natural gas chemical looping combustion Chemical looping combustion (CLC) reactors have developed into megawatt units, calling for industrial-scale oxygen carriers (OCs). Four typical OCs with potential for industrial-scale applications are quantitatively evaluated in terms of reactivity and attrition, including ilmenite (labeled as Ilm-NO), Cu-Fe bi-ore OC through hydroforming (labeled as CuFe-Hy), perovskite through spray drying (labeled as Per-SD), and Cu-based OC through impregnation (labeled as CuAl-Im). The 20-cycle reactivity test is operated in a batch fluidized bed reactor, while the 5-hour attrition test is conducted in an air jet attrition reactor. With the determined reduction durations via breakthrough testing, all OCs show no decrease in methane combustion performance. CuAl-Im demonstrates the highest instantaneous oxygen transferring rate of ca. 19.5 × 10–3 wt.%/s and the second maximum accumulated oxygen transferring amount of 3.74 wt.%. The OC reactivity follows the order of CuAl-Im > Per-SD > CuFe-Im > Ilm-NO. The attrition test results indicate that the attrition indexes, inversely proportional to the lifetimes of OCs, are 0.04 wt.% for Ilm-NO, 0.32 wt.% for CuFe-Hy, 0.20 wt.% for Per-SD, and 0.04 wt.% for CuAl-Im. Characterization results demonstrate all OCs get developed in pore structures except CuAl-Im due to its severe sintering after the reactivity test, which suppresses the regeneration of minor CuAlO2. Reduced crushing strengths of four OCs are observed. Additionally, their phases are relatively stable, except for the migration of iron in Ilm-NO and CuFe-Hy, and the copper migration in CuAl-Im. The proposed method can be a preliminary standard to screen appropriate OC for industrial CLC units. The cycle number can be further reduced to 10 according to the reactivity tests, while the benchmark test details such the concentration of testing gases, reaction temperature, and reduction duration may need further consideration. Anyway, the obtained results are beneficial to the selection of OC for CLC of methane.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Upcycling of epoxy resin from waste wind turbine blades: Pyrolysis-methylation tandem reaction to methylated phenols and hexamethylbenzene The pyrolysis products of epoxy resin consist of mixed phenolic compounds, which can be transformed into methylated phenolic compounds, pentamethylbenzene, hexamethylbenzene, and other high-value chemicals through methylation. However, the mechanism of methylation for pyrolysis products of epoxy resin remains unclear. In this study, using thermosetting epoxy resin and waste wind turbine blades as feedstocks, we investigated the methylation performance of different solid acid catalysts (γ-Al2O3, α-Al2O3, ZSM-5, MCM-41) through a pyrolysis-methylation cascade reactor. The study unveils the impact of reaction temperature and reaction time on the pyrolysis reaction and the product distribution. The optimal reaction parameters are determined to be 500 °C and a reaction time of 20 min. Under these conditions, the reforming products exhibited the highest selectivity for methylated phenolic compounds and hexamethylbenzene (42.57 wt%). The proposed methyl substitution reaction pathway for isopropenylphenol was supported by a13C methanol isotope experiment. On nanoscale γ-Al2O3 catalyst, the methylation reaction displays a non-position-selective methylation pattern. Methyl substitution occurs by directly replacing the methylating agent on the isopropyl/isopropenyl group, leading to the breaking of the Carom-Caliph bond. Additionally, Density Functional Theory (DFT) simulations reveal that methyl serves as an intermediate in the methylation substitution reaction. The study also conducted a material flow assessment for the recycling of epoxy resin waste through the pyrolysis-methylation pathway.
+

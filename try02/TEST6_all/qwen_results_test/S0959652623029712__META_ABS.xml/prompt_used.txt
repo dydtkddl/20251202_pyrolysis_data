@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+CO2 plasma gasification of bakelite-based electrical switch waste feedstock Poor degradability of e-waste causes severe soil and water contamination. In recent times, plasma gasification has been an attractive way of solid waste management towards energy recovery considering the environmental benefits. To reduce the short end-of-life electrical products and net CO2 emissions, the low-grade feed of electrical switch waste (ESW) comprising of bakelite (BAK) is chosen for generating clean syngas through the plasma method using CO2. The influence of the feed rate of solid waste, feed CO2 gas and plasma torch power on the product yield and syngas composition is evaluated. Energy and exergy (2-E) analyses are performed to assess the feasibility of the process. The experiment results indicate a maximum syngas yield of ∼85% at the highest torch power of 1.6 kW, with high concentrations of H2 (24.36 vol%) and CO (43.61 vol%). At low torch power of 0.5 kW, the residual solid yield reaches 24.58%. Considering all the cases, syngas with a medium calorific value of up to 10.20 MJ/m3 is attained. For the optimum feed rate of 40 g/10 min, CO2 flow rate of 0.6 lpm and plasma power of 0.75 kW, the process achieved the highest cold gas and exergy efficiency of 42.33% and 35.99%, respectively. The obtained oil (viscosity = 6.43 cP, density = 0.975 g/ml, pH = 8.01 and LHV = 31.47 MJ/kg) is suitable for applications in combustion, transportation and chemical production after quality upgradation. The solid residue (volatile matter = 11 wt%, fixed carbon = 65.67 wt%, ash = 23.33 wt% and LHV = 15.51 MJ/kg) obtained containing Ba (70.42 wt%), Zn (3.87 wt%), Ti (3.25 wt%), etc. in the ash, can be used for making corrosion coating agents, alloys and paints after recovery. The oil analysis showed the formation of NH3 during the reaction at a high torch power of 1.6 kW. Lastly, the reaction mechanism of plasma gasification for the conversion of ESW into syngas is proposed.
+

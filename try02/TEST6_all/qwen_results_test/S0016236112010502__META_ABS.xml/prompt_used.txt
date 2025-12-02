@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A study on catalytic pyrolysis of biomass with Y-zeolite based FCC catalyst using response surface methodology A response surface methodology (RSM) was used to investigate the influence of temperature, weight hourly space velocity (WHSV) and vapor residence time on the catalytic pyrolysis of hybrid poplar wood using Y-zeolite based FCC catalyst in a 50mm bubbling fluidized bed reactor. The levels of the independent variables were: temperature (400–600°C), WHSV (1–3h−1), and vapor residence time (3–6s). The Box–Behnken experimental design was used and a total number of 15 experimental runs including 3 center runs were generated. The analysis of variance (ANOVA) at 95% confidence interval was performed with Minitab 16 software package and reduced models were generated for the prediction of the responses. It was found that higher levels of WHSV (>1h−1) with shorter vapor residence time and moderate temperatures (⩽500°C) favor higher yield of organic liquid fraction. Also, higher temperature (>500°C) and WHSV (>2h−1) reduces the formation of coke/char. The catalytic pyrolysis with the Y-zeolite based FCC catalysts at high temperatures (>500°C) and long residence time enhanced the cracking of the primary vapors and increased the formation of CO, H2 and CH4. The catalytic process at higher temperatures (>500°C) and lower WHSV (⩽2h−1) decreased the oxygen content and increased the viscosity of the bio-oil. The reaction temperature was the most significant independent variable on char/coke yield, concentration of non-condensable gases, carbon content, oxygen content, pH and viscosity of the bio-oils. The WHSV was found to be the most important significant independent variable that affected the yield of organic liquid and the formation of water. The models for the prediction of the responses with the exception of viscosity were adequate and statistically significant.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Unravelling the contribution of chain microstructure in the mechanism of the syndiotactic polypropylene pyrolysis The pyrolysis of a highly syndiotactic and high-molecular weight polypropylene (sPP) has been thoroughly studied through preparative TGA experiments, which were performed up to final temperatures between 262 °C and 427 °C. The 13C NMR characterization of the samples shows a two-stage process clearly evidenced by changes in the chain microstructure. In a first period, up to a 22% weight loss, the molecular weight collapses and only vinylidene end-capped chains are produced. In a second stage, over 22% weight loss, a wider variety of groups, including both terminal vinylen and isobutenyl functions as well as n-propyl tails, are also detected. Regardless the type, all these new species are formed at the expense of propylene units belonging to rrrr pentads. The evolution of the Eact predicted by means of analytical TGA allows us to associate the lowest Eact value found with the changes taking place during the very beginning of the process (up to a 3% weight loss), i.e. the molecular weight collapse and a some evidence of configurational stereo-specificity. As regards the further Eact build-up, it can be rationalized in terms of the ability of chains to be rolled in the most stable GGTT conformation, as it is supported by complementary FTIR and DSC characterization of the samples.
+

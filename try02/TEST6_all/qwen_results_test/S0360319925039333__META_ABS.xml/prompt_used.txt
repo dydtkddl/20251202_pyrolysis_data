@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A systematic review on hydrogen production via hydrochar-based gasification Hydrogen (H2) yields from various gasification and hydrothermal processes demonstrate significant variability depending on feedstock, catalysts, and process parameters. This systematic review explores hydrogen production through hydrochar-based gasification technologies, focusing on the unique properties of hydrochar derived from biomass. Known for its ability to enhance syngas production, especially hydrogen, hydrochar's porous structure, high surface area, and active catalytic sites significantly improve syngas quality and hydrogen yield. Studies show that supercritical water gasification (SCWG) of almond shells with hydrochars yielded up to 11.63 mmol/g, while catalytic subcritical and SCWG of waste tires reached 19.7 mmol/g. Hydrothermal carbonization (HTC) coupled with gasification yields as high as 76.7 g H2/kg biochar for sewage sludge hydrochar, with processes like anaerobic digestion and HTC producing 1278 mL/g from hemp hurd hydrochar. Key aspects such as the catalytic influence of hydrochar, the role of additives and co-catalysts, and optimization of gasification parameters, including temperature, pressure, and equivalence ratios, are explored. The review also delves into hydrochar preparation advancements, such as alkali and alkaline earth metals (AAEMs) incorporation, and highlights hydrochar's role in reducing tar formation, enhancing H2/CO ratios, and stabilizing syngas heating value.
+

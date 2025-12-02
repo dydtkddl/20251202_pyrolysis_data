@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of walnut shell residues in a fixed bed reactor: Effects of process parameters, chemical and functional properties of bio-oil In the present work the products and characteristics of bio-yields obtained from pyrolysis of different types of walnut shells (WS) by using a fixed bed pyrolyzer. The different walnut shells considered are paper (PSW), thin (TSW), medium (MSW) and hard (HSW) shelled walnut. The biomass samples were pyrolyzed at various temperatures, particle sizes, heating and sweep gas flow rates. The results revealed that the maximum bio-oil 44.7, biochar 37.6 and gas 40.4 wt% yields have been obtained for HSW, MSW and HSW at a pyrolysis temperature of 550, 375 and 750 °C respectively at heating rate 0.33 K/sec, particle size 0.5–1.5 mm with swept gas flow rate 1.6 × 10−6 m3/s. The higher heating value (HHV) of bio-oil obtained from different walnut shells are ranged from 26 to 27.3 MJ/kg. Comprehensive physiochemical characteristics such as density, viscosity, flash point, pour point and water content of bio-oils have been obtained. Chemical composition analysis of bio-oils revealed that the pyrolytic bio-oil composition is predominated by oxygenated compounds such as carbonyl, methoxy, phenols and carboxyl groups determined by GC-MS, FTIR, 1H NMR and 13C NMR. The pyrolysis gas mainly contained CH4 CO, H2, CO2, and light hydrocarbons. Based on these results and structural analysis of the bio-oil, it can be concluded that the bio-oil obtained from WS may be used as a feedstock for furnaces, as a fuel, as a lubricant after modifications and value-added products via pyrolysis.
+

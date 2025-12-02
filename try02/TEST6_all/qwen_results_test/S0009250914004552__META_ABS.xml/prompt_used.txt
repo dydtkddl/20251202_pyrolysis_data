@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Local characterization of a gas–solid fluidized bed in the presence of thermally induced interparticle forces This article reports the results obtained from an extensive experimental campaign aimed at investigating the effect of interparticle forces (IPFs) on the local flow structure of a gas–solid fluidized bed. A polymer coating approach was used to enhance and control the degree of cohesive IPFs in a gas–solid fluidized bed. In this work, the local transient solids concentration (bed voidage) was carefully measured with the help of an accurate optical fiber probe at different temperatures and gas velocities covering both bubbling and turbulent fluidization regimes. Also, the Radioactive Particle Tracking (RPT) technique was employed to track the trajectory of a tracer mimicking the behavior of solid particles in two systems, one with the least amount of IPFs in the bubbling regime and the other with the highest amount. Experimental results showed that by increasing the level of IPFs in the bed the fixed bed and emulsion phase voidage in the bubbling regime increased and demonstrated higher capacities in holding gas inside their structures. In addition, the emulsion phase fraction increased, the tendency of the fluidizing gas passing through the bed in the emulsion phase enhanced in the bubbling regime, the frequency of the bubble/emulsion phase cycle decreased, and the meso-scale transition from bubbling to turbulent fluidization regime delayed until reaching higher superficial gas velocities.
+

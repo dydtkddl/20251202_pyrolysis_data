@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Effect of calcium on synergy evolution mechanism of Zhundong coal and polyethylene co-pyrolysis The effect of calcium on the synergy evolution mechanism of Zhundong coal and polyethylene (PE) co-pyrolysis was explored by thermogravimetric (TG), fixed-bed experiments, and the ReaxFF simulation method. The weight loss characteristics of coal and PE pyrolysis, obtained through ReaxFF simulations, exhibited good agreement with TG experimental results. The distribution of coal/PE co-pyrolysis products was examined via fixed-bed fast pyrolysis experiments and Reaxff isothermal pyrolysis simulation. The results reveal that calcium substantially reduces co-pyrolysis tar while simultaneously enhancing co-pyrolysis char and gas to varying extents. Besides, the experimental temperature of 973 K and the simulated temperature of 2600 K yield the highest decrease in co-pyrolysis tar, with reductions of 9.52 % and 14.03 %, respectively. It is discovered that the addition of calcium enhances the synergy degree to 100 % between coal and PE molecules, which means that coal molecules become more firmly attached to PE molecular fragments. Additionally, calcium induces polymerization in co-pyrolysis char, causing the char molecules to become larger and increasing their average molecular weight. Ca-containing tars are rich in aliphatic hydrogens, and synergistic molecules prefer light tars, whereas Ca-free tars have a slightly broader range of aromatic hydrogens, and synergistic molecules favor heavy tars, indicating that the addition of calcium may promote the ring-opening process of coal molecules, releasing more branched-chain hydrogen. In the Ca-free and Ca-containing systems, 24.67 % and 29.51 % of the hydrogen content of the coal molecules migrated toward the co-pyrolysis tar, respectively. The proportion of coal tar fragments decreases while the proportion of PE tar and synergistic tar fragments increases in Ca-containing tar when compared to Ca-free tar, indicating that calcium promotes the polymerization of coal tar molecules with PE tar molecules, which leads to larger char molecules and smaller gas molecules.
+

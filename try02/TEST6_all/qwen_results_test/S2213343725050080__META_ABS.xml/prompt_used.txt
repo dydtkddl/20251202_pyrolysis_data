@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Mechanistic Study on the Degradation of Waste Polyethylene Terephthalate Catalyzed by Agricultural Straw Ash The overuse of polyethylene terephthalate (PET) poses a serious challenge to the environment. In this study, a green degradation strategy based on agro-biomass ash (rice straw ash, RSA; wheat straw ash, WSA; corn stover ash, CSA) catalyzing PET glycolysis is proposed. Biomass ash catalysts synthesized through 700°C calcination exhibited dominant metal salt phases, metal oxide compositions, and complex hierarchical pore structures, which provide abundant active sites for catalytic reactions. Under the explored optimal reaction conditions, RSA exhibited optimal catalytic performance, achieving 100% PET conversion and 86.37% yield of bis(2-hydroxyethyl) terephthalate (BHET) within 5h. The excellent performance of RSA was attributed to its high potassium content (15.90%) and unique pore structure, which effectively facilitated the diffusion of the reactants. The kinetic analysis showed that the reaction conformed to the first-order kinetic model, and the apparent activation energy was 157.58kJ/mol. After 5 cycles, the BHET yield of RSA was only 8%. This study confirmed the feasibility of agricultural biomass ash as an efficient catalyst for PET glycolysis, while providing a synergistic solution for the resourceful utilization of agricultural waste and plastic pollution management.
+

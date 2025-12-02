@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Extensive thermogravimetric and thermo-kinetic study of waste motor oil based on iso-conversional methods The pyrolytic kinetics of waste motor oil (WMO) based on various differential and integral based model-free methods is studied utilizing the data obtained from TGA. For the different heating rates, i.e., 5 °C/min, 10 °C/min, and 40 °C/min the overall volatile conversion was found to be > 90%. The calculation of activation energy is performed using four different models (a) Friedman (b) Kissinger-Akahira-Sunnose (c) Flynn-Wall-Ozawa and (d) Starink methods. The mean activation energy was found to be 139.863 kJ/mol, which has been later used for the determination of z(α) master plots. Moreover, the prediction of the reaction model has been made by analyzing the different theoretical and experimental z(α) master plots. Further, the unknown parameters of the Sestak & Berggrens’s model are obtained using the model fitting methods in MATLAB. The obtained reaction model is f α = d α dt = 3.21 x 10 10 β e - 139863 RT ( 1 - α ) 3.049 α - 6.994 - ln 1 - α 5.626 which followed the autocatalytic (sigmoidal) mechanism. Furthermore, the thermodynamic stability of the system had been determined by calculating the change in entropy, enthalpy and Gibbs free energy. The kinetic parameters along with the thermodynamic results recommend a highly reactive system feasible for waste to energy generation using pyrolysis.
+

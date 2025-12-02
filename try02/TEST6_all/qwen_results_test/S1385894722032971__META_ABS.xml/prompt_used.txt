@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+A novel ‘sea-thermal’, synergistic co-valorisation approach for biofuels production from unavoidable food waste (almond hulls) and plastic residues (disposable face masks) This work first-time addresses the synergetic hydrothermal co-valorisation of almond hulls (an unavoidable food waste) and FFP2 face masks (a common plastic material) using seawater (a sustainable reaction medium). The effects of the feedstock composition (each material alone and all possible binary combinations) and the reaction medium (deionised water, seawater and all possible binary mixtures) have been evaluated at 350 °C and 170 bar over a wide range of reaction times (20–180 min). Bilateral biomass-plastic synergistic and antagonistic interactions between both feedstocks, combined with several promoting and inhibiting effects displayed by seawater, ruled the distribution of the reaction products and their most important physicochemical and fuel properties. Process optimisation revealed that the formation of an energy-dense (32 MJ/kg) liquid biofuel was maximised (26% biocrude yield) by conducting the process with almond hulls in deionised water for 115 min. At the same time, face masks promoted solid biofuel formation (83% hydrochar yield, 46 MJ/kg) by coprocessing an almond hulls/disposable face masks mixture (8:92 wt%) in salted (seawater/deionised water mixture with 37471 ppm salinity) water for 180 min. Conducting the process with seawater (44608 ppm salinity) for 180 min allowed coprocessing of both materials (22/78 wt% almond hulls/face masks) efficiently to maximise biofuels production (13% biocrude yield, HHV = 33 MJ/kg and 67% hydrochar yield, HHV = 49 MJ/kg). These results are a breakthrough in developing season-free and flexible biorefineries, which contribute to reducing pollution and bringing out the hidden value of human activity common residues.
+

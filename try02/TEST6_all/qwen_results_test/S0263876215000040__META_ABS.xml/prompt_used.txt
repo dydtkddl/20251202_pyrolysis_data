@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Experimental and kinetic studies of ethyltoluenes production via different alkylation reactions Ethyltoluenes production via two alkylation reactions vis: toluene ethylation and ethylbenzene (EB) methylation on ZSM-5 and mordenite (MOR) was studied in a batch fluidized-bed reactor at a temperature range of 200–300°C for reaction times of 5–20s. Toluene ethylation with ethanol gave better yield and selectivity to ethyltoluenes on ZSM-5 compared with EB methylation with methanol. A maximum ethyltoluenes yield of 22.0% was achieved during toluene ethylation whereas 7.3% yield was attained in EB methylation on ZSM-5. To achieve enhanced para-ethyltoluene selectivity, ZSM-5 was modified by silylation treatment using tetraethyl orthosilicate (TEOS). While toluene conversion on silylated ZSM-5 (HZ80-6L) was decreased, 100% para-isomer selectivity was obtained due to the reduction of the effective pore channel and strength of acid sites. A comprehensive kinetic study of the toluene ethylation reaction is reported in this paper using the power-law approach for the model development. A satisfactory correlation between experimental data and the model result was achieved. The required apparent activation energy for the alkylation step of toluene ethylation reaction over ZSM-5, HZ80-6L and MOR catalysts was determined to be 70kJ/mol, 63kJ/mol and 28kJ/mol, respectively.
+

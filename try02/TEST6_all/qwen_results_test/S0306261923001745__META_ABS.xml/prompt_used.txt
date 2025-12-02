@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Methane pyrolysis and carbon formation mechanisms in molten manganese chloride mixtures Molten manganese chloride (MnCl2) is attractive as a high-temperature liquid catalyst for methane pyrolysis (CH4 → C + 2H2). Nevertheless, the mechanism of this reaction for continuously producing high-purity hydrogen and graphitic carbon from CH4 has not been fully elucidated. In this work, we investigated the reaction kinetics and mechanism of CH4 pyrolysis in mixtures of molten MnCl2 with various monovalent or divalent chlorides. The apparent activation energies of the molten MnCl2 mixtures for CH4 pyrolysis (<230 kJ mol−1) were much lower than that of the uncatalyzed reaction (400 kJ mol−1). Among the MnCl2 mixtures, only MnCl2–KCl showed a lower apparent activation energy than pure MnCl2 (152 and 172 kJ mol−1, respectively). In addition, MnCl2–KCl produced the largest amount of CH2* and the final solid carbon product with the highest crystallinity, suggesting that this system has unique CH4 dehydrogenation and carbon formation pathways. Density functional theory calculations also predicted high concentrations of CH2* in MnCl2–KCl, as confirmed by CH2 formation being more thermodynamically favorable in MnCl2–KCl than in MnCl2. Furthermore, the generation of C2+ unsaturated intermediates from CHx* (x < 3) was thermodynamically favored, suggesting a more facile pathway for the formation of graphitic carbon layers in molten MnCl2–KCl. In addition, an NVT ab initio molecular dynamics simulation suggested that gas-phase C–C coupling was facilitated in MnCl2–KCl by the frequent reversible desorption and adsorption of CHx* intermediates. These fundamental insights into the origins of the enhanced CH4 pyrolysis performance in MnCl2–KCl could aid in the development of molten salt catalysts with enhanced reactivity.
+

@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Advancements, mechanisms, and challenges in the catalytic conversion of coal, coal tar, model compounds, and coal+x: An in-depth analysis of light aromatics preparation and future perspectives Exploring the compatibility between the molecular structure and compositional characteristics of coal and the physicochemical properties of catalysts is crucial. It not only aids in understanding the reaction mechanisms for the catalytic conversion of coal and its derivatives into high-value chemicals, but also contributes significantly to addressing key global issues, such as environmental degradation and the diminishing petroleum resources. In this review, we provide an in-depth summary of the evolutionary mechanisms and structure–activity relationships of various catalysts and their pretreatment methods in converting coal, coal tar, model compounds, and coal+x into high-value chemicals, particularly light aromatics. Furthermore, this review meticulously assesses the individual physical and chemical properties of catalysts, as well as their synergistic interactions, to understand how these elements affect the production of high-value light aromatics, with a particular focus on the mechanisms and trends at play. Finally, this review summarizes the challenges encountered in the catalytic conversion of coal, coal tar, model compounds, and coal+x into high-value light aromatics. It also outlines future research directions and prospects. In summary, this study holds significant strategic value, promoting the high-value utilization of coal, alleviating oil shortages and environmental degradation, and enhancing energy security and sustainable development.
+

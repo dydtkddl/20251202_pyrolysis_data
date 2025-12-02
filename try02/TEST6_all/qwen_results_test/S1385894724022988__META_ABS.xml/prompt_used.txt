@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Understanding hydropyrolysis mechanism of β-O-4 type lignin dimer Hydropyrolysis has been demonstrated as a highly effective method in the production of fuels and high-value chemicals. However, limited research has been conducted on the reaction mechanism under hydrogen conditions, which necessitates further investigation. In order to examine the impact of hydrogen, experiments were conducted on a high-pressure pyrolyzer using 1-methoxy-2-phenethoxybenzenene with β-O-4 linkage. The results indicated that hydrogen promoted the depolymerization and reduced the formation of heavier compounds, leading to an increase in the production of the monomer phenols and aromatic compounds. Experiments were further conducted at different pressures. The results obtained from reactive molecular dynamics simulations exhibited the pyrolysis mechanisms. The cleavage of Cβ-O, Cph-O, and Cα-Cβ bonds, as well as demethylation and demethoxylation processes during hydropyrolysis were observed. The initial reaction commenced with Cβ-O bond cleavage, which was enhanced by the presence of hydrogen. Subsequent reactions were categorized into three types: decomposition or isomerization reaction, coupling with radical groups containing carbon, and combination with hydrogen molecules or hydrogen radicals. The direct reactions between the model compound molecules and hydrogen molecules or hydrogen radicals, as well as primary hydrogen abstraction reactions and hydrogen elimination reactions were explored. These simulations offer valuable insights into understanding the influence of hydrogen at the molecular level.
+

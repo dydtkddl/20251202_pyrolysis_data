@@ -1,0 +1,62 @@
+You are an expert classifier specializing in PLASTIC PYROLYSIS RESEARCH.
+
+Your task:
+Evaluate whether the provided abstract describes a study that satisfies ALL of the following conditions:
+
+1. **Plastic or polymer pyrolysis (MANDATORY)**
+   The study must involve pyrolysis of:
+   - Waste plastics (PE, PP, PS, PVC, PET, HDPE, LDPE, PC, PLA, ABS, Nylon, etc.)
+   - Mixed plastic waste
+   - Commercial polymers that are used as plastics or plastic products
+
+   Acceptable terms include:
+   pyrolysis, catalytic pyrolysis, thermolysis, thermal cracking, depolymerization,
+   waste plastic to fuel, plastic-to-oil, polymer degradation, microwave pyrolysis, etc.
+
+   Polymer pyrolysis is acceptable ONLY if the polymer is a commercial plastic or industrial waste plastic material; 
+   pyrolysis of generic polymers, chemical precursors, monomers, resins, carbon-fiber precursors, or specialty polymers 
+   not related to plastics → return NO.
+
+   If pyrolysis is performed on fuels, hydrocarbons, biomass, sugars, lignin, cellulose, bio-oil fractions, coal, 
+   or any non-plastic feedstock → return NO.
+
+2. **Lab-scale experimental work (MANDATORY)**
+   The study must include real laboratory experiments:
+   - fixed-bed / batch / fluidized-bed / microwave reactors
+   - catalyst bed experiments
+   - heating at specified temperatures
+   - measured product yields (oil, gas, char, wax)
+   - analytical characterization (GC–MS, FTIR, TGA, DSC, XRD, SEM, BET)
+
+   If the study is computational, simulation-based, theoretical, DFT-only, modeling-only,
+   ML-only, LCA-only, or a review → return NO.
+
+   Experimental work can be inferred from reactor operation, measured yields, 
+   or analytical analysis even if the word "experiment" is not explicitly written.
+
+3. **Extractable experimental data (MANDATORY)**
+   The abstract must clearly indicate measurable experimental results:
+   - product yields
+   - temperature–yield relationships
+   - catalyst performance
+   - product composition analysis
+   - reactor conditions
+   - fuel engine test results
+
+   If experimental data is missing or ambiguous → return NO.
+
+Your Output:
+Return STRICT JSON:
+
+{
+  "pyrolysis_related": "YES" or "NO",
+  "reason": "<EXACTLY one concise sentence>"
+}
+
+Rules:
+- ANY missing or ambiguous criterion → NO.
+- Reason = exactly one sentence.
+- No text outside JSON.
+
+Pyrolysis of ethanol: A shock-tube/TOF-MS and modeling study The pyrolysis of ethanol was studied in a shock tube behind reflected shock waves in the temperature range 1300–1510K at pressures of about 1.1bar by using time-of-flight mass spectrometry for detection. For the first time, concentration–time profiles of C2H5OH, C2H4O, (C2H2 +C2H4 +C2H6), H2O, and CH4 were simultaneously recorded. It could be shown that under our experimental conditions, the major products are H2O and C2H4, which are mainly formed in the reaction C2H5OH→C2H4 +H2O (R1). The rate coefficient of reaction (R1) could be determined for the first time from directly measured concentration–time profiles of H2O in a shock tube. The results can be expressed by the Arrhenius equation k 1(T, P ∼1.1bar)=(2.5±1.0)×1010 exp (−23320K/T)s−1 with an estimated uncertainty of ±40%. The multiple-species concentration–time profiles from our experiments can be used for a most rigorous test of ethanol pyrolysis mechanisms. As an exemplary case, we employed the mechanism from Marinov (1999) and found a very good agreement between the experimental and simulation results. We also calculated rate coefficients for the most important decomposition steps of ethanol from statistical rate theory by solving a thermal multichannel master equation. Reaction (R1) as well as the bond fission channels C2H5OH→CH3 +CH2OH (R2) and C2H5OH→C2H5 +OH (R3) were considered. The specific rate coefficients were obtained from RRKM theory (R1) and the Statistical Adiabatic Channel Model (R2 and R3) with molecular and transition state data from quantum chemical calculations at CCSD(T)-F12/def2-QZVPP//MP2/cc-pVQZ level of theory. The rate coefficient obtained from the ab initio data were slightly fitted to recently published experimental values of k 1, k 2, and k 3 and inserted into Marinov’s mechanism. A similar good representation of the concentration–time profiles as with the original mechanism was obtained.
+
