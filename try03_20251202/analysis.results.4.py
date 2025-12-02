@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Scan qwen_results_test folders.
-Save all (YES + NO) into CSV with:
-source_file, abstract, label, reason
-Includes logging + tqdm.
+Scan qwen_results folders and export a CSV with:
+source_file, abstract, pyrolysis_related, include_in_oil_db, reason, flags
 """
 
 import os
@@ -20,9 +18,11 @@ logging.basicConfig(
 
 def scan_results(root_folder):
     """
-    qwen_results_test 내부 폴더들을 순회하며
-    input.txt + result.json 을 파싱.
-    폴더 이름(~.xml)을 source_file 로 저장.
+    Scan result folders such as:
+      root/source_file_folder/
+         - input.txt
+         - result.json
+    Return list of dict containing parsed info.
     """
     data = []
 
@@ -33,11 +33,11 @@ def scan_results(root_folder):
     ]
 
     for folder in tqdm(subfolders, desc="Scanning result folders"):
-        source_file = os.path.basename(folder)  # e.g., 000862159380027C__META_ABS.xml
+        source_file = os.path.basename(folder)
         input_path = os.path.join(folder, "input.txt")
         result_path = os.path.join(folder, "result.json")
 
-        if not os.path.exists(input_path) or not os.path.exists(result_path):
+        if not (os.path.exists(input_path) and os.path.exists(result_path)):
             continue
 
         try:
@@ -47,14 +47,24 @@ def scan_results(root_folder):
             with open(result_path, "r", encoding="utf-8") as f:
                 result = json.load(f)
 
-            label = result.get("pyrolysis_related", "")
+            pyro = result.get("pyrolysis_related", "")
+            include = result.get("include_in_oil_db", "")
             reason = result.get("reason", "")
+            flags = result.get("flags", [])
+
+            # flags must be list, convert safely
+            if isinstance(flags, list):
+                flags_str = ";".join(flags)
+            else:
+                flags_str = str(flags)
 
             data.append({
                 "source_file": source_file,
                 "abstract": abstract,
-                "label": label,
-                "reason": reason
+                "pyrolysis_related": pyro,
+                "include_in_oil_db": include,
+                "reason": reason,
+                "flags": flags_str
             })
 
         except Exception as e:
@@ -69,22 +79,31 @@ def save_all_to_csv(data, csv_path="all_results.csv"):
 
     with open(csv_path, "w", newline="", encoding="utf-8-sig") as f:
         writer = csv.writer(f)
-        writer.writerow(["source_file", "abstract", "label", "reason"])
+        writer.writerow([
+            "source_file",
+            "abstract",
+            "pyrolysis_related",
+            "include_in_oil_db",
+            "reason",
+            "flags"
+        ])
 
         for d in data:
             writer.writerow([
                 d["source_file"],
                 d["abstract"],
-                d["label"],
-                d["reason"]
+                d["pyrolysis_related"],
+                d["include_in_oil_db"],
+                d["reason"],
+                d["flags"]
             ])
 
     logging.info(f"Saved {len(data)} rows to {csv_path}")
 
 
 def count_yes_no(data):
-    yes = sum(1 for d in data if d["label"] == "YES")
-    no = sum(1 for d in data if d["label"] == "NO")
+    yes = sum(1 for d in data if d["pyrolysis_related"] == "YES")
+    no = sum(1 for d in data if d["pyrolysis_related"] == "NO")
     total = yes + no
     return yes, no, total
 
@@ -98,8 +117,8 @@ if __name__ == "__main__":
     yes, no, total = count_yes_no(parsed)
 
     print("\n===== SUMMARY =====")
-    print(f"YES: {yes}")
-    print(f"NO: {no}")
+    print(f"pyrolysis_related = YES: {yes}")
+    print(f"pyrolysis_related = NO : {no}")
     print(f"TOTAL: {total}")
 
     save_all_to_csv(parsed, "all_results.csv")
